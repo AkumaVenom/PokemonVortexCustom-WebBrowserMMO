@@ -1,8 +1,6 @@
 # PokemonVortexCustom-WebBrowserMMO-WebServer WIP
 
-# Pokémon Vortex — Production Sci‑Fi Reconstruction - WIP
-
-This package is a carefully modernized reconstruction of the recovered Pokémon Vortex browser RPG source, prepared for a current XAMPP/PHP environment.
+This package is a carefully modernized style reconstruction of the recovered Pokémon Vortex browser RPG source, prepared for a current XAMPP/PHP environment.
 
 ## Install on XAMPP
 
