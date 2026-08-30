@@ -2,6 +2,8 @@
 
 This package is a carefully modernized style reconstruction of the recovered Pokémon Vortex browser MMORPG source, prepared for a current XAMPP/PHP environment.
 
+<img width="3798" height="1854" alt="MainPage" src="https://github.com/user-attachments/assets/1a958402-87a9-414c-a9ab-16169c171936" />
+
 ## Install on XAMPP
 
 1. Copy the `public_html` folder to `C:\xampp\htdocs\PokemonVortex`.
