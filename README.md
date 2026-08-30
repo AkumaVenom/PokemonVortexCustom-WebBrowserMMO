@@ -37,5 +37,3 @@ The included reconstruction database combines the recovered Vortex SQL material 
 - PHP 8.2+ with `mysqli`
 - MariaDB 10.4+ or MySQL 8+
 - Modern Chromium/Firefox/Edge browser
-
-The source tree passes PHP 8.4 syntax validation in this build. Database-driven gameplay still requires runtime validation against your local XAMPP MySQL service.
