@@ -774,3 +774,5 @@ Anyone hosting or distributing a modified instance is responsible for reviewing:
 <img width="3840" height="2080" alt="evolutionlab" src="https://github.com/user-attachments/assets/35978ec2-ea94-40ce-af11-f5fada26c0e3" />
 <img width="3798" height="2086" alt="team" src="https://github.com/user-attachments/assets/8492f085-b8fd-4c93-83a1-9ca2bd7d4b40" />
 <img width="3807" height="2074" alt="Shop" src="https://github.com/user-attachments/assets/72233f4f-1d46-4296-919f-307972e73d2e" />
+<img width="3840" height="2082" alt="AI Controlled Player Battles Fully Working" src="https://github.com/user-attachments/assets/6f658f0b-badf-4cd4-aa0e-5b6728ca4032" />
+<img width="3840" height="2079" alt="AI Controlled Player Battles Win Or Defeat" src="https://github.com/user-attachments/assets/86d6b6a4-6f57-44c6-965c-ef93f6ff36f6" />
