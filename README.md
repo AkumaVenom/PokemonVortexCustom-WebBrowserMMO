@@ -135,7 +135,7 @@ Special visual forms from the recovered map data are also preserved wherever pos
 
 ## Map System
 
-The reconstructed game retains the recovered browser-map exploration system.
+The reconstructed game retains the recovered browser-map exploration system plus the additional full KANTO overworld.
 
 The current restoration includes:
 
@@ -147,6 +147,8 @@ The current restoration includes:
 * species/form preservation;
 * secure battle handoff;
 * and local sprite resolution.
+* additional full KANTO overworld.
+
 
 The project contains the recovered map image set used by the reconstructed exploration runtime.
 
@@ -712,7 +714,6 @@ Ongoing development includes progressively improving:
 * battle compatibility;
 * account security;
 * Pokémon management;
-* map/exploration systems;
 * trading;
 * multiplayer/community features;
 * Events;
@@ -770,6 +771,7 @@ Anyone hosting or distributing a modified instance is responsible for reviewing:
 <img width="3803" height="2076" alt="allpokemonvarietiesrestored" src="https://github.com/user-attachments/assets/cbebbe81-6489-42db-87cf-c672bcb23c65" />
 <img width="3840" height="2085" alt="battles" src="https://github.com/user-attachments/assets/faab5162-65ba-4e45-b6c0-e643774a2981" />
 <img width="3800" height="2071" alt="capturingwildpokemon" src="https://github.com/user-attachments/assets/b48629bf-5868-440b-9a91-34f35b1c90e9" />
+<img width="3840" height="2078" alt="didit2" src="https://github.com/user-attachments/assets/72c2209d-5cd5-4920-9810-7b93ac03c7e4" />
 <img width="3799" height="2073" alt="restored maps to explore" src="https://github.com/user-attachments/assets/c9f4735d-b587-46af-8d29-05f2a847ff35" />
 <img width="3840" height="2080" alt="evolutionlab" src="https://github.com/user-attachments/assets/35978ec2-ea94-40ce-af11-f5fada26c0e3" />
 <img width="3798" height="2086" alt="team" src="https://github.com/user-attachments/assets/8492f085-b8fd-4c93-83a1-9ca2bd7d4b40" />
