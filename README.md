@@ -135,7 +135,7 @@ Special visual forms from the recovered map data are also preserved wherever pos
 
 ## Map System
 
-The reconstructed game retains the recovered browser-map exploration system plus the additional full KANTO overworld.
+The reconstructed game retains the recovered browser-map exploration system plus the additional Kanto & Hoenn Regions.
 
 The current restoration includes:
 
@@ -147,7 +147,7 @@ The current restoration includes:
 * species/form preservation;
 * secure battle handoff;
 * and local sprite resolution.
-* additional full KANTO overworld.
+* additional Kanto & Hoenn regions.
 
 
 The project contains the recovered map image set used by the reconstructed exploration runtime.
@@ -773,6 +773,8 @@ Anyone hosting or distributing a modified instance is responsible for reviewing:
 <img width="3800" height="2071" alt="capturingwildpokemon" src="https://github.com/user-attachments/assets/b48629bf-5868-440b-9a91-34f35b1c90e9" />
 <img width="3840" height="2078" alt="didit2" src="https://github.com/user-attachments/assets/72c2209d-5cd5-4920-9810-7b93ac03c7e4" />
 <img width="3799" height="2073" alt="restored maps to explore" src="https://github.com/user-attachments/assets/c9f4735d-b587-46af-8d29-05f2a847ff35" />
+<img width="3840" height="2076" alt="hoenn3" src="https://github.com/user-attachments/assets/380c15f9-3250-4e8e-834d-20429f39116f" />
+<img width="3840" height="2077" alt="hoenn1" src="https://github.com/user-attachments/assets/227e3042-ba59-46dd-a728-e331384b3fe2" />
 <img width="3840" height="2080" alt="evolutionlab" src="https://github.com/user-attachments/assets/35978ec2-ea94-40ce-af11-f5fada26c0e3" />
 <img width="3798" height="2086" alt="team" src="https://github.com/user-attachments/assets/8492f085-b8fd-4c93-83a1-9ca2bd7d4b40" />
 <img width="3807" height="2074" alt="Shop" src="https://github.com/user-attachments/assets/72233f4f-1d46-4296-919f-307972e73d2e" />
