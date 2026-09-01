@@ -780,3 +780,5 @@ Anyone hosting or distributing a modified instance is responsible for reviewing:
 <img width="3807" height="2074" alt="Shop" src="https://github.com/user-attachments/assets/72233f4f-1d46-4296-919f-307972e73d2e" />
 <img width="3840" height="2082" alt="AI Controlled Player Battles Fully Working" src="https://github.com/user-attachments/assets/6f658f0b-badf-4cd4-aa0e-5b6728ca4032" />
 <img width="3840" height="2079" alt="AI Controlled Player Battles Win Or Defeat" src="https://github.com/user-attachments/assets/86d6b6a4-6f57-44c6-965c-ef93f6ff36f6" />
+<img width="3840" height="2082" alt="leuge" src="https://github.com/user-attachments/assets/6a506c4d-5a78-465a-af23-ba39f476a3ce" />
+<img width="3840" height="2080" alt="battlearena" src="https://github.com/user-attachments/assets/b43d3a07-c77d-4ae6-a6b6-a4d9cb73a651" />
