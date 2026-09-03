@@ -3,11 +3,7 @@
 ### Modernized Web Browser MMO / Web Server Reconstruction
 
 > A modernized reconstruction of a recovered Pokémon Vortex browser MMORPG codebase, rebuilt for modern PHP, Apache, MySQL/MariaDB and current desktop web browsers while preserving the character and gameplay of the recovered project.
-
-**Current Project Version:** `v23.5.1 — Production Vortex Collision Traversal Correction`  
-**Current Release Status:** XAMPP test candidate  
-**Accepted Stable Parent:** `v23.4.1 — Production World Map Copy Polish`  
-**Database Schema:** `26`  
+ 
 **Runtime:** PHP 8.x · Apache 2.4+ · MySQL / MariaDB  
 **License:** MIT for project-owned code — see [LICENSE](LICENSE)
 
