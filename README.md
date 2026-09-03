@@ -44,43 +44,6 @@ The result is a modernized playable reconstruction rather than a bit-for-bit cop
 
 ---
 
-# Project Status
-
-## Current Version — v23.5.1
-
-`v23.5.1` is the current project package and corrected final major Vortex World movement-polish candidate.
-
-It builds directly on the accepted `v23.4.1` baseline and adds complete collision reconstruction for all 25 original Vortex World maps while preserving the existing map artwork, encounters, multiplayer presence, transitions and previously accepted gameplay systems.
-
-The current package contains:
-
-* **25 original Vortex World maps** with reconstructed terrain collision;
-* **7,434 audited Vortex terrain blockers**;
-* collision-safe map entry and saved-position recovery;
-* all **56 directed Vortex map connections** preserved;
-* all **8 special inter-region portals** preserved;
-* the full Kanto region;
-* the full Hoenn region;
-* Wild Battle and capture;
-* AI-controlled Trainer Battles;
-* Battle Arena / League / facility progression;
-* Special Events;
-* the full reconstructed Sidequest campaign;
-* server-synchronized Live PvP;
-* multiplayer map presence;
-* a reconstructed Pokédex;
-* Evolution, Move and Fossil Labs;
-* trading, inventory, PokéMart, clans, messages and trainer systems;
-* and the completed player-facing copy polish pass.
-
-### Stable Baseline Note
-
-At the time of this README update, `v23.4.1` is the last real-XAMPP accepted stable parent. The original `v23.5.0` collision candidate was rejected after XAMPP testing exposed blocked Grass-region stair/height transitions; `v23.5.1` is the corrected candidate awaiting final acceptance.
-
-No database migration is required between these versions. Both use **schema revision 26**.
-
----
-
 # Major Game Systems
 
 ## Trainer Accounts & Persistence
