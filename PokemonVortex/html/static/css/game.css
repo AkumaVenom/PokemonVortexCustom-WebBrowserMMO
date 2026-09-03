@@ -1,0 +1,764 @@
+
+#container
+{
+	overflow: hidden;
+}
+
+ul#logout
+{
+	margin: 15px 15px 0 0;
+	list-style: none;
+	padding: 0;
+}
+
+ul#logout li
+{
+	padding: 0;
+}
+
+#menuBox
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	border: 2px solid #666666;
+	background-color: #CCCCCC;
+	z-index: 1000;
+	text-align: center;
+}
+
+#menuBox table
+{
+	margin: 0 auto;
+}
+
+#menuBox ul
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#menuBox ul li
+{
+	margin: 0;
+	padding: 0;
+	border-top: 1px dotted #AAAAAA;
+}
+
+#menuBox ul:first-child li:first-child
+{
+	border-top: none;
+}
+
+#menuBox ul li a
+{
+	display: block;
+	padding: 7px 0;
+}
+
+#menuBox ul li a:link, #menuBox ul li a:visited
+{
+	color: #000000;
+}
+
+#menuBox ul li a:active, #menuBox ul li a:hover
+{
+	/*color: #990000;
+	background-color: #BBBBBB;*/
+	color: #FFFFFF;
+	background-color: #000099;
+}
+
+#suggestResults
+{
+	width: 300px;
+	padding: 0;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	display: none;
+	position: absolute;
+    background-color: #EEEEEE;
+    border: 2px solid #666666;
+	font-weight: normal;
+	text-align: center;
+	z-index: 10;
+}
+
+a.suggestion, a.suggestionHighlighted
+{
+	margin: 1px;
+	padding: 5px;
+	display: block;
+}
+
+a:link.suggestion, a:visited.suggestion
+{
+	border: 1px solid #EEEEEE;
+	text-decoration: none;
+	color: #000000;
+}
+
+a:link.suggestionHighlighted, a:visited.suggestionHighlighted
+{
+	text-decoration: underline;
+	border: 1px solid #666666;
+	color: #FFFFFF;
+	background: #CA541A;
+}
+
+a:hover.suggestion, a:active.suggestion, a:hover.suggestionHighlighted, a:active.suggestionHighlighted
+{
+	text-decoration: underline;
+	border: 1px solid #666666;
+	color: #FFFFFF;
+	background: #000099;
+}
+
+.mapSelect
+{
+	background-color: #000000;
+	margin: 0 auto;
+}
+
+ul#nav
+{
+	list-style: none;
+	float: left;
+	margin: 10px 10px -2px 5px;
+	text-align: left;
+	padding: 0;
+}
+
+ul#nav li
+{
+	display: block;
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+ul#nav li a
+{
+	display: block;
+	width: 119px;
+	height: 32px;
+	background-repeat: no-repeat;
+}
+
+ul#nav li a em
+{
+	display: none;
+}
+
+ul#nav li a.selected
+{
+	background-position: 0 0;
+}
+
+ul#nav li a.deselected
+{
+	background-position: 0 -32px;
+}
+
+ul#nav li a.active, ul#nav li a:hover
+{
+	background-position: 0 -64px;
+}
+
+ul#nav li a#mapsTab
+{
+	background-image: url('../layout/mapsblue.gif');
+}
+
+ul#nav li a#battleTab
+{
+	background-image: url('../layout/battleblue.gif');
+}
+
+ul#nav li a#yourAccountTab
+{
+	background-image: url('../layout/accountblue.gif');
+}
+
+ul#nav li a#communityTab
+{
+	background-image: url('../layout/communityblue.gif');
+}
+
+#sidebar
+{
+	position: absolute;
+	width: 500px;
+	top: -2px;
+	left: -472px;
+	z-index: 100;
+}
+
+#sidebarContainer
+{
+	float: left;
+	width: 470px;
+	border-top: 2px solid #666666;
+	background-color: #E1E1E1;
+	z-index: 150;
+}
+
+#sidebarContent
+{
+	overflow: auto;
+	padding: 0 15px;
+}
+
+#sidebarLoading, #messageLoading, #messageListLoading
+{
+	position: absolute;
+	background-image: url('../images/grayout.gif');
+	visibility: hidden;
+	z-index: 200;
+}
+
+.tabContent
+{
+	background-color: #E1E1E1;
+	display: none;
+	z-index: 200;
+}
+
+ul#sidebarTabs
+{
+	float: left;
+	width: 30px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	background-image: url('../layout/gray_bg.gif');
+	background-repeat: repeat-y;
+}
+
+ul#sidebarTabs li
+{
+	margin: 15px 0;
+}
+
+ul#sidebarTabs li a
+{
+	display: block;
+	width: 30px;
+	height: 102px;
+	background-repeat: no-repeat;
+}
+
+ul#sidebarTabs li a em
+{
+	display: none;
+}
+
+ul#sidebarTabs li a.selected
+{
+	background-position: 0 0;
+}
+
+ul#sidebarTabs li a.deselected
+{
+	background-position: -30px 0;
+}
+
+ul#sidebarTabs li a.active, ul#sidebarTabs li a:hover
+{
+	background-position: -60px 0;
+}
+
+ul#sidebarTabs li a#optionsTab
+{
+	background-image: url('../layout/optionsblue.gif');
+}
+
+ul#sidebarTabs li a#pokedexTab
+{
+	background-image: url('../layout/pokedexblue.gif');
+}
+
+ul#sidebarTabs li a#membersTab
+{
+	background-image: url('../layout/membersblue.gif');
+}
+
+#content
+{
+	position: relative;
+	margin-left: 40px;
+}
+
+#notification
+{
+	position: absolute;
+	text-align: center;
+	padding: 15px;
+	background-color: #CCCCCC;
+	border: 2px solid #666666;
+	width: 65%;
+	margin: 20px 120px;
+	z-index: 40;
+}
+
+#notificationContents
+{
+	margin: 0 auto;
+}
+
+#scroll
+{
+	position: relative;
+	overflow: auto;
+	overflow-x: auto;
+	overflow-y: scroll;
+	padding: 0 10px 0 0;
+	height: 400px;
+}
+
+#scrollContent
+{
+	margin: 20px 170px 0 0;
+}
+
+table#mapWrapper
+{
+	position: relative;
+	width: 830px;
+	margin: 10px auto 0 auto;
+}
+
+table#mapWrapper td
+{
+	vertical-align: top;
+}
+
+#mapContainer
+{
+	text-align: center;
+}
+
+#foundPokemon
+{
+	text-align: center;
+	border-top: 2px solid #666666;
+	border-bottom: 2px solid #666666;
+}
+
+table#map
+{
+	width: 480px;
+	border: none;
+}
+
+table#map td, table#map img
+{
+	width: 16px;
+	height: 16px;
+}
+
+#mapLoading
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/overshadow.png');
+	visibility: hidden;
+	z-index: 50;
+}
+
+#trainers
+{
+	text-align: center;
+	margin: 0 auto;
+}
+
+#messageContainer
+{
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	width: 960px;
+}
+
+#messageList
+{
+	float: left;
+	background-color: #EEEEEE;
+	clear: both;
+	width: 330px;
+	overflow: auto;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	border-right: 2px solid #CCCCCC;
+}
+
+#messageList ul
+{
+	background-image: url('../layout/content_background.gif');
+	background-repeat: repeat-x;
+	background-color: #FFFFFF;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#messageList ul li
+{
+	display: block;
+	margin: 0;
+	padding: 5px 0;
+	border-bottom: 1px dotted #CCCCCC;
+	clear: left;
+}
+
+#messageList ul li div
+{
+	float: left;
+	padding: 0;
+}
+
+#message
+{
+	/*background-image: url('../layout/content_background.gif');
+	background-repeat: repeat-x;*/
+	background-color: #EEEEEE;
+	margin-left: 332px;
+	clear: right;
+}
+
+#messageContent
+{
+	padding: 0 10px;
+	overflow: auto;
+	width: 100%;
+}
+
+#messageHeader
+{
+	white-space: nowrap;
+	overflow: hidden;
+	border-bottom: 1px solid #666666;
+}
+
+#messageOptions
+{
+	margin-top: 10px;
+	height: 30px;
+	background-image: url('../layout/gray_bg.gif');
+	background-position: bottom;
+	background-repeat: repeat-x;
+}
+
+#newMessage
+{
+	background-color: #EEEEEE;
+}
+
+#newMessageContent
+{
+	padding: 80px;
+}
+
+ul#messageFunctions
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 30px;
+}
+
+ul#messageFunctions li
+{
+	float: right;
+	margin: 0 10px 0 0;
+}
+
+ul#messageFunctions li input
+{
+	border: none;
+	background: none;
+}
+
+ul#messageTabs
+{
+	float: left;
+	height: 30px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul#messageTabs li
+{
+	float: left;
+	margin: 0 0 0 10px;
+}
+
+ul#messageTabs li a
+{
+	display: block;
+	height: 30px;
+	background-repeat: no-repeat;
+}
+
+ul#messageTabs li a em
+{
+	display: none;
+}
+
+ul#messageTabs li a.selected
+{
+	background-position: 0 0;
+}
+
+ul#messageTabs li a.deselected
+{
+	background-position: 0 -30px;
+}
+
+ul#messageTabs li a:hover
+{
+	background-position: 0 -60px;
+}
+
+ul#messageTabs li a#newMessageTab
+{
+	width: 102px;
+	background-image: url('../layout/messages/new_message.png');
+}
+
+ul#messageTabs li a#inboxTab
+{
+	width: 57px;
+	background-image: url('../layout/messages/inbox.png');
+}
+
+ul#messageTabs li a#sentTab
+{
+	width: 52px;
+	background-image: url('../layout/messages/sent.png');
+}
+
+#ajax
+{
+	text-align: center;
+	margin-top: 25px;
+}
+
+.autowidth
+{
+	width: 100%;
+	margin: 0 auto;
+}
+.mediumwidth
+{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.list
+{
+	margin: 0 auto;
+	text-align: center;
+	vertical-align: middle;
+	border: 2px solid #666666;
+}
+
+.list table
+{
+	width: 100%;
+}
+
+.list table th
+{
+	border-bottom: 1px solid #999999;
+	font-weight: bold;
+	background-color: #CCCCCC;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.list table td
+{
+	text-align: center;
+	vertical-align: middle;
+	border-left: 1px dotted #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+}
+#listy
+{
+	text-align: center;
+	vertical-align: middle;
+	border-left: 1px dotted #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.list table td:first-child
+{
+	text-align: left;
+	border-left: none;
+}
+
+.list img, .optionsList img
+{
+	vertical-align: middle;
+}
+
+#r 
+{
+	text-align: left;
+	border-left: none;
+}
+.optionsList
+{
+	margin: 10px auto;
+	padding: 2px 0;
+	border-top: 1px dotted #666666;
+	border-bottom: 1px dotted #666666;
+	line-height: 185%;
+}
+
+ul.optionsList
+{
+	text-align: left;
+	margin: 10px auto;
+}
+
+ul.optionsList li
+{
+	padding: 0;
+	margin: 10px 20px;
+}
+
+.pokemonList
+{
+	text-align: left;
+	margin: 0 auto;
+}
+
+.pokemonList img
+{
+	vertical-align: middle;
+}
+
+.optionsList a.selected, .optionsList a.deselected
+{
+	margin: 0;
+}
+
+.optionsList a.selected:link, .optionsList a.selected:visited
+{
+	padding: 6px;
+	text-decoration: none;
+	color: #000000;
+	background: #CCCCCC;
+}
+
+.optionsList a.selected:hover, .optionsList a.selected:active
+{
+	padding: 6px;
+	text-decoration: underline;
+	color: #FFFFFF;
+	background: #000099;
+}
+
+.optionsList a.deselected:link, .optionsList a.deselected:visited
+{
+	padding: 6px;
+	text-decoration: none;
+	color: #000099;
+}
+
+.optionsList a.deselected:hover, .optionsList a.deselected:active
+{
+	padding: 6px;
+	text-decoration: underline;
+	color: #FFFFFF;
+	background: #000099;
+}
+
+#lbOverlay {
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	cursor: pointer;
+}
+
+#lbCenter, #lbBottomContainer {
+	position: absolute;
+	z-index: 9999;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.lbLoading {
+	background: #fff url(loading.gif) no-repeat center;
+}
+
+#lbImage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 10px solid #fff;
+	background-repeat: no-repeat;
+}
+
+#lbPrevLink, #lbNextLink {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 50%;
+	outline: none;
+}
+
+#lbPrevLink {
+	left: 0;
+}
+
+#lbPrevLink:hover {
+	background: transparent url(prevlabel.gif) no-repeat 0 15%;
+}
+
+#lbNextLink {
+	right: 0;
+}
+
+#lbNextLink:hover {
+	background: transparent url(nextlabel.gif) no-repeat 100% 15%;
+}
+
+#lbBottom {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666;
+	line-height: 1.4em;
+	text-align: left;
+	border: 10px solid #fff;
+	border-top-style: none;
+}
+
+#lbCloseLink {
+	display: block;
+	float: right;
+	width: 66px;
+	height: 22px;
+	background: transparent url(closelabel.gif) no-repeat center;
+	margin: 5px 0;
+	outline: none;
+}
+
+#lbCaption, #lbNumber {
+	margin-right: 71px;
+}
+
+#lbCaption {
+	font-weight: bold;
+}

@@ -2,39 +2,41 @@
 
 ### Modernized Web Browser MMO / Web Server Reconstruction
 
-> A modernized reconstruction of the recovered Pokémon Vortex browser MMORPG codebase, restored and progressively hardened for contemporary PHP, MySQL/MariaDB, Apache and modern web browsers.
+> A modernized reconstruction of a recovered Pokémon Vortex browser MMORPG codebase, rebuilt for modern PHP, Apache, MySQL/MariaDB and current desktop web browsers while preserving the character and gameplay of the recovered project.
 
-**Current Development Baseline:** `v20`
-**Status:** Work in Progress / Active Development
-**Runtime:** PHP 8.x · Apache · MySQL / MariaDB
-**License:** MIT for original project code — see [LICENSE](LICENSE)
+**Current Project Version:** `v23.5.1 — Production Vortex Collision Traversal Correction`  
+**Current Release Status:** XAMPP test candidate  
+**Accepted Stable Parent:** `v23.4.1 — Production World Map Copy Polish`  
+**Database Schema:** `26`  
+**Runtime:** PHP 8.x · Apache 2.4+ · MySQL / MariaDB  
+**License:** MIT for project-owned code — see [LICENSE](LICENSE)
 
 ---
 
 ## Overview
 
-**Pokémon Vortex Custom** is a restoration, modernization and continued-development project based on recovered historical Pokémon Vortex browser RPG source material.
+**Pokémon Vortex Custom** is a restoration, modernization and continued-development project built from recovered historical Pokémon Vortex browser RPG source material.
 
-The objective is not simply to make the old PHP files execute again.
+The project has been reconstructed into a coherent browser-based Pokémon MMO with modern account handling, persistent Pokémon ownership, exploration, wild encounters, trainer battles, Battle Arena progression, Special Events, Sidequests, Live PvP, trading, Pokémon Labs, Pokédex features, multiplayer map presence and a unified modern interface.
 
-The project is being systematically reconstructed into a coherent, playable and maintainable browser-based Pokémon MMO while preserving the character of the recovered game wherever practical.
+Development has focused on preserving the identity of the recovered game while replacing broken or unsafe historical behavior with reliable modern implementations.
 
-The modernization work focuses on:
+Major goals of the reconstruction include:
 
-* restoring previously broken gameplay systems;
-* supporting current PHP environments;
-* replacing obsolete PHP APIs and unsafe historical patterns;
-* making important gameplay actions server-authoritative;
-* improving database transaction integrity;
-* protecting actions against duplicate requests and forged input;
-* restoring missing or incomplete Pokémon/game data;
-* removing obsolete external dependencies;
-* preserving recovered maps, sprites and game content;
-* rebuilding damaged frontend and gameplay interfaces;
-* introducing a consistent modern dark navy / cyan / gold presentation;
-* and progressively bringing the entire project toward production-quality standards.
+* restoring damaged or incomplete gameplay systems;
+* supporting current PHP 8 environments;
+* preserving recovered Pokémon, maps, sprites and game content;
+* providing reliable persistent accounts and progression;
+* protecting important actions against forged or duplicate requests;
+* improving battle, trading, reward and inventory integrity;
+* rebuilding Kanto and Hoenn as additional explorable regions;
+* preserving the original Vortex World and its encounter identity;
+* providing real-time multiplayer presence and Live PvP;
+* presenting the game through a consistent dark navy / cyan / gold interface;
+* keeping normal player-facing text focused on gameplay rather than implementation details;
+* and maintaining deterministic release gates for systems that have already been accepted.
 
-This is an ongoing reconstruction rather than a bit-for-bit archival copy of any historical production Pokémon Vortex server.
+The result is a modernized playable reconstruction rather than a bit-for-bit copy of any historical live Pokémon Vortex server.
 
 <img width="3798" height="1854" alt="MainPage" src="https://github.com/user-attachments/assets/c4410dee-c7e6-4b1e-8a82-ad025746d0a6" />
 
@@ -44,81 +46,84 @@ This is an ongoing reconstruction rather than a bit-for-bit archival copy of any
 
 # Project Status
 
-## Current Baseline — v20
+## Current Version — v23.5.1
 
-`v20` is the current authoritative development baseline.
+`v23.5.1` is the current project package and corrected final major Vortex World movement-polish candidate.
 
-Development is proceeding conservatively from this version with an emphasis on:
+It builds directly on the accepted `v23.4.1` baseline and adds complete collision reconstruction for all 25 original Vortex World maps while preserving the existing map artwork, encounters, multiplayer presence, transitions and previously accepted gameplay systems.
 
-* regression prevention;
-* server-side validation;
-* transactional database operations;
-* PHP 8 compatibility;
-* secure account handling;
-* reliable battle state;
-* persistent gameplay state;
-* preservation of recovered assets;
-* coherent UI/UX;
-* maintainable compatibility layers;
-* and root-cause fixes rather than temporary workarounds.
+The current package contains:
 
-The project remains **WIP** and should not yet be considered a finished production MMO.
+* **25 original Vortex World maps** with reconstructed terrain collision;
+* **7,434 audited Vortex terrain blockers**;
+* collision-safe map entry and saved-position recovery;
+* all **56 directed Vortex map connections** preserved;
+* all **8 special inter-region portals** preserved;
+* the full Kanto region;
+* the full Hoenn region;
+* Wild Battle and capture;
+* AI-controlled Trainer Battles;
+* Battle Arena / League / facility progression;
+* Special Events;
+* the full reconstructed Sidequest campaign;
+* server-synchronized Live PvP;
+* multiplayer map presence;
+* a reconstructed Pokédex;
+* Evolution, Move and Fossil Labs;
+* trading, inventory, PokéMart, clans, messages and trainer systems;
+* and the completed player-facing copy polish pass.
+
+### Stable Baseline Note
+
+At the time of this README update, `v23.4.1` is the last real-XAMPP accepted stable parent. The original `v23.5.0` collision candidate was rejected after XAMPP testing exposed blocked Grass-region stair/height transitions; `v23.5.1` is the corrected candidate awaiting final acceptance.
+
+No database migration is required between these versions. Both use **schema revision 26**.
 
 ---
 
-# Major Systems
+# Major Game Systems
 
-A significant amount of the recovered game has already been restored or modernized.
+## Trainer Accounts & Persistence
 
-## Trainer Accounts
+The account system supports:
 
-The account system includes modernized handling for:
-
-* trainer registration;
-* login;
+* trainer registration and login;
 * password recovery;
-* account initialization;
 * starter Pokémon creation;
-* trainer statistics;
-* team assignment;
-* Pokédex initialization;
+* trainer statistics and progression;
+* persistent inventory;
+* persistent Pokémon ownership;
+* active team assignment;
+* Pokédex progress;
 * account options;
-* and related persistent account records.
+* online presence;
+* and persistent gameplay state across sessions.
 
-Critical account creation operations are handled transactionally so failed registration attempts do not leave partially-created trainers behind.
-
-Password recovery has also been hardened around single-use reset state and transactional completion.
+Important account and progression operations use modern database validation and transactional handling so partial or duplicate writes do not leave inconsistent trainer data.
 
 ---
 
 ## Pokémon Collection
 
-The project maintains the core Pokémon collection model inherited from the recovered game while progressively improving validation and persistence.
-
-Pokémon records can contain information such as:
+Owned Pokémon retain persistent information including:
 
 * species;
-* level;
-* experience;
-* moves;
+* level and experience;
+* four move slots;
 * ability;
 * nature;
 * gender;
-* IV information;
+* IVs;
 * Pokémon variant;
 * original trainer;
 * capture ball;
 * happiness;
-* team/storage state;
-* and other recovered game metadata.
+* active-team or storage state;
+* and related collection metadata.
 
----
+### Pokémon Variants
 
-## Pokémon Variants
-
-Recovered visual variants are preserved where corresponding assets are available.
-
-Supported recovered variant families include:
+The reconstructed game preserves the six primary Vortex variant families:
 
 * Normal
 * Shiny
@@ -127,387 +132,391 @@ Supported recovered variant families include:
 * Metallic
 * Shadow
 
-Special visual forms from the recovered map data are also preserved wherever possible, including species with form-specific artwork even where the historical database only contains one canonical species entry.
+Recovered visual subforms are also retained where corresponding local artwork is available.
 
 ---
 
 # World & Exploration
 
-## Map System
+The project currently contains three explorable world groups.
 
-The reconstructed game retains the recovered browser-map exploration system plus the additional Kanto & Hoenn Regions.
+## Vortex World
 
-The current restoration includes:
+The original Vortex World contains **25 connected maps** across its Grass, Cave, Electric, Fire, Ice and Ghost environments.
 
-* recovered map artwork;
-* player positioning;
-* map navigation;
-* encounter generation;
-* Pokémon encounter presentation;
-* species/form preservation;
-* secure battle handoff;
-* and local sprite resolution.
-* additional Kanto & Hoenn regions.
+Current Vortex World functionality includes:
 
+* four-way and diagonal map movement;
+* complete terrain collision across all 25 maps;
+* one-way ledges;
+* connected map transitions;
+* special inter-region portals;
+* collision-safe entry points;
+* persistent trainer position;
+* multiplayer trainer presence;
+* wild Pokémon habitats;
+* regional encounter identity;
+* and direct Wild Battle handoff.
 
-The project contains the recovered map image set used by the reconstructed exploration runtime.
+The corrected v23.5.1 collision reconstruction prevents movement through solid scenery such as trees, water, cliffs, cave walls, rocks, structures, machinery, lava, ice formations and graveyard scenery while explicitly preserving intended roads, grass, bridges, stairs, entrances, floors and height-transition paths.
 
----
+## Kanto
 
-## Secure Wild Encounters
+Kanto is available as a complete additional world containing cities, routes, caves and landmarks with its own regional wild Pokémon habitats and persistent multiplayer exploration.
 
-Wild encounters no longer depend on blindly trusting historical client-provided Pokémon identifiers.
+Kanto uses the established fixed natural-size map presentation inside the game's exploration viewport and retains the accepted regional collision and encounter behavior.
 
-Modernized encounter handling includes server-issued encounter state containing information such as:
+## Hoenn
 
-* species;
-* display form;
-* sprite;
-* level;
-* map;
-* coordinates;
-* and secure encounter identity.
+Hoenn is also available as a complete additional world with towns, routes, caves, seas and regional Pokémon habitats.
 
-Encounter requests use cryptographically generated one-use state so the browser cannot simply fabricate arbitrary wild encounters.
-
-Expired or previously-consumed encounter state cannot be reused to begin another battle.
+Its accepted map presentation, collision, encounters and multiplayer behavior are preserved independently from the Vortex World collision reconstruction.
 
 ---
 
-# Battle System
+## Multiplayer Map Presence
 
-One of the most heavily reconstructed areas of the project is the battle runtime.
+Logged-in trainers exploring the same supported world area can see one another on the map.
 
-## Wild Battles
+Presence is kept separate by world and area so trainers are displayed only where they are actually exploring.
 
-The historical wild battle implementation has been replaced with a modern server-controlled workflow.
+The **Show Players on Map** option defaults to enabled.
 
-Current functionality includes:
+---
+
+# Wild Pokémon & Capture
+
+Wild Pokémon can appear while exploring supported habitats.
+
+The current Wild Battle system supports:
 
 * Fight;
 * Pokémon switching;
 * automatic replacement after fainting;
-* Items;
+* battle items;
 * Poké Balls;
 * Run;
 * Victory;
 * Defeat;
 * Capture;
-* EXP rewards;
-* happiness rewards;
-* money rewards;
-* trainer progression;
-* battle result persistence;
-* and duplicate-reward protection.
+* EXP and happiness progression;
+* money and trainer progression;
+* persistent battle results;
+* and duplicate-result protection.
 
----
-
-## Battle Mechanics
-
-The reconstructed battle runtime includes support for core mechanics such as:
-
-* HP calculation;
-* move accuracy;
-* STAB;
-* Pokémon type effectiveness;
-* immunities;
-* resistances;
-* critical hits;
-* bounded damage variance;
-* move metadata;
-* opponent move selection;
-* fainting;
-* party replacement;
-* and battle completion state.
-
----
-
-## Battle Integrity
-
-Important battle decisions are validated on the server.
-
-Protection includes:
-
-* Pokémon ownership validation;
-* active-team validation;
-* move-slot allowlists;
-* item allowlists;
-* CSRF protection;
-* battle identity checking;
-* turn sequence validation;
-* stale-form rejection;
-* duplicate-submit prevention;
-* one-use battle actions;
-* atomic item consumption;
-* and durable result processing.
-
-Battle result state is recorded so a completed reward or capture cannot simply be processed again because of a repeated browser request or interrupted response.
-
----
-
-# Pokémon Capture
-
-Wild Pokémon can be captured through the reconstructed battle runtime.
-
-Supported capture items include:
+Supported capture balls include:
 
 * Poké Ball
 * Great Ball
 * Ultra Ball
 * Master Ball
 
-Capture probability can take into account battle state such as:
-
-* remaining target HP;
-* capture ball tier;
-* and opponent level.
-
-Successful captures create persistent Pokémon records containing reconstructed game data including appropriate catalogue information, moves, types, IVs, nature, gender, ability, original trainer and capture-ball metadata.
-
-Failed capture attempts consume exactly one applicable ball and continue the existing encounter.
+Captured Pokémon are added directly to the trainer's persistent collection with their generated level, IVs, nature, gender, ability, form and capture information.
 
 ---
 
-# Battle Items
+# Battle Systems
 
-Recovered medicine and battle inventory behaviour has been progressively hardened.
+## AI-Controlled Trainer Battles
 
-Implemented/restored behaviour includes healing items such as:
+Trainers can challenge another player account through the standard Trainer Battle system.
 
-* Potion
-* Super Potion
-* Hyper Potion
+The challenged trainer's team is controlled by the battle engine, allowing traditional asynchronous trainer-vs-team battles without requiring the other player to be online.
 
-Historical status-item inconsistencies and several inventory-decrement issues have also been corrected.
+The reconstructed standard battle runtime preserves:
 
-Battle inventory operations are designed so applicable items are consumed once rather than being vulnerable to duplicate or inconsistent decrements.
+* Pokémon team order;
+* move selection;
+* switching;
+* healing and status items;
+* victory and defeat;
+* EXP, level and happiness progression;
+* money rewards;
+* clan win/loss integration where applicable;
+* and persistent battle results.
 
 ---
 
-# Additional Game Systems
+## Battle Arena
 
-The reconstruction also retains or restores major portions of the wider browser MMO.
+The Battle Arena contains the reconstructed League, Elite Four, Champion, Frontier and facility progression network.
 
-Depending on the current development state of each subsystem, this includes:
+The current catalogue includes:
 
-* PokéMart;
-* Pokémon Labs;
-* Pokémon collection management;
-* trading;
-* sidequests;
-* Event Center;
+* **95 progression opponents**;
+* **402 deterministic NPC Pokémon**;
+* persistent `g1–g95` progression;
+* Gym, League, Elite Four, Champion and facility battles;
+* complete team previews;
+* and replayable completed battles where supported.
+
+---
+
+## Special Events
+
+The Event Center contains the reconstructed historical Special Event battle network.
+
+Current event content includes:
+
+* **32 event opponents**;
+* **181 deterministic event NPC Pokémon**;
+* Team Rocket;
+* Team Aqua;
+* Team Magma;
+* Team Galactic;
+* Team Plasma;
+* Team Flare;
+* Vortex Staff;
+* and seven organization event badges.
+
+Event progression and rewards are persisted through the modern battle and progression systems.
+
+---
+
+## Sidequests
+
+The complete reconstructed Sidequest campaign contains:
+
+* **690 battle positions**;
+* **six regional reward milestones**;
+* Kanto;
+* Johto;
+* Sevii;
+* Navel Rock / Birth Island;
+* TCG;
+* Orange;
+* and Hoenn content.
+
+The Sidequest catalogue contains **3,091 deterministic NPC Pokémon** and preserves major recovered landmark encounters and reward positions.
+
+Progress is persistent and sequential, with duplicate milestone rewards protected against repeated submission.
+
+---
+
+## Live PvP
+
+Live PvP provides synchronized two-player battles between online trainers.
+
+The modern Live Battle system supports:
+
+* challenge and acceptance;
+* synchronized battle state;
+* trainer-owned teams;
+* move selection;
+* switching;
+* items;
+* forced replacement after fainting;
+* turn synchronization;
+* shared battle results;
+* win/loss settlement;
+* and reconnect/refresh-safe match state.
+
+Live PvP is independent from the AI-controlled Trainer Battle mode.
+
+---
+
+# Pokédex
+
+The reconstructed Pokédex provides both collection tracking and detailed Pokémon information.
+
+Selected entries can display:
+
+* Pokédex number;
+* species and variant;
+* type information;
+* abilities;
+* default moves;
+* evolution paths;
+* six-variant family presentation;
+* owned copies;
+* owned Pokémon details;
+* previous/next navigation;
+* and local sprite fallbacks for recovered visual forms.
+
+Pokédex detail access is read-only and ownership-sensitive where trainer-specific information is shown.
+
+---
+
+# Pokémon Labs
+
+## Evolution Lab
+
+Eligible owned Pokémon can be evolved through the Evolution Lab.
+
+The current system supports:
+
+* evolution requirements;
+* ownership validation;
+* required-item consumption;
+* variant-aware evolution;
+* optional evolved moveset adoption;
+* ability updates;
+* persistent species/form updates;
+* and transaction-safe completion.
+
+When **Adopt evolved moveset** is enabled, duplicate or blank evolved-species move slots are repaired using unique moves the Pokémon already knows, preventing duplicate attacks such as the historical Cyndaquil → Quilava Smokescreen issue.
+
+## Move Lab
+
+The Move Lab allows supported owned Pokémon to manage their move sets through the reconstructed move catalogue and collection system.
+
+## Fossil Lab
+
+The Fossil Lab restores supported fossil Pokémon from items in the trainer's inventory and creates the restored Pokémon directly in the trainer's collection.
+
+---
+
+# Trading, Economy & Community
+
+The wider MMO includes:
+
+* PokéMart and item purchasing;
+* persistent trainer inventory;
+* Pokémon trade listings;
+* trade offers;
+* protected Pokémon reservation while an offer is active;
+* trainer profiles;
 * clans;
-* community functionality;
 * private messages;
-* trainer progression;
-* Pokédex tracking;
-* Live Battle compatibility;
-* standard/gym battle compatibility;
-* account recovery;
-* and persistent trainer data.
+* trainer listings;
+* account options;
+* and community pages.
 
-These systems continue to receive modernization and integrity passes as development progresses.
-
----
-
-# Event Center
-
-Recovered Event Center functionality has received additional server-side validation.
-
-Modernization work includes:
-
-* CSRF enforcement;
-* rejection of conflicting forged actions;
-* transactional purchases;
-* duplicate unlock protection;
-* ownership checking;
-* protected Pokémon validation;
-* guarded item/currency updates;
-* and improved fusion request validation.
-
----
-
-# Sidequests & Rewards
-
-Sidequest reward handling has been reconstructed with emphasis on preventing duplicate progression rewards.
-
-Important milestone rewards can be committed transactionally so repeated or interrupted requests do not result in the same reward being collected multiple times.
+Gameplay mutations such as purchases, trades, rewards and item consumption are protected by the modern validation and persistence layers used throughout the project.
 
 ---
 
 # Modern User Interface
 
-The reconstruction is progressively replacing the fragmented historical presentation with a consistent modern interface.
-
-The established visual direction uses:
+The reconstructed frontend uses a consistent game-wide visual direction built around:
 
 * deep navy backgrounds;
-* cyan interface highlights;
-* gold accent elements;
-* polished panels;
-* responsive information hierarchy;
-* modern status displays;
-* clear gameplay actions;
-* and game-focused browser MMO presentation.
+* cyan highlights;
+* gold accents;
+* polished information panels;
+* clear navigation;
+* responsive gameplay layouts;
+* modern battle HUDs;
+* readable collection and Pokédex views;
+* focused trainer-facing messages;
+* and game-oriented rather than developer-oriented copy.
 
-The reconstructed battle interface includes elements such as:
-
-* player and enemy Pokémon HUDs;
-* health bars;
-* battle telemetry;
-* command tabs;
-* move cards;
-* item controls;
-* capture controls;
-* Pokémon switching cards;
-* encounter information;
-* and responsive gameplay feedback.
-
-The goal is to maintain the identity of a Pokémon browser MMO while presenting it at a substantially higher visual and usability standard than the recovered frontend.
+The player-facing copy reconstruction completed in the v23.4.x line removed implementation and asset-production terminology from normal gameplay pages while retaining technical detail in development documentation where it belongs.
 
 ---
 
-# Legacy Compatibility
+# Production Hardening
 
-The recovered source relied heavily on PHP functionality that no longer exists in current PHP releases.
+The modernization effort includes:
 
-Most notably, historical code depended on the removed:
-
-```text
-mysql_*
-```
-
-PHP extension.
-
-A compatibility bootstrap maps required legacy database calls onto modern `mysqli` behaviour so reconstructed legacy gameplay pages can continue functioning while progressively modernized systems use safer database access patterns.
-
-This allows restoration to proceed incrementally without requiring the entire historical application to be rewritten in one destructive pass.
-
-Legacy compatibility code should be considered a migration bridge rather than the preferred architecture for newly written systems.
-
----
-
-# Security & Runtime Hardening
-
-Security and state integrity are major priorities of the reconstruction.
-
-Modernized areas progressively use practices including:
-
-* prepared statements;
-* server-authoritative validation;
+* PHP 8 compatibility;
+* prepared `mysqli` access on modern runtime paths;
 * CSRF protection;
-* transactional database operations;
-* guarded database updates;
-* row locking where appropriate;
-* cryptographically generated tokens;
-* single-use actions;
-* POST → Redirect → GET workflows;
-* ownership verification;
-* command allowlists;
-* duplicate-request protection;
-* immutable battle identifiers;
-* persistent result ledgers;
-* same-origin restrictions;
-* and production-safe error handling.
+* server-side ownership and action validation;
+* single-use command tokens;
+* duplicate-submit protection;
+* transaction-backed progression and rewards;
+* guarded item consumption;
+* safe Pokémon ownership checks;
+* persistent battle-result handling;
+* HTTP isolation of retained helper/source-only PHP surfaces;
+* same-origin restrictions where applicable;
+* production-safe player error messages;
+* and release-blocking regression gates.
 
-The project intentionally avoids blindly preserving insecure historical implementation details where they would compromise the reconstructed game.
-
----
-
-# Database Reconstruction
-
-The project database is assembled from recovered Pokémon Vortex SQL material together with supplementary Pokémon and ability datasets used during restoration.
-
-Some original production-era data was unavailable.
-
-Where required, compatibility records and supporting data have therefore been reconstructed so the game can operate coherently.
-
-The goal is:
-
-> **A functional, internally consistent and playable reconstruction — not a forensic bit-for-bit replica of the original live database.**
+Historical compatibility code that remains in the repository is retained only where it is still needed for compatibility or source preservation. Modern gameplay code should use the current runtime/service architecture.
 
 ---
 
 # Requirements
 
-Recommended environment:
+A normal local installation can be run with **XAMPP**.
 
-| Component              | Recommended                         |
-| ---------------------- | ----------------------------------- |
-| Web Server             | Apache 2.4+                         |
-| PHP                    | PHP 8.2+                            |
-| Database               | MariaDB 10.4+ or MySQL 8+           |
-| PHP Database Extension | `mysqli`                            |
-| Browser                | Current Firefox, Chromium or Edge   |
-| Development Package    | Current XAMPP release or equivalent |
-
-The project has undergone compatibility validation against modern PHP 8 environments during development.
+| Component | Recommended |
+| --- | --- |
+| Web server | Apache 2.4+ |
+| PHP | PHP 8.2+ |
+| Database | MariaDB 10.4+ or MySQL 8+ |
+| PHP database extension | `mysqli` |
+| Browser | Current Firefox, Chromium or Edge |
+| Local development package | Current XAMPP release or equivalent |
 
 ---
 
-# Local Installation with XAMPP
+# Quick Local Installation with XAMPP
+
+This is the simplest way to run the project locally on Windows.
 
 ## 1. Install XAMPP
 
-Install a current XAMPP environment containing:
+Download and install a current version of **XAMPP**.
+
+The installation needs:
 
 * Apache;
 * PHP;
 * MariaDB/MySQL;
-* and phpMyAdmin if desired.
+* and optionally phpMyAdmin.
 
----
+The normal default installation location is:
 
-## 2. Copy the Web Application
+```text
+C:\xampp
+```
 
-Place the contents of the project's:
+## 2. Copy Pokémon Vortex into `htdocs`
+
+Open the project package and locate:
 
 ```text
 public_html
 ```
 
-directory into a directory such as:
+Create a folder such as:
 
 ```text
 C:\xampp\htdocs\PokemonVortex
 ```
 
-Your resulting layout should begin approximately like:
+Copy **the contents of `public_html`** into that folder.
+
+The finished layout should look similar to:
 
 ```text
 C:\xampp\htdocs\PokemonVortex\
+    assets\
     config\
-    ...
+    includes\
+    sql\
     index.php
     _setup.php
+    ...
 ```
 
----
+Do not place `public_html` itself one level too deep. `index.php` and `_setup.php` should be directly inside the `PokemonVortex` folder.
 
-## 3. Start the Required Services
+## 3. Start Apache and MySQL
 
-Start:
+Open the **XAMPP Control Panel** and start:
 
 ```text
 Apache
 MySQL
 ```
 
-from the XAMPP Control Panel.
+Both services should show as running before continuing.
 
----
+## 4. Check the Database Configuration
 
-## 4. Configure the Database
-
-Check:
+Open:
 
 ```text
 config/app.php
 ```
 
-and confirm that the configured database credentials match your local environment.
+Make sure the database settings match your local XAMPP installation.
 
-A typical default XAMPP installation uses values equivalent to:
+A typical default local XAMPP setup uses:
 
 ```text
 Host:      localhost
@@ -516,23 +525,62 @@ Password:  [blank]
 Database:  pokemon_vortex
 ```
 
-Do not use blank database credentials on an Internet-facing production server.
+If your XAMPP/MySQL installation uses a password or a different database name, enter those values instead.
 
----
+> A blank MySQL root password is common for a local XAMPP development machine. Do not use that configuration for a public Internet-facing server.
 
-## 5. Run the Local Setup Utility
+## 5. Open `_setup.php`
 
-From the machine hosting XAMPP, open:
+With Apache and MySQL running, open this address in your browser:
 
 ```text
 http://localhost/PokemonVortex/_setup.php
 ```
 
-and run the supplied installation/database import process.
+`_setup.php` is the local installation and database maintenance page.
 
-The setup utility is intentionally restricted to localhost and is not intended to appear in normal player navigation.
+### Brand-New Installation
 
----
+For a completely new installation with no progress to preserve:
+
+1. Choose **Fresh Rebuild**.
+2. Type:
+
+```text
+INSTALL
+```
+
+3. Click **Build Fresh Database**.
+4. Wait for the success message.
+
+**Fresh Rebuild deletes existing Pokémon Vortex accounts and game progress.** Use it only for a new installation or when you intentionally want to reset the database.
+
+### Updating an Existing Installation
+
+If a future release specifically requires a database upgrade:
+
+1. Back up the database first.
+2. Open `_setup.php`.
+3. Choose **Upgrade / Repair**.
+4. Type:
+
+```text
+UPGRADE
+```
+
+5. Click **Upgrade Existing Database**.
+
+Upgrade / Repair adds required compatibility fields and indexes without intentionally deleting trainer progress.
+
+### v23.4.1 → v23.5.1
+
+The current v23.5.1 candidate remains on **schema revision 26**.
+
+If you are updating an existing v23.4.1 installation to v23.5.1:
+
+**Do not run Fresh Rebuild and do not run Upgrade / Repair.**
+
+Replace the web files with the new package while keeping your existing database.
 
 ## 6. Launch the Game
 
@@ -542,191 +590,209 @@ Open:
 http://localhost/PokemonVortex/
 ```
 
-Create a trainer account and sign in.
+Create a trainer account, sign in and begin playing.
 
 ---
 
-# Version History
+# Updating an Existing Local Installation
 
-## v19 — Production Runtime Integrity Hardening
+Before replacing an older installation:
 
-### Standard & Live Battle
+1. Stop using the site while files are being replaced.
+2. Back up your current Pokémon Vortex folder.
+3. Back up the MySQL/MariaDB database.
+4. Replace the web files with the new release.
+5. Read that release's README, CHANGELOG and testing notes.
+6. Run `_setup.php` **only when the release specifically says a database upgrade is required**.
+7. Hard-refresh the browser after the update so new CSS/JavaScript assets are loaded.
 
-* Added strict server-side allowlists for submitted move slots and battle items.
-* Added active-team validation for switching.
-* Rejected fainted or forged Pokémon IDs.
-* Removed the historical standard-battle double medicine decrement path.
-* Made applicable item decrements atomic and single-use.
-* Corrected historical status medicine naming inconsistencies.
-* Corrected poison item-turn damage handling.
-* Corrected historical Live Battle inventory update defects.
-* Synchronized applicable Live Battle medicine changes with persistent inventory.
-* Prevented ineffective status medicine from being consumed.
-
-### Accounts & Recovery
-
-* Made trainer registration transactional across related account records.
-* Failed registration now rolls back cleanly.
-* Expanded transactional database engine coverage.
-* Removed new writes to obsolete password mirrors.
-* Made password reset completion atomic.
-* Added single-use reset token consumption.
-* Made reset-token replacement transactional.
-
-### Event Center
-
-* Enforced CSRF protection.
-* Rejected conflicting forged actions.
-* Made event unlocks atomic and idempotent.
-* Made applicable Event Center purchases transactional.
-* Hardened fusion request validation.
-* Added stronger Pokémon ownership and identity validation.
-* Removed inappropriate production error output.
-
-### Security
-
-* Tightened frame restrictions after obsolete embeds were retired.
-* Continued production runtime hardening.
-* Completed full PHP and JavaScript syntax validation for the corresponding development package.
+Never use **Fresh Rebuild** on a database containing progress you want to keep.
 
 ---
 
-## v18 — Battle, Sidequest & Production Safekeeping
+# Common XAMPP Troubleshooting
 
-* Established the verified safekeeping baseline used for subsequent runtime-hardening work.
-* Preserved exact map encounter identity through battle initialization.
-* Reconstructed Fight, Items, Poké Balls, Switch, Run, victory, defeat and capture flows.
-* Added CSRF validation and one-use battle actions.
-* Added durable battle result processing.
-* Hardened standard/gym and Live Battle compatibility.
-* Added transactional sidequest milestone rewards.
-* Added duplicate reward protection.
-* Continued removal of obsolete dependencies and historical restoration/debug output.
-* Preserved trading, labs, PokéMart, collection, community, messaging and clan functionality.
+## Apache Will Not Start
 
----
+Another program may already be using Apache's configured HTTP/HTTPS ports.
 
-## v16 — Wild Encounter & Battle Reconstruction
+Check the XAMPP Control Panel logs before changing project files.
 
-### Encounters
+## MySQL Will Not Start
 
-* Removed dependence on unreliable historic numeric encounter Pokémon IDs.
-* Added species-name resolution against the installed Pokémon catalogue.
-* Preserved recovered form-specific encounter artwork.
-* Added cryptographically generated one-use encounter state.
-* Added encounter expiry and replay protection.
-* Reconstructed compatibility encounter data where required.
+Check the MySQL log from the XAMPP Control Panel and make sure another MySQL/MariaDB service is not already using the same port.
 
-### Wild Battle
+## Database Connection Error
 
-* Replaced the damaged recovered AJAX battle flow.
-* Added same-origin POST battle commands.
-* Added CSRF validation.
-* Added POST → Redirect → GET handling.
-* Added per-turn command sequence validation.
-* Added immutable battle IDs.
-* Added team ownership validation.
-* Added HP, accuracy, STAB, type, critical-hit and damage calculations.
-* Added opponent battle logic.
-* Added Pokémon switching and automatic faint replacement.
-* Added battle telemetry and completion locking.
-* Added durable result processing.
+Verify the values in:
 
-### Capture & Items
+```text
+config/app.php
+```
 
-* Added atomic medicine and Poké Ball consumption.
-* Added Potion, Super Potion and Hyper Potion support.
-* Added multiple Poké Ball tiers.
-* Added persistent captured Pokémon creation.
-* Added progression/Pokédex refresh.
-* Ensured failed captures continue the existing battle correctly.
+and confirm MySQL is running.
 
-### Rewards
+## `_setup.php` Does Not Open
 
-* Added one-time battle reward processing.
-* Added team EXP.
-* Added happiness progression.
-* Added trainer wins.
-* Added money rewards.
-* Added authoritative progression recalculation.
-* Added defeat recording.
+Make sure:
 
-### Presentation
+* Apache is running;
+* the project is inside `C:\xampp\htdocs`;
+* the URL matches the folder name;
+* and you are opening the setup utility locally through `localhost`.
 
-* Reconstructed the wild battle interface.
-* Added combat HUDs and HP displays.
-* Added telemetry.
-* Added command tabs and move cards.
-* Added item and capture controls.
-* Added team switching.
-* Added sprite fallback handling.
-* Added the modernized map encounter panel.
+## Page Styling Looks Old After an Update
+
+Perform a hard refresh in the browser after replacing the project files.
 
 ---
 
-# Contributing
+# Release Validation
 
-This project is under active reconstruction.
+The project uses deterministic release gates to protect accepted systems from regression.
 
-When contributing, changes should prioritize:
+The current v23.5.1 candidate validates areas including:
 
-1. preserving validated behaviour;
+* all 25 Vortex collision definitions;
+* Vortex encounters;
+* Kanto and Hoenn regional rendering;
+* Evolution Lab moveset adoption;
+* AI-controlled Standard Battle;
+* Live PvP;
+* Pokédex detail behavior;
+* player-facing copy;
+* retained helper-surface isolation;
+* PHP syntax;
+* JavaScript parsing;
+* CSS structure;
+* accepted-parent file deltas;
+* and complete package SHA-256 integrity.
+
+The release package remains on **database schema revision 26**.
+
+---
+
+# Recent Version History
+
+## v23.5.1 — Production Vortex Collision Traversal Correction
+
+* Corrects the rejected v23.5.0 collision candidate after real XAMPP testing found legitimate Grass-region stair/height transitions blocked.
+* Keeps complete collision coverage across all 25 original Vortex World maps with **7,434 audited terrain blockers**.
+* Reopens exactly 13 confirmed Grass Region I–III staircase/height-transition cells while keeping adjacent cliffs and scenery solid.
+* Adds direct staircase crossing and whole-map walkable-component reachability checks to the release gate.
+* Preserves all 56 directed map connections, eight special inter-region portals, one-way ledges and collision-safe saved-position recovery.
+* Preserves Kanto, Hoenn, Vortex encounters, battles, multiplayer and all accepted gameplay systems.
+* Schema remains revision 26.
+
+## v23.5.0 — Rejected Collision Test Candidate
+
+* Not accepted as a stable baseline.
+* Real XAMPP testing found that rare Grass-region staircase/height-transition artwork had been classified as solid collision.
+* Superseded by v23.5.1.
+
+## v23.4.1 — Production World Map Copy Polish
+
+* Replaced the final Kanto/Hoenn asset-production wording with gamer-ready world descriptions.
+* Preserved the accepted map assets and behavior unchanged.
+* Strengthened permanent player-facing copy regression coverage.
+
+## v23.4.0 — Production Player-Facing Copy Reconstruction
+
+* Reworked normal trainer-facing text across the site.
+* Removed unnecessary implementation, reconstruction and developer terminology from gameplay pages.
+* Preserved technical detail in maintenance, testing and development documentation.
+
+## v23.3.1 — Production Evolution Moveset Adoption Integrity Fix
+
+* Fixed duplicate evolved moves when **Adopt evolved moveset** is enabled.
+* Added catalogue-wide duplicate-default protection.
+* Preserved valid existing moves when the evolved default profile contains duplicate or blank slots.
+
+## v23.3.0 — Production Legacy Helper Surface Isolation
+
+* Made retained root compatibility helpers unavailable as direct browser pages.
+* Preserved required internal PHP include behavior.
+* Reduced unnecessary executable legacy surface area.
+
+## v23.2.0 — Production Standard Battle Runtime Reconstruction
+
+* Moved the standard AI-controlled Trainer Battle database boundary away from the old `mysql_*` compatibility API.
+* Preserved accepted battle mechanics and presentation.
+* Added owner-bound party, inventory, progression and win/loss persistence.
+
+## v23.1.0 — Production Pokédex Detail Reconstruction
+
+* Restored selected Pokédex detail pages.
+* Added variant-aware evolution information.
+* Added abilities, moves, variant-family presentation and owned-Pokémon information.
+* Added recovered visual-form sprite fallbacks.
+
+## v23.0.0 — Production Vortex / Wild / Live PvP Baseline
+
+The v23 line consolidated the modern production architecture built during earlier Battle Arena, Events, Sidequest, regional map, Wild Battle and Live PvP reconstruction work.
+
+Earlier detailed release history is preserved in:
+
+```text
+CHANGELOG.md
+```
+
+---
+
+# Project Development Standard
+
+Changes to the project should continue to prioritize:
+
+1. preservation of accepted runtime behavior;
 2. PHP 8 compatibility;
-3. server-side authority;
+3. server-side authority for important gameplay actions;
 4. database integrity;
-5. secure input validation;
-6. clear and maintainable code;
+5. safe ownership and input validation;
+6. root-cause fixes rather than temporary workarounds;
 7. local asset reliability;
-8. UI consistency;
-9. regression testing;
-10. documented behavioural changes.
+8. consistent gamer-facing UI/UX;
+9. deterministic regression testing;
+10. clear README, changelog and testing documentation.
 
-Large rewrites of functioning legacy systems should be avoided unless they provide a clear technical or security benefit.
+Large rewrites of already accepted systems should be avoided unless there is a clear correctness, security or maintainability benefit.
 
 ---
 
 # Issues & Bug Reports
 
-Useful bug reports should include:
+A useful bug report should include:
 
 * project version;
 * PHP version;
-* database version;
+* MariaDB/MySQL version;
 * operating system;
 * browser;
-* affected page/system;
-* expected behaviour;
-* actual behaviour;
+* affected page or system;
+* expected behavior;
+* actual behavior;
 * reproduction steps;
 * relevant Apache/PHP errors;
-* relevant screenshots;
-* and whether the issue occurs on a clean database.
+* and screenshots where useful.
 
-Avoid posting passwords, database credentials, session cookies, reset tokens or other sensitive information in public issues.
+Do **not** post passwords, database credentials, session cookies, reset tokens or other sensitive information in public bug reports.
 
 ---
 
-# Roadmap
+# Current Development Direction
 
-Ongoing development includes progressively improving:
+The major reconstruction and hardening phase is now near completion.
 
-* remaining legacy PHP paths;
-* battle compatibility;
-* account security;
-* Pokémon management;
-* trading;
-* multiplayer/community features;
-* Events;
-* sidequests;
-* frontend consistency;
-* responsive presentation;
-* administrator tooling;
-* database integrity;
-* security hardening;
-* documentation;
-* and production deployment readiness.
+Once v23.5.1 passes its final real-XAMPP collision acceptance test, future work can primarily focus on:
 
-The guiding objective is a complete, reliable and highly polished modern browser MMO reconstruction while retaining the identity and recovered functionality of the original source.
+* newly discovered bugs;
+* gameplay polish;
+* balancing;
+* optional content expansion;
+* browser compatibility maintenance;
+* security maintenance;
+* and documentation improvements.
+
+Core accepted systems should remain stable unless a verified issue requires a focused change.
 
 ---
 
@@ -746,7 +812,7 @@ for the complete license terms.
 
 Pokémon names, characters, imagery, game concepts, trademarks and other Pokémon-related intellectual property belong to their respective rights holders.
 
-The MIT license supplied with this repository does **not** grant ownership of or additional rights to third-party Pokémon intellectual property or recovered third-party assets.
+The MIT license supplied with this repository does **not** grant ownership of, or additional rights to, third-party Pokémon intellectual property or recovered third-party assets.
 
 This project is an independent fan-made restoration/reconstruction project and should not be interpreted as an official Pokémon product or as being endorsed by the relevant rights holders.
 
@@ -773,12 +839,8 @@ Anyone hosting or distributing a modified instance is responsible for reviewing:
 <img width="3800" height="2071" alt="capturingwildpokemon" src="https://github.com/user-attachments/assets/b48629bf-5868-440b-9a91-34f35b1c90e9" />
 <img width="3840" height="2078" alt="didit2" src="https://github.com/user-attachments/assets/72c2209d-5cd5-4920-9810-7b93ac03c7e4" />
 <img width="3799" height="2073" alt="restored maps to explore" src="https://github.com/user-attachments/assets/c9f4735d-b587-46af-8d29-05f2a847ff35" />
-<img width="3840" height="2076" alt="hoenn3" src="https://github.com/user-attachments/assets/380c15f9-3250-4e8e-834d-20429f39116f" />
-<img width="3840" height="2077" alt="hoenn1" src="https://github.com/user-attachments/assets/227e3042-ba59-46dd-a728-e331384b3fe2" />
 <img width="3840" height="2080" alt="evolutionlab" src="https://github.com/user-attachments/assets/35978ec2-ea94-40ce-af11-f5fada26c0e3" />
 <img width="3798" height="2086" alt="team" src="https://github.com/user-attachments/assets/8492f085-b8fd-4c93-83a1-9ca2bd7d4b40" />
 <img width="3807" height="2074" alt="Shop" src="https://github.com/user-attachments/assets/72233f4f-1d46-4296-919f-307972e73d2e" />
 <img width="3840" height="2082" alt="AI Controlled Player Battles Fully Working" src="https://github.com/user-attachments/assets/6f658f0b-badf-4cd4-aa0e-5b6728ca4032" />
 <img width="3840" height="2079" alt="AI Controlled Player Battles Win Or Defeat" src="https://github.com/user-attachments/assets/86d6b6a4-6f57-44c6-965c-ef93f6ff36f6" />
-<img width="3840" height="2082" alt="leuge" src="https://github.com/user-attachments/assets/6a506c4d-5a78-465a-af23-ba39f476a3ce" />
-<img width="3840" height="2080" alt="battlearena" src="https://github.com/user-attachments/assets/b43d3a07-c77d-4ae6-a6b6-a4d9cb73a651" />

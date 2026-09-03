@@ -1,0 +1,72 @@
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Never expose private application internals directly.
+RewriteRule ^(?:config|includes|storage|_private)(?:/|$) - [F,L,NC]
+# Recovered AJAX/stat helper trees are retained only as historical source material.
+# The modern runtime does not address them over HTTP; direct access would bypass
+# current CSRF, movement and account boundaries.
+RewriteRule ^(?:xml|tabs|stats)(?:/|$) - [F,L,NC]
+RewriteRule ^event_includes(?:/|$) - [F,L,NC]
+RewriteRule ^html/static/.*\.php$ - [F,L,NC]
+RewriteRule ^(?:html|xml)/pv_connect_to_db\.php$ - [F,L,NC]
+
+# Friendly extension-less routes for public PHP pages.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L,QSA]
+</IfModule>
+
+<FilesMatch "(?i)\.(sql|ini|log|bak|dist|env|conf)$">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "^(?:composer\.(?:json|lock)|package(?:-lock)?\.json|README(?:\..*)?)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>
+
+# Local maintenance endpoint is never public.
+<Files "_setup.php">
+  Require local
+</Files>
+
+ServerSignature Off
+
+# Static assets are immutable within a release build and can be cached aggressively.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json application/xml
+</IfModule>
+
+# v23.3.0: root compatibility helpers are server-side/include-only source.
+# Deny direct browser execution while preserving normal PHP include/require semantics.
+<FilesMatch "^(?i:kick|pv_connect_to_db|pv_disconnect_from_db|pagination|typo)\.php$">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "(?i)\.(zip|rar|7z|tar|gz|tgz|bz2|xz|bak|old|orig)$">
+  Require all denied
+</FilesMatch>
+
+ErrorDocument 404 /PokemonVortex/404.php

@@ -1,0 +1,20 @@
+html
+{
+	overflow: auto;
+}
+
+#scroll
+{
+	overflow-y: auto;
+	height: auto;
+}
+
+#next
+{
+	display: none;
+}
+
+#previous
+{
+	display: none;
+}

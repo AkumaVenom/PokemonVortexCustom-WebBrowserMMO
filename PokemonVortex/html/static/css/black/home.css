@@ -1,0 +1,131 @@
+.itemHeader
+{
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #000000;
+}
+#down{
+	margin-top:90px;
+}
+ul#homeNav
+{
+	list-style: none;
+	float: left;
+	margin: 10px 10px -2px 5px;
+	text-align: left;
+	padding: 0;
+}
+ul#homeNav li
+{
+	display: block;
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+ul#homeNav li a
+{
+	display: block;
+	width: 132px;
+	height: 32px;
+	background-repeat: no-repeat;
+}
+
+ul#homeNav li a em
+{
+	display: none;
+}
+
+ul#homeNav li a.selected
+{
+	background-position: 0 0;
+}
+
+ul#homeNav li a.deselected
+{
+	background-position: 0 -32px;
+}
+
+ul#homeNav li a.active, ul#homeNav li a:hover
+{
+	background-position: 0 -64px;
+}
+
+ul#homeNav li a#loginTab
+{
+	background-image: url('../../layout/home/loginblack.gif');
+}
+
+ul#homeNav li a#signupTab
+{
+	background-image: url('../../layout/home/signupblack.gif');
+}
+
+ul#homeNav li a#aboutTab
+{
+	background-image: url('../../layout/home/aboutblack.gif');
+}
+
+
+#rightbarContainer
+{
+	float: right;
+	width: 200px;
+	margin: 20px;
+}
+
+#rightbarTop
+{
+	width: 200px;
+	height: 12px;
+	font-size: 1px;
+	background-image: url('../../layout/rightbar_top.png');
+	background-repeat: no-repeat;
+}
+
+#rightbarBottom
+{
+	width: 200px;
+	height: 12px;
+	font-size: 1px;
+	background-image: url('../../layout/rightbar_bottom.png');
+	background-repeat: no-repeat;
+}
+
+#rightbar
+{
+	width: 196px;
+	border-left: 2px solid #666666;
+	border-right: 2px solid #666666;
+	background-color: #BBBBBB;
+}
+
+#rightbarContent
+{
+	padding: 0 10px;
+}
+
+#rightbarContent h4
+{
+	margin-top: 0;
+}
+
+#rightbarContent p
+{
+	padding-left: 10px;
+}
+
+#scroll
+{
+	position: relative;
+	overflow: auto;
+	overflow-x: auto;
+	overflow-y: scroll;
+	padding: 0;
+}
+
+#scrollContent
+{
+	padding: 20px 10px;
+	position: relative;
+	margin-right: 240px;
+}

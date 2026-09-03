@@ -1,0 +1,551 @@
+.mapsquare
+{
+	width: 16px; 
+	height: 16px; 
+	float: left;
+}
+.explainmap
+{
+	border-top: 2px solid #666666;
+	border-bottom: 2px solid #666666;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.appeartext
+{
+	vertical-align: top;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#center
+{
+	text-align: center;
+}
+#MapTop
+{
+	width: 804px;
+	height: 12px;
+	font-size: 1px;
+	background-image: url('../layout/v3/map_top.png');
+	background-repeat: no-repeat;
+}
+#MapBottom
+{
+	width: 804px;
+	height: 12px;
+	font-size: 1px;
+	background-image: url('../layout/v3/map_bottom.png');
+	background-repeat: no-repeat;
+}
+#MapContainer
+{
+	width: 800px;
+	border-left: 2px solid #666666;
+	border-right: 2px solid #666666;
+	background-color: #BBBBBB;
+}
+#MapContent
+{
+	padding: 0 8px;
+}
+#find {
+	margin-top:1px;
+}
+#overlay1
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night1.png');
+
+}
+#overlay2
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night2.png');
+
+}
+#overlay3
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night3.png');
+
+}
+#overlay4
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night4.png');
+
+}
+#overlay5
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night5.png');
+
+}
+#overlay6
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night6.png');
+
+}
+#overlay7
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night7.png');
+
+}
+#overlay8
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night8.png');
+
+}
+#overlay9
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night9.png');
+
+}
+#overlay10
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night10.png');
+
+}
+#overlay11
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night11.png');
+
+}
+#overlay12
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night12.png');
+
+}
+#overlay13
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night13.png');
+
+}
+#overlay14
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night14.png');
+
+}
+#overlay15
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night15.png');
+
+}
+#overlay16
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night16.png');
+
+}
+#overlay17
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night17.png');
+
+}
+#overlay18
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night18.png');
+
+}
+#overlay19
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night19.png');
+
+}
+#overlay20
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night20.png');
+
+}
+#overlay21
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night21.png');
+
+}
+#overlay22
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night22.png');
+
+}
+#overlay23
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night23.png');
+
+}
+#overlay24
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night24.png');
+
+}
+#overlay25
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/night25.png');
+
+}
+#dayoverlay1
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day1.png');
+
+}
+#dayoverlay2
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day2.png');
+
+}
+#dayoverlay3
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day3.png');
+
+}
+#dayoverlay4
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day4.png');
+
+}
+#dayoverlay5
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day5.png');
+
+}
+#dayoverlay6
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day6.png');
+
+}
+#dayoverlay7
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day7.png');
+
+}
+#dayoverlay8
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day8.png');
+
+}
+#dayoverlay9
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day9.png');
+
+}
+#dayoverlay10
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day10.png');
+
+}
+#dayoverlay11
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day11.png');
+
+}
+#dayoverlay12
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day12.png');
+
+}
+#dayoverlay13
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day13.png');
+
+}
+#dayoverlay14
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day14.png');
+
+}
+#dayoverlay15
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day15.png');
+
+}
+#dayoverlay16
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day16.png');
+
+}
+#dayoverlay17
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day17.png');
+
+}
+#dayoverlay18
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day18.png');
+
+}
+#dayoverlay19
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day19.png');
+
+}
+#dayoverlay20
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day21.png');
+
+}
+#dayoverlay22
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day22.png');
+
+}
+#dayoverlay23
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day23.png');
+
+}
+#dayoverlay24
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day24.png');
+
+}
+#dayoverlay25
+{
+	position: absolute;
+	color: #FFFFFF;
+	border: 2px solid #666666;
+	width: 480px;
+	height: 400px;
+	background-image: url('../images/maps/overlays/day25.png');
+
+}
+#getPkmn {
+	width: 300px;
+	height: 156px;
+}
+#backgetPkmn {
+	width: 300px;
+	height: 156px;
+	background-image: url('../images/Pokeball.PNG');
+	background-repeat: no-repeat;
+}
