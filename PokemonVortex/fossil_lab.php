@@ -81,6 +81,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             $stmt=$db->prepare('UPDATE pguide SET amount=amount+1 WHERE name=?');
             if($stmt){$stmt->bind_param('s',$name);$stmt->execute();$stmt->close();}
             $db->commit();
+            pv_server_event('LAB','Fossil restored',['pokemon_id'=>$pokemonId,'pokemon'=>$name,'fossil'=>$fossilLabel]);
             pv_recalculate_trainer_progress($db,$uid,true);
             $success=['name'=>$name,'id'=>$pokemonId,'gender'=>$gender,'nature'=>$nature,'ability'=>$ability,'fossil'=>$fossilLabel];
         } catch (Throwable $e) {

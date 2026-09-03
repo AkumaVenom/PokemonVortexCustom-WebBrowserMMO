@@ -215,6 +215,13 @@ function pv_live_settle_result(mysqli $db, int $battleId, int $userSlot, int $op
                 ]);
             }
         }
+        pv_server_event('PVP', 'Live PvP result settled', [
+            'battle_id'=>$battleId,
+            'opponent_uid'=>$opponentId,
+            'outcome'=>$outcome,
+            'reward_exp'=>$rewardExp,
+            'reward_money'=>$rewardMoney,
+        ]);
         return [
             'outcome' => $outcome,
             'reward_exp' => $rewardExp,

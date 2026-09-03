@@ -439,6 +439,13 @@ function pv_evolve_pokemon(mysqli $db, int $uid, int $pokemonId, string $ruleKey
         }
 
         $db->commit();
+        pv_server_event('LAB','Pokémon evolved',[
+            'pokemon_id'=>$pokemonId,
+            'from'=>$oldName,
+            'to'=>$newName,
+            'adopt_moves'=>$replaceMoves,
+            'consumed_item'=>$item,
+        ]);
         pv_recalculate_trainer_progress($db, $uid, true);
 
         return [

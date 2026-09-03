@@ -34,7 +34,13 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                 $token = trim((string)($_POST['encounter_token'] ?? ''));
                 if ($token === '') throw new RuntimeException('The wild encounter link is no longer available. Return to the map and scan again.');
                 if (!is_array($state) || !hash_equals((string)($state['encounter_token'] ?? ''), $token) || ($state['status'] ?? '') !== 'active') {
-                    pv_wild_start($db, $uid, $token);
+                    $startedState = pv_wild_start($db, $uid, $token);
+                    pv_server_event('WILD', 'Wild battle started', [
+                        'battle_id' => substr((string)($startedState['id'] ?? ''), 0, 12),
+                        'pokemon' => (string)($startedState['wild']['display_name'] ?? $startedState['wild']['name'] ?? ''),
+                        'level' => (int)($startedState['wild']['level'] ?? 0),
+                        'map' => (int)($startedState['map'] ?? 0),
+                    ]);
                 }
             } elseif (isset($_POST['battle_action'])) {
                 if (!is_array($state)) throw new RuntimeException('There is no active wild battle. Return to the map and find another Pokémon.');
@@ -42,7 +48,41 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                 if ($battleId === '' || !hash_equals((string)$state['id'], $battleId)) {
                     throw new RuntimeException('That action came from an older encounter. Return to the current battle and try again.');
                 }
-                pv_wild_handle_action($db, $state, $_POST);
+                $resolvedState = pv_wild_handle_action($db, $state, $_POST);
+                $action = trim((string)($_POST['battle_action'] ?? ''));
+                $detail = '';
+                if ($action === 'attack') $detail = trim((string)($_POST['move'] ?? ''));
+                elseif ($action === 'heal') $detail = trim((string)($_POST['item'] ?? ''));
+                elseif ($action === 'ball') $detail = trim((string)($_POST['ball'] ?? ''));
+                elseif ($action === 'switch') $detail = (string)max(0, (int)($_POST['pokemon_id'] ?? 0));
+                pv_server_event('WILD', 'Wild battle action', [
+                    'battle_id' => substr((string)($resolvedState['id'] ?? ''), 0, 12),
+                    'action' => $action,
+                    'detail' => $detail,
+                    'target' => (string)($resolvedState['wild']['display_name'] ?? $resolvedState['wild']['name'] ?? ''),
+                    'turn' => (int)($resolvedState['turn'] ?? 0),
+                    'status' => (string)($resolvedState['status'] ?? ''),
+                    'captured_id' => (int)($resolvedState['result']['pokemon_id'] ?? 0),
+                ]);
+                $terminalStatus = (string)($resolvedState['status'] ?? '');
+                if ($terminalStatus !== '' && $terminalStatus !== 'active') {
+                    $terminalEvent = match ($terminalStatus) {
+                        'captured' => 'Wild Pokémon captured',
+                        'won' => 'Wild battle won',
+                        'lost' => 'Wild battle lost',
+                        'ran' => 'Wild battle ended by run',
+                        default => 'Wild battle completed',
+                    };
+                    pv_server_event('WILD', $terminalEvent, [
+                        'battle_id' => substr((string)($resolvedState['id'] ?? ''), 0, 12),
+                        'target' => (string)($resolvedState['wild']['display_name'] ?? $resolvedState['wild']['name'] ?? ''),
+                        'level' => (int)($resolvedState['wild']['level'] ?? 0),
+                        'outcome' => $terminalStatus,
+                        'captured_id' => (int)($resolvedState['result']['pokemon_id'] ?? 0),
+                        'reward_exp' => (int)($resolvedState['result']['exp'] ?? 0),
+                        'reward_money' => (int)($resolvedState['result']['money'] ?? 0),
+                    ]);
+                }
             } else {
                 throw new RuntimeException('No battle command was received.');
             }

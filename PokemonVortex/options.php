@@ -22,6 +22,7 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
             // Reconstruct the recovered Vortex map Day/Night preference on the
             // modern CSRF-protected endpoint. Historical behavior was session-scoped.
             $_SESSION['night']=$night;
+            pv_server_event('ACCOUNT','Trainer options saved',['show_players'=>$mapPresence,'messages'=>$messages,'notifications'=>$notify,'trainer_sprite'=>$trainer,'map_time'=>$mapTime]);
             $_SESSION['pv_options_flash']=['type'=>'success','text'=>'Trainer preferences saved.'];
         }catch(Throwable $e){$db->rollback();if($e instanceof RuntimeException)throw $e;throw new RuntimeException('Preferences could not be saved safely.');}
     }catch(RuntimeException $e){$_SESSION['pv_options_flash']=['type'=>'error','text'=>$e->getMessage()];}

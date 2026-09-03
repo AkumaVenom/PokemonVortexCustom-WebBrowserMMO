@@ -96,6 +96,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                 continue;
             }
             $db->commit();
+            pv_server_event('TRADE','Pokémon listed for trade',['pokemon_id'=>$pokemonId,'pokemon'=>$name]);
             $success[] = $name;
         }
 

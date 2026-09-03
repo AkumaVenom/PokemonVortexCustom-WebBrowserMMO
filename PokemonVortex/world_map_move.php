@@ -4,7 +4,11 @@ define('PV_DISABLE_OUTPUT_FILTER', true);
 require_once __DIR__ . '/includes/world_maps.php';
 header('Content-Type: application/json; charset=UTF-8');
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-function pv_world_json(array $payload,int $status=200):never{http_response_code($status);echo json_encode($payload,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);exit;}
+function pv_world_json(array $payload,int $status=200):never{
+    http_response_code($status);
+    echo json_encode($payload,JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+    exit;
+}
 if(!pv_is_logged_in())pv_world_json(['ok'=>false,'error'=>'session'],401);
 if(($_SERVER['REQUEST_METHOD']??'GET')!=='POST')pv_world_json(['ok'=>false,'error'=>'method'],405);
 if(!pv_verify_csrf())pv_world_json(['ok'=>false,'error'=>'csrf'],419);

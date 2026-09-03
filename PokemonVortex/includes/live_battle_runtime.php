@@ -596,6 +596,19 @@ function pv_live_runtime_submit(mysqli $db, int $battleId, int $userSlot, int $o
         if (!$stmt->execute() || $stmt->affected_rows !== 1) throw new RuntimeException('The Live Battle state changed before it could be saved.');
         $stmt->close();
         $db->commit();
+        $detail='';
+        if($action==='attack')$detail='move_slot:'.max(0,(int)($payload['move_slot']??0));
+        elseif(in_array($action,['select','switch'],true))$detail='pokemon_id:'.max(0,(int)($payload['pokemon_id']??0));
+        elseif($action==='item')$detail=trim((string)($payload['item']??''));
+        pv_server_event('PVP','Live PvP command',[
+            'battle_id'=>$battleId,
+            'opponent_uid'=>$opponentId,
+            'action'=>$action,
+            'detail'=>$detail,
+            'phase'=>(string)($state['phase']??''),
+            'revision'=>(int)($state['revision']??0),
+            'winner_slot'=>(int)($state['winner_slot']??0),
+        ]);
         return $state;
     } catch (Throwable $e) {
         try { $db->rollback(); } catch (Throwable $ignored) {}

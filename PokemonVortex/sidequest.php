@@ -66,6 +66,7 @@ function pv_claim_sidequest_milestone(mysqli $db,int $uid,int $expectedProgress)
         if(!$stmt->execute()||$stmt->affected_rows!==1){$stmt->close();throw new RuntimeException('Could not deliver Sidequest reward.');}$stmt->close();
 
         $db->commit();$_SESSION['sidequest']=$next;
+        pv_server_event('SIDEQUEST','Sidequest milestone claimed',['region'=>(string)$config['region'],'prize'=>(string)$reward['label'],'quantity'=>$quantity,'money'=>$money,'next'=>$next]);
         return ['region'=>(string)$config['region'],'prize'=>(string)$reward['label'],'money'=>$money,'next'=>$next];
     }catch(Throwable $e){
         $db->rollback();pv_log('Sidequest reward failed for trainer '.$uid.' at milestone '.$expectedProgress.': '.$e->getMessage());return null;

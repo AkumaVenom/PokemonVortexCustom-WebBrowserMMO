@@ -362,6 +362,12 @@ function pv_trade_create_offer(mysqli $db, int $listingPokemonId, int $offererId
         pv_trade_refresh_listing_offer_count($db, $listingId);
         $db->commit();
 
+        pv_server_event('TRADE','Trade offer created',[
+            'offer_id'=>$offerId,
+            'listing_pokemon_id'=>$listingPokemonId,
+            'seller_uid'=>$listingOwnerId,
+            'offered_pokemon_ids'=>$validated,
+        ]);
         pv_recalculate_trainer_progress($db, $offererId, true);
         return $offerId;
     } catch (Throwable $e) {
@@ -411,6 +417,13 @@ function pv_trade_resolve_offer(mysqli $db, int $offerId, int $actorId, string $
             $stmt->close();
             pv_trade_refresh_listing_offer_count($db, $listingId);
             $db->commit();
+            pv_server_event('TRADE','Trade offer resolved',[
+                'offer_id'=>$offerId,
+                'status'=>$status,
+                'listing_pokemon_id'=>$listingPokemonId,
+                'seller_uid'=>$sellerId,
+                'offerer_uid'=>$offererId,
+            ]);
             foreach ($affected as $uid) pv_recalculate_trainer_progress($db, (int)$uid, (int)$uid === $actorId);
             return ['status'=>$status,'listing_pokemon_id'=>$listingPokemonId,'seller_id'=>$sellerId,'offerer_id'=>$offererId];
         }
@@ -501,6 +514,13 @@ function pv_trade_resolve_offer(mysqli $db, int $offerId, int $actorId, string $
         $stmt->close();
 
         $db->commit();
+        pv_server_event('TRADE','Trade completed',[
+            'offer_id'=>$offerId,
+            'listing_pokemon_id'=>$listingPokemonId,
+            'seller_uid'=>$sellerId,
+            'offerer_uid'=>$offererId,
+            'offered_count'=>count($acceptedItems),
+        ]);
         foreach (array_keys($recalc) as $uid) pv_recalculate_trainer_progress($db, (int)$uid, (int)$uid === $actorId);
         return ['status'=>'accepted','listing_pokemon_id'=>$listingPokemonId,'seller_id'=>$sellerId,'offerer_id'=>$offererId];
     } catch (Throwable $e) {
@@ -576,6 +596,10 @@ function pv_trade_remove_listing(mysqli $db, int $listingPokemonId, int $ownerId
         $stmt->close();
         $db->commit();
 
+        pv_server_event('TRADE','Trade listing removed',[
+            'listing_pokemon_id'=>$listingPokemonId,
+            'affected_trainers'=>array_keys($recalc),
+        ]);
         foreach (array_keys($recalc) as $uid) pv_recalculate_trainer_progress($db, (int)$uid, (int)$uid === $ownerId);
         return ['listing_pokemon_id'=>$listingPokemonId,'affected_trainers'=>array_keys($recalc)];
     } catch (Throwable $e) {

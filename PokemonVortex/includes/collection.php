@@ -95,7 +95,7 @@ function pv_collection_save_team(mysqli $db,int $uid,array $submitted): array
         $slots=array_pad($ids,6,0);
         $stmt=$db->prepare('UPDATE members SET s1=?,s2=?,s3=?,s4=?,s5=?,s6=? WHERE id=?');if(!$stmt)throw new RuntimeException('The team could not be saved.');
         $stmt->bind_param('iiiiiii',$slots[0],$slots[1],$slots[2],$slots[3],$slots[4],$slots[5],$uid);if(!$stmt->execute()){ $stmt->close();throw new RuntimeException('The team could not be saved.');}$stmt->close();
-        $db->commit();return $slots;
+        $db->commit();pv_server_event('COLLECTION','Active team updated',['slots'=>$slots]);return $slots;
     }catch(Throwable $e){$db->rollback();if($e instanceof RuntimeException)throw $e;pv_log('Team save failure: '.$e->getMessage());throw new RuntimeException('Your team could not be saved. Your previous team is unchanged.');}
 }
 
@@ -111,6 +111,7 @@ function pv_collection_release(mysqli $db,int $uid,int $pokemonId): string
         $stmt=$db->prepare('DELETE FROM pokemon WHERE id=? AND CAST(owner AS UNSIGNED)=?');if(!$stmt)throw new RuntimeException('The Pokémon could not be released.');$stmt->bind_param('ii',$pokemonId,$uid);$stmt->execute();$ok=$stmt->affected_rows===1;$stmt->close();if(!$ok)throw new RuntimeException('The Pokémon could not be released.');
         $stmt=$db->prepare('UPDATE pguide SET amount=GREATEST(0,amount-1) WHERE id=?');if($stmt){$stmt->bind_param('i',$pid);$stmt->execute();$stmt->close();}
         $db->commit();
+        pv_server_event('COLLECTION','Pokémon released',['pokemon_id'=>$pokemonId,'pokemon'=>$name]);
         try{pv_recalculate_trainer_progress($db,$uid,true);}catch(Throwable $e){pv_log('Release progress refresh failed: '.$e->getMessage());}
         return $name;
     }catch(Throwable $e){$db->rollback();if($e instanceof RuntimeException)throw $e;pv_log('Release failure: '.$e->getMessage());throw new RuntimeException('That Pokémon could not be released. Your collection is unchanged.');}
@@ -158,6 +159,6 @@ function pv_move_teach(mysqli $db,int $uid,int $pokemonId,int $slot,string $newM
         $stmt=$db->prepare('UPDATE members SET money=money-? WHERE id=? AND money>=?');if(!$stmt)throw new RuntimeException('Trainer funds could not be updated.');$stmt->bind_param('iii',$price,$uid,$price);$stmt->execute();$ok=$stmt->affected_rows===1;$stmt->close();if(!$ok)throw new RuntimeException('Your balance changed before the move could be taught.');
         $column='a'.$slot;$sql='UPDATE pokemon SET `'.$column.'`=? WHERE id=? AND CAST(owner AS UNSIGNED)=?';$stmt=$db->prepare($sql);if(!$stmt)throw new RuntimeException('The move could not be saved.');$stmt->bind_param('sii',$newMove,$pokemonId,$uid);$stmt->execute();$ok=$stmt->affected_rows===1||strcasecmp($current[$slot],$newMove)===0;$stmt->close();if(!$ok)throw new RuntimeException('The move could not be saved.');
         $old=$current[$slot];$now=time();$stmt=$db->prepare('INSERT INTO move_lab_transactions (user_id,pokemon_id,slot_no,old_move,new_move,price,created_at) VALUES (?,?,?,?,?,?,?)');if(!$stmt)throw new RuntimeException('The Move Lab receipt could not be recorded.');$stmt->bind_param('iiissii',$uid,$pokemonId,$slot,$old,$newMove,$price,$now);$stmt->execute();$stmt->close();
-        $db->commit();return ['old'=>$old,'new'=>$newMove,'price'=>$price];
+        $db->commit();pv_server_event('LAB','Move taught',['pokemon_id'=>$pokemonId,'slot'=>$slot,'old_move'=>$old,'new_move'=>$newMove,'price'=>$price]);return ['old'=>$old,'new'=>$newMove,'price'=>$price];
     }catch(Throwable $e){$db->rollback();if($e instanceof RuntimeException)throw $e;pv_log('Move Lab failure: '.$e->getMessage());throw new RuntimeException('The move could not be changed. Your Pokémon and money are unchanged.');}
 }

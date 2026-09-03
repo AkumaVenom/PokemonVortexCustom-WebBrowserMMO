@@ -71,6 +71,7 @@ function pv_event_unlock(mysqli $db, int $uid, string $eventKey): string {
         if (!$stmt->execute()) throw new RuntimeException('Could not unlock the Event Center.');
         $stmt->close();
         $db->commit();
+        pv_server_event('EVENT','Event unlocked',['event'=>$eventKey]);
         return 'unlocked';
     } catch (Throwable $e) {
         try { $db->rollback(); } catch (Throwable $ignored) {}
@@ -117,6 +118,7 @@ function pv_event_buy_splicers(mysqli $db, int $uid): string {
         $stmt->close();
         if (!$delivered) throw new RuntimeException('DNA Splicers could not be delivered.');
         $db->commit();
+        pv_server_event('EVENT','DNA Splicers purchased',['price'=>500000]);
         return 'purchased';
     } catch (Throwable $e) {
         try { $db->rollback(); } catch (Throwable $ignored) {}
@@ -201,6 +203,11 @@ function pv_event_fuse_kyurem(mysqli $db, int $uid, int $kyuremId, int $partnerI
         $stmt->close();
 
         $db->commit();
+        pv_server_event('EVENT', 'Kyurem fusion completed', [
+            'pokemon_id' => $kyuremId,
+            'partner_id' => $partnerId,
+            'result' => $resultName,
+        ]);
 
         // Fusion is already authoritative after commit. Treat progression
         // recalculation as a post-commit synchronization step so an unrelated
@@ -287,6 +294,7 @@ function pv_event_claim_cosplay_pikachu(mysqli $db, int $uid, string $username, 
         $stmt=$db->prepare('INSERT INTO done_event (username,ip) VALUES (?,?)');
         if($stmt){$stmt->bind_param('ss',$username,$ip);$stmt->execute();$stmt->close();}
         $db->commit();
+        pv_server_event('EVENT','Event reward claimed',['event'=>$eventKey,'prize'=>$prize,'promo_code_id'=>$promoId]);
         return['status'=>'claimed','code'=>$code,'prize'=>$prize,'count'=>$count,'promo_code_id'=>$promoId];
     }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}throw$e;}
 }

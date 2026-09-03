@@ -107,11 +107,15 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && $dbReady) {
             $stmt->close();
 
             $db->commit();
-            pv_redirect('login.php?reg=1');
+            $registrationComplete=true;
         } catch(Throwable $e) {
-            $db->rollback();
+            try { $db->rollback(); } catch(Throwable $rollbackError) {}
             pv_log('Atomic account creation failed for '.$username.': '.$e->getMessage());
             $error='We could not create your trainer account right now. No partial account was saved; please try again shortly.';
+        }
+        if (!empty($registrationComplete)) {
+            pv_server_event('AUTH','Trainer account created',['username'=>$username,'uid'=>$uid,'starter'=>$starter]);
+            pv_redirect('login.php?reg=1');
         }
     }
 }

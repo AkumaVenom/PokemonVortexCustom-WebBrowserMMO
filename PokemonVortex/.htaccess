@@ -70,3 +70,11 @@ ServerSignature Off
 </FilesMatch>
 
 ErrorDocument 404 /PokemonVortex/404.php
+
+# v23.6.2: local operator console is CLI-only and must never be downloadable/executable over HTTP.
+<FilesMatch "^(?i:server_console\.php|PokemonVortex_ServerConsole\.cmd)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "(?i)\.(?:cmd|bat|ps1)$">
+  Require all denied
+</FilesMatch>

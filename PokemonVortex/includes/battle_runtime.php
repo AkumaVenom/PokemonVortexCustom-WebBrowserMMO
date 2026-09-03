@@ -300,6 +300,7 @@ function pv_battle_runtime_record_victory(mysqli $db, int $uid, int $now, int $m
             $stmt->close();
         }
         $db->commit();
+        pv_server_event('BATTLE', 'Standard battle victory', ['reward_money'=>$money,'clan'=>$clanName]);
     } catch (Throwable $e) {
         $db->rollback();
         throw $e;
@@ -333,6 +334,7 @@ function pv_battle_runtime_record_defeat(mysqli $db, int $uid, int $now, string 
             $stmt->close();
         }
         $db->commit();
+        pv_server_event('BATTLE', 'Standard battle defeat', ['clan'=>$clanName]);
     } catch (Throwable $e) {
         $db->rollback();
         throw $e;

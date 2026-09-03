@@ -162,6 +162,7 @@ function pv_shop_purchase(mysqli $db, int $uid, string $itemKey, int $quantity):
         $stmt->close();
 
         $db->commit();
+        pv_server_event('SHOP','PokéMart purchase',['item'=>$label,'quantity'=>$quantity,'total'=>$total,'balance'=>$money-$total]);
         return ['item'=>$item,'quantity'=>$quantity,'total'=>$total,'balance'=>$money-$total];
     } catch (Throwable $e) {
         $db->rollback();

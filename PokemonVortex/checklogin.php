@@ -14,16 +14,17 @@ $db->query("DELETE FROM login_trys WHERE time < {$cutoff}");
 
 $stmt=$db->prepare('SELECT attempts FROM login_trys WHERE ip=? LIMIT 1');
 $stmt->bind_param('s',$ip); $stmt->execute(); $attemptRow=$stmt->get_result()->fetch_assoc(); $stmt->close();
-if ((int)($attemptRow['attempts']??0) >= 6) pv_redirect('login.php?action=Attempts');
+if ((int)($attemptRow['attempts']??0) >= 6) { pv_server_event('AUTH','Login blocked by attempt limit',['username'=>$username],'WARN'); pv_redirect('login.php?action=Attempts'); }
 
 $stmt=$db->prepare('SELECT * FROM members WHERE username=? LIMIT 1');
 $stmt->bind_param('s',$username); $stmt->execute(); $member=$stmt->get_result()->fetch_assoc(); $stmt->close();
 if (!$member || !pv_password_matches($password,(string)$member['password'])) {
     $stmt=$db->prepare('INSERT INTO login_trys (ip,username,time,attempts) VALUES (?,?,?,1) ON DUPLICATE KEY UPDATE username=VALUES(username),time=VALUES(time),attempts=attempts+1');
     $stmt->bind_param('ssi',$ip,$username,$now); $stmt->execute(); $stmt->close();
+    pv_server_event('AUTH','Login failed',['username'=>$username,'reason'=>'invalid_credentials'],'WARN');
     pv_redirect('login.php?error=1');
 }
-if ((string)($member['banned']??'0') === '1') pv_redirect('login.php?action=Banned');
+if ((string)($member['banned']??'0') === '1') { pv_server_event('AUTH','Banned trainer login rejected',['username'=>$username,'uid'=>(int)$member['id']],'WARN'); pv_redirect('login.php?action=Banned'); }
 
 // Seamlessly upgrade old MD5 passwords the first time an old account signs in.
 if (strlen((string)$member['password']) === 32 && ctype_xdigit((string)$member['password'])) {
@@ -47,4 +48,5 @@ $stmt=$db->prepare("INSERT INTO online (id,username,clan_tag,activity,time,usera
 $stmt->bind_param('issis',$uid,$member['username'],$clantag,$now,$useragent); $stmt->execute(); $stmt->close();
 $stmt=$db->prepare('UPDATE members SET llogin=?, last_login=?, ip=?, time=? WHERE id=?'); $last=(string)$now; $stmt->bind_param('issii',$now,$last,$ip,$now,$uid); $stmt->execute(); $stmt->close();
 $stmt=$db->prepare('DELETE FROM login_trys WHERE ip=?'); $stmt->bind_param('s',$ip); $stmt->execute(); $stmt->close();
+pv_server_event('AUTH','Trainer logged in',['username'=>(string)$member['username'],'uid'=>$uid]);
 pv_redirect('dashboard.php');

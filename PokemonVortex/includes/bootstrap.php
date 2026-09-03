@@ -197,9 +197,13 @@ function pv_password_hash(string $plain): string {
     return password_hash($plain, PASSWORD_DEFAULT);
 }
 
-function pv_log(string $message): void {
+require_once __DIR__ . '/server_console.php';
+pv_server_console_register_request_logging();
+
+function pv_log(string $message, array $context = []): void {
     $line = '[' . date('c') . '] ' . $message . PHP_EOL;
     @file_put_contents(dirname(__DIR__) . '/storage/logs/app.log', $line, FILE_APPEND | LOCK_EX);
+    pv_server_log('ERROR', 'APP', $message, $context);
 }
 
 /* --------------------------- Database --------------------------- */
