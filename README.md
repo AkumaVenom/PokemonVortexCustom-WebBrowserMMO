@@ -38,9 +38,11 @@ Major goals of the reconstruction include:
 
 The result is a modernized playable reconstruction rather than a bit-for-bit copy of any historical live Pokémon Vortex server.
 
-<img width="3798" height="1854" alt="MainPage" src="https://github.com/user-attachments/assets/c4410dee-c7e6-4b1e-8a82-ad025746d0a6" />
-
-<img width="3840" height="2079" alt="Create" src="https://github.com/user-attachments/assets/3ecb1a88-958a-4916-9e62-cf67cba68cc4" />
+<img width="3788" height="1842" alt="1" src="https://github.com/user-attachments/assets/53c32e2d-3961-4990-afb3-481ae0e811eb" />
+<img width="3795" height="1843" alt="2" src="https://github.com/user-attachments/assets/2b98eb04-d7a5-4169-9fc1-586cd5b02e2d" />
+<img width="3797" height="1843" alt="3" src="https://github.com/user-attachments/assets/a4bf51b8-467f-4cf2-a2b6-98d4dc2e2230" />
+<img width="3785" height="1846" alt="4" src="https://github.com/user-attachments/assets/069e7f4c-eb3e-4add-8535-5a8787c56f4c" />
+<img width="3789" height="1851" alt="5" src="https://github.com/user-attachments/assets/4a7c8c09-2be9-40ec-81e1-88927fd54ab8" />
 
 ---
 
