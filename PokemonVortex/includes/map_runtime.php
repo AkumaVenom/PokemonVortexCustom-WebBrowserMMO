@@ -515,9 +515,35 @@ function pv_map_players(mysqli $db, int $uid, int $map, string $world = 'vortex'
             'trainer'=>max(1,min(29,(int)$row['trainer'])),
             'x'=>(int)$row['x'],
             'y'=>(int)$row['y'],
+            'bot'=>false,
         ];
     }
     $stmt->close();
+
+    // Autonomous trainers are persistent simulated players, not PHP/browser
+    // sessions, so their presence is read from the authoritative bot registry
+    // rather than the short-lived online table used by human trainers.
+    $remaining = max(0, 60 - count($players));
+    if ($remaining > 0 && pv_world_map_column_available($db) && pv_table_exists('bot_trainers')) {
+        $mapKey = (string)$map;
+        $stmt = $db->prepare('SELECT b.user_id AS id,m.username,b.trainer_sprite AS trainer,b.x,b.y FROM bot_trainers b INNER JOIN members m ON m.id=b.user_id WHERE b.enabled=1 AND b.world_key=? AND b.map_key=? AND b.user_id<>? ORDER BY b.bot_index LIMIT ' . (int)$remaining);
+        if ($stmt) {
+            $stmt->bind_param('ssi', $world, $mapKey, $uid);
+            $stmt->execute();
+            $r = $stmt->get_result();
+            while ($row = $r->fetch_assoc()) {
+                $players[] = [
+                    'id'=>(int)$row['id'],
+                    'username'=>(string)$row['username'],
+                    'trainer'=>max(1,min(29,(int)$row['trainer'])),
+                    'x'=>(int)$row['x'],
+                    'y'=>(int)$row['y'],
+                    'bot'=>true,
+                ];
+            }
+            $stmt->close();
+        }
+    }
     return $players;
 }
 

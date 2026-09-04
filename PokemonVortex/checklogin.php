@@ -18,6 +18,11 @@ if ((int)($attemptRow['attempts']??0) >= 6) { pv_server_event('AUTH','Login bloc
 
 $stmt=$db->prepare('SELECT * FROM members WHERE username=? LIMIT 1');
 $stmt->bind_param('s',$username); $stmt->execute(); $member=$stmt->get_result()->fetch_assoc(); $stmt->close();
+if ($member && pv_table_exists('bot_trainers')) {
+    $botUid=(int)$member['id'];
+    $stmt=$db->prepare('SELECT 1 FROM bot_trainers WHERE user_id=? AND enabled=1 LIMIT 1');
+    if($stmt){$stmt->bind_param('i',$botUid);$stmt->execute();$isBot=(bool)$stmt->get_result()->fetch_row();$stmt->close();if($isBot)$member=null;}
+}
 if (!$member || !pv_password_matches($password,(string)$member['password'])) {
     $stmt=$db->prepare('INSERT INTO login_trys (ip,username,time,attempts) VALUES (?,?,?,1) ON DUPLICATE KEY UPDATE username=VALUES(username),time=VALUES(time),attempts=attempts+1');
     $stmt->bind_param('ssi',$ip,$username,$now); $stmt->execute(); $stmt->close();

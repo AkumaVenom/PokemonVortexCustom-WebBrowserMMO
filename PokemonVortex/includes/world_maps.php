@@ -288,13 +288,23 @@ function pv_world_players(mysqli $db, int $uid, string $world, string $area): ar
     $stmt=$db->prepare('SELECT m.id,m.username,m.trainer,m.x,m.y FROM mapusers m INNER JOIN online o ON o.id=m.id WHERE m.world_key=? AND m.map=? AND m.id<>? AND CAST(o.time AS UNSIGNED)>=? ORDER BY m.username LIMIT 60');
     if(!$stmt)return[];
     $stmt->bind_param('ssii',$world,$area,$uid,$cutoff);$stmt->execute();$r=$stmt->get_result();$players=[];
-    while($row=$r->fetch_assoc())$players[]=['id'=>(int)$row['id'],'username'=>(string)$row['username'],'trainer'=>max(1,min(29,(int)$row['trainer'])),'x'=>(int)$row['x'],'y'=>(int)$row['y']];
-    $stmt->close();return$players;
+    while($row=$r->fetch_assoc())$players[]=['id'=>(int)$row['id'],'username'=>(string)$row['username'],'trainer'=>max(1,min(29,(int)$row['trainer'])),'x'=>(int)$row['x'],'y'=>(int)$row['y'],'bot'=>false];
+    $stmt->close();
+
+    $remaining=max(0,60-count($players));
+    if($remaining>0 && pv_table_exists('bot_trainers')){
+        $stmt=$db->prepare('SELECT b.user_id AS id,m.username,b.trainer_sprite AS trainer,b.x,b.y FROM bot_trainers b INNER JOIN members m ON m.id=b.user_id WHERE b.enabled=1 AND b.world_key=? AND b.map_key=? AND b.user_id<>? ORDER BY b.bot_index LIMIT '.(int)$remaining);
+        if($stmt){$stmt->bind_param('ssi',$world,$area,$uid);$stmt->execute();$r=$stmt->get_result();while($row=$r->fetch_assoc())$players[]=['id'=>(int)$row['id'],'username'=>(string)$row['username'],'trainer'=>max(1,min(29,(int)$row['trainer'])),'x'=>(int)$row['x'],'y'=>(int)$row['y'],'bot'=>true];$stmt->close();}
+    }
+    return$players;
 }
 
 function pv_world_blocks(mysqli $db, string $world, string $area): array {
     $world = pv_world_normalize_key($world);
     $area = pv_world_area_key($area);
+    static $runtimeCache=[];
+    $runtimeKey=spl_object_id($db).'|'.$world.'|'.$area;
+    if(isset($runtimeCache[$runtimeKey]))return $runtimeCache[$runtimeKey];
     $blocks=[];
 
     // Static region collision ships with each Kanto/Hoenn area. Database rows remain an additive runtime-tuning layer.
@@ -320,7 +330,7 @@ function pv_world_blocks(mysqli $db, string $world, string $area): array {
         while($row=$r->fetch_assoc())$blocks[(int)$row['xblock'].':'.(int)$row['yblock']]=true;
         $stmt->close();
     }
-    return$blocks;
+    return $runtimeCache[$runtimeKey]=$blocks;
 }
 
 /**

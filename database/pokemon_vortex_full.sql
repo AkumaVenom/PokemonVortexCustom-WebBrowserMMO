@@ -1,6 +1,13 @@
 -- Pokémon Vortex - game database package
 -- Built from the supplied game data plus compatibility migrations.
 -- Target: MariaDB 10.x / MySQL 5.7+
+--
+-- Public-distribution credential policy (v23.7.1):
+-- this SQL creates/imports only the game database. It does not create, alter,
+-- rotate, harden or delete MySQL/MariaDB accounts. _setup.php authenticates
+-- using exactly the host/user/password configured in public_html/config/app.php.
+-- A blank password is therefore supported for an untouched local XAMPP root
+-- account, while users with a password can configure their own credential.
 
 CREATE DATABASE IF NOT EXISTS `pokemon_vortex` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `pokemon_vortex`;
@@ -1307,6 +1314,34 @@ CREATE TABLE IF NOT EXISTS `live_battle_challenges` (
   KEY `idx_live_challenge_target` (`target_id`,`status`,`created_at`),
   KEY `idx_live_challenge_challenger` (`challenger_id`,`status`,`created_at`),
   KEY `idx_live_challenge_battle` (`battle_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `bot_trainers` (
+  `user_id` INT NOT NULL,
+  `bot_index` INT NOT NULL,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
+  `trainer_sprite` TINYINT NOT NULL DEFAULT 1,
+  `world_key` VARCHAR(24) NOT NULL DEFAULT 'vortex',
+  `map_key` VARCHAR(64) NOT NULL DEFAULT '1',
+  `x` INT NOT NULL DEFAULT 1,
+  `y` INT NOT NULL DEFAULT 1,
+  `next_action_at` BIGINT NOT NULL DEFAULT 0,
+  `last_action_at` BIGINT NOT NULL DEFAULT 0,
+  `last_action` VARCHAR(32) NOT NULL DEFAULT '',
+  `last_wild_name` VARCHAR(80) NOT NULL DEFAULT '',
+  `last_wild_level` INT NOT NULL DEFAULT 0,
+  `wild_battles` INT UNSIGNED NOT NULL DEFAULT 0,
+  `wild_wins` INT UNSIGNED NOT NULL DEFAULT 0,
+  `captures` INT UNSIGNED NOT NULL DEFAULT 0,
+  `player_battles` INT UNSIGNED NOT NULL DEFAULT 0,
+  `player_wins` INT UNSIGNED NOT NULL DEFAULT 0,
+  `player_losses` INT UNSIGNED NOT NULL DEFAULT 0,
+  `created_at` BIGINT NOT NULL DEFAULT 0,
+  `updated_at` BIGINT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `uq_bot_trainers_index` (`bot_index`),
+  KEY `idx_bot_trainers_due` (`enabled`,`next_action_at`),
+  KEY `idx_bot_trainers_location` (`enabled`,`world_key`,`map_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS `promo_codes` (

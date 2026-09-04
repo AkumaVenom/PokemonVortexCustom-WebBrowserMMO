@@ -41,8 +41,14 @@
     const left = (x - 1) * 16;
     const top = (y - 2) * 16;
     const username = own ? 'You' : esc(player.username || 'Trainer');
-    const cls = own ? ' pv-map-actor-own' : '';
-    return `<span class="pv-map-actor${cls}" style="left:${left}px;top:${top}px" title="${username}" data-player-id="${own ? 'self' : Number(player.id) || 0}">${spriteMarkup(own ? state.trainer : player.trainer, own)}<b>${username}</b></span>`;
+    const isBot = !own && Boolean(player.bot);
+    const cls = own ? ' pv-map-actor-own' : (isBot ? ' pv-map-actor-bot' : '');
+    const content = `${spriteMarkup(own ? state.trainer : player.trainer, own)}<b>${username}${isBot ? '<small>AI TRAINER</small>' : ''}</b>`;
+    if (isBot) {
+      const id = Math.max(0, Number(player.id) || 0);
+      return `<a class="pv-map-actor${cls}" style="left:${left}px;top:${top}px" title="${username} · AI trainer · interact" data-player-id="${id}" href="${esc(String(cfg.botProfileBase || 'bot_trainer.php?id='))}${id}">${content}</a>`;
+    }
+    return `<span class="pv-map-actor${cls}" style="left:${left}px;top:${top}px" title="${username}" data-player-id="${own ? 'self' : Number(player.id) || 0}">${content}</span>`;
   }
 
 

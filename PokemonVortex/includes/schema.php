@@ -3,6 +3,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/battle_catalog.php';
 require_once __DIR__ . '/event_battle_catalog.php';
 require_once __DIR__ . '/sidequest_catalog.php';
+require_once __DIR__ . '/bot_runtime.php';
 
 /**
  * Pokémon Vortex recovered-schema compatibility layer.
@@ -434,6 +435,38 @@ function pv_apply_schema_migrations(mysqli $db): array
     pv_schema_ensure_innodb($db, 'live_battle', $changes);
     pv_schema_ensure_innodb($db, 'live_battle_challenges', $changes);
 
+    // v23.7 introduces 1,000 persistent autonomous trainers. Bots are ordinary
+    // member/Pokémon owners for combat compatibility, while this registry is the
+    // authoritative control plane for AI identity, map presence and simulation.
+    pv_schema_ensure_table($db, 'bot_trainers', "CREATE TABLE `bot_trainers` (
+        `user_id` INT NOT NULL,
+        `bot_index` INT NOT NULL,
+        `enabled` TINYINT NOT NULL DEFAULT 1,
+        `trainer_sprite` TINYINT NOT NULL DEFAULT 1,
+        `world_key` VARCHAR(24) NOT NULL DEFAULT 'vortex',
+        `map_key` VARCHAR(64) NOT NULL DEFAULT '1',
+        `x` INT NOT NULL DEFAULT 1,
+        `y` INT NOT NULL DEFAULT 1,
+        `next_action_at` BIGINT NOT NULL DEFAULT 0,
+        `last_action_at` BIGINT NOT NULL DEFAULT 0,
+        `last_action` VARCHAR(32) NOT NULL DEFAULT '',
+        `last_wild_name` VARCHAR(80) NOT NULL DEFAULT '',
+        `last_wild_level` INT NOT NULL DEFAULT 0,
+        `wild_battles` INT UNSIGNED NOT NULL DEFAULT 0,
+        `wild_wins` INT UNSIGNED NOT NULL DEFAULT 0,
+        `captures` INT UNSIGNED NOT NULL DEFAULT 0,
+        `player_battles` INT UNSIGNED NOT NULL DEFAULT 0,
+        `player_wins` INT UNSIGNED NOT NULL DEFAULT 0,
+        `player_losses` INT UNSIGNED NOT NULL DEFAULT 0,
+        `created_at` BIGINT NOT NULL DEFAULT 0,
+        `updated_at` BIGINT NOT NULL DEFAULT 0,
+        PRIMARY KEY (`user_id`),
+        UNIQUE KEY `uq_bot_trainers_index` (`bot_index`),
+        KEY `idx_bot_trainers_due` (`enabled`,`next_action_at`),
+        KEY `idx_bot_trainers_location` (`enabled`,`world_key`,`map_key`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", $changes);
+    pv_schema_ensure_innodb($db, 'bot_trainers', $changes);
+
     // Production collection/economy/network tables. These normalized tables
     // replace small or revision-specific historical structures while leaving
     // those old tables intact for import compatibility.
@@ -742,13 +775,20 @@ function pv_apply_schema_migrations(mysqli $db): array
     pv_schema_add_index($db, 'trade_offer_items', 'idx_trade_offer_items_pokemon', '`pokemon_id`', $changes);
     pv_schema_add_index($db, 'trade_offer_items', 'idx_trade_offer_items_owner', '`original_owner_id`', $changes);
 
+    // Population repair is idempotent: interrupted local setup runs can resume
+    // without duplicating bots or touching human trainer progress.
+    $botPopulation = pv_bot_ensure_population($db, 1000);
+    if ((int)($botPopulation['created'] ?? 0) > 0) {
+        $changes[] = 'Seeded ' . (int)$botPopulation['created'] . ' autonomous trainer bot account(s)';
+    }
+
     // Recalculate the account collection count only when the source tables exist.
     if (pv_schema_table_exists($db, 'members') && pv_schema_table_exists($db, 'pokemon') && pv_schema_column_exists($db, 'members', 'total_poke')) {
         @$db->query('UPDATE `members` m SET `total_poke`=(SELECT COUNT(*) FROM `pokemon` p WHERE p.`owner`=m.`id`)');
     }
 
     if (pv_schema_table_exists($db, 'pv_schema_meta')) {
-        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,26,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
+        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,27,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
     }
 
     return $changes;

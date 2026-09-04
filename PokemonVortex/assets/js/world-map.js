@@ -43,7 +43,14 @@
     const left = (x - 1) * state.tile + Math.max(0, (state.tile - unit) / 2);
     const top = (y - 1) * state.tile - unit;
     const name = own ? 'You' : esc(player.username || 'Trainer');
-    return `<span class="pv-map-actor${own ? ' pv-map-actor-own' : ''}" style="left:${left}px;top:${top}px;--pv-world-actor-unit:${unit}px" title="${name}">${sprite(own ? state.trainer : player.trainer, own)}<b>${name}</b></span>`;
+    const isBot = !own && Boolean(player.bot);
+    const cls = own ? ' pv-map-actor-own' : (isBot ? ' pv-map-actor-bot' : '');
+    const content = `${sprite(own ? state.trainer : player.trainer, own)}<b>${name}${isBot ? '<small>AI TRAINER</small>' : ''}</b>`;
+    if (isBot) {
+      const id = Math.max(0, Number(player.id) || 0);
+      return `<a class="pv-map-actor${cls}" style="left:${left}px;top:${top}px;--pv-world-actor-unit:${unit}px" title="${name} · AI trainer · interact" href="${esc(String(cfg.botProfileBase || 'bot_trainer.php?id='))}${id}">${content}</a>`;
+    }
+    return `<span class="pv-map-actor${cls}" style="left:${left}px;top:${top}px;--pv-world-actor-unit:${unit}px" title="${name}">${content}</span>`;
   }
 
   function render() {

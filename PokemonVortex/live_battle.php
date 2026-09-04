@@ -5,6 +5,7 @@ require_once __DIR__ . '/kick.php';
 require_once __DIR__ . '/includes/ui.php';
 require_once __DIR__ . '/includes/live_battle_settlement.php';
 require_once __DIR__ . '/includes/live_battle_runtime.php';
+require_once __DIR__ . '/includes/bot_runtime.php';
 
 $userId = max(0, (int)($_SESSION['myid'] ?? 0));
 if ($userId <= 0 || (int)($_SESSION['access'] ?? 0) !== 9) pv_redirect('login.php?goawaxP=1');
@@ -20,11 +21,15 @@ if (!in_array($userSlot, [1,2], true) || !in_array($opponentSlot, [1,2], true)
 }
 
 $db = pv_db();
+$opponentIsBot = pv_bot_is_bot($db, $opponentId);
 $error = trim((string)($_SESSION['pv_live_runtime_error'] ?? ''));
 unset($_SESSION['pv_live_runtime_error']);
 $state = null;
 try {
     $state = pv_live_runtime_initialize($db, $battleId, $userSlot, $opponentSlot, $userId, $opponentId);
+    if ($opponentIsBot) {
+        $state = pv_bot_live_autoplay($db, $battleId, $opponentSlot, $userSlot, $opponentId, $userId);
+    }
     if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
         pv_require_csrf();
         if (!pv_consume_action_token('live_battle.php', (string)($_POST['battle_action_token'] ?? ''))) pv_redirect('live_battle.php');
@@ -35,7 +40,10 @@ try {
             'item' => trim((string)($_POST['item'] ?? '')),
         ];
         try {
-            pv_live_runtime_submit($db, $battleId, $userSlot, $opponentSlot, $userId, $opponentId, $action, $payload);
+            $state = pv_live_runtime_submit($db, $battleId, $userSlot, $opponentSlot, $userId, $opponentId, $action, $payload);
+            if ($opponentIsBot) {
+                $state = pv_bot_live_autoplay($db, $battleId, $opponentSlot, $userSlot, $opponentId, $userId);
+            }
         } catch (Throwable $commandError) {
             $_SESSION['pv_live_runtime_error'] = 'That battle action could not be used. Check your active Pokémon and try again.';
             pv_log('Authoritative Live Battle command: ' . $commandError->getMessage());
@@ -43,8 +51,19 @@ try {
         pv_redirect('live_battle.php');
     }
     $state = pv_live_runtime_load($db, $battleId, $userSlot, $opponentSlot, $userId, $opponentId);
+    if ($opponentIsBot && ($state['phase'] ?? '') !== 'complete') {
+        $state = pv_bot_live_autoplay($db, $battleId, $opponentSlot, $userSlot, $opponentId, $userId);
+    }
     if (($state['phase'] ?? '') === 'complete') {
         $outcome = (int)($state['winner_slot'] ?? 0) === $userSlot ? 'win' : 'loss';
+        if ($opponentIsBot) {
+            $botOutcome = (int)($state['winner_slot'] ?? 0) === $opponentSlot ? 'win' : 'loss';
+            try {
+                pv_bot_settle_live_result($db, $battleId, $opponentSlot, $userSlot, $opponentId, $userId, $botOutcome);
+            } catch (Throwable $botSettlementError) {
+                pv_log('Live AI Battle bot settlement: ' . $botSettlementError->getMessage());
+            }
+        }
         pv_live_runtime_project_session($state, $userSlot);
         pv_live_settle_result($db, $battleId, $userSlot, $opponentSlot, $userId, $opponentId, $outcome);
         $_SESSION['live_last_result_battle_id'] = $battleId;
@@ -103,7 +122,7 @@ pv_page_start('Live Battle', 'battle_select.php', true);
 <div class="pv-game-layout">
 <?php pv_game_side_menu('battle_select.php'); ?>
 <main class="pv-main-column"><section class="pv-page pv-live-runtime-page">
-<div class="pv-page-head"><div><span class="pv-eyebrow">LIVE BATTLE // REAL-TIME PVP</span><h1>Live Battle</h1><p class="pv-subtle">Battle another trainer in real time. Match #<?=number_format($battleId)?> · Turn <?=number_format($turn)?></p></div><div class="pv-combat-runtime-signal"><i></i><strong>MATCH STATUS</strong><span><?=pv_h(strtoupper($phase))?></span></div></div>
+<div class="pv-page-head"><div><span class="pv-eyebrow"><?=$opponentIsBot?'LIVE BATTLE // AUTONOMOUS TRAINER':'LIVE BATTLE // REAL-TIME PVP'?></span><h1><?=$opponentIsBot?'Live AI Battle':'Live Battle'?></h1><p class="pv-subtle"><?=$opponentIsBot?'Battle a persistent autonomous trainer using the same server-authoritative Live Battle engine.':'Battle another trainer in real time.'?> Match #<?=number_format($battleId)?> · Turn <?=number_format($turn)?></p></div><div class="pv-combat-runtime-signal"><i></i><strong>MATCH STATUS</strong><span><?=pv_h(strtoupper($phase))?></span></div></div>
 <?php if($error): ?><div class="pv-flash danger"><?=pv_h($error)?></div><?php endif; ?>
 <?php if($state): ?>
 <div class="pv-combat-modern-surface" data-pv-live-runtime>
@@ -114,7 +133,7 @@ pv_page_start('Live Battle', 'battle_select.php', true);
 </div></section>
 <section class="pv-wild-control-panel"><div class="pv-map-panel-label">BATTLE COMMAND // <?=pv_h(strtoupper($phase))?></div>
 <?php if($ownWaiting): ?>
-<div class="pv-live-runtime-wait" data-pv-live-runtime-wait><span class="pv-wild-scan-ring"></span><i></i><strong>Move locked</strong><p>Waiting for <?=pv_h((string)($opponent['name'] ?? 'the other trainer'))?>. Your turn will continue after they choose an action.</p></div>
+<div class="pv-live-runtime-wait" data-pv-live-runtime-wait><span class="pv-wild-scan-ring"></span><i></i><strong>Move locked</strong><p><?=$opponentIsBot?'The AI trainer is choosing its next action.':'Waiting for '.pv_h((string)($opponent['name'] ?? 'the other trainer')).'. Your turn will continue after they choose an action.'?></p></div>
 <?php elseif(in_array($phase, ['select','switch'], true)): ?>
 <div class="pv-live-runtime-section-head"><strong><?=$phase==='switch'?'Choose your replacement Pokémon':'Choose your active Pokémon'?></strong><span>Choose a Pokémon from your active team that can still battle.</span></div>
 <div class="pv-wild-team-grid pv-live-runtime-team-grid">

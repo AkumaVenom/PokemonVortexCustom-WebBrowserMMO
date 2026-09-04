@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/includes/map_runtime.php';
+require_once __DIR__ . '/includes/bot_runtime.php';
 require_once __DIR__ . '/includes/ui.php';
 pv_require_login();
 
@@ -24,6 +25,7 @@ if ((int)($_SESSION['map'] ?? 0) === $map) {
     [$x, $y] = pv_map_spawn($map, $blocks);
 }
 pv_map_upsert_player($db, $uid, $map, $x, $y, $worldKey);
+pv_bot_tick($db, 60);
 
 $players = pv_map_players($db, $uid, $map, $worldKey);
 $blockedDirections = pv_map_blocked_directions($db, $map, $x, $y);
@@ -34,11 +36,7 @@ $overlayRel = 'images/maps/overlays/' . ($night ? 'night' : 'day') . $map . '.pn
 $overlayAbs = __DIR__ . '/html/static/' . $overlayRel;
 $overlayUrl = is_file($overlayAbs) ? pv_static($overlayRel) : '';
 $mapImage = pv_static_file('images/maps/v3/map' . $map . '.png', 'images/maps/map' . $map . '.png');
-$mapCount = 0;
-try {
-    $r = $db->query('SELECT COUNT(*) c FROM online WHERE CAST(time AS UNSIGNED) >= ' . (time() - 1800));
-    if ($r) $mapCount = (int)($r->fetch_assoc()['c'] ?? 0);
-} catch (Throwable $e) {}
+$mapCount = count($players) + 1;
 
 pv_page_start($mapName, 'map_select.php', true);
 ?>
@@ -109,7 +107,7 @@ pv_page_start($mapName, 'map_select.php', true);
                     <dl>
                         <div><dt>Biome</dt><dd><?= pv_h($category) ?></dd></div>
                         <div><dt>Map</dt><dd><?= (int)$map ?> / 25</dd></div>
-                        <div><dt>Players online</dt><dd><?= (int)$mapCount ?></dd></div>
+                        <div><dt>Trainers here</dt><dd><?= (int)$mapCount ?></dd></div>
                         <div><dt>Cycle</dt><dd><?= $night ? 'Night' : 'Day' ?></dd></div>
                     </dl>
                 </section>
@@ -131,6 +129,7 @@ window.PV_MAP_CONFIG = <?= json_encode([
     'blockedDirections'=>$blockedDirections,
     'moveUrl'=>pv_url('map_move.php'),
     'presenceUrl'=>pv_url('map_presence.php'),
+    'botProfileBase'=>pv_url('bot_trainer.php?id='),
     'presenceInterval'=>2000,
     'csrf'=>pv_csrf_token(),
     'spriteBase'=>pv_static('images/sprites/'),

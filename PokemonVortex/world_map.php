@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/includes/world_maps.php';
+require_once __DIR__ . '/includes/bot_runtime.php';
 require_once __DIR__ . '/includes/ui.php';
 pv_require_login();
 
@@ -37,6 +38,7 @@ if($positionInvalid){
     [$x,$y]=$safeSpawn;
 }
 pv_world_presence_upsert($db,$uid,$world,$areaKey,$x,$y);
+pv_bot_tick($db,60);
 $players=pv_world_players($db,$uid,$world,$areaKey);
 $blockedDirections=pv_world_blocked_directions($db,$area,$x,$y);
 $connectedAreas=pv_world_connected_areas($area);
@@ -98,6 +100,7 @@ window.PV_WORLD_MAP_CONFIG = <?=json_encode([
     'columns'=>(int)$area['columns'],'rows'=>(int)$area['rows'],'tileSize'=>(int)$area['display_tile_size'],'logicalTileSize'=>(int)$area['tile_size'],
     'trainer'=>$trainer,'players'=>$players,'blockedDirections'=>$blockedDirections,
     'moveUrl'=>pv_url('world_map_move.php'),'presenceUrl'=>pv_url('world_map_presence.php'),'presenceInterval'=>2000,
+    'botProfileBase'=>pv_url('bot_trainer.php?id='),
     'csrf'=>pv_csrf_token(),'spriteBase'=>pv_static('images/sprites/'),'renderMode'=>$renderMode,'renderImageCount'=>$renderTiles!==[]?count($renderTiles):1,
 ],JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE)?>;
 </script>

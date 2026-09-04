@@ -20,17 +20,19 @@ if (!headers_sent()) header('X-Robots-Tag: noindex, nofollow');
 function pv_setup_connect(array $dbConfig, bool $withDatabase): mysqli
 {
     mysqli_report(MYSQLI_REPORT_OFF);
-    $conn = @new mysqli(
-        (string)$dbConfig['host'],
-        (string)$dbConfig['user'],
-        (string)$dbConfig['pass'],
-        $withDatabase ? (string)$dbConfig['name'] : '',
-        (int)$dbConfig['port']
-    );
+    $host = (string)($dbConfig['host'] ?? '127.0.0.1');
+    $user = (string)($dbConfig['user'] ?? 'root');
+    $password = (string)($dbConfig['pass'] ?? '');
+    $database = $withDatabase ? (string)($dbConfig['name'] ?? 'pokemon_vortex') : '';
+    $port = (int)($dbConfig['port'] ?? 3306);
+    $charset = (string)($dbConfig['charset'] ?? 'utf8mb4');
+
+    $conn = @new mysqli($host, $user, $password, $database, $port);
     if ($conn->connect_errno) {
-        throw new RuntimeException('Could not connect to MySQL/MariaDB. Check that the service is running and config/app.php contains the correct database settings.');
+        throw new RuntimeException('Could not connect to MySQL/MariaDB with config/app.php. Check that the service is running and that the configured host, user and password match the local database account.');
     }
-    $conn->set_charset((string)($dbConfig['charset'] ?? 'utf8mb4'));
+
+    $conn->set_charset($charset);
     return $conn;
 }
 
@@ -54,8 +56,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                     $status = 'Database upgrade completed successfully.';
                     $actionDone = 'upgrade';
                     $details = $changes !== []
-                        ? array_merge(['Existing trainer progress was preserved.'], $changes)
-                        : ['Existing trainer progress was preserved.', 'The database already matches the current gameplay schema.'];
+                        ? array_merge(['Existing trainer progress was preserved.', 'Database account credentials were left unchanged.'], $changes)
+                        : ['Existing trainer progress was preserved.', 'Database account credentials were left unchanged.', 'The database already matches the current gameplay schema.'];
                 } finally {
                     $conn->close();
                 }
@@ -73,6 +75,9 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                     $sql = file_get_contents($sqlFile);
                     if ($sql === false) throw new RuntimeException('Could not read the database installer.');
 
+                    // The public installer never creates, alters or rotates MySQL/MariaDB accounts.
+                    // It authenticates with exactly the credentials configured in config/app.php,
+                    // including the standard blank root password used by untouched local XAMPP installs.
                     $dbName = str_replace('`', '``', (string)$dbConfig['name']);
                     if (!$conn->multi_query("DROP DATABASE IF EXISTS `{$dbName}`;\n" . $sql)) {
                         throw new RuntimeException('Database import could not start: ' . $conn->error);
@@ -94,6 +99,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
                         'Game schema created and repaired to the current runtime version.',
                         'Pokémon, ability, attack and progression data imported.',
                         'Trading, clans, items, maps and account compatibility fields verified.',
+                        'Database account credentials were left unchanged.',
                         'Account registration is ready.'
                     ];
                     if ($changes !== []) $details[] = count($changes) . ' compatibility migration(s) were applied after import.';

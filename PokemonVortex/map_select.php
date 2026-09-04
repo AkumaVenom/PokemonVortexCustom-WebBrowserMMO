@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/includes/map_runtime.php';
+require_once __DIR__ . '/includes/bot_runtime.php';
 require_once __DIR__ . '/includes/ui.php';
 pv_require_login();
 
@@ -12,6 +13,7 @@ $requestedWorld=pv_world_normalize_key((string)($_GET['world']??'vortex'));
 $selectedWorld=isset($worlds[$requestedWorld])?$requestedWorld:'vortex';
 $status=(string)($_GET['status']??'');
 $cutoff=time()-1800;
+pv_bot_tick($db,60);
 
 $catalog=pv_map_catalog();
 $groupCopy=[
@@ -26,6 +28,10 @@ $counts=array_fill(1,25,0);
 if(pv_world_map_column_available($db))$stmt=$db->prepare("SELECT m.map,COUNT(*) c FROM mapusers m INNER JOIN online o ON o.id=m.id WHERE m.world_key='vortex' AND CAST(o.time AS UNSIGNED)>=? GROUP BY m.map");
 else $stmt=$db->prepare('SELECT m.map,COUNT(*) c FROM mapusers m INNER JOIN online o ON o.id=m.id WHERE CAST(o.time AS UNSIGNED)>=? GROUP BY m.map');
 if($stmt){$stmt->bind_param('i',$cutoff);$stmt->execute();$r=$stmt->get_result();while($row=$r->fetch_assoc()){$i=(int)$row['map'];if($i>=1&&$i<=25)$counts[$i]=(int)$row['c'];}$stmt->close();}
+if(pv_bot_registry_ready($db)){
+    $botCounts=$db->query("SELECT map_key,COUNT(*) c FROM bot_trainers WHERE enabled=1 AND world_key='vortex' GROUP BY map_key");
+    if($botCounts){while($row=$botCounts->fetch_assoc()){$i=(int)$row['map_key'];if($i>=1&&$i<=25)$counts[$i]+=(int)$row['c'];}$botCounts->free();}
+}
 $groups=[];foreach($catalog as $id=>$meta)$groups[$meta[0]][$id]=$meta[1];
 
 $regionData=[];
@@ -42,6 +48,10 @@ foreach(pv_world_region_keys() as $regionKey){
     if($areas&&pv_world_map_column_available($db)){
         $stmt=$db->prepare('SELECT m.map,COUNT(*) c FROM mapusers m INNER JOIN online o ON o.id=m.id WHERE m.world_key=? AND CAST(o.time AS UNSIGNED)>=? GROUP BY m.map');
         if($stmt){$stmt->bind_param('si',$regionKey,$cutoff);$stmt->execute();$r=$stmt->get_result();while($row=$r->fetch_assoc())$presence[(string)$row['map']]=(int)$row['c'];$stmt->close();}
+        if(pv_bot_registry_ready($db)){
+            $stmt=$db->prepare('SELECT map_key,COUNT(*) c FROM bot_trainers WHERE enabled=1 AND world_key=? GROUP BY map_key');
+            if($stmt){$stmt->bind_param('s',$regionKey);$stmt->execute();$r=$stmt->get_result();while($row=$r->fetch_assoc()){$key=(string)$row['map_key'];$presence[$key]=(int)($presence[$key]??0)+(int)$row['c'];}$stmt->close();}
+        }
     }
     $regionData[$regionKey]=['areas'=>$areas,'manifest'=>$manifest,'groups'=>$areaGroups,'counts'=>$presence];
 }

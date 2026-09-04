@@ -219,11 +219,12 @@ function pv_db(): mysqli {
     }
 
     $db = pv_config('db', []);
+    $dbPassword = (string)($db['pass'] ?? '');
     mysqli_report(MYSQLI_REPORT_OFF);
     $conn = @new mysqli(
         (string)($db['host'] ?? '127.0.0.1'),
         (string)($db['user'] ?? 'root'),
-        (string)($db['pass'] ?? ''),
+        $dbPassword,
         (string)($db['name'] ?? 'pokemon_vortex'),
         (int)($db['port'] ?? 3306)
     );

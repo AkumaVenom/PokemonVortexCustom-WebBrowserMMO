@@ -2,6 +2,7 @@
 declare(strict_types=1);
 define('PV_DISABLE_OUTPUT_FILTER', true);
 require_once __DIR__ . '/includes/map_runtime.php';
+require_once __DIR__ . '/includes/bot_runtime.php';
 
 header('Content-Type: application/json; charset=UTF-8');
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
@@ -25,6 +26,7 @@ $uid = (int)$_SESSION['myid'];
 $worldKey = (string)($_SESSION['world_key'] ?? 'vortex');
 if ($worldKey !== 'vortex') pv_map_presence_json(['ok'=>false,'error'=>'world'], 409);
 $map = max(1, min(25, (int)($_SESSION['map'] ?? 1)));
+pv_bot_tick($db, 48);
 
 pv_map_presence_json([
     'ok'=>true,
