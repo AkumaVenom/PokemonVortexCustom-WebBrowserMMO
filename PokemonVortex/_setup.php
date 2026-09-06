@@ -147,7 +147,7 @@ $assetVersion = rawurlencode((string)($config['asset_version'] ?? '9.0.0'));
 <img src="<?=$base?>/html/static/images/frontv3.png" alt="Pokémon Vortex">
 </section>
 <section class="pv-auth-panel">
-<div class="pv-brand"><span class="pv-brand-mark">PV</span><span class="pv-brand-copy">LOCAL SETUP<small>PRIVATE MAINTENANCE</small></span></div>
+<div class="pv-brand"><span class="pv-brand-mark"><img src="<?=pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG'))?>" alt=""></span><span class="pv-brand-copy">LOCAL SETUP<small>PRIVATE MAINTENANCE</small></span></div>
 <br>
 <h1>Database maintenance</h1>
 <p>Use the safe upgrade when moving to a newer build. A fresh rebuild is only for a new installation or when you intentionally want to erase all trainer progress.</p>

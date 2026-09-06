@@ -30,7 +30,7 @@ pv_page_start('Change Team','your_pokemon.php',true);
 <div class="pv-game-layout"><?php pv_game_side_menu('change_team.php'); ?><main class="pv-main-column"><section class="pv-page pv-team-builder-page">
 <div class="pv-page-head"><div><span class="pv-eyebrow">ACTIVE TEAM CONFIGURATION</span><h1>Change Team</h1><p class="pv-subtle">Choose up to six different Pokémon. Slot 1 enters wild battles first.</p></div><a class="pv-button pv-button-secondary" href="<?=pv_h(pv_url('your_pokemon.php'))?>">Collection Archive</a></div>
 <?php if(is_array($flash)):?><div class="pv-alert pv-alert-<?=pv_h((string)$flash['type'])?>"><?=pv_h((string)$flash['text'])?></div><?php endif;?>
-<?php if(!$owned):?><div class="pv-empty-state"><span class="pv-brand-mark">PV</span><div><h2>No Pokémon available</h2><p>Capture or obtain a Pokémon before configuring an active team.</p><a class="pv-button" href="<?=pv_h(pv_url('map_select.php'))?>">Explore Maps</a></div></div><?php else:?>
+<?php if(!$owned):?><div class="pv-empty-state"><span class="pv-brand-mark"><img src="<?=pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG'))?>" alt=""></span><div><h2>No Pokémon available</h2><p>Capture or obtain a Pokémon before configuring an active team.</p><a class="pv-button" href="<?=pv_h(pv_url('map_select.php'))?>">Explore Maps</a></div></div><?php else:?>
 <form method="post" class="pv-team-builder"><?=pv_csrf_field()?>
 <div class="pv-team-slot-grid">
 <?php for($slot=1;$slot<=6;$slot++):$selected=(int)$current[$slot-1];$row=$byId[$selected]??null;$display=$row?pv_collection_display_name($row):'';?>

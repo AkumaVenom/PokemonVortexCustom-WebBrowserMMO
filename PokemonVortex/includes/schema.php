@@ -467,6 +467,83 @@ function pv_apply_schema_migrations(mysqli $db): array
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", $changes);
     pv_schema_ensure_innodb($db, 'bot_trainers', $changes);
 
+    // v25 Ranked Rival Network. This progression is deliberately isolated from
+    // the recovered members.points formula so the historic collection ranking
+    // remains compatible while PvP/AI competition can use a stable Elo ladder.
+    pv_schema_ensure_table($db, 'trainer_rank_state', "CREATE TABLE `trainer_rank_state` (
+        `user_id` INT NOT NULL,
+        `rating` INT NOT NULL DEFAULT 1000,
+        `peak_rating` INT NOT NULL DEFAULT 1000,
+        `ranked_wins` INT UNSIGNED NOT NULL DEFAULT 0,
+        `ranked_losses` INT UNSIGNED NOT NULL DEFAULT 0,
+        `current_streak` INT UNSIGNED NOT NULL DEFAULT 0,
+        `best_streak` INT UNSIGNED NOT NULL DEFAULT 0,
+        `shield_until` BIGINT NOT NULL DEFAULT 0,
+        `shield_source_user_id` INT NOT NULL DEFAULT 0,
+        `last_ranked_at` BIGINT NOT NULL DEFAULT 0,
+        `last_attack_at` BIGINT NOT NULL DEFAULT 0,
+        `last_defense_at` BIGINT NOT NULL DEFAULT 0,
+        `updated_at` BIGINT NOT NULL DEFAULT 0,
+        PRIMARY KEY (`user_id`),
+        KEY `idx_rank_rating` (`rating`,`user_id`),
+        KEY `idx_rank_shield` (`shield_until`),
+        KEY `idx_rank_activity` (`last_ranked_at`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", $changes);
+    pv_schema_ensure_innodb($db, 'trainer_rank_state', $changes);
+
+    pv_schema_ensure_table($db, 'rival_battles', "CREATE TABLE `rival_battles` (
+        `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        `attacker_id` INT NOT NULL,
+        `defender_id` INT NOT NULL,
+        `winner_id` INT NOT NULL,
+        `loser_id` INT NOT NULL,
+        `source` VARCHAR(24) NOT NULL DEFAULT 'challenge',
+        `attacker_rating_before` INT NOT NULL DEFAULT 1000,
+        `defender_rating_before` INT NOT NULL DEFAULT 1000,
+        `rating_delta` INT NOT NULL DEFAULT 0,
+        `retaliation_id` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+        `summary` VARCHAR(255) NOT NULL DEFAULT '',
+        `created_at` BIGINT NOT NULL DEFAULT 0,
+        PRIMARY KEY (`id`),
+        KEY `idx_rival_battles_attacker` (`attacker_id`,`created_at`),
+        KEY `idx_rival_battles_defender` (`defender_id`,`created_at`),
+        KEY `idx_rival_battles_recent` (`created_at`),
+        KEY `idx_rival_battles_winner` (`winner_id`,`created_at`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", $changes);
+    pv_schema_ensure_innodb($db, 'rival_battles', $changes);
+
+    pv_schema_ensure_table($db, 'rival_retaliations', "CREATE TABLE `rival_retaliations` (
+        `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        `battle_id` BIGINT UNSIGNED NOT NULL,
+        `defender_id` INT NOT NULL,
+        `attacker_id` INT NOT NULL,
+        `status` VARCHAR(16) NOT NULL DEFAULT 'open',
+        `created_at` BIGINT NOT NULL DEFAULT 0,
+        `expires_at` BIGINT NOT NULL DEFAULT 0,
+        `used_at` BIGINT NOT NULL DEFAULT 0,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `uq_rival_retaliation_battle` (`battle_id`,`defender_id`),
+        KEY `idx_rival_retaliation_owner` (`defender_id`,`status`,`expires_at`),
+        KEY `idx_rival_retaliation_target` (`attacker_id`,`status`,`expires_at`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", $changes);
+    pv_schema_ensure_innodb($db, 'rival_retaliations', $changes);
+
+    pv_schema_ensure_table($db, 'ai_activity', "CREATE TABLE `ai_activity` (
+        `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        `bot_user_id` INT NOT NULL,
+        `category` VARCHAR(32) NOT NULL DEFAULT '',
+        `headline` VARCHAR(160) NOT NULL DEFAULT '',
+        `detail` VARCHAR(255) NOT NULL DEFAULT '',
+        `related_user_id` INT NOT NULL DEFAULT 0,
+        `rating_delta` INT NOT NULL DEFAULT 0,
+        `created_at` BIGINT NOT NULL DEFAULT 0,
+        PRIMARY KEY (`id`),
+        KEY `idx_ai_activity_recent` (`created_at`),
+        KEY `idx_ai_activity_bot` (`bot_user_id`,`created_at`),
+        KEY `idx_ai_activity_category` (`category`,`created_at`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", $changes);
+    pv_schema_ensure_innodb($db, 'ai_activity', $changes);
+
     // Production collection/economy/network tables. These normalized tables
     // replace small or revision-specific historical structures while leaving
     // those old tables intact for import compatibility.
@@ -778,6 +855,27 @@ function pv_apply_schema_migrations(mysqli $db): array
     // Population repair is idempotent: interrupted local setup runs can resume
     // without duplicating bots or touching human trainer progress.
     $botPopulation = pv_bot_ensure_population($db, 2000);
+
+    // Create one ranked state row for every human and autonomous trainer. The
+    // deterministic initial spread is only a bootstrap; subsequent movement is
+    // entirely driven by ranked battle results.
+    if (pv_schema_table_exists($db, 'trainer_rank_state')) {
+        $rankSeedSql = "INSERT IGNORE INTO trainer_rank_state
+            (user_id,rating,peak_rating,ranked_wins,ranked_losses,current_streak,best_streak,shield_until,shield_source_user_id,last_ranked_at,last_attack_at,last_defense_at,updated_at)
+            SELECT m.id,
+                   GREATEST(700,LEAST(1800,1000
+                       + LEAST(260,FLOOR(LOG10(GREATEST(1,COALESCE(m.battle,0)+1))*110))
+                       + GREATEST(-180,LEAST(180,(COALESCE(m.wins,0)-COALESCE(m.losses,0))*3))
+                       + CASE WHEN b.user_id IS NULL THEN 0 ELSE MOD(b.bot_index*37,181)-90 END)),
+                   GREATEST(700,LEAST(1800,1000
+                       + LEAST(260,FLOOR(LOG10(GREATEST(1,COALESCE(m.battle,0)+1))*110))
+                       + GREATEST(-180,LEAST(180,(COALESCE(m.wins,0)-COALESCE(m.losses,0))*3))
+                       + CASE WHEN b.user_id IS NULL THEN 0 ELSE MOD(b.bot_index*37,181)-90 END)),
+                   0,0,0,0,0,0,0,0,0,UNIX_TIMESTAMP()
+            FROM members m LEFT JOIN bot_trainers b ON b.user_id=m.id AND b.enabled=1";
+        if (!$db->query($rankSeedSql)) throw new RuntimeException('Could not seed Ranked Rival Network trainer states: ' . $db->error);
+        if ($db->affected_rows > 0) $changes[] = 'Seeded ' . (int)$db->affected_rows . ' Ranked Rival Network trainer state row(s)';
+    }
     if ((int)($botPopulation['created'] ?? 0) > 0) {
         $changes[] = 'Seeded ' . (int)$botPopulation['created'] . ' autonomous trainer bot account(s)';
     }
@@ -788,7 +886,7 @@ function pv_apply_schema_migrations(mysqli $db): array
     }
 
     if (pv_schema_table_exists($db, 'pv_schema_meta')) {
-        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,27,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
+        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,28,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
     }
 
     return $changes;

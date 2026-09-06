@@ -1,3 +1,21 @@
+## v25.0.0 — Pokémon Rival Network & Autonomous Ranked Trainer Field
+
+- Added an isolated server-authoritative **Rival Network** progression layer with Rival Rating, peak rating, ranked W/L, streaks and last-activity state for every human and autonomous trainer. Historic `members.points` collection ranking remains untouched.
+- Added a polished Pokémon-style **Rival Hub** with recommended close-rating rivals, Elite Rivals, recently active competitors, personal battle history and one-click launch into the existing animated Trainer Snapshot battle engine.
+- Added **15-minute battle protection** after being attacked plus **24-hour one-use retaliation orders**. Normal challenges respect target protection; valid retaliation may answer a protected attacker; starting any outgoing ranked battle immediately drops the attacker's own shield.
+- Added a shared **Top-100 Trainer Rankings** page where players and the 2,000 persistent autonomous trainers climb the same ladder, with Poké/Great/Ultra/Master/Champion tiers, W/L, streaks, peak rating and activity.
+- Added a dedicated **AI Activity** page exposing meaningful ranked, capture, wild-battle and sampled roaming events plus world-population telemetry and top AI ladder pressure.
+- Extended `bot_runtime.php` so due autonomous trainers can perform unattended ranked operations against appropriate unprotected targets using persisted team strength and current ladder rating. Results use the same Elo/history/shield/retaliation settlement path as player ranked battles.
+- Tuned autonomous ranked pressure for a long-running 2,000-trainer world: each AI has a bounded four-hour ranked cadence, human trainers are deliberately preferred when they are valid/open targets so incoming AI challenges are visible to players, defender shields prevent dog-piling, and old autonomous-only history is pruned on rolling retention windows.
+- Preserved the legacy `bot_trainers.player_battles/player_wins/player_losses` contract exclusively for **Live Player Battles**. Rival Network W/L lives only in `trainer_rank_state`, preventing cross-mode telemetry mixing or double-counting.
+- Preserved ordinary non-Rival Trainer Snapshot battles as non-ranked. `battle.php` settles Rival Rating only when the battle was explicitly armed from Rival Hub and the matching one-time session context is still valid.
+- Advanced the database to **schema revision 28** with additive `trainer_rank_state`, `rival_battles`, `rival_retaliations` and `ai_activity` tables plus deterministic `INSERT IGNORE` state seeding for existing players/bots.
+- Rebuilt the site-wide visual language from the old sci-fi navy skin into a brighter **Pokémon-world style** using the packaged Pokémon sprites, trainer sprites and Poké Ball assets. Added Pokémon banner teams, layered hover/highlight depth, a looping Pokédex-style scan beam, decorative sprite field and coherent League-color accents.
+- Replaced shorthand visual emblems such as `PV`, `MAP`, `VS` and `DEX` with actual image assets on the updated surfaces. Login/signup/empty-state branding now uses Poké Ball artwork.
+- Preserved v24.1.1 cinematic Wild, Trainer Snapshot, Live PvP and Live AI battle FX/authority. The new visual JavaScript remains presentation-only and includes reduced-motion fallbacks.
+- Asset cache key advanced to `25.0.0`. Existing v24.1.1 installations must run **Upgrade / Repair once** after copying this release.
+- Final release gate: 233 PHP files lint clean; 33 JavaScript files syntax clean; 34 CSS files structurally balanced; all 14 current-release gates pass; 23 required v25 visual assets verified present.
+
 ## v24.1.1 — Unified Cinematic Battle Stage Hotfix
 
 - Fixed Trainer/Snapshot Battles falling back to the oversized recovered table layout when a Pokémon fainted and the Attack radio controls disappeared. The modernizer now identifies the authoritative two-fighter combat table itself, so attack-result, KO and Continue states remain inside the shared cinematic arena.

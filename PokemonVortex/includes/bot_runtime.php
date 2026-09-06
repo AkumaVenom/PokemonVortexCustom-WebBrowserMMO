@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/map_runtime.php';
+require_once __DIR__ . '/rival_runtime.php';
 
 /**
  * Persistent server-authoritative autonomous trainer runtime.
@@ -488,7 +489,22 @@ function pv_bot_tick(mysqli $db,int $limit=24): int
                 $next=$now+random_int(35,110);$wildName=$wildResult?(string)$wildResult['species']:'';$wildLevel=$wildResult?(int)$wildResult['level']:0;$battleInc=$wildResult?1:0;$winInc=$wildResult&&!empty($wildResult['won'])?1:0;$captureInc=$wildResult&&!empty($wildResult['captured'])?1:0;
                 $stmt=$db->prepare('UPDATE bot_trainers SET world_key=?,map_key=?,x=?,y=?,next_action_at=?,last_action_at=?,last_action=?,last_wild_name=?,last_wild_level=?,wild_battles=wild_battles+?,wild_wins=wild_wins+?,captures=captures+?,updated_at=? WHERE user_id=? AND enabled=1');
                 if($stmt){$stmt->bind_param('ssiiiissiiiiii',$world,$mapKey,$x,$y,$next,$now,$action,$wildName,$wildLevel,$battleInc,$winInc,$captureInc,$now,$uid);$stmt->execute();$stmt->close();}
-                pv_bot_write_presence($db,$uid,(string)$bot['username'],max(1,min(28,(int)$bot['trainer_sprite'])),$world,$mapKey,$x,$y,$now);$processed++;
+                pv_bot_write_presence($db,$uid,(string)$bot['username'],max(1,min(28,(int)$bot['trainer_sprite'])),$world,$mapKey,$x,$y,$now);
+
+                // v25 Rival Network: world simulation now feeds a durable AI
+                // activity stream and, at a bounded cadence, autonomous trainers
+                // actively challenge similarly rated competitors. This never
+                // enters the browser battle engine; watched player battles retain
+                // the existing fully animated authoritative combat flow.
+                try {
+                    $activityBot=$bot;
+                    $activityBot['world_key']=$world;$activityBot['map_key']=$mapKey;
+                    pv_rival_log_bot_world_action($db,$activityBot,$action,$wildResult);
+                    if(random_int(1,100)<=44) pv_rival_bot_ranked_operation($db,$activityBot);
+                } catch(Throwable $rivalError) {
+                    pv_log('Rival Network bot activity failed for '.$uid.': '.$rivalError->getMessage());
+                }
+                $processed++;
             }catch(Throwable $e){
                 pv_log('Autonomous trainer tick failed for '.$uid.': '.$e->getMessage());
                 // Back off a failed identity so one malformed row cannot become a
@@ -498,6 +514,7 @@ function pv_bot_tick(mysqli $db,int $limit=24): int
                 if($stmt){$stmt->bind_param('iisii',$retry,$now,$idle,$now,$uid);$stmt->execute();$stmt->close();}
             }
         }
+        try { pv_rival_housekeeping($db); } catch(Throwable $ignored) {}
     }finally{$db->query("DO RELEASE_LOCK('pokemon_vortex_bot_tick')");}
     return $processed;
 }

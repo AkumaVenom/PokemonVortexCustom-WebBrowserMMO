@@ -1,0 +1,34 @@
+<?php
+declare(strict_types=1);
+require_once __DIR__ . '/includes/rival_ui.php';
+require_once __DIR__ . '/includes/bot_runtime.php';
+pv_require_login();
+$db=pv_db(); $uid=max(1,(int)($_SESSION['myid']??0)); $now=time(); $ready=pv_rival_ready($db);
+$rows=[];$myState=null;$myRank=0;$counts=['total'=>0,'humans'=>0,'bots'=>0,'battles24'=>0];
+$scope=(string)($_GET['scope']??'all'); if(!in_array($scope,['all','human','ai'],true))$scope='all';
+if($ready){
+    pv_rival_ensure_all_states($db); pv_rival_housekeeping($db); pv_bot_tick($db,36); $now=time();
+    $myState=pv_rival_state($db,$uid); if($myState)$myRank=pv_rival_rank_position($db,$uid,(int)$myState['rating'],(int)$myState['ranked_wins']);
+    $r=$db->query("SELECT COUNT(*) total,SUM(b.user_id IS NULL) humans,SUM(b.user_id IS NOT NULL) bots FROM trainer_rank_state rs LEFT JOIN bot_trainers b ON b.user_id=rs.user_id AND b.enabled=1"); if($r){$counts=array_merge($counts,$r->fetch_assoc()?:[]);$r->free();}
+    $r=$db->query('SELECT COUNT(*) c FROM rival_battles WHERE created_at>='.(int)($now-86400)); if($r){$counts['battles24']=(int)($r->fetch_assoc()['c']??0);$r->free();}
+    $where=$scope==='human'?' AND b.user_id IS NULL ':($scope==='ai'?' AND b.user_id IS NOT NULL ':'');
+    $sql="SELECT rs.*,(SELECT COUNT(*)+1 FROM trainer_rank_state gr WHERE gr.rating>rs.rating OR (gr.rating=rs.rating AND gr.ranked_wins>rs.ranked_wins) OR (gr.rating=rs.rating AND gr.ranked_wins=rs.ranked_wins AND gr.user_id<rs.user_id)) global_rank,m.username,COALESCE(b.bot_index,0) bot_index,COALESCE(b.trainer_sprite,0) trainer_sprite,COALESCE(o.trainer,1) trainer,p.name lead_name,CASE WHEN b.user_id IS NULL THEN 0 ELSE 1 END is_bot FROM trainer_rank_state rs JOIN members m ON m.id=rs.user_id LEFT JOIN bot_trainers b ON b.user_id=rs.user_id AND b.enabled=1 LEFT JOIN members_options o ON o.id=rs.user_id LEFT JOIN pokemon p ON p.id=m.s1 AND CAST(p.owner AS UNSIGNED)=m.id WHERE COALESCE(m.s1,0)>0 {$where} ORDER BY rs.rating DESC,rs.ranked_wins DESC,rs.user_id ASC LIMIT 100";
+    $r=$db->query($sql); if($r){$rows=$r->fetch_all(MYSQLI_ASSOC);$r->free();}
+}
+$myTier=pv_rival_tier((int)($myState['rating']??PV_RIVAL_START_RATING));
+pv_page_start('Trainer Rankings','rankings.php',true);
+?>
+<div class="pv-game-layout"><?php pv_game_side_menu('rankings.php'); ?><main class="pv-main-column"><section class="pv-page pv-rankings-page">
+<?php pv_pokemon_banner('GLOBAL BATTLE LADDER','Trainer Rankings','Players and autonomous AI trainers compete on one persistent Rival Rating ladder. Battle protected targets cycle back in, streaks build, and every ranked result can change the global order.',['Mewtwo','Lucario','Dragonite','Gardevoir','Pikachu']); ?>
+<?php if(!$ready):?><div class="pv-flash warning"><strong>Trainer Rankings are waiting to be activated.</strong><span>Open Setup and run Upgrade once to bring the Rival Network ladder online.</span></div><?php else:?>
+<section class="pv-ranking-summary">
+<article class="pv-ranking-self"><span class="pv-ranking-ball"><img src="<?=pv_h(pv_static_file((string)$myTier['ball'],'images/items/Poke Ball.png'))?>" alt=""></span><div><span class="pv-eyebrow">YOUR GLOBAL POSITION</span><h2>#<?=number_format($myRank)?></h2><strong><?=number_format((int)($myState['rating']??0))?> RP</strong><small><?=pv_h((string)$myTier['name'])?> · Peak <?=number_format((int)($myState['peak_rating']??0))?></small></div></article>
+<article><img src="<?=pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG'))?>" alt=""><strong><?=number_format((int)$counts['total'])?></strong><span>Ranked Trainers</span></article>
+<article><img src="<?=pv_h(pv_static_file('images/sprites/2whole.gif','images/Pokeball.PNG'))?>" alt=""><strong><?=number_format((int)$counts['humans'])?></strong><span>Player Trainers</span></article>
+<article><img src="<?=pv_h(pv_static_file('images/items/Ultra Ball.png','images/Pokeball.PNG'))?>" alt=""><strong><?=number_format((int)$counts['bots'])?></strong><span>Autonomous AI</span></article>
+<article><img src="<?=pv_h(pv_static_file('images/pokemon/Lucario.gif','images/Pokeball.PNG'))?>" alt=""><strong><?=number_format((int)$counts['battles24'])?></strong><span>Ranked Battles · 24h</span></article>
+</section>
+<section class="pv-rankings-panel"><div class="pv-rival-section-head"><div><span class="pv-eyebrow">TOP 100</span><h2>Global Trainer Ladder</h2><p>Rating is separate from the historic collection points system: this board measures only Rival Network competition.</p></div><nav class="pv-ranking-filters" aria-label="Ranking filters"><a class="<?=$scope==='all'?'active':''?>" href="<?=pv_h(pv_url('rankings.php?scope=all'))?>">All</a><a class="<?=$scope==='human'?'active':''?>" href="<?=pv_h(pv_url('rankings.php?scope=human'))?>">Players</a><a class="<?=$scope==='ai'?'active':''?>" href="<?=pv_h(pv_url('rankings.php?scope=ai'))?>">AI</a></nav></div>
+<?php if($rows):?><div class="pv-ranking-table" role="table" aria-label="Trainer rankings"><div class="pv-ranking-row pv-ranking-header" role="row"><span>#</span><span>Trainer</span><span>Tier</span><span>Rating</span><span>Record</span><span>Streak</span><span>Activity</span></div><?php foreach($rows as $index=>$row): $rating=(int)$row['rating'];$tier=pv_rival_tier($rating);$trainer=pv_rival_trainer_sprite($row);$isMe=(int)$row['user_id']===$uid;?><a role="row" class="pv-ranking-row <?=$isMe?'is-you':''?> <?=($index<3?'is-podium podium-'.($index+1):'')?>" href="<?=pv_h(pv_rival_profile_url($row))?>"><span class="pv-ranking-number"><?=number_format((int)($row['global_rank']??($index+1)))?></span><span class="pv-ranking-trainer"><i><img class="trainer" src="<?=pv_h(pv_static_file('images/sprites/'.$trainer.'whole.gif','images/sprites/1whole.gif'))?>" alt=""><img class="lead" src="<?=pv_h(pv_rival_lead_url($row))?>" alt=""></i><b><?=pv_h((string)$row['username'])?></b><?=pv_rival_is_bot($row)?'<em>AI</em>':'<em>PLAYER</em>'?><?=$isMe?'<small>YOU</small>':''?></span><span class="pv-rival-tier pv-tier-<?=pv_h((string)$tier['class'])?>"><img src="<?=pv_h(pv_rival_ball_url($rating))?>" alt=""><?=pv_h((string)$tier['short'])?></span><span class="pv-ranking-rating"><strong><?=number_format($rating)?></strong><small>peak <?=number_format((int)$row['peak_rating'])?></small></span><span><?=number_format((int)$row['ranked_wins'])?> W · <?=number_format((int)$row['ranked_losses'])?> L</span><span>×<?=number_format((int)$row['current_streak'])?></span><span><?=pv_h(pv_rival_time_ago((int)$row['last_ranked_at'],$now))?></span></a><?php endforeach;?></div><?php else:?><div class="pv-empty-state"><strong>No ranked trainers are available yet.</strong><span>The ladder will populate as valid trainer teams are created.</span></div><?php endif;?>
+</section>
+<?php endif;?></section></main></div><?php pv_page_end(); ?>

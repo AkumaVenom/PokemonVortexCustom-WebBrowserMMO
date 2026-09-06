@@ -7,6 +7,7 @@ require_once __DIR__ . '/includes/battle_catalog.php';
 require_once __DIR__ . '/includes/event_battle_catalog.php';
 require_once __DIR__ . '/includes/sidequest_catalog.php';
 require_once __DIR__ . '/includes/battle_runtime.php';
+require_once __DIR__ . '/includes/rival_runtime.php';
 if(!isset($_SESSION['myid']) || $_SESSION['access'] != 9){
 	pv_redirect('login.php?goawaxP=1');
 }
@@ -2508,6 +2509,16 @@ if($battleStartRequested){
 								pv_battle_runtime_record_victory($battleDb, $trainerId, (int)$time, $money, $clanName);
 								if(($_SESSION['opponent_profile'][3] ?? '') === 'clan') unset($_SESSION['clan_battle']);
 
+								// Ranked Rival Network settlement is opt-in and session-bound.
+								// Ordinary Trainer Snapshot battles remain exactly as before.
+								if((string)($_SESSION['opponent_profile'][3] ?? '') === ''){
+									$rankedOpponent=max(0,(int)($_SESSION['opponent_profile'][0] ?? 0));
+									if($rankedOpponent>0 && pv_rival_session_context($trainerId,$rankedOpponent)){
+										$rankedResult=pv_rival_complete_session_battle($battleDb,$trainerId,$rankedOpponent,'win');
+										if($rankedResult) echo '<div class="pv-rival-battle-result is-win"><strong>Rival Network Victory</strong><span>Rating +'.number_format((int)$rankedResult['rating_delta']).' · your opponent now has temporary battle protection.</span><a href="'.pv_h(pv_url('rival_hub.php')).'">Return to Rival Hub →</a></div>';
+									}
+								}
+
 								pv_recalculate_trainer_progress($battleDb, $trainerId, true);
 							}
 						}
@@ -2547,6 +2558,13 @@ if($battleStartRequested){
 								$clanName = (($_SESSION['opponent_profile'][3] ?? '') === 'clan') ? trim((string)($_SESSION['clan'] ?? '')) : '';
 								pv_battle_runtime_record_defeat($battleDb, $trainerId, (int)$time, $clanName);
 								if(($_SESSION['opponent_profile'][3] ?? '') === 'clan') unset($_SESSION['clan_battle']);
+								if((string)($_SESSION['opponent_profile'][3] ?? '') === ''){
+									$rankedOpponent=max(0,(int)($_SESSION['opponent_profile'][0] ?? 0));
+									if($rankedOpponent>0 && pv_rival_session_context($trainerId,$rankedOpponent)){
+										$rankedResult=pv_rival_complete_session_battle($battleDb,$trainerId,$rankedOpponent,'loss');
+										if($rankedResult) echo '<div class="pv-rival-battle-result is-loss"><strong>Rival Network Defeat</strong><span>Rating -'.number_format((int)$rankedResult['rating_delta']).' · your opponent now has temporary battle protection.</span><a href="'.pv_h(pv_url('rival_hub.php')).'">Return to Rival Hub →</a></div>';
+									}
+								}
 								echo '<h2>Sorry, you lost the battle.</h2>
 								<h3>Your team lost to ' . htmlentities($_SESSION['opponent_profile'][1]) . '\'s team.</h3>';
 								echo '<p class="optionsList autowidth"><strong>Options:</strong><br />';

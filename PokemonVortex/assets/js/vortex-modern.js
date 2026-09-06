@@ -1171,3 +1171,122 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, {once:true});
   else start();
 })();
+
+/* v25.0.0 — coherent Pokémon-world motion, Rival Network countdowns and card depth. */
+(() => {
+  'use strict';
+
+  const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+
+  const staticRoot = () => {
+    const link = document.querySelector('link[href*="vortex-modern.css"]');
+    if (!link?.href) return null;
+    try { return new URL('../../html/static/', link.href); } catch (_) { return null; }
+  };
+
+  const decorateLegacyPages = () => {
+    document.body?.classList.add('pv-pokemon-theme-v25');
+    if (document.querySelector('.pv-global-spritefield')) return;
+    const root = staticRoot();
+    if (!root || !document.body) return;
+    const field = document.createElement('div');
+    field.className = 'pv-global-spritefield pv-global-spritefield-injected';
+    field.setAttribute('aria-hidden', 'true');
+    const pokemon = ['Pikachu','Eevee','Charizard','Gengar','Lucario','Mudkip','Treecko','Torchic','Snorlax','Dragonite'];
+    pokemon.forEach((name) => {
+      const img = document.createElement('img');
+      img.alt = '';
+      img.loading = 'lazy';
+      img.src = new URL(`images/pokemon/${name}.gif`, root).href;
+      field.appendChild(img);
+    });
+    [['ball-a','Poke Ball.png'],['ball-b','Great Ball.png'],['ball-c','Ultra Ball.png']].forEach(([cls,file]) => {
+      const holder = document.createElement('i');
+      holder.className = `pv-float-ball ${cls}`;
+      const img = document.createElement('img');
+      img.alt = '';
+      img.loading = 'lazy';
+      img.src = new URL(`images/items/${file}`, root).href;
+      holder.appendChild(img);
+      field.appendChild(holder);
+    });
+    document.body.prepend(field);
+  };
+
+  const formatCountdown = (remaining) => {
+    remaining = Math.max(0, Math.floor(remaining));
+    const hours = Math.floor(remaining / 3600);
+    const minutes = Math.floor((remaining % 3600) / 60);
+    const seconds = remaining % 60;
+    if (hours > 0) return `${hours}h ${String(minutes).padStart(2,'0')}m`;
+    return `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+  };
+
+  const armCountdowns = () => {
+    const nodes = Array.from(document.querySelectorAll('[data-pv-countdown]'));
+    if (!nodes.length) return;
+    const tick = () => {
+      const now = Math.floor(Date.now() / 1000);
+      let hasActive = false;
+      nodes.forEach((node) => {
+        const end = Number(node.dataset.pvCountdown || 0);
+        if (!Number.isFinite(end) || end <= 0) return;
+        const remaining = Math.max(0, end - now);
+        if (remaining > 0) {
+          hasActive = true;
+          node.textContent = formatCountdown(remaining);
+        } else {
+          node.textContent = node.closest('.pv-retaliation-card') ? 'EXPIRED' : 'READY';
+          node.classList.add('is-complete');
+          const protectedBox = node.closest('.pv-rival-protected');
+          if (protectedBox) protectedBox.classList.add('is-expired');
+        }
+      });
+      if (!hasActive && timer) clearInterval(timer);
+    };
+    let timer = 0;
+    tick();
+    timer = window.setInterval(tick, 1000);
+  };
+
+  const armCardDepth = () => {
+    if (reducedMotion || !window.matchMedia?.('(hover:hover) and (pointer:fine)').matches) return;
+    const cards = document.querySelectorAll('.pv-rival-target,.pv-dashboard-feature,.pv-ai-zone-grid article');
+    cards.forEach((card) => {
+      card.addEventListener('pointermove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / Math.max(1, rect.width);
+        const y = (event.clientY - rect.top) / Math.max(1, rect.height);
+        card.style.setProperty('--tilt-y', `${((x - .5) * 4.5).toFixed(2)}deg`);
+        card.style.setProperty('--tilt-x', `${((.5 - y) * 4.0).toFixed(2)}deg`);
+      }, {passive:true});
+      card.addEventListener('pointerleave', () => {
+        card.style.setProperty('--tilt-y', '0deg');
+        card.style.setProperty('--tilt-x', '0deg');
+      }, {passive:true});
+    });
+  };
+
+  const armReveal = () => {
+    if (reducedMotion || !('IntersectionObserver' in window)) return;
+    const items = document.querySelectorAll('.pv-rival-section,.pv-ranking-summary,.pv-rankings-panel,.pv-ai-kpis,.pv-ai-zone-strip,.pv-ai-feed-panel,.pv-ai-pressure-panel,.pv-dashboard-rival-card');
+    items.forEach((item) => item.classList.add('pv-pokemon-reveal'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, {threshold:.08, rootMargin:'0px 0px -24px'});
+    items.forEach((item) => observer.observe(item));
+  };
+
+  const start = () => {
+    decorateLegacyPages();
+    armCountdowns();
+    armCardDepth();
+    armReveal();
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, {once:true});
+  else start();
+})();
