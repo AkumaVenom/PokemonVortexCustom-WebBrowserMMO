@@ -65,9 +65,11 @@ try {
             }
         }
         pv_live_runtime_project_session($state, $userSlot);
+        // Settle immediately and idempotently, but keep this terminal state on the
+        // shared battle stage for one final KO/result replay. The user explicitly
+        // hands off to the durable result receipt after the cinematic beat.
         pv_live_settle_result($db, $battleId, $userSlot, $opponentSlot, $userId, $opponentId, $outcome);
         $_SESSION['live_last_result_battle_id'] = $battleId;
-        pv_redirect('live_battle_result.php?match=' . $battleId);
     }
 } catch (Throwable $e) {
     $error = trim($error . ' The match could not be loaded. Return to the Live Battle Arena and start a new challenge.');
@@ -80,14 +82,33 @@ function pv_live_page_fighter(array $participant): ?array
     return $index >= 0 && isset($participant['team'][$index]) ? $participant['team'][$index] : null;
 }
 
+function pv_live_page_display_fighter(array $participant, array $state): ?array
+{
+    $active = pv_live_page_fighter($participant);
+    if ($active) return $active;
+
+    // During an authoritative KO/switch phase the runtime intentionally clears the
+    // active id. Keep the just-fainted combatant visible for the cinematic replay.
+    $log = array_reverse((array)($state['log'] ?? []));
+    foreach ($log as $entry) {
+        $message = trim((string)($entry['message'] ?? ''));
+        if (!preg_match('/^(.+?) fainted\.$/u', $message, $match)) continue;
+        $faintedName = trim((string)$match[1]);
+        foreach ((array)($participant['team'] ?? []) as $candidate) {
+            if ((string)($candidate['name'] ?? '') === $faintedName) return $candidate;
+        }
+    }
+    return null;
+}
+
 function pv_live_page_sprite(string $name): string
 {
     return 'html/static/images/pokemon/' . rawurlencode($name) . '.gif';
 }
 
-function pv_live_page_fighter_card(array $participant, bool $enemy): void
+function pv_live_page_fighter_card(array $participant, bool $enemy, ?array $fighter = null): void
 {
-    $fighter = pv_live_page_fighter($participant);
+    $fighter ??= pv_live_page_fighter($participant);
     $label = $enemy ? 'OPPOSING TRAINER' : 'ACTIVE PARTNER';
     $class = $enemy ? 'pv-wild-enemy' : 'pv-wild-player';
     if (!$fighter) {
@@ -98,7 +119,8 @@ function pv_live_page_fighter_card(array $participant, bool $enemy): void
     $maxHp = max(1, (int)$fighter['max_hp']);
     $percent = max(0, min(100, (int)round(($hp / $maxHp) * 100)));
     $hud = '<div class="pv-wild-fighter-hud"><div><small>' . $label . '</small><h2>' . pv_h((string)$fighter['name']) . '</h2><span>Lv. ' . number_format((int)$fighter['level']) . ' · ' . pv_h((string)$participant['name']) . '</span></div><strong>' . number_format($hp) . ' / ' . number_format($maxHp) . ' HP</strong></div><div class="pv-wild-hp"><i style="width:' . $percent . '%"></i></div>';
-    $sprite = '<div class="pv-wild-sprite-zone"><span class="pv-wild-scan-ring"></span><img src="' . pv_h(pv_live_page_sprite((string)$fighter['name'])) . '" alt="' . pv_h((string)$fighter['name']) . '"></div>';
+    $side = $enemy ? 'enemy' : 'player';
+    $sprite = '<div class="pv-wild-sprite-zone" data-pv-fighter="' . $side . '" data-pv-fighter-hp="' . $hp . '" data-pv-fighter-level="' . (int)$fighter['level'] . '"><span class="pv-wild-scan-ring"></span><img src="' . pv_h(pv_live_page_sprite((string)$fighter['name'])) . '" alt="' . pv_h((string)$fighter['name']) . '"></div>';
     echo '<article class="pv-wild-fighter ' . $class . ' pv-combat-fighter-card">' . ($enemy ? $hud.$sprite : $sprite.$hud) . '</article>';
 }
 
@@ -116,20 +138,24 @@ $turn = max(0, (int)($state['turn'] ?? 0));
 $revision = max(0, (int)($state['revision'] ?? 0));
 $ownWaiting = in_array($phase, ['select','switch'], true) ? pv_live_runtime_active_is_ready($own) : ($phase === 'command' && is_array($own['command'] ?? null));
 $inventory = $state ? pv_live_runtime_inventory($db, $userId) : [];
+$ownDisplayFighter = $state ? pv_live_page_display_fighter($own, $state) : null;
+$opponentDisplayFighter = $state ? pv_live_page_display_fighter($opponent, $state) : null;
+$liveMoveTypes = $state ? pv_live_runtime_move_types($db, $state) : [];
 
 pv_page_start('Live Battle', 'battle_select.php', true);
 ?>
 <div class="pv-game-layout">
 <?php pv_game_side_menu('battle_select.php'); ?>
 <main class="pv-main-column"><section class="pv-page pv-live-runtime-page">
-<div class="pv-page-head"><div><span class="pv-eyebrow"><?=$opponentIsBot?'LIVE BATTLE // AUTONOMOUS TRAINER':'LIVE BATTLE // REAL-TIME PVP'?></span><h1><?=$opponentIsBot?'Live AI Battle':'Live Battle'?></h1><p class="pv-subtle"><?=$opponentIsBot?'Battle a persistent autonomous trainer using the same server-authoritative Live Battle engine.':'Battle another trainer in real time.'?> Match #<?=number_format($battleId)?> · Turn <?=number_format($turn)?></p></div><div class="pv-combat-runtime-signal"><i></i><strong>MATCH STATUS</strong><span><?=pv_h(strtoupper($phase))?></span></div></div>
+<div class="pv-page-head"><div><span class="pv-eyebrow"><?=$opponentIsBot?'LIVE BATTLE // AUTONOMOUS TRAINER':'LIVE BATTLE // REAL-TIME PVP'?></span><h1><?=$opponentIsBot?'Live AI Battle':'Live Battle'?></h1><p class="pv-subtle"><?=$opponentIsBot?'Battle a persistent autonomous trainer using the same synchronized Live Battle system.':'Battle another trainer in real time.'?> Match #<?=number_format($battleId)?> · Turn <?=number_format($turn)?></p></div><div class="pv-combat-runtime-signal"><i></i><strong>MATCH STATUS</strong><span><?=pv_h(strtoupper($phase))?></span></div></div>
 <?php if($error): ?><div class="pv-flash danger"><?=pv_h($error)?></div><?php endif; ?>
 <?php if($state): ?>
-<div class="pv-combat-modern-surface" data-pv-live-runtime>
-<div class="pv-wild-arena"><?php pv_live_page_fighter_card($opponent, true); ?><div class="pv-wild-versus"><span>VS</span><i></i></div><?php pv_live_page_fighter_card($own, false); ?></div>
+<div class="pv-combat-modern-surface" data-pv-live-runtime data-pv-live-turn="<?=number_format($turn,0,'.','')?>" data-pv-live-phase="<?=pv_h($phase)?>" data-pv-live-match-id="<?=number_format($battleId,0,'.','')?>" data-pv-live-user-slot="<?=number_format($userSlot,0,'.','')?>" data-pv-live-opponent-slot="<?=number_format($opponentSlot,0,'.','')?>" data-pv-live-own-trainer="<?=pv_h((string)($own['name'] ?? 'Trainer'))?>" data-pv-live-opponent-trainer="<?=pv_h((string)($opponent['name'] ?? 'Trainer'))?>">
+<div class="pv-wild-arena" data-pv-battle-fx-stage="live"><?php pv_live_page_fighter_card($opponent, true, $opponentDisplayFighter); ?><div class="pv-wild-versus"><span>VS</span><i></i></div><?php pv_live_page_fighter_card($own, false, $ownDisplayFighter); ?></div>
+<script type="application/json" id="pv-live-battle-move-types"><?=json_encode($liveMoveTypes, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT)?></script>
 <div class="pv-wild-lower-grid">
 <section class="pv-wild-log-panel"><div class="pv-map-panel-label">TURN LOG</div><div class="pv-wild-log">
-<?php foreach(array_reverse((array)($state['log'] ?? [])) as $entry): ?><div class="tone-<?=pv_h((string)($entry['tone'] ?? 'info'))?>"><i></i><span><?=pv_h((string)($entry['message'] ?? ''))?></span></div><?php endforeach; ?>
+<?php foreach(array_reverse((array)($state['log'] ?? [])) as $entry): ?><div class="tone-<?=pv_h((string)($entry['tone'] ?? 'info'))?>" data-pv-log-turn="<?=(int)($entry['turn'] ?? 0)?>"><i></i><span><?=pv_h((string)($entry['message'] ?? ''))?></span></div><?php endforeach; ?>
 </div></section>
 <section class="pv-wild-control-panel"><div class="pv-map-panel-label">BATTLE COMMAND // <?=pv_h(strtoupper($phase))?></div>
 <?php if($ownWaiting): ?>
@@ -140,20 +166,30 @@ pv_page_start('Live Battle', 'battle_select.php', true);
 <?php foreach((array)($own['team'] ?? []) as $fighter): $living=(int)$fighter['hp']>0; ?><form method="post"><?=pv_live_page_form_fields('select')?><input type="hidden" name="pokemon_id" value="<?=(int)$fighter['id']?>"><button type="submit" <?=!$living?'disabled':''?>><img src="<?=pv_h(pv_live_page_sprite((string)$fighter['name']))?>" alt=""><span><strong><?=pv_h((string)$fighter['name'])?></strong><small>Lv. <?=(int)$fighter['level']?> · <?=(int)$fighter['hp']?> / <?=(int)$fighter['max_hp']?> HP</small></span></button></form><?php endforeach; ?>
 </div>
 <?php elseif($phase === 'command'): $active=pv_live_page_fighter($own); ?>
-<div class="pv-live-runtime-command-grid">
-<section><div class="pv-live-runtime-section-head"><strong>Fight</strong><span>Choose one move each turn.</span></div><div class="pv-wild-move-grid">
-<?php foreach((array)($active['moves'] ?? []) as $index=>$move): ?><form method="post"><?=pv_live_page_form_fields('attack')?><input type="hidden" name="move_slot" value="<?=$index+1?>"><button type="submit"><small>MOVE SLOT <?=$index+1?></small><strong><?=pv_h((string)$move)?></strong><span>Choose move</span></button></form><?php endforeach; ?>
-</div></section>
-<section><div class="pv-live-runtime-section-head"><strong>Items</strong><span>Choose an item to use this turn.</span></div><div class="pv-wild-item-grid">
-<?php foreach($inventory as $item=>$quantity): ?><form method="post"><?=pv_live_page_form_fields('item')?><input type="hidden" name="item" value="<?=pv_h($item)?>"><button type="submit" <?=$quantity<=0?'disabled':''?>><strong><?=pv_h($item)?></strong><span><?=number_format($quantity)?> available</span></button></form><?php endforeach; ?>
-</div></section>
-<section><div class="pv-live-runtime-section-head"><strong>Team</strong><span>Switching happens before attacks.</span></div><div class="pv-wild-team-grid pv-live-runtime-team-grid compact">
-<?php foreach((array)($own['team'] ?? []) as $fighter): $canSwitch=(int)$fighter['hp']>0 && (int)$fighter['id']!==(int)($own['active']??0); ?><form method="post"><?=pv_live_page_form_fields('switch')?><input type="hidden" name="pokemon_id" value="<?=(int)$fighter['id']?>"><button type="submit" <?=!$canSwitch?'disabled':''?>><img src="<?=pv_h(pv_live_page_sprite((string)$fighter['name']))?>" alt=""><span><strong><?=pv_h((string)$fighter['name'])?></strong><small><?=(int)$fighter['hp']?> / <?=(int)$fighter['max_hp']?> HP</small></span></button></form><?php endforeach; ?>
-</div></section>
+<div class="pv-wild-command-tabs pv-live-command-tabs" data-pv-unified-command-tabs>
+<button type="button" class="active" data-pv-battle-tab="moves">Fight</button>
+<button type="button" data-pv-battle-tab="items">Items</button>
+<button type="button" data-pv-battle-tab="team">Team</button>
+<button type="button" data-pv-battle-tab="forfeit">Forfeit</button>
 </div>
-<?php elseif($phase === 'complete'): ?><div class="pv-empty-state"><strong>This match has finished.</strong><span>Your result is still being recorded. Use the button below to finish and continue.</span></div><div class="pv-actions"><a class="pv-button" href="<?=pv_h(pv_url('live_battle.php'))?>">Retry Result</a></div>
+<div class="pv-wild-command-view active" data-pv-battle-view="moves">
+<div class="pv-live-runtime-section-head"><strong>Fight</strong><span>Choose one move for this turn.</span></div><div class="pv-wild-move-grid">
+<?php foreach((array)($active['moves'] ?? []) as $index=>$move): $moveType=$liveMoveTypes[(string)$move] ?? 'normal'; ?><form method="post"><?=pv_live_page_form_fields('attack')?><input type="hidden" name="move_slot" value="<?=$index+1?>"><button type="submit"><small><?=pv_h(strtoupper($moveType))?> · MOVE SLOT <?=$index+1?></small><strong><?=pv_h((string)$move)?></strong><span>BATTLE COMMAND</span></button></form><?php endforeach; ?>
+</div></div>
+<div class="pv-wild-command-view" data-pv-battle-view="items">
+<div class="pv-live-runtime-section-head"><strong>Items</strong><span>Choose an item to resolve before the opponent's attack.</span></div><div class="pv-wild-item-grid">
+<?php foreach($inventory as $item=>$quantity): ?><form method="post"><?=pv_live_page_form_fields('item')?><input type="hidden" name="item" value="<?=pv_h($item)?>"><button type="submit" <?=$quantity<=0?'disabled':''?>><strong><?=pv_h($item)?></strong><span><?=number_format($quantity)?> available</span></button></form><?php endforeach; ?>
+</div></div>
+<div class="pv-wild-command-view" data-pv-battle-view="team">
+<div class="pv-live-runtime-section-head"><strong>Team</strong><span>Switching resolves before attacks and keeps the same battle-stage flow.</span></div><div class="pv-wild-team-grid pv-live-runtime-team-grid compact">
+<?php foreach((array)($own['team'] ?? []) as $fighter): $canSwitch=(int)$fighter['hp']>0 && (int)$fighter['id']!==(int)($own['active']??0); ?><form method="post"><?=pv_live_page_form_fields('switch')?><input type="hidden" name="pokemon_id" value="<?=(int)$fighter['id']?>"><button type="submit" <?=!$canSwitch?'disabled':''?>><img src="<?=pv_h(pv_live_page_sprite((string)$fighter['name']))?>" alt=""><span><strong><?=pv_h((string)$fighter['name'])?></strong><small>Lv. <?=(int)$fighter['level']?> · <?=(int)$fighter['hp']?> / <?=(int)$fighter['max_hp']?> HP</small></span></button></form><?php endforeach; ?>
+</div></div>
+<div class="pv-wild-command-view" data-pv-battle-view="forfeit">
+<div class="pv-wild-run-box"><strong>Forfeit match?</strong><span>Forfeiting records a loss and cannot be undone.</span><form method="post" onsubmit="return confirm('Forfeit this Live Battle?');"><?=pv_live_page_form_fields('forfeit')?><button class="pv-button pv-button-secondary" type="submit">Forfeit Match</button></form></div>
+</div>
+<?php elseif($phase === 'complete'): ?><div class="pv-live-complete-command"><span>MATCH COMPLETE</span><strong><?=((int)($state['winner_slot']??0)===$userSlot)?'Victory confirmed':'Defeat recorded'?></strong><p>This match has finished. The final turn remains on the arena so the knockout and impact sequence can finish before you view the result.</p><a class="pv-button" href="<?=pv_h(pv_url('live_battle_result.php?match='.(int)$battleId))?>">View Battle Result</a></div>
 <?php else: ?><div class="pv-empty-state"><strong>This match could not be loaded.</strong><span>Return to the arena and start a new challenge.</span></div><?php endif; ?>
-<?php if($phase !== 'complete'): ?><form method="post" class="pv-live-runtime-forfeit" onsubmit="return confirm('Forfeit this Live Battle?');"><?=pv_live_page_form_fields('forfeit')?><button class="pv-button pv-button-secondary" type="submit">Forfeit Match</button></form><?php endif; ?>
+<?php if($phase !== 'complete' && $phase !== 'command'): ?><form method="post" class="pv-live-runtime-forfeit" onsubmit="return confirm('Forfeit this Live Battle?');"><?=pv_live_page_form_fields('forfeit')?><button class="pv-button pv-button-secondary" type="submit">Forfeit Match</button></form><?php endif; ?>
 </section></div></div>
 <?php else: ?><div class="pv-panel"><div class="pv-empty-state"><strong>This match could not be loaded.</strong><span>Return to the arena and start a fresh challenge.</span></div><div class="pv-actions"><a class="pv-button" href="<?=pv_h(pv_url('live_battle_arena.php'))?>">Live Battle Arena</a></div></div><?php endif; ?>
 </section></main></div>

@@ -131,6 +131,7 @@ $wildHpPct = max(0, min(100, (int)round(((int)$wild['hp'] / max(1,(int)$wild['ma
 $playerHpPct = max(0, min(100, (int)round(((int)$active['hp'] / max(1,(int)$active['max_hp'])) * 100)));
 $wildSprite = pv_static_file('images/pokemon/' . (string)$wild['sprite_name'] . '.gif', 'images/Pokeball.PNG');
 $playerSprite = pv_pokemon_sprite((string)$active['name']);
+$battleFx = is_array($state['fx'] ?? null) ? $state['fx'] : ['action'=>'intro','turn'=>0];
 
 pv_page_start('Wild Battle · ' . (string)$wild['display_name'], 'battle_select.php', true);
 ?>
@@ -155,20 +156,20 @@ pv_page_start('Wild Battle · ' . (string)$wild['display_name'], 'battle_select.
         </div>
     <?php endif; ?>
 
-    <div class="pv-wild-arena <?= !$battleActive ? 'is-complete' : '' ?>">
+    <div class="pv-wild-arena <?= !$battleActive ? 'is-complete' : '' ?>" data-pv-battle-fx-stage>
         <article class="pv-wild-fighter pv-wild-enemy">
             <div class="pv-wild-fighter-hud">
                 <div><small>WILD TARGET</small><h2><?= pv_h((string)$wild['display_name']) ?></h2><span>Lv. <?= (int)$wild['level'] ?> · <?= pv_h((string)$wild['type1']) ?><?= trim((string)$wild['type2'])!==''?' / '.pv_h((string)$wild['type2']):'' ?></span></div>
                 <strong><?= (int)$wild['hp'] ?> / <?= (int)$wild['max_hp'] ?> HP</strong>
             </div>
             <div class="pv-wild-hp"><i style="width:<?= $wildHpPct ?>%"></i></div>
-            <div class="pv-wild-sprite-zone"><span class="pv-wild-scan-ring"></span><img src="<?= pv_h($wildSprite) ?>" alt="Wild <?= pv_h((string)$wild['display_name']) ?>"></div>
+            <div class="pv-wild-sprite-zone" data-pv-fighter="enemy"><span class="pv-wild-scan-ring"></span><img src="<?= pv_h($wildSprite) ?>" alt="Wild <?= pv_h((string)$wild['display_name']) ?>"></div>
         </article>
 
         <div class="pv-wild-versus"><span>VS</span><i></i></div>
 
         <article class="pv-wild-fighter pv-wild-player">
-            <div class="pv-wild-sprite-zone"><span class="pv-wild-scan-ring"></span><img src="<?= pv_h($playerSprite) ?>" alt="<?= pv_h((string)$active['name']) ?>"></div>
+            <div class="pv-wild-sprite-zone" data-pv-fighter="player"><span class="pv-wild-scan-ring"></span><img src="<?= pv_h($playerSprite) ?>" alt="<?= pv_h((string)$active['name']) ?>"></div>
             <div class="pv-wild-fighter-hud">
                 <div><small>ACTIVE PARTNER</small><h2><?= pv_h((string)$active['name']) ?></h2><span>Lv. <?= (int)$active['level'] ?> · <?= pv_h((string)$active['type1']) ?><?= trim((string)$active['type2'])!==''?' / '.pv_h((string)$active['type2']):'' ?></span></div>
                 <strong><?= (int)$active['hp'] ?> / <?= (int)$active['max_hp'] ?> HP</strong>
@@ -231,6 +232,7 @@ pv_page_start('Wild Battle · ' . (string)$wild['display_name'], 'battle_select.
 </section>
 </main>
 </div>
+<script type="application/json" id="pv-wild-battle-fx"><?=json_encode($battleFx, JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)?></script>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{const root=document.querySelector('[data-pv-battle-tabs]');if(!root)return;const buttons=[...root.querySelectorAll('[data-pv-battle-tab]')];const views=[...document.querySelectorAll('[data-pv-battle-view]')];buttons.forEach(btn=>btn.addEventListener('click',()=>{buttons.forEach(b=>b.classList.toggle('active',b===btn));views.forEach(v=>v.classList.toggle('active',v.dataset.pvBattleView===btn.dataset.pvBattleTab));}));});
 </script>

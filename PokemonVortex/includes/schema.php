@@ -777,7 +777,7 @@ function pv_apply_schema_migrations(mysqli $db): array
 
     // Population repair is idempotent: interrupted local setup runs can resume
     // without duplicating bots or touching human trainer progress.
-    $botPopulation = pv_bot_ensure_population($db, 1000);
+    $botPopulation = pv_bot_ensure_population($db, 2000);
     if ((int)($botPopulation['created'] ?? 0) > 0) {
         $changes[] = 'Seeded ' . (int)$botPopulation['created'] . ' autonomous trainer bot account(s)';
     }

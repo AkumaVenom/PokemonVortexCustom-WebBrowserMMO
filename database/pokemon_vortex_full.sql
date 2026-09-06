@@ -1,13 +1,12 @@
 -- Pokémon Vortex - game database package
 -- Built from the supplied game data plus compatibility migrations.
 -- Target: MariaDB 10.x / MySQL 5.7+
---
--- Public-distribution credential policy (v23.7.1):
--- this SQL creates/imports only the game database. It does not create, alter,
--- rotate, harden or delete MySQL/MariaDB accounts. _setup.php authenticates
--- using exactly the host/user/password configured in public_html/config/app.php.
--- A blank password is therefore supported for an untouched local XAMPP root
--- account, while users with a password can configure their own credential.
+
+-- Database-service credentials are deliberately NOT managed by this SQL file.
+-- The public XAMPP package defaults to root with a blank password in config/app.php,
+-- but operators may set any local password they require. Fresh Rebuild and
+-- Upgrade / Repair use the configured credential as-is and never CREATE, ALTER,
+-- DROP, or otherwise rewrite MySQL/MariaDB user accounts.
 
 CREATE DATABASE IF NOT EXISTS `pokemon_vortex` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `pokemon_vortex`;

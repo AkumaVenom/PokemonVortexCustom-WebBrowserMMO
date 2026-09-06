@@ -92,12 +92,78 @@ function pv_bot_username(int $index): string
 
 function pv_bot_region_assignment(int $index): array
 {
+    // Preserve the accepted v23.7.0 placement contract for the original 1,000
+    // identities. Existing bots are never relocated by a population repair.
     if ($index <= 400) return ['vortex', (string)(((($index - 1) % 25) + 1))];
-    $world = $index <= 700 ? 'kanto' : 'hoenn';
-    $areas = array_keys(pv_world_ready_areas($world));
-    if ($areas === []) return ['vortex', (string)(((($index - 1) % 25) + 1))];
-    $offset = $world === 'kanto' ? $index - 401 : $index - 701;
-    return [$world, (string)$areas[$offset % count($areas)]];
+    if ($index <= 1000) {
+        $world = $index <= 700 ? 'kanto' : 'hoenn';
+        $areas = array_keys(pv_world_ready_areas($world));
+        if ($areas === []) return ['vortex', (string)(((($index - 1) % 25) + 1))];
+        $offset = $world === 'kanto' ? $index - 401 : $index - 701;
+        return [$world, (string)$areas[$offset % count($areas)]];
+    }
+
+    // Database-free fallback for tooling/tests. Runtime seeding for identities
+    // above 1,000 uses pv_bot_lowest_population_assignment() below.
+    $maps = pv_bot_population_maps();
+    if ($maps === []) return ['vortex', (string)(((($index - 1) % 25) + 1))];
+    $choice = $maps[($index - 1001) % count($maps)];
+    return [(string)$choice['world'], (string)$choice['map']];
+}
+
+function pv_bot_population_maps(): array
+{
+    static $maps = null;
+    if (is_array($maps)) return $maps;
+    $maps = [];
+    for ($map = 1; $map <= 25; $map++) $maps[] = ['world'=>'vortex','map'=>(string)$map];
+    foreach (pv_world_region_keys() as $world) {
+        foreach (array_keys(pv_world_ready_areas($world)) as $mapKey) {
+            $maps[] = ['world'=>(string)$world,'map'=>(string)$mapKey];
+        }
+    }
+    return $maps;
+}
+
+function pv_bot_population_count_key(string $world, string $mapKey): string
+{
+    return pv_world_normalize_key($world) . "\0" . (string)$mapKey;
+}
+
+function pv_bot_lowest_population_choice(array $counts, int $index): array
+{
+    $maps = pv_bot_population_maps();
+    if ($maps === []) return pv_bot_region_assignment($index);
+    $lowest = PHP_INT_MAX;
+    $candidates = [];
+    foreach ($maps as $map) {
+        $key = pv_bot_population_count_key((string)$map['world'], (string)$map['map']);
+        $count = max(0, (int)($counts[$key] ?? 0));
+        if ($count < $lowest) {
+            $lowest = $count;
+            $candidates = [$map];
+        } elseif ($count === $lowest) {
+            $candidates[] = $map;
+        }
+    }
+    if ($candidates === []) return pv_bot_region_assignment($index);
+    $offset = max(0, $index - 1001) % count($candidates);
+    $choice = $candidates[$offset];
+    return [(string)$choice['world'], (string)$choice['map']];
+}
+
+function pv_bot_lowest_population_assignment(mysqli $db, int $index): array
+{
+    $counts = [];
+    $result = $db->query('SELECT world_key,map_key,COUNT(*) AS bot_count FROM bot_trainers WHERE enabled=1 GROUP BY world_key,map_key');
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $key = pv_bot_population_count_key((string)($row['world_key'] ?? ''), (string)($row['map_key'] ?? ''));
+            $counts[$key] = max(0, (int)($row['bot_count'] ?? 0));
+        }
+        $result->free();
+    }
+    return pv_bot_lowest_population_choice($counts, $index);
 }
 
 function pv_bot_spawn_occupied(mysqli $db, string $world, string $mapKey): array
@@ -259,7 +325,7 @@ function pv_bot_seed_one(mysqli $db, int $index): int
         }
     }}
 
-    [$world,$mapKey]=pv_bot_region_assignment($index);
+    [$world,$mapKey]=$index<=1000?pv_bot_region_assignment($index):pv_bot_lowest_population_assignment($db,$index);
     [$x,$y]=pv_bot_spawn_for($db,$world,$mapKey,$index);
     $trainer=(($index-1)%28)+1;
     $starters=pv_bot_starter_names();$starter=$starters[($index-1)%count($starters)];
@@ -308,10 +374,10 @@ function pv_bot_seed_one(mysqli $db, int $index): int
     }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}throw $e;}
 }
 
-function pv_bot_ensure_population(mysqli $db, int $target=1000): array
+function pv_bot_ensure_population(mysqli $db, int $target=2000): array
 {
     if(!pv_bot_registry_ready($db))throw new RuntimeException('Bot trainer registry is unavailable.');
-    $target=max(0,min(1000,$target));
+    $target=max(0,min(2000,$target));
     $existingIndexes=[];$existing=0;
     $r=$db->query('SELECT bot_index FROM bot_trainers ORDER BY bot_index');
     if($r){while($row=$r->fetch_assoc()){$index=(int)$row['bot_index'];$existingIndexes[$index]=true;$existing++;}$r->free();}

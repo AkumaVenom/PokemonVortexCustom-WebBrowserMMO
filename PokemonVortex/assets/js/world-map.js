@@ -23,11 +23,10 @@
     players: Array.isArray(cfg.players) ? cfg.players : [],
     blocked: Array.isArray(cfg.blockedDirections) ? cfg.blockedDirections.map(Number) : [],
     moving: false,
+    lastDirection: 2,
   };
 
-  const esc = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;',
-  }[ch]));
+  const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true;
 
   function sprite(trainer, own) {
     const n = Math.max(1, Math.min(29, Number(trainer) || 1));
@@ -35,34 +34,119 @@
     return `<img class="pv-map-sprite-top" src="${cfg.spriteBase}${highlighted ? 'otop' : 'top'}${n}.gif" alt=""><img class="pv-map-sprite-bottom" src="${cfg.spriteBase}${highlighted ? 'o' : ''}${n}.gif" alt="">`;
   }
 
-  function actor(player, own = false) {
+  function actorKey(player, own) {
+    if (own) return 'self';
+    const id = Math.max(0, Number(player.id) || 0);
+    return id > 0 ? `player-${id}` : `guest-${String(player.username || 'trainer')}`;
+  }
+
+  function facingFromDelta(dx, dy, fallback = 2) {
+    if (Math.abs(dx) >= Math.abs(dy) && dx !== 0) return dx > 0 ? 4 : 3;
+    if (dy !== 0) return dy > 0 ? 2 : 1;
+    return fallback;
+  }
+
+  function facingClass(direction) {
+    if (direction === 1) return 'facing-up';
+    if (direction === 3) return 'facing-left';
+    if (direction === 4) return 'facing-right';
+    return 'facing-down';
+  }
+
+  function createActor(player, own) {
+    const isBot = !own && Boolean(player.bot);
+    const element = document.createElement(isBot ? 'a' : 'span');
+    element.className = `pv-map-actor${own ? ' pv-map-actor-own' : ''}${isBot ? ' pv-map-actor-bot' : ''} is-spawning`;
+    element.dataset.playerKey = actorKey(player, own);
+    element.dataset.playerId = own ? 'self' : String(Math.max(0, Number(player.id) || 0));
+    element.dataset.trainer = String(own ? state.trainer : Math.max(1, Math.min(29, Number(player.trainer) || 1)));
+    element.innerHTML = `${sprite(own ? state.trainer : player.trainer, own)}<b></b>`;
+    if (isBot) element.href = `${String(cfg.botProfileBase || 'bot_trainer.php?id=')}${Math.max(0, Number(player.id) || 0)}`;
+    window.requestAnimationFrame(() => element.classList.remove('is-spawning'));
+    return element;
+  }
+
+  function updateActor(element, player, own, initial) {
     const x = Number(player.x) || 1;
     const y = Number(player.y) || 1;
     const ratio = Math.max(1, state.tile / state.logicalTile);
     const unit = Math.round(16 * ratio);
     const left = (x - 1) * state.tile + Math.max(0, (state.tile - unit) / 2);
     const top = (y - 1) * state.tile - unit;
-    const name = own ? 'You' : esc(player.username || 'Trainer');
+    const previousX = Number(element.dataset.x) || x;
+    const previousY = Number(element.dataset.y) || y;
+    const changed = previousX !== x || previousY !== y;
+    const direction = own ? state.lastDirection : facingFromDelta(x - previousX, y - previousY, Number(element.dataset.facing) || 2);
     const isBot = !own && Boolean(player.bot);
-    const cls = own ? ' pv-map-actor-own' : (isBot ? ' pv-map-actor-bot' : '');
-    const content = `${sprite(own ? state.trainer : player.trainer, own)}<b>${name}${isBot ? '<small>AI TRAINER</small>' : ''}</b>`;
-    if (isBot) {
-      const id = Math.max(0, Number(player.id) || 0);
-      return `<a class="pv-map-actor${cls}" style="left:${left}px;top:${top}px;--pv-world-actor-unit:${unit}px" title="${name} · AI trainer · interact" href="${esc(String(cfg.botProfileBase || 'bot_trainer.php?id='))}${id}">${content}</a>`;
+    const name = own ? 'You' : String(player.username || 'Trainer');
+    const trainer = own ? state.trainer : Math.max(1, Math.min(29, Number(player.trainer) || 1));
+
+    if (element.dataset.trainer !== String(trainer)) {
+      element.innerHTML = `${sprite(trainer, own)}<b></b>`;
+      element.dataset.trainer = String(trainer);
     }
-    return `<span class="pv-map-actor${cls}" style="left:${left}px;top:${top}px;--pv-world-actor-unit:${unit}px" title="${name}">${content}</span>`;
+
+    const label = element.querySelector('b');
+    if (label) {
+      label.textContent = name;
+      if (isBot) {
+        const small = document.createElement('small');
+        small.textContent = 'AI TRAINER';
+        label.appendChild(small);
+      }
+    }
+
+    element.title = isBot ? `${name} · AI trainer · interact` : name;
+    element.dataset.x = String(x);
+    element.dataset.y = String(y);
+    element.dataset.facing = String(direction);
+    element.classList.remove('facing-up', 'facing-down', 'facing-left', 'facing-right', 'is-leaving');
+    element.classList.add(facingClass(direction));
+    element.style.setProperty('--pv-world-actor-unit', `${unit}px`);
+    element.style.setProperty('--pv-actor-x', `${left}px`);
+    element.style.setProperty('--pv-actor-y', `${top}px`);
+
+    if (changed && !initial && !reducedMotion) {
+      element.classList.remove('is-walking');
+      void element.offsetWidth;
+      element.classList.add('is-walking');
+      const token = String((Number(element.dataset.walkToken) || 0) + 1);
+      element.dataset.walkToken = token;
+      window.setTimeout(() => {
+        if (element.dataset.walkToken === token) element.classList.remove('is-walking');
+      }, 560);
+    }
   }
 
-  function render() {
-    let html = actor({ x: state.x, y: state.y }, true);
+  function render(initial = false) {
+    const wanted = new Set();
+    const renderOne = (player, own) => {
+      const key = actorKey(player, own);
+      wanted.add(key);
+      let element = actors.querySelector(`[data-player-key="${CSS.escape(key)}"]`);
+      const isNew = !element;
+      if (!element) {
+        element = createActor(player, own);
+        actors.appendChild(element);
+      }
+      updateActor(element, player, own, initial || isNew);
+    };
+
+    renderOne({ x: state.x, y: state.y }, true);
     state.players.forEach(player => {
       const x = Number(player.x);
       const y = Number(player.y);
-      if (x >= 1 && x <= Number(cfg.columns) && y >= 1 && y <= Number(cfg.rows)) {
-        html += actor(player, false);
-      }
+      if (x >= 1 && x <= Number(cfg.columns) && y >= 1 && y <= Number(cfg.rows)) renderOne(player, false);
     });
-    actors.innerHTML = html;
+
+    Array.from(actors.querySelectorAll('[data-player-key]')).forEach(element => {
+      if (wanted.has(element.dataset.playerKey || '')) return;
+      element.classList.add('is-leaving');
+      window.setTimeout(() => {
+        if (!wanted.has(element.dataset.playerKey || '') && element.classList.contains('is-leaving')) element.remove();
+      }, reducedMotion ? 0 : 220);
+    });
+
     coordinates.textContent = `X ${state.x} // Y ${state.y}`;
   }
 
@@ -85,6 +169,17 @@
   function setStatus(message, tone = '') {
     status.textContent = message;
     status.dataset.tone = tone;
+  }
+
+  function refreshEncounter(markup) {
+    if (!encounter) return;
+    encounter.classList.remove('is-refreshing', 'has-encounter');
+    if (markup) encounter.innerHTML = markup;
+    encounter.classList.toggle('has-encounter', Boolean(encounter.querySelector('form')));
+    if (!reducedMotion) {
+      void encounter.offsetWidth;
+      encounter.classList.add('is-refreshing');
+    }
   }
 
   function clamp(value, minimum, maximum) {
@@ -153,6 +248,7 @@
 
   async function move(direction) {
     if (state.moving) return;
+    state.lastDirection = Number(direction) || state.lastDirection;
     setBusy(true);
     setStatus('Validating movement…', 'busy');
 
@@ -184,6 +280,7 @@
       if (!response.ok || !data.ok) throw new Error(data.error || `HTTP ${response.status}`);
       if (data.redirect) {
         setStatus('Entering connected area…', 'success');
+        stage.classList.add('is-transitioning');
         window.location.href = data.redirect;
         return;
       }
@@ -200,11 +297,11 @@
       state.y = Number(data.y) || state.y;
       state.players = Array.isArray(data.players) ? data.players : state.players;
       if (Array.isArray(data.blockedDirections)) state.blocked = data.blockedDirections.map(Number);
-      render();
+      render(false);
       blocked();
       center();
       scheduleCenter();
-      if (encounter && data.encounter) encounter.innerHTML = data.encounter;
+      refreshEncounter(data.encounter);
       setStatus('Movement confirmed.', 'success');
     } catch (error) {
       console.error('World movement failed', error);
@@ -238,7 +335,7 @@
       const data = await response.json();
       if (!response.ok || !data.ok || String(data.world) !== String(cfg.world) || String(data.area) !== String(cfg.area)) return;
       state.players = Array.isArray(data.players) ? data.players : [];
-      render();
+      render(false);
     } catch (error) {
       console.debug('World presence refresh skipped', error);
     } finally {
@@ -285,17 +382,25 @@
     };
 
     mapImages.forEach(image => {
-      image.addEventListener('load', scheduleCenter);
+      image.addEventListener('load', () => {
+        stage.classList.add('is-map-ready');
+        scheduleCenter();
+      });
       image.addEventListener('error', reportArtworkError, { once: true });
 
       if (image.complete) {
-        if (image.naturalWidth > 0 && image.naturalHeight > 0) scheduleCenter();
-        else reportArtworkError();
+        if (image.naturalWidth > 0 && image.naturalHeight > 0) {
+          stage.classList.add('is-map-ready');
+          scheduleCenter();
+        } else reportArtworkError();
         return;
       }
 
       if (typeof image.decode === 'function') {
-        image.decode().then(scheduleCenter).catch(() => {
+        image.decode().then(() => {
+          stage.classList.add('is-map-ready');
+          scheduleCenter();
+        }).catch(() => {
           /* A decode promise may reject while an ordinary image load remains
              valid. The image error event is the authority for hard failure. */
         });
@@ -303,7 +408,7 @@
     });
   }
 
-  render();
+  render(true);
   blocked();
   center();
   scheduleCenter();

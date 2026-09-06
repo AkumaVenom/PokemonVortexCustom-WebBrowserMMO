@@ -357,7 +357,7 @@ if($_SESSION['layout'] == '2'){
 </style>
 
 </head>
-<body class="pv-legacy-battle-page" data-pv-battle-network-isolated="1">
+<body class="pv-legacy-battle-page" data-pv-battle-network-isolated="1" data-pv-battle-action="<?php echo !empty($_POST['attack']) ? 'attack' : (!empty($_POST['item']) ? 'item' : 'idle'); ?>" data-pv-battle-move="<?php echo htmlspecialchars((string)($_SESSION['attack_short'][0] ?? $_POST['attack'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>" data-pv-battle-item="<?php echo htmlspecialchars((string)($_POST['item'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>">
 <?php
 include_once("analytics.php"); ?>
 <div id="menuBox"></div>
@@ -1879,8 +1879,14 @@ if(($_SESSION['position'] ?? 0) == 2 && !isset($_POST['choose'])){
 		echo "Select an Attack";
 	}
 
-	echo '</h2><table cellpadding="0" cellspacing="0" style="width: 80%; text-align: center; margin: 0 auto;"><tr style="vertical-align: bottom;"><td style="width: 50%;">';
-	echo '<h3>Your ' . $_SESSION['s'.$p][0] . '</h3><img src="html/static/images/pokemon/' . $_SESSION['s'.$p][0] . '.gif" width="96" height="96" /><br /><em>Level:</em> ' . $_SESSION['s'.$p][4] . '</td><td style="width: 50%;"><h3>' . htmlentities($_SESSION['opponent_profile'][1]) . '\'s ' . $_SESSION['ops'.$q][0] . '</h3><img src="html/static/images/pokemon/' . $_SESSION['ops'.$q][0] . '.gif" width="96" height="96" /><br /><em>Level:</em> ' . $_SESSION['ops'.$q][4] . '</span></td></tr>';
+	$pvPlayerResolvedMoveType = htmlspecialchars((string)($_SESSION['attack_short'][1] ?? 'Normal'), ENT_QUOTES, 'UTF-8');
+	$pvEnemyResolvedMoveType = htmlspecialchars((string)($_SESSION['attack_short'][4] ?? 'Normal'), ENT_QUOTES, 'UTF-8');
+	$pvPlayerCurrentHp = max(0, (int)($_SESSION['s'.$p][10] ?? 0));
+	$pvPlayerMaxHp = max(1, (int)($_SESSION['s'.$p][11] ?? 1));
+	$pvEnemyCurrentHp = max(0, (int)($_SESSION['ops'.$q][10] ?? 0));
+	$pvEnemyMaxHp = max(1, (int)($_SESSION['ops'.$q][11] ?? 1));
+	echo '</h2><table class="pv-legacy-combat-table" data-pv-player-move-type="' . $pvPlayerResolvedMoveType . '" data-pv-enemy-move-type="' . $pvEnemyResolvedMoveType . '" data-pv-player-current-hp="' . $pvPlayerCurrentHp . '" data-pv-player-max-hp="' . $pvPlayerMaxHp . '" data-pv-enemy-current-hp="' . $pvEnemyCurrentHp . '" data-pv-enemy-max-hp="' . $pvEnemyMaxHp . '" cellpadding="0" cellspacing="0" style="width: 80%; text-align: center; margin: 0 auto;"><tr style="vertical-align: bottom;"><td class="pv-legacy-battle-fighter" style="width: 50%;">';
+	echo '<h3>Your ' . $_SESSION['s'.$p][0] . '</h3><img class="pv-legacy-battle-sprite pv-legacy-battle-player" src="html/static/images/pokemon/' . $_SESSION['s'.$p][0] . '.gif" width="96" height="96" /><br /><em>Level:</em> ' . $_SESSION['s'.$p][4] . '</td><td class="pv-legacy-battle-fighter" style="width: 50%;"><h3>' . htmlentities($_SESSION['opponent_profile'][1]) . '\'s ' . $_SESSION['ops'.$q][0] . '</h3><img class="pv-legacy-battle-sprite pv-legacy-battle-enemy" src="html/static/images/pokemon/' . $_SESSION['ops'.$q][0] . '.gif" width="96" height="96" /><br /><em>Level:</em> ' . $_SESSION['ops'.$q][4] . '</span></td></tr>';
 	echo '<tr style="vertical-align: middle;"><td style="width: 50%; padding: 10px 0;">
 	<strong>HP: <img src="html/static/images/misc/hpbar.gif" height="10" width="' . $_SESSION['s'.$p][12] . '" style="border:1px solid black" /> ' . $_SESSION['s'.$p][10] . ' </strong>'; // display your status effect
 	if($_SESSION['s'.$u][14] == 'Poison'){
@@ -2130,7 +2136,19 @@ if(($_SESSION['position'] ?? 0) == 2 && !isset($_POST['choose'])){
 		if($_SESSION['attack_short'][0] == $_SESSION['s'.$p][9]){
 			$four = 'checked="checked"';
 		}
-		echo '<td style="width: 50%; padding: 0 10px;"><table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 0 auto; text-align: left;"><tr><td><p><strong>Select an attack:</strong></p><p><input type="radio" name="attack" id="attack1" value="1" ' . $one . ' />1. ' . $_SESSION['s'.$p][6] . '<br /><input type="radio" name="attack" id="attack2" value="2" ' . $two . '/>2. ' . $_SESSION['s'.$p][7] . '<br /><input type="radio" name="attack" id="attack3" value="3" ' . $three . '/>3. ' . $_SESSION['s'.$p][8] . '<br /><input type="radio" name="attack" id="attack4" value="4" ' . $four . '/>4. ' . $_SESSION['s'.$p][9] . '</p></td></tr></table></td>';
+		$pvCheckedMoves = [1 => $one ?? '', 2 => $two ?? '', 3 => $three ?? '', 4 => $four ?? ''];
+		echo '<td style="width: 50%; padding: 0 10px;"><table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 0 auto; text-align: left;"><tr><td><p><strong>Select an attack:</strong></p><p>';
+		for ($pvMoveSlot = 1; $pvMoveSlot <= 4; $pvMoveSlot++) {
+			$pvMoveName = (string)($_SESSION['s'.$p][$pvMoveSlot + 5] ?? 'Struggle');
+			$pvMoveData = pv_battle_move_data($pvMoveName, (string)($_SESSION['s'.$p][2] ?? 'Normal'));
+			echo '<input type="radio" name="attack" id="attack' . $pvMoveSlot . '" value="' . $pvMoveSlot . '" ' . $pvCheckedMoves[$pvMoveSlot]
+				. ' data-pv-move-name="' . htmlspecialchars($pvMoveName, ENT_QUOTES, 'UTF-8') . '"'
+				. ' data-pv-move-type="' . htmlspecialchars((string)($pvMoveData['type'] ?? 'Normal'), ENT_QUOTES, 'UTF-8') . '"'
+				. ' data-pv-move-power="' . (int)($pvMoveData['power'] ?? 0) . '"'
+				. ' data-pv-move-accuracy="' . (int)($pvMoveData['accuracy'] ?? 100) . '" />'
+				. $pvMoveSlot . '. ' . htmlspecialchars($pvMoveName, ENT_QUOTES, 'UTF-8') . ($pvMoveSlot < 4 ? '<br />' : '');
+		}
+		echo '</p></td></tr></table></td>';
 
 		echo '<td style="width: 50%; padding: 0 10px;">
 		<table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 0 auto; text-align: left;"><tr><td><p><strong>Attacks:</strong></p><p>1. ' . $_SESSION['ops'.$q][6] . '<br />2. ' . $_SESSION['ops'.$q][7] . '<br />3. ' . $_SESSION['ops'.$q][8] . '<br />4. ' . $_SESSION['ops'.$q][9] . '</p></td></tr></table></td>';
@@ -2562,7 +2580,9 @@ if($battleStartRequested){
 						echo '<h3>Select your next Pok&eacute;mon to battle:</h3><table cellspacing="0" cellpadding="0" class="pokemonList"><tr><td nowrap="nowrap" id="y_p">';
 						for($i=1;$i<=$_SESSION['your_profile'][2];$i++){
 
-							echo '<table cellpadding="3" cellspacing="0"><tr><td><input type="radio" name="active_pokemon" value="'. $_SESSION['s'.$i][1] . '"';
+							$pvRosterPlayerCurrentHp = max(0, (int)($_SESSION['s'.$i][10] ?? 0));
+							$pvRosterPlayerMaxHp = max(1, (int)($_SESSION['s'.$i][11] ?? 1));
+							echo '<table class="pv-battle-roster-card pv-battle-roster-player" data-pv-roster-current-hp="' . $pvRosterPlayerCurrentHp . '" data-pv-roster-max-hp="' . $pvRosterPlayerMaxHp . '" cellpadding="3" cellspacing="0"><tr><td><input type="radio" name="active_pokemon" value="'. $_SESSION['s'.$i][1] . '"';
 							if($_SESSION['s1'][10] != 0 && $i == 1){  
 								echo ' checked="checked"';
 							} 
@@ -2602,7 +2622,9 @@ if($battleStartRequested){
 						<td nowrap="nowrap" id="opponent_pokemon">';
 	
 						for($i=1;$i<=$_SESSION['opponent_profile'][2];$i++){
-							echo '<table cellpadding="3" cellspacing="0"><tr><td>';
+							$pvRosterEnemyCurrentHp = max(0, (int)($_SESSION['ops'.$i][10] ?? 0));
+							$pvRosterEnemyMaxHp = max(1, (int)($_SESSION['ops'.$i][11] ?? 1));
+							echo '<table class="pv-battle-roster-card pv-battle-roster-enemy" data-pv-roster-current-hp="' . $pvRosterEnemyCurrentHp . '" data-pv-roster-max-hp="' . $pvRosterEnemyMaxHp . '" cellpadding="3" cellspacing="0"><tr><td>';
 							echo '<img src="html/static/images/pokemon/' . $_SESSION['ops'.$i][0] . '.gif" width="96" height="96" /></td><td><p><strong><a href="pokedex.php?';
 							if($_SESSION['opponent_profile'][3] == 'gym' || $_SESSION['opponent_profile'][3] == 'side' || $_SESSION['opponent_profile'][3] == 'event'){
 								echo'dex=' . $_SESSION['ops'.$i][0] . '">';

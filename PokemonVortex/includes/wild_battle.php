@@ -217,6 +217,7 @@ function pv_wild_start(mysqli $db, int $uid, string $token): array
         'area'=>trim((string)($pending['area']??'')),
         'encounter_token'=>$token,'wild'=>$wild,'team'=>$team,'active_id'=>$activeId,
         'participants'=>[$activeId=>true],'log'=>[],'result'=>null,'rewarded'=>false,
+        'fx'=>['id'=>bin2hex(random_bytes(6)),'turn'=>0,'action'=>'intro','detail'=>'','player'=>null,'enemy'=>null,'capture'=>null,'heal'=>null,'switch'=>null,'created_at'=>time()],
     ];
     pv_wild_log($state,'Wild '.$display.' appeared at level '.$level.'.','accent');
     pv_wild_log($state,'Go, '.$team[$activeId]['name'].'!');
@@ -244,6 +245,10 @@ function pv_wild_attack_turn(mysqli $db, array &$state, int $attackerId, string 
     if (!in_array($moveName,$player['moves'],true)) throw new RuntimeException('Choose one of your active Pokémon’s moves.');
     $move=pv_wild_move_data($db,$moveName,(string)$player['type1']);
     $result=pv_wild_damage($player,$wild,$move);
+    $state['fx']['player']=[
+        'move'=>(string)$move['attack'],'type'=>(string)$move['type'],'hit'=>(bool)$result['hit'],
+        'damage'=>(int)$result['damage'],'critical'=>(bool)$result['critical'],'effectiveness'=>(float)$result['effectiveness'],
+    ];
     if(!$result['hit']) {
         pv_wild_log($state,$player['name'].' used '.$move['attack'].', but it missed.','muted');
     } else {
@@ -279,6 +284,10 @@ function pv_wild_enemy_turn(mysqli $db, array &$state): void
     $moveName=(string)$pool[random_int(0,count($pool)-1)];
     $move=pv_wild_move_data($db,$moveName,(string)$wild['type1']);
     $result=pv_wild_damage($wild,$player,$move);
+    $state['fx']['enemy']=[
+        'move'=>(string)$move['attack'],'type'=>(string)$move['type'],'hit'=>(bool)$result['hit'],
+        'damage'=>(int)$result['damage'],'critical'=>(bool)$result['critical'],'effectiveness'=>(float)$result['effectiveness'],
+    ];
     if(!$result['hit']) {
         pv_wild_log($state,'Wild '.$wild['display_name'].' used '.$move['attack'].', but it missed.','muted');
     } else {
@@ -442,6 +451,7 @@ function pv_wild_use_heal(mysqli $db, array &$state, string $item): void
     if(!pv_wild_consume($db,(int)$_SESSION['myid'],$catalog[$item]['column'])) throw new RuntimeException('You do not have that item in your inventory.');
     $before=(int)$player['hp'];
     $player['hp']=min((int)$player['max_hp'],$before+(int)$catalog[$item]['heal']);
+    $state['fx']['heal']=['item'=>$item,'amount'=>(int)($player['hp']-$before)];
     pv_wild_log($state,'You used '.$item.'. '.$player['name'].' recovered '.($player['hp']-$before).' HP.','good');
     pv_wild_enemy_turn($db,$state);
 }
@@ -535,6 +545,7 @@ function pv_wild_throw_ball(mysqli $db, array &$state, string $ball): void
         }
     }
 
+    $state['fx']['capture']=['ball'=>$ball,'caught'=>$caught];
     if($caught){
         try { pv_recalculate_trainer_progress($db,$uid,true); }
         catch(Throwable $e){ pv_log('Wild capture progress refresh failed after committed capture: '.$e->getMessage()); }
@@ -553,6 +564,7 @@ function pv_wild_switch(mysqli $db, array &$state, int $pokemonId): void
     if((int)$state['team'][$pokemonId]['hp']<=0) throw new RuntimeException('A fainted Pokémon cannot be switched in.');
     if($pokemonId===(int)$state['active_id']) throw new RuntimeException('That Pokémon is already active.');
     $state['active_id']=$pokemonId;$state['participants'][$pokemonId]=true;
+    $state['fx']['switch']=['pokemon_id'=>$pokemonId,'name'=>(string)$state['team'][$pokemonId]['name']];
     pv_wild_log($state,'Go, '.$state['team'][$pokemonId]['name'].'!','accent');
     pv_wild_enemy_turn($db,$state);
 }
@@ -564,6 +576,17 @@ function pv_wild_handle_action(mysqli $db, array $state, array $post): array
     $currentTurn=max(1,(int)($state['turn']??1));
     if($submittedTurn!==$currentTurn) throw new RuntimeException('That action came from an older turn. The current battle has been refreshed.');
     $action=(string)($post['battle_action']??'');
+    $detail=match($action){
+        'attack'=>trim((string)($post['move']??'')),
+        'heal'=>trim((string)($post['item']??'')),
+        'ball'=>trim((string)($post['ball']??'')),
+        'switch'=>(string)max(0,(int)($post['pokemon_id']??0)),
+        default=>'',
+    };
+    $state['fx']=[
+        'id'=>bin2hex(random_bytes(6)),'turn'=>$currentTurn,'action'=>$action,'detail'=>$detail,
+        'player'=>null,'enemy'=>null,'capture'=>null,'heal'=>null,'switch'=>null,'created_at'=>time(),
+    ];
     switch($action){
         case 'attack':
             pv_wild_attack_turn($db,$state,(int)$state['active_id'],trim((string)($post['move']??'')));

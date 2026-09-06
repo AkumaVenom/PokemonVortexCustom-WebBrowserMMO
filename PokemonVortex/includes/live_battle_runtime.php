@@ -302,6 +302,32 @@ function pv_live_runtime_item_catalog(): array
     ];
 }
 
+/**
+ * Read-only move-type projection for the Live Battle presentation layer.
+ * Combat resolution remains inside pv_live_runtime_damage(); this helper only
+ * exposes move metadata already defined by the shared combat catalogue.
+ */
+function pv_live_runtime_move_types(mysqli $db, array $state): array
+{
+    $types = [];
+    foreach ((array)($state['participants'] ?? []) as $participant) {
+        foreach ((array)($participant['team'] ?? []) as $fighter) {
+            foreach ((array)($fighter['moves'] ?? []) as $moveName) {
+                $moveName = trim((string)$moveName);
+                if ($moveName === '' || isset($types[$moveName])) continue;
+                try {
+                    $moveData = pv_combat_move_data($db, $moveName, (string)($fighter['type1'] ?? 'Normal'));
+                    $type = strtolower(trim((string)($moveData['type'] ?? 'Normal')));
+                    $types[$moveName] = $type !== '' ? $type : 'normal';
+                } catch (Throwable $e) {
+                    $types[$moveName] = 'normal';
+                }
+            }
+        }
+    }
+    return $types;
+}
+
 function pv_live_runtime_inventory(mysqli $db, int $userId): array
 {
     $catalog = pv_live_runtime_item_catalog();
