@@ -151,11 +151,32 @@
     coordinates.textContent = `X ${state.x} // Y ${state.y}`;
   }
 
+  // Center only this scroll container, never the document. Vortex's native
+  // 480x400 map must keep the trainer visible in a narrow phone viewport.
+  const viewport = stage.closest('.pv-map-viewport-wrap');
+  let cameraFrame = 0;
+  function centerTrainer() {
+    if (!viewport || cameraFrame) return;
+    cameraFrame = window.requestAnimationFrame(() => {
+      cameraFrame = 0;
+      const view = viewport.getBoundingClientRect();
+      const map = stage.getBoundingClientRect();
+      const x = map.left - view.left + viewport.scrollLeft + (state.x - 1) * 16 + 8;
+      const y = map.top - view.top + viewport.scrollTop + (state.y - 1) * 16;
+      viewport.scrollLeft = Math.max(0, Math.min(viewport.scrollWidth - viewport.clientWidth, x - viewport.clientWidth / 2));
+      viewport.scrollTop = Math.max(0, Math.min(viewport.scrollHeight - viewport.clientHeight, y - viewport.clientHeight / 2));
+    });
+  }
+  window.addEventListener('resize', centerTrainer, { passive:true });
+  window.addEventListener('pageshow', centerTrainer);
+  if (viewport && typeof ResizeObserver === 'function') new ResizeObserver(centerTrainer).observe(viewport);
+
   function bindMapArtwork() {
     if (!mapArt) return;
     const loaded = () => {
       stage.classList.remove('is-map-error');
       stage.classList.add('is-map-ready');
+      centerTrainer();
       if (!state.moving) setStatus('Ready. Use WASD, arrow keys, numpad or the movement pad.', 'success');
     };
     const failed = () => {
@@ -249,6 +270,7 @@
       state.players = Array.isArray(data.players) ? data.players : state.players;
       if (Array.isArray(data.blockedDirections)) state.blockedDirections = data.blockedDirections.map(Number);
       renderActors(false);
+      centerTrainer();
       applyBlockedDirections();
       refreshEncounter(data.encounter);
       setStatus('Movement confirmed. Area scan complete.', 'success');
@@ -320,6 +342,7 @@
 
   bindMapArtwork();
   renderActors(true);
+  centerTrainer();
   applyBlockedDirections();
   startPresenceSync();
 })();

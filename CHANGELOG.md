@@ -1,3 +1,15 @@
+## v25.3.0 — Responsive Mobile & iPad UI
+
+- Added a zero-specificity input guard to the existing theme's hover selectors. Mouse input retains the desktop effects; touch/pen and non-hover input no longer trigger hover-driven target movement/reveals. Passive capture listeners retain native click, scrolling, zooming and form submission semantics.
+- Unified standard and dynamically inserted Trainer Battle navigation binding, including idempotent initialization, tablet breakpoints, link/outside dismissal, Escape focus restoration, history restoration and a visible no-JavaScript fallback.
+- Added compact, collapsible Game sections without cloning or changing existing specialist navigation links. The battle shell retains access to its sidebar routes on small screens.
+- Added responsive navigation, form, authentication, card, battle-control and map framing rules. Menus fit short screens, mobile text inputs use 16px text, touch actions have a 44px minimum height, and the movement pad retains 52px controls.
+- Removed percentage-based reveal visibility dependencies that could hide oversized panels. Content is visible even without an observer callback.
+- Added local-trainer camera centering inside the native Vortex scroll viewport after confirmed movement, initial display and viewport changes. Presence refreshes do not force this camera. Kanto/Hoenn artwork, tile dimensions, map configuration and region camera code remain unchanged.
+- Added device viewport metadata to recovered full HTML documents that lack it, without injecting into AJAX fragments.
+- Preserved server actions, CSRF/action tokens, database schema 28, credentials, account data, all map/Pokémon assets and the v25.2.8 ranked AI service. Asset cache advanced to 25.3.0.
+- Added portable interaction/camera tests, a frontend-only browser matrix harness and a physical-device acceptance checklist. Portable checks pass; browser rendering, physical devices and PHP/MySQL gameplay remain pending.
+
 ## v25.2.8 — Active AI Ranked Competition
 
 - Replaced the four-match/five-minute ranked pulse with a shared one-minute scheduler targeting up to 16 committed automatic matches per minute, subject to available trainers and bounded request work.

@@ -2,32 +2,94 @@
   'use strict';
   document.documentElement.classList.add('pv-js');
 
-  const topbar = document.querySelector('.pv-topbar');
-  const navToggle = document.querySelector('[data-pv-nav-toggle]');
-  const nav = document.getElementById('pv-primary-nav');
+  // v25.3.0 — keep native click/submit behavior and make hover a mouse-only
+  // enhancement. Touch must not mutate the hit target before Safari sends click.
+  const html = document.documentElement;
+  const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const setHover = (enabled) => html.classList.toggle('pv-can-hover', enabled);
+  setHover(hoverQuery.matches);
+  document.addEventListener('pointerdown', (event) => {
+    setHover(event.pointerType === 'mouse' && hoverQuery.matches);
+  }, { capture: true, passive: true });
+  document.addEventListener('pointermove', (event) => {
+    if (event.pointerType === 'mouse') setHover(hoverQuery.matches);
+  }, { capture: true, passive: true });
+  document.addEventListener('touchstart', () => setHover(false), { capture: true, passive: true });
+  const syncHover = () => setHover(hoverQuery.matches);
+  if (hoverQuery.addEventListener) hoverQuery.addEventListener('change', syncHover);
+  else if (hoverQuery.addListener) hoverQuery.addListener(syncHover);
 
-  const closeNav = () => {
-    if (!topbar || !navToggle) return;
-    topbar.classList.remove('pv-nav-open');
-    navToggle.setAttribute('aria-expanded', 'false');
+  // Shared by the server-rendered header and the upgraded trainer-battle shell.
+  // Navigation stays expanded if JavaScript is unavailable or initialization fails.
+  const initNavigation = (root = document) => {
+    root.querySelectorAll('[data-pv-nav-toggle]').forEach((toggle) => {
+      if (toggle.dataset.pvNavBound === '1') return;
+      const topbar = toggle.closest('.pv-topbar');
+      const nav = document.getElementById(toggle.getAttribute('aria-controls'));
+      if (!topbar || !nav) return;
+      toggle.dataset.pvNavBound = '1';
+      const close = (restoreFocus = false) => {
+        const wasOpen = topbar.classList.contains('pv-nav-open');
+        topbar.classList.remove('pv-nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        if (wasOpen && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => {
+        const open = !topbar.classList.contains('pv-nav-open');
+        topbar.classList.toggle('pv-nav-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      nav.addEventListener('click', (event) => {
+        if (event.target.closest('a')) close();
+      });
+      document.addEventListener('click', (event) => {
+        if (!topbar.contains(event.target)) close();
+      });
+      topbar.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') close(true);
+      });
+      topbar.addEventListener('focusout', (event) => {
+        if (event.relatedTarget && !topbar.contains(event.relatedTarget)) close();
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1100) close();
+      }, { passive: true });
+      window.addEventListener('pageshow', () => close());
+      topbar.classList.add('pv-nav-ready');
+    });
+
+    root.querySelectorAll('.pv-side-menu').forEach((side, index) => {
+      if (side.classList.contains('pv-side-menu-ready')) return;
+      const sections = document.createElement('div');
+      sections.className = 'pv-side-sections';
+      let id = `pv-game-sections-${index}`;
+      while (document.getElementById(id)) id += '-next';
+      sections.id = id;
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'pv-side-toggle';
+      toggle.textContent = 'Game sections';
+      toggle.setAttribute('aria-controls', id);
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.addEventListener('click', () => {
+        const open = !side.classList.contains('pv-side-open');
+        side.classList.toggle('pv-side-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      side.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape' || !side.classList.contains('pv-side-open')) return;
+        side.classList.remove('pv-side-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      });
+      // Keep the original links and URLs, including all specialist game pages.
+      while (side.firstChild) sections.appendChild(side.firstChild);
+      side.append(toggle, sections);
+      side.classList.add('pv-side-menu-ready');
+    });
   };
-
-  if (topbar && navToggle && nav) {
-    navToggle.addEventListener('click', () => {
-      const open = !topbar.classList.contains('pv-nav-open');
-      topbar.classList.toggle('pv-nav-open', open);
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    nav.addEventListener('click', (event) => {
-      if (event.target.closest('a')) closeNav();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeNav();
-    });
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 900) closeNav();
-    }, { passive: true });
-  }
+  window.PVUI = Object.freeze({ initNavigation });
+  initNavigation();
 
   // Make legacy and modern server messages accessible to assistive technology.
   document.querySelectorAll('.actionMsg,.successMsg,.noticeMsg,.errorMsg,.pv-system-error,.pv-flash').forEach((el) => {
@@ -111,7 +173,7 @@
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
-    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
+    }, { rootMargin: '0px', threshold: 0 });
     revealTargets.forEach(element => revealObserver.observe(element));
   } else {
     revealTargets.forEach(element => element.classList.add('is-visible'));
@@ -292,19 +354,7 @@
   container.appendChild(footer);
   body.classList.add('pv-combat-shell-upgraded');
 
-  // Re-run the responsive nav behavior for the shell inserted after the base
-  // script initialized. This is presentation-only; combat form semantics stay untouched.
-  const toggle = header.querySelector('[data-pv-nav-toggle]');
-  const nav = header.querySelector('.pv-nav');
-  if (toggle && nav) {
-    const close = () => { header.classList.remove('pv-nav-open'); toggle.setAttribute('aria-expanded','false'); };
-    toggle.addEventListener('click', () => {
-      const open = !header.classList.contains('pv-nav-open');
-      header.classList.toggle('pv-nav-open', open); toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    nav.addEventListener('click', (e) => { if (e.target.closest('a')) close(); });
-    window.addEventListener('resize', () => { if (window.innerWidth > 900) close(); }, { passive: true });
-  }
+  window.PVUI.initNavigation();
 
   const directTable = (form) => Array.from(form?.children || []).find(el => el.tagName === 'TABLE') || form?.querySelector('table') || null;
   const submitFormFor = (input) => {
@@ -1250,10 +1300,11 @@
   };
 
   const armCardDepth = () => {
-    if (reducedMotion || !window.matchMedia?.('(hover:hover) and (pointer:fine)').matches) return;
+    if (reducedMotion) return;
     const cards = document.querySelectorAll('.pv-rival-target,.pv-dashboard-feature,.pv-ai-zone-grid article');
     cards.forEach((card) => {
       card.addEventListener('pointermove', (event) => {
+        if (event.pointerType !== 'mouse' || !document.documentElement.classList.contains('pv-can-hover')) return;
         const rect = card.getBoundingClientRect();
         const x = (event.clientX - rect.left) / Math.max(1, rect.width);
         const y = (event.clientY - rect.top) / Math.max(1, rect.height);
@@ -1277,7 +1328,7 @@
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
-    }, {threshold:.08, rootMargin:'0px 0px -24px'});
+    }, {threshold:0, rootMargin:'0px'});
     items.forEach((item) => observer.observe(item));
   };
 

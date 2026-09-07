@@ -411,6 +411,9 @@ function pv_output_filter(string $html): string {
     }, $html);
 
     $version = pv_asset_version();
+    if ($isDocument && stripos($html, 'name="viewport"') === false && stripos($html, "name='viewport'") === false) {
+        $html = preg_replace('~</head>~i', '<meta name="viewport" content="width=device-width, initial-scale=1"></head>', $html, 1) ?? $html;
+    }
     $injection = '<link rel="stylesheet" href="' . pv_asset('css/vortex-modern.css') . '?v=' . $version . '">'
                . '<script defer src="' . pv_asset('js/vortex-modern.js') . '?v=' . $version . '"></script>';
     if ($isDocument && stripos($html, 'vortex-modern.css') === false) {
