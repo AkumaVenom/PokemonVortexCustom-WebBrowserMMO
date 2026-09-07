@@ -59,7 +59,7 @@ The result is an actively developed browser Pokémon MMO with a modernized backe
 
 <img width="3790" height="1847" alt="6" src="https://github.com/user-attachments/assets/e408b174-6100-4291-ac49-3f0656dacc3a" />
 
-<img width="3786" height="1840" alt="2" src="https://github.com/user-attachments/assets/a6363549-03a2-4e99-bc4a-4aed72e46ff6" />
+<img width="3785" height="1852" alt="1" src="https://github.com/user-attachments/assets/5fe882a9-8041-4fcb-922e-a74c1423610a" />
 
 <img width="3789" height="1853" alt="3" src="https://github.com/user-attachments/assets/7e928f10-3f80-4e23-af7e-3af981543e89" />
 
