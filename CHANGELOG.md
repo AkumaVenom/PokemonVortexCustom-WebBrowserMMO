@@ -1,3 +1,95 @@
+## v25.2.8 — Active AI Ranked Competition
+
+- Replaced the four-match/five-minute ranked pulse with a shared one-minute scheduler targeting up to 16 committed automatic matches per minute, subject to available trainers and bounded request work.
+- Fixed returning-rival starvation: half the match opportunities prioritize eligible high-RP contenders, one quarter Master/Elite identities and one quarter the rotating wider field. The rotation continues across small requests using the committed match count.
+- Added a 120-second recurring contender window and shortened normal identity cooldowns to 90–150 seconds for Masters, 180–300 seconds for Elites and 600–1,200 seconds for Active Rivals. The operation floor now supports these intervals.
+- Routed automatic world-tick ranked launches through the same scheduler, eliminating a separate path that could bypass the shared quota and race another automatic launch.
+- Separated the per-request batch limit from the minute target: four-match map batches can now accumulate to the full 16-match cycle instead of treating four as the entire cycle's ceiling.
+- Made quota-read failures reject scheduling, checked request budgets even when every candidate fails, and stopped starting new work after the sampled cycle boundary. Existing participant team ownership and defender-protection checks remain active.
+- Reduced routine map service work to four matches with a 350 ms scheduling budget. A full minute skips repeated rank-state seeding. Rankings can top up remaining work with the existing 1,200 ms budget.
+- Updated Rankings to a shared one-minute countdown/refresh and explained recurring AI competition in the current ladder copy.
+- Preserved accepted v25.2.7 RP-first sorting, human/AI ranked statistics, durable replay receipts, player shields/retaliation, outcome math and unrelated gameplay/assets. No RP, wins or history are fabricated or reset.
+- Added portable 2,000-trainer policy simulation and an isolated PHP/MySQL service integration test. Portable gates pass; native integration/browser validation remains pending on XAMPP.
+- Asset cache advanced to 25.2.8; database remains schema 28 with unchanged credentials. The existing request-driven execution model is retained.
+
+## v25.2.7 — Rating Points Ladder & Ranked Battle Stats Fix
+
+- Replaced wins-first ordering with rating-first ordering in mixed/Players/AI standings, every displayed global rank, Dashboard/Rival Hub rank calculations and Top AI Rivals. Ranked W/L are deterministic equal-RP tiebreakers.
+- Connected Rankings to explicit ranked profile challenges for both player and AI trainers. Profiles show current RP, global rank, ranked W/L and peak RP, and launch through the existing CSRF/action-token, team and shield checks.
+- Labelled Practice Snapshot and Live AI as unranked and removed their competing launch controls from the Rankings-origin AI profile view.
+- Moved ranked terminal settlement outside the legacy standard reward cooldown so legitimate fast wins and defeats still affect both trainers' ranked stats.
+- Added durable session-nonce receipts in retained match history, checked under deterministic participant locks before any rating mutation, to make settlement retries duplicate-safe without a schema migration.
+- Retained failed server-resolved outcomes in the active session and added retries on ranked pages and before a new ranked launch. Pending results cannot be overwritten by another ranked launch.
+- Bound ranked launch state to the initialized trainer battle; refreshing its start URL resumes the active battle, and switching opponent modes removes stale ranked intent.
+- Isolated post-commit AI activity-feed failures from committed match settlement. Result feedback shows actual RP change, current rating and committed W/L, including the rating floor.
+- Preserved earned RP/W/L, the neutral entry point, Elo parameters, all-player visibility, autonomous service, shields/retaliation and unrelated gameplay/assets.
+- Asset cache advanced to 25.2.7. Database schema remains 28 and XAMPP credentials are unchanged. Source/SQL checks are recorded separately from pending PHP/MySQL and gameplay validation.
+
+## v25.2.6 — Wins-First Global Ranking & Autonomous AI Ranked Service Fix
+
+- Corrected the global competitive-order contract: `ranked_wins` is now the primary sort key everywhere. Rival Rating breaks equal-win ties, fewer ranked losses breaks equal-win/equal-rating ties, and `user_id` is the deterministic final tiebreaker.
+- Updated the signed-in trainer rank calculation, per-row `global_rank`, mixed Top 100, complete Players view, AI view and AI Activity **Top AI Rivals** ordering to use the same wins-first contract. A trainer with the most ranked wins can no longer be buried by AI accounts that merely have higher RP.
+- Removed free competitive seeding. New human and autonomous trainer rank states begin at exactly `1,000 RP`; never-played legacy rank rows are idempotently normalized to `1,000 RP` without touching any trainer that already owns ranked W/L history.
+- Hardened the five-minute autonomous Ranked service so bucket accounting reads committed `rival_battles` rows with `source='autonomous'` instead of presentation-only `ai_activity` telemetry.
+- Made the Ranked pulse self-contained by ensuring missing trainer rank states before scheduling, and restricted attacker selection to bots whose active lead Pokémon is actually owned by that account.
+- Hardened autonomous opponent selection with owned-team validation and a full-field fallback when the normal ±260 RP target window has no attackable trainer. Defender shields and authoritative settlement checks still apply.
+- Connected the bounded Ranked pulse to ordinary active-world bot ticks, so normal game/map/Rival/AI traffic services the shared five-minute Ranked bucket instead of requiring Trainer Rankings itself to be the only reliable driver.
+- Preserved Elo rating changes, tiers, 15-minute defender protection, 24-hour retaliation, the four-settlement five-minute bucket ceiling, all-player visibility, ranked result W/L feedback, wild level cap, map/collision authority and existing gameplay progression.
+- Asset cache key advanced to `25.2.6`. Database schema remains revision 28; MySQL remains `root` with a blank password.
+
+## v25.2.5 — All-Player Ladder Visibility & Ranked Result Clarity
+
+- Added a dedicated **Player Trainer Standings** block to the mixed Trainer Rankings page. Every eligible human trainer is now surfaced immediately on every Rankings response, even when thousands of autonomous trainers push that player outside the global Top 100.
+- Preserved authoritative ordering: player spotlight rows display their real mixed player/AI `global_rank` and do not promote, reorder or alter Elo for any trainer.
+- Changed the **Players** filter from a Top-100 slice into the complete eligible human ladder. The **AI** and mixed global fields remain bounded to their existing Top-100 autonomous/global views for predictable request cost.
+- Preserved the v25.2.4 signed-in `YOU` fallback beneath the mixed Top 100 as a secondary safeguard while adding the new immediate all-player visibility surface above the global field.
+- Extended ranked settlement results to return the newly committed attacker/defender W/L and streak counters directly from the same transaction that updates rating and match history. Completed Rival battles now show the player's new ranked record immediately alongside the rating delta.
+- Removed the misleading direct **Rebattle Opponent** path from an active Rival Network result. Ranked follow-up now returns through Rival Hub so protection, retaliation and one-time ranked session authorization are revalidated before another result can count. Ordinary non-Rival Trainer Snapshot rebattles remain unchanged and unranked.
+- Preserved the shared server five-minute refresh bucket, cache-busted automatic reload, four-result bounded AI pulse, Elo math, 15-minute defender shield, 24-hour retaliation, wild level cap, map/collision authority and all accepted progression contracts.
+- Asset cache key advanced to `25.2.5`. Database schema remains revision 28 and MySQL remains `root` with a blank password; no migration is required from v25.2.4.
+
+## v25.2.4 — Authoritative Ranked Cycle Sync
+
+- Replaced the page-local Rankings countdown with the **same fixed server five-minute bucket used by the ranked pulse**. Trainer Rankings now embeds the authoritative server time, current cycle start and next refresh boundary; reloading the page inside a cycle shows only the remaining time instead of fabricating a new `05:00`.
+- The initial countdown is rendered server-side, so there is no fake `05:00` flash before JavaScript starts. Browser timing uses a monotonic clock only after it is anchored to the server deadline, with the existing watchdog, focus, visibility and BFCache catch-up paths preserved.
+- The refresh watchdog now waits only for the **remaining portion of the current server cycle**, not another full five minutes from page load. Automatic refresh remains cache-busted, while its temporary query token is removed from the visible URL after the new response loads.
+- Hardened ladder synchronization so the trainer summary counts, displayed global rank and personal global rank all use the same active-team eligibility. Hidden/no-team rank-state rows can no longer create invisible rank gaps.
+- Added a pinned authoritative **YOU** row when the signed-in player is outside the mixed Top 100. This fixes the confusing case where the summary correctly reported (for example) global rank `#766` but the player appeared to be missing from the board entirely. The pinned row does not alter Elo, ordering or anyone else's rank.
+- Preserved the fixed-bucket autonomous top-up, four-settlement ceiling, five-minute attacker floor, 15-minute defender shield, 24-hour retaliation, normal Master / Elite / Active Rival identity cadences, wild level cap, map contracts and all server-authoritative battle settlement.
+- Asset cache key advanced to `25.2.4`. Database schema remains revision 28 and MySQL remains `root` with a blank password; no migration is required from v25.2.3.
+
+## v25.2.3 — Ranked Live Loop + Countdown Reliability Fix
+
+- Reworked the five-minute Ranked ladder pulse from a rolling `MAX(created_at)` skip rule to independent fixed five-minute buckets. Normal autonomous ranked results count toward the bucket and the pulse only tops up the missing settlements, so one late AI result can no longer suppress the next visible ladder cycle.
+- Expanded the fairness candidate scan and gave the bounded Ranked page pulse a 1.2-second XAMPP-safe service budget while retaining the four-settlement ceiling, five-minute attacker floor, Elo settlement, defender shields and existing Master / Elite / Active Rival identity cooldowns.
+- Added a polished visible **NEXT REFRESH `05:00` countdown** to Trainer Rankings. The clock is calculated from an absolute deadline, updates continuously, changes to `REFRESHING…` at zero and restarts after the new page response.
+- Replaced the previous visibility-gated one-shot reload with a cache-busted forced navigation, a continuously checking countdown loop, an independent watchdog, and visibility/focus/BFCache catch-up paths. Hidden-tab throttling can delay execution but can no longer permanently skip the refresh cycle.
+- Preserved MySQL `root` with a **blank password**, database schema revision 28, the v25.2.1 world-wide wild level-24 cap, and all accepted native-map / responsive-image containment contracts.
+- Asset cache key advanced to `25.2.3`. No database migration is required from v25.2.2.
+
+## v25.2.2 — Five-Minute Ranked Ladder Refresh
+
+- Fixed Trainer Rankings not visibly advancing on the expected service cadence. The page now uses an explicit **300-second / 5-minute** no-cache refresh contract and preserves the active `scope=all|human|ai` URL while reloading.
+- Added a server-authoritative **five-minute ranked ladder pulse**. If ordinary autonomous simulation has already produced a ranked result during the current five-minute window, the pulse does nothing; otherwise it may settle a small bounded batch of AI ranked operations so the public ladder cannot remain motionless simply because the slower per-class AI cadence has not fired yet.
+- Deliberately did **not** make all 2,000 AI trainers attack every five minutes. Pulse work is capped at four successful settlements, uses a non-blocking MySQL advisory lock, enforces a five-minute per-attacker floor and retains existing Elo, target protection, 15-minute defender shields, human targeting and bounded-history contracts.
+- Preserved the v25.2.0 Master/Elite/Active Rival roaming and normal ranked-cadence profiles; the five-minute pulse is a separate global service-level guarantee, not a replacement for those identity behaviors.
+- Added `no-store` / `no-cache` response headers to Trainer Rankings so browser or proxy caching cannot present a stale ladder after a scheduled refresh.
+- Database credentials remain at the accepted XAMPP default: **root with a blank password**. No credential rotation or setup-password bridge is included.
+- Preserved the accepted site-wide responsive containment rules and the explicit native-map sizing exceptions, preventing the oversized UI/image regression without scaling Vortex/Kanto/Hoenn map artwork.
+- Asset cache key advanced to `25.2.2`. Database schema remains **revision 28**; no migration is required from v25.2.1.
+
+## v25.2.1 — Wild Encounter Level 24 Progression Cap
+
+- Rebalanced every active wild-encounter source so no runtime wild Pokémon can exceed **level 24**, eliminating the level-25+ encounter bands that were producing excessive Wild Battle EXP and accelerating players and autonomous trainers toward level 100 too quickly.
+- Updated **15 Kanto encounter profiles / 96 entries** and **19 Hoenn encounter profiles / 129 entries** whose previous maximum exceeded level 24. Existing low/mid-game entries at or below the cap are unchanged.
+- Preserved encounter-level randomness instead of flattening late areas to level 24. Cross-cap ranges keep their existing minimum where possible; ranges that previously started at level 24+ are compressed into variable late-game bands ending at 24, with historically harder bands biased closer to the cap.
+- Rebalanced all **16 Vortex day/night encounter pools**: ordinary tiers remain **5–20**, high tiers are now **22–24**, and legendary tiers are now **23–24**. Species, rarity windows, variants and legendary unlock behavior remain unchanged.
+- Added a shared server-side Wild Encounter balance contract (`PV_WILD_LEVEL_CAP = 24`) used by Vortex, Kanto, Hoenn and autonomous AI encounter generation so future encounter-table edits cannot silently reintroduce level-25+ wild Pokémon.
+- Added final generated-level guards on human and AI Vortex encounters and made Wild Battle startup fail closed on stale pre-release pending encounters above level 24 rather than silently changing the scanner-visible level.
+- Preserved the accepted Wild Battle EXP formula (`max(75, wild level × 55)`) for both human progression and the AI base curve. The fix is applied at the encounter-level source so low-level progression and human/AI reward parity remain intact.
+- Added dedicated wild-level-cap regression coverage auditing all **424 Kanto/Hoenn encounter entries** plus all **16 Vortex day/night pools**.
+- Asset cache key advanced to `25.2.1`. Database schema remains **revision 28**; no database migration is required from v25.2.0.
+
 ## v25.2.0 — Active Rival Trainer AI
 
 - Rebalanced all 2,000 persistent autonomous trainers for substantially higher activity while preserving the existing server-authoritative map, battle, inventory and Rival Network contracts.

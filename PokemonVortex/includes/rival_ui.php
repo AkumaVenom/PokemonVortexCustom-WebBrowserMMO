@@ -100,3 +100,46 @@ function pv_rival_target_card(array $row, int $now, string $variant = 'rival'): 
     }
     echo '</article>';
 }
+
+
+/** Shared competitive profile surface for player and autonomous trainers. */
+function pv_rival_profile_panel(mysqli $db, int $trainerId, int $viewerId): void
+{
+    if (!pv_rival_ready($db)) return;
+    $saved = pv_rival_retry_pending_result($db, $viewerId);
+    $state = pv_rival_state($db, $trainerId);
+    if (!$state) return;
+    $rating = (int)$state['rating'];
+    $tier = pv_rival_tier($rating);
+    $shield = pv_rival_shield_remaining($state);
+    $hasTeam = pv_rival_has_team($db, $trainerId);
+    $rank = $hasTeam ? pv_rival_rank_position($db, $trainerId, $rating, (int)$state['ranked_wins'], (int)$state['ranked_losses']) : 0;
+    ?>
+    <section class="pv-card pv-panel pv-ranked-profile" aria-label="Ranked trainer record">
+        <div class="pv-page-head"><div><span class="pv-eyebrow">RANKED LADDER</span><h2><?=pv_h((string)$tier['name'])?> · <?=number_format($rating)?> RP</h2></div><a class="pv-button pv-button-secondary" href="<?=pv_h(pv_url('rankings.php'))?>">Trainer Rankings</a></div>
+        <div class="pv-stat-grid">
+            <div><span>Global rank</span><strong><?=$rank > 0 ? '#'.number_format($rank) : 'Unplaced'?></strong></div>
+            <div><span>Ranked wins</span><strong><?=number_format((int)$state['ranked_wins'])?></strong></div>
+            <div><span>Ranked losses</span><strong><?=number_format((int)$state['ranked_losses'])?></strong></div>
+            <div><span>Peak rating</span><strong><?=number_format((int)$state['peak_rating'])?> RP</strong></div>
+        </div>
+        <p>Ranked wins earn rating points and losses cost rating points. The result updates both trainers on the shared player and AI ladder.</p>
+        <?php if (!$saved): ?>
+            <p class="pv-flash warning">Your completed ranked result is waiting to save. Open Trainer Rankings to retry before starting another ranked battle.</p>
+        <?php elseif ($trainerId === $viewerId): ?>
+            <a class="pv-button" href="<?=pv_h(pv_url('rival_hub.php'))?>">Find a Ranked Rival</a>
+        <?php elseif (!$hasTeam): ?>
+            <p class="pv-subtle">This trainer needs an active Pokémon team before being challenged.</p>
+        <?php elseif ($shield > 0): ?>
+            <p class="pv-subtle">Battle protection: <?=pv_h(pv_rival_format_duration($shield))?> remaining. <a href="<?=pv_h(pv_url('rival_hub.php'))?>">Find another rival or use a retaliation.</a></p>
+        <?php else: ?>
+            <form class="pv-rival-battle-form" method="post" action="<?=pv_h(pv_url('rival_action.php'))?>">
+                <?=pv_csrf_field()?>
+                <input type="hidden" name="rival_action_token" value="<?=pv_h(pv_action_token('rival_action.php'))?>">
+                <input type="hidden" name="action" value="challenge"><input type="hidden" name="target_id" value="<?=$trainerId?>">
+                <button class="pv-button pv-rival-battle-button" type="submit">Start Ranked Battle</button>
+            </form>
+        <?php endif; ?>
+    </section>
+    <?php
+}

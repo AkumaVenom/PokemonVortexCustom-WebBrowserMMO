@@ -7,6 +7,7 @@ pv_require_login();
 $db = pv_db();
 $uid = max(1, (int)($_SESSION['myid'] ?? 0));
 $now = time();
+$rankedResultSaved = pv_rival_retry_pending_result($db, $uid);
 $ready = pv_rival_ready($db);
 $flash = $_SESSION['pv_rival_flash'] ?? null;
 unset($_SESSION['pv_rival_flash']);
@@ -24,7 +25,7 @@ if ($ready) {
     $now = time();
     $state = pv_rival_state($db, $uid);
     if ($state) {
-        $rank = pv_rival_rank_position($db, $uid, (int)$state['rating'], (int)$state['ranked_wins']);
+        $rank = pv_rival_rank_position($db, $uid, (int)$state['rating'], (int)$state['ranked_wins'], (int)$state['ranked_losses']);
         $tier = pv_rival_tier((int)$state['rating']);
     }
 
@@ -60,6 +61,9 @@ pv_page_start('Rival Hub','rival_hub.php',true);
 <div class="pv-game-layout"><?php pv_game_side_menu('rival_hub.php'); ?><main class="pv-main-column"><section class="pv-page pv-rival-page">
 <?php pv_pokemon_banner('RIVAL NETWORK · RANKED TRAINER BATTLES','Rival Hub','Scout competitive trainers, challenge Elite Rivals, answer retaliation calls and climb the same persistent ladder as the autonomous AI field.',['Lucario','Pikachu','Gengar','Greninja','Charizard']); ?>
 
+<?php if (!$rankedResultSaved): ?>
+<div class="pv-flash warning"><strong>Ranked result waiting to save.</strong><span>Your completed battle is retained in this session. Refresh this page to retry; another ranked battle can start once it saves.</span></div>
+<?php endif; ?>
 <?php if(!$ready): ?>
 <div class="pv-flash warning"><strong>The Rival Network is waiting to be activated.</strong><span>Open Setup and run Upgrade once to unlock ranked battles, protection shields, retaliation orders and AI Activity.</span></div>
 <?php else: ?>

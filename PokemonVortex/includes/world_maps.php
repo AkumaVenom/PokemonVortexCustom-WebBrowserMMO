@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/wild_level_balance.php';
 
 /**
  * Multi-world exploration registry.
@@ -408,7 +409,7 @@ function pv_world_encounter_html(mysqli $db,array $area,int $x,int $y): string {
     $roll=random_int(1,$total);$picked=null;
     foreach($entries as $e){if(!is_array($e)||count($e)<4)continue;$roll-=max(0,(int)$e[3]);if($roll<=0){$picked=$e;break;}}
     if(!is_array($picked))return'';
-    $baseSpecies=trim((string)$picked[0]);$min=max(2,(int)$picked[1]);$max=max($min,(int)$picked[2]);$level=random_int($min,$max);
+    $baseSpecies=trim((string)$picked[0]);$min=max(2,(int)$picked[1]);$max=max($min,(int)$picked[2]);[$min,$max]=pv_wild_balanced_level_range($min,$max,2);$level=random_int($min,$max);
 
     // Species rarity is resolved first from the area's existing weighted table.
     // Variety is a second, independent roll using the recovered Vortex ordinary

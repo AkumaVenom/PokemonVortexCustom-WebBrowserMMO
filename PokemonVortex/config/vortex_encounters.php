@@ -159,7 +159,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Shaymin (Sky)', 'Celebi', 'Latias', 'Shaymin', 'Mew', 'Virizion', 'Xerneas (Active)', 'Tornadus'],
             'rare_source_index_max' => 7,
             'legendary_variants' => [
@@ -169,7 +169,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => [
                 'Pikachu',
                 'Raticate',
@@ -246,7 +246,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Kyogre', 'Lugia', 'Keldeo'],
             'rare_source_index_max' => 3,
             'legendary_variants' => [
@@ -256,7 +256,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Dewott', 'Tentacruel', 'Gyarados', 'Marshtomp']
         ],
         3 => [
@@ -330,7 +330,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Mew', 'Rotom', 'Mesprit', 'Azelf', 'Uxie', 'Celebi', 'Yveltal'],
             'rare_source_index_max' => 6,
             'legendary_variants' => [
@@ -340,7 +340,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Kadabra', 'Bronzong', 'Hypno', 'Chimecho', 'Malamar', 'Xatu', 'Kirlia']
         ],
         4 => [
@@ -412,7 +412,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Manaphy', 'Phione', 'Suicune', 'Keldeo'],
             'rare_source_index_max' => 3,
             'legendary_variants' => [
@@ -422,7 +422,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Wartortle', 'Golduck', 'Tentacruel', 'Simipour']
         ],
         5 => [
@@ -493,7 +493,7 @@ return [
             'rare_signal' => [782, 784],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Zapdos', 'Raikou', 'Thundurus', 'Zekrom', 'Genesect'],
             'rare_source_index_max' => 4,
             'legendary_variants' => [
@@ -503,7 +503,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Raichu', 'Altaria', 'Electabuzz', 'Staravia', 'Pidgeotto', 'Zebstrika']
         ],
         6 => [
@@ -574,7 +574,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Articuno', 'Suicune', 'Lugia', 'Regice', 'Kyurem', 'Diancie'],
             'rare_source_index_max' => 5,
             'legendary_variants' => [
@@ -584,7 +584,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Dewgong', 'Jynx', 'Weavile', 'Golbat', 'Vanillish', 'Beartic']
         ],
         7 => [
@@ -650,7 +650,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Heatran', 'Ho-oh', 'Moltres', 'Entei', 'Reshiram', 'Victini'],
             'rare_source_index_max' => 6,
             'legendary_variants' => [
@@ -660,7 +660,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Magmar', 'Flareon', 'Houndoom', 'Charmeleon', 'Simisear', 'Lampent', 'Pyroar']
         ],
         8 => [
@@ -762,7 +762,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => [
                 'Groudon',
                 'Arceus',
@@ -793,7 +793,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => [
                 'Steelix',
                 'Metang',
@@ -934,7 +934,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Latios', 'Rayquaza', 'Cresselia', 'Azelf', 'Uxie', 'Mesprit', 'Genesect', 'Yveltal'],
             'rare_source_index_max' => 8,
             'legendary_variants' => [
@@ -944,7 +944,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => [
                 'Pikachu',
                 'Raticate',
@@ -1021,7 +1021,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Kyogre', 'Lugia', 'Keldeo'],
             'rare_source_index_max' => 3,
             'legendary_variants' => [
@@ -1031,7 +1031,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Dewott', 'Tentacruel', 'Gyarados', 'Marshtomp']
         ],
         3 => [
@@ -1113,7 +1113,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Giratina', 'Rotom', 'Darkrown', 'Darkrai', 'Yveltal'],
             'rare_source_index_max' => 4,
             'legendary_variants' => [
@@ -1123,7 +1123,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => [
                 'Haunter',
                 'Kadabra',
@@ -1200,7 +1200,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Manaphy', 'Phione', 'Suicune'],
             'rare_source_index_max' => 2,
             'legendary_variants' => [
@@ -1210,7 +1210,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Wartortle', 'Tentacruel', 'Simipour']
         ],
         5 => [
@@ -1278,7 +1278,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Zapdos', 'Darkrai', 'Darkrown', 'Jirachi', 'Zekrom'],
             'rare_source_index_max' => 4,
             'legendary_variants' => [
@@ -1288,7 +1288,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Raichu', 'Electabuzz', 'Zebstrika', 'Excadrill', 'Whirlipede']
         ],
         6 => [
@@ -1359,7 +1359,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Articuno', 'Suicune', 'Lugia', 'Regice', 'Kyurem', 'Diancie'],
             'rare_source_index_max' => 5,
             'legendary_variants' => [
@@ -1369,7 +1369,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Dewgong', 'Jynx', 'Weavile', 'Golbat', 'Vanillish', 'Beartic']
         ],
         7 => [
@@ -1435,7 +1435,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => ['Heatran', 'Ho-oh', 'Moltres', 'Entei', 'Reshiram', 'Victini'],
             'rare_source_index_max' => 6,
             'legendary_variants' => [
@@ -1445,7 +1445,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => ['Magmar', 'Flareon', 'Houndoom', 'Charmeleon', 'Simisear', 'Lampent', 'Pyroar']
         ],
         8 => [
@@ -1547,7 +1547,7 @@ return [
             'rare_signal' => [782, 783],
             'rare_roll' => [1, 25],
             'legendary_roll_max' => 12,
-            'legendary_level' => [50, 75],
+            'legendary_level' => [23, 24],
             'legendary' => [
                 'Groudon',
                 'Arceus',
@@ -1578,7 +1578,7 @@ return [
                 11 => 'Metallic',
                 12 => 'Shadow'
             ],
-            'high_level' => [35, 46],
+            'high_level' => [22, 24],
             'high' => [
                 'Steelix',
                 'Metang',

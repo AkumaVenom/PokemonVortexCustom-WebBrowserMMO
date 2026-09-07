@@ -51,8 +51,9 @@ function pv_wild_clear(): void
  * Region worlds legitimately use early-game levels below 5. Never coerce a
  * valid encounter upward here: the level shown by the scanner must be the
  * same level used for battle HP/damage, capture creation and the result
- * ledger. Invalid/corrupt encounter state fails closed instead of silently
- * changing the Pokémon.
+ * ledger. The v25.2.1 progression contract caps wild encounters at level 24;
+ * stale or corrupt pending encounters above that cap fail closed and must be rescanned
+ * instead of being silently altered after the scanner has shown a different level.
  */
 function pv_wild_authoritative_encounter_level(array $pending): int
 {
@@ -60,7 +61,7 @@ function pv_wild_authoritative_encounter_level(array $pending): int
         throw new RuntimeException('The wild encounter level is missing. Return to the map and scan again.');
     }
     $level = (int)$pending['level'];
-    if ($level < 1 || $level > 100) {
+    if ($level < 1 || $level > PV_WILD_LEVEL_CAP) {
         throw new RuntimeException('The wild encounter level is invalid. Return to the map and scan again.');
     }
     return $level;

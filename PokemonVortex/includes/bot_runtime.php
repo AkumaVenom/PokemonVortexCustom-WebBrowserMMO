@@ -90,7 +90,7 @@ function pv_bot_activity_profile(int $botIndex): array
             'key'=>'master','label'=>'Master Rival','movement_min'=>4,'movement_max'=>6,
             'action_min'=>5,'action_max'=>12,'wild_chance'=>58,'training_multiplier'=>1.28,
             'capture_bonus'=>10,'collection_cap'=>48,'rank_attempt_chance'=>88,
-            'rank_cooldown_min'=>600,'rank_cooldown_max'=>1200,'ranked_win_bonus'=>7.0,
+            'rank_cooldown_min'=>90,'rank_cooldown_max'=>150,'ranked_win_bonus'=>7.0,
             'human_target_percent'=>55,
         ];
     }
@@ -99,7 +99,7 @@ function pv_bot_activity_profile(int $botIndex): array
             'key'=>'elite','label'=>'Elite Rival','movement_min'=>3,'movement_max'=>4,
             'action_min'=>10,'action_max'=>22,'wild_chance'=>46,'training_multiplier'=>1.12,
             'capture_bonus'=>6,'collection_cap'=>42,'rank_attempt_chance'=>72,
-            'rank_cooldown_min'=>1800,'rank_cooldown_max'=>3600,'ranked_win_bonus'=>3.5,
+            'rank_cooldown_min'=>180,'rank_cooldown_max'=>300,'ranked_win_bonus'=>3.5,
             'human_target_percent'=>50,
         ];
     }
@@ -107,17 +107,171 @@ function pv_bot_activity_profile(int $botIndex): array
         'key'=>'rival','label'=>'Active Rival','movement_min'=>2,'movement_max'=>3,
         'action_min'=>18,'action_max'=>40,'wild_chance'=>34,'training_multiplier'=>1.0,
         'capture_bonus'=>0,'collection_cap'=>36,'rank_attempt_chance'=>48,
-        'rank_cooldown_min'=>5400,'rank_cooldown_max'=>9000,'ranked_win_bonus'=>0.0,
+        'rank_cooldown_min'=>600,'rank_cooldown_max'=>1200,'ranked_win_bonus'=>0.0,
         'human_target_percent'=>42,
     ];
 }
 
 function pv_bot_ranked_cooldown_for(array $profile, int $botIndex): int
 {
-    $min = max(300, (int)($profile['rank_cooldown_min'] ?? 5400));
+    $min = max(60, (int)($profile['rank_cooldown_min'] ?? 600));
     $max = max($min, (int)($profile['rank_cooldown_max'] ?? $min));
     if ($max === $min) return $min;
     return $min + (($botIndex * 197) % (($max - $min) + 1));
+}
+
+const PV_BOT_RANKED_PULSE_SECONDS = 60;
+const PV_BOT_RANKED_PULSE_TARGET_OPERATIONS = 16;
+const PV_BOT_RANKED_PULSE_MAX_OPERATIONS = 16;
+const PV_BOT_RANKED_CONTENDER_COOLDOWN = 120;
+
+/**
+ * Return the single authoritative wall-clock cycle used by both the server
+ * ranked pulse and the Trainer Rankings browser clock. A manual reload inside
+ * a cycle therefore receives the same refresh_at value instead of inventing a
+ * fresh one-minute client countdown.
+ *
+ * @return array{server_now:int,bucket_start:int,refresh_at:int,bucket_id:int}
+ */
+function pv_bot_ranked_cycle(?int $now = null): array
+{
+    $now = max(0, $now ?? time());
+    $bucketStart = intdiv($now, PV_BOT_RANKED_PULSE_SECONDS) * PV_BOT_RANKED_PULSE_SECONDS;
+    return [
+        'server_now' => $now,
+        'bucket_start' => $bucketStart,
+        'refresh_at' => $bucketStart + PV_BOT_RANKED_PULSE_SECONDS,
+        'bucket_id' => intdiv($bucketStart, PV_BOT_RANKED_PULSE_SECONDS),
+    ];
+}
+
+/** The same slot rotation continues across page requests within a minute. */
+function pv_bot_ranked_lane(int $settled): string
+{
+    return ['contender','featured','contender','field'][max(0, $settled) % 4];
+}
+
+/** A request cap limits this batch, never the shared minute's total target. */
+function pv_bot_ranked_remaining(int $settled, int $maxOperations): int
+{
+    return min(max(0, min(PV_BOT_RANKED_PULSE_MAX_OPERATIONS, $maxOperations)),
+        max(0, PV_BOT_RANKED_PULSE_TARGET_OPERATIONS - max(0, $settled)));
+}
+
+/** Server-only cooldown SQL, derived from the same identity profiles as PHP. */
+function pv_bot_ranked_cooldown_sql(): string
+{
+    $clauses = [];
+    foreach ([24, 96, 2000] as $index) {
+        $profile = pv_bot_activity_profile($index);
+        $min = max(60, (int)$profile['rank_cooldown_min']);
+        $span = max(1, (int)$profile['rank_cooldown_max'] - $min + 1);
+        $expression = '(' . $min . ' + MOD(b.bot_index*197,' . $span . '))';
+        $clauses[] = $index === 2000 ? 'ELSE ' . $expression : 'WHEN b.bot_index<=' . $index . ' THEN ' . $expression;
+    }
+    return '(CASE ' . implode(' ', $clauses) . ' END)';
+}
+
+/**
+ * Recurring leaders compete alongside featured identities and a rotating field.
+ * Every lane validates owned active teams. Ratings are earned by settlement;
+ * being selected here does not award points or guarantee a victory.
+ */
+function pv_bot_ranked_candidates_sql(string $lane, int $now, int $bucket): string
+{
+    if (!in_array($lane, ['contender','featured','field'], true)) throw new InvalidArgumentException('Invalid ranked candidate lane.');
+    $cooldown = $lane === 'contender' ? (string)PV_BOT_RANKED_CONTENDER_COOLDOWN : pv_bot_ranked_cooldown_sql();
+    $sql = 'SELECT b.*,m.username,rs.rating,COALESCE(rs.last_attack_at,0) rank_last_attack_at '
+        . 'FROM bot_trainers b JOIN members m ON m.id=b.user_id '
+        . 'JOIN trainer_rank_state rs ON rs.user_id=b.user_id '
+        . 'WHERE b.enabled=1 AND COALESCE(m.s1,0)>0 '
+        . 'AND COALESCE(rs.last_attack_at,0)<=' . max(0, $now) . '-' . $cooldown . ' '
+        . 'AND EXISTS (SELECT 1 FROM pokemon ap WHERE ap.id=m.s1 AND CAST(ap.owner AS UNSIGNED)=m.id) ';
+    if ($lane === 'featured') $sql .= 'AND b.bot_index<=96 ';
+    $sql .= $lane === 'contender'
+        ? 'ORDER BY rs.rating DESC,COALESCE(rs.last_attack_at,0) ASC,rs.ranked_wins DESC, '
+        : 'ORDER BY COALESCE(rs.last_attack_at,0) ASC, ';
+    return $sql . 'MOD(b.bot_index*37+' . max(0, $bucket) . ',2003) ASC,b.user_id ASC LIMIT 48';
+}
+
+/**
+ * One shared, non-blocking service owns every autonomous ranked launch.
+ * Up to 16 committed matches per real minute; no idle-time catch-up fabrication.
+ * Half of scheduled slots favour RP leaders, a quarter Master/Elite identities,
+ * and a quarter the full field. Empty lanes lend their slot to another lane.
+ */
+function pv_bot_ranked_pulse(mysqli $db, int $maxOperations = PV_BOT_RANKED_PULSE_MAX_OPERATIONS, int $budgetMs = 1200): int
+{
+    if (!pv_bot_registry_ready($db) || !pv_rival_ready($db) || $maxOperations <= 0) return 0;
+    $maxOperations = min(PV_BOT_RANKED_PULSE_MAX_OPERATIONS, $maxOperations);
+    $budgetMs = max(150, min(2000, $budgetMs));
+    $lock = $db->query("SELECT GET_LOCK('pokemon_vortex_ranked_pulse',0) AS acquired");
+    $acquired = $lock ? (int)($lock->fetch_assoc()['acquired'] ?? 0) : 0;
+    if ($lock) $lock->free();
+    if ($acquired !== 1) return 0;
+
+    $started = microtime(true);
+    $completed = 0;
+    try {
+        $now = time();
+        $cycle = pv_bot_ranked_cycle($now);
+        $bucketStart = (int)$cycle['bucket_start'];
+        $bucketEnd = (int)$cycle['refresh_at'];
+        $result = $db->query("SELECT COUNT(*) AS settled FROM rival_battles WHERE source='autonomous' "
+            . 'AND created_at>=' . $bucketStart . ' AND created_at<' . $bucketEnd);
+        // Fail closed: a failed counter read must not manufacture an empty quota.
+        if (!$result) throw new RuntimeException('Could not read the ranked service count.');
+        $alreadySettled = max(0, (int)($result->fetch_assoc()['settled'] ?? 0));
+        $result->free();
+        $needed = pv_bot_ranked_remaining($alreadySettled, $maxOperations);
+        if ($needed <= 0) return 0;
+
+        // Paid only when this minute still needs work; map polling after quota
+        // completion does not repeatedly seed/normalize all 2,000 rank states.
+        pv_rival_ensure_all_states($db);
+        $lanes = ['contender','featured','field'];
+        $pools = [];
+        foreach ($lanes as $lane) {
+            if (((microtime(true) - $started) * 1000.0) >= $budgetMs || time() >= $bucketEnd) return 0;
+            $result = $db->query(pv_bot_ranked_candidates_sql($lane, $now, (int)$cycle['bucket_id']));
+            if (!$result) throw new RuntimeException('Could not load ranked competitors.');
+            $pools[$lane] = $result->fetch_all(MYSQLI_ASSOC);
+            $result->free();
+        }
+
+        $attempted = [];
+        while ($completed < $needed) {
+            // Check the budget even if every prior candidate failed. A protected
+            // or broken target pool must not create an unbounded page request.
+            if (((microtime(true) - $started) * 1000.0) >= $budgetMs || time() >= $bucketEnd) break;
+            $preferred = pv_bot_ranked_lane($alreadySettled + $completed);
+            $bot = null;
+            $selectedLane = $preferred;
+            foreach (array_unique(array_merge([$preferred], $lanes)) as $lane) {
+                while ($pools[$lane] !== []) {
+                    $candidate = array_shift($pools[$lane]);
+                    $id = (int)$candidate['user_id'];
+                    if (isset($attempted[$id])) continue;
+                    $attempted[$id] = true;
+                    $bot = $candidate;
+                    $selectedLane = $lane;
+                    break 2;
+                }
+            }
+            if ($bot === null) break;
+            $profile = pv_bot_activity_profile(max(1, (int)$bot['bot_index']));
+            $bot['ranked_win_bonus'] = (float)$profile['ranked_win_bonus'];
+            $bot['human_target_percent'] = (int)$profile['human_target_percent'];
+            $cooldown = $selectedLane === 'contender' ? PV_BOT_RANKED_CONTENDER_COOLDOWN
+                : pv_bot_ranked_cooldown_for($profile, (int)$bot['bot_index']);
+            if (pv_rival_bot_ranked_operation($db, $bot, $cooldown) !== null) $completed++;
+        }
+    } catch (Throwable $e) {
+        pv_log('Active ranked competition service failed: ' . $e->getMessage());
+    } finally {
+        $db->query("DO RELEASE_LOCK('pokemon_vortex_ranked_pulse')");
+    }
+    return $completed;
 }
 
 function pv_bot_disabled_password_hash(): string
@@ -481,12 +635,12 @@ function pv_bot_roll_wild(mysqli $db,string $world,string $mapKey,int $x,int $y,
         $map=max(1,min(25,(int)$mapKey));
         try{$rolled=pv_vortex_encounter_roll(pv_map_encounter_mode($map,$x,$y),false,false,random_int(665,1000));}catch(Throwable $e){return null;}
         $display=trim((string)($rolled['display_name']??''));if($display==='')return null;$guide=pv_map_resolve_species($db,$display);if(!$guide)return null;
-        return['guide'=>$guide,'display'=>$display,'level'=>max(5,min(99,(int)($rolled['level']??5)))];
+        return['guide'=>$guide,'display'=>$display,'level'=>pv_wild_capped_level((int)($rolled['level']??5),5)];
     }
     $area=pv_world_area($world,$mapKey);if(!$area)return null;$profileKey=trim((string)($area['encounter_profile']??''));if($profileKey==='')return null;$profile=pv_world_encounter_profiles($world)[$profileKey]??null;if(!is_array($profile))return null;
     $entries=(array)($profile['entries']??[]);$total=0;foreach($entries as $e)if(is_array($e)&&count($e)>=4)$total+=max(0,(int)$e[3]);if($total<=0)return null;
     $roll=random_int(1,$total);$picked=null;foreach($entries as $e){if(!is_array($e)||count($e)<4)continue;$roll-=max(0,(int)$e[3]);if($roll<=0){$picked=$e;break;}}if(!$picked)return null;
-    $base=trim((string)$picked[0]);$min=max(2,(int)$picked[1]);$max=max($min,(int)$picked[2]);$display=pv_world_vortex_variant_roll().$base;
+    $base=trim((string)$picked[0]);$min=max(2,(int)$picked[1]);$max=max($min,(int)$picked[2]);[$min,$max]=pv_wild_balanced_level_range($min,$max,2);$display=pv_world_vortex_variant_roll().$base;
     $stmt=$db->prepare('SELECT id,name,type1,type2,a1,a2,a3,a4 FROM pguide WHERE name=? LIMIT 1');if(!$stmt)return null;$stmt->bind_param('s',$display);$stmt->execute();$guide=$stmt->get_result()->fetch_assoc();$stmt->close();
     if(!$guide && $display!==$base){$display=$base;$stmt=$db->prepare('SELECT id,name,type1,type2,a1,a2,a3,a4 FROM pguide WHERE name=? LIMIT 1');if($stmt){$stmt->bind_param('s',$display);$stmt->execute();$guide=$stmt->get_result()->fetch_assoc();$stmt->close();}}
     return $guide?['guide'=>$guide,'display'=>$display,'level'=>random_int($min,$max)]:null;
@@ -603,7 +757,7 @@ function pv_bot_tick(mysqli $db,int $limit=24,string $focusWorld='',string $focu
     if(!pv_bot_registry_ready($db))return 0;$limit=max(1,min(64,$limit));$budgetMs=max(15,min(150,$budgetMs));
     $focusWorld=trim($focusWorld);$focusMap=trim($focusMap);
     $lock=$db->query("SELECT GET_LOCK('pokemon_vortex_bot_tick',0) AS acquired");$acquired=$lock?(int)($lock->fetch_assoc()['acquired']??0):0;if($lock)$lock->free();if($acquired!==1)return 0;
-    $processed=0;$rankOps=0;$now=time();$started=microtime(true);
+    $processed=0;$now=time();$started=microtime(true);
     try{
         $rankReady=pv_rival_ready($db);
         $base=$rankReady
@@ -632,10 +786,8 @@ function pv_bot_tick(mysqli $db,int $limit=24,string $focusWorld='',string $focu
                     $activityBot=$bot;$activityBot['world_key']=$world;$activityBot['map_key']=$mapKey;$activityBot['ranked_win_bonus']=(float)$profile['ranked_win_bonus'];$activityBot['human_target_percent']=(int)$profile['human_target_percent'];
                     pv_rival_log_bot_world_action($db,$activityBot,$action,$wildResult);
                     if($wildResult&&!empty($wildResult['evolutions']))foreach((array)$wildResult['evolutions'] as $evo){pv_rival_log_ai_activity($db,$uid,'evolution','Evolved '.$evo['old_name'].' into '.$evo['new_name'],'Training pushed '.$evo['old_name'].' past its level requirement, evolving it into '.$evo['new_name'].'.');}
-                    $cooldown=pv_bot_ranked_cooldown_for($profile,max(1,(int)$bot['bot_index']));$lastAttack=max(0,(int)($bot['rank_last_attack_at']??0));
-                    if($rankOps<2&&$lastAttack<=$now-$cooldown&&random_int(1,100)<=(int)$profile['rank_attempt_chance']&&((microtime(true)-$started)*1000.0)<($budgetMs*0.78)){
-                        if(pv_rival_bot_ranked_operation($db,$activityBot,$cooldown)!==null)$rankOps++;
-                    }
+                    // Ranked matches are scheduled below by the single shared
+                    // service; movement must not bypass its quota or cooldowns.
                 }catch(Throwable $rivalError){pv_log('Rival Network bot activity failed for '.$uid.': '.$rivalError->getMessage());}
                 $processed++;
             }catch(Throwable $e){
@@ -643,6 +795,10 @@ function pv_bot_tick(mysqli $db,int $limit=24,string $focusWorld='',string $focu
                 $retry=$now+180;$idle='idle';$stmt=$db->prepare('UPDATE bot_trainers SET next_action_at=?,last_action_at=?,last_action=?,updated_at=? WHERE user_id=? AND enabled=1');if($stmt){$stmt->bind_param('iisii',$retry,$now,$idle,$now,$uid);$stmt->execute();$stmt->close();}
             }
         }
+        // Active-world requests also service the shared one-minute Ranked bucket.
+        // This prevents autonomous Ranked play from depending on somebody having
+        // Trainer Rankings open; the bucket accounting keeps the work bounded.
+        if($rankReady){try{pv_bot_ranked_pulse($db,4,350);}catch(Throwable $rankPulseError){pv_log('Ranked service heartbeat failed: '.$rankPulseError->getMessage());}}
         try{pv_rival_housekeeping($db);}catch(Throwable $ignored){}
     }finally{$db->query("DO RELEASE_LOCK('pokemon_vortex_bot_tick')");}
     return $processed;

@@ -637,7 +637,7 @@ function pv_map_encounter_html(int $map, int $x, int $y): string {
     }
 
     $displayName = trim((string)($rolled['display_name'] ?? ''));
-    $level = max(5, min(99, (int)($rolled['level'] ?? 0)));
+    $level = pv_wild_capped_level((int)($rolled['level'] ?? 0), 5);
     $db = null;
     if ($displayName === '' || $level < 5) {
         return '<div class="pv-map-quiet"><strong>No wild Pokémon appeared.</strong><span>Keep exploring — encounters are random.</span></div>';

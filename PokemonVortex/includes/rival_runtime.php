@@ -16,7 +16,7 @@ require_once __DIR__ . '/bootstrap.php';
 const PV_RIVAL_START_RATING = 1000;
 const PV_RIVAL_SHIELD_SECONDS = 900;       // 15 minutes after a ranked attack.
 const PV_RIVAL_RETALIATION_SECONDS = 86400; // 24 hours to answer an attack.
-const PV_RIVAL_BOT_ATTACK_COOLDOWN = 5400; // v25.2 regular-rival floor; elite/master profiles use shorter deterministic cooldowns.
+const PV_RIVAL_BOT_ATTACK_COOLDOWN = 600; // Regular-rival default; the shared scheduler supplies profile/contender cooldowns.
 const PV_RIVAL_AUTONOMOUS_HISTORY_SECONDS = 604800; // Seven-day rolling AI-only history keeps higher activity sustainable.
 
 function pv_rival_table_exists(mysqli $db, string $table): bool
@@ -44,13 +44,10 @@ function pv_rival_ready(mysqli $db): bool
 
 function pv_rival_seed_rating_from_row(array $member, int $botIndex = 0): int
 {
-    $battle = max(0, (int)($member['battle'] ?? 0));
-    $wins = max(0, (int)($member['wins'] ?? 0));
-    $losses = max(0, (int)($member['losses'] ?? 0));
-    $progress = (int)floor(log10(max(1, $battle + 1)) * 110);
-    $record = max(-180, min(180, ($wins - $losses) * 3));
-    $botSpread = $botIndex > 0 ? (($botIndex * 37) % 181) - 90 : 0;
-    return max(700, min(1800, PV_RIVAL_START_RATING + min(260, $progress) + $record + $botSpread));
+    // Ranked competition starts from one neutral rating for every human and AI.
+    // Legacy Battle Arena progression and bot identity must never grant free
+    // ladder standing before a Ranked Rival result has actually been settled.
+    return PV_RIVAL_START_RATING;
 }
 
 function pv_rival_ensure_state(mysqli $db, int $userId): bool
@@ -84,30 +81,23 @@ function pv_rival_ensure_state(mysqli $db, int $userId): bool
 function pv_rival_ensure_all_states(mysqli $db): int
 {
     if (!pv_rival_ready($db)) return 0;
-    // Deterministic initial spread keeps a fresh 2,000-AI world competitive before
-    // autonomous Elo movement has had time to establish its own distribution.
+    // Every trainer enters Ranked Rival competition at the same neutral 1,000 RP.
+    // Legacy member progression and bot index are intentionally excluded.
     $sql = "INSERT IGNORE INTO trainer_rank_state
         (user_id,rating,peak_rating,ranked_wins,ranked_losses,current_streak,best_streak,shield_until,shield_source_user_id,last_ranked_at,last_attack_at,last_defense_at,updated_at)
-        SELECT m.id,
-               GREATEST(700,LEAST(1800,
-                   1000
-                   + LEAST(260,FLOOR(LOG10(GREATEST(1,COALESCE(m.battle,0)+1))*110))
-                   + GREATEST(-180,LEAST(180,(COALESCE(m.wins,0)-COALESCE(m.losses,0))*3))
-                   + CASE WHEN b.user_id IS NULL THEN 0 ELSE MOD(b.bot_index*37,181)-90 END
-               )),
-               GREATEST(700,LEAST(1800,
-                   1000
-                   + LEAST(260,FLOOR(LOG10(GREATEST(1,COALESCE(m.battle,0)+1))*110))
-                   + GREATEST(-180,LEAST(180,(COALESCE(m.wins,0)-COALESCE(m.losses,0))*3))
-                   + CASE WHEN b.user_id IS NULL THEN 0 ELSE MOD(b.bot_index*37,181)-90 END
-               )),
-               0,0,0,0,0,0,0,0,0,UNIX_TIMESTAMP()
+        SELECT m.id,1000,1000,0,0,0,0,0,0,0,0,0,UNIX_TIMESTAMP()
         FROM members m
-        LEFT JOIN bot_trainers b ON b.user_id=m.id AND b.enabled=1
         LEFT JOIN trainer_rank_state existing ON existing.user_id=m.id
         WHERE existing.user_id IS NULL";
     if (!$db->query($sql)) return 0;
-    return max(0, (int)$db->affected_rows);
+    $created = max(0, (int)$db->affected_rows);
+
+    // Repair only never-played legacy seed rows from pre-v25.2.6 installs. A
+    // trainer with any authoritative ranked W/L history keeps their earned RP.
+    // This makes the repair safe to run on every request and non-destructive to
+    // already-settled competitive results.
+    @$db->query('UPDATE trainer_rank_state SET rating=1000,peak_rating=1000,updated_at=UNIX_TIMESTAMP() WHERE ranked_wins=0 AND ranked_losses=0 AND last_ranked_at=0 AND (rating<>1000 OR peak_rating<>1000)');
+    return $created;
 }
 
 function pv_rival_state(mysqli $db, int $userId): ?array
@@ -132,21 +122,28 @@ function pv_rival_tier(int $rating): array
     return ['name'=>'Poké Ball','short'=>'POKÉ','ball'=>'images/items/Poke Ball.png','class'=>'poke'];
 }
 
-function pv_rival_rank_position(mysqli $db, int $userId, int $rating, ?int $rankedWins = null): int
+function pv_rival_rank_position(mysqli $db, int $userId, int $rating, ?int $rankedWins = null, ?int $rankedLosses = null): int
 {
     if (!pv_rival_ready($db) || $userId <= 0) return 0;
-    if ($rankedWins === null) {
-        $stmt = $db->prepare('SELECT ranked_wins FROM trainer_rank_state WHERE user_id=? LIMIT 1');
+    if ($rankedWins === null || $rankedLosses === null) {
+        $stmt = $db->prepare('SELECT ranked_wins,ranked_losses FROM trainer_rank_state WHERE user_id=? LIMIT 1');
         if (!$stmt) return 0;
         $stmt->bind_param('i', $userId);
         $stmt->execute();
-        $rankedWins = max(0, (int)($stmt->get_result()->fetch_assoc()['ranked_wins'] ?? 0));
+        $row = $stmt->get_result()->fetch_assoc() ?: [];
         $stmt->close();
+        if ($rankedWins === null) $rankedWins = max(0, (int)($row['ranked_wins'] ?? 0));
+        if ($rankedLosses === null) $rankedLosses = max(0, (int)($row['ranked_losses'] ?? 0));
     }
     $rankedWins = max(0, (int)$rankedWins);
-    $stmt = $db->prepare('SELECT COUNT(*)+1 AS rank_pos FROM trainer_rank_state WHERE rating>? OR (rating=? AND ranked_wins>?) OR (rating=? AND ranked_wins=? AND user_id<?)');
+    $rankedLosses = max(0, (int)$rankedLosses);
+
+    // Rating points determine global position for humans and AI alike. Wins,
+    // fewer losses and finally user id resolve equal-rating ties consistently
+    // with Rankings and Top AI Rivals. Only active-team trainers occupy a rank.
+    $stmt = $db->prepare('SELECT COUNT(*)+1 AS rank_pos FROM trainer_rank_state rs JOIN members m ON m.id=rs.user_id WHERE COALESCE(m.s1,0)>0 AND (rs.rating>? OR (rs.rating=? AND rs.ranked_wins>?) OR (rs.ranked_wins=? AND rs.rating=? AND rs.ranked_losses<?) OR (rs.ranked_wins=? AND rs.rating=? AND rs.ranked_losses=? AND rs.user_id<?))');
     if (!$stmt) return 0;
-    $stmt->bind_param('iiiiii', $rating, $rating, $rankedWins, $rating, $rankedWins, $userId);
+    $stmt->bind_param('iiiiiiiiii', $rating, $rating, $rankedWins, $rankedWins, $rating, $rankedLosses, $rankedWins, $rating, $rankedLosses, $userId);
     $stmt->execute();
     $rank = max(1, (int)($stmt->get_result()->fetch_assoc()['rank_pos'] ?? 1));
     $stmt->close();
@@ -221,6 +218,9 @@ function pv_rival_open_retaliation(mysqli $db, int $retaliationId, int $defender
 
 function pv_rival_begin_attack(mysqli $db, int $attackerId, int $defenderId, int $retaliationId = 0): array
 {
+    if (!pv_rival_retry_pending_result($db, $attackerId)) {
+        throw new RuntimeException('Your completed ranked result is still waiting to save. Return to Trainer Rankings and try again.');
+    }
     if (!pv_rival_ready($db)) throw new RuntimeException('The Rival Network database upgrade has not been applied yet.');
     if ($attackerId <= 0 || $defenderId <= 0 || $attackerId === $defenderId) throw new RuntimeException('Choose a valid rival.');
     if (!pv_rival_has_team($db, $attackerId)) throw new RuntimeException('Your active team needs at least one valid Pokémon before entering a ranked battle.');
@@ -270,7 +270,7 @@ function pv_rival_begin_attack(mysqli $db, int $attackerId, int $defenderId, int
             if (!$stmt->execute() || $stmt->affected_rows !== 1) { $stmt->close(); throw new RuntimeException('That retaliation is no longer available.'); }
             $stmt->close();
         }
-        $db->commit();
+        if (!$db->commit()) throw new RuntimeException('Could not commit ranked battle.');
     } catch (Throwable $e) {
         try { $db->rollback(); } catch (Throwable $ignored) {}
         throw $e;
@@ -281,6 +281,7 @@ function pv_rival_begin_attack(mysqli $db, int $attackerId, int $defenderId, int
         'defender_id'=>$defenderId,
         'retaliation_id'=>$retaliationId,
         'source'=>$retaliationId > 0 ? 'retaliation' : 'challenge',
+        'phase'=>'armed',
         'started_at'=>$now,
         'nonce'=>bin2hex(random_bytes(18)),
     ];
@@ -293,7 +294,7 @@ function pv_rival_session_context(int $attackerId, int $defenderId): ?array
     $ctx = $_SESSION['pv_rival_battle'] ?? null;
     if (!is_array($ctx)) return null;
     if ((int)($ctx['attacker_id'] ?? 0) !== $attackerId || (int)($ctx['defender_id'] ?? 0) !== $defenderId) return null;
-    if (time() - (int)($ctx['started_at'] ?? 0) > 7200) {
+    if (($ctx['phase'] ?? 'armed') === 'armed' && time() - (int)($ctx['started_at'] ?? 0) > 7200) {
         unset($_SESSION['pv_rival_battle']);
         return null;
     }
@@ -322,7 +323,7 @@ function pv_rival_log_ai_activity(mysqli $db, int $botUserId, string $category, 
     $stmt->close();
 }
 
-function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int $winnerId, string $source, int $retaliationId = 0, string $summary = '', bool $createRetaliation = true): array
+function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int $winnerId, string $source, int $retaliationId = 0, string $summary = '', bool $createRetaliation = true, string $sessionNonce = ''): array
 {
     if (!pv_rival_ready($db)) throw new RuntimeException('The Rival Network is not available.');
     if ($attackerId <= 0 || $defenderId <= 0 || $attackerId === $defenderId || !in_array($winnerId, [$attackerId,$defenderId], true)) {
@@ -332,6 +333,13 @@ function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int
     pv_rival_ensure_state($db, $defenderId);
 
     $source = in_array($source, ['challenge','retaliation','autonomous'], true) ? $source : 'challenge';
+    if ($sessionNonce !== '' && (!preg_match('/^[a-f0-9]{36}$/D', $sessionNonce) || $source === 'autonomous')) {
+        throw new RuntimeException('Invalid ranked settlement identity.');
+    }
+    // Human-involved history is retained permanently. Its server-issued nonce
+    // serves as a durable receipt without a schema migration. Both participant
+    // locks below serialize duplicate receipts for this same battle.
+    if ($sessionNonce !== '') $summary = 'Ranked Trainer Battle [' . $sessionNonce . ']';
     $now = time();
     $shieldUntil = $now + PV_RIVAL_SHIELD_SECONDS;
     $loserId = $winnerId === $attackerId ? $defenderId : $attackerId;
@@ -350,6 +358,19 @@ function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int
         $states = [];
         foreach ($rows as $row) $states[(int)$row['user_id']] = $row;
         if (!isset($states[$attackerId], $states[$defenderId])) throw new RuntimeException('Rival rating state is incomplete.');
+        if ($sessionNonce !== '') {
+            $stmt = $db->prepare('SELECT * FROM rival_battles WHERE attacker_id=? AND defender_id=? AND summary=? ORDER BY id LIMIT 1 FOR UPDATE');
+            if (!$stmt) throw new RuntimeException('Could not check ranked battle receipt.');
+            $stmt->bind_param('iis', $attackerId, $defenderId, $summary);
+            if (!$stmt->execute()) throw new RuntimeException('Could not read ranked battle receipt.');
+            $receipt = $stmt->get_result()->fetch_assoc();
+            $stmt->close();
+            if ($receipt) {
+                $result = pv_rival_match_result($receipt, $states[$attackerId], $states[$defenderId]);
+                if (!$db->commit()) throw new RuntimeException('Could not finish ranked receipt lookup.');
+                return $result + ['already_settled'=>true];
+            }
+        }
         // Autonomous operations resolve immediately and therefore must still
         // respect protection at settlement time. Player-launched battles are
         // allowed to finish after a valid launch even if another battle changes
@@ -371,6 +392,8 @@ function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int
         $stmt = $db->prepare('UPDATE trainer_rank_state SET rating=?,peak_rating=GREATEST(peak_rating,?),ranked_wins=ranked_wins+?,ranked_losses=ranked_losses+?,current_streak=?,best_streak=GREATEST(best_streak,?),shield_until=0,shield_source_user_id=0,last_ranked_at=?,last_attack_at=?,updated_at=? WHERE user_id=?');
         if (!$stmt) throw new RuntimeException('Could not update attacker ranking.');
         $aWinInc = $attackerWon ? 1 : 0; $aLossInc = $attackerWon ? 0 : 1;
+        $aWins = max(0, (int)$states[$attackerId]['ranked_wins']) + $aWinInc;
+        $aLosses = max(0, (int)$states[$attackerId]['ranked_losses']) + $aLossInc;
         $stmt->bind_param('iiiiiiiiii', $newA, $newA, $aWinInc, $aLossInc, $aStreak, $aStreak, $now, $now, $now, $attackerId);
         if (!$stmt->execute() || $stmt->affected_rows !== 1) { $stmt->close(); throw new RuntimeException('Could not update attacker ranking.'); }
         $stmt->close();
@@ -380,6 +403,8 @@ function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int
         $stmt = $db->prepare('UPDATE trainer_rank_state SET rating=?,peak_rating=GREATEST(peak_rating,?),ranked_wins=ranked_wins+?,ranked_losses=ranked_losses+?,current_streak=?,best_streak=GREATEST(best_streak,?),shield_until=?,shield_source_user_id=?,last_ranked_at=?,last_defense_at=?,updated_at=? WHERE user_id=?');
         if (!$stmt) throw new RuntimeException('Could not update defender ranking.');
         $dWinInc = $attackerWon ? 0 : 1; $dLossInc = $attackerWon ? 1 : 0;
+        $dWins = max(0, (int)$states[$defenderId]['ranked_wins']) + $dWinInc;
+        $dLosses = max(0, (int)$states[$defenderId]['ranked_losses']) + $dLossInc;
         $stmt->bind_param('iiiiiiiiiiii', $newD, $newD, $dWinInc, $dLossInc, $dStreak, $dStreak, $shieldUntil, $attackerId, $now, $now, $now, $defenderId);
         if (!$stmt->execute() || $stmt->affected_rows !== 1) { $stmt->close(); throw new RuntimeException('Could not update defender ranking.'); }
         $stmt->close();
@@ -403,7 +428,7 @@ function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int
             $stmt->close();
         }
 
-        $db->commit();
+        if (!$db->commit()) throw new RuntimeException('Could not commit ranked battle.');
     } catch (Throwable $e) {
         try { $db->rollback(); } catch (Throwable $ignored) {}
         throw $e;
@@ -415,27 +440,32 @@ function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int
     // have their own authoritative W/L telemetry in trainer_rank_state, so touching
     // the legacy counters here would mix two different battle modes and could make
     // a bot appear to have played the same human-facing battle twice.
-    $botFlags = [];
-    foreach ([$attackerId,$defenderId] as $id) {
-        $stmt = $db->prepare('SELECT 1 FROM bot_trainers WHERE user_id=? AND enabled=1 LIMIT 1');
-        if ($stmt) {
-            $stmt->bind_param('i', $id); $stmt->execute(); $botFlags[$id] = (bool)$stmt->get_result()->fetch_row(); $stmt->close();
+    try {
+        $botFlags = [];
+        foreach ([$attackerId,$defenderId] as $id) {
+            $stmt = $db->prepare('SELECT 1 FROM bot_trainers WHERE user_id=? AND enabled=1 LIMIT 1');
+            if ($stmt) {
+                $stmt->bind_param('i', $id); $stmt->execute(); $botFlags[$id] = (bool)$stmt->get_result()->fetch_row(); $stmt->close();
+            }
         }
-    }
 
-    if (!empty($botFlags[$attackerId])) {
-        $targetName = 'a rival';
-        $stmt = $db->prepare('SELECT username FROM members WHERE id=? LIMIT 1');
-        if ($stmt) { $stmt->bind_param('i',$defenderId); $stmt->execute(); $targetName=(string)($stmt->get_result()->fetch_assoc()['username']??$targetName); $stmt->close(); }
-        pv_rival_log_ai_activity(
-            $db,
-            $attackerId,
-            'ranked',
-            ($winnerId === $attackerId ? 'Won' : 'Lost') . ' a ranked rival battle',
-            ($winnerId === $attackerId ? 'Defeated ' : 'Challenged ') . $targetName . ' in the Rival Network.',
-            $defenderId,
-            $winnerId === $attackerId ? $delta : -$delta
-        );
+        if (!empty($botFlags[$attackerId])) {
+            $targetName = 'a rival';
+            $stmt = $db->prepare('SELECT username FROM members WHERE id=? LIMIT 1');
+            if ($stmt) { $stmt->bind_param('i',$defenderId); $stmt->execute(); $targetName=(string)($stmt->get_result()->fetch_assoc()['username']??$targetName); $stmt->close(); }
+            pv_rival_log_ai_activity(
+                $db,
+                $attackerId,
+                'ranked',
+                ($winnerId === $attackerId ? 'Won' : 'Lost') . ' a ranked rival battle',
+                ($winnerId === $attackerId ? 'Defeated ' : 'Challenged ') . $targetName . ' in the Rival Network.',
+                $defenderId,
+                $winnerId === $attackerId ? $delta : -$delta
+            );
+        }
+
+    } catch (Throwable $e) {
+        pv_log('Ranked activity feed update failed after committed battle ' . $battleId . ': ' . $e->getMessage());
     }
 
     return [
@@ -444,9 +474,40 @@ function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int
         'loser_id'=>$loserId,
         'rating_delta'=>$delta,
         'attacker_rating'=>$newA,
+        'attacker_rating_change'=>$newA - $aRating,
         'defender_rating'=>$newD,
+        'defender_rating_change'=>$newD - $dRating,
+        'attacker_ranked_wins'=>$aWins,
+        'attacker_ranked_losses'=>$aLosses,
+        'attacker_streak'=>$aStreak,
+        'defender_ranked_wins'=>$dWins,
+        'defender_ranked_losses'=>$dLosses,
+        'defender_streak'=>$dStreak,
         'shield_until'=>$shieldUntil,
         'retaliation_id'=>$newRetaliationId,
+    ];
+}
+
+/** Reconstruct an existing receipt without changing either trainer again. */
+function pv_rival_match_result(array $battle, array $attacker, array $defender): array
+{
+    $won = (int)$battle['winner_id'] === (int)$battle['attacker_id'];
+    $delta = (int)$battle['rating_delta'];
+    $aBefore = (int)$battle['attacker_rating_before'];
+    $dBefore = (int)$battle['defender_rating_before'];
+    return [
+        'battle_id'=>(int)$battle['id'], 'winner_id'=>(int)$battle['winner_id'],
+        'loser_id'=>(int)$battle['loser_id'], 'rating_delta'=>$delta,
+        'attacker_rating'=>(int)$attacker['rating'], 'defender_rating'=>(int)$defender['rating'],
+        'attacker_rating_change'=>max(100, $aBefore + ($won ? $delta : -$delta)) - $aBefore,
+        'defender_rating_change'=>max(100, $dBefore + ($won ? -$delta : $delta)) - $dBefore,
+        'attacker_ranked_wins'=>(int)$attacker['ranked_wins'],
+        'attacker_ranked_losses'=>(int)$attacker['ranked_losses'],
+        'attacker_streak'=>(int)$attacker['current_streak'],
+        'defender_ranked_wins'=>(int)$defender['ranked_wins'],
+        'defender_ranked_losses'=>(int)$defender['ranked_losses'],
+        'defender_streak'=>(int)$defender['current_streak'],
+        'shield_until'=>(int)$defender['shield_until'], 'retaliation_id'=>0,
     ];
 }
 
@@ -454,28 +515,36 @@ function pv_rival_complete_session_battle(mysqli $db, int $attackerId, int $defe
 {
     if (!in_array($outcome, ['win','loss'], true)) return null;
     $ctx = pv_rival_session_context($attackerId, $defenderId);
-    if (!$ctx) return null;
+    if (!$ctx || ($ctx['phase'] ?? '') === 'armed') return null;
+    // Only the authoritative combat terminal path supplies this outcome. Once
+    // recorded, a retry cannot reverse it and it must not expire as an idle launch.
+    $outcome = (string)($ctx['pending_outcome'] ?? $outcome);
+    $_SESSION['pv_rival_battle']['phase'] = 'pending';
+    $_SESSION['pv_rival_battle']['pending_outcome'] = $outcome;
     $winnerId = $outcome === 'win' ? $attackerId : $defenderId;
     try {
+        $nonce = (string)($ctx['nonce'] ?? '');
+        if (!preg_match('/^[a-f0-9]{36}$/D', $nonce)) throw new RuntimeException('Ranked battle identity is missing.');
         $result = pv_rival_record_match(
-            $db,
-            $attackerId,
-            $defenderId,
-            $winnerId,
+            $db, $attackerId, $defenderId, $winnerId,
             (string)($ctx['source'] ?? 'challenge'),
-            max(0, (int)($ctx['retaliation_id'] ?? 0)),
-            $outcome === 'win' ? 'Player completed an animated ranked Trainer Battle.' : 'Player was defeated in an animated ranked Trainer Battle.'
+            max(0, (int)($ctx['retaliation_id'] ?? 0)), '', true, $nonce
         );
         unset($_SESSION['pv_rival_battle']);
-        $_SESSION['pv_rival_last_result'] = $result + ['outcome'=>$outcome,'opponent_id'=>$defenderId];
+        $_SESSION['pv_rival_last_result'] = $result + ['outcome'=>(int)$result['winner_id'] === $attackerId ? 'win' : 'loss','opponent_id'=>$defenderId];
         return $result;
     } catch (Throwable $e) {
-        // Combat progression has already settled at this point. Rival metadata is
-        // secondary and must never make a completed Pokémon battle look uncommitted.
-        pv_log('Rival Network settlement failed: '.$e->getMessage(), ['attacker'=>$attackerId,'defender'=>$defenderId,'outcome'=>$outcome]);
-        unset($_SESSION['pv_rival_battle']);
+        pv_log('Rival Network settlement pending: '.$e->getMessage(), ['attacker'=>$attackerId,'defender'=>$defenderId,'outcome'=>$outcome]);
         return null;
     }
+}
+
+/** Retry only a server-resolved result; never infer an outcome from a URL. */
+function pv_rival_retry_pending_result(mysqli $db, int $userId): bool
+{
+    $ctx = $_SESSION['pv_rival_battle'] ?? null;
+    if (!is_array($ctx) || (int)($ctx['attacker_id'] ?? 0) !== $userId || !isset($ctx['pending_outcome'])) return true;
+    return pv_rival_complete_session_battle($db, $userId, (int)$ctx['defender_id'], (string)$ctx['pending_outcome']) !== null;
 }
 
 function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeconds = PV_RIVAL_BOT_ATTACK_COOLDOWN): ?array
@@ -484,7 +553,7 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeco
     $botId = max(0, (int)($bot['user_id'] ?? 0));
     if ($botId <= 0 || !pv_rival_has_team($db, $botId)) return null;
     $now = time();
-    $cooldownSeconds = max(300, min(14400, $cooldownSeconds));
+    $cooldownSeconds = max(60, min(14400, $cooldownSeconds));
     if (array_key_exists('rank_last_attack_at', $bot) && (int)$bot['rank_last_attack_at'] > $now - $cooldownSeconds) return null;
     pv_rival_ensure_state($db, $botId);
     $state = pv_rival_state($db, $botId);
@@ -500,6 +569,7 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeco
         . 'LEFT JOIN bot_trainers b ON b.user_id=r.user_id AND b.enabled=1 '
         . 'WHERE r.user_id<>? AND r.rating BETWEEN ? AND ? AND r.shield_until<=? '
         . 'AND COALESCE(m.s1,0)>0 '
+        . 'AND EXISTS (SELECT 1 FROM pokemon tp WHERE tp.id=m.s1 AND CAST(tp.owner AS UNSIGNED)=m.id) '
         . 'ORDER BY CASE WHEN b.user_id IS NULL THEN 0 ELSE 1 END ASC, ABS(r.rating-?) ASC, MOD(r.user_id*31+?,97) ASC LIMIT 18'
     );
     if (!$stmt) return null;
@@ -508,6 +578,25 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeco
     $stmt->execute();
     $candidates = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
+
+    // A narrow RP window must never be able to stall autonomous Ranked play.
+    // If every nearby rival is protected or the Elo field has spread apart,
+    // widen to the whole eligible field while still preferring close RP.
+    if ($candidates === []) {
+        $stmt = $db->prepare(
+            'SELECT r.user_id,r.rating,m.username,CASE WHEN b.user_id IS NULL THEN 0 ELSE 1 END is_bot '
+            . 'FROM trainer_rank_state r JOIN members m ON m.id=r.user_id '
+            . 'LEFT JOIN bot_trainers b ON b.user_id=r.user_id AND b.enabled=1 '
+            . 'WHERE r.user_id<>? AND r.shield_until<=? AND COALESCE(m.s1,0)>0 '
+            . 'AND EXISTS (SELECT 1 FROM pokemon tp WHERE tp.id=m.s1 AND CAST(tp.owner AS UNSIGNED)=m.id) '
+            . 'ORDER BY ABS(r.rating-?) ASC, CASE WHEN b.user_id IS NULL THEN 0 ELSE 1 END ASC, MOD(r.user_id*31+?,97) ASC LIMIT 24'
+        );
+        if (!$stmt) return null;
+        $stmt->bind_param('iiii', $botId, $now, $rating, $minuteSeed);
+        $stmt->execute();
+        $candidates = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+    }
     if ($candidates === []) return null;
 
     // AI should visibly compete with real trainers, not disappear into a private

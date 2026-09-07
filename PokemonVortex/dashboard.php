@@ -19,7 +19,7 @@ $teamIds=array_filter(array_map('intval',[$member['s1']??0,$member['s2']??0,$mem
 if($teamIds){ $ids=implode(',',array_map('intval',$teamIds)); $r=$db->query("SELECT p.*, ps.nature, ps.ability, ps.happiness FROM pokemon p LEFT JOIN pokemon_stats ps ON ps.id=p.id WHERE p.owner={$uid} AND p.id IN ({$ids})"); $by=[]; while($x=$r->fetch_assoc())$by[(int)$x['id']]=$x; foreach($teamIds as $id)if(isset($by[$id]))$team[]=$by[$id]; }
 $money=(int)($member['money']??0);$battles=(int)($member['battle']??0);
 $rivalState=null;$rivalRank=0;$rivalTier=pv_rival_tier(PV_RIVAL_START_RATING);
-if(pv_rival_ready($db)){ pv_rival_ensure_state($db,$uid); $rivalState=pv_rival_state($db,$uid); if($rivalState){$rivalRank=pv_rival_rank_position($db,$uid,(int)$rivalState['rating']);$rivalTier=pv_rival_tier((int)$rivalState['rating']);} }
+if(pv_rival_ready($db)){ pv_rival_ensure_state($db,$uid); $rivalState=pv_rival_state($db,$uid); if($rivalState){$rivalRank=pv_rival_rank_position($db,$uid,(int)$rivalState['rating'],(int)$rivalState['ranked_wins'],(int)$rivalState['ranked_losses']);$rivalTier=pv_rival_tier((int)$rivalState['rating']);} }
 pv_page_start('Dashboard','dashboard.php',true);
 ?>
 <div class="pv-game-layout"><?php pv_game_side_menu('dashboard.php'); ?><main class="pv-page pv-dashboard-pokemon">

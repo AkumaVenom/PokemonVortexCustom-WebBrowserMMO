@@ -862,19 +862,14 @@ function pv_apply_schema_migrations(mysqli $db): array
     if (pv_schema_table_exists($db, 'trainer_rank_state')) {
         $rankSeedSql = "INSERT IGNORE INTO trainer_rank_state
             (user_id,rating,peak_rating,ranked_wins,ranked_losses,current_streak,best_streak,shield_until,shield_source_user_id,last_ranked_at,last_attack_at,last_defense_at,updated_at)
-            SELECT m.id,
-                   GREATEST(700,LEAST(1800,1000
-                       + LEAST(260,FLOOR(LOG10(GREATEST(1,COALESCE(m.battle,0)+1))*110))
-                       + GREATEST(-180,LEAST(180,(COALESCE(m.wins,0)-COALESCE(m.losses,0))*3))
-                       + CASE WHEN b.user_id IS NULL THEN 0 ELSE MOD(b.bot_index*37,181)-90 END)),
-                   GREATEST(700,LEAST(1800,1000
-                       + LEAST(260,FLOOR(LOG10(GREATEST(1,COALESCE(m.battle,0)+1))*110))
-                       + GREATEST(-180,LEAST(180,(COALESCE(m.wins,0)-COALESCE(m.losses,0))*3))
-                       + CASE WHEN b.user_id IS NULL THEN 0 ELSE MOD(b.bot_index*37,181)-90 END)),
-                   0,0,0,0,0,0,0,0,0,UNIX_TIMESTAMP()
-            FROM members m LEFT JOIN bot_trainers b ON b.user_id=m.id AND b.enabled=1";
+            SELECT m.id,1000,1000,0,0,0,0,0,0,0,0,0,UNIX_TIMESTAMP()
+            FROM members m";
         if (!$db->query($rankSeedSql)) throw new RuntimeException('Could not seed Ranked Rival Network trainer states: ' . $db->error);
-        if ($db->affected_rows > 0) $changes[] = 'Seeded ' . (int)$db->affected_rows . ' Ranked Rival Network trainer state row(s)';
+        if ($db->affected_rows > 0) $changes[] = 'Seeded ' . (int)$db->affected_rows . ' Ranked Rival Network trainer state row(s) at neutral 1,000 RP';
+        if (!$db->query('UPDATE trainer_rank_state SET rating=1000,peak_rating=1000,updated_at=UNIX_TIMESTAMP() WHERE ranked_wins=0 AND ranked_losses=0 AND last_ranked_at=0 AND (rating<>1000 OR peak_rating<>1000)')) {
+            throw new RuntimeException('Could not normalize untouched Ranked Rival Network seed ratings: ' . $db->error);
+        }
+        if ($db->affected_rows > 0) $changes[] = 'Normalized ' . (int)$db->affected_rows . ' untouched Ranked Rival seed rating row(s) to 1,000 RP';
     }
     if ((int)($botPopulation['created'] ?? 0) > 0) {
         $changes[] = 'Seeded ' . (int)$botPopulation['created'] . ' autonomous trainer bot account(s)';

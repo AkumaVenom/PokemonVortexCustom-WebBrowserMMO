@@ -86,6 +86,23 @@ function pv_battle_form_security_fields(): string {
     return pv_csrf_field() . '<input type="hidden" name="battle_action_token" value="' . pv_h(pv_action_token('battle.php')) . '">';
 }
 
+/**
+ * Return the correct post-battle route for ordinary Trainer Snapshot battles.
+ *
+ * A Rival Network match must never expose the recovered direct rebattle link:
+ * that URL starts an unranked snapshot battle and bypasses ranked protection /
+ * retaliation launch checks. Ranked competitors are routed back through Rival
+ * Hub so every subsequent ranked result is explicitly armed and counted.
+ */
+function pv_battle_trainer_rebattle_link(): string {
+    $trainerId = max(1, (int)($_SESSION['myid'] ?? 0));
+    $opponentId = max(0, (int)($_SESSION['opponent_profile'][0] ?? 0));
+    if ($opponentId > 0 && (pv_rival_session_context($trainerId, $opponentId) || (int)($GLOBALS['pv_battle_ranked_opponent'] ?? 0) === $opponentId)) {
+        return '<a href="' . pv_h(pv_url('rival_hub.php')) . '" class="deselected">Return to Rival Hub for Next Ranked Battle</a>';
+    }
+    return '<a href="battle.php?bid=' . $opponentId . '" class="deselected">Rebattle Opponent</a>';
+}
+
 
 /**
  * Resolve NPC battle move metadata through the unified combat contract.
@@ -261,6 +278,21 @@ if ($battleRouteType === 'clanbattle' && empty($_SESSION['clan_battle'][0])) {
 }
 
 if($battleStartRequested){
+    if (!pv_rival_retry_pending_result($battleDb, (int)$_SESSION['myid'])) {
+        pv_redirect('rankings.php');
+    }
+    $rankedLaunch = $battleRouteType === 'bid'
+        ? pv_rival_session_context((int)$_SESSION['myid'], (int)$battleRoute['bid']) : null;
+    if ($rankedLaunch) {
+        if (($rankedLaunch['phase'] ?? '') === 'active'
+            && (int)($_SESSION['opponent_profile'][0] ?? 0) === (int)$battleRoute['bid']
+            && (string)($_SESSION['opponent_profile'][3] ?? '') === '') {
+            pv_redirect('battle.php');
+        }
+        $_SESSION['pv_rival_battle']['phase'] = 'active';
+    } else {
+        unset($_SESSION['pv_rival_battle']);
+    }
 	// Unset previous battle sessions only after the new route has been validated.
 	unset($_SESSION['opponent_profile'],$_SESSION['s1'],$_SESSION['s2'],$_SESSION['s3'],$_SESSION['s4'],$_SESSION['s5'],$_SESSION['s6'],$_SESSION['ops1'],$_SESSION['ops2'],$_SESSION['ops3'],$_SESSION['ops4'],$_SESSION['ops5'],$_SESSION['ops6'],$_SESSION['position'],$_SESSION['your_profile'],$_SESSION['y_p']);
 	// The recovered engine treats this ten-element array as a tiny move cache.
@@ -2355,6 +2387,27 @@ if($battleStartRequested){
 				$all_dead_op = 1;
 				$all_dead_op = $_SESSION['ops1'][10] + $_SESSION['ops2'][10] + $_SESSION['ops3'][10] + $_SESSION['ops4'][10] + $_SESSION['ops5'][10] + $_SESSION['ops6'][10];
 				$all_dead_u = $_SESSION['s1'][10] + $_SESSION['s2'][10] + $_SESSION['s3'][10] + $_SESSION['s4'][10] + $_SESSION['s5'][10] + $_SESSION['s6'][10];
+                // Ranked W/L and RP belong to the completed combat result, not
+                // the legacy ten-second money/EXP reward gate below.
+                $rankedTrainer = (int)$_SESSION['myid'];
+                $rankedOpponent = (int)($_SESSION['opponent_profile'][0] ?? 0);
+                if (isset($_SESSION['ops1']) && ($all_dead_op == 0 || $all_dead_u == 0)
+                    && (string)($_SESSION['opponent_profile'][3] ?? '') === ''
+                    && ($terminalRankedContext = pv_rival_session_context($rankedTrainer, $rankedOpponent))
+                    && ($terminalRankedContext['phase'] ?? '') !== 'armed') {
+                    $GLOBALS['pv_battle_ranked_opponent'] = $rankedOpponent;
+                    $rankedOutcome = $all_dead_op == 0 ? 'win' : 'loss';
+                    $rankedResult = pv_rival_complete_session_battle($battleDb, $rankedTrainer, $rankedOpponent, $rankedOutcome);
+                    if ($rankedResult) {
+                        $change = (int)$rankedResult['attacker_rating_change'];
+                        echo '<div class="pv-rival-battle-result is-' . $rankedOutcome . '"><strong>Ranked ' . ($rankedOutcome === 'win' ? 'Victory' : 'Defeat') . '</strong><span>'
+                            . ($change > 0 ? '+' : '') . number_format($change) . ' RP · Rating ' . number_format((int)$rankedResult['attacker_rating'])
+                            . ' RP · Ranked record ' . number_format((int)$rankedResult['attacker_ranked_wins']) . ' W · ' . number_format((int)$rankedResult['attacker_ranked_losses'])
+                            . ' L · Both trainers updated.</span><a href="' . pv_h(pv_url('rankings.php')) . '">Return to Trainer Rankings →</a></div>';
+                    } else {
+                        echo '<div class="pv-flash warning"><strong>Ranked result waiting to save.</strong><span>Your result is retained. Open Trainer Rankings to retry saving it.</span><a href="' . pv_h(pv_url('rankings.php')) . '">Return to Trainer Rankings →</a></div>';
+                    }
+                }
 				if($all_dead_op == 0 && isset($_SESSION['ops1'])){
 
 					$tb = pv_battle_runtime_member_snapshot($battleDb, (int)$_SESSION['myid']);
@@ -2362,7 +2415,7 @@ if($battleStartRequested){
 					$time = time();
 					$secs = $time - $tbb;
 					if($secs < 10){
-						echo '<div class="errorMsg">You have already completed a battle within the last 10 seconds. This is in effect to prevent cheating of any kind.</div>
+						echo '<div class="errorMsg">' . (!empty($GLOBALS['pv_battle_ranked_opponent']) ? 'Standard battle rewards are on cooldown. Your ranked result is handled separately above.' : 'You have already completed a battle within the last 10 seconds. This is in effect to prevent cheating of any kind.') . '</div>
 						<p class="optionsList autowidth"><strong>Options:</strong><br />';
 						if($_SESSION['opponent_profile'][3] == 'gym'){
 							echo '<a href="battle.php?gymleader=' . $_SESSION['opponent_profile'][1] . '" class="deselected">Rebattle Opponent</a>';
@@ -2377,7 +2430,7 @@ if($battleStartRequested){
 							echo '<a href="clans.php?view=Battle" class="deselected">Back To Clan Battles</a>';
 						}
 						else{
-							echo '<a href="battle.php?bid=' . $_SESSION['opponent_profile'][0] . '" class="deselected">Rebattle Opponent</a>';
+							echo pv_battle_trainer_rebattle_link();
 						}
 						echo '</a><br />
 						<a href="change_team.php" class="deselected">View/Modify Team</a><br />
@@ -2493,7 +2546,7 @@ if($battleStartRequested){
 									echo '<a href="clans.php?view=Battle" class="deselected">Back To Clan Battles</a>';
 								}
 								else{
-									echo '<a href="battle.php?bid=' . $_SESSION['opponent_profile'][0] . '" class="deselected">Rebattle Opponent</a>';
+									echo pv_battle_trainer_rebattle_link();
 								}
 								echo '</a><br />
 								<a href="change_team.php" class="deselected">View/Modify Team</a><br />
@@ -2509,15 +2562,6 @@ if($battleStartRequested){
 								pv_battle_runtime_record_victory($battleDb, $trainerId, (int)$time, $money, $clanName);
 								if(($_SESSION['opponent_profile'][3] ?? '') === 'clan') unset($_SESSION['clan_battle']);
 
-								// Ranked Rival Network settlement is opt-in and session-bound.
-								// Ordinary Trainer Snapshot battles remain exactly as before.
-								if((string)($_SESSION['opponent_profile'][3] ?? '') === ''){
-									$rankedOpponent=max(0,(int)($_SESSION['opponent_profile'][0] ?? 0));
-									if($rankedOpponent>0 && pv_rival_session_context($trainerId,$rankedOpponent)){
-										$rankedResult=pv_rival_complete_session_battle($battleDb,$trainerId,$rankedOpponent,'win');
-										if($rankedResult) echo '<div class="pv-rival-battle-result is-win"><strong>Rival Network Victory</strong><span>Rating +'.number_format((int)$rankedResult['rating_delta']).' · your opponent now has temporary battle protection.</span><a href="'.pv_h(pv_url('rival_hub.php')).'">Return to Rival Hub →</a></div>';
-									}
-								}
 
 								pv_recalculate_trainer_progress($battleDb, $trainerId, true);
 							}
@@ -2531,7 +2575,7 @@ if($battleStartRequested){
 							$time = time();
 							$secs = $time - $tbb;
 							if($secs < 9){
-								echo '<div class="errorMsg">You have already completed a battle within the last 10 seconds. This is in effect to prevent cheating of any kind.</div>
+								echo '<div class="errorMsg">' . (!empty($GLOBALS['pv_battle_ranked_opponent']) ? 'Standard battle rewards are on cooldown. Your ranked result is handled separately above.' : 'You have already completed a battle within the last 10 seconds. This is in effect to prevent cheating of any kind.') . '</div>
 								<p class="optionsList autowidth"><strong>Options:</strong><br />';
 								if($_SESSION['opponent_profile'][3] == 'gym'){
 									echo '<a href="battle.php?gymleader=' . $_SESSION['opponent_profile'][1] . '" class="deselected">Rebattle Opponent</a>';
@@ -2546,7 +2590,7 @@ if($battleStartRequested){
 									echo '<a href="clans.php?view=Battle" class="deselected">Back To Clan Battles</a>';
 								}
 								else{
-									echo '<a href="battle.php?bid=' . $_SESSION['opponent_profile'][0] . '" class="deselected">Rebattle Opponent</a>';
+									echo pv_battle_trainer_rebattle_link();
 								}
 								echo '</a><br />
 								<a href="change_team.php" class="deselected">View/Modify Team</a><br />
@@ -2558,13 +2602,7 @@ if($battleStartRequested){
 								$clanName = (($_SESSION['opponent_profile'][3] ?? '') === 'clan') ? trim((string)($_SESSION['clan'] ?? '')) : '';
 								pv_battle_runtime_record_defeat($battleDb, $trainerId, (int)$time, $clanName);
 								if(($_SESSION['opponent_profile'][3] ?? '') === 'clan') unset($_SESSION['clan_battle']);
-								if((string)($_SESSION['opponent_profile'][3] ?? '') === ''){
-									$rankedOpponent=max(0,(int)($_SESSION['opponent_profile'][0] ?? 0));
-									if($rankedOpponent>0 && pv_rival_session_context($trainerId,$rankedOpponent)){
-										$rankedResult=pv_rival_complete_session_battle($battleDb,$trainerId,$rankedOpponent,'loss');
-										if($rankedResult) echo '<div class="pv-rival-battle-result is-loss"><strong>Rival Network Defeat</strong><span>Rating -'.number_format((int)$rankedResult['rating_delta']).' · your opponent now has temporary battle protection.</span><a href="'.pv_h(pv_url('rival_hub.php')).'">Return to Rival Hub →</a></div>';
-									}
-								}
+
 								echo '<h2>Sorry, you lost the battle.</h2>
 								<h3>Your team lost to ' . htmlentities($_SESSION['opponent_profile'][1]) . '\'s team.</h3>';
 								echo '<p class="optionsList autowidth"><strong>Options:</strong><br />';
@@ -2581,7 +2619,7 @@ if($battleStartRequested){
 									echo '<a href="clans.php?view=Battle" class="deselected">Back To Clan Battles</a>';
 								}
 								else{
-									echo '<a href="battle.php?bid=' . $_SESSION['opponent_profile'][0] . '" class="deselected">Rebattle Opponent</a>';
+									echo pv_battle_trainer_rebattle_link();
 								}
 								echo '</a><br />
 								<a href="change_team.php" class="deselected">View/Modify Team</a><br />

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/includes/bot_runtime.php';
-require_once __DIR__ . '/includes/ui.php';
+require_once __DIR__ . '/includes/rival_ui.php';
 pv_require_login();
 
 try { $db = pv_db(); }
@@ -66,21 +66,29 @@ pv_page_start($username,'map_select.php',true);
     <div class="pv-mini-status"><i></i> <?=pv_h(strtoupper((string)$activityProfile['label']))?> ACTIVE</div>
 </div>
 
+<?php pv_rival_profile_panel($db, $botId, (int)$_SESSION['myid']); ?>
+
 <div class="pv-bot-profile-grid">
 <section class="pv-panel pv-bot-interaction-card">
+<?php if (($_GET['ranked'] ?? '') === '1'): ?>
+    <div class="pv-map-panel-label">RANKED TRAINER CHALLENGE</div>
+    <p>Use the ranked challenge above to update this ladder. Battle protection applies to every trainer.</p>
+    <a class="pv-button pv-button-secondary" href="<?=pv_h(pv_url('bot_trainer.php?id='.$botId))?>">View Practice and Live AI Battles</a>
+<?php else: ?>
     <div class="pv-map-panel-label">TRAINER INTERACTION</div>
     <h2>Challenge <?=pv_h($username)?></h2>
-    <p>Choose a trainer snapshot battle for the classic battle flow, or start a Live AI Battle against this trainer's current team.</p>
+    <p>These practice and Live AI battles have separate records and do not award ranked RP. Use Start Ranked Battle above to compete on the ladder.</p>
     <div class="pv-actions pv-bot-actions">
-        <a class="pv-button pv-button-secondary" href="<?=pv_h(pv_url('battle.php?bid='.$botId))?>">Trainer Snapshot Battle</a>
+        <a class="pv-button pv-button-secondary" href="<?=pv_h(pv_url('battle.php?bid='.$botId))?>">Practice Snapshot (Unranked)</a>
         <form method="post" action="<?=pv_h(pv_url('bot_live_battle.php'))?>">
             <?=pv_csrf_field()?>
             <input type="hidden" name="battle_action_token" value="<?=pv_h(pv_action_token('bot_live_battle.php'))?>">
             <input type="hidden" name="bot_id" value="<?=$botId?>">
-            <button class="pv-button" type="submit">Start Live AI Battle</button>
+            <button class="pv-button" type="submit">Live AI Battle (Unranked)</button>
         </form>
     </div>
     <div class="pv-bot-scope-note"><strong><?=pv_h((string)$activityProfile['label'])?> behavior</strong><span>This rival roams in multi-step bursts, trains its full active team through wild battles, catches Pokémon, automatically evolves eligible level-based evolutions and pressures the ranked ladder. It does not autonomously battle gyms, Battle Arena trainers, event trainers or Sidequest opponents.</span></div>
+<?php endif; ?>
 </section>
 
 <section class="pv-panel pv-bot-location-card">

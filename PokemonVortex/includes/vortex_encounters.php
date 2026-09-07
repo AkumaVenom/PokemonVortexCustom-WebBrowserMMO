@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/wild_level_balance.php';
+
 /**
  * Server-owned encounter selection for the original 25-map Vortex world.
  *
@@ -45,7 +47,7 @@ function pv_vortex_encounter_validate_catalog(array $catalog): void
                 }
             }
 
-            foreach ([['low_level', 1, 100], ['legendary_level', 1, 100], ['high_level', 1, 100], ['rare_signal', 665, 1000], ['rare_roll', 1, PHP_INT_MAX]] as [$field, $absoluteMin, $absoluteMax]) {
+            foreach ([['low_level', 1, PV_WILD_LEVEL_CAP], ['legendary_level', 1, PV_WILD_LEVEL_CAP], ['high_level', 1, PV_WILD_LEVEL_CAP], ['rare_signal', 665, 1000], ['rare_roll', 1, PHP_INT_MAX]] as [$field, $absoluteMin, $absoluteMax]) {
                 $range = $pool[$field] ?? null;
                 if (!is_array($range) || count($range) !== 2) {
                     throw new RuntimeException("Vortex encounter pool $period/$mode has an invalid $field range.");
@@ -199,6 +201,7 @@ function pv_vortex_encounter_roll(
 
     $levelMin = max(1, (int)($levelRange[0] ?? 1));
     $levelMax = max($levelMin, (int)($levelRange[1] ?? $levelMin));
+    [$levelMin, $levelMax] = pv_wild_balanced_level_range($levelMin, $levelMax, 1);
     $level = pv_vortex_encounter_random_int($levelMin, $levelMax, $rng);
     $displayName = $variant !== '' ? $variant . ' ' . $baseName : $baseName;
 
