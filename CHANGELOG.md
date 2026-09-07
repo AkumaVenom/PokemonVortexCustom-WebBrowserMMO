@@ -1,3 +1,20 @@
+## v25.2.0 — Active Rival Trainer AI
+
+- Rebalanced all 2,000 persistent autonomous trainers for substantially higher activity while preserving the existing server-authoritative map, battle, inventory and Rival Network contracts.
+- Added deterministic activity classes: **24 Master Rivals**, **72 Elite Rivals** and **1,904 Active Rivals**. Master/Elite rivals use progressively higher roaming, training, capture and ranked-pressure settings and are labelled on AI trainer profiles, the AI Activity feed and Trainer Rankings.
+- Replaced the old single-cell, 35–110 second movement rhythm with multi-cell collision-authoritative roaming bursts: Active Rivals move 2–3 steps every 18–40 seconds, Elite Rivals 3–4 steps every 10–22 seconds and Master Rivals 4–6 steps every 5–12 seconds when due.
+- Increased wild-training opportunity from the previous flat 16% roll to class-based 34% / 46% / 58% encounter attempts. Existing Vortex and regional encounter tables, collision, transitions and species authority remain unchanged.
+- Added whole-active-team autonomous training. Every AI team member receives the same base Wild Battle EXP curve used by human Wild Battles (`max(75, wild level × 55)`), with modest Elite/Master training multipliers, level 100 clamping and normal trainer-progress recalculation.
+- Added automatic AI level evolution through the existing authoritative Evolution Lab runtime. Eligible level-based evolutions can chain through multiple already-satisfied stages; item, happiness and special-move evolution methods remain untouched.
+- Expanded sustainable AI catching/collection growth to class caps of 36 / 42 / 48 Pokémon with stronger early collection rates and existing active-team promotion logic preserved.
+- Replaced the former universal four-hour autonomous ranked cooldown with deterministic class cadences: Active Rivals 90–150 minutes, Elite Rivals 30–60 minutes and Master Rivals 10–20 minutes. Master/Elite profiles also receive modest ranked decision bonuses while all results continue through the same Elo/shield/history settlement runtime.
+- Preserved human-facing anti-dogpile behavior. Defender shields remain 15 minutes and retaliation remains 24 hours. Autonomous bot-v-bot matches no longer create retaliation rows; autonomous attacks against human trainers still create the normal retaliation opportunity.
+- Added current-map AI prioritization to Vortex/Kanto/Hoenn map and presence requests so nearby trainers visibly move more often instead of global simulation work crowding them out.
+- Added hard per-request AI execution budgets, a maximum of two autonomous ranked settlements per tick and the existing non-blocking global advisory lock to prevent higher activity from causing concurrent page-load spikes.
+- Optimized Rival state seeding to insert only missing trainers, sampled high-frequency housekeeping, retained at most 6,000 recent AI activity events and reduced autonomous-only ranked battle retention to seven days. Human-involved Rival history remains preserved.
+- Added Evolution telemetry to AI Activity and refreshed trainer/ranking labels so Master Rival, Elite Rival and Active Rival identities are visible to players.
+- Asset cache key advanced to `25.2.0`. Database schema remains **revision 28**; no database migration is required from v25.1.1.
+
 ## v25.1.1 — Full Pokémon Style Completion
 
 - Completed a second full-site visual audit after real XAMPP screenshots exposed remaining recovered navy/sci-fi surfaces in Sidequests, Special Events, battle result/runtime framing and Community cards.

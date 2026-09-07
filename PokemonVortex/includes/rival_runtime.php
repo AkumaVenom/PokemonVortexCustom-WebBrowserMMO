@@ -16,7 +16,8 @@ require_once __DIR__ . '/bootstrap.php';
 const PV_RIVAL_START_RATING = 1000;
 const PV_RIVAL_SHIELD_SECONDS = 900;       // 15 minutes after a ranked attack.
 const PV_RIVAL_RETALIATION_SECONDS = 86400; // 24 hours to answer an attack.
-const PV_RIVAL_BOT_ATTACK_COOLDOWN = 14400; // Four-hour per-bot ranked cadence; 2,000 trainers still keep the ladder lively without runaway history growth.
+const PV_RIVAL_BOT_ATTACK_COOLDOWN = 5400; // v25.2 regular-rival floor; elite/master profiles use shorter deterministic cooldowns.
+const PV_RIVAL_AUTONOMOUS_HISTORY_SECONDS = 604800; // Seven-day rolling AI-only history keeps higher activity sustainable.
 
 function pv_rival_table_exists(mysqli $db, string $table): bool
 {
@@ -102,7 +103,9 @@ function pv_rival_ensure_all_states(mysqli $db): int
                )),
                0,0,0,0,0,0,0,0,0,UNIX_TIMESTAMP()
         FROM members m
-        LEFT JOIN bot_trainers b ON b.user_id=m.id AND b.enabled=1";
+        LEFT JOIN bot_trainers b ON b.user_id=m.id AND b.enabled=1
+        LEFT JOIN trainer_rank_state existing ON existing.user_id=m.id
+        WHERE existing.user_id IS NULL";
     if (!$db->query($sql)) return 0;
     return max(0, (int)$db->affected_rows);
 }
@@ -319,7 +322,7 @@ function pv_rival_log_ai_activity(mysqli $db, int $botUserId, string $category, 
     $stmt->close();
 }
 
-function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int $winnerId, string $source, int $retaliationId = 0, string $summary = ''): array
+function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int $winnerId, string $source, int $retaliationId = 0, string $summary = '', bool $createRetaliation = true): array
 {
     if (!pv_rival_ready($db)) throw new RuntimeException('The Rival Network is not available.');
     if ($attackerId <= 0 || $defenderId <= 0 || $attackerId === $defenderId || !in_array($winnerId, [$attackerId,$defenderId], true)) {
@@ -389,13 +392,16 @@ function pv_rival_record_match(mysqli $db, int $attackerId, int $defenderId, int
         $battleId = (int)$db->insert_id;
         $stmt->close();
 
-        $expiresAt = $now + PV_RIVAL_RETALIATION_SECONDS;
-        $stmt = $db->prepare("INSERT INTO rival_retaliations (battle_id,defender_id,attacker_id,status,created_at,expires_at,used_at) VALUES (?,?,?,'open',?,?,0)");
-        if (!$stmt) throw new RuntimeException('Could not create retaliation order.');
-        $stmt->bind_param('iiiii', $battleId, $defenderId, $attackerId, $now, $expiresAt);
-        if (!$stmt->execute()) { $error=$stmt->error; $stmt->close(); throw new RuntimeException('Could not create retaliation order: '.$error); }
-        $newRetaliationId = (int)$db->insert_id;
-        $stmt->close();
+        $newRetaliationId = 0;
+        if ($createRetaliation) {
+            $expiresAt = $now + PV_RIVAL_RETALIATION_SECONDS;
+            $stmt = $db->prepare("INSERT INTO rival_retaliations (battle_id,defender_id,attacker_id,status,created_at,expires_at,used_at) VALUES (?,?,?,'open',?,?,0)");
+            if (!$stmt) throw new RuntimeException('Could not create retaliation order.');
+            $stmt->bind_param('iiiii', $battleId, $defenderId, $attackerId, $now, $expiresAt);
+            if (!$stmt->execute()) { $error=$stmt->error; $stmt->close(); throw new RuntimeException('Could not create retaliation order: '.$error); }
+            $newRetaliationId = (int)$db->insert_id;
+            $stmt->close();
+        }
 
         $db->commit();
     } catch (Throwable $e) {
@@ -472,16 +478,18 @@ function pv_rival_complete_session_battle(mysqli $db, int $attackerId, int $defe
     }
 }
 
-function pv_rival_bot_ranked_operation(mysqli $db, array $bot): ?array
+function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeconds = PV_RIVAL_BOT_ATTACK_COOLDOWN): ?array
 {
     if (!pv_rival_ready($db)) return null;
     $botId = max(0, (int)($bot['user_id'] ?? 0));
     if ($botId <= 0 || !pv_rival_has_team($db, $botId)) return null;
+    $now = time();
+    $cooldownSeconds = max(300, min(14400, $cooldownSeconds));
+    if (array_key_exists('rank_last_attack_at', $bot) && (int)$bot['rank_last_attack_at'] > $now - $cooldownSeconds) return null;
     pv_rival_ensure_state($db, $botId);
     $state = pv_rival_state($db, $botId);
     if (!$state) return null;
-    $now = time();
-    if ((int)($state['last_attack_at'] ?? 0) > $now - PV_RIVAL_BOT_ATTACK_COOLDOWN) return null;
+    if ((int)($state['last_attack_at'] ?? 0) > $now - $cooldownSeconds) return null;
 
     $rating = max(100, (int)$state['rating']);
     $low = max(100, $rating - 260);
@@ -507,7 +515,8 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot): ?array
     // most of the time when they are currently attackable. The defender shield
     // prevents this preference from turning into dog-piling.
     $humanCandidates = array_values(array_filter($candidates, static fn(array $row): bool => (int)($row['is_bot'] ?? 0) === 0));
-    $pool = ($humanCandidates !== [] && random_int(1,100) <= 68) ? $humanCandidates : $candidates;
+    $humanTargetPercent = max(20, min(75, (int)($bot['human_target_percent'] ?? 42)));
+    $pool = ($humanCandidates !== [] && random_int(1,100) <= $humanTargetPercent) ? $humanCandidates : $candidates;
 
     // Rotate through the selected close-ranked pool rather than hammering one id.
     $offset = (($botId * 17) + intdiv($now, 45)) % count($pool);
@@ -521,7 +530,7 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot): ?array
     $botPower = pv_rival_team_power($db, $botId);
     $targetPower = pv_rival_team_power($db, $targetId);
     $targetRating = max(100, (int)$target['rating']);
-    $chance = 50.0 + (($botPower - $targetPower) / 11.0) + (($rating - $targetRating) / 32.0);
+    $chance = 50.0 + (($botPower - $targetPower) / 11.0) + (($rating - $targetRating) / 32.0) + (float)($bot['ranked_win_bonus'] ?? 0.0);
     $chance = max(22.0, min(78.0, $chance));
     $won = random_int(1,10000) <= (int)round($chance * 100);
     $winnerId = $won ? $botId : $targetId;
@@ -534,7 +543,8 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot): ?array
             $winnerId,
             'autonomous',
             0,
-            'Autonomous AI ranked operation resolved from persisted team strength and ladder rating.'
+            'Autonomous AI ranked operation resolved from persisted team strength and ladder rating.',
+            (int)($target['is_bot'] ?? 0) === 0
         );
         $result['target_id'] = $targetId;
         $result['target_name'] = (string)$target['username'];
@@ -557,9 +567,11 @@ function pv_rival_log_bot_world_action(mysqli $db, array $bot, string $action, ?
         $species = trim((string)($wildResult['species'] ?? 'wild Pokémon'));
         $level = max(1, (int)($wildResult['level'] ?? 1));
         if (!empty($wildResult['captured'])) {
-            pv_rival_log_ai_activity($db,$uid,'capture','Caught '.$species,'Captured a Lv. '.$level.' '.$species.' while roaming '.$world.' · '.$map.'.');
+            $training=(int)($wildResult['exp']??0);$levelUps=(int)($wildResult['level_ups']??0);$trainingText=$training>0?' · +'.number_format($training).' team EXP'.($levelUps>0?' · '.$levelUps.' level'.($levelUps===1?'':'s').' gained':''):'';
+            pv_rival_log_ai_activity($db,$uid,'capture','Caught '.$species,'Captured a Lv. '.$level.' '.$species.' while roaming '.$world.' · '.$map.$trainingText.'.');
         } elseif (!empty($wildResult['won'])) {
-            pv_rival_log_ai_activity($db,$uid,'wild','Won a wild battle','Defeated a Lv. '.$level.' '.$species.' while training in '.$world.' · '.$map.'.');
+            $training=(int)($wildResult['exp']??0);$levelUps=(int)($wildResult['level_ups']??0);$trainingText=$training>0?' · +'.number_format($training).' team EXP'.($levelUps>0?' · '.$levelUps.' level'.($levelUps===1?'':'s').' gained':''):'';
+            pv_rival_log_ai_activity($db,$uid,'wild','Won a wild battle','Defeated a Lv. '.$level.' '.$species.' while training in '.$world.' · '.$map.$trainingText.'.');
         } else {
             pv_rival_log_ai_activity($db,$uid,'wild','Lost a wild battle','Was defeated by a Lv. '.$level.' '.$species.' in '.$world.' · '.$map.' and continued training.');
         }
@@ -576,9 +588,10 @@ function pv_rival_housekeeping(mysqli $db): void
 {
     if (!pv_rival_ready($db)) return;
     $now = time();
-    @$db->query("UPDATE rival_retaliations SET status='expired' WHERE status='open' AND expires_at<=".(int)$now);
-    // Keep a compact rolling activity feed. This delete is cheap with the time index.
-    if (($now % 17) === 0) {
+    // Housekeeping is intentionally sampled. Presence polling can call this runtime every few seconds; expiry may lag by only a few seconds, but no page request is forced to run maintenance every poll.
+    if (($now % 13) === 0) @$db->query("UPDATE rival_retaliations SET status='expired' WHERE status='open' AND expires_at<=".(int)$now);
+    // Keep a compact rolling activity feed without turning high AI activity into a hot delete path.
+    if (($now % 29) === 0) {
         @$db->query('DELETE FROM ai_activity WHERE created_at<'.(int)($now - 604800));
         $result = $db->query('SELECT id FROM ai_activity ORDER BY id DESC LIMIT 1 OFFSET 6000');
         if ($result) {
@@ -595,7 +608,7 @@ function pv_rival_housekeeping(mysqli $db): void
         @$db->query("DELETE rr FROM rival_retaliations rr INNER JOIN bot_trainers ba ON ba.user_id=rr.attacker_id AND ba.enabled=1 INNER JOIN bot_trainers bd ON bd.user_id=rr.defender_id AND bd.enabled=1 WHERE rr.status<>'open' AND rr.expires_at<".(int)$botOnlyCutoff);
     }
     if (($now % 211) === 0) {
-        $battleCutoff = $now - (30 * 86400);
+        $battleCutoff = $now - PV_RIVAL_AUTONOMOUS_HISTORY_SECONDS;
         @$db->query("DELETE rb FROM rival_battles rb INNER JOIN bot_trainers ba ON ba.user_id=rb.attacker_id AND ba.enabled=1 INNER JOIN bot_trainers bd ON bd.user_id=rb.defender_id AND bd.enabled=1 WHERE rb.source='autonomous' AND rb.created_at<".(int)$battleCutoff);
     }
 }

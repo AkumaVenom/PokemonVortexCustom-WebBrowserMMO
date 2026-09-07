@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/map_runtime.php';
 require_once __DIR__ . '/rival_runtime.php';
+require_once __DIR__ . '/evolution.php';
 
 /**
  * Persistent server-authoritative autonomous trainer runtime.
@@ -73,6 +74,50 @@ function pv_bot_profile(mysqli $db, int $userId): ?array
 function pv_bot_starter_names(): array
 {
     return ['Bulbasaur','Charmander','Squirtle','Pidgey','Chikorita','Cyndaquil','Totodile','Pichu','Treecko','Torchic','Mudkip','Poochyena','Turtwig','Chimchar','Piplup','Shinx','Snivy','Tepig','Oshawott','Lillipup','Chespin','Fennekin','Froakie','Bunnelby'];
+}
+
+/**
+ * v25.2 activity classes. The first 24 identities are persistent Master Rivals,
+ * the next 72 are Elite Rivals, and the remainder are regular rivals. The
+ * classification is deterministic so an existing 2,000-trainer database gains
+ * the new behavior immediately without a destructive migration.
+ */
+function pv_bot_activity_profile(int $botIndex): array
+{
+    $botIndex = max(1, $botIndex);
+    if ($botIndex <= 24) {
+        return [
+            'key'=>'master','label'=>'Master Rival','movement_min'=>4,'movement_max'=>6,
+            'action_min'=>5,'action_max'=>12,'wild_chance'=>58,'training_multiplier'=>1.28,
+            'capture_bonus'=>10,'collection_cap'=>48,'rank_attempt_chance'=>88,
+            'rank_cooldown_min'=>600,'rank_cooldown_max'=>1200,'ranked_win_bonus'=>7.0,
+            'human_target_percent'=>55,
+        ];
+    }
+    if ($botIndex <= 96) {
+        return [
+            'key'=>'elite','label'=>'Elite Rival','movement_min'=>3,'movement_max'=>4,
+            'action_min'=>10,'action_max'=>22,'wild_chance'=>46,'training_multiplier'=>1.12,
+            'capture_bonus'=>6,'collection_cap'=>42,'rank_attempt_chance'=>72,
+            'rank_cooldown_min'=>1800,'rank_cooldown_max'=>3600,'ranked_win_bonus'=>3.5,
+            'human_target_percent'=>50,
+        ];
+    }
+    return [
+        'key'=>'rival','label'=>'Active Rival','movement_min'=>2,'movement_max'=>3,
+        'action_min'=>18,'action_max'=>40,'wild_chance'=>34,'training_multiplier'=>1.0,
+        'capture_bonus'=>0,'collection_cap'=>36,'rank_attempt_chance'=>48,
+        'rank_cooldown_min'=>5400,'rank_cooldown_max'=>9000,'ranked_win_bonus'=>0.0,
+        'human_target_percent'=>42,
+    ];
+}
+
+function pv_bot_ranked_cooldown_for(array $profile, int $botIndex): int
+{
+    $min = max(300, (int)($profile['rank_cooldown_min'] ?? 5400));
+    $max = max($min, (int)($profile['rank_cooldown_max'] ?? $min));
+    if ($max === $min) return $min;
+    return $min + (($botIndex * 197) % (($max - $min) + 1));
 }
 
 function pv_bot_disabled_password_hash(): string
@@ -428,9 +473,10 @@ function pv_bot_move_region(mysqli $db,array $bot): array
     return['world'=>$world,'map'=>$mapKey,'x'=>$x,'y'=>$y,'moved'=>false];
 }
 
-function pv_bot_roll_wild(mysqli $db,string $world,string $mapKey,int $x,int $y): ?array
+function pv_bot_roll_wild(mysqli $db,string $world,string $mapKey,int $x,int $y,int $encounterChance=16): ?array
 {
-    if(random_int(1,100)>16)return null;
+    $encounterChance=max(0,min(90,$encounterChance));
+    if($encounterChance<=0||random_int(1,100)>$encounterChance)return null;
     if($world==='vortex'){
         $map=max(1,min(25,(int)$mapKey));
         try{$rolled=pv_vortex_encounter_roll(pv_map_encounter_mode($map,$x,$y),false,false,random_int(665,1000));}catch(Throwable $e){return null;}
@@ -446,18 +492,95 @@ function pv_bot_roll_wild(mysqli $db,string $world,string $mapKey,int $x,int $y)
     return $guide?['guide'=>$guide,'display'=>$display,'level'=>random_int($min,$max)]:null;
 }
 
+
+function pv_bot_move_burst(mysqli $db,array $bot,int $steps): array
+{
+    $steps=max(1,min(8,$steps));$current=$bot;$movedSteps=0;$last=['world'=>(string)($bot['world_key']??'vortex'),'map'=>(string)($bot['map_key']??'1'),'x'=>(int)($bot['x']??1),'y'=>(int)($bot['y']??1),'moved'=>false];
+    for($i=0;$i<$steps;$i++){
+        $last=(string)($current['world_key']??'vortex')==='vortex'?pv_bot_move_vortex($db,$current):pv_bot_move_region($db,$current);
+        if(empty($last['moved']))break;
+        $movedSteps++;
+        $current['world_key']=(string)$last['world'];$current['map_key']=(string)$last['map'];$current['x']=(int)$last['x'];$current['y']=(int)$last['y'];
+    }
+    $last['moved']=$movedSteps>0;$last['moved_steps']=$movedSteps;
+    return $last;
+}
+
+function pv_bot_active_team_ids(mysqli $db,int $uid): array
+{
+    if($uid<=0)return [];
+    $stmt=$db->prepare('SELECT s1,s2,s3,s4,s5,s6 FROM members WHERE id=? LIMIT 1');if(!$stmt)return [];
+    $stmt->bind_param('i',$uid);$stmt->execute();$m=$stmt->get_result()->fetch_assoc()?:[];$stmt->close();
+    $ids=[];for($slot=1;$slot<=6;$slot++){$id=max(0,(int)($m['s'.$slot]??0));if($id>0&&!in_array($id,$ids,true))$ids[]=$id;}
+    return $ids;
+}
+
+/** Award the same wild-battle EXP curve used by human Wild Battles to every
+ * active AI team member. This intentionally trains the whole six-Pokémon rival
+ * team rather than leaving reserve slots permanently under-levelled. */
+function pv_bot_award_wild_training(mysqli $db,int $uid,int $wildLevel,float $multiplier=1.0): array
+{
+    $ids=pv_bot_active_team_ids($db,$uid);if($ids===[])return['exp'=>0,'level_ups'=>0,'team_ids'=>[]];
+    $wildLevel=max(1,min(100,$wildLevel));$multiplier=max(0.75,min(1.5,$multiplier));
+    $expGain=max(75,(int)round($wildLevel*55*$multiplier));$idList=implode(',',array_map('intval',$ids));$levelUps=0;
+    $db->begin_transaction();
+    try{
+        $stmt=$db->prepare("SELECT id,lvl,exp FROM pokemon WHERE CAST(owner AS UNSIGNED)=? AND id IN ({$idList}) FOR UPDATE");if(!$stmt)throw new RuntimeException('Could not lock AI training team.');
+        $stmt->bind_param('i',$uid);$stmt->execute();$rows=$stmt->get_result()->fetch_all(MYSQLI_ASSOC);$stmt->close();
+        $update=$db->prepare('UPDATE pokemon SET lvl=?,exp=? WHERE id=? AND CAST(owner AS UNSIGNED)=?');if(!$update)throw new RuntimeException('Could not prepare AI team progression.');
+        foreach($rows as $row){$old=max(1,(int)$row['lvl']);$newExp=max(0,(int)$row['exp'])+$expGain;$new=$old>=100?100:min(100,max(1,(int)floor($newExp/500)));$levelUps+=max(0,$new-$old);$pid=(int)$row['id'];$update->bind_param('iiii',$new,$newExp,$pid,$uid);if(!$update->execute())throw new RuntimeException('Could not persist AI team experience.');}
+        $update->close();
+        $db->query("UPDATE pokemon_stats SET happiness=LEAST(255,happiness+1) WHERE id IN ({$idList})");
+        $stmt=$db->prepare('UPDATE members SET battle=battle+1 WHERE id=?');if(!$stmt)throw new RuntimeException('Could not update AI wild-battle progression.');$stmt->bind_param('i',$uid);if(!$stmt->execute())throw new RuntimeException('Could not persist AI battle progression.');$stmt->close();
+        $db->commit();
+    }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}throw $e;}
+    return['exp'=>$expGain,'level_ups'=>$levelUps,'team_ids'=>$ids];
+}
+
+/** Automatically follow every currently satisfied level evolution, including a
+ * second stage when an AI Pokémon has already passed both thresholds. Item,
+ * happiness and special-move evolutions remain governed by their own rules. */
+function pv_bot_auto_evolve_team(mysqli $db,int $uid,array $teamIds): array
+{
+    $evolved=[];
+    foreach(array_values(array_unique(array_map('intval',$teamIds))) as $pokemonId){
+        if($pokemonId<=0)continue;
+        for($stage=0;$stage<3;$stage++){
+            $pokemon=pv_evolution_load_owned_pokemon($db,$uid,$pokemonId);if(!$pokemon)break;
+            $level=max(1,(int)($pokemon['lvl']??1));$gender=trim((string)($pokemon['stat_gender']??$pokemon['gender']??''));$selected=null;
+            foreach(pv_evolution_rules_for((string)($pokemon['name']??'')) as $rule){
+                if(strtolower(trim((string)($rule['method']??'')))!=='level')continue;
+                if($level<max(1,(int)($rule['min_level']??1)))continue;
+                $requiredGender=trim((string)($rule['required_gender']??''));if($requiredGender!==''&&strcasecmp($requiredGender,$gender)!==0)continue;
+                $selected=$rule;break;
+            }
+            if(!$selected)break;
+            try{$result=pv_evolve_pokemon($db,$uid,$pokemonId,pv_evolution_rule_key($selected),true);$evolved[]=$result;}
+            catch(Throwable $e){pv_log('AI level evolution failed for '.$uid.'/'.$pokemonId.': '.$e->getMessage());break;}
+        }
+    }
+    return $evolved;
+}
+
 function pv_bot_team_average_level(mysqli $db,int $uid): float
 {
     $stmt=$db->prepare('SELECT s1,s2,s3,s4,s5,s6 FROM members WHERE id=? LIMIT 1');if(!$stmt)return 1.0;$stmt->bind_param('i',$uid);$stmt->execute();$m=$stmt->get_result()->fetch_assoc()?:[];$stmt->close();$ids=[];for($i=1;$i<=6;$i++){if((int)($m['s'.$i]??0)>0)$ids[]=(int)$m['s'.$i];}if(!$ids)return 1.0;$idList=implode(',',array_map('intval',$ids));$r=$db->query("SELECT AVG(lvl) a FROM pokemon WHERE CAST(owner AS UNSIGNED)=".(int)$uid." AND id IN ({$idList})");if(!$r)return 1.0;$avg=(float)($r->fetch_assoc()['a']??1);$r->free();return max(1.0,$avg);
 }
 
-function pv_bot_simulate_wild(mysqli $db,array $bot,array $wild): array
+function pv_bot_simulate_wild(mysqli $db,array $bot,array $wild,array $activityProfile=[]): array
 {
-    $uid=(int)$bot['user_id'];$username=(string)$bot['username'];$level=max(2,(int)$wild['level']);$avg=pv_bot_team_average_level($db,$uid);
-    $winChance=max(52,min(96,(int)round(72+($avg-$level)*2.2)));$won=random_int(1,100)<=$winChance;$captured=false;$pokemonId=0;
+    $uid=(int)$bot['user_id'];$username=(string)$bot['username'];$level=max(2,(int)$wild['level']);
+    if($activityProfile===[])$activityProfile=pv_bot_activity_profile(max(1,(int)($bot['bot_index']??1)));
+    $avg=pv_bot_team_average_level($db,$uid);$classBonus=(float)($activityProfile['ranked_win_bonus']??0.0)*0.45;
+    $winChance=max(54,min(97,(int)round(74+($avg-$level)*2.2+$classBonus)));$won=random_int(1,100)<=$winChance;$captured=false;$pokemonId=0;
+    $training=['exp'=>0,'level_ups'=>0,'team_ids'=>[]];$evolutions=[];
     if($won){
+        try{$training=pv_bot_award_wild_training($db,$uid,$level,(float)($activityProfile['training_multiplier']??1.0));$evolutions=pv_bot_auto_evolve_team($db,$uid,(array)$training['team_ids']);}
+        catch(Throwable $e){pv_log('AI wild training failed for '.$uid.': '.$e->getMessage());}
+
         $stmt=$db->prepare('SELECT total_poke FROM members WHERE id=? LIMIT 1');$total=0;if($stmt){$stmt->bind_param('i',$uid);$stmt->execute();$total=(int)($stmt->get_result()->fetch_assoc()['total_poke']??0);$stmt->close();}
-        $catchChance=$total<6?68:($total<12?18:($total<24?7:($total<30?2:0)));
+        $cap=max(6,(int)($activityProfile['collection_cap']??36));$catchChance=0;
+        if($total<$cap){$catchChance=$total<6?82:($total<12?38:($total<20?20:($total<28?10:4)));$catchChance=min(92,$catchChance+max(0,(int)($activityProfile['capture_bonus']??0)));}
         if($catchChance>0 && random_int(1,100)<=$catchChance){
             $db->begin_transaction();
             try{
@@ -468,53 +591,59 @@ function pv_bot_simulate_wild(mysqli $db,array $bot,array $wild): array
                 $db->commit();$captured=true;
             }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}pv_log('Bot capture failed for '.$uid.': '.$e->getMessage());}
         }
+        try{pv_recalculate_trainer_progress($db,$uid,false);}catch(Throwable $e){pv_log('AI trainer progress refresh failed for '.$uid.': '.$e->getMessage());}
+    }else{
+        $stmt=$db->prepare('UPDATE members SET losses=losses+1 WHERE id=?');if($stmt){$stmt->bind_param('i',$uid);$stmt->execute();$stmt->close();}
     }
-    return['won'=>$won,'captured'=>$captured,'pokemon_id'=>$pokemonId,'species'=>(string)$wild['display'],'level'=>$level];
+    return['won'=>$won,'captured'=>$captured,'pokemon_id'=>$pokemonId,'species'=>(string)$wild['display'],'level'=>$level,'exp'=>(int)($training['exp']??0),'level_ups'=>(int)($training['level_ups']??0),'evolutions'=>$evolutions];
 }
 
-function pv_bot_tick(mysqli $db,int $limit=24): int
+function pv_bot_tick(mysqli $db,int $limit=24,string $focusWorld='',string $focusMap='',int $budgetMs=65): int
 {
-    if(!pv_bot_registry_ready($db))return 0;$limit=max(1,min(60,$limit));
+    if(!pv_bot_registry_ready($db))return 0;$limit=max(1,min(64,$limit));$budgetMs=max(15,min(150,$budgetMs));
+    $focusWorld=trim($focusWorld);$focusMap=trim($focusMap);
     $lock=$db->query("SELECT GET_LOCK('pokemon_vortex_bot_tick',0) AS acquired");$acquired=$lock?(int)($lock->fetch_assoc()['acquired']??0):0;if($lock)$lock->free();if($acquired!==1)return 0;
-    $processed=0;$now=time();
+    $processed=0;$rankOps=0;$now=time();$started=microtime(true);
     try{
-        $result=$db->query('SELECT b.*,m.username FROM bot_trainers b JOIN members m ON m.id=b.user_id WHERE b.enabled=1 AND b.next_action_at<='.(int)$now.' ORDER BY b.next_action_at,b.bot_index LIMIT '.(int)$limit);
-        $bots=$result?$result->fetch_all(MYSQLI_ASSOC):[];if($result)$result->free();
+        $rankReady=pv_rival_ready($db);
+        $base=$rankReady
+            ? 'SELECT b.*,m.username,COALESCE(rs.last_attack_at,0) rank_last_attack_at FROM bot_trainers b JOIN members m ON m.id=b.user_id LEFT JOIN trainer_rank_state rs ON rs.user_id=b.user_id WHERE b.enabled=1 AND b.next_action_at<='.(int)$now.' '
+            : 'SELECT b.*,m.username,0 rank_last_attack_at FROM bot_trainers b JOIN members m ON m.id=b.user_id WHERE b.enabled=1 AND b.next_action_at<='.(int)$now.' ';
+        if($focusWorld!==''&&$focusMap!==''){
+            $stmt=$db->prepare($base.'ORDER BY CASE WHEN b.world_key=? AND b.map_key=? THEN 0 ELSE 1 END,b.next_action_at,CASE WHEN b.bot_index<=24 THEN 0 WHEN b.bot_index<=96 THEN 1 ELSE 2 END,b.bot_index LIMIT '.(int)$limit);
+            if($stmt){$stmt->bind_param('ss',$focusWorld,$focusMap);$stmt->execute();$bots=$stmt->get_result()->fetch_all(MYSQLI_ASSOC);$stmt->close();}else $bots=[];
+        }else{
+            $result=$db->query($base.'ORDER BY b.next_action_at,CASE WHEN b.bot_index<=24 THEN 0 WHEN b.bot_index<=96 THEN 1 ELSE 2 END,b.bot_index LIMIT '.(int)$limit);$bots=$result?$result->fetch_all(MYSQLI_ASSOC):[];if($result)$result->free();
+        }
         foreach($bots as $bot){
+            if($processed>0&&((microtime(true)-$started)*1000.0)>=$budgetMs)break;
             $uid=(int)($bot['user_id']??0);
             try{
-                $move=(string)$bot['world_key']==='vortex'?pv_bot_move_vortex($db,$bot):pv_bot_move_region($db,$bot);
-                $world=(string)$move['world'];$mapKey=(string)$move['map'];$x=(int)$move['x'];$y=(int)$move['y'];$wild=pv_bot_roll_wild($db,$world,$mapKey,$x,$y);$wildResult=null;$action=!empty($move['moved'])?'move':'idle';
-                if($wild){$wildResult=pv_bot_simulate_wild($db,$bot,$wild);$action=$wildResult['captured']?'caught_wild':($wildResult['won']?'won_wild':'lost_wild');}
-                $next=$now+random_int(35,110);$wildName=$wildResult?(string)$wildResult['species']:'';$wildLevel=$wildResult?(int)$wildResult['level']:0;$battleInc=$wildResult?1:0;$winInc=$wildResult&&!empty($wildResult['won'])?1:0;$captureInc=$wildResult&&!empty($wildResult['captured'])?1:0;
+                $profile=pv_bot_activity_profile(max(1,(int)($bot['bot_index']??1)));$steps=random_int((int)$profile['movement_min'],(int)$profile['movement_max']);
+                $move=pv_bot_move_burst($db,$bot,$steps);
+                $world=(string)$move['world'];$mapKey=(string)$move['map'];$x=(int)$move['x'];$y=(int)$move['y'];$wild=pv_bot_roll_wild($db,$world,$mapKey,$x,$y,(int)$profile['wild_chance']);$wildResult=null;$action=!empty($move['moved'])?'move':'idle';
+                if($wild){$wildResult=pv_bot_simulate_wild($db,$bot,$wild,$profile);$action=$wildResult['captured']?'caught_wild':($wildResult['won']?'won_wild':'lost_wild');}
+                $next=$now+random_int((int)$profile['action_min'],(int)$profile['action_max']);$wildName=$wildResult?(string)$wildResult['species']:'';$wildLevel=$wildResult?(int)$wildResult['level']:0;$battleInc=$wildResult?1:0;$winInc=$wildResult&&!empty($wildResult['won'])?1:0;$captureInc=$wildResult&&!empty($wildResult['captured'])?1:0;
                 $stmt=$db->prepare('UPDATE bot_trainers SET world_key=?,map_key=?,x=?,y=?,next_action_at=?,last_action_at=?,last_action=?,last_wild_name=?,last_wild_level=?,wild_battles=wild_battles+?,wild_wins=wild_wins+?,captures=captures+?,updated_at=? WHERE user_id=? AND enabled=1');
                 if($stmt){$stmt->bind_param('ssiiiissiiiiii',$world,$mapKey,$x,$y,$next,$now,$action,$wildName,$wildLevel,$battleInc,$winInc,$captureInc,$now,$uid);$stmt->execute();$stmt->close();}
                 pv_bot_write_presence($db,$uid,(string)$bot['username'],max(1,min(28,(int)$bot['trainer_sprite'])),$world,$mapKey,$x,$y,$now);
 
-                // v25 Rival Network: world simulation now feeds a durable AI
-                // activity stream and, at a bounded cadence, autonomous trainers
-                // actively challenge similarly rated competitors. This never
-                // enters the browser battle engine; watched player battles retain
-                // the existing fully animated authoritative combat flow.
-                try {
-                    $activityBot=$bot;
-                    $activityBot['world_key']=$world;$activityBot['map_key']=$mapKey;
+                try{
+                    $activityBot=$bot;$activityBot['world_key']=$world;$activityBot['map_key']=$mapKey;$activityBot['ranked_win_bonus']=(float)$profile['ranked_win_bonus'];$activityBot['human_target_percent']=(int)$profile['human_target_percent'];
                     pv_rival_log_bot_world_action($db,$activityBot,$action,$wildResult);
-                    if(random_int(1,100)<=44) pv_rival_bot_ranked_operation($db,$activityBot);
-                } catch(Throwable $rivalError) {
-                    pv_log('Rival Network bot activity failed for '.$uid.': '.$rivalError->getMessage());
-                }
+                    if($wildResult&&!empty($wildResult['evolutions']))foreach((array)$wildResult['evolutions'] as $evo){pv_rival_log_ai_activity($db,$uid,'evolution','Evolved '.$evo['old_name'].' into '.$evo['new_name'],'Training pushed '.$evo['old_name'].' past its level requirement, evolving it into '.$evo['new_name'].'.');}
+                    $cooldown=pv_bot_ranked_cooldown_for($profile,max(1,(int)$bot['bot_index']));$lastAttack=max(0,(int)($bot['rank_last_attack_at']??0));
+                    if($rankOps<2&&$lastAttack<=$now-$cooldown&&random_int(1,100)<=(int)$profile['rank_attempt_chance']&&((microtime(true)-$started)*1000.0)<($budgetMs*0.78)){
+                        if(pv_rival_bot_ranked_operation($db,$activityBot,$cooldown)!==null)$rankOps++;
+                    }
+                }catch(Throwable $rivalError){pv_log('Rival Network bot activity failed for '.$uid.': '.$rivalError->getMessage());}
                 $processed++;
             }catch(Throwable $e){
                 pv_log('Autonomous trainer tick failed for '.$uid.': '.$e->getMessage());
-                // Back off a failed identity so one malformed row cannot become a
-                // hot-loop poison pill for every 2-second presence refresh.
-                $retry=$now+300;$idle='idle';
-                $stmt=$db->prepare('UPDATE bot_trainers SET next_action_at=?,last_action_at=?,last_action=?,updated_at=? WHERE user_id=? AND enabled=1');
-                if($stmt){$stmt->bind_param('iisii',$retry,$now,$idle,$now,$uid);$stmt->execute();$stmt->close();}
+                $retry=$now+180;$idle='idle';$stmt=$db->prepare('UPDATE bot_trainers SET next_action_at=?,last_action_at=?,last_action=?,updated_at=? WHERE user_id=? AND enabled=1');if($stmt){$stmt->bind_param('iisii',$retry,$now,$idle,$now,$uid);$stmt->execute();$stmt->close();}
             }
         }
-        try { pv_rival_housekeeping($db); } catch(Throwable $ignored) {}
+        try{pv_rival_housekeeping($db);}catch(Throwable $ignored){}
     }finally{$db->query("DO RELEASE_LOCK('pokemon_vortex_bot_tick')");}
     return $processed;
 }

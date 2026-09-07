@@ -13,7 +13,7 @@ $requestedWorld=pv_world_normalize_key((string)($_GET['world']??'vortex'));
 $selectedWorld=isset($worlds[$requestedWorld])?$requestedWorld:'vortex';
 $status=(string)($_GET['status']??'');
 $cutoff=time()-1800;
-pv_bot_tick($db,60);
+pv_bot_tick($db,24,'','',35);
 
 $catalog=pv_map_catalog();
 $groupCopy=[

@@ -20,7 +20,7 @@ if ($ready) {
     pv_rival_housekeeping($db);
     // A modest server-side tick keeps the autonomous field moving when trainers
     // visit the competitive pages, without replacing the existing world tick.
-    pv_bot_tick($db, 48);
+    pv_bot_tick($db, 18, '', '', 35);
     $now = time();
     $state = pv_rival_state($db, $uid);
     if ($state) {

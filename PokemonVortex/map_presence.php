@@ -26,7 +26,7 @@ $uid = (int)$_SESSION['myid'];
 $worldKey = (string)($_SESSION['world_key'] ?? 'vortex');
 if ($worldKey !== 'vortex') pv_map_presence_json(['ok'=>false,'error'=>'world'], 409);
 $map = max(1, min(25, (int)($_SESSION['map'] ?? 1)));
-pv_bot_tick($db, 48);
+pv_bot_tick($db, 48, $worldKey, (string)$map, 45);
 
 pv_map_presence_json([
     'ok'=>true,

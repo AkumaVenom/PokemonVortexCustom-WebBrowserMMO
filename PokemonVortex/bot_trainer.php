@@ -10,8 +10,9 @@ catch (Throwable $e) { pv_log('Bot trainer profile DB unavailable: '.$e->getMess
 $botId=max(0,(int)($_GET['id']??0));
 $profile=$botId>0?pv_bot_profile($db,$botId):null;
 if(!$profile)pv_redirect('map_select.php?status=unavailable');
-pv_bot_tick($db,24);
+pv_bot_tick($db,16,(string)$profile['world_key'],(string)$profile['map_key'],35);
 $profile=pv_bot_profile($db,$botId)??$profile;
+$activityProfile=pv_bot_activity_profile((int)$profile['bot_index']);
 
 $teamIds=[];
 for($slot=1;$slot<=6;$slot++){
@@ -60,9 +61,9 @@ pv_page_start($username,'map_select.php',true);
 <div class="pv-section-hero pv-bot-profile-hero">
     <div class="pv-bot-profile-identity">
         <span class="pv-bot-trainer-avatar"><img src="<?=pv_h(pv_static_file('images/sprites/'.$trainer.'whole.gif','images/sprites/1whole.gif'))?>" alt="<?=pv_h($username)?>"></span>
-        <div><span class="pv-eyebrow">AUTONOMOUS TRAINER // AI <?=str_pad((string)(int)$profile['bot_index'],4,'0',STR_PAD_LEFT)?></span><h1><?=pv_h($username)?></h1><p class="pv-subtle">A persistent trainer roaming the MMO world. This trainer battles wild Pokémon, catches Pokémon for its collection and can battle players.</p></div>
+        <div><span class="pv-eyebrow"><?=pv_h(strtoupper((string)$activityProfile['label']))?> // AI <?=str_pad((string)(int)$profile['bot_index'],4,'0',STR_PAD_LEFT)?></span><h1><?=pv_h($username)?></h1><p class="pv-subtle">A persistent trainer roaming the MMO world. This trainer battles wild Pokémon, catches Pokémon for its collection and can battle players.</p></div>
     </div>
-    <div class="pv-mini-status"><i></i> AI TRAINER ACTIVE</div>
+    <div class="pv-mini-status"><i></i> <?=pv_h(strtoupper((string)$activityProfile['label']))?> ACTIVE</div>
 </div>
 
 <div class="pv-bot-profile-grid">
@@ -79,7 +80,7 @@ pv_page_start($username,'map_select.php',true);
             <button class="pv-button" type="submit">Start Live AI Battle</button>
         </form>
     </div>
-    <div class="pv-bot-scope-note"><strong>AI trainer behavior</strong><span>This AI may battle players and wild Pokémon and may catch wild Pokémon. It does not autonomously battle gyms, Battle Arena trainers, event trainers or Sidequest opponents.</span></div>
+    <div class="pv-bot-scope-note"><strong><?=pv_h((string)$activityProfile['label'])?> behavior</strong><span>This rival roams in multi-step bursts, trains its full active team through wild battles, catches Pokémon, automatically evolves eligible level-based evolutions and pressures the ranked ladder. It does not autonomously battle gyms, Battle Arena trainers, event trainers or Sidequest opponents.</span></div>
 </section>
 
 <section class="pv-panel pv-bot-location-card">

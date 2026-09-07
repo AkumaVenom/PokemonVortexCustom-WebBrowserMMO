@@ -25,7 +25,7 @@ if ((int)($_SESSION['map'] ?? 0) === $map) {
     [$x, $y] = pv_map_spawn($map, $blocks);
 }
 pv_map_upsert_player($db, $uid, $map, $x, $y, $worldKey);
-pv_bot_tick($db, 60);
+pv_bot_tick($db, 48, $worldKey, (string)$map, 45);
 
 $players = pv_map_players($db, $uid, $map, $worldKey);
 $blockedDirections = pv_map_blocked_directions($db, $map, $x, $y);

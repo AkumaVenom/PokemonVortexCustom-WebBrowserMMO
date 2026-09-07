@@ -38,7 +38,7 @@ if($positionInvalid){
     [$x,$y]=$safeSpawn;
 }
 pv_world_presence_upsert($db,$uid,$world,$areaKey,$x,$y);
-pv_bot_tick($db,60);
+pv_bot_tick($db,48,$world,$areaKey,45);
 $players=pv_world_players($db,$uid,$world,$areaKey);
 $blockedDirections=pv_world_blocked_directions($db,$area,$x,$y);
 $connectedAreas=pv_world_connected_areas($area);
