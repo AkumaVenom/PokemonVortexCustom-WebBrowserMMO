@@ -1,3 +1,27 @@
+## v25.1.1 — Full Pokémon Style Completion
+
+- Completed a second full-site visual audit after real XAMPP screenshots exposed remaining recovered navy/sci-fi surfaces in Sidequests, Special Events, battle result/runtime framing and Community cards.
+- Converted the remaining Sidequest queue, upcoming-step cards, map framing, rewards and handoff surfaces to the bright Pokémon adventure-book treatment while preserving Sidequest progression and reward authority.
+- Converted Special Event organization/group headers and badge state strips to bright Pokémon/League cards with organization-color accents while preserving all Event opponents, teams, badges and battle routing.
+- Removed the remaining dark outer battle-runtime shell and normalized Trainer, Wild and Live battle stage chrome to bright sky/field panels without changing combat forms, action tokens, HP state, animation hooks, settlement, rewards or persistence.
+- Fixed Community card artwork overlapping Trainer Directory / Messages / Trade Center / Clans text by reserving a dedicated clipped icon column, constraining sprite dimensions and isolating text in a non-overlapping content column.
+- Normalized the remaining public/auth/setup, world/map framing, shop, collection, trade, messages, clans, directory, account/options, Labs and secondary helper surfaces so user-facing literal-dark backgrounds no longer survive the final cascade.
+- Updated legacy inline fallback styling in Setup, Signup and the hidden battle verification fallback so those states also match the bright Pokémon UI if they become visible.
+- Preserved native Vortex/Kanto/Hoenn map dimensions, map actor labels, day/night overlay behavior, all existing local image assets and the full cinematic battle FX/reduced-motion contracts. No generated artwork was added.
+- Asset cache key advanced to `25.1.1`; database schema remains revision 28 and no database migration is required.
+
+## v25.1.0 — Site-wide Pokémon Visual Coherence Pass
+
+- Completed the bright Pokémon-world visual conversion across the remaining pages that still carried the older dark navy / sci-fi presentation.
+- Reworked Home, world selection, world exploration chrome, Trainer/Wild/Live battle presentation, Sidequests, collection, team management, Pokédex, PokéMart, Trade Center, Community, Messages, trainer directory, accounts/options, AI trainer profiles, Labs, Events, Battle Arena and Live PvP lobby surfaces into one coherent Pokémon-styled UI language.
+- Preserved deliberate dark framing only where it improves gameplay readability around native map pixels or cinematic effects; ordinary cards, control panels, information blocks and navigation surfaces now use bright League/Pokédex-inspired white, sky-blue, cream, yellow, red and green treatments.
+- Rebuilt battle fighter stages into a brighter sky/field presentation while preserving the existing authoritative battle engine, move forms, HP state, Wild/Trainer/Live cinematic attack effects and capture choreography.
+- Replaced remaining player-facing battle terminal terminology such as “Authoritative NPC Combat”, “Combat Link”, “Battle Telemetry” and “Server-Authoritative Command” with gamer-facing Trainer Challenge / Battle Ready / Battle Log / Choose Move language. Backend authority and validation remain unchanged.
+- Replaced the recovered legacy Trainer Battle `PV` title emblem with the packaged Poké Ball artwork without changing battle routing or recovered layout behavior.
+- Added stronger page-wide responsive containment for ordinary artwork, tables, cards, flex/grid children and specialist panels while explicitly excluding native Vortex/Kanto/Hoenn map artwork from destructive scaling.
+- Added additional hover lift, card shine, League-color accents, rounded Pokédex-style controls, Pokémon sprite decoration and reduced-motion fallbacks using only the project’s existing local assets. No generated or replacement artwork was added.
+- Asset cache key advanced to `25.1.0`; database schema remains revision 28 and no database migration is required for this visual-only release.
+
 ## v25.0.0 — Pokémon Rival Network & Autonomous Ranked Trainer Field
 
 - Added an isolated server-authoritative **Rival Network** progression layer with Rival Rating, peak rating, ranked W/L, streaks and last-activity state for every human and autonomous trainer. Historic `members.points` collection ranking remains untouched.

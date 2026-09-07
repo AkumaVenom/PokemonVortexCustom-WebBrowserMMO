@@ -274,7 +274,7 @@
   });
 
   const banner = make('section', 'pv-combat-runtime-banner');
-  banner.innerHTML = `<div><span class="pv-eyebrow">BATTLE NETWORK // ${isLive ? 'SYNCHRONIZED PVP' : 'AUTHORITATIVE NPC COMBAT'}</span><h1>${isLive ? 'Live Battle' : 'Trainer Battle'}</h1><p>${isLive ? 'Both trainers resolve against the same durable match identity. Terminal results automatically converge across both browser sessions.' : 'League, Event, Sidequest and trainer commands are validated server-side before the combat engine resolves the turn.'}</p></div><div class="pv-combat-runtime-signal"><i></i><strong>COMBAT LINK</strong><span>STABLE</span></div>`;
+  banner.innerHTML = `<div><span class="pv-eyebrow">BATTLE NETWORK // ${isLive ? 'TRAINER VS TRAINER' : 'TRAINER CHALLENGE'}</span><h1>${isLive ? 'Live Battle' : 'Trainer Battle'}</h1><p>${isLive ? 'Battle another trainer live with synchronized turns, team switches and shared results.' : 'Take on League, Event, Sidequest and rival trainers in the full animated battle arena.'}</p></div><div class="pv-combat-runtime-signal"><i></i><strong>BATTLE READY</strong><span>CONNECTED</span></div>`;
 
   const footer = make('footer', 'pv-footer pv-combat-footer', '<div class="pv-footer-main"><strong>Pokémon Vortex</strong><span>Unified Combat Runtime</span></div><div class="pv-footer-links"><a href="battle_select.php">Battle Arena</a><a href="contactus.php">Support</a><a href="terms.php">Terms</a><a href="privacy.php">Privacy</a></div><div class="pv-footer-signal"><i></i><span>VORTEX NETWORK</span></div>');
 
@@ -402,7 +402,7 @@
   };
   const buildLogPanel = (entries) => {
     const panel = make('section', 'pv-wild-log-panel');
-    panel.innerHTML = '<div class="pv-map-panel-label">BATTLE TELEMETRY</div>';
+    panel.innerHTML = '<div class="pv-map-panel-label">BATTLE LOG</div>';
     const log = make('div', 'pv-wild-log');
     (entries.length ? entries : [isLive ? 'Live combat channel synchronized.' : 'Trainer combat channel ready.']).forEach((text, index) => {
       const row = make('div', index === 0 ? 'tone-accent' : 'tone-muted');
@@ -448,7 +448,7 @@
         const power = normalize(radio.dataset.pvMovePower || '');
         const accuracy = normalize(radio.dataset.pvMoveAccuracy || '');
         const meta = [type, power ? `${power} PWR` : '', accuracy ? `${accuracy}% ACC` : ''].filter(Boolean).join(' · ');
-        btn.innerHTML = `<small>${esc(meta || `MOVE SLOT ${slot}`)}</small><strong>${esc(radio.dataset.pvMoveName || name)}</strong><span>SERVER-AUTHORITATIVE COMMAND</span>`;
+        btn.innerHTML = `<small>${esc(meta || `MOVE SLOT ${slot}`)}</small><strong>${esc(radio.dataset.pvMoveName || name)}</strong><span>CHOOSE MOVE</span>`;
         btn.addEventListener('click', () => submitFormFor(radio)); wrap.appendChild(btn); grid.appendChild(wrap);
       });
       view.appendChild(grid); panel.appendChild(view); views.push(view);
@@ -571,7 +571,7 @@
     const lower = make('div', 'pv-wild-lower-grid');
     lower.appendChild(buildLogPanel(logFromTable(arenaData.rows)));
     const controls = attackForm ? buildControlPanel(attackForm) : null;
-    lower.appendChild(controls || buildContinuePanel(attackForm) || make('section', 'pv-wild-control-panel pv-combat-continue-panel', '<div class="pv-map-panel-label">BATTLE COMMAND</div><div class="pv-combat-continue-copy"><strong>Turn resolved</strong><span>Continue the battle from the server-authoritative state.</span></div>'));
+    lower.appendChild(controls || buildContinuePanel(attackForm) || make('section', 'pv-wild-control-panel pv-combat-continue-panel', '<div class="pv-map-panel-label">BATTLE COMMAND</div><div class="pv-combat-continue-copy"><strong>Turn resolved</strong><span>Continue to the next battle moment.</span></div>'));
     surface.appendChild(lower);
     vaultLegacy([surface]);
     ajax.insertBefore(surface, ajax.querySelector('.pv-combat-legacy-vault'));
@@ -602,7 +602,7 @@
     }
 
     const lower = make('div', 'pv-wild-lower-grid');
-    lower.appendChild(buildLogPanel(['A replacement is required before the next server-authoritative combat turn can begin.']));
+    lower.appendChild(buildLogPanel(['Choose your next Pokémon to continue the battle.']));
     const controls = make('section', 'pv-wild-control-panel pv-combat-team-choice-panel');
     controls.innerHTML = '<div class="pv-map-panel-label">BATTLE COMMAND // TEAM</div><div class="pv-combat-continue-copy"><strong>Choose your next Pokémon</strong><span>The selected partner is submitted to the existing battle form; no combat state is predicted in the browser.</span></div>';
     const grid = make('div', 'pv-wild-team-grid pv-combat-team-choice-grid');

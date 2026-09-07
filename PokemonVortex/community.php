@@ -25,10 +25,10 @@ pv_page_start('Community', 'community.php', true);
 </section>
 
 <section class="pv-network-grid">
-<a class="pv-network-card" href="<?= pv_h(pv_url('members.php')) ?>"><span class="pv-network-code">DIR</span><div><h3>Trainer Directory</h3><p>Browse trainers, inspect profiles and find people currently online.</p></div><b>→</b></a>
-<a class="pv-network-card" href="<?= pv_h(pv_url('messages.php')) ?>"><span class="pv-network-code">MSG</span><div><h3>Messages</h3><p>Read private messages and keep in touch with other trainers.</p></div><b>→</b></a>
-<a class="pv-network-card" href="<?= pv_h(pv_url('trade.php')) ?>"><span class="pv-network-code">TRD</span><div><h3>Trade Center</h3><p>Search listings, offer Pokémon and manage your active trades.</p></div><b>→</b></a>
-<a class="pv-network-card" href="<?= pv_h(pv_url('clans.php')) ?>"><span class="pv-network-code">CLN</span><div><h3>Clans</h3><p>Create or join a clan and build a shared identity with other trainers.</p></div><b>→</b></a>
+<a class="pv-network-card" href="<?= pv_h(pv_url('members.php')) ?>"><span class="pv-network-code pv-image-icon"><img src="<?=pv_h(pv_static_file('images/sprites/2whole.gif','images/sprites/1.gif'))?>" alt="Trainer"></span><div class="pv-network-copy"><h3>Trainer Directory</h3><p>Browse trainers, inspect profiles and find people currently online.</p></div><b>→</b></a>
+<a class="pv-network-card" href="<?= pv_h(pv_url('messages.php')) ?>"><span class="pv-network-code pv-image-icon"><img src="<?=pv_h(pv_static_file('images/pokemon/Chatot.gif'))?>" alt="Messages"></span><div class="pv-network-copy"><h3>Messages</h3><p>Read private messages and keep in touch with other trainers.</p></div><b>→</b></a>
+<a class="pv-network-card" href="<?= pv_h(pv_url('trade.php')) ?>"><span class="pv-network-code pv-image-icon"><img src="<?=pv_h(pv_static_file('images/items/Great Ball.png'))?>" alt="Trade"></span><div class="pv-network-copy"><h3>Trade Center</h3><p>Search listings, offer Pokémon and manage your active trades.</p></div><b>→</b></a>
+<a class="pv-network-card" href="<?= pv_h(pv_url('clans.php')) ?>"><span class="pv-network-code pv-image-icon"><img src="<?=pv_h(pv_static_file('images/pokemon/Lucario.gif'))?>" alt="Clans"></span><div class="pv-network-copy"><h3>Clans</h3><p>Create or join a clan and build a shared identity with other trainers.</p></div><b>→</b></a>
 </section>
 
 <section class="pv-panel pv-prose pv-compact-panel"><span class="pv-eyebrow">PLAYER SAFETY</span><h2>Protect your trainer account</h2><p>Keep your password private. Use the built-in trade and messaging systems for player interactions, and never share sign-in credentials in messages or profile text.</p></section>

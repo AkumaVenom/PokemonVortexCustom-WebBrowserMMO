@@ -79,7 +79,7 @@ pv_page_start($username,'map_select.php',true);
             <button class="pv-button" type="submit">Start Live AI Battle</button>
         </form>
     </div>
-    <div class="pv-bot-scope-note"><strong>Autonomy rules</strong><span>This AI may battle players and wild Pokémon and may catch wild Pokémon. It does not autonomously battle gyms, Battle Arena trainers, event trainers or Sidequest opponents.</span></div>
+    <div class="pv-bot-scope-note"><strong>AI trainer behavior</strong><span>This AI may battle players and wild Pokémon and may catch wild Pokémon. It does not autonomously battle gyms, Battle Arena trainers, event trainers or Sidequest opponents.</span></div>
 </section>
 
 <section class="pv-panel pv-bot-location-card">
@@ -106,7 +106,7 @@ pv_page_start($username,'map_select.php',true);
     <article><span>WILD BATTLES</span><strong><?=number_format((int)$profile['wild_battles'])?></strong><small><?=number_format((int)$profile['wild_wins'])?> wins</small></article>
     <article><span>CAPTURES</span><strong><?=number_format((int)$profile['captures'])?></strong><small><?=number_format((int)$profile['total_poke'])?> owned Pokémon</small></article>
     <article><span>LIVE PLAYER BATTLES</span><strong><?=number_format((int)$profile['player_battles'])?></strong><small><?=number_format((int)$profile['player_wins'])?> W · <?=number_format((int)$profile['player_losses'])?> L</small></article>
-    <article><span>TRAINER SPRITE</span><strong>#<?=number_format($trainer)?></strong><small>persistent identity</small></article>
+    <article><span>TRAINER SPRITE</span><strong>#<?=number_format($trainer)?></strong><small>trainer appearance</small></article>
 </section>
 </section></main></div>
 <?php pv_page_end(); ?>

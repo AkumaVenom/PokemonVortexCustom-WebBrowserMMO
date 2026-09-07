@@ -3778,3 +3778,984 @@ hr,.hr{background:linear-gradient(90deg,transparent,rgba(42,117,187,.36),rgba(25
 /* Poké Ball motif for blank/utility emblems. */
 .pv-icon:not(.pv-image-icon){border-radius:50%!important;background:#fff url("../../html/static/images/items/Poke%20Ball.png") center/70% 70% no-repeat!important;color:transparent!important;border:2px solid rgba(42,117,187,.15)!important;box-shadow:0 6px 12px rgba(39,83,118,.1)!important}
 .pv-incoming-panel{margin:15px 0;padding:18px;border:1px solid rgba(42,117,187,.18);border-radius:20px;background:linear-gradient(145deg,#fff,#f3faff);box-shadow:0 13px 28px rgba(39,83,118,.09)}.pv-incoming-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.pv-incoming-grid article{display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px;align-items:center;padding:10px;border:1px solid rgba(42,117,187,.1);border-radius:14px;background:#fff}.pv-incoming-grid article.is-held{border-top:4px solid #37b86a}.pv-incoming-grid article.is-breached{border-top:4px solid #e84545}.pv-incoming-grid .signal{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#eff8fd}.pv-incoming-grid .signal img{max-width:34px;max-height:34px}.pv-incoming-grid small,.pv-incoming-grid strong,.pv-incoming-grid span{display:block}.pv-incoming-grid small{font-size:6px!important;letter-spacing:.06em}.pv-incoming-grid strong{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pv-incoming-grid span{font-size:7px;color:#6d8294}.pv-incoming-grid b{grid-column:1/-1;padding-top:5px;border-top:1px solid rgba(42,117,187,.08);font-size:7px;letter-spacing:.08em;color:#2a75bb}.pv-incoming-grid .is-held b{color:#26884d}.pv-incoming-grid .is-breached b{color:#cc3d3d}@media(max-width:1040px){.pv-incoming-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.pv-incoming-grid{grid-template-columns:1fr}}
+
+/* -------------------------------------------------------------------------- */
+/* v25.1.0 — site-wide Pokémon visual coherence pass                          */
+/*                                                                            */
+/* The Rival Network established the bright Pokémon-world language. This      */
+/* section deliberately carries that language through the remaining recovered  */
+/* dark/navy surfaces without altering map dimensions, battle authority,       */
+/* persistence, or combat animation hooks. Existing local artwork only.        */
+/* -------------------------------------------------------------------------- */
+
+:root{
+  --pv-poke-ink:#17324d;
+  --pv-poke-blue:#2a75bb;
+  --pv-poke-blue-deep:#174f91;
+  --pv-poke-sky:#eaf8ff;
+  --pv-poke-yellow:#ffcb05;
+  --pv-poke-red:#e84545;
+  --pv-poke-green:#37b86a;
+  --pv-poke-cream:#fff9df;
+  --pv-poke-white:#ffffff;
+  --pv-poke-muted:#60788c;
+  --pv-poke-line:rgba(42,117,187,.16);
+  --pv-poke-shadow:0 16px 36px rgba(39,83,118,.11),0 3px 9px rgba(39,83,118,.06);
+}
+
+/* Common game-page canvas. */
+.pv-page,
+.pv-main-column{
+  color:var(--pv-poke-ink)!important;
+}
+.pv-page{
+  position:relative;
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 95% 3%,rgba(255,203,5,.13),transparent 24rem),
+    radial-gradient(circle at 0 100%,rgba(55,184,106,.08),transparent 22rem),
+    linear-gradient(145deg,rgba(255,255,255,.98),rgba(246,252,255,.98) 56%,rgba(255,250,224,.96))!important;
+}
+.pv-page::before{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  z-index:0;
+  width:180px;height:180px;
+  right:34px;top:42px;
+  border:24px solid rgba(42,117,187,.035);
+  border-radius:50%;
+  box-shadow:0 0 0 15px rgba(255,255,255,.26),0 0 0 17px rgba(232,69,69,.025);
+}
+.pv-page>*{position:relative;z-index:1}
+.pv-page-head{
+  margin-bottom:14px!important;
+  padding:20px 2px 18px!important;
+  border-bottom:1px solid rgba(42,117,187,.12)!important;
+}
+.pv-page-head h1,.pv-page-head h2{color:var(--pv-poke-ink)!important;text-shadow:none!important}
+.pv-page-head p,.pv-page-head .pv-subtle{color:var(--pv-poke-muted)!important}
+.pv-eyebrow{color:#2374b5!important}
+.pv-eyebrow::before{background:linear-gradient(90deg,var(--pv-poke-yellow),var(--pv-poke-blue))!important}
+
+/* Tactile shared cards and metric blocks. */
+.pv-stat-grid>div,
+.pv-stat-grid-wide>div,
+.pv-network-summary>div,
+.pv-bot-metrics-grid>article,
+.pv-event-status-grid>article,
+.pv-arena-summary-grid>div{
+  position:relative;
+  overflow:hidden;
+  color:var(--pv-poke-ink)!important;
+  background:linear-gradient(150deg,#fff,#f2faff)!important;
+  border:1px solid var(--pv-poke-line)!important;
+  border-radius:18px!important;
+  box-shadow:0 9px 20px rgba(39,83,118,.07)!important;
+}
+.pv-stat-grid>div::before,
+.pv-stat-grid-wide>div::before,
+.pv-network-summary>div::before,
+.pv-bot-metrics-grid>article::before,
+.pv-event-status-grid>article::before{
+  content:"";position:absolute;left:0;top:0;width:52px;height:7px;
+  background:linear-gradient(90deg,var(--pv-poke-blue),var(--pv-poke-yellow),var(--pv-poke-red));
+  border-radius:0 0 8px 0;
+}
+.pv-stat-grid strong,.pv-stat-grid-wide strong,.pv-network-summary strong,.pv-bot-metrics-grid strong,.pv-event-status-grid strong,.pv-arena-summary-grid strong{color:var(--pv-poke-blue-deep)!important;text-shadow:none!important}
+.pv-stat-grid span,.pv-stat-grid-wide span,.pv-network-summary span,.pv-bot-metrics-grid span,.pv-event-status-grid span,.pv-arena-summary-grid small{color:#6b8194!important}
+
+/* Public home — bright Pokémon launch screen rather than command terminal. */
+.pv-hero{
+  position:relative!important;
+  overflow:hidden!important;
+  min-height:510px!important;
+  border:1px solid rgba(42,117,187,.2)!important;
+  border-radius:28px!important;
+  background:
+    url("../../html/static/images/pokemon/Pikachu.gif") calc(100% - 74px) 16%/78px 78px no-repeat,
+    url("../../html/static/images/pokemon/Charizard.gif") calc(100% - 175px) 54%/150px 150px no-repeat,
+    url("../../html/static/images/pokemon/Eevee.gif") calc(100% - 310px) 28%/88px 88px no-repeat,
+    radial-gradient(circle at 78% 45%,rgba(255,203,5,.28),transparent 18rem),
+    radial-gradient(circle at 68% 48%,rgba(42,117,187,.10),transparent 26rem),
+    linear-gradient(135deg,#ffffff,#edf9ff 53%,#fff6c9)!important;
+  box-shadow:0 22px 46px rgba(39,83,118,.14)!important;
+}
+.pv-hero::before{
+  content:"";position:absolute;right:115px;top:82px;width:310px;height:310px;border-radius:50%;
+  border:38px solid rgba(42,117,187,.045);box-shadow:0 0 0 20px rgba(255,255,255,.34),0 0 0 23px rgba(232,69,69,.035);pointer-events:none
+}
+.pv-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:7px;background:linear-gradient(90deg,#e84545 0 20%,#ffcb05 20% 40%,#2a75bb 40% 66%,#37b86a 66% 84%,#e84545 84%)}
+.pv-hero-copy{position:relative;z-index:3;max-width:650px!important}
+.pv-hero h1{color:var(--pv-poke-ink)!important;text-shadow:0 3px #fff!important}
+.pv-hero h1 span{color:transparent!important;-webkit-text-stroke:2px var(--pv-poke-blue-deep);text-shadow:0 3px 0 rgba(255,255,255,.9)!important}
+.pv-hero p{color:#5b7488!important;max-width:620px!important}
+.pv-hero-tags span{color:#365e7a!important;background:#fff!important;border:1px solid rgba(42,117,187,.13)!important;border-radius:999px!important;box-shadow:0 5px 12px rgba(39,83,118,.06)!important}
+.pv-world-status{
+  position:relative!important;z-index:3!important;
+  background:rgba(255,255,255,.91)!important;
+  border:1px solid rgba(42,117,187,.22)!important;
+  border-radius:22px!important;
+  box-shadow:0 14px 28px rgba(39,83,118,.12)!important;
+  backdrop-filter:blur(8px);
+}
+.pv-status-label,.pv-status-row span{color:#6c8194!important}
+.pv-status-online{color:#249b55!important;text-shadow:none!important}
+.pv-status-copy{color:#5e768a!important}
+.pv-status-row{border-color:rgba(42,117,187,.09)!important}.pv-status-row strong{color:var(--pv-poke-blue-deep)!important}
+.pv-home-banner{
+  border-radius:22px!important;border:1px solid var(--pv-poke-line)!important;
+  background:radial-gradient(circle at 82% 20%,rgba(255,203,5,.19),transparent 29%),linear-gradient(135deg,#fff,#eef9ff)!important;
+  box-shadow:var(--pv-poke-shadow)!important
+}
+.pv-home-banner h2{color:var(--pv-poke-ink)!important}.pv-home-banner p{color:var(--pv-poke-muted)!important}
+.pv-feature{transition:transform .24s cubic-bezier(.2,.85,.25,1),box-shadow .24s ease!important}.pv-feature:hover{z-index:3;transform:translateY(-7px) scale(1.015)!important;box-shadow:0 20px 34px rgba(42,117,187,.16)!important}
+
+/* World selection — turn old dark route cards into polished region cards. */
+.pv-map-select-page .pv-section-hero,
+.pv-map-select-hero{background:radial-gradient(circle at 88% 18%,rgba(255,203,5,.20),transparent 26%),linear-gradient(135deg,#fff,#edf9ff)!important}
+.pv-world-section-head{border-color:rgba(42,117,187,.10)!important}.pv-world-section-head span,.pv-world-section-head strong{color:#2a75bb!important}.pv-world-section-head h2{color:var(--pv-poke-ink)!important}.pv-world-section-head p{color:var(--pv-poke-muted)!important}
+.pv-region-overworld-source{
+  border:1px solid rgba(42,117,187,.17)!important;border-radius:20px!important;
+  background:linear-gradient(130deg,#fff,#edf8ff 58%,#fff8d7)!important;
+  box-shadow:0 12px 26px rgba(39,83,118,.10)!important;
+}
+.pv-region-overworld-source>img{border:5px solid #fff!important;outline:1px solid rgba(42,117,187,.18)!important;box-shadow:0 10px 22px rgba(39,83,118,.12)!important}
+.pv-region-overworld-source h2{color:var(--pv-poke-ink)!important}.pv-region-overworld-source p{color:var(--pv-poke-muted)!important}
+.pv-region-readiness span{color:#557287!important}.pv-region-readiness i{background:var(--pv-poke-green)!important;box-shadow:0 0 0 4px rgba(55,184,106,.12)!important}
+.pv-map-group-code{background:linear-gradient(145deg,#eaf8ff,#fff)!important;border-color:rgba(42,117,187,.15)!important;color:#2a75bb!important}
+.pv-map-group-head span{color:#2a75bb!important}.pv-map-group-head h2{color:var(--pv-poke-ink)!important}.pv-map-group-head p{color:var(--pv-poke-muted)!important}
+.pv-map-card{
+  color:var(--pv-poke-ink)!important;border:1px solid rgba(42,117,187,.13)!important;border-radius:17px!important;
+  background:linear-gradient(145deg,#fff,#f4fbff)!important;box-shadow:0 7px 16px rgba(39,83,118,.07)!important;
+  transition:transform .24s cubic-bezier(.2,.85,.25,1),box-shadow .24s ease,border-color .24s ease!important
+}
+.pv-map-card::before{width:5px!important;background:linear-gradient(#2a75bb,#ffcb05,#37b86a)!important;opacity:.9!important}
+.pv-map-card::after{border-color:rgba(255,203,5,.20)!important;background:rgba(255,203,5,.05)!important;border-radius:16px!important}
+.pv-map-card:hover{z-index:3;color:var(--pv-poke-ink)!important;border-color:rgba(42,117,187,.34)!important;background:linear-gradient(145deg,#fff,#edf8ff 70%,#fff6c7)!important;transform:translateY(-6px) scale(1.012)!important;box-shadow:0 18px 30px rgba(42,117,187,.15)!important}
+.pv-map-card-image{background:#fff!important;border:1px solid rgba(42,117,187,.13)!important;border-radius:13px!important;box-shadow:0 5px 12px rgba(39,83,118,.08)!important}
+.pv-map-card-body small{color:#2a75bb!important}.pv-map-card-body strong{color:var(--pv-poke-ink)!important}.pv-map-card-body em{color:#6d8294!important}.pv-map-card>b,.pv-map-card:hover>b{color:#2a75bb!important}
+
+/* Exploration chrome stays bright while native map pixels remain untouched. */
+.pv-map-console,.pv-map-sidebar,.pv-map-control-panel,.pv-map-encounter-panel,.pv-map-region-panel{
+  background:linear-gradient(150deg,#fff,#f3faff)!important;border:1px solid rgba(42,117,187,.16)!important;color:var(--pv-poke-ink)!important;box-shadow:0 10px 24px rgba(39,83,118,.08)!important
+}
+.pv-map-console{border-radius:20px!important;overflow:hidden!important}
+.pv-map-console-top,.pv-map-console-bottom{background:linear-gradient(90deg,#eef9ff,#fff9dc)!important;border-color:rgba(42,117,187,.10)!important;color:#527086!important}
+.pv-map-console-top strong,.pv-map-console-bottom strong,.pv-map-panel-label{color:#2473b3!important}
+.pv-map-control-panel,.pv-map-encounter-panel,.pv-map-region-panel{border-radius:16px!important}
+.pv-map-quiet,.pv-map-region-panel p,.pv-map-control-panel p{color:#698094!important}
+.pv-map-compass button{background:linear-gradient(180deg,#fff,#eaf7ff)!important;color:#1768ad!important;border-color:rgba(42,117,187,.18)!important;box-shadow:0 4px 9px rgba(39,83,118,.06)!important}.pv-map-compass button:hover{background:linear-gradient(180deg,#fff8cc,#ffde57)!important;color:#17324d!important;transform:translateY(-2px)!important}
+/* Native map containers intentionally retain their dark framing and exact dimensions. */
+.pv-map-stage,.pv-map-viewport-wrap,.pv-map-art,.pv-world-map-stage,.pv-world-map-viewport{border-color:rgba(42,117,187,.22)!important}
+
+/* Pokémon battle presentation — arena becomes sky/field, controls become tactile cards. */
+.pv-wildbattle-page,.pv-live-runtime-page,.pv-combat-modern-surface,.pv-legacy-battle-page{--pv-battle-ink:#17324d;--pv-battle-line:rgba(42,117,187,.17)}
+.pv-wildbattle-page .pv-page,.pv-live-runtime-page .pv-page{background:linear-gradient(145deg,#fff,#eff9ff 58%,#fff9df)!important}
+.pv-wild-arena,
+.pv-combat-modern-surface .pv-wild-arena,
+.pv-legacy-combat-table{
+  padding:10px!important;border:1px solid rgba(42,117,187,.20)!important;border-radius:22px!important;
+  background:linear-gradient(145deg,#ffffff,#edf9ff 62%,#fff8d6)!important;
+  box-shadow:0 15px 32px rgba(39,83,118,.12)!important
+}
+.pv-wild-fighter{
+  border:1px solid rgba(42,117,187,.17)!important;border-radius:18px!important;
+  background:linear-gradient(180deg,#dff5ff 0%,#f8fdff 52%,#e9f7d9 53%,#cfeeb8 100%)!important;
+  box-shadow:inset 0 1px #fff,0 7px 16px rgba(39,83,118,.07)!important
+}
+.pv-wild-enemy{background:linear-gradient(180deg,#e6f7ff 0%,#fffdf3 51%,#f5e7c6 52%,#e9d49f 100%)!important}
+.pv-wild-fighter::before{border-color:rgba(42,117,187,.06)!important}
+.pv-wild-fighter-hud{background:rgba(255,255,255,.88)!important;border-bottom:1px solid rgba(42,117,187,.09)!important;backdrop-filter:blur(5px)}
+.pv-wild-player .pv-wild-fighter-hud{border-top:1px solid rgba(42,117,187,.09)!important;border-bottom:0!important}
+.pv-wild-fighter-hud small{color:#2a75bb!important}.pv-wild-fighter-hud h2{color:var(--pv-poke-ink)!important;text-shadow:none!important}.pv-wild-fighter-hud span,.pv-wild-fighter-hud>strong{color:#60798c!important}
+.pv-wild-hp{background:#d7e6e9!important;border-radius:999px!important}.pv-wild-hp i,.pv-wild-enemy .pv-wild-hp i{background:linear-gradient(90deg,#27a85a,#68dc7f)!important;box-shadow:0 0 10px rgba(55,184,106,.30)!important;border-radius:999px!important}
+.pv-wild-sprite-zone{background:radial-gradient(ellipse at 50% 78%,rgba(255,255,255,.72),transparent 30%),radial-gradient(circle at 50% 45%,rgba(42,117,187,.09),transparent 42%)!important}
+.pv-wild-sprite-zone::after{height:3px!important;bottom:34px!important;background:linear-gradient(90deg,transparent,rgba(55,184,106,.30),transparent)!important;border-radius:50%!important}
+.pv-wild-sprite-zone img{filter:drop-shadow(0 16px 16px rgba(33,73,99,.22))!important}
+.pv-wild-scan-ring{border-color:rgba(42,117,187,.10)!important;box-shadow:0 0 0 28px rgba(42,117,187,.024),0 0 0 58px rgba(255,203,5,.022)!important}
+.pv-wild-versus{color:#174f91!important}.pv-wild-versus span{background:linear-gradient(145deg,#fff4ad,#ffcb05)!important;color:#17324d!important;border:2px solid #fff!important;outline:2px solid rgba(42,117,187,.18)!important;border-radius:12px!important;box-shadow:0 8px 17px rgba(39,83,118,.11)!important}.pv-wild-versus i{background:linear-gradient(transparent,rgba(42,117,187,.18),transparent)!important}
+.pv-wild-log-panel,.pv-wild-control-panel,.pv-live-panel,.pv-combat-modern-surface{
+  border-color:rgba(42,117,187,.16)!important;background:linear-gradient(150deg,#fff,#f4fbff)!important;color:var(--pv-poke-ink)!important;border-radius:18px!important;box-shadow:0 10px 23px rgba(39,83,118,.08)!important
+}
+.pv-wild-log-panel .pv-map-panel-label,.pv-wild-control-panel .pv-map-panel-label{border-color:rgba(42,117,187,.09)!important;background:linear-gradient(90deg,#eef9ff,#fff9dc)!important}
+.pv-wild-log>div{border-color:rgba(42,117,187,.08)!important;color:#5f788b!important}.pv-wild-log .tone-good{color:#26884d!important}.pv-wild-log .tone-danger{color:#c74747!important}.pv-wild-log .tone-accent{color:#1768ad!important}.pv-wild-log .tone-muted{color:#7b8e9d!important}
+.pv-wild-command-tabs{border-color:rgba(42,117,187,.09)!important;background:#f7fbff!important}.pv-wild-command-tabs button{background:linear-gradient(180deg,#fff,#edf8ff)!important;color:#4b6b82!important;border:1px solid rgba(42,117,187,.14)!important;border-radius:999px!important;box-shadow:0 4px 10px rgba(39,83,118,.05)!important}.pv-wild-command-tabs button:hover,.pv-wild-command-tabs button.active{background:linear-gradient(180deg,#3c94d2,#2a75bb)!important;color:#fff!important;border-color:#2a75bb!important;transform:translateY(-2px)!important}
+.pv-wild-command-view{background:transparent!important}
+.pv-wild-move-grid button,.pv-wild-item-grid button,.pv-wild-team-grid button{
+  background:linear-gradient(145deg,#fff,#eef8ff)!important;color:var(--pv-poke-ink)!important;border:1px solid rgba(42,117,187,.15)!important;border-radius:14px!important;box-shadow:0 5px 12px rgba(39,83,118,.06)!important
+}
+.pv-wild-move-grid button:hover,.pv-wild-item-grid button:hover:not(:disabled),.pv-wild-team-grid button:hover:not(:disabled){background:linear-gradient(145deg,#fff8cd,#fff)!important;border-color:rgba(255,190,0,.48)!important;box-shadow:0 10px 20px rgba(39,83,118,.11)!important;transform:translateY(-3px)!important}
+.pv-wild-move-grid button small,.pv-wild-item-grid button small,.pv-wild-team-grid small,.pv-wild-move-grid button span{color:#688095!important}.pv-wild-move-grid button strong,.pv-wild-item-grid button strong,.pv-wild-team-grid strong,.pv-wild-run-box h3,.pv-wild-command-complete strong{color:var(--pv-poke-ink)!important;text-shadow:none!important}
+.pv-wild-team-grid i{background:#dce9ec!important;border-radius:99px!important}.pv-wild-team-grid i b{background:linear-gradient(90deg,#37b86a,#68dd80)!important;border-radius:99px!important}
+.pv-wild-run-box p,.pv-wild-command-complete p{color:#687f92!important}
+.pv-combat-runtime-signal{background:linear-gradient(145deg,#effbf2,#fff)!important;border:1px solid rgba(55,184,106,.19)!important;border-radius:14px!important}.pv-combat-runtime-signal strong{color:#25864c!important}.pv-combat-runtime-signal span{color:#6d8190!important}
+
+/* Recovered Trainer Battle outer shell is now the same bright trainer-network chrome. */
+body.pv-legacy-battle-page{
+  background:radial-gradient(circle at 90% 8%,rgba(255,203,5,.18),transparent 24rem),linear-gradient(145deg,#d8f4ff,#f9fdff 46%,#fff6d7 72%,#eaf8e7)!important;color:var(--pv-poke-ink)!important
+}
+body.pv-legacy-battle-page #container{background:transparent!important}
+body.pv-legacy-battle-page #header{
+  background:linear-gradient(120deg,#fff,#f1f9ff 58%,#fff7d2)!important;border:1px solid rgba(42,117,187,.18)!important;border-radius:0 0 22px 22px!important;box-shadow:0 10px 27px rgba(39,83,118,.12)!important
+}
+body.pv-legacy-battle-page #header::after{height:4px!important;background:linear-gradient(90deg,#e84545 0 20%,#ffcb05 20% 40%,#2a75bb 40% 65%,#37b86a 65% 82%,#e84545 82%)!important;opacity:1!important}
+body.pv-legacy-battle-page #title h1 a::before{
+  content:""!important;background:#fff url("../../html/static/images/items/Poke%20Ball.png") center/74% 74% no-repeat!important;border:3px solid #2a75bb!important;border-radius:50%!important;box-shadow:0 6px 14px rgba(42,117,187,.18)!important;color:transparent!important
+}
+body.pv-legacy-battle-page #title h1 a::after{color:#17324d!important;text-shadow:none!important}
+body.pv-legacy-battle-page #nav a,body.pv-legacy-battle-page #logout a,body.pv-legacy-battle-page #sidebarTabs a{color:#536e82!important;background:transparent!important}
+body.pv-legacy-battle-page #nav a:hover,body.pv-legacy-battle-page #nav a.selected,body.pv-legacy-battle-page #sidebarTabs a:hover,body.pv-legacy-battle-page #sidebarTabs a.selected{background:#edf8ff!important;color:#174f91!important;border-color:rgba(42,117,187,.17)!important}
+body.pv-legacy-battle-page #usernav{background:linear-gradient(90deg,#2a75bb,#287dbf)!important;color:#eefaff!important;border:0!important;border-bottom:4px solid #ffcb05!important;border-radius:0 0 12px 12px!important}
+body.pv-legacy-battle-page #sidebar{background:linear-gradient(160deg,#fff,#f3faff)!important;border-color:rgba(42,117,187,.17)!important;box-shadow:0 13px 28px rgba(39,83,118,.09)!important}
+body.pv-legacy-battle-page #scroll{background:linear-gradient(150deg,#fff,#f3faff)!important;border-color:rgba(42,117,187,.17)!important;box-shadow:0 13px 28px rgba(39,83,118,.09)!important}
+body.pv-legacy-battle-page #scrollContent,body.pv-legacy-battle-page #ajax{color:var(--pv-poke-ink)!important}
+
+/* Sidequests — map/adventure book styling. */
+.pv-sidequest-page-modern{overflow:visible!important}.pv-sidequest-page-modern::after{border-color:rgba(255,203,5,.10)!important}
+.pv-sidequest-hero{background:radial-gradient(circle at 89% 15%,rgba(255,203,5,.23),transparent 26%),linear-gradient(135deg,#fff,#eef9ff)!important;border-color:rgba(42,117,187,.17)!important;border-radius:22px!important}
+.pv-sidequest-progress-orb{background:radial-gradient(circle,#fff 0 44%,#edf8ff 45% 64%,#ffed98 65% 72%,transparent 73%)!important;border-color:rgba(42,117,187,.15)!important;color:#174f91!important}
+.pv-sidequest-summary-grid>div,.pv-sidequest-sequence>div,.pv-sidequest-target,.pv-sidequest-map-card,.pv-sidequest-reward-panel{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;border-color:rgba(42,117,187,.13)!important;color:var(--pv-poke-ink)!important;border-radius:16px!important;box-shadow:0 7px 16px rgba(39,83,118,.06)!important
+}
+.pv-sidequest-summary-grid strong,.pv-sidequest-target h2,.pv-sidequest-target h3,.pv-sidequest-map-card h3{color:var(--pv-poke-ink)!important}.pv-sidequest-summary-grid span,.pv-sidequest-target p,.pv-sidequest-map-card p{color:#688094!important}
+.pv-sidequest-sequence>div.is-active,.pv-sidequest-target:hover{border-color:rgba(255,190,0,.42)!important;background:linear-gradient(145deg,#fff8d2,#fff)!important}
+.pv-sidequest-team span{background:#eef8ff!important;border-color:rgba(42,117,187,.12)!important;border-radius:13px!important}
+
+/* Collection / team builder. */
+.pv-collection-filter,.pv-team-builder-footer,.pv-options-footer{
+  background:linear-gradient(90deg,#eef9ff,#fff9df)!important;border-color:rgba(42,117,187,.13)!important;border-radius:16px!important
+}
+.pv-collection-card,.pv-team-slot,.pv-pokemon-select-card{
+  background:linear-gradient(150deg,#fff,#f2faff)!important;border:1px solid rgba(42,117,187,.14)!important;border-radius:18px!important;color:var(--pv-poke-ink)!important;box-shadow:0 8px 18px rgba(39,83,118,.07)!important;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important
+}
+.pv-collection-card:hover,.pv-team-slot:hover,.pv-pokemon-select-card:hover{z-index:3;transform:translateY(-6px) scale(1.01)!important;border-color:rgba(42,117,187,.32)!important;box-shadow:0 17px 28px rgba(42,117,187,.13)!important}
+.pv-collection-card-art,.pv-team-slot-preview{background:radial-gradient(circle at 50% 55%,#fff 0 25%,#eaf8ff 55%,transparent 72%)!important;border-color:rgba(42,117,187,.10)!important}
+.pv-collection-card-art img,.pv-team-slot-preview img{filter:drop-shadow(0 12px 14px rgba(33,73,99,.18))!important}
+.pv-collection-card-body>small{color:#2a75bb!important}.pv-collection-card-body h3,.pv-team-slot h3,.pv-team-slot strong{color:var(--pv-poke-ink)!important}.pv-collection-card-body dl>div{background:#f7fbff!important;border-color:rgba(42,117,187,.08)!important}.pv-collection-card-body dt{color:#708596!important}.pv-collection-card-body dd{color:#385d76!important}
+.pv-collection-types span{background:#eaf8ff!important;border-color:rgba(42,117,187,.13)!important;color:#266c9e!important;border-radius:999px!important}
+.pv-collection-card-actions{border-color:rgba(42,117,187,.10)!important}.pv-collection-card-actions a{color:#55768d!important;border-color:rgba(42,117,187,.08)!important}.pv-collection-card-actions a:hover{background:#edf8ff!important;color:#1768ad!important}.pv-collection-card-actions a.danger:hover{background:#fff0ef!important;color:#c74444!important}
+
+/* Pokédex — clean research-book cards, still sprite-first. */
+.pv-dex-search{background:linear-gradient(90deg,#eef9ff,#fff9dd)!important;border:1px solid rgba(42,117,187,.13)!important;border-radius:16px!important}
+.pv-dex-card,.pv-dex-variant-card,.pv-dex-variant-tile,.pv-dex-owned-card,.pv-dex-ability-card,.pv-dex-move-card,.pv-dex-evolution-card{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;border:1px solid rgba(42,117,187,.13)!important;border-radius:17px!important;color:var(--pv-poke-ink)!important;box-shadow:0 7px 16px rgba(39,83,118,.06)!important;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important
+}
+.pv-dex-card:hover,.pv-dex-variant-card:hover,.pv-dex-variant-tile:hover,.pv-dex-owned-card:hover{z-index:3;transform:translateY(-6px) scale(1.015)!important;border-color:rgba(42,117,187,.31)!important;box-shadow:0 16px 27px rgba(42,117,187,.13)!important}
+.pv-dex-card strong,.pv-dex-card h3,.pv-dex-variant-card strong,.pv-dex-owned-card strong{color:var(--pv-poke-ink)!important}.pv-dex-card span,.pv-dex-card small{color:#6c8294!important}
+.pv-dex-hero{background:linear-gradient(135deg,#fff,#edf9ff 60%,#fff8d2)!important;border-color:rgba(42,117,187,.16)!important;border-radius:20px!important}.pv-dex-scan{background:radial-gradient(circle,#fff 0 25%,#eaf8ff 55%,transparent 72%)!important}.pv-dex-scan i{border-color:rgba(42,117,187,.10)!important}.pv-dex-scan img{filter:drop-shadow(0 15px 18px rgba(33,73,99,.20))!important}.pv-dex-hero>div:last-child>span{color:#2a75bb!important}.pv-dex-hero p{color:#657d90!important}.pv-dex-moves span,.pv-dex-types span{background:#eef8ff!important;color:#2b6b96!important;border-color:rgba(42,117,187,.11)!important;border-radius:999px!important}.pv-dex-ivs>div,.pv-dex-evolution-list>div{background:#f7fbff!important;border-color:rgba(42,117,187,.08)!important}.pv-dex-ivs span,.pv-dex-evolution-list span{color:#6a8194!important}.pv-dex-ivs i{background:#dfeaed!important;border-radius:99px!important}
+.pv-dex-telemetry,.pv-dex-entry-nav>*{background:linear-gradient(145deg,#fff,#eef8ff)!important;border-color:rgba(42,117,187,.12)!important;color:#4d6b82!important}
+
+/* PokéMart / items. */
+.pv-shop-tabs{background:linear-gradient(90deg,#eef9ff,#fff8d4)!important;border:1px solid rgba(42,117,187,.13)!important;border-radius:16px!important}.pv-shop-tabs a{color:#56758b!important;border-radius:999px!important}.pv-shop-tabs a:hover,.pv-shop-tabs a.active{background:#2a75bb!important;color:#fff!important;border-color:#2a75bb!important}
+.pv-wallet{background:linear-gradient(145deg,#fff8c4,#ffdf56)!important;color:#17324d!important;border-color:rgba(198,151,0,.18)!important;border-radius:16px!important;box-shadow:0 8px 16px rgba(176,133,0,.12)!important}.pv-wallet strong{color:#174f91!important}
+.pv-shop-department-head{background:linear-gradient(135deg,#fff,#eef8ff)!important;border-color:rgba(42,117,187,.13)!important;border-radius:18px!important}.pv-shop-department-head h2{color:var(--pv-poke-ink)!important}.pv-shop-department-head p{color:var(--pv-poke-muted)!important}
+.pv-shop-card,.pv-item-panel{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;border:1px solid rgba(42,117,187,.14)!important;border-radius:18px!important;color:var(--pv-poke-ink)!important;box-shadow:0 8px 18px rgba(39,83,118,.07)!important;overflow:hidden!important;transition:transform .22s ease,box-shadow .22s ease!important
+}
+.pv-shop-card:hover{z-index:3;transform:translateY(-6px)!important;box-shadow:0 17px 28px rgba(42,117,187,.13)!important}.pv-shop-art{background:radial-gradient(circle,#fff 0 26%,#eaf8ff 58%,transparent 72%)!important}.pv-shop-art img{filter:drop-shadow(0 12px 14px rgba(33,73,99,.18))!important}.pv-shop-copy h3{color:var(--pv-poke-ink)!important}.pv-shop-copy p,.pv-shop-copy small{color:#698094!important}.pv-shop-buy{background:#f7fbff!important;border-color:rgba(42,117,187,.09)!important}.pv-receipt-list>div{background:#f7fbff!important;border-color:rgba(42,117,187,.08)!important}.pv-receipt-list span{color:#6d8293!important}
+
+/* Trade Center — marketplace cards become bright binder/trade-ticket surfaces. */
+.pv-trade-overview>a,.pv-trade-card,.pv-trade-focus,.pv-offer-row{
+  background:linear-gradient(145deg,#fff,#f2faff)!important;border:1px solid rgba(42,117,187,.14)!important;border-radius:17px!important;color:var(--pv-poke-ink)!important;box-shadow:0 7px 16px rgba(39,83,118,.06)!important
+}
+.pv-trade-overview>a::before{background:linear-gradient(135deg,rgba(42,117,187,.22) 0 48%,transparent 49%)!important}.pv-trade-overview>a::after{background:#37b86a!important}.pv-trade-overview>a:hover,.pv-trade-overview>a.active{background:linear-gradient(145deg,#fff8d1,#fff)!important;border-color:rgba(255,190,0,.40)!important;transform:translateY(-5px)!important;box-shadow:0 15px 25px rgba(39,83,118,.11)!important}
+.pv-trade-overview small,.pv-trade-card-title small,.pv-trade-offer-head small,.pv-trade-focus small{color:#6a8194!important}.pv-trade-overview strong,.pv-trade-card-title h3,.pv-trade-offer-head h3{color:var(--pv-poke-ink)!important}.pv-trade-overview span{color:#688094!important}
+.pv-trade-tabs,.pv-trade-search{background:linear-gradient(90deg,#eef9ff,#fff9df)!important;border-color:rgba(42,117,187,.13)!important;border-radius:16px!important}.pv-trade-tabs a{color:#56758b!important;border-radius:999px!important}.pv-trade-tabs a:hover,.pv-trade-tabs a.active{background:#2a75bb!important;color:#fff!important;border-color:#2a75bb!important}.pv-trade-search label>span{color:#2a75bb!important}
+.pv-trade-card-image,.pv-trade-focus-image{background:radial-gradient(circle,#fff 0 25%,#eaf8ff 57%,transparent 72%)!important;border-color:rgba(42,117,187,.09)!important}.pv-trade-card-image::before,.pv-trade-focus-image::before{border-color:rgba(42,117,187,.08)!important}.pv-trade-card-image img,.pv-trade-focus-image img{filter:drop-shadow(0 12px 15px rgba(33,73,99,.18))!important}.pv-trade-card-image>span{background:#fff!important;color:#2a75bb!important;border-color:rgba(42,117,187,.13)!important;border-radius:999px!important}.pv-trade-meta span,.pv-move-strip span{background:#eef8ff!important;color:#52758e!important;border-color:rgba(42,117,187,.09)!important;border-radius:999px!important}.pv-trade-card-actions>a,.pv-trade-card-actions button{background:#fff!important;color:#52758e!important;border-color:rgba(42,117,187,.13)!important;border-radius:999px!important}.pv-trade-card-actions>a.primary{background:#2a75bb!important;color:#fff!important;border-color:#2a75bb!important}.pv-trade-card-actions button{color:#bd4545!important;background:#fff2f1!important}
+
+/* Community, messages, trainer directory and clans. */
+.pv-network-card{
+  color:var(--pv-poke-ink)!important;border:1px solid rgba(42,117,187,.14)!important;border-radius:18px!important;background:linear-gradient(145deg,#fff,#f2faff)!important;box-shadow:0 8px 17px rgba(39,83,118,.06)!important
+}
+.pv-network-card::after{border-color:rgba(255,203,5,.19)!important;background:rgba(255,203,5,.05)!important}.pv-network-card:hover{color:var(--pv-poke-ink)!important;border-color:rgba(42,117,187,.31)!important;background:linear-gradient(145deg,#fff8d1,#fff)!important;transform:translateY(-6px)!important;box-shadow:0 17px 28px rgba(42,117,187,.12)!important}.pv-network-code{background:#edf8ff!important;color:#2a75bb!important;border-color:rgba(42,117,187,.16)!important}.pv-network-card h3{color:var(--pv-poke-ink)!important}.pv-network-card p{color:#688094!important}.pv-network-card>b,.pv-network-card:hover>b{color:#2a75bb!important}
+.pv-message-nav,.pv-message-row,.pv-message-reader,.pv-message-compose,.pv-clan-hero,.pv-clan-directory-card,.pv-form-card{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;border:1px solid rgba(42,117,187,.13)!important;border-radius:16px!important;color:var(--pv-poke-ink)!important;box-shadow:0 7px 16px rgba(39,83,118,.05)!important
+}
+.pv-message-nav a{color:#5b778d!important;border-radius:12px!important}.pv-message-nav a:hover,.pv-message-nav a.active{background:#edf8ff!important;color:#1768ad!important;border-color:rgba(42,117,187,.16)!important}.pv-message-list-head{color:#607b90!important}.pv-message-row span,.pv-message-row small,.pv-message-reader header small{color:#6c8294!important}.pv-message-row.unread{background:linear-gradient(145deg,#eef9ff,#fff)!important;border-color:rgba(42,117,187,.23)!important;box-shadow:inset 4px 0 #2a75bb!important}.pv-message-body{color:#4f6d83!important}.pv-recipient-chip{background:#eaf8ff!important;color:#2b6d9b!important;border-color:rgba(42,117,187,.13)!important;border-radius:999px!important}
+.pv-trainer-card,.pv-pokemon-card,.pv-request-list>div{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;border:1px solid rgba(42,117,187,.13)!important;border-radius:17px!important;color:var(--pv-poke-ink)!important;box-shadow:0 7px 16px rgba(39,83,118,.05)!important;transition:transform .22s ease,box-shadow .22s ease!important
+}
+.pv-trainer-card:hover{z-index:3;transform:translateY(-5px)!important;box-shadow:0 15px 25px rgba(42,117,187,.12)!important}.pv-trainer-avatar{background:radial-gradient(circle,#fff,#eaf8ff)!important;border-color:rgba(42,117,187,.13)!important}.pv-status-pill{background:#effbf2!important;color:#25864c!important;border-color:rgba(55,184,106,.18)!important;border-radius:999px!important}
+.pv-clan-hero{background:radial-gradient(circle at 12% 50%,rgba(255,203,5,.18),transparent 21%),linear-gradient(145deg,#fff,#fff9df)!important;border-color:rgba(218,168,0,.18)!important}.pv-clan-emblem{background:linear-gradient(145deg,#fff8c2,#ffdb4d)!important;color:#5d4800!important;border-color:rgba(206,157,0,.23)!important;border-radius:50%!important;box-shadow:0 7px 15px rgba(170,129,0,.12)!important}.pv-clan-hero small{color:#9d7800!important}.pv-clan-hero p,.pv-clan-hero span,.pv-clan-directory-card p,.pv-clan-directory-card span{color:#6b8193!important}.pv-clan-rank strong{color:#b98400!important}.pv-clan-roster>div{background:#f7fbff!important;border-color:rgba(42,117,187,.08)!important}.pv-clan-directory-card small{color:#2a75bb!important}
+
+/* Account / options. */
+.pv-account-panel,.pv-compact-panel,.pv-options-form>.pv-card{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;border:1px solid rgba(42,117,187,.14)!important;border-radius:19px!important;box-shadow:0 9px 20px rgba(39,83,118,.07)!important;color:var(--pv-poke-ink)!important
+}
+.pv-detail-list>div{border-color:rgba(42,117,187,.09)!important}.pv-detail-list dt{color:#54738a!important}.pv-detail-list dd{color:#275a7e!important}.pv-option-list>label,.pv-option-list>div{background:#f7fbff!important;border:1px solid rgba(42,117,187,.09)!important;border-radius:14px!important;color:var(--pv-poke-ink)!important}.pv-option-list>label:hover,.pv-option-list>div:hover{background:#fff9dc!important;border-color:rgba(255,190,0,.27)!important}.pv-sprite-choice{background:#f4faff!important;border:1px solid rgba(42,117,187,.11)!important;border-radius:15px!important;transition:transform .2s ease,border-color .2s ease,background .2s ease!important}.pv-sprite-choice:hover{transform:translateY(-4px)!important;background:#fff9d8!important;border-color:rgba(255,190,0,.32)!important}.pv-sprite-choice input:checked+*{filter:drop-shadow(0 0 7px rgba(42,117,187,.18))!important}
+
+/* Autonomous trainer profiles. */
+.pv-bot-profile-hero,.pv-bot-interaction-card,.pv-bot-location-card,.pv-bot-team-panel,.pv-bot-pokemon-card{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;border:1px solid rgba(42,117,187,.14)!important;border-radius:19px!important;color:var(--pv-poke-ink)!important;box-shadow:0 9px 20px rgba(39,83,118,.07)!important
+}
+.pv-bot-profile-hero{background:radial-gradient(circle at 86% 16%,rgba(255,203,5,.18),transparent 27%),linear-gradient(145deg,#fff,#eef9ff)!important}.pv-bot-trainer-avatar,.pv-bot-pokemon-sprite{background:radial-gradient(circle,#fff,#eaf8ff)!important;border-color:rgba(42,117,187,.13)!important}.pv-bot-profile-page h1,.pv-bot-profile-page h2,.pv-bot-profile-page h3{color:var(--pv-poke-ink)!important}.pv-bot-profile-page p,.pv-bot-stat-list dt,.pv-bot-pokemon-card small{color:#677f92!important}.pv-bot-stat-list>div{border-color:rgba(42,117,187,.08)!important}.pv-bot-stat-list dd{color:#2e668d!important}.pv-bot-scope-note{background:#fff9dc!important;border-color:rgba(255,190,0,.20)!important;color:#6c5a18!important;border-radius:14px!important}.pv-bot-pokemon-card:hover{transform:translateY(-5px)!important;border-color:rgba(42,117,187,.29)!important;box-shadow:0 15px 24px rgba(42,117,187,.11)!important}
+
+/* Labs: Evolution, Move and Fossil. */
+.pv-evolution-source,.pv-evolution-card,.pv-evolution-result,.pv-evolution-empty,.pv-movelab-pokemon,.pv-movelab-current>div,.pv-move-card,.pv-fossil-card,.pv-fossil-result{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;border:1px solid rgba(42,117,187,.13)!important;border-radius:17px!important;color:var(--pv-poke-ink)!important;box-shadow:0 7px 16px rgba(39,83,118,.06)!important
+}
+.pv-evolution-card:hover,.pv-move-card:hover,.pv-fossil-card:hover{transform:translateY(-5px)!important;border-color:rgba(42,117,187,.30)!important;box-shadow:0 15px 25px rgba(42,117,187,.12)!important}.pv-evolution-source-art,.pv-evolution-card-art,.pv-fossil-card-image{background:radial-gradient(circle,#fff,#eaf8ff)!important;border-color:rgba(42,117,187,.09)!important}.pv-evolution-source-art img,.pv-evolution-card-art img,.pv-fossil-card-image img,.pv-movelab-pokemon img{filter:drop-shadow(0 12px 15px rgba(33,73,99,.18))!important}.pv-evolution-card-copy>small,.pv-movelab-pokemon small,.pv-move-card header small{color:#2a75bb!important}.pv-evolution-card-copy h3,.pv-movelab-pokemon h2,.pv-move-card h3{color:var(--pv-poke-ink)!important}.pv-evolution-requirement{color:#2e6f9a!important}.pv-evolution-status-copy,.pv-movelab-pokemon span{color:#6a8194!important}.pv-evolution-types span,.pv-move-stats span{background:#eef8ff!important;color:#52758e!important;border-color:rgba(42,117,187,.09)!important;border-radius:999px!important}.pv-movelab-current>div{background:#f7fbff!important}.pv-move-card.is-known{background:linear-gradient(145deg,#effbf2,#fff)!important;border-color:rgba(55,184,106,.20)!important}.pv-move-card header>strong{color:#b98400!important}.pv-move-stats b{color:#2e668d!important}.pv-move-known{color:#25864c!important}
+
+/* Events / Arena / Live PvP lobby. */
+.pv-event-hero,.pv-event-feature,.pv-event-rules,.pv-event-purchase,.pv-event-unlock,.pv-event-banner,.pv-event-opponent,.pv-arena-network-card,.pv-arena-opponent,.pv-live-arena-tabs,.pv-live-trainer-list,.pv-live-offer-list{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;border:1px solid rgba(42,117,187,.14)!important;border-radius:18px!important;color:var(--pv-poke-ink)!important;box-shadow:0 8px 18px rgba(39,83,118,.06)!important
+}
+.pv-event-hero,.pv-event-banner{background:radial-gradient(circle at 88% 16%,rgba(232,69,69,.10),transparent 24%),radial-gradient(circle at 77% 28%,rgba(255,203,5,.17),transparent 22%),linear-gradient(145deg,#fff,#eef9ff)!important}.pv-event-feature:hover,.pv-event-opponent:hover,.pv-arena-opponent:hover{transform:translateY(-5px)!important;border-color:rgba(42,117,187,.29)!important;box-shadow:0 15px 26px rgba(42,117,187,.11)!important}.pv-event-code{background:#fff8cc!important;color:#8b6900!important;border-color:rgba(205,157,0,.20)!important;border-radius:999px!important}.pv-live-arena-tabs a{color:#5d778c!important;border-radius:999px!important}.pv-live-arena-tabs a b{background:#eaf8ff!important;color:#2a75bb!important;border-color:rgba(42,117,187,.13)!important;border-radius:50%!important}.pv-live-arena-tabs a:hover,.pv-live-arena-tabs a.active{background:#2a75bb!important;color:#fff!important;border-color:#2a75bb!important}.pv-live-arena-tabs a:hover b,.pv-live-arena-tabs a.active b{background:#fff!important;color:#2a75bb!important}
+
+/* Generic dark leftovers on modern feature pages. Keep deliberate map/battle stages excluded. */
+.pv-modern-page .pv-card:not(.pv-rival-target):not(.pv-dex-card),
+.pv-modern-page .pv-panel,
+.pv-modern-page .pv-compact-panel{
+  color:var(--pv-poke-ink)!important
+}
+.pv-modern-page .pv-card:not(.pv-rival-target):not(.pv-dex-card) h1,
+.pv-modern-page .pv-card:not(.pv-rival-target):not(.pv-dex-card) h2,
+.pv-modern-page .pv-card:not(.pv-rival-target):not(.pv-dex-card) h3,
+.pv-modern-page .pv-panel h1,.pv-modern-page .pv-panel h2,.pv-modern-page .pv-panel h3{color:var(--pv-poke-ink)!important;text-shadow:none!important}
+
+/* Inputs and tables match the bright skin. */
+.pv-modern-page input[type="text"],.pv-modern-page input[type="password"],.pv-modern-page input[type="email"],.pv-modern-page input[type="number"],.pv-modern-page input[type="search"],.pv-modern-page select,.pv-modern-page textarea,
+body.pv-legacy-battle-page input[type="text"],body.pv-legacy-battle-page select,body.pv-legacy-battle-page textarea{
+  background:#fff!important;color:var(--pv-poke-ink)!important;border:1px solid rgba(42,117,187,.20)!important;border-radius:13px!important;box-shadow:inset 0 2px 5px rgba(39,83,118,.04)!important
+}
+.pv-modern-page input:focus,.pv-modern-page select:focus,.pv-modern-page textarea:focus,body.pv-legacy-battle-page input:focus,body.pv-legacy-battle-page select:focus,body.pv-legacy-battle-page textarea:focus{border-color:#2a75bb!important;outline:3px solid rgba(255,203,5,.25)!important;box-shadow:none!important}
+.pv-modern-page table:not(.pv-legacy-combat-table){background:#fff!important;color:var(--pv-poke-ink)!important;border-color:rgba(42,117,187,.12)!important}.pv-modern-page table:not(.pv-legacy-combat-table) th{background:linear-gradient(180deg,#368cc9,#2a75bb)!important;color:#fff!important}.pv-modern-page table:not(.pv-legacy-combat-table) td{border-color:rgba(42,117,187,.08)!important}
+
+/* Strong containment: never let ordinary artwork recreate the old oversized-UI bug. */
+.pv-page img:not(.pv-map-art):not(.pv-world-map-art),
+.pv-main-column img:not(.pv-map-art):not(.pv-world-map-art),
+#scroll img:not(.pv-map-art):not(.pv-world-map-art){max-width:100%;height:auto}
+.pv-page,.pv-main-column,.pv-card,.pv-panel,.pv-map-card,.pv-collection-card,.pv-trade-card,.pv-dex-card,.pv-shop-card,.pv-team-slot,.pv-message-content,.pv-bot-team-panel{min-width:0;max-width:100%}
+.pv-page table,.pv-main-column table{max-width:100%}
+
+/* Hover shine shared by major non-map cards. */
+.pv-collection-card,.pv-trade-card,.pv-dex-card,.pv-shop-card,.pv-team-slot,.pv-trainer-card,.pv-network-card,.pv-bot-pokemon-card,.pv-evolution-card,.pv-move-card,.pv-fossil-card,.pv-map-card{position:relative;overflow:hidden}
+.pv-collection-card::after,.pv-trade-card::after,.pv-dex-card::after,.pv-shop-card::after,.pv-team-slot::after,.pv-trainer-card::after,.pv-network-card::before,.pv-bot-pokemon-card::after,.pv-evolution-card::after,.pv-move-card::after,.pv-fossil-card::after,.pv-map-card .pv-map-card-body::after{
+  content:"";position:absolute;pointer-events:none;width:42%;height:160%;left:-70%;top:-28%;transform:skewX(-18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);opacity:0;transition:left .55s ease,opacity .3s ease
+}
+.pv-collection-card:hover::after,.pv-trade-card:hover::after,.pv-dex-card:hover::after,.pv-shop-card:hover::after,.pv-team-slot:hover::after,.pv-trainer-card:hover::after,.pv-network-card:hover::before,.pv-bot-pokemon-card:hover::after,.pv-evolution-card:hover::after,.pv-move-card:hover::after,.pv-fossil-card:hover::after{left:130%;opacity:.55}
+
+@media(max-width:900px){
+  .pv-hero{background:url("../../html/static/images/pokemon/Pikachu.gif") calc(100% - 35px) 18%/72px 72px no-repeat,radial-gradient(circle at 84% 28%,rgba(255,203,5,.18),transparent 14rem),linear-gradient(135deg,#fff,#edf9ff 60%,#fff8d4)!important}
+  .pv-hero::before{right:-80px;opacity:.45}.pv-world-status{max-width:none!important}
+}
+@media(max-width:620px){
+  .pv-hero{min-height:auto!important;background:linear-gradient(135deg,#fff,#edf9ff 62%,#fff8d4)!important}.pv-hero::before{display:none}.pv-hero h1 span{-webkit-text-stroke:1px var(--pv-poke-blue-deep)}
+  .pv-map-card:hover,.pv-collection-card:hover,.pv-trade-card:hover,.pv-dex-card:hover,.pv-shop-card:hover,.pv-team-slot:hover,.pv-trainer-card:hover,.pv-network-card:hover,.pv-bot-pokemon-card:hover,.pv-evolution-card:hover,.pv-move-card:hover,.pv-fossil-card:hover{transform:translateY(-3px)!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .pv-feature,.pv-map-card,.pv-collection-card,.pv-trade-card,.pv-dex-card,.pv-shop-card,.pv-team-slot,.pv-trainer-card,.pv-network-card,.pv-bot-pokemon-card,.pv-evolution-card,.pv-move-card,.pv-fossil-card{transition:none!important}
+  .pv-collection-card::after,.pv-trade-card::after,.pv-dex-card::after,.pv-shop-card::after,.pv-team-slot::after,.pv-trainer-card::after,.pv-network-card::before,.pv-bot-pokemon-card::after,.pv-evolution-card::after,.pv-move-card::after,.pv-fossil-card::after{display:none!important}
+}
+
+/* v25.1.0 specialist-surface completion. */
+.pv-map-legend,.pv-world-card,.pv-kanto-prepared-panel,.pv-kanto-atlas-source,.pv-world-panel,.pv-arena-hold,.pv-arena-challenge-form,
+.pv-sidequest-roadmap,.pv-sidequest-handoff,.pv-sidequest-source-note,.pv-sidequest-handoff-status,
+.pv-live-trainer-list,.pv-live-offer-list,.pv-live-result-grid>div,.pv-live-wait-modern,
+.pv-combat-runtime-banner,.pv-combat-outcome-reward,.pv-combat-outcome-roster,
+.pv-trade-offer-card,.pv-trade-offer-items,.pv-evolution-focus,.pv-evolution-vitals>div,.pv-evolution-moves>div,.pv-evolution-form,
+.pv-map-wild-card,.pv-wild-result,.pv-wild-rewards,.pv-dex-ability-list>*,.pv-dex-move-row,.pv-dex-empty-owned,.pv-dex-final-stage,
+.pv-dex-evolution-current,.pv-dex-evolution-node,.pv-dex-specimen-list>*,.pv-turn-move-banner,.pv-combat-continue-copy{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  border-color:rgba(42,117,187,.13)!important;
+  color:var(--pv-poke-ink)!important;
+  box-shadow:0 7px 16px rgba(39,83,118,.05)!important;
+}
+.pv-map-legend,.pv-world-card,.pv-kanto-prepared-panel,.pv-kanto-atlas-source,.pv-sidequest-roadmap,.pv-sidequest-handoff,.pv-live-wait-modern,.pv-combat-runtime-banner,.pv-trade-offer-card,.pv-evolution-focus,.pv-wild-result,.pv-map-wild-card{border-radius:18px!important}
+.pv-world-card:hover,.pv-trade-offer-card:hover,.pv-map-wild-card:hover,.pv-dex-evolution-node:hover{transform:translateY(-4px)!important;border-color:rgba(42,117,187,.28)!important;box-shadow:0 14px 24px rgba(42,117,187,.10)!important}
+.pv-world-card h2,.pv-world-card h3,.pv-kanto-prepared-panel h2,.pv-kanto-atlas-source h2,.pv-sidequest-roadmap h2,.pv-sidequest-handoff h2,.pv-combat-runtime-banner h1,.pv-combat-runtime-banner h2,.pv-trade-offer-card h3,.pv-evolution-focus h2,.pv-wild-result h2,.pv-map-wild-card h3{color:var(--pv-poke-ink)!important;text-shadow:none!important}
+.pv-world-card p,.pv-kanto-prepared-panel p,.pv-kanto-atlas-source p,.pv-sidequest-roadmap p,.pv-sidequest-handoff p,.pv-combat-runtime-banner p,.pv-trade-offer-card p,.pv-evolution-focus p,.pv-wild-result p,.pv-map-wild-card p{color:#667f92!important}
+.pv-world-code{background:#edf8ff!important;color:#2a75bb!important;border-color:rgba(42,117,187,.13)!important;border-radius:999px!important}
+.pv-kanto-connection-list>*,.pv-world-connection-list>*{background:#f7fbff!important;color:#527187!important;border-color:rgba(42,117,187,.08)!important;border-radius:12px!important}
+
+.pv-arena-progress-orb{background:radial-gradient(circle,#fff 0 43%,#eaf8ff 44% 62%,#ffed99 63% 72%,transparent 73%)!important;border-color:rgba(42,117,187,.15)!important;color:#174f91!important}
+.pv-arena-tabs,.pv-arena-region-switch{background:linear-gradient(90deg,#eef9ff,#fff9df)!important;border-color:rgba(42,117,187,.12)!important;border-radius:16px!important}
+.pv-arena-team span,.pv-event-opponent .pv-arena-team span{background:radial-gradient(circle,#fff,#eaf8ff)!important;border-color:rgba(42,117,187,.10)!important;border-radius:13px!important}
+.pv-arena-hold,.pv-arena-challenge-form{border-radius:16px!important}
+.pv-arena-challenge-form label{color:#55748b!important}
+
+.pv-sidequest-roadmap>*,.pv-sidequest-sequence-grid>*,.pv-sidequest-rewards>*{background:#f8fcff!important;border-color:rgba(42,117,187,.09)!important;color:#58758b!important;border-radius:13px!important}
+.pv-sidequest-roadmap .active,.pv-sidequest-sequence-grid .active{background:#fff8d4!important;border-color:rgba(255,190,0,.28)!important;color:#6f5700!important}
+.pv-sidequest-handoff-status{background:#effbf2!important;color:#25864c!important;border-color:rgba(55,184,106,.17)!important;border-radius:999px!important}
+.pv-sidequest-source-note{background:#f7fbff!important;color:#6b8193!important;border-radius:13px!important}
+
+.pv-alert,.pv-empty-state,.pv-pagination,.pv-sticky-actionbar{
+  background:linear-gradient(145deg,#fff,#f4fbff)!important;border-color:rgba(42,117,187,.13)!important;color:var(--pv-poke-ink)!important;border-radius:16px!important;box-shadow:0 7px 15px rgba(39,83,118,.05)!important
+}
+.pv-alert-success{background:#effbf2!important;border-color:rgba(55,184,106,.20)!important;color:#267d49!important}.pv-alert-error{background:#fff1ef!important;border-color:rgba(232,69,69,.20)!important;color:#aa3e3e!important}
+.pv-empty-state strong{color:var(--pv-poke-ink)!important}.pv-empty-state span,.pv-empty-state p{color:#6a8194!important}
+.pv-pagination a,.pv-pagination span{background:#fff!important;color:#55748b!important;border-color:rgba(42,117,187,.11)!important;border-radius:999px!important}.pv-pagination a:hover,.pv-pagination .active{background:#2a75bb!important;color:#fff!important;border-color:#2a75bb!important}
+.pv-sticky-actionbar{backdrop-filter:blur(12px)}
+.pv-pokemon-select-check{background:#fff8cd!important;color:#735a00!important;border-color:rgba(255,190,0,.23)!important;border-radius:999px!important}
+
+.pv-trade-status{background:#eef8ff!important;color:#2b6d9b!important;border-color:rgba(42,117,187,.12)!important;border-radius:999px!important}.pv-trade-offer-head small{color:#2a75bb!important}.pv-trade-offer-items>*{background:#f7fbff!important;border-color:rgba(42,117,187,.08)!important;border-radius:12px!important}
+
+.pv-evolution-vitals>div,.pv-evolution-moves>div{background:#f7fbff!important}.pv-evolution-vitals span,.pv-evolution-moves span{color:#6c8294!important}.pv-evolution-vitals strong,.pv-evolution-moves strong{color:#315e7c!important}.pv-evolution-form{background:#fff9df!important}.pv-evolution-locked-note{background:#fff1ef!important;color:#a54646!important;border-color:rgba(232,69,69,.16)!important;border-radius:13px!important}.pv-evolution-chip{background:#eef8ff!important;color:#2a75bb!important;border-color:rgba(42,117,187,.11)!important;border-radius:999px!important}.pv-empty-icon{background:#edf8ff!important;border-color:rgba(42,117,187,.11)!important;color:#2a75bb!important}
+
+.pv-wild-result{background:radial-gradient(circle at 85% 20%,rgba(255,203,5,.20),transparent 25%),linear-gradient(145deg,#fff,#eef9ff)!important}.pv-wild-result-won,.pv-wild-result-captured{border-color:rgba(55,184,106,.23)!important}.pv-wild-result-lost{border-color:rgba(232,69,69,.22)!important}.pv-wild-rewards b{background:#fff8cd!important;color:#735a00!important;border-color:rgba(255,190,0,.18)!important;border-radius:999px!important}.pv-map-wild-card>img{filter:drop-shadow(0 10px 12px rgba(33,73,99,.18))!important}
+
+.pv-dex-entry-nav>*{border-radius:14px!important}.pv-dex-owned-badge{background:#effbf2!important;color:#25864c!important;border-color:rgba(55,184,106,.18)!important;border-radius:999px!important}.pv-dex-variant-badge{background:#fff8cc!important;color:#7a6000!important;border-color:rgba(255,190,0,.18)!important;border-radius:999px!important}.pv-dex-ability-list>*{border-radius:12px!important}.pv-dex-move-row{border-radius:12px!important}.pv-dex-move-index{background:#2a75bb!important;color:#fff!important;border-radius:9px!important}.pv-dex-empty-owned{color:#6b8294!important;border-radius:14px!important}.pv-dex-final-stage{background:#fff9df!important}.pv-dex-evolution-current{background:#effbf2!important}.pv-dex-evolution-node{border-radius:14px!important}.pv-dex-specimen-list>*{border-radius:12px!important}
+
+.pv-live-trainer-list,.pv-live-offer-list{padding:12px!important}.pv-live-trainer-list>*,.pv-live-offer-list>*{background:#f7fbff!important;border-color:rgba(42,117,187,.09)!important;border-radius:13px!important}.pv-live-result-grid>div{border-radius:14px!important}.pv-live-wait-modern{background:radial-gradient(circle at 50% 35%,rgba(42,117,187,.10),transparent 28%),linear-gradient(145deg,#fff,#eef9ff)!important}.pv-live-wait-modern h2{color:var(--pv-poke-ink)!important}.pv-live-wait-modern p{color:#698094!important}
+
+.pv-combat-runtime-banner{background:radial-gradient(circle at 90% 18%,rgba(255,203,5,.17),transparent 22%),linear-gradient(135deg,#fff,#edf9ff)!important;border-radius:18px!important}.pv-combat-outcome-reward,.pv-combat-outcome-roster{border-radius:14px!important}.pv-turn-move-banner{background:linear-gradient(90deg,#eef9ff,#fff9df)!important;color:#315f7f!important;border-radius:999px!important}.pv-combat-continue-copy{border-radius:14px!important}.pv-combat-continue-copy strong{color:var(--pv-poke-ink)!important}.pv-combat-continue-copy span{color:#688094!important}
+
+.pv-event-fusion-form,.pv-event-progress{background:linear-gradient(145deg,#fff,#f3faff)!important;border-color:rgba(42,117,187,.13)!important;border-radius:16px!important;color:var(--pv-poke-ink)!important}.pv-event-progress i{background:#dfeaed!important;border-radius:999px!important}.pv-event-progress i b{background:linear-gradient(90deg,#37b86a,#ffcb05,#2a75bb)!important;border-radius:999px!important}
+
+/* Ensure bright text contrast within intentionally dark native map pixels only. */
+.pv-map-stage .pv-map-actor-label,.pv-map-viewport-wrap .pv-map-actor-label,.pv-world-map-stage .pv-map-actor-label{color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.75)!important}
+
+/* Final specificity safeguards for the bright battle HUD. */
+:root{color-scheme:light}
+body.pv-legacy-battle-page .pv-combat-modern-arena .pv-wild-fighter-hud h1,
+body.pv-legacy-battle-page .pv-combat-modern-arena .pv-wild-fighter-hud h2,
+body.pv-legacy-battle-page .pv-combat-modern-arena .pv-wild-fighter-hud h3,
+.pv-live-runtime-page .pv-wild-arena .pv-wild-fighter-hud h1,
+.pv-live-runtime-page .pv-wild-arena .pv-wild-fighter-hud h2,
+.pv-live-runtime-page .pv-wild-arena .pv-wild-fighter-hud h3,
+.pv-wildbattle-page .pv-wild-arena .pv-wild-fighter-hud h1,
+.pv-wildbattle-page .pv-wild-arena .pv-wild-fighter-hud h2,
+.pv-wildbattle-page .pv-wild-arena .pv-wild-fighter-hud h3{color:var(--pv-poke-ink)!important;text-shadow:none!important}
+body.pv-legacy-battle-page .pv-combat-modern-arena .pv-wild-fighter-hud strong,
+.pv-live-runtime-page .pv-wild-arena .pv-wild-fighter-hud strong,
+.pv-wildbattle-page .pv-wild-arena .pv-wild-fighter-hud strong{color:#60798c!important}
+
+/* v25.1.0 — final icon and trainer-directory sprite coherence */
+.pv-network-code.pv-image-icon {
+    display: grid;
+    place-items: center;
+    overflow: visible;
+    background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(233,247,255,.98));
+    border: 1px solid rgba(42,117,187,.22);
+    box-shadow: 0 8px 20px rgba(36,87,125,.11), inset 0 0 0 3px rgba(255,255,255,.72);
+}
+.pv-network-code.pv-image-icon img {
+    width: 42px;
+    height: 42px;
+    max-width: 42px;
+    max-height: 42px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 5px 7px rgba(28,60,88,.18));
+    transform: translateZ(0);
+    transition: transform .22s ease, filter .22s ease;
+}
+.pv-network-card:hover .pv-network-code.pv-image-icon img {
+    transform: translateY(-3px) scale(1.08);
+    filter: drop-shadow(0 8px 9px rgba(42,117,187,.22));
+}
+.pv-trainer-avatar {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 35%, #fff 0 30%, #edf8ff 31% 67%, #d8effc 68% 100%);
+    border-color: rgba(42,117,187,.22) !important;
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,.78), 0 6px 16px rgba(38,88,123,.11);
+}
+.pv-trainer-avatar img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 52px;
+    max-height: 62px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 4px 4px rgba(35,69,92,.18));
+}
+.pv-trainer-card:hover .pv-trainer-avatar img,
+.pv-trainer-identity:hover .pv-trainer-avatar img {
+    animation: pvTrainerSpriteHop .48s ease both;
+}
+@keyframes pvTrainerSpriteHop {
+    0%,100% { transform: translateY(0) scale(1); }
+    46% { transform: translateY(-5px) scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pv-trainer-card:hover .pv-trainer-avatar img,
+    .pv-trainer-identity:hover .pv-trainer-avatar img { animation: none; }
+}
+
+/* -------------------------------------------------------------------------- */
+/* v25.1.1 — full-site Pokémon style completion                               */
+/*                                                                            */
+/* Final coherence sweep across every player-facing surface. The older        */
+/* terminal/navy palette is no longer used for ordinary game UI. Native map    */
+/* pixels, sprite assets, combat animation hooks and server-authoritative       */
+/* behavior remain untouched.                                                  */
+/* -------------------------------------------------------------------------- */
+
+:root{
+  color-scheme:light;
+  --pv-bg:#eaf8ff;
+  --pv-bg-2:#fff9df;
+  --pv-panel:rgba(255,255,255,.98);
+  --pv-panel-2:rgba(245,251,255,.98);
+  --pv-panel-soft:rgba(238,249,255,.92);
+  --pv-border:rgba(42,117,187,.18);
+  --pv-border-strong:rgba(42,117,187,.34);
+  --pv-text:#17324d;
+  --pv-muted:#60788c;
+  --pv-cyan:#2a75bb;
+  --pv-blue:#2a75bb;
+  --pv-blue-2:#174f91;
+  --pv-gold:#ffcb05;
+  --pv-green:#37b86a;
+  --pv-red:#e84545;
+  --pv-shadow:0 18px 42px rgba(39,83,118,.12),0 3px 10px rgba(39,83,118,.06);
+}
+
+/* Global text fallback so any recovered sub-surface that missed a page-level
+   override inherits the bright Pokémon theme instead of the old dark skin. */
+body,
+body.pv-modern-page,
+body.pv-pokemon-theme-v25{color:var(--pv-poke-ink)!important}
+body h1,body h2,body h3,body h4,body h5,body h6,body strong{color:var(--pv-poke-ink)!important;text-shadow:none!important}
+body small,body .small,body .pv-subtle,body .pv-muted{color:var(--pv-poke-muted)!important}
+body a{color:#1768ad}
+body a:hover{color:#174f91}
+
+/* Public landing page: remove the last large navy hero/status surfaces. */
+.pv-hero{
+  color:var(--pv-poke-ink)!important;
+  background:
+    radial-gradient(circle at 84% 23%,rgba(255,203,5,.24),transparent 18rem),
+    radial-gradient(circle at 92% 76%,rgba(55,184,106,.11),transparent 16rem),
+    linear-gradient(135deg,#fff 0%,#edf9ff 58%,#fff8d5 100%)!important;
+  border:1px solid rgba(42,117,187,.18)!important;
+  box-shadow:0 22px 48px rgba(39,83,118,.13)!important;
+}
+.pv-hero h1,.pv-hero h2,.pv-hero h3{color:var(--pv-poke-ink)!important}
+.pv-hero h1 span{color:transparent!important;-webkit-text-stroke:2px #b78b00!important;text-shadow:none!important}
+.pv-hero p{color:#5e788c!important}
+.pv-world-status{
+  background:linear-gradient(150deg,#fff,#f4fbff)!important;
+  color:var(--pv-poke-ink)!important;
+  border:1px solid rgba(42,117,187,.18)!important;
+  border-radius:20px!important;
+  box-shadow:0 14px 28px rgba(39,83,118,.10)!important;
+}
+.pv-world-status .pv-status-online{color:#25864c!important}
+.pv-world-status .pv-status-copy,.pv-status-row span{color:#688094!important}
+.pv-status-row{border-color:rgba(42,117,187,.09)!important}
+.pv-home-banner,.pv-feature,.pv-feature-card{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  border-color:rgba(42,117,187,.14)!important;
+  color:var(--pv-poke-ink)!important;
+  box-shadow:0 10px 22px rgba(39,83,118,.08)!important;
+}
+.pv-feature:hover,.pv-feature-card:hover{background:linear-gradient(145deg,#fff8d5,#fff)!important;border-color:rgba(255,190,0,.31)!important;transform:translateY(-5px)!important}
+
+/* Authentication/setup surfaces and local utility pages. */
+.pv-auth-page{
+  background:radial-gradient(circle at 12% 15%,rgba(42,117,187,.14),transparent 28rem),radial-gradient(circle at 88% 13%,rgba(255,203,5,.22),transparent 25rem),linear-gradient(145deg,#e8f8ff,#fffdf2 70%,#eefbe9)!important
+}
+.pv-trainer-preview,.pv-setup-box{
+  background:linear-gradient(145deg,#fff,#f2faff)!important;
+  border-color:rgba(42,117,187,.16)!important;
+  color:var(--pv-poke-ink)!important;
+  border-radius:16px!important;
+  box-shadow:0 8px 18px rgba(39,83,118,.06)!important;
+}
+.pv-setup-box p,.pv-setup-details span{color:#647f92!important}
+.pv-starter label{background:linear-gradient(145deg,#fff,#f2faff)!important;border-color:rgba(42,117,187,.14)!important;color:var(--pv-poke-ink)!important}
+.pv-starter label:hover{background:#fff9d8!important;border-color:rgba(255,190,0,.30)!important;transform:translateY(-3px)}
+.pv-starter input:checked+label{background:linear-gradient(145deg,#fff8c9,#fff)!important;border-color:#2a75bb!important;box-shadow:0 0 0 3px rgba(42,117,187,.10)!important}
+.pv-skip-link{background:#fff!important;color:#174f91!important;border-color:#2a75bb!important}
+
+/* World selection and exploration chrome. Actual map images retain native size. */
+.pv-map-viewport-wrap,.pv-kanto-native-viewport,.pv-region-native-viewport{
+  background:linear-gradient(145deg,#eaf8ff,#fff9df)!important;
+  border:1px solid rgba(42,117,187,.16)!important;
+  box-shadow:inset 0 0 0 6px rgba(255,255,255,.7),0 12px 26px rgba(39,83,118,.09)!important;
+}
+.pv-map-quiet,.pv-map-noscript{
+  background:rgba(255,255,255,.88)!important;
+  color:#607b90!important;
+  border-color:rgba(42,117,187,.18)!important;
+  border-radius:15px!important;
+}
+.pv-kanto-native-stage,.pv-region-native-stage{outline-color:rgba(42,117,187,.15)!important;box-shadow:0 0 0 1px rgba(42,117,187,.16),0 18px 36px rgba(39,83,118,.15)!important}
+.pv-map-stage{box-shadow:0 18px 36px rgba(39,83,118,.16)!important}
+
+/* Sidequests: every queue/roadmap/reward surface now uses the same bright
+   adventure-book language. The old navy queue container was still visible. */
+.pv-sidequest-sequence,.pv-sidequest-handoff,.pv-sidequest-reward-panel,.pv-sidequest-map-card,.pv-sidequest-target{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  border:1px solid rgba(42,117,187,.14)!important;
+  color:var(--pv-poke-ink)!important;
+  border-radius:19px!important;
+  box-shadow:0 10px 22px rgba(39,83,118,.08)!important;
+}
+.pv-sidequest-sequence .pv-world-section-head,.pv-sidequest-map-card .pv-world-section-head{background:transparent!important;color:var(--pv-poke-ink)!important}
+.pv-sidequest-sequence-grid>div{
+  background:linear-gradient(145deg,#fff,#f6fbff)!important;
+  border-color:rgba(42,117,187,.11)!important;
+  color:var(--pv-poke-ink)!important;
+}
+.pv-sidequest-sequence-grid>div.is-current{background:linear-gradient(145deg,#fff8d0,#fff)!important;border-color:rgba(255,190,0,.34)!important;box-shadow:inset 4px 0 #ffcb05!important}
+.pv-sidequest-sequence-grid span{color:#2a75bb!important}.pv-sidequest-sequence-grid b{color:#17324d!important}.pv-sidequest-sequence-grid small{color:#688094!important}.pv-sidequest-sequence-grid em{color:#778b9a!important}.pv-sidequest-sequence-grid .is-current em{color:#25864c!important}
+.pv-sidequest-map-frame{background:linear-gradient(145deg,#eaf8ff,#fff9df)!important;border-color:rgba(42,117,187,.14)!important;border-radius:15px!important}
+.pv-sidequest-map-frame img{filter:saturate(.98) brightness(1)!important}.pv-sidequest-map-frame:hover img{filter:saturate(1.06) brightness(1.02)!important}
+.pv-sidequest-progress{background:#fff!important;border-color:rgba(42,117,187,.16)!important;color:var(--pv-poke-ink)!important}
+.pv-sidequest-rewards span{background:#f7fbff!important;color:var(--pv-poke-ink)!important}
+.pv-sidequest-rewards small{color:#25864c!important}
+
+/* Battle Arena + Events: organization banners and region headers were the
+   final large sci-fi strips on this page. */
+.pv-event-region-head{
+  background:radial-gradient(circle at 88% 20%,rgba(255,203,5,.15),transparent 15rem),linear-gradient(145deg,#fff,#eef9ff)!important;
+  border:1px solid rgba(42,117,187,.15)!important;
+  border-left:5px solid #2a75bb!important;
+  color:var(--pv-poke-ink)!important;
+  border-radius:18px!important;
+  box-shadow:0 9px 20px rgba(39,83,118,.08)!important;
+}
+.pv-event-region:nth-of-type(3n+2) .pv-event-region-head{border-left-color:#e84545!important}
+.pv-event-region:nth-of-type(3n+3) .pv-event-region-head{border-left-color:#37b86a!important}
+.pv-event-region.is-complete .pv-event-region-head{border-color:rgba(55,184,106,.28)!important;border-left:5px solid #37b86a!important;box-shadow:0 9px 20px rgba(39,83,118,.08),inset 0 0 0 1px rgba(55,184,106,.08)!important}
+.pv-event-region-head::after{border-color:rgba(255,203,5,.16)!important;background:rgba(255,203,5,.04)!important}
+.pv-event-region-copy span{color:#2a75bb!important}.pv-event-region-copy h2{color:var(--pv-poke-ink)!important}.pv-event-region-copy p{color:#687f92!important}.pv-event-badge-state strong{color:#2a75bb!important}.pv-event-badge-state small{color:#718699!important}
+.pv-event-banner{background:linear-gradient(145deg,#fff,#f7fbff)!important;border-color:rgba(42,117,187,.11)!important}
+.pv-arena-opponent-grid{gap:12px!important}.pv-arena-region{color:var(--pv-poke-ink)!important}
+.pv-arena-opponent-head,.pv-arena-reward{border-color:rgba(42,117,187,.09)!important}
+.pv-arena-locked{background:#eef3f6!important;color:#7890a1!important;border-color:rgba(42,117,187,.08)!important;border-radius:999px!important}
+
+/* Trainer/Wild/Live battle stages: presentation only. Animation attributes,
+   forms, action tokens, HP values and authoritative server resolution are not
+   altered. */
+.pv-combat-modern-arena,.pv-wild-arena,.pv-live-runtime-page .pv-wild-arena,
+body.pv-combat-shell-upgraded #scrollContent,
+body.pv-combat-shell-upgraded #ajax{
+  background:radial-gradient(circle at 50% 5%,rgba(255,203,5,.13),transparent 18rem),linear-gradient(145deg,#f8fcff,#fff9df)!important;
+  color:var(--pv-poke-ink)!important;
+  border-color:rgba(42,117,187,.16)!important;
+  box-shadow:0 14px 30px rgba(39,83,118,.10)!important;
+}
+.pv-wild-fighter,
+body.pv-combat-shell-upgraded #ajax .pokemonList table{
+  background:radial-gradient(circle at 50% 56%,#fff 0 18%,#eaf8ff 48%,#f9fdff 72%,#fff9df 100%)!important;
+  color:var(--pv-poke-ink)!important;
+  border:1px solid rgba(42,117,187,.15)!important;
+  box-shadow:0 10px 22px rgba(39,83,118,.08)!important;
+}
+.pv-wild-fighter::before,.pv-wild-fighter::after{border-color:rgba(42,117,187,.08)!important}
+.pv-wild-fighter-hud{background:linear-gradient(90deg,rgba(255,255,255,.95),rgba(238,249,255,.96))!important;border-color:rgba(42,117,187,.09)!important}
+.pv-wild-fighter-hud span,.pv-wild-fighter-hud small{color:#607b90!important}.pv-wild-fighter-hud h2,.pv-wild-fighter-hud h3{color:#17324d!important}
+.pv-wild-sprite-zone{background:radial-gradient(circle at 50% 55%,rgba(255,255,255,.96),rgba(219,244,255,.67) 40%,rgba(255,248,214,.22) 61%,transparent 72%)!important}
+.pv-wild-scan-ring,.pv-wild-scan-ring::before,.pv-wild-scan-ring::after{border-color:rgba(42,117,187,.13)!important}
+.pv-wild-hp,.pv-wild-team-grid i{background:#dce8ec!important;border-radius:999px!important}
+.pv-wild-log-panel,.pv-wild-control-panel{
+  background:linear-gradient(145deg,#fff,#f2faff)!important;
+  color:var(--pv-poke-ink)!important;
+  border:1px solid rgba(42,117,187,.14)!important;
+  border-radius:18px!important;
+  box-shadow:0 8px 18px rgba(39,83,118,.06)!important;
+}
+.pv-wild-log{background:transparent!important}.pv-wild-command-complete,.pv-wild-run-box{background:#f8fcff!important;color:var(--pv-poke-ink)!important;border-color:rgba(42,117,187,.10)!important}
+.pv-wild-empty{background:linear-gradient(145deg,#fff,#f3faff)!important;color:var(--pv-poke-ink)!important;border-color:rgba(42,117,187,.14)!important;border-radius:18px!important}
+body.pv-combat-shell-upgraded{background:radial-gradient(circle at 90% 8%,rgba(255,203,5,.18),transparent 25rem),linear-gradient(145deg,#dff5ff,#fffdf3 67%,#edfbe8)!important;color:var(--pv-poke-ink)!important}
+body.pv-combat-shell-upgraded #ajax .pokemonList td,body.pv-combat-shell-upgraded #ajax .pokemonList th{background:transparent!important;color:var(--pv-poke-ink)!important;border-color:rgba(42,117,187,.09)!important}
+.pv-combat-outcome-reward,.pv-combat-outcome-roster,.pv-combat-continue-copy{background:linear-gradient(145deg,#fff,#f3faff)!important;color:var(--pv-poke-ink)!important;border-color:rgba(42,117,187,.12)!important}
+
+/* Collection, shop, trade, messages, clans, directory, account and options:
+   aggressively normalize any recovered literal-dark child blocks. */
+.pv-shop-department-head,.pv-shop-card,.pv-collection-card,.pv-team-slot,.pv-dex-card,.pv-dex-hero,
+.pv-movelab-pokemon,.pv-move-card,.pv-message-row,.pv-message-reader,.pv-message-compose,
+.pv-trainer-card,.pv-clan-hero,.pv-clan-directory-card,.pv-clan-emblem,.pv-danger-zone,
+.pv-trade-offer-card,.pv-trade-market-grid>*,.pv-offer-row,.pv-trade-filter,
+.pv-option-list>label,.pv-sprite-choice,.pv-options-footer{
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  color:var(--pv-poke-ink)!important;
+  border-color:rgba(42,117,187,.13)!important;
+}
+.pv-danger-zone{background:linear-gradient(145deg,#fff5f4,#fff)!important;border-color:rgba(232,69,69,.20)!important;border-radius:18px!important}
+.pv-clan-emblem{background:radial-gradient(circle,#fff8ce,#fff)!important;color:#8b6900!important;border-color:rgba(255,190,0,.24)!important}
+.pv-trade-filter a:hover,.pv-trade-filter a.active{color:#174f91!important;border-color:rgba(42,117,187,.25)!important;background:#fff8d4!important}
+.pv-trade-card-title>b,.pv-trade-offer-head>strong{color:#25864c!important;background:#effbf2!important;border-color:rgba(55,184,106,.17)!important;border-radius:999px!important}
+.pv-evolution-method-icon{background:#fff8cf!important;color:#7d6200!important;border-color:rgba(255,190,0,.22)!important;border-radius:999px!important}
+.pv-evolution-cost,.pv-evolution-card-status{background:#eef8ff!important;color:#2a75bb!important;border-color:rgba(42,117,187,.12)!important}
+.pv-prose code{background:#eef8ff!important;color:#1768ad!important;border-color:rgba(42,117,187,.14)!important}
+
+/* Community cards: reserve a real icon column and clip the artwork inside it.
+   This specifically prevents Pokémon/trainer art from overlapping card text. */
+.pv-network-grid{gap:12px!important}
+.pv-network-card{
+  grid-template-columns:72px minmax(0,1fr) 26px!important;
+  gap:16px!important;
+  min-height:126px!important;
+  padding:18px 20px!important;
+  overflow:hidden!important;
+  align-items:center!important;
+}
+.pv-network-code.pv-image-icon{
+  width:62px!important;height:62px!important;
+  min-width:62px!important;max-width:62px!important;
+  overflow:hidden!important;
+  clip-path:none!important;
+  border-radius:50%!important;
+  position:relative!important;
+  z-index:2!important;
+}
+.pv-network-code.pv-image-icon img{
+  display:block!important;
+  width:46px!important;height:46px!important;
+  max-width:46px!important;max-height:46px!important;
+  object-fit:contain!important;
+  margin:0!important;
+  transform:none!important;
+}
+.pv-network-copy{min-width:0!important;padding-left:2px!important;position:relative!important;z-index:2!important;overflow:hidden!important}
+.pv-network-copy h3{margin:0 0 6px!important;line-height:1.2!important;white-space:normal!important;overflow-wrap:anywhere!important}
+.pv-network-copy p{margin:0!important;line-height:1.5!important;white-space:normal!important;overflow-wrap:anywhere!important}
+.pv-network-card>b{position:relative!important;z-index:2!important;justify-self:end!important}
+.pv-network-card:hover .pv-network-code.pv-image-icon img{transform:translateY(-2px) scale(1.04)!important}
+
+/* Legacy helper/secondary pages that remain routable. */
+.pv-sidequest-progress,.pv-trade-offer-head,.pv-trade-filter,.pv-progress{
+  color:var(--pv-poke-ink)!important;
+  border-color:rgba(42,117,187,.13)!important;
+}
+.pv-progress{background:#dfeaed!important}.pv-progress span{background:linear-gradient(90deg,#37b86a,#ffcb05,#2a75bb)!important;box-shadow:none!important}
+
+/* Final hover polish stays contained and never overlaps neighboring copy. */
+.pv-network-card,.pv-event-region-head,.pv-sidequest-sequence,.pv-wild-fighter,.pv-shop-card,.pv-trainer-card,.pv-clan-directory-card{isolation:isolate}
+.pv-network-card:hover,.pv-event-region-head:hover,.pv-sidequest-sequence:hover{transform:translateY(-3px)!important;box-shadow:0 16px 28px rgba(42,117,187,.11)!important}
+
+/* Do not let decorative sprites or card art escape their intended boxes. */
+.pv-network-card img,.pv-event-region-head img,.pv-sidequest-sequence img,.pv-shop-card img,.pv-trainer-card img,.pv-clan-directory-card img{max-width:100%;max-height:100%}
+.pv-network-copy,.pv-event-region-copy,.pv-sidequest-sequence-grid>div,.pv-arena-opponent-main,.pv-shop-copy,.pv-trainer-card>div{min-width:0}
+
+@media(max-width:760px){
+  .pv-network-card{grid-template-columns:56px minmax(0,1fr) 20px!important;padding:14px!important;gap:12px!important}
+  .pv-network-code.pv-image-icon{width:50px!important;height:50px!important;min-width:50px!important;max-width:50px!important}
+  .pv-network-code.pv-image-icon img{width:38px!important;height:38px!important;max-width:38px!important;max-height:38px!important}
+  .pv-event-region-head{grid-template-columns:1fr!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .pv-network-card:hover,.pv-event-region-head:hover,.pv-sidequest-sequence:hover{transform:none!important}
+  .pv-network-card:hover .pv-network-code.pv-image-icon img{transform:none!important}
+}
+.pv-button-danger,.pv-button.pv-button-danger{
+  background:linear-gradient(145deg,#ffefed,#ffd9d5)!important;
+  color:#a63b3b!important;
+  border-color:rgba(232,69,69,.28)!important;
+  box-shadow:0 7px 14px rgba(190,65,65,.08)!important;
+}
+.pv-button-danger:hover,.pv-button.pv-button-danger:hover{background:linear-gradient(145deg,#ffd9d5,#fff)!important;color:#8f2f2f!important;border-color:rgba(232,69,69,.42)!important;transform:translateY(-2px)!important}
+
+/* -------------------------------------------------------------------------- */
+/* v25.1.1 — residual surface audit                                            */
+/*                                                                            */
+/* The full page inventory exposed a final set of recovered literal-navy       */
+/* components nested inside otherwise bright pages. These selectors normalize  */
+/* those components explicitly instead of relying on inherited variables.      */
+/* Map pixels, battle sprite layers and gameplay state hooks are not resized.   */
+/* -------------------------------------------------------------------------- */
+
+/* Core shells, generic cards, empty states and authentication surfaces. */
+:is(.pv-page,.pv-panel,.pv-card,.pv-form-card,.pv-auth,.pv-auth-panel,.pv-auth-side,
+    .pv-section-hero,.pv-empty-state,.pv-alert,.pv-stat-grid>div,.pv-stat-grid-wide>div){
+  background:linear-gradient(145deg,#ffffff,#f1f9ff)!important;
+  border-color:rgba(42,117,187,.14)!important;
+  color:var(--pv-poke-ink)!important;
+  box-shadow:0 10px 24px rgba(39,83,118,.08)!important;
+}
+.pv-auth-side{background:radial-gradient(circle at 18% 18%,rgba(42,117,187,.16),transparent 18rem),radial-gradient(circle at 82% 72%,rgba(255,203,5,.18),transparent 17rem),linear-gradient(145deg,#f5fbff,#fff9df)!important}
+.pv-alert{border-left:4px solid #2a75bb!important;border-radius:14px!important}
+.pv-empty-icon{background:linear-gradient(145deg,#fff8cf,#eef8ff)!important;border-color:rgba(42,117,187,.14)!important;color:#2a75bb!important}
+.pv-hero-tags span,.pv-status-pill,.pv-mini-status{background:#eef8ff!important;border-color:rgba(42,117,187,.16)!important;color:#2a75bb!important;border-radius:999px!important}
+
+/* Keep primary actions Pokémon-blue and make secondary actions light instead
+   of retaining the recovered terminal/navy button treatment. */
+.pv-btn:not(.secondary),.pv-btn.primary{
+  background:linear-gradient(145deg,#3c9ee2,#2a75bb)!important;
+  color:#fff!important;
+  border-color:#1f69aa!important;
+  box-shadow:0 8px 16px rgba(42,117,187,.18)!important;
+}
+.pv-btn.secondary,.pv-button-secondary{
+  background:linear-gradient(145deg,#fff,#eef8ff)!important;
+  color:#1768ad!important;
+  border-color:rgba(42,117,187,.24)!important;
+  box-shadow:0 7px 14px rgba(39,83,118,.07)!important;
+}
+.pv-btn:hover:not(.secondary),.pv-btn.primary:hover{background:linear-gradient(145deg,#2a75bb,#174f91)!important;transform:translateY(-2px)!important}
+.pv-btn.secondary:hover,.pv-button-secondary:hover{background:linear-gradient(145deg,#fff8d5,#fff)!important;color:#174f91!important;transform:translateY(-2px)!important}
+
+/* Battle Arena and Special Event catalogue. */
+:is(.pv-arena-summary-grid>div,.pv-arena-network-card,.pv-arena-opponent,.pv-event-hero,
+    .pv-event-rules,.pv-event-purchase,.pv-event-fusion-form,.pv-event-status-grid>div){
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  border-color:rgba(42,117,187,.14)!important;
+  color:var(--pv-poke-ink)!important;
+  box-shadow:0 9px 20px rgba(39,83,118,.07)!important;
+}
+.pv-arena-progress-orb,.pv-event-progress{background:radial-gradient(circle,#fff8c7,#eef8ff 70%)!important;border-color:rgba(255,190,0,.28)!important;color:#174f91!important}
+.pv-arena-tabs{background:#fff!important;border-color:rgba(42,117,187,.13)!important;border-radius:999px!important;padding:5px!important}
+.pv-arena-tabs a{background:transparent!important;color:#527085!important;border-color:transparent!important;border-radius:999px!important}
+.pv-arena-tabs a:hover,.pv-arena-tabs a.active{background:linear-gradient(145deg,#3c9ee2,#2a75bb)!important;color:#fff!important;border-color:#2a75bb!important;box-shadow:0 6px 12px rgba(42,117,187,.16)!important}
+.pv-arena-region-switch a{background:#fff!important;color:#41657e!important;border-color:rgba(42,117,187,.12)!important;border-radius:12px!important}
+.pv-arena-region-switch a:hover,.pv-arena-region-switch a.active{background:#fff8d5!important;color:#174f91!important;border-color:rgba(255,190,0,.30)!important}
+.pv-arena-team span{background:#f7fbff!important;border-color:rgba(42,117,187,.11)!important;border-radius:50%!important}
+.pv-arena-challenge-form input,.pv-arena-challenge-form select{background:#fff!important;color:#17324d!important;border-color:rgba(42,117,187,.20)!important;border-radius:10px!important}
+.pv-event-code{background:#fff8d5!important;color:#856800!important;border-color:rgba(255,190,0,.24)!important}
+
+/* Sidequest campaign: hero, roadmap, summary, team and handoff auxiliaries. */
+.pv-sidequest-hero{background:radial-gradient(circle at 86% 18%,rgba(255,203,5,.18),transparent 20rem),linear-gradient(145deg,#fff,#eef9ff)!important;border-color:rgba(42,117,187,.14)!important;color:var(--pv-poke-ink)!important}
+.pv-sidequest-progress-orb{background:radial-gradient(circle,#fff8c8,#eef8ff 70%)!important;border-color:rgba(42,117,187,.18)!important;color:#174f91!important;box-shadow:0 8px 20px rgba(39,83,118,.08)!important}
+:is(.pv-sidequest-summary-grid>div,.pv-sidequest-roadmap>div,.pv-sidequest-team>span,
+    .pv-sidequest-handoff-status,.pv-sidequest-source-note){
+  background:linear-gradient(145deg,#fff,#f4faff)!important;
+  border-color:rgba(42,117,187,.12)!important;
+  color:var(--pv-poke-ink)!important;
+}
+.pv-sidequest-roadmap>div.is-active{background:linear-gradient(145deg,#fff8cf,#fff)!important;border-color:rgba(255,190,0,.30)!important;box-shadow:inset 4px 0 #ffcb05!important}
+.pv-sidequest-roadmap>div.is-complete{background:linear-gradient(145deg,#effbf2,#fff)!important;border-color:rgba(55,184,106,.24)!important;box-shadow:inset 4px 0 #37b86a!important}
+.pv-sidequest-summary-grid i{background:#dce9ef!important;border-color:rgba(42,117,187,.10)!important}.pv-sidequest-summary-grid i span{background:linear-gradient(90deg,#37b86a,#ffcb05,#2a75bb)!important}
+
+/* Exploration and world-selection chrome. Native map/image dimensions remain
+   controlled by their existing dedicated stage selectors. */
+:is(.pv-map-card,.pv-map-console,.pv-map-control-panel,.pv-map-encounter-panel,.pv-map-region-panel,
+    .pv-map-legend,.pv-map-compass,.pv-world-connection-list,.pv-region-overworld-source){
+  background:linear-gradient(145deg,#fff,#f2faff)!important;
+  border-color:rgba(42,117,187,.14)!important;
+  color:var(--pv-poke-ink)!important;
+  box-shadow:0 9px 20px rgba(39,83,118,.07)!important;
+}
+.pv-map-card:hover{background:linear-gradient(145deg,#fff8d3,#fff)!important;border-color:rgba(255,190,0,.29)!important;transform:translateY(-3px)!important}
+.pv-map-card-image{background:linear-gradient(145deg,#eaf8ff,#fff9df)!important;border-color:rgba(42,117,187,.12)!important;overflow:hidden!important}
+.pv-map-console-top,.pv-map-console-bottom{background:linear-gradient(90deg,#2a75bb,#3c9ee2)!important;color:#fff!important;border-color:rgba(23,79,145,.20)!important}
+.pv-map-console-top :where(span,b,strong,small),.pv-map-console-bottom :where(span,b,strong,small){color:#fff!important}
+.pv-map-control-panel button{background:linear-gradient(145deg,#fff,#eef8ff)!important;color:#1768ad!important;border-color:rgba(42,117,187,.22)!important;box-shadow:0 5px 10px rgba(39,83,118,.06)!important}
+.pv-map-control-panel button:hover{background:linear-gradient(145deg,#fff8ce,#fff)!important;border-color:rgba(255,190,0,.30)!important;transform:translateY(-2px)!important}
+.pv-world-code{background:#eef8ff!important;color:#2a75bb!important;border-color:rgba(42,117,187,.13)!important}
+
+/* Pokédex/detail surfaces. */
+:is(.pv-dex-search,.pv-dex-entry-nav>a,.pv-dex-entry-nav>div,.pv-dex-telemetry>div,
+    .pv-dex-ability-list>div,.pv-dex-move-row,.pv-dex-final-stage,.pv-dex-empty-owned,
+    .pv-dex-evolution-node,.pv-dex-evolution-current,.pv-dex-variant-tile,.pv-dex-specimen-list>a){
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  border-color:rgba(42,117,187,.12)!important;
+  color:var(--pv-poke-ink)!important;
+}
+.pv-dex-entry-nav>a:hover,.pv-dex-specimen-list>a:hover,.pv-dex-specimen-list>a.is-active{background:#fff8d5!important;border-color:rgba(255,190,0,.30)!important;color:#174f91!important}
+.pv-dex-variant-badge,.pv-dex-owned-badge{background:#eef8ff!important;color:#2a75bb!important;border-color:rgba(42,117,187,.15)!important;border-radius:999px!important}
+.pv-dex-owned-badge{background:#effbf2!important;color:#25864c!important;border-color:rgba(55,184,106,.18)!important}
+.pv-dex-move-index{background:#2a75bb!important;color:#fff!important;border-color:#1f69aa!important;border-radius:9px!important}
+.pv-dex-variant-tile.is-owned{background:linear-gradient(145deg,#effbf2,#fff)!important;border-color:rgba(55,184,106,.20)!important}
+.pv-dex-ivs{background:#f7fbff!important;border-color:rgba(42,117,187,.12)!important;color:var(--pv-poke-ink)!important}
+
+/* Collection/team selection. */
+:is(.pv-pokemon-card,.pv-collection-card-body,.pv-collection-filter,.pv-pokemon-select-card,
+    .pv-team-slot-preview,.pv-team-builder-footer){
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  border-color:rgba(42,117,187,.13)!important;
+  color:var(--pv-poke-ink)!important;
+  box-shadow:0 8px 18px rgba(39,83,118,.06)!important;
+}
+.pv-pokemon-card:hover,.pv-pokemon-select-card:hover{background:linear-gradient(145deg,#fff8d7,#fff)!important;border-color:rgba(255,190,0,.28)!important;transform:translateY(-3px)!important}
+.pv-pokemon-select-check{background:#2a75bb!important;color:#fff!important;border-color:#1f69aa!important;border-radius:50%!important}
+
+/* Evolution/Move/Fossil labs. */
+:is(.pv-evolution-card,.pv-evolution-empty,.pv-evolution-focus,.pv-evolution-form,.pv-evolution-moves,
+    .pv-evolution-result,.pv-evolution-source-art,.pv-evolution-vitals,.pv-movelab-current,
+    .pv-move-strip,.pv-move-stats){
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  border-color:rgba(42,117,187,.13)!important;
+  color:var(--pv-poke-ink)!important;
+  box-shadow:0 8px 18px rgba(39,83,118,.06)!important;
+}
+.pv-evolution-chip,.pv-evolution-types span{background:#eef8ff!important;color:#2a75bb!important;border-color:rgba(42,117,187,.14)!important;border-radius:999px!important}
+.pv-evolution-locked-note{background:#fff6e3!important;color:#8a6800!important;border-color:rgba(255,190,0,.20)!important}
+
+/* Shop and wallet. */
+.pv-shop-tabs{background:#fff!important;border-color:rgba(42,117,187,.13)!important;border-radius:999px!important;padding:5px!important}
+.pv-shop-tabs a{background:transparent!important;color:#527085!important;border-color:transparent!important;border-radius:999px!important}
+.pv-shop-tabs a:hover,.pv-shop-tabs a.active{background:linear-gradient(145deg,#3c9ee2,#2a75bb)!important;color:#fff!important}
+.pv-shop-art{background:radial-gradient(circle,#fff,#eaf8ff 70%)!important;border-color:rgba(42,117,187,.10)!important}
+.pv-shop-buy{background:linear-gradient(145deg,#f7fbff,#fff)!important;border-color:rgba(42,117,187,.12)!important}
+.pv-wallet{background:linear-gradient(145deg,#fff8c8,#fff)!important;color:#715900!important;border-color:rgba(255,190,0,.25)!important;box-shadow:0 8px 18px rgba(170,130,0,.08)!important}
+
+/* Trade Center and offers. */
+:is(.pv-trade-card,.pv-trade-card-image,.pv-trade-card-actions,.pv-trade-focus,.pv-trade-meta,
+    .pv-trade-offer-items,.pv-trade-overview,.pv-trade-search,.pv-trade-status){
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  border-color:rgba(42,117,187,.12)!important;
+  color:var(--pv-poke-ink)!important;
+}
+.pv-trade-tabs{background:#fff!important;border-color:rgba(42,117,187,.13)!important;border-radius:999px!important;padding:5px!important}
+.pv-trade-tabs a{background:transparent!important;color:#527085!important;border-radius:999px!important}
+.pv-trade-tabs a:hover,.pv-trade-tabs a.active{background:#2a75bb!important;color:#fff!important}
+
+/* Community/messages/directory/clans. */
+:is(.pv-message-nav,.pv-request-list,.pv-clan-roster,.pv-pagination){
+  background:linear-gradient(145deg,#fff,#f3faff)!important;
+  border-color:rgba(42,117,187,.12)!important;
+  color:var(--pv-poke-ink)!important;
+}
+.pv-message-nav a{color:#4d6c82!important;border-color:transparent!important}.pv-message-nav a:hover,.pv-message-nav a.active{background:#eef8ff!important;color:#174f91!important;border-color:rgba(42,117,187,.18)!important}
+.pv-trainer-avatar{background:radial-gradient(circle,#fff,#eef8ff)!important;border-color:rgba(42,117,187,.14)!important;color:#2a75bb!important}
+
+/* Autonomous trainer profile/detail cards. */
+:is(.pv-bot-trainer-avatar,.pv-bot-scope-note,.pv-bot-pokemon-card,.pv-bot-metrics-grid article){
+  background:linear-gradient(145deg,#fff,#f2faff)!important;
+  border-color:rgba(42,117,187,.13)!important;
+  color:var(--pv-poke-ink)!important;
+  box-shadow:0 8px 18px rgba(39,83,118,.06)!important;
+}
+.pv-bot-trainer-avatar::after{background:#2a75bb!important;color:#fff!important;border-color:#1f69aa!important;box-shadow:0 4px 10px rgba(42,117,187,.16)!important}
+
+/* Wild/Trainer/Live battle controls and results. */
+:is(.pv-wild-command-tabs,.pv-wild-item-grid,.pv-wild-move-grid,.pv-wild-result,.pv-wild-rewards,
+    .pv-live-offer-list,.pv-live-result-grid,.pv-live-trainer-list){
+  background:linear-gradient(145deg,#fff,#f2faff)!important;
+  border-color:rgba(42,117,187,.13)!important;
+  color:var(--pv-poke-ink)!important;
+  box-shadow:0 8px 18px rgba(39,83,118,.06)!important;
+}
+.pv-wild-versus{background:linear-gradient(145deg,#ffcb05,#ffe779)!important;color:#174f91!important;border-color:#d5a900!important;box-shadow:0 7px 15px rgba(190,145,0,.15)!important}
+.pv-combat-runtime-signal{background:#effbf2!important;color:#25864c!important;border-color:rgba(55,184,106,.22)!important;border-radius:14px!important}
+.pv-live-arena-tabs{background:#fff!important;border-color:rgba(42,117,187,.13)!important;border-radius:999px!important}.pv-live-arena-tabs a{color:#527085!important;border-radius:999px!important}.pv-live-arena-tabs a.active,.pv-live-arena-tabs a:hover{background:#2a75bb!important;color:#fff!important}
+
+/* Sticky/floating utilities. */
+.pv-sticky-actionbar{background:rgba(255,255,255,.94)!important;border-color:rgba(42,117,187,.15)!important;color:var(--pv-poke-ink)!important;box-shadow:0 -10px 24px rgba(39,83,118,.10)!important;backdrop-filter:blur(14px)!important}
+.pv-receipt-list>*,.pv-request-list>*{background:#f7fbff!important;border-color:rgba(42,117,187,.10)!important;color:var(--pv-poke-ink)!important}
+
+/* Residual recovered controls that can otherwise pull the old palette back in. */
+:is(.pv-collection-filter input,.pv-collection-filter select,.pv-trade-search input,.pv-trade-search select,
+    .pv-evolution-form input,.pv-evolution-form select,.pv-live-offer-list input,.pv-live-offer-list select){
+  background:#fff!important;color:#17324d!important;border-color:rgba(42,117,187,.20)!important;border-radius:10px!important;
+}
+
+/* Readability guard: recovered components sometimes set pale terminal text on
+   descendants. On the normalized light surfaces force normal copy back to the
+   site ink/muted palette while leaving buttons/badges/icons free to override. */
+:is(.pv-arena-opponent,.pv-arena-network-card,.pv-event-hero,.pv-event-rules,.pv-event-purchase,
+    .pv-sidequest-summary-grid>div,.pv-sidequest-roadmap>div,.pv-sidequest-handoff-status,.pv-sidequest-source-note,
+    .pv-map-card,.pv-map-console,.pv-map-control-panel,.pv-map-encounter-panel,.pv-map-region-panel,.pv-map-legend,
+    .pv-dex-telemetry>div,.pv-dex-ability-list>div,.pv-dex-move-row,.pv-dex-evolution-node,.pv-dex-evolution-current,.pv-dex-variant-tile,
+    .pv-pokemon-card,.pv-pokemon-select-card,.pv-evolution-card,.pv-evolution-focus,.pv-evolution-form,.pv-evolution-result,
+    .pv-trade-card,.pv-trade-focus,.pv-trade-overview,.pv-bot-pokemon-card,.pv-bot-scope-note,
+    .pv-wild-item-grid,.pv-wild-move-grid,.pv-live-offer-list,.pv-live-result-grid,.pv-live-trainer-list)
+  :where(p,span,small,em,label,li,td,th){color:#60788c!important}
+:is(.pv-arena-opponent,.pv-arena-network-card,.pv-event-hero,.pv-event-rules,.pv-event-purchase,
+    .pv-sidequest-summary-grid>div,.pv-sidequest-roadmap>div,.pv-sidequest-handoff-status,.pv-sidequest-source-note,
+    .pv-map-card,.pv-map-console,.pv-map-control-panel,.pv-map-encounter-panel,.pv-map-region-panel,.pv-map-legend,
+    .pv-dex-telemetry>div,.pv-dex-ability-list>div,.pv-dex-move-row,.pv-dex-evolution-node,.pv-dex-evolution-current,.pv-dex-variant-tile,
+    .pv-pokemon-card,.pv-pokemon-select-card,.pv-evolution-card,.pv-evolution-focus,.pv-evolution-form,.pv-evolution-result,
+    .pv-trade-card,.pv-trade-focus,.pv-trade-overview,.pv-bot-pokemon-card,.pv-bot-scope-note,
+    .pv-wild-item-grid,.pv-wild-move-grid,.pv-live-offer-list,.pv-live-result-grid,.pv-live-trainer-list)
+  :where(h1,h2,h3,h4,h5,h6,strong,b){color:#17324d!important}
+
+/* Never let decorative/community artwork overlap adjacent copy. */
+.pv-network-card .pv-network-code{contain:layout paint!important}.pv-network-card .pv-network-copy{max-width:100%!important}.pv-network-card .pv-network-copy>*{max-width:100%!important}
+
+@media(max-width:900px){
+  .pv-arena-tabs,.pv-shop-tabs,.pv-trade-tabs,.pv-live-arena-tabs{border-radius:16px!important;flex-wrap:wrap!important}
+}
+body.pv-legacy-battle-page{
+  background:radial-gradient(circle at 90% 8%,rgba(255,203,5,.18),transparent 25rem),linear-gradient(145deg,#dff5ff,#fffdf3 67%,#edfbe8)!important;
+  color:var(--pv-poke-ink)!important;
+}

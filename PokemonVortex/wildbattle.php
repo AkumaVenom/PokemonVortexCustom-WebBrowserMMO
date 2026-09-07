@@ -140,7 +140,7 @@ pv_page_start('Wild Battle · ' . (string)$wild['display_name'], 'battle_select.
 <main class="pv-main-column">
 <section class="pv-page pv-wildbattle-page">
     <div class="pv-page-head pv-wildbattle-head">
-        <div><span class="pv-eyebrow">WILD BATTLE // ENCOUNTER LOCK <?= pv_h(strtoupper(substr((string)$state['id'],0,8))) ?></span><h1>Wild <?= pv_h((string)$wild['display_name']) ?></h1><p class="pv-subtle">Turn <?= (int)$state['turn'] ?> · <?= pv_h($locationLabel) ?> · encounter channel stable</p></div>
+        <div><span class="pv-eyebrow">WILD ENCOUNTER // <?= pv_h(strtoupper($locationLabel)) ?></span><h1>Wild <?= pv_h((string)$wild['display_name']) ?></h1><p class="pv-subtle">Turn <?= (int)$state['turn'] ?> · <?= pv_h($locationLabel) ?> · Wild encounter active</p></div>
         <a class="pv-button pv-button-secondary" href="<?= pv_h($returnUrl) ?>">Return to Map</a>
     </div>
 

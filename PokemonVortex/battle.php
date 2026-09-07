@@ -66,18 +66,18 @@ unset($_SESSION['nojs-check']);
 
 function displayNOJSpuzzle(){
 	if (isset($_SESSION['nojs-check'], $_SESSION['nojs-check-a'], $_SESSION['nojs-check-b'])) { ?>
-  		<div id="nojs-solve" style="display:none;background:#fbb;width:300px;margin:auto;padding:10px;border:1px solid #888;">
+  		<div id="nojs-solve" style="display:none;background:#fff4f2;color:#8f3434;width:300px;margin:auto;padding:12px;border:1px solid rgba(232,69,69,.24);border-radius:14px;">
 		<?php
 		if (isset($_SESSION['nojs-check-err'])) {
 			unset($_SESSION['nojs-check-err']);
 			?>
-			<span style="color:red;display:block;">Incorrect answer. Please try again.</span>
+			<span style="color:#b33d3d;display:block;">Incorrect answer. Please try again.</span>
 			<?php
 		} ?>
 		<input type="hidden" id="nojs-solve-a" value="<?=$_SESSION['nojs-check-a']?>" /> 
 		<input type="hidden" id="nojs-solve-b" value="<?=$_SESSION['nojs-check-b']?>" />
 		<label style="font-size:13px;">Please solve the following <?=$_SESSION['nojs-check-a']?> + <?=$_SESSION['nojs-check-b']?> = <input id="nojs-solve-v" type="text" name="nojs-check" style="width:30px;padding:6px;font-size:13px;"></label>
-		<noscript><span style="display:block;color:#666;padding-top:10px;font-size:9px;">Note If you enable Javascript in your browser, you will no longer have to solve these puzzles.</span></noscript>
+		<noscript><span style="display:block;color:#60788c;padding-top:10px;font-size:9px;">Note If you enable Javascript in your browser, you will no longer have to solve these puzzles.</span></noscript>
 		</div>
 		<?php
 	}
