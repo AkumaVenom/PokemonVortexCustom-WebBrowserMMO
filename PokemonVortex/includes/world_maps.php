@@ -6,7 +6,7 @@ require_once __DIR__ . '/wild_level_balance.php';
  * Multi-world exploration registry.
  *
  * Vortex keeps its recovered numeric 1-25 runtime in map.php. Region worlds
- * (Kanto, Johto, Hoenn, and future additions) use stable world/area namespaces so
+ * (Kanto, Johto, Hoenn, Unbound, and future additions) use stable world/area namespaces so
  * their maps, saved positions, collision and multiplayer presence never
  * collide with the original Vortex network.
  */
@@ -21,7 +21,7 @@ function pv_world_area_key(string $area): string {
 }
 
 function pv_world_region_keys(): array {
-    return ['kanto','johto','hoenn'];
+    return ['kanto','johto','hoenn','unbound'];
 }
 
 function pv_world_is_region_world(string $world): bool {
@@ -44,6 +44,7 @@ function pv_world_manifest(string $world): array {
 function pv_world_kanto_manifest(): array { return pv_world_manifest('kanto'); }
 function pv_world_johto_manifest(): array { return pv_world_manifest('johto'); }
 function pv_world_hoenn_manifest(): array { return pv_world_manifest('hoenn'); }
+function pv_world_unbound_manifest(): array { return pv_world_manifest('unbound'); }
 
 function pv_world_catalog(): array {
     static $cached = null;

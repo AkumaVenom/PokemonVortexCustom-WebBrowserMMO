@@ -1,0 +1,5548 @@
+{
+  "schema_version": 1,
+  "source_inventory_count": 694,
+  "supplied_source_count": 722,
+  "blank_source_count": 17,
+  "unnamed_alias_count": 11,
+  "expected_playable_count": 618,
+  "reviewed_playable_count": 618,
+  "reviewed_unplayable_count": 76,
+  "pending_review_count": 0,
+  "review_complete": true,
+  "unplayable_sources": [
+    {
+      "source": "B02_M054_Antisis_City.png",
+      "key": "antisis-city-area-01",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "459ec02e4339154015d233f3da2e36ad441effebcfb5264878e2edad7193a9b0",
+        "pixel_sha256": "8bc77d6435b74c6f1a644d75bfd05006f40481bdb0aa59219fc6866a696a8ef2",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 119
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B01_M070_Antisis_Sewers.png",
+      "key": "antisis-sewers-area-02",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "f557034ddde9a29a2d46923884726dbb8e4e2e029c8ae5d9e0ac9972f8bf97b0",
+        "pixel_sha256": "74487811160b064cf2573312946a7d5e51bb5c60d3f646780800e441cab9a6fd",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 138
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B01_M071_Antisis_Sewers.png",
+      "key": "antisis-sewers-area-03",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "f557034ddde9a29a2d46923884726dbb8e4e2e029c8ae5d9e0ac9972f8bf97b0",
+        "pixel_sha256": "74487811160b064cf2573312946a7d5e51bb5c60d3f646780800e441cab9a6fd",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 138
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B01_M056_Bellin_Town.png",
+      "key": "bellin-town-area-01",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "b572382e0632b5dbbe7d8782e0c2b6b946a01223da1e8f35e6a6e0051a7336dd",
+        "pixel_sha256": "7a99e44d67449494cb4c66c3577ea5293a89d2bb0cf5023124051c63bb793e09",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 90
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B02_M016_Cootes_Bog.png",
+      "key": "cootes-bog-area-02",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "4b80a328afb142fdced16dde938d36937f855e535a5115229c6c2232ac58d990",
+        "pixel_sha256": "7e3effa5fc753447f5638de3cabf1ab1f4662b619c2f77a639cad7ee6d16bb87",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 110
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B02_M017_Cootes_Bog.png",
+      "key": "cootes-bog-area-03",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "2e4256668fcd89d3baeb0e585a7c507e3bfccee7b4a2eaa8013125cdfdd57834",
+        "pixel_sha256": "462072ce679036447368151f96174ada0dc5d157cf72fe37d0321715d51cc65f",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 121
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B02_M018_Cootes_Bog.png",
+      "key": "cootes-bog-area-04",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "246ea5000e0111d879cc2b5bfabbbd98a119a5e450b88deee7c6b42021fe9c2f",
+        "pixel_sha256": "40f05d7e91dee1e7c824cf9cad09e3cd6cdb15f7329486356df2a0ad1ae4f5e0",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 121
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B02_M019_Cootes_Bog.png",
+      "key": "cootes-bog-area-05",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "356d4df60a39b6a1a25242d5c686ba8858726910078c90b1768ca25205c5a902",
+        "pixel_sha256": "c3429c14c63b2c883546e882bbc2c62a0c99d292c7c3d6ec8fa521032940b908",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 121
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B02_M020_Cootes_Bog.png",
+      "key": "cootes-bog-area-06",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "b0a8258ede9fd9c5e18744af9c397f04971d42b1b3e0c9d57ede544dacffc796",
+        "pixel_sha256": "8e72a4a148d09a4f2ccdf3d87a9ee5ac9029e506880014b55688aa97b47f5224",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 121
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B02_M021_Cootes_Bog.png",
+      "key": "cootes-bog-area-07",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "d61dc5a69a4c584a7e6a84f0ae6b963be748f5f11c9b3a80a934b1a4d66110d4",
+        "pixel_sha256": "0cf183ac2765c0299f3de686516af8ecff2191f3882faf5b2de692f84bf5753f",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 121
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B02_M022_Cootes_Bog.png",
+      "key": "cootes-bog-area-08",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "9ab7af6485ab91ecd5af4a885b9cde3b9613eb94c260ad5aef1e8aeed9af7664",
+        "pixel_sha256": "5b78eb49b68c9d7afc23ee5c96308314e00e73ea50199a3efa778a34cddd18c7",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 121
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B02_M023_Cootes_Bog.png",
+      "key": "cootes-bog-area-09",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "64f9b8aef10f7c4fd2223b4caaacc1b930bb5ff4ffc0f74747363da515e5cbb1",
+        "pixel_sha256": "31d89136bb4670a99d7cd3a50f2b1d13d52df46ddf394aecab749226ed08d1a0",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 121
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B02_M024_Cootes_Bog.png",
+      "key": "cootes-bog-area-10",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "19fc24843ad4dd585398714613b653a9e87f9a8d00f24b0a172c6bd365c4ca78",
+        "pixel_sha256": "e3a8a5e4c5fa29909b831becc915b8cf864585de2fb46dda95dff4cec278028d",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 121
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B02_M025_Cootes_Bog.png",
+      "key": "cootes-bog-area-11",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "302910a5a2a94816c1320ae377d37009a6120e0161afd7cd2d75388f65e647c1",
+        "pixel_sha256": "ca617d5bc6e87dd93c1d942f9bc663752613298acc202f0b15fd9e14523774cf",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 121
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B00_M001_Dehara_Dept.png",
+      "key": "dehara-dept-area-02",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "f708c006275dabfc883c4196e82bad49b221df0b8457c8d4cf1e646a74b4b75a",
+        "pixel_sha256": "f742025e4c9470a6ba1508b0741f6a55102eddb2601088d33e03eea045999c3a",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 108
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B03_M044_Fallshore_City.png",
+      "key": "fallshore-city-area-02",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "af6e3a0999eaffab95840b4e845c2abf4ae517965d9d5473cd2038a6937fb068",
+        "pixel_sha256": "ac2aebb9ae4a579e56d31878c47a4d5311ffd1f36df26f285aab2826438f7d45",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1140
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B01_M073_Flower_Paradise.png",
+      "key": "flower-paradise-area-03",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "f557034ddde9a29a2d46923884726dbb8e4e2e029c8ae5d9e0ac9972f8bf97b0",
+        "pixel_sha256": "74487811160b064cf2573312946a7d5e51bb5c60d3f646780800e441cab9a6fd",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 138
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B33_M016_Seaport_City.png",
+      "key": "seaport-city-area-24",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "a77de7ada70b12937b1da0614bc7adfb63a0823ee4d459d1bee0a4ae5efb741a",
+        "pixel_sha256": "94de3adab3b6cd6a4e95fc599365291680b5205f83de1b962becffe4cf061e37",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1750
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "B03_M048_Old_Map.png",
+      "key": "old-map-area-03",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "4cf0edc8b6b7ee80f72b456a9371a4d29ffb45e5e9206e67e2918a412451b73c",
+        "pixel_sha256": "6158c9ee90acecf8cd37e1a10188fe66fb181533ef1a0ef31ac8ced58c930c2d",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1920
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B03_M052_Old_Map.png",
+      "key": "old-map-area-04",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "3536c7d51d5e5bce0f5d99bf5277d86239f77a1dc7cb161299bbb9edb3cb200c",
+        "pixel_sha256": "6ddf6ce014a4745f268b0aab50e160aa41e259a71a9b02f6ad68f648586ec512",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1680
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B03_M053_Old_Map.png",
+      "key": "old-map-area-05",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "fef551b2e677fffc89b2f09fc114907fa7c2f4acadd8fc79923adcc32b9d2d8f",
+        "pixel_sha256": "1a71d4b113333ced81f191be1fa6ef5b59266d257977713c03cf79a638a0f888",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1440
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B03_M057_Old_Map.png",
+      "key": "old-map-area-06",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "fef551b2e677fffc89b2f09fc114907fa7c2f4acadd8fc79923adcc32b9d2d8f",
+        "pixel_sha256": "1a71d4b113333ced81f191be1fa6ef5b59266d257977713c03cf79a638a0f888",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1440
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B03_M059_Old_Map.png",
+      "key": "old-map-area-07",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "3aa9f64e6637c6daee7dee7012535394af45b7608ba1c1ffae2ef8e9db6b3819",
+        "pixel_sha256": "5d72f4049fc3c5ff255c66a3566cdd10149692156ec5c008a36084eb5bdaf4e6",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1440
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "B03_M065_Old_Map.png",
+      "key": "old-map-area-08",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Rendered source is an isolated border/roof strip or open-water pattern with no useful dry walkable map or arrival.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "1b1fc09066f9d47ad495b7f54ac2f98d985562a65e8c3f03f75d75e01a7150d7",
+        "pixel_sha256": "e688b1b8a6b000e33fedabad1c428de2dc83cd9f62d123e2b03cc1907df4f834",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 2880
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source inspected; no terrain invented and full mask remains blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0261.png",
+      "key": "layout-0261",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "a65a104ffecc9d23807471697dd08e7871ed401ac85b3f320033e8154fbed455",
+        "pixel_sha256": "9be88a9990d02a0a047da7a92150626b1d8140cac6f9d6ae56fe551139e6c844",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 480
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0392.png",
+      "key": "layout-0392",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "8d2938a431fa6db473da9bd28146b9c569f51bfd1d3269b43ede96cd7a5eae15",
+        "pixel_sha256": "a08e9ae55e8491ead2ba252230da2e485d0092fcfbc0da4d933fe54e0bf46224",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 2652
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0389.png",
+      "key": "layout-0389",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "28dc974ddacb24f3ef4da5ea2b668f6adbdccaf720e908cf4cb5b1211613b9c8",
+        "pixel_sha256": "1a152c91f0ae685f76652949e029da1f559b3e9f4c0645cdc7b71594cfbf2d65",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 2256
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0416.png",
+      "key": "layout-0416",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "0845b0984fba287b8e6ccc6094ef273e4982a902274b3217038a92b25084dcf8",
+        "pixel_sha256": "4ab140b37a826e68e2e2f8e9a006f10dcb28705341f905bc298c5312cab643cf",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 180
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0432.png",
+      "key": "layout-0432",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "11a587c7035616683fa9b6e7d33009033f660657a287c820583f338c1421d3f5",
+        "pixel_sha256": "c418b8b7b2e930af0f823fb37790eff662ff35e0fcc57f4a5f7f4d70894617d2",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 7097
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0431.png",
+      "key": "layout-0431",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "36e3686983b0d8d2f75766d4d3ae94bbbdc0ffa482a62ff12239af6396e5a6d2",
+        "pixel_sha256": "54a2513065c4418d7f3cb3a7d465880f1f3bb0bd52469d9437ed6e3191f2daa1",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1000
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0433.png",
+      "key": "layout-0433",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "bf542e0579f463c336c9def770dbdef99ec967f87a6e2edc20da36f949739b17",
+        "pixel_sha256": "b47571588ff0d579ece09e9da800ffaa749f3ae76e99cf1fc328549d334f17a2",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 7144
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0434.png",
+      "key": "layout-0434",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "f53de7e5f852b654ac73a10f0d10890fa9ae5a4b023c50d4e40e4e04c331c50b",
+        "pixel_sha256": "7a65d4e4eaa3edd4dcc2199bc42fb06becae9b99458c39dd16fb3ed86cda239e",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 3689
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0435.png",
+      "key": "layout-0435",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "a690cca70fb8ae03d19a74bb090f2bf0bbb37af96ece110efe5bbe702ddc6029",
+        "pixel_sha256": "874950f7e7e20d50b3d0ac1fe5f382841f44ff49084332e26181f90cb7d17719",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 3000
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0387.png",
+      "key": "layout-0387",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "c9106d77a76ae3b2af173ade806032cea6784f1a2f4b90328cc6b71f321b2e9c",
+        "pixel_sha256": "739309cb5c90b27b422c1c552e7da2b62dc2e1af01394ded5e454950cf79f933",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 2100
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0388.png",
+      "key": "layout-0388",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "b171657d547c741ea01e947eba349db6a8bd7df731f76c7fa2720921af3583e8",
+        "pixel_sha256": "5d0eb2a743b6623fe9630a95cd975a29ca45b6e7f6a816a8bde57494cd2ef8c7",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1480
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0390.png",
+      "key": "layout-0390",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "682a41109600432cb723c9805245d0a82bfb7216c4f7be653f68a23c4cb605fb",
+        "pixel_sha256": "8c2b5acb5dae0138749d6a9f1a344c5f2d3470957f1b36ec288cc995100660fe",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 4715
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0394.png",
+      "key": "layout-0394",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "50ec11685fbce275d17dbc5c8d59364b7f8b1c26848bfde8f587d7b2c149c838",
+        "pixel_sha256": "1a3dff5c00ada0dfcbd4c2d4c0402fde61eb0151350df43fce580a7139952445",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 3300
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0004.png",
+      "key": "layout-0004",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "5a5540f897848dceb4d23551acf03436df6979a2da5452d7e377abfdd2408592",
+        "pixel_sha256": "cc3b54a675a132ac315165871b93b47dae011a8f138e93201435bbc57c6f4fb6",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 72
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0014.png",
+      "key": "layout-0014",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "b8611208779e8b3845b016070db4ba5a20a0eda1839f58bac283aff57517a67f",
+        "pixel_sha256": "98f2686c915495cc0f8754a032b56cf7faa5066ecd323c4cc8df4917446224ec",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 88
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0016.png",
+      "key": "layout-0016",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "65908750e8fdd5cc23c8f80d27a82da4dcc9964e7d4d3140a6c116fe682ded85",
+        "pixel_sha256": "b2a44acb783c0ca04fc296991e2ee4dc1fcbee0e424c7df91d9f4c3f4658aa34",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 126
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0018.png",
+      "key": "layout-0018",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "e7b3ea870a272c462b7c0be55f8ff8b94bf27e849a449e3ecff7853b99b04a6e",
+        "pixel_sha256": "268d43d6c8333a58725b1d49cfe315b9168d3ae2df94c7edacaeb7235a219520",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 90
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0019.png",
+      "key": "layout-0019",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "89ef77de550fd8356fd44a6d16d2f075373da8b7655b4891279ef5eeb4961031",
+        "pixel_sha256": "a5d02c3d4a689d3f71354713082ab974beefcb4bf1c1a973e4a02a8745d7b502",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 90
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0032.png",
+      "key": "layout-0032",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "bda7cde8961ec1b20bdc024a58bd2c8e6abce39aee84a54504d324aaa2f45158",
+        "pixel_sha256": "57932dea294827d1e4dc77255180f883b9c4577a5165880243cdf680d9747325",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 99
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0033.png",
+      "key": "layout-0033",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "84c4a86b533f8743ff51e439069a5973d52a685edc3a9bbc44df4f7289a25b5d",
+        "pixel_sha256": "0f02068fcd8922d34d7fb18504d76e6b5a413ee6ade71778b12635a4c19d1a75",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 48
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0035.png",
+      "key": "layout-0035",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "88df8ecf94ceb1ca68cc81b45fbab5f8fcb1a6a9d008597315d2705320796a20",
+        "pixel_sha256": "8c6da6193ad4dc9b4eea96b960a85b68d6bc51b0b700f741965f7ce6ee550402",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 48
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0046.png",
+      "key": "layout-0046",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "9828f40c8c0b97d0282a1fcb8ffc43451ea828fe76de284703499043dcf78d9b",
+        "pixel_sha256": "a7055b5fe89d85bcc917c6e0edf9b2cbc809f75f7913f6b1e6a1b85bc8d056c3",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 252
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0052.png",
+      "key": "layout-0052",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "a3c8802de4e791890922a58d0e1ee134d11823ba24833dad206c08ec6a695e21",
+        "pixel_sha256": "f4b012a198e9888d5f8f5985b60efa0dbdbcbc08eda22b21c13265f3309e984e",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1600
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0053.png",
+      "key": "layout-0053",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "6470332205a6e3664c11968b7cc2bc48573390b141f4a8e4a47149c8f5675bd7",
+        "pixel_sha256": "abe0493dbfac9a87308c31756ad2290fa2103e15d858474d0ca5868e7f21a712",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1600
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0054.png",
+      "key": "layout-0054",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "8bc20a6539b511c9fb8d6f40b9f101ad131da356fc33b34af5fafa0d43b09a68",
+        "pixel_sha256": "2244b8bc673e09f219c12ba17290f2f9aee3ccd3331b30fdd2fe36c12eb50b65",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 1600
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0055.png",
+      "key": "layout-0055",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "4282d22e41b68df159e19f09ed18bf0c3ced58de83a7ac7084ec5fe97716b358",
+        "pixel_sha256": "3412eafa32a205dae9b04244082a3739e49420a92a36fc7882883c4d6813902b",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 48
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0057.png",
+      "key": "layout-0057",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "967941bf750365ceb4577850e237d41269717d84073cdf8a99ed2ef53193eac3",
+        "pixel_sha256": "7f8bf9d41bc3e21fb4c79d1da6fca162d7a480fe0771609b4fb7532a3fa553d5",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 870
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0062.png",
+      "key": "layout-0062",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "5267b47dc2062f5aa3b16c0d0a8f4d807220954043ac166d9894bf8f122a9be6",
+        "pixel_sha256": "23474d2221aa4cbeea5730f7d4b18bd96070c8c9bde10eb7fb92a333b3d58453",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 234
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0063.png",
+      "key": "layout-0063",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "7b0079a259db68119d78d806ead249e7429729a80d3108e9acfeb0d78b25fa19",
+        "pixel_sha256": "18f54a3db6880afae103401ede1682c72e8f49067639257b01def88946f04c5d",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 221
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0064.png",
+      "key": "layout-0064",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "75107c639644b1799841893ebd9496d85f2dbad0a6c4c8acd2482112655cf5d0",
+        "pixel_sha256": "a9e7af6cfa7144def4b33cce3f0ad33eb4ba526af59fa43d1ee6b522a51b2279",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 648
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0065.png",
+      "key": "layout-0065",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "98e20aae1b44b1999a0bde33e8f4c7ea3d503c8ce692d9991c7fa8c96aca1722",
+        "pixel_sha256": "e95bd2beb0220173e6c2eb7d5d6ee651cc2a0d1585eb3a32be2538866f0efdb0",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 126
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0066.png",
+      "key": "layout-0066",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "85197d055366147b0a457847d76b73ea45ced0d74b068272d0aa4688ff2c4a0b",
+        "pixel_sha256": "9cb4f9ad0891c6380262c513431d1f22dd1ed49bc3e2c1284d1b55ae6afbfabf",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 126
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0067.png",
+      "key": "layout-0067",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "a8afd1ee3bc86f6735b2b860c1b0e8b52577d43531b646ca70e87c5034c57478",
+        "pixel_sha256": "fb52735373fbdbfcb85a40346877d524861779295b5bd57ad75e34f3cb353426",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 126
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0068.png",
+      "key": "layout-0068",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "dfdf349417366be442904e83afa14b82e1be653bced6d2e66af11082865e45f8",
+        "pixel_sha256": "9deb661fc072d73d7e72019fbc87718524f5958d706c44c4567356080d959382",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 255
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0069.png",
+      "key": "layout-0069",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "3c202f710bc43d665b77ff150155d3b0d43da5f91ee4bb51150147596b8b05cc",
+        "pixel_sha256": "eb22f38036ad2895c69f0bb964f348ce8c75b12cd85dfec3ed20f126f2dd426b",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 88
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0071.png",
+      "key": "layout-0071",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "aef832bc5817b0954605a3506bd6d018b78b71b8375fadc622336dfef82670a3",
+        "pixel_sha256": "4793acb2f5b336aca0252dbd8877432f6463a774c8a045540178b331a00ec79a",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 56
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0072.png",
+      "key": "layout-0072",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "fdbffdc73e76600a35d7701af879450271831f63a99cc50b5f2eb0b40d017f36",
+        "pixel_sha256": "2211d3aff39c4c20f96596e414e23beff4b1b09cf06336fdd958aa4f5be48743",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 56
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0073.png",
+      "key": "layout-0073",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "2fa9eab161c07241ce5ab3f76507579b2350556ed4f3492b9ac08c0a237983d2",
+        "pixel_sha256": "dd76e32f79b8221bb44fa7fe8f57ca4a9cd7abf3482ffe3caf7b0f0d26acc94c",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 56
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0074.png",
+      "key": "layout-0074",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "f75cb6175f80d044679ea76071021af72b596ae552459e88cb64784cbbdec855",
+        "pixel_sha256": "09be9fee7d045ac5c0d3f5c317b156d094a6add889334283e9815c50580042bc",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 112
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0075.png",
+      "key": "layout-0075",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "d2f67bb456851788b4e1164da0e5f271d631083235b72510192389adc4d0b309",
+        "pixel_sha256": "ac4b18900c3926f06b26cd1c3c9ce809d6bbbcc8c7cc77172454830237396487",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 112
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0077.png",
+      "key": "layout-0077",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "eed38925ba0bf12f653b17f835c0f4b8b60b2e165f82b069d5feab46661ffc44",
+        "pixel_sha256": "f80673e6e258c933df6d2a5bdc72dd23985c7eba2fc73743e57df869ffca65e2",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 90
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0267.png",
+      "key": "layout-0267",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "5298489b7ddb194bb1cf1ddfd2253f8dc63657ca635f75c04fcfedb837c7c8ab",
+        "pixel_sha256": "f837af384bcb7cc151b329ba021826f7cacf343be657df84a614740b71aed38f",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 165
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0268.png",
+      "key": "layout-0268",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "44a3ed657dd59b1c10a059ee382fcc48071028b6017dc90c21282d0cf551f818",
+        "pixel_sha256": "c328d4e9f965d474ae01e1c3bb4495d6e317f7a8e042bf1b878cda048464ae14",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 187
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0278.png",
+      "key": "layout-0278",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "32f818c29137d4ec9cf482b4b2af444a40ebd8854958f01b09ef2f0489ac4230",
+        "pixel_sha256": "c427e3b1a04de213c7369e5065b614b6ba7bbd913e1fa7db66200fdb5d3050ea",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 912
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0279.png",
+      "key": "layout-0279",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "4df3817a5b75912927bc96b317a87ebcf9fcf111c1c8ab3502cc4c7f913883de",
+        "pixel_sha256": "76c9c50fc6cc31474e873b2d2cf7bacfa7cbe24b1ff2cd5808e4917d974f95ab",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 912
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0319.png",
+      "key": "layout-0319",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "4b720551b1fe965d7012a643ce6e09c6cb6e6feef5262cf9606bfb707dd954a3",
+        "pixel_sha256": "73755403b21570b526fca44432cd11cc97ece91043ce44bb45a3788739317c59",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 210
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0366.png",
+      "key": "layout-0366",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "dcb198014e70f55777f739525937069da918bc588f01502eca7f9eabb78c8164",
+        "pixel_sha256": "a29d40656e67fbccb153c6602bece48c948cdd1b08794a71fe3d033d5df13bf2",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 306
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0370.png",
+      "key": "layout-0370",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "25a3392a7df5638f4b81ade454cb83170bec52b8b807cfd818fb8de4313b81b1",
+        "pixel_sha256": "29324eef735df5e1eb4b5f3b30b1dde600ff4228935f8f9c9b624adb638324c6",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 306
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0371.png",
+      "key": "layout-0371",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "b278b083085cabcafb87efca8727770e30a0ba4d3a90c06957ffb6b2c3009d75",
+        "pixel_sha256": "25016bb3eeb96766c26c89a0693c2b8b232afeda11e096e575bbb5dd4e19516b",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 306
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0374.png",
+      "key": "layout-0374",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "deda2ebe955c92f039bcaf6ebfdb0b105e77896d95cf04e3863fa002f730168c",
+        "pixel_sha256": "9e61d9fe30295e6a103372490db1c7f0d59ffe0a77571f5b365f73e5bfd83314",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 306
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0378.png",
+      "key": "layout-0378",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "c7cf9e78dd771345ecacd7f4eb30d1f9ba96ae351e822d98fbf8a99d10878e93",
+        "pixel_sha256": "2b6b474e77b12e4edd87d4221e6432183fe76e6336e5c3863f6f35cc39d2cc11",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 306
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    },
+    {
+      "source": "Extra_Layout_0379.png",
+      "key": "layout-0379",
+      "disposition": "source-invalid-malformed-export",
+      "reason": "Supplied export contains repeated tile sheets, missing terrain or incompatible tile fragments instead of a coherent playable map.",
+      "evidence": {
+        "method": "Exact RGB signature of 30x30 metatile core; ignore only the 1-pixel interpolation halo whose colors depend on neighboring artwork.",
+        "source_sha256": "d7109428e3672d494272c0cea094c87c390e343300b3f944d15f980e041d29a0",
+        "pixel_sha256": "f627b00533d43a92bdad44097d8e37a06f5e55212254a8db4c54bb6687c6726b",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 306
+        },
+        "water_policy": "Incidental water blocked; reviewed ice/glass/grass/stair floors are walkable.",
+        "arrival_reviewed": true,
+        "review_note": "Full source artwork reviewed; no floor invented and all cells blocked."
+      }
+    }
+  ],
+  "areas": [
+    {
+      "source": "B03_M102_Antisis_City.png",
+      "key": "antisis-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M007_Antisis_Port.png",
+      "key": "antisis-port",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M068_Antisis_Sewers.png",
+      "key": "antisis-sewers",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M082_Auburn_Waterway.png",
+      "key": "auburn-waterway",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M119_Autl_Woods.png",
+      "key": "autl-woods",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M012_Battle_Circus.png",
+      "key": "battle-circus",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M003_Battle_Frontier.png",
+      "key": "battle-frontier",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M004_Battle_Mine.png",
+      "key": "battle-mine",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M010_Battle_Tower.png",
+      "key": "battle-tower",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M092_Battleground.png",
+      "key": "battleground",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M068_Bellin_Town.png",
+      "key": "bellin-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M078_Blizzard_City.png",
+      "key": "blizzard-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M082_Cave_of_Being.png",
+      "key": "cave-of-being",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B45_M003_Cinder_Volcano.png",
+      "key": "cinder-volcano",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B52_M000_Cliff_Cave.png",
+      "key": "cliff-cave",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M001_Cootes_Bog.png",
+      "key": "cootes-bog",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M074_Crater_Town.png",
+      "key": "crater-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M000_Crystal_Peak.png",
+      "key": "crystal-peak",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M006_Cube_Corp.png",
+      "key": "cube-corp",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M118_Cube_Space.png",
+      "key": "cube-space",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M089_Dehara_City.png",
+      "key": "dehara-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M000_Dehara_Dept.png",
+      "key": "dehara-dept",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M051_Desert_Ruins.png",
+      "key": "desert-ruins",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M024_Distortion_World.png",
+      "key": "distortion-world",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M071_Dresco_Town.png",
+      "key": "dresco-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M086_Epidimy_Town.png",
+      "key": "epidimy-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M084_Fallshore_City.png",
+      "key": "fallshore-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M017_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M004_Flower_Paradise.png",
+      "key": "flower-paradise",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B50_M000_Frost_Mountain.png",
+      "key": "frost-mountain",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M081_Frozen_Forest.png",
+      "key": "frozen-forest",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M066_Frozen_Heights.png",
+      "key": "frozen-heights",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M052_Frozen_Tomb.png",
+      "key": "frozen-tomb",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M000_Fullmoon_Island.png",
+      "key": "fullmoon-island",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M014_Game_Corner.png",
+      "key": "game-corner",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M090_Great_Desert.png",
+      "key": "great-desert",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B45_M001_Grim_Woods.png",
+      "key": "grim-woods",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M098_Gurun_Town.png",
+      "key": "gurun-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M007_Hidden_Grotto.png",
+      "key": "hidden-grotto",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B43_M000_Icicle_Cave.png",
+      "key": "icicle-cave",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M014_Icy_Hole.png",
+      "key": "icy-hole",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M053_Island_Cave.png",
+      "key": "island-cave",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M000_KBT_Expressway.png",
+      "key": "kbt-expressway",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M121_Lost_Tunnel.png",
+      "key": "lost-tunnel",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M004_Magnolia_Fields.png",
+      "key": "magnolia-fields",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M002_Magnolia_Town.png",
+      "key": "magnolia-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M002_Newmoon_Island.png",
+      "key": "newmoon-island",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M094_Pokemon_Day_Care.png",
+      "key": "pokemon-day-care",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M108_Pokemon_League.png",
+      "key": "pokemon-league",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M000_Polder_Town.png",
+      "key": "polder-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M033_Redwood_Forest.png",
+      "key": "redwood-forest",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M005_Redwood_Village.png",
+      "key": "redwood-village",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M033_Rift_Cave.png",
+      "key": "rift-cave",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M067_Route_1.png",
+      "key": "route-1",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M081_Route_10.png",
+      "key": "route-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M085_Route_11.png",
+      "key": "route-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M088_Route_12.png",
+      "key": "route-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M093_Route_13.png",
+      "key": "route-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M095_Route_14.png",
+      "key": "route-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M100_Route_15.png",
+      "key": "route-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M101_Route_16.png",
+      "key": "route-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M104_Route_17.png",
+      "key": "route-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M106_Route_18.png",
+      "key": "route-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M069_Route_2.png",
+      "key": "route-2",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M070_Route_3.png",
+      "key": "route-3",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M072_Route_4.png",
+      "key": "route-4",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M073_Route_5.png",
+      "key": "route-5",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M075_Route_6.png",
+      "key": "route-6",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M076_Route_7.png",
+      "key": "route-7",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M077_Route_8.png",
+      "key": "route-8",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M079_Route_9.png",
+      "key": "route-9",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M109_Ruins_of_Void.png",
+      "key": "ruins-of-void",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M039_S_S_Marine.png",
+      "key": "s-s-marine",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B20_M000_Safari_Zone.png",
+      "key": "safari-zone",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M105_Seaport_City.png",
+      "key": "seaport-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M010_Shadow_Base.png",
+      "key": "shadow-base",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M059_Tarmigan_Mansion.png",
+      "key": "tarmigan-mansion",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M087_Tarmigan_Town.png",
+      "key": "tarmigan-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M080_Tehl_Town.png",
+      "key": "tehl-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M000_Thundercap_Mt.png",
+      "key": "thundercap-mt",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M012_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M031_Underground_Pass.png",
+      "key": "underground-pass",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M057_Underwater.png",
+      "key": "underwater",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B47_M000_Valley_Cave.png",
+      "key": "valley-cave",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B55_M000_Victory_Road.png",
+      "key": "victory-road",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M099_Vivill_Town.png",
+      "key": "vivill-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M100_Vivill_Warehouse.png",
+      "key": "vivill-warehouse",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M099_Vivill_Woods.png",
+      "key": "vivill-woods",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M002_Antisis_City.png",
+      "key": "antisis-city-area-19",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B17_M000_Antisis_City.png",
+      "key": "antisis-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M000_Antisis_City.png",
+      "key": "antisis-city-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B16_M000_Antisis_City.png",
+      "key": "antisis-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M001_Antisis_City.png",
+      "key": "antisis-city-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M054_Antisis_City.png",
+      "key": "antisis-city-area-01",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B06_M000_Antisis_City.png",
+      "key": "antisis-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M002_Antisis_City.png",
+      "key": "antisis-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M003_Antisis_City.png",
+      "key": "antisis-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B15_M001_Antisis_City.png",
+      "key": "antisis-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B18_M001_Antisis_City.png",
+      "key": "antisis-city-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B22_M000_Antisis_City.png",
+      "key": "antisis-city-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B22_M001_Antisis_City.png",
+      "key": "antisis-city-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B23_M002_Antisis_City.png",
+      "key": "antisis-city-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B25_M000_Antisis_City.png",
+      "key": "antisis-city-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B27_M000_Antisis_City.png",
+      "key": "antisis-city-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B30_M000_Antisis_City.png",
+      "key": "antisis-city-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B31_M001_Antisis_City.png",
+      "key": "antisis-city-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M003_Antisis_City.png",
+      "key": "antisis-city-area-20",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M004_Antisis_City.png",
+      "key": "antisis-city-area-21",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M005_Antisis_City.png",
+      "key": "antisis-city-area-22",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M009_Antisis_City.png",
+      "key": "antisis-city-area-23",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M010_Antisis_City.png",
+      "key": "antisis-city-area-24",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M011_Antisis_City.png",
+      "key": "antisis-city-area-25",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M012_Antisis_City.png",
+      "key": "antisis-city-area-26",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M013_Antisis_City.png",
+      "key": "antisis-city-area-27",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M014_Antisis_City.png",
+      "key": "antisis-city-area-28",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M015_Antisis_City.png",
+      "key": "antisis-city-area-29",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M016_Antisis_City.png",
+      "key": "antisis-city-area-30",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M037_Antisis_City.png",
+      "key": "antisis-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B19_M000_Antisis_Port.png",
+      "key": "antisis-port-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M035_Antisis_Port.png",
+      "key": "antisis-port-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M008_Antisis_Port.png",
+      "key": "antisis-port-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M070_Antisis_Sewers.png",
+      "key": "antisis-sewers-area-02",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B01_M071_Antisis_Sewers.png",
+      "key": "antisis-sewers-area-03",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B01_M069_Antisis_Sewers.png",
+      "key": "antisis-sewers-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M072_Antisis_Sewers.png",
+      "key": "antisis-sewers-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M083_Auburn_Waterway.png",
+      "key": "auburn-waterway-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M120_Autl_Woods.png",
+      "key": "autl-woods-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M003_Battle_Circus.png",
+      "key": "battle-circus-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M006_Battle_Circus.png",
+      "key": "battle-circus-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B24_M000_Battle_Frontier.png",
+      "key": "battle-frontier-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M005_Battle_Frontier.png",
+      "key": "battle-frontier-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M005_Battle_Mine.png",
+      "key": "battle-mine-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M001_Battle_Tower.png",
+      "key": "battle-tower-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M002_Battle_Tower.png",
+      "key": "battle-tower-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M007_Battle_Tower.png",
+      "key": "battle-tower-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M008_Battle_Tower.png",
+      "key": "battle-tower-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M009_Battle_Tower.png",
+      "key": "battle-tower-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M011_Battle_Tower.png",
+      "key": "battle-tower-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M006_Battleground.png",
+      "key": "battleground-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B05_M003_Bellin_Town.png",
+      "key": "bellin-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B05_M002_Bellin_Town.png",
+      "key": "bellin-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B05_M005_Bellin_Town.png",
+      "key": "bellin-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B37_M001_Bellin_Town.png",
+      "key": "bellin-town-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B05_M000_Bellin_Town.png",
+      "key": "bellin-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B05_M006_Bellin_Town.png",
+      "key": "bellin-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M056_Bellin_Town.png",
+      "key": "bellin-town-area-01",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B49_M002_Blizzard_City.png",
+      "key": "blizzard-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M000_Blizzard_City.png",
+      "key": "blizzard-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M001_Blizzard_City.png",
+      "key": "blizzard-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M001_Blizzard_City.png",
+      "key": "blizzard-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B15_M000_Blizzard_City.png",
+      "key": "blizzard-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B15_M002_Blizzard_City.png",
+      "key": "blizzard-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M003_Blizzard_City.png",
+      "key": "blizzard-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M004_Blizzard_City.png",
+      "key": "blizzard-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M005_Blizzard_City.png",
+      "key": "blizzard-city-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M006_Blizzard_City.png",
+      "key": "blizzard-city-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M007_Blizzard_City.png",
+      "key": "blizzard-city-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M008_Blizzard_City.png",
+      "key": "blizzard-city-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M009_Blizzard_City.png",
+      "key": "blizzard-city-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M010_Blizzard_City.png",
+      "key": "blizzard-city-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M011_Blizzard_City.png",
+      "key": "blizzard-city-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M013_Blizzard_City.png",
+      "key": "blizzard-city-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M014_Blizzard_City.png",
+      "key": "blizzard-city-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M015_Blizzard_City.png",
+      "key": "blizzard-city-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M029_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M046_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M047_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M048_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M049_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M050_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M051_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M052_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M053_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M054_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M012_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B45_M004_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B45_M005_Cinder_Volcano.png",
+      "key": "cinder-volcano-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B52_M001_Cliff_Cave.png",
+      "key": "cliff-cave-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B52_M002_Cliff_Cave.png",
+      "key": "cliff-cave-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B35_M003_Cootes_Bog.png",
+      "key": "cootes-bog-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M038_Cootes_Bog.png",
+      "key": "cootes-bog-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M016_Cootes_Bog.png",
+      "key": "cootes-bog-area-02",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B02_M017_Cootes_Bog.png",
+      "key": "cootes-bog-area-03",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B02_M018_Cootes_Bog.png",
+      "key": "cootes-bog-area-04",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B02_M019_Cootes_Bog.png",
+      "key": "cootes-bog-area-05",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B02_M020_Cootes_Bog.png",
+      "key": "cootes-bog-area-06",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B02_M021_Cootes_Bog.png",
+      "key": "cootes-bog-area-07",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B02_M022_Cootes_Bog.png",
+      "key": "cootes-bog-area-08",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B02_M023_Cootes_Bog.png",
+      "key": "cootes-bog-area-09",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B02_M024_Cootes_Bog.png",
+      "key": "cootes-bog-area-10",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B02_M025_Cootes_Bog.png",
+      "key": "cootes-bog-area-11",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B06_M003_Crater_Town.png",
+      "key": "crater-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M010_Crater_Town.png",
+      "key": "crater-town-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M011_Crater_Town.png",
+      "key": "crater-town-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M013_Crater_Town.png",
+      "key": "crater-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M002_Crater_Town.png",
+      "key": "crater-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M004_Crater_Town.png",
+      "key": "crater-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M006_Crater_Town.png",
+      "key": "crater-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M007_Crater_Town.png",
+      "key": "crater-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M008_Crater_Town.png",
+      "key": "crater-town-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M009_Crater_Town.png",
+      "key": "crater-town-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M024_Crystal_Peak.png",
+      "key": "crystal-peak-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M007_Crystal_Peak.png",
+      "key": "crystal-peak-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M013_Crystal_Peak.png",
+      "key": "crystal-peak-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M015_Crystal_Peak.png",
+      "key": "crystal-peak-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M020_Crystal_Peak.png",
+      "key": "crystal-peak-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M021_Crystal_Peak.png",
+      "key": "crystal-peak-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M028_Crystal_Peak.png",
+      "key": "crystal-peak-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M029_Crystal_Peak.png",
+      "key": "crystal-peak-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M040_Crystal_Peak.png",
+      "key": "crystal-peak-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M041_Crystal_Peak.png",
+      "key": "crystal-peak-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M046_Crystal_Peak.png",
+      "key": "crystal-peak-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M049_Crystal_Peak.png",
+      "key": "crystal-peak-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M054_Crystal_Peak.png",
+      "key": "crystal-peak-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M055_Crystal_Peak.png",
+      "key": "crystal-peak-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M001_Crystal_Peak.png",
+      "key": "crystal-peak-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M002_Crystal_Peak.png",
+      "key": "crystal-peak-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M003_Crystal_Peak.png",
+      "key": "crystal-peak-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M004_Crystal_Peak.png",
+      "key": "crystal-peak-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M005_Crystal_Peak.png",
+      "key": "crystal-peak-area-19",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M006_Crystal_Peak.png",
+      "key": "crystal-peak-area-20",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M007_Crystal_Peak.png",
+      "key": "crystal-peak-area-21",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M008_Crystal_Peak.png",
+      "key": "crystal-peak-area-22",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M009_Crystal_Peak.png",
+      "key": "crystal-peak-area-23",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M010_Crystal_Peak.png",
+      "key": "crystal-peak-area-24",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M011_Crystal_Peak.png",
+      "key": "crystal-peak-area-25",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B56_M012_Crystal_Peak.png",
+      "key": "crystal-peak-area-26",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B45_M000_Dehara_City.png",
+      "key": "dehara-city-area-19",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M012_Dehara_City.png",
+      "key": "dehara-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M013_Dehara_City.png",
+      "key": "dehara-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M007_Dehara_City.png",
+      "key": "dehara-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M008_Dehara_City.png",
+      "key": "dehara-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M009_Dehara_City.png",
+      "key": "dehara-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M010_Dehara_City.png",
+      "key": "dehara-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M011_Dehara_City.png",
+      "key": "dehara-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M015_Dehara_City.png",
+      "key": "dehara-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M016_Dehara_City.png",
+      "key": "dehara-city-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M017_Dehara_City.png",
+      "key": "dehara-city-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M018_Dehara_City.png",
+      "key": "dehara-city-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M019_Dehara_City.png",
+      "key": "dehara-city-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M020_Dehara_City.png",
+      "key": "dehara-city-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M021_Dehara_City.png",
+      "key": "dehara-city-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M022_Dehara_City.png",
+      "key": "dehara-city-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M023_Dehara_City.png",
+      "key": "dehara-city-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M024_Dehara_City.png",
+      "key": "dehara-city-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M025_Dehara_City.png",
+      "key": "dehara-city-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M001_Dehara_Dept.png",
+      "key": "dehara-dept-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M002_Dehara_Dept.png",
+      "key": "dehara-dept-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M003_Dehara_Dept.png",
+      "key": "dehara-dept-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M004_Dehara_Dept.png",
+      "key": "dehara-dept-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M005_Dehara_Dept.png",
+      "key": "dehara-dept-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B10_M006_Dehara_Dept.png",
+      "key": "dehara-dept-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B00_M000_Dehara_Dept.png",
+      "key": "dehara-dept-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B00_M001_Dehara_Dept.png",
+      "key": "dehara-dept-area-02",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B00_M002_Dehara_Dept.png",
+      "key": "dehara-dept-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B00_M003_Dehara_Dept.png",
+      "key": "dehara-dept-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B00_M004_Dehara_Dept.png",
+      "key": "dehara-dept-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M063_Distortion_World.png",
+      "key": "distortion-world-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M064_Distortion_World.png",
+      "key": "distortion-world-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M065_Distortion_World.png",
+      "key": "distortion-world-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M066_Distortion_World.png",
+      "key": "distortion-world-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M067_Distortion_World.png",
+      "key": "distortion-world-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M025_Distortion_World.png",
+      "key": "distortion-world-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M004_Dresco_Town.png",
+      "key": "dresco-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M002_Dresco_Town.png",
+      "key": "dresco-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M000_Dresco_Town.png",
+      "key": "dresco-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M001_Dresco_Town.png",
+      "key": "dresco-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M003_Dresco_Town.png",
+      "key": "dresco-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M005_Dresco_Town.png",
+      "key": "dresco-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M006_Dresco_Town.png",
+      "key": "dresco-town-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M007_Dresco_Town.png",
+      "key": "dresco-town-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M008_Dresco_Town.png",
+      "key": "dresco-town-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M009_Dresco_Town.png",
+      "key": "dresco-town-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M010_Dresco_Town.png",
+      "key": "dresco-town-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B07_M011_Dresco_Town.png",
+      "key": "dresco-town-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M001_Epidimy_Town.png",
+      "key": "epidimy-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M005_Epidimy_Town.png",
+      "key": "epidimy-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M006_Epidimy_Town.png",
+      "key": "epidimy-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M004_Epidimy_Town.png",
+      "key": "epidimy-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M007_Epidimy_Town.png",
+      "key": "epidimy-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M008_Epidimy_Town.png",
+      "key": "epidimy-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M009_Epidimy_Town.png",
+      "key": "epidimy-town-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M010_Epidimy_Town.png",
+      "key": "epidimy-town-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M011_Epidimy_Town.png",
+      "key": "epidimy-town-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M044_Fallshore_City.png",
+      "key": "fallshore-city-area-02",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B14_M005_Fallshore_City.png",
+      "key": "fallshore-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M006_Fallshore_City.png",
+      "key": "fallshore-city-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M007_Fallshore_City.png",
+      "key": "fallshore-city-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M000_Fallshore_City.png",
+      "key": "fallshore-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M001_Fallshore_City.png",
+      "key": "fallshore-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M002_Fallshore_City.png",
+      "key": "fallshore-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M003_Fallshore_City.png",
+      "key": "fallshore-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M004_Fallshore_City.png",
+      "key": "fallshore-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M008_Fallshore_City.png",
+      "key": "fallshore-city-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M009_Fallshore_City.png",
+      "key": "fallshore-city-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M010_Fallshore_City.png",
+      "key": "fallshore-city-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M011_Fallshore_City.png",
+      "key": "fallshore-city-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M012_Fallshore_City.png",
+      "key": "fallshore-city-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M013_Fallshore_City.png",
+      "key": "fallshore-city-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M014_Fallshore_City.png",
+      "key": "fallshore-city-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B14_M015_Fallshore_City.png",
+      "key": "fallshore-city-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B15_M003_Fallshore_City.png",
+      "key": "fallshore-city-area-19",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M056_Fallshore_City.png",
+      "key": "fallshore-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M043_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M044_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M045_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M046_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M047_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B23_M001_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M018_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M019_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M020_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M021_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M022_Ferrothorn_Turf.png",
+      "key": "ferrothorn-turf-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M073_Flower_Paradise.png",
+      "key": "flower-paradise-area-03",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B01_M005_Flower_Paradise.png",
+      "key": "flower-paradise-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M006_Flower_Paradise.png",
+      "key": "flower-paradise-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M026_Frost_Mountain.png",
+      "key": "frost-mountain-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B48_M001_Frost_Mountain.png",
+      "key": "frost-mountain-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B50_M001_Frost_Mountain.png",
+      "key": "frost-mountain-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M000_Frozen_Heights.png",
+      "key": "frozen-heights-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M001_Frozen_Heights.png",
+      "key": "frozen-heights-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M002_Frozen_Heights.png",
+      "key": "frozen-heights-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M003_Frozen_Heights.png",
+      "key": "frozen-heights-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M005_Frozen_Heights.png",
+      "key": "frozen-heights-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M007_Frozen_Heights.png",
+      "key": "frozen-heights-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M008_Frozen_Heights.png",
+      "key": "frozen-heights-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M009_Frozen_Heights.png",
+      "key": "frozen-heights-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M004_Frozen_Heights.png",
+      "key": "frozen-heights-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M001_Fullmoon_Island.png",
+      "key": "fullmoon-island-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M061_Great_Desert.png",
+      "key": "great-desert-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M062_Great_Desert.png",
+      "key": "great-desert-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M064_Great_Desert.png",
+      "key": "great-desert-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M091_Great_Desert.png",
+      "key": "great-desert-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M092_Great_Desert.png",
+      "key": "great-desert-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B09_M002_Gurun_Town.png",
+      "key": "gurun-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B09_M000_Gurun_Town.png",
+      "key": "gurun-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B09_M001_Gurun_Town.png",
+      "key": "gurun-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B09_M007_Gurun_Town.png",
+      "key": "gurun-town-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B09_M003_Gurun_Town.png",
+      "key": "gurun-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B09_M004_Gurun_Town.png",
+      "key": "gurun-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B09_M005_Gurun_Town.png",
+      "key": "gurun-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B09_M006_Gurun_Town.png",
+      "key": "gurun-town-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M009_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M012_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M013_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M014_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M015_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M016_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M017_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M018_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M019_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M020_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M021_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M022_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M023_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M015_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M008_Hidden_Grotto.png",
+      "key": "hidden-grotto-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M093_Icicle_Cave.png",
+      "key": "icicle-cave-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M028_Icicle_Cave.png",
+      "key": "icicle-cave-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B43_M001_Icicle_Cave.png",
+      "key": "icicle-cave-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B43_M002_Icicle_Cave.png",
+      "key": "icicle-cave-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B43_M003_Icicle_Cave.png",
+      "key": "icicle-cave-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B43_M004_Icicle_Cave.png",
+      "key": "icicle-cave-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B43_M005_Icicle_Cave.png",
+      "key": "icicle-cave-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B43_M007_Icicle_Cave.png",
+      "key": "icicle-cave-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B43_M006_Icicle_Cave.png",
+      "key": "icicle-cave-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M000_Icy_Hole.png",
+      "key": "icy-hole-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M058_KBT_Expressway.png",
+      "key": "kbt-expressway-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M008_KBT_Expressway.png",
+      "key": "kbt-expressway-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M026_KBT_Expressway.png",
+      "key": "kbt-expressway-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M027_KBT_Expressway.png",
+      "key": "kbt-expressway-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M060_KBT_Expressway.png",
+      "key": "kbt-expressway-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M001_KBT_Expressway.png",
+      "key": "kbt-expressway-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M002_KBT_Expressway.png",
+      "key": "kbt-expressway-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M003_KBT_Expressway.png",
+      "key": "kbt-expressway-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M004_KBT_Expressway.png",
+      "key": "kbt-expressway-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M005_KBT_Expressway.png",
+      "key": "kbt-expressway-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M006_KBT_Expressway.png",
+      "key": "kbt-expressway-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M007_KBT_Expressway.png",
+      "key": "kbt-expressway-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M008_KBT_Expressway.png",
+      "key": "kbt-expressway-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B46_M009_KBT_Expressway.png",
+      "key": "kbt-expressway-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M059_Lost_Tunnel.png",
+      "key": "lost-tunnel-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M038_Magnolia_Fields.png",
+      "key": "magnolia-fields-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B35_M000_Magnolia_Town.png",
+      "key": "magnolia-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B35_M001_Magnolia_Town.png",
+      "key": "magnolia-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B35_M006_Magnolia_Town.png",
+      "key": "magnolia-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B35_M002_Magnolia_Town.png",
+      "key": "magnolia-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B35_M004_Magnolia_Town.png",
+      "key": "magnolia-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B35_M005_Magnolia_Town.png",
+      "key": "magnolia-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M003_Newmoon_Island.png",
+      "key": "newmoon-island-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B45_M002_Pokemon_Day_Care.png",
+      "key": "pokemon-day-care-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B13_M001_Pokemon_League.png",
+      "key": "pokemon-league-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M074_Pokemon_League.png",
+      "key": "pokemon-league-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M075_Pokemon_League.png",
+      "key": "pokemon-league-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M076_Pokemon_League.png",
+      "key": "pokemon-league-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M077_Pokemon_League.png",
+      "key": "pokemon-league-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M078_Pokemon_League.png",
+      "key": "pokemon-league-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M079_Pokemon_League.png",
+      "key": "pokemon-league-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M080_Pokemon_League.png",
+      "key": "pokemon-league-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M091_Pokemon_League.png",
+      "key": "pokemon-league-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B13_M000_Pokemon_League.png",
+      "key": "pokemon-league-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M031_Pokemon_League.png",
+      "key": "pokemon-league-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M002_Polder_Town.png",
+      "key": "polder-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M000_Polder_Town.png",
+      "key": "polder-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M009_Polder_Town.png",
+      "key": "polder-town-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M001_Polder_Town.png",
+      "key": "polder-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B12_M000_Polder_Town.png",
+      "key": "polder-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M003_Polder_Town.png",
+      "key": "polder-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M004_Polder_Town.png",
+      "key": "polder-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M006_Polder_Town.png",
+      "key": "polder-town-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M007_Polder_Town.png",
+      "key": "polder-town-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M008_Polder_Town.png",
+      "key": "polder-town-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M098_Redwood_Forest.png",
+      "key": "redwood-forest-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M002_Redwood_Village.png",
+      "key": "redwood-village-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M000_Redwood_Village.png",
+      "key": "redwood-village-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M012_Redwood_Village.png",
+      "key": "redwood-village-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M001_Redwood_Village.png",
+      "key": "redwood-village-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M003_Redwood_Village.png",
+      "key": "redwood-village-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M004_Redwood_Village.png",
+      "key": "redwood-village-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M005_Redwood_Village.png",
+      "key": "redwood-village-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M006_Redwood_Village.png",
+      "key": "redwood-village-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M007_Redwood_Village.png",
+      "key": "redwood-village-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M008_Redwood_Village.png",
+      "key": "redwood-village-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M009_Redwood_Village.png",
+      "key": "redwood-village-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M010_Redwood_Village.png",
+      "key": "redwood-village-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B36_M011_Redwood_Village.png",
+      "key": "redwood-village-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B38_M000_Redwood_Village.png",
+      "key": "redwood-village-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B39_M000_Redwood_Village.png",
+      "key": "redwood-village-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B40_M000_Redwood_Village.png",
+      "key": "redwood-village-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M034_Rift_Cave.png",
+      "key": "rift-cave-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M035_Rift_Cave.png",
+      "key": "rift-cave-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M036_Rift_Cave.png",
+      "key": "rift-cave-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B21_M000_ROUTE_10.png",
+      "key": "route-10-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B21_M001_ROUTE_10.png",
+      "key": "route-10-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B18_M000_Route_12.png",
+      "key": "route-12-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B23_M000_Route_12.png",
+      "key": "route-12-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M035_Route_13.png",
+      "key": "route-13-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M045_Route_13.png",
+      "key": "route-13-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M094_Route_13.png",
+      "key": "route-13-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M055_Route_14.png",
+      "key": "route-14-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M023_Route_14.png",
+      "key": "route-14-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M058_Route_14.png",
+      "key": "route-14-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M096_Route_14.png",
+      "key": "route-14-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M097_Route_14.png",
+      "key": "route-14-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M014_Route_14.png",
+      "key": "route-14-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M063_Route_14.png",
+      "key": "route-14-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B32_M000_Route_14.png",
+      "key": "route-14-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B32_M001_Route_14.png",
+      "key": "route-14-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M039_Route_15.png",
+      "key": "route-15-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B17_M001_Route_16.png",
+      "key": "route-16-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B54_M006_Route_16.png",
+      "key": "route-16-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M047_Route_16.png",
+      "key": "route-16-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B32_M005_Route_16.png",
+      "key": "route-16-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M010_Route_17.png",
+      "key": "route-17-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M037_Route_17.png",
+      "key": "route-17-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M056_Route_17.png",
+      "key": "route-17-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B32_M006_Route_17.png",
+      "key": "route-17-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B31_M003_Route_18.png",
+      "key": "route-18-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B31_M004_Route_18.png",
+      "key": "route-18-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M042_Route_18.png",
+      "key": "route-18-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M043_Route_18.png",
+      "key": "route-18-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M107_Route_18.png",
+      "key": "route-18-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M027_Route_4.png",
+      "key": "route-4-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B45_M006_Route_5.png",
+      "key": "route-5-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B48_M003_Route_6.png",
+      "key": "route-6-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B48_M002_Route_7.png",
+      "key": "route-7-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B48_M000_Route_7.png",
+      "key": "route-7-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B51_M000_Route_9.png",
+      "key": "route-9-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B51_M001_Route_9.png",
+      "key": "route-9-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M107_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M108_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M110_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M111_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M112_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M113_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M114_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M115_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M116_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M117_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M040_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M030_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B32_M002_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B32_M003_Ruins_of_Void.png",
+      "key": "ruins-of-void-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M040_S_S_Marine.png",
+      "key": "s-s-marine-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M041_S_S_Marine.png",
+      "key": "s-s-marine-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B34_M005_Safari_Zone.png",
+      "key": "safari-zone-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M026_Seaport_City.png",
+      "key": "seaport-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M002_Seaport_City.png",
+      "key": "seaport-city-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B31_M002_Seaport_City.png",
+      "key": "seaport-city-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M000_Seaport_City.png",
+      "key": "seaport-city-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M001_Seaport_City.png",
+      "key": "seaport-city-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B25_M002_Seaport_City.png",
+      "key": "seaport-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B26_M000_Seaport_City.png",
+      "key": "seaport-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B26_M001_Seaport_City.png",
+      "key": "seaport-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B28_M000_Seaport_City.png",
+      "key": "seaport-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B29_M000_Seaport_City.png",
+      "key": "seaport-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B31_M000_Seaport_City.png",
+      "key": "seaport-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M003_Seaport_City.png",
+      "key": "seaport-city-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M004_Seaport_City.png",
+      "key": "seaport-city-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M007_Seaport_City.png",
+      "key": "seaport-city-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M008_Seaport_City.png",
+      "key": "seaport-city-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M009_Seaport_City.png",
+      "key": "seaport-city-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M010_Seaport_City.png",
+      "key": "seaport-city-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M011_Seaport_City.png",
+      "key": "seaport-city-area-19",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M012_Seaport_City.png",
+      "key": "seaport-city-area-20",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M013_Seaport_City.png",
+      "key": "seaport-city-area-21",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M014_Seaport_City.png",
+      "key": "seaport-city-area-22",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M015_Seaport_City.png",
+      "key": "seaport-city-area-23",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M016_Seaport_City.png",
+      "key": "seaport-city-area-24",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "B33_M017_Seaport_City.png",
+      "key": "seaport-city-area-25",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M018_Seaport_City.png",
+      "key": "seaport-city-area-26",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B42_M000_Seaport_City.png",
+      "key": "seaport-city-area-27",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M009_Seaport_City.png",
+      "key": "seaport-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B49_M012_Shadow_Base.png",
+      "key": "shadow-base-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M042_Shadow_Base.png",
+      "key": "shadow-base-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M043_Shadow_Base.png",
+      "key": "shadow-base-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M044_Shadow_Base.png",
+      "key": "shadow-base-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M045_Shadow_Base.png",
+      "key": "shadow-base-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M011_Shadow_Base.png",
+      "key": "shadow-base-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B04_M012_Shadow_Base.png",
+      "key": "shadow-base-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M060_Tarmigan_Mansion.png",
+      "key": "tarmigan-mansion-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M061_Tarmigan_Mansion.png",
+      "key": "tarmigan-mansion-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M062_Tarmigan_Mansion.png",
+      "key": "tarmigan-mansion-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B12_M007_Tarmigan_Town.png",
+      "key": "tarmigan-town-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B12_M005_Tarmigan_Town.png",
+      "key": "tarmigan-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B12_M006_Tarmigan_Town.png",
+      "key": "tarmigan-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B12_M001_Tarmigan_Town.png",
+      "key": "tarmigan-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B12_M002_Tarmigan_Town.png",
+      "key": "tarmigan-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B12_M003_Tarmigan_Town.png",
+      "key": "tarmigan-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B12_M004_Tarmigan_Town.png",
+      "key": "tarmigan-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B12_M008_Tarmigan_Town.png",
+      "key": "tarmigan-town-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B08_M005_Tehl_Town.png",
+      "key": "tehl-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B08_M000_Tehl_Town.png",
+      "key": "tehl-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B08_M001_Tehl_Town.png",
+      "key": "tehl-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B08_M002_Tehl_Town.png",
+      "key": "tehl-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B08_M003_Tehl_Town.png",
+      "key": "tehl-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B08_M004_Tehl_Town.png",
+      "key": "tehl-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M096_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M010_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-19",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M010_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M011_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M025_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M097_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M041_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M011_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M032_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M103_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M001_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M002_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M003_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M004_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M005_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M006_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M007_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M008_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M009_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B53_M011_Thundercap_Mt.png",
+      "key": "thundercap-mt-area-20",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M083_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M084_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M085_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M086_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M087_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M088_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M089_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M090_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M016_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M017_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M018_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M022_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M050_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M051_Tomb_of_Borrius.png",
+      "key": "tomb-of-borrius-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M032_Underground_Pass.png",
+      "key": "underground-pass-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M027_Valley_Cave.png",
+      "key": "valley-cave-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B47_M001_Valley_Cave.png",
+      "key": "valley-cave-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B47_M002_Valley_Cave.png",
+      "key": "valley-cave-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B47_M003_Valley_Cave.png",
+      "key": "valley-cave-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M030_Victory_Road.png",
+      "key": "victory-road-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M055_Victory_Road.png",
+      "key": "victory-road-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M095_Victory_Road.png",
+      "key": "victory-road-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M048_Victory_Road.png",
+      "key": "victory-road-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M049_Victory_Road.png",
+      "key": "victory-road-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B02_M050_Victory_Road.png",
+      "key": "victory-road-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B55_M001_Victory_Road.png",
+      "key": "victory-road-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B55_M002_Victory_Road.png",
+      "key": "victory-road-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B55_M003_Victory_Road.png",
+      "key": "victory-road-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B55_M004_Victory_Road.png",
+      "key": "victory-road-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B55_M005_Victory_Road.png",
+      "key": "victory-road-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B55_M006_Victory_Road.png",
+      "key": "victory-road-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B55_M007_Victory_Road.png",
+      "key": "victory-road-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B55_M008_Victory_Road.png",
+      "key": "victory-road-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M122_Vivill_Town.png",
+      "key": "vivill-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B25_M001_Vivill_Town.png",
+      "key": "vivill-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B44_M002_Vivill_Town.png",
+      "key": "vivill-town-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B44_M000_Vivill_Town.png",
+      "key": "vivill-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B44_M001_Vivill_Town.png",
+      "key": "vivill-town-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B44_M003_Vivill_Town.png",
+      "key": "vivill-town-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B44_M004_Vivill_Town.png",
+      "key": "vivill-town-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B44_M005_Vivill_Town.png",
+      "key": "vivill-town-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M036_Vivill_Town.png",
+      "key": "vivill-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M034_Vivill_Town.png",
+      "key": "vivill-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B32_M004_Vivill_Town.png",
+      "key": "vivill-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M101_Vivill_Warehouse.png",
+      "key": "vivill-warehouse-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M102_Vivill_Warehouse.png",
+      "key": "vivill-warehouse-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M103_Vivill_Warehouse.png",
+      "key": "vivill-warehouse-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M104_Vivill_Warehouse.png",
+      "key": "vivill-warehouse-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M105_Vivill_Warehouse.png",
+      "key": "vivill-warehouse-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M106_Vivill_Warehouse.png",
+      "key": "vivill-warehouse-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B01_M058_Old_Map.png",
+      "key": "old-map",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B37_M000_SIX_ISLAND.png",
+      "key": "six-island",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M048_Old_Map.png",
+      "key": "old-map-area-03",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B03_M052_Old_Map.png",
+      "key": "old-map-area-04",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B03_M053_Old_Map.png",
+      "key": "old-map-area-05",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B03_M057_Old_Map.png",
+      "key": "old-map-area-06",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B03_M059_Old_Map.png",
+      "key": "old-map-area-07",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B03_M065_Old_Map.png",
+      "key": "old-map-area-08",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "B01_M057_Old_Map.png",
+      "key": "old-map-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B05_M004_Old_Map.png",
+      "key": "old-map-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B06_M005_Old_Map.png",
+      "key": "old-map-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B05_M001_Old_Map.png",
+      "key": "old-map-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B11_M000_Old_Map.png",
+      "key": "old-map-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B24_M001_Old_Map.png",
+      "key": "old-map-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B33_M019_Old_Map.png",
+      "key": "old-map-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B41_M000_Old_Map.png",
+      "key": "old-map-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B41_M001_Old_Map.png",
+      "key": "old-map-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B03_M019_Old_Map.png",
+      "key": "old-map-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0386.png",
+      "key": "layout-0386",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0396.png",
+      "key": "layout-0396",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0261.png",
+      "key": "layout-0261",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0258.png",
+      "key": "layout-0258",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0260.png",
+      "key": "layout-0260",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0259.png",
+      "key": "layout-0259",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0392.png",
+      "key": "layout-0392",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0389.png",
+      "key": "layout-0389",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0401.png",
+      "key": "layout-0401",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0384.png",
+      "key": "layout-0384",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0402.png",
+      "key": "layout-0402",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0416.png",
+      "key": "layout-0416",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0264.png",
+      "key": "layout-0264",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0432.png",
+      "key": "layout-0432",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0431.png",
+      "key": "layout-0431",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0433.png",
+      "key": "layout-0433",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0434.png",
+      "key": "layout-0434",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0435.png",
+      "key": "layout-0435",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0385.png",
+      "key": "layout-0385",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0387.png",
+      "key": "layout-0387",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0388.png",
+      "key": "layout-0388",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0390.png",
+      "key": "layout-0390",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0391.png",
+      "key": "layout-0391",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0393.png",
+      "key": "layout-0393",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0394.png",
+      "key": "layout-0394",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0395.png",
+      "key": "layout-0395",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B37_M004_SIX_ISLAND.png",
+      "key": "six-island-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B37_M003_SIX_ISLAND.png",
+      "key": "six-island-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "B37_M002_SIX_ISLAND.png",
+      "key": "six-island-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "Extra_Layout_0004.png",
+      "key": "layout-0004",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0014.png",
+      "key": "layout-0014",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0016.png",
+      "key": "layout-0016",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0018.png",
+      "key": "layout-0018",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0019.png",
+      "key": "layout-0019",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0032.png",
+      "key": "layout-0032",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0033.png",
+      "key": "layout-0033",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0035.png",
+      "key": "layout-0035",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0046.png",
+      "key": "layout-0046",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0052.png",
+      "key": "layout-0052",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0053.png",
+      "key": "layout-0053",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0054.png",
+      "key": "layout-0054",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0055.png",
+      "key": "layout-0055",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0057.png",
+      "key": "layout-0057",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0062.png",
+      "key": "layout-0062",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0063.png",
+      "key": "layout-0063",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0064.png",
+      "key": "layout-0064",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0065.png",
+      "key": "layout-0065",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0066.png",
+      "key": "layout-0066",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0067.png",
+      "key": "layout-0067",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0068.png",
+      "key": "layout-0068",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0069.png",
+      "key": "layout-0069",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0071.png",
+      "key": "layout-0071",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0072.png",
+      "key": "layout-0072",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0073.png",
+      "key": "layout-0073",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0074.png",
+      "key": "layout-0074",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0075.png",
+      "key": "layout-0075",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0077.png",
+      "key": "layout-0077",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0267.png",
+      "key": "layout-0267",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0268.png",
+      "key": "layout-0268",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0278.png",
+      "key": "layout-0278",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0279.png",
+      "key": "layout-0279",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0319.png",
+      "key": "layout-0319",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0366.png",
+      "key": "layout-0366",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0370.png",
+      "key": "layout-0370",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0371.png",
+      "key": "layout-0371",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0374.png",
+      "key": "layout-0374",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0378.png",
+      "key": "layout-0378",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    },
+    {
+      "source": "Extra_Layout_0379.png",
+      "key": "layout-0379",
+      "state": "source-invalid-malformed-export",
+      "ready": false
+    }
+  ]
+}

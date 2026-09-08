@@ -39,11 +39,14 @@ foreach(pv_world_region_keys() as $regionKey){
     $areas=pv_world_ready_areas($regionKey);$manifest=pv_world_manifest($regionKey);
     $areaGroups=['Settlements'=>[],'Routes & Wild Areas'=>[],'Caves & Landmarks'=>[]];
     if($regionKey==='johto')$areaGroups['Frontier & Expeditions']=[];
+    if($regionKey==='unbound'){$areaGroups['Buildings & Facilities']=[];$areaGroups['Side Destinations']=[];}
     foreach($areas as $key=>$area){
         $cat=(string)($area['category']??'Area');
         if($regionKey==='johto'&&!empty($area['is_extra']))$areaGroups['Frontier & Expeditions'][$key]=$area;
+        elseif($regionKey==='unbound'&&!empty($area['is_extra']))$areaGroups['Side Destinations'][$key]=$area;
+        elseif($regionKey==='unbound'&&in_array($cat,['Interior','Building','Facility'],true))$areaGroups['Buildings & Facilities'][$key]=$area;
         elseif(in_array($cat,['City','Town'],true))$areaGroups['Settlements'][$key]=$area;
-        elseif(in_array($cat,['Route','Forest','Sea Route','Coast'],true))$areaGroups['Routes & Wild Areas'][$key]=$area;
+        elseif(in_array($cat,['Route','Forest','Sea Route','Coast'],true)||($regionKey==='unbound'&&$cat==='Sea'))$areaGroups['Routes & Wild Areas'][$key]=$area;
         else $areaGroups['Caves & Landmarks'][$key]=$area;
     }
     $presence=[];
@@ -71,8 +74,8 @@ pv_page_start('World Maps','map_select.php',true);
 
     <div class="pv-world-switcher" aria-label="World selection">
         <?php foreach($worlds as $key=>$world):$active=$selectedWorld===$key;$prepared=($world['status']??'')==='prepared';?>
-            <a class="pv-world-card<?=$active?' is-active':''?><?=$prepared?' is-prepared':''?>" href="<?=pv_h(pv_url('map_select.php?world='.$key))?>">
-                <span class="pv-world-code"><?=pv_h(['vortex'=>'VOR','kanto'=>'KAN','johto'=>'JOH','hoenn'=>'HON'][$key]??strtoupper(substr($key,0,3)))?></span>
+            <a class="pv-world-card<?=$active?' is-active':''?><?=$prepared?' is-prepared':''?>" href="<?=pv_h(pv_url('map_select.php?world='.$key))?>"<?=$active?' aria-current="page"':''?>>
+                <span class="pv-world-code"><?=pv_h(['vortex'=>'VOR','kanto'=>'KAN','johto'=>'JOH','hoenn'=>'HON','unbound'=>'UNB'][$key]??strtoupper(substr($key,0,3)))?></span>
                 <span class="pv-world-card-copy"><small><?=pv_h((string)$world['subtitle'])?></small><strong><?=pv_h((string)$world['label'])?></strong><em><?=pv_h((string)$world['description'])?></em></span>
                 <b><?=$prepared?'PREPARED':'ENTER'?></b>
             </a>
@@ -102,9 +105,15 @@ pv_page_start('World Maps','map_select.php',true);
         $areas=$data['areas'];$manifest=$data['manifest'];$areaGroups=$data['groups'];$regionCounts=$data['counts'];
         $worldDef=$worlds[$selectedWorld];$label=(string)$worldDef['label'];$upper=strtoupper($label);
         $heroTitle='Explore '.$label;
-        $heroBody=$selectedWorld==='johto'
-            ?'Set out from New Bark Town, discover ancient towers and woodland trails, and meet the Pokémon of Johto. Continue your journey with island expeditions and Frontier destinations.'
-            :'Travel through '.$label.' cities, routes, caves and landmarks, with wild Pokémon suited to each location.';
+        $heroBody=match($selectedWorld){
+            'johto'=>'Set out from New Bark Town, discover ancient towers and woodland trails, and meet the Pokémon of Johto. Continue your journey with island expeditions and Frontier destinations.',
+            'unbound'=>'Begin in snowy Frozen Heights and travel through mountain trails, forests, cities and coastlines. Find Pokémon from across the available generations in habitats throughout Unbound.',
+            default=>'Travel through '.$label.' cities, routes, caves and landmarks, with wild Pokémon suited to each location.',
+        };
+        $overviewIsLocation=($manifest['overview_kind']??'')==='location';
+        $overviewAlt=$overviewIsLocation?(string)($manifest['overview_label']??$label):$label.' overworld';
+        $overviewHeading=$upper.($overviewIsLocation?' REGION PREVIEW':' REGION OVERVIEW');
+        $entry=match($selectedWorld){'johto'=>['new-bark-town','New Bark Town'],'unbound'=>['frozen-heights','Frozen Heights'],default=>null};
     ?>
         <div class="pv-world-section-head"><div><span>ACTIVE REGION</span><h2><?=pv_h($label)?></h2><p><?=pv_h((string)$worldDef['description'])?></p></div><strong><?=count($areas)?> AREAS ONLINE</strong></div>
         <div class="pv-region-search" hidden>
@@ -112,13 +121,15 @@ pv_page_start('World Maps','map_select.php',true);
             <input id="pv-region-search" type="search" placeholder="Search routes, islands, caves or floors…" autocomplete="off" aria-controls="pv-region-area-results">
             <span id="pv-region-search-count" role="status" aria-live="polite"><?=count($areas)?> areas</span>
         </div>
-        <?php if(!empty($manifest['master_asset'])):?><section class="pv-region-overworld-source"><img src="<?=pv_h(pv_static((string)$manifest['master_asset']).'?v='.pv_asset_version())?>" alt="<?=pv_h($label)?> overworld"><div><span class="pv-eyebrow"><?=pv_h($upper)?> REGION OVERVIEW</span><h2><?=pv_h($heroTitle)?></h2><p><?=pv_h($heroBody)?></p><div class="pv-region-readiness"><span><i></i> Full-size regional maps</span><span><i></i> Quick area previews</span><span><i></i> Saved trainer positions</span><span><i></i> <?=pv_h($label)?> wild habitats</span></div><?php if($selectedWorld==='johto'):?><div class="pv-actions"><a class="pv-button" href="<?=pv_h(pv_world_area_url('johto','new-bark-town'))?>">Enter New Bark Town</a></div><?php endif;?></div></section><?php endif;?>
+        <?php if(!empty($manifest['master_asset'])):?><section class="pv-region-overworld-source"><img src="<?=pv_h(pv_static((string)$manifest['master_asset']).'?v='.pv_asset_version())?>" alt="<?=pv_h($overviewAlt)?>"><div><span class="pv-eyebrow"><?=pv_h($overviewHeading)?></span><h2><?=pv_h($heroTitle)?></h2><p><?=pv_h($heroBody)?></p><div class="pv-region-readiness"><span><i></i> Full-size regional maps</span><span><i></i> Quick area previews</span><span><i></i> Saved trainer positions</span><span><i></i> <?=pv_h($label)?> wild habitats</span></div><?php if($entry!==null):?><div class="pv-actions"><a class="pv-button" href="<?=pv_h(pv_world_area_url($selectedWorld,$entry[0]))?>">Enter <?=pv_h($entry[1])?></a></div><?php endif;?></div></section><?php endif;?>
         <div id="pv-region-area-results">
         <?php foreach($areaGroups as $groupName=>$groupAreas):if(!$groupAreas)continue;
             [$code,$groupDescription]=match($groupName){
                 'Settlements'=>['CTY','Cities and towns across '.$label.'.'],
                 'Caves & Landmarks'=>['LMK','Caves, mountains, dungeons and major landmarks to explore.'],
                 'Frontier & Expeditions'=>['EXP','Island journeys, Frontier destinations and further places to discover.'],
+                'Buildings & Facilities'=>['BLD','Explore local buildings, training halls and shared facilities.'],
+                'Side Destinations'=>['EXP','Discover further paths, islands and destinations around Unbound.'],
                 default=>['RTE','Routes, forests and sea areas with their own wild Pokémon.'],
             };
         ?>

@@ -1,3 +1,13 @@
+## v29.0.0 — Unbound
+
+- Added Unbound as the fifth Explore region, with searchable map groups, Connected Areas and Frozen Heights as its native location preview.
+- Enabled 618 reviewed playable scenes at the accepted 16-pixel logical / 32-pixel display grid and 32 × 64-pixel trainer size. Images remain at their supplied dimensions inside the existing scrolling viewport.
+- Shared player/AI collision blocks walls, buildings, obstacles and unsafe boundaries while allowing reviewed grass, glass floors, bridges and stairs. Main entrances and section arrivals use clear reviewed terrain; invalid saved positions recover through the established services.
+- Distributed 666 ordinary supported Pokémon from Generations 1–6 across 154 authored habitat profiles, with Normal, Shiny, Dark, Mystic, Metallic and Shadow varieties. Wild levels never exceed 24; high areas use 21–24. Quiet facilities remain quiet.
+- Existing AI trainers can gradually travel into Unbound, catch local varieties and train their owned Pokémon above level 24 using the normal service. Existing accounts, collections, credentials and schema 28 are retained; no migration or AI reseed is required.
+- Preserved all 722 source images exactly: 694 canonical records, 17 blank exports and 11 exact unnamed aliases. 76 canonical exports without usable reviewed terrain are unavailable and documented. All inherited regional art, collision and database files retain their accepted v28 bytes.
+- Prepared checked offline Gen7 sprite import and habitat activation. The baseline contains 74 Gen7 guide identities but lacks all 444 corresponding variety sprites; these species are not live wild encounters in this archive. A complete authentic local six-variety set is required for each added species.
+
 ## v28.0.0 — Johto & Island Expeditions
 
 - Added Johto to Explore, shared region navigation and the home region cards, using the supplied overview and matching existing presentation.

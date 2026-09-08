@@ -1,0 +1,2910 @@
+{
+  "format_version": 1,
+  "kind": "authored_mmo_habitats",
+  "counts": {
+    "catalog_maps": 694,
+    "habitat_maps": 207,
+    "quiet_maps": 487,
+    "profiles": 154,
+    "species": 666,
+    "variety_forms": 3996,
+    "active_generations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "species_per_generation": {
+      "1": 145,
+      "2": 94,
+      "3": 125,
+      "4": 93,
+      "5": 143,
+      "6": 66
+    },
+    "gen7_guide_species": 74,
+    "gen7_missing_exact_sprites": 444
+  },
+  "preserved_baseline_files": {
+    "database/original_pguide.sql": "b3a7cb4b664182290fcf71a629c08e9f873ac75026a14df026ccb563eafb573f",
+    "database/pokemon_vortex_full.sql": "f368427723de5824b177e3f459d05c0dcd327b6aa473c25fb5905a70ad4f4bf4",
+    "public_html/config/vortex_encounters.php": "05b25212426afa488eff96635ffa6ab8ea8965368d4ab88ce58652c06c172631",
+    "public_html/config/worlds/kanto_encounters.php": "bdb40f5930681b3d900812dbe208a1fc2f516b6e191437676c23ae7a13fbf488",
+    "public_html/config/worlds/kanto_expansion_encounters.php": "931c1d69d0609438875af1474c443ed623952e5a760f7afbb9b74d58ed33e3ad",
+    "public_html/config/worlds/hoenn_encounters.php": "20674ca58973e1d696692c5041d7d6c97195dfe258499a621303288bfc3c1942",
+    "public_html/config/worlds/hoenn_expansion_encounters.php": "97bc71ccbd6a77c379df20552ff47b3368d9843fd6ab7c0a8ba94ad84475453c",
+    "public_html/config/worlds/johto_encounters.php": "316ccb3e4bee662b3a3be840b8b5b6ebd184c7e5a21df6114147e616447d46c0"
+  },
+  "sprite_aliases": [
+    {
+      "source": "public_html/html/static/images/pokemon/Burmy (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Burmy.gif",
+      "sha256": "08f1a833863806c676f69623acfe434d5870c9426ff0584f4e23e0368448bc78"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Burmy (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Burmy.gif",
+      "sha256": "ac9c6d989f886248d6de7bc385b562725c08b58ee595c5ddcbc00ea49643c80a"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Burmy (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Burmy.gif",
+      "sha256": "ce3d136f22f9d7db40bfa021e0efa8503a626904b4370a62c64602a4c0ec60d2"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Burmy (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Burmy.gif",
+      "sha256": "8b2117f7b60091ee390da3c9648679e941120279e6cd6c6f4db257a7f4472ca7"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Burmy (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Burmy.gif",
+      "sha256": "2ef36b9dee515a1c8d1df14641681616dd677a4d85fc3225655aa28802510795"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Burmy (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Burmy.gif",
+      "sha256": "36ea553eaa4ed279a858752493760fa576565bd724745c883f5eb7a9bc052d5b"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Wormadam (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Wormadam.gif",
+      "sha256": "918f31f4d399cb57184abbfb30994480786db07af3e4330771c4228e23cce0a4"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Wormadam (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Wormadam.gif",
+      "sha256": "13d51404e8e5193dc4259f78e67f54962668f17f3db7d6ca48a7df808ad7849a"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Wormadam (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Wormadam.gif",
+      "sha256": "d4ab09f3c85cc7755258f134894eced4d480adef7f5498f2972ccf7f15e3dd76"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Wormadam (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Wormadam.gif",
+      "sha256": "2541323cc19708de56d50e709299f2685674224596695dbb19c70f5adfc14c44"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Wormadam (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Wormadam.gif",
+      "sha256": "a8fd5dd1563ba0e5d2e7855b34e707a948c23ef76080d1e8e3975f4da95a7666"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Wormadam (Plant).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Wormadam.gif",
+      "sha256": "06668fa94e347bf0915c0d3ea7889c77ae85ab7b41ba3f1fbec276cc8cd98665"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Cherrim (Non Sunny).gif",
+      "target": "public_html/html/static/images/pokemon/Cherrim.gif",
+      "sha256": "15c378e5c8ab997aee774905a43c9a82ba2dc4671e5fbf7d9a86317e2ccba3b5"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Cherrim (Non Sunny).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Cherrim.gif",
+      "sha256": "530c46b6c6ea49920f676b821b2eafab62a781177ebe3d6fa1cbb2f5b5a1e06f"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Cherrim (Non Sunny).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Cherrim.gif",
+      "sha256": "0055ec9c3ac3277f59df6af4decb3e010996593304aad9b964c0920507a60ef6"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Cherrim (Non Sunny).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Cherrim.gif",
+      "sha256": "de95ba3df8dc5517c58c19018732aa7e5e751298ad737939a8db2e48e816d654"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Cherrim (Non Sunny).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Cherrim.gif",
+      "sha256": "5cd0864ae3c6ab8a0ed70e204acb8c83542ad5c77e06929c0a36acd972027b8f"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Cherrim (Non Sunny).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Cherrim.gif",
+      "sha256": "f5761ce02eabac987a88b04de66c6d9a9b954cc99ddb4e8eb5c41d180ca1f92d"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shellos (West).gif",
+      "target": "public_html/html/static/images/pokemon/Shellos.gif",
+      "sha256": "80c2a1a8f1736df5a7a71bb4c2faae42d68001ddaa1308ce5262bea030288e26"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Shellos (West).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Shellos.gif",
+      "sha256": "cff7ae1a10d62e20ec6c51b3dde3a4afada402f1144919c6bc9062cba7a829bd"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Shellos (West).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Shellos.gif",
+      "sha256": "9f4f2378f026b2ca2daae57a5ac921fda2bcbe0a20d6687743e226838142a560"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Shellos (West).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Shellos.gif",
+      "sha256": "1cb82dcf2a5d500b788d304c0332b41371e1937f4e37aa3dc707d722d2e39b15"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Shellos (West).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Shellos.gif",
+      "sha256": "f0ba7af9a0b4b42d84c2c1cb5ab935c248fefabe454afa8385c20bf06b4f9009"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Shellos (West).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Shellos.gif",
+      "sha256": "fc879d07808130e58d0f18f9ce75bc627973d091aa1dae61d405102bed65a09a"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Gastrodon (West).gif",
+      "target": "public_html/html/static/images/pokemon/Gastrodon.gif",
+      "sha256": "b3d7742696f4c2f3edadbf5957af1965cef8cd0f750abc3a5fa454750a4dc18e"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Gastrodon (West).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Gastrodon.gif",
+      "sha256": "3fc0afa9b0a4ee6f339fe4acb68bb5d3d625635a8adc6f7c6b6dea8bece7663f"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Gastrodon (West).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Gastrodon.gif",
+      "sha256": "9d120173cd2e81fdaef44465245fd55024d4465211a9a668097d223953ba1059"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Gastrodon (West).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Gastrodon.gif",
+      "sha256": "5f711af2b45d4249218d62c8e4b168d1ca6a7806aa09b0ee9eb721eb17b091b3"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Gastrodon (West).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Gastrodon.gif",
+      "sha256": "4302cedd9ccecbbf4fdf0bf8440d0b5e6782cd6f5de726f5f9c5663a3009eee7"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Gastrodon (West).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Gastrodon.gif",
+      "sha256": "411143e5205e299d0219b021d1b161c0336eb8fec0f88c56f5325254c972c46e"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Basculin (Red Stripe).gif",
+      "target": "public_html/html/static/images/pokemon/Basculin.gif",
+      "sha256": "a63b43c0711661cec355367ed3109a1610ab4ff1b4927035396922630424fc29"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Basculin (Red Stripe).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Basculin.gif",
+      "sha256": "030b93305c54e175a953f14ad7e2a9e993307a3f64e175aa45d274df40f840ee"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Basculin (Red Stripe).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Basculin.gif",
+      "sha256": "44f9ff8fde849f6277b5cb64b2ebe1634dd39f2938786230dac4cc4446d2cbf3"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Basculin (Red Stripe).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Basculin.gif",
+      "sha256": "c7c4c4c37eb69b3385c2c373fef717d62ebb89fdca2b988cb2733553eeebe5c2"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Basculin (Red Stripe).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Basculin.gif",
+      "sha256": "9c1bf55c89fc98039799f5499905630c94baa5cb0aa1bd59c62be8b256ab9237"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Basculin (Red Stripe).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Basculin.gif",
+      "sha256": "7d19bd4ce35f0a136292b399db1192c81aa0771798488ca761af0b8f6fa0e986"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Deerling (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Deerling.gif",
+      "sha256": "ac04ef571057cbed1f7bf861f9610373763e0d972e8c5f99db416b63d0ccdad2"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Deerling (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Deerling.gif",
+      "sha256": "bb0034b519ed4c83a8fb9443a9362b57223d54165b0544434cd8771acdd77b85"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Deerling (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Deerling.gif",
+      "sha256": "4cbe7db0c20ae85265e335de735cd62ad41ed80f15e83bb83cf2d8f14a28c426"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Deerling (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Deerling.gif",
+      "sha256": "98ff98aa72cd55781e0626ceeda0f1a1b100a157545c38ac56a641d6d4611e71"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Deerling (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Deerling.gif",
+      "sha256": "6e8611d13d6a2630e5f596e86efe1a6dd90e409a7ac504be4bf6bd9048987b0a"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Deerling (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Deerling.gif",
+      "sha256": "9cfc4b0aa8dfa8af83a77cb5ee52f2ea48b4758d9420ca26e4a5e644935b8a6c"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Sawsbuck (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Sawsbuck.gif",
+      "sha256": "b22f19174990ecc0d67b26fa2b77cdcfe56aa4e125da13af1bdc830763a523a3"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Sawsbuck (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Sawsbuck.gif",
+      "sha256": "b7d11ec270efb38ea4236ee16819c1c4ea28741ae7732781c7a65ad171455cb5"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Sawsbuck (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Sawsbuck.gif",
+      "sha256": "90aa87058f992de901535ea0f2550e627f7d22e6b5a12b12fad392c0581a1f8a"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Sawsbuck (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Sawsbuck.gif",
+      "sha256": "a753e7641b7962226b923a5118e7e261820457fee7e5885317b442fe96878b03"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Sawsbuck (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Sawsbuck.gif",
+      "sha256": "5f74e55eaf0b15128c20197d70f7c3b7445757ad2e143f186982c7e78c7bc6f9"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Sawsbuck (Spring).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Sawsbuck.gif",
+      "sha256": "2d1cd19ad00002a1d59dc77f46026454cc03398e7a91bf554e23aa2cf8e396bb"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Vivillon (Meadow).gif",
+      "target": "public_html/html/static/images/pokemon/Vivillon.gif",
+      "sha256": "9aeeb8f29ac06b522c578102ff1f26f5452f6e5b146bceab4096a0fb6cf632cd"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Vivillon (Meadow).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Vivillon.gif",
+      "sha256": "5edc2add3f319f82fb3c381e52fdcb4e3d8ee47855f2c543b4d6c2822da90352"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Vivillon (Meadow).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Vivillon.gif",
+      "sha256": "8ae1cb4a6b4d4031b68308cea5c9bf26b515cd17577dc64e9891b9d3691e307d"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Vivillon (Meadow).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Vivillon.gif",
+      "sha256": "b55487f8d57c332d0b66f72b1db1a16932a302183e5c81eaa71e7d971f5c4a1f"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Vivillon (Meadow).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Vivillon.gif",
+      "sha256": "e03fed6a2082e8a897a64f077d4acfb1c9de9425df9620ef203880ffd139c93d"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Vivillon (Meadow).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Vivillon.gif",
+      "sha256": "a6d8bdea465f653e1234f0c8c14d3e74f24b43c7e2feadab6e21d8f308ef5318"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Floette (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Floette.gif",
+      "sha256": "8c1eaef80187ee4160d2aafda7df064305139acf9ba9eafbe0b7be0a9720764a"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Floette (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Floette.gif",
+      "sha256": "541f7b46071e2206bdd033ec05d04d92b1ad3c9a783413a58bbd03362929ce91"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Floette (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Floette.gif",
+      "sha256": "326554a7464dca835bfa6e3f42ed8c913cb8a65658c0e6726c078e93617ec630"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Floette (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Floette.gif",
+      "sha256": "ad8de65d09f067e1e62237e86c9ee5cddb575efa729654cf865f6f32e7b1164a"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Floette (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Floette.gif",
+      "sha256": "4aa7bf8bcb439993a4068214946ef99a9ff0ecd1d5ecd78e75626cab7012b90e"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Floette (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Floette.gif",
+      "sha256": "690753618398b242c7652616f445de8f15bde8e5053966252888574838454ade"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Florges (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Florges.gif",
+      "sha256": "cadf57d1ec1c754d806e8f60b834dcfa2dc50141e8c25ebebfb1bd671d537916"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Florges (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Florges.gif",
+      "sha256": "2906de12232aa4aa96dd4ec7e966cc5203ec82fef2abe17b8ba43f9808a60e8a"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Florges (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Florges.gif",
+      "sha256": "ecc7aa3853c5ffbf01eddfbf92a2296c1fe7567eec2ef1822065af51ece8e5ea"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Florges (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Florges.gif",
+      "sha256": "95714926b62a1a25656e015182e17612c1cb2c9e964f1bffc1b3783df473962f"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Florges (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Florges.gif",
+      "sha256": "4e09b324addda3bde622380ebaebc676f4748ded7e64ddffebc20adc77b62897"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Florges (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Florges.gif",
+      "sha256": "880715ecc7a8498e1ad92d79be643d19742ba4b614b7e4f7d51015d50c9802e5"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Meowstic (M).gif",
+      "target": "public_html/html/static/images/pokemon/Meowstic.gif",
+      "sha256": "c5ab118eaf4369dbb0d6e8cd300f5fbbf255cc2577d896327bfcbec8e524a0c3"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Meowstic (M).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Meowstic.gif",
+      "sha256": "4b7c201299e7e2f17687d97f300511981bd99b5fa096bb16521529e654d971f8"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Meowstic (M).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Meowstic.gif",
+      "sha256": "c3479b73ae4844269ed2f0b04bb7c04044222ebdf9abdb1f91e40b87c974343e"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Meowstic (M).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Meowstic.gif",
+      "sha256": "d711aaa934eaad1dbc84132a62d0aa6d42c8e1b6a471cb2652507373838bee8d"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Meowstic (M).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Meowstic.gif",
+      "sha256": "6413c5c9a84f809015eb9839e5c4fb3b2c12b85399966685c9e14f3e9254f6c9"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Meowstic (M).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Meowstic.gif",
+      "sha256": "72afd6a7d424fb5ec1b43ae5b1684fb6d9111652d4f31e12f51f81ad8c45ee15"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Aegislash (Shield).gif",
+      "target": "public_html/html/static/images/pokemon/Aegislash.gif",
+      "sha256": "7095f8c31afe5986e8dc5eb38aacce5c5396992329c4d6409878d88fc878ddae"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Aegislash (Shield).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Aegislash.gif",
+      "sha256": "375b27dff1375a0ba37e78ed4d74e8a382dc643ec8a9b9532ea94684a5312ee5"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Aegislash (Shield).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Aegislash.gif",
+      "sha256": "6d111db4dacfd2558c79e2e81346ea4bfe9d437a99663981a2d7d9751a7b0dbe"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Aegislash (Shield).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Aegislash.gif",
+      "sha256": "0fb0c71162cabfe9802a409ad85fa506049fff83762320a7362363300cc6deac"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Aegislash (Shield).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Aegislash.gif",
+      "sha256": "48d78461e5bfde1840af243a5ddcaa006324abbcc7213ac97344b621a894752d"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Aegislash (Shield).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Aegislash.gif",
+      "sha256": "73c75d92a9703451c790ee9f165c5c0859d3f7ca890994440a425d13e55209d1"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Pumpkaboo (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Pumpkaboo.gif",
+      "sha256": "26783bd15f148c4402053016ee9e7827e2878c5e2b44f43a26f14ead5b4c6dea"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Pumpkaboo (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Pumpkaboo.gif",
+      "sha256": "9805b2c23c92eaac7b9006e9b8dd5423943daba9bf98cecdb2591990c6cf915f"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Pumpkaboo (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Pumpkaboo.gif",
+      "sha256": "00bf2f2f5b305d62227e48f06df7bfb36f0daeeaa0c6a66250aff83f8eb69697"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Pumpkaboo (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Pumpkaboo.gif",
+      "sha256": "f6a464b038f9d509c902f559c53641dbf3192f103e5dbecc980a695d82845f6f"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Pumpkaboo (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Pumpkaboo.gif",
+      "sha256": "4378b0b4f0abe6118234177a7248618771f7015a3434f7ad31b2c0709d9dddc5"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Pumpkaboo (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Pumpkaboo.gif",
+      "sha256": "4e869af91bc148885288f729f8de3a81b84374692f6d6f0a748f991b1124e095"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Gourgeist (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Gourgeist.gif",
+      "sha256": "4d5a72c9a46778c747bb29b0929a26c972d09bdf8d15c3a5a1ff9d2ed2f47dab"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Gourgeist (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Gourgeist.gif",
+      "sha256": "e2717aa6d048c9b73d644a42145fc09ce87d1c34ee9b34614729d3d6b6344e32"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Gourgeist (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Gourgeist.gif",
+      "sha256": "403b95b42d90b61afd4dd10cc4ab2c01ba22329f8bde9c1eb755290e63fbf694"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Gourgeist (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Gourgeist.gif",
+      "sha256": "01dc8e00d4fb28897f54f155e7484e4d86343f8cfdae646081af24c617bae507"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Gourgeist (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Gourgeist.gif",
+      "sha256": "09c1367cf461570816f6bf97fe89934752c61124050b23dd3884fb47a82e0c0f"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Gourgeist (Average).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Gourgeist.gif",
+      "sha256": "567111cbd77f6ad10cf2140115f1e361534aeb0f278a1394a13f5abd4f4501aa"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Flabebe (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Flabebe.gif",
+      "sha256": "9ed1028b441c97371386b4bf9e0c644ccb67d65f3dbbbe4cce93cafb744f0c99"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shiny Flabebe (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Shiny Flabebe.gif",
+      "sha256": "20477ad1f53c839b308797c6acb0dd928c1f110b469078448d434923b767cfd4"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Dark Flabebe (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Dark Flabebe.gif",
+      "sha256": "b0f733930e937677be27f050136d2ad72c14b89aa7e10f8f055c4d1cdf9afc81"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Mystic Flabebe (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Mystic Flabebe.gif",
+      "sha256": "c2937703eda58a4674f4e839b299b4e9b12d89ff13314e4e72a45f10803780f0"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Metallic Flabebe (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Metallic Flabebe.gif",
+      "sha256": "b690bd169cbecc178cfa4f108582d35edacbdf2868affba7a15dd35d449f3e69"
+    },
+    {
+      "source": "public_html/html/static/images/pokemon/Shadow Flabebe (Red).gif",
+      "target": "public_html/html/static/images/pokemon/Shadow Flabebe.gif",
+      "sha256": "b951cde3bad4f82d7b2f85a545447b1e73dff14a4092aa08bf163d44d1a658da"
+    }
+  ],
+  "profiles": {
+    "unbound-antisis-sewers-sewer-18-23-6c9a6a15": {
+      "habitat": "sewer",
+      "min_level": 18,
+      "max_level": 23,
+      "group": "antisis-sewers",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        5
+      ]
+    },
+    "unbound-antisis-sewers-sewer-18-23-dee84903": {
+      "habitat": "sewer",
+      "min_level": 18,
+      "max_level": 23,
+      "group": "antisis-sewers",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        5
+      ]
+    },
+    "unbound-auburn-waterway-freshwater-15-19-2173f084": {
+      "habitat": "freshwater",
+      "min_level": 15,
+      "max_level": 19,
+      "group": "auburn-waterway",
+      "kind": "authored_mmo_habitat",
+      "species_count": 23,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-auburn-waterway-freshwater-15-19-88cf87a9": {
+      "habitat": "freshwater",
+      "min_level": 15,
+      "max_level": 19,
+      "group": "auburn-waterway",
+      "kind": "authored_mmo_habitat",
+      "species_count": 19,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-autl-woods-forest-16-20-6e599e16": {
+      "habitat": "forest",
+      "min_level": 16,
+      "max_level": 20,
+      "group": "autl-woods",
+      "kind": "authored_mmo_habitat",
+      "species_count": 29,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-autl-woods-forest-16-20-c56e09b5": {
+      "habitat": "forest",
+      "min_level": 16,
+      "max_level": 20,
+      "group": "autl-woods",
+      "kind": "authored_mmo_habitat",
+      "species_count": 28,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-15f0069f": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-26621785": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-28ff3854": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-4fc10870": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-74408978": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 12,
+      "generations": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-91137e35": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-93d08dc7": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-ab81ebfe": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-bdaa8de1": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 15,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-d1d1150b": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-d30d818f": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-e091328e": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-cinder-volcano-volcano-21-24-e36aa4e5": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cinder-volcano",
+      "kind": "authored_mmo_habitat",
+      "species_count": 12,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-cliff-cave-mountain-18-23-1be722cb": {
+      "habitat": "mountain",
+      "min_level": 18,
+      "max_level": 23,
+      "group": "cliff-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-cliff-cave-mountain-18-23-a38e3cbd": {
+      "habitat": "mountain",
+      "min_level": 18,
+      "max_level": 23,
+      "group": "cliff-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 14,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-cliff-cave-mountain-18-23-d6a42d54": {
+      "habitat": "mountain",
+      "min_level": 18,
+      "max_level": 23,
+      "group": "cliff-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-cootes-bog-marsh-21-24-ddbe1d9b": {
+      "habitat": "marsh",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "cootes-bog",
+      "kind": "authored_mmo_habitat",
+      "species_count": 30,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-097cfa0d": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 18,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-0bf5d29b": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-13cae063": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 15,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-1b9591ba": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 17,
+      "generations": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-34f6395d": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-371d0f12": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 14,
+      "generations": [
+        1,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-576c0f28": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-669c72c8": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 15,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-6a7b85e8": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 14,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-6c439987": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 15,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-8a9e6629": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 21,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-9eaebd41": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 19,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-crystal-peak-crystal-21-24-aea3bc42": {
+      "habitat": "crystal",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "crystal-peak",
+      "kind": "authored_mmo_habitat",
+      "species_count": 24,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-desert-ruins-desert-21-24-ea635bf3": {
+      "habitat": "desert",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "desert-ruins",
+      "kind": "authored_mmo_habitat",
+      "species_count": 26,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-distortion-world-distortion-21-24-206098b9": {
+      "habitat": "distortion",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "distortion-world",
+      "kind": "authored_mmo_habitat",
+      "species_count": 16,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-distortion-world-distortion-21-24-578946ba": {
+      "habitat": "distortion",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "distortion-world",
+      "kind": "authored_mmo_habitat",
+      "species_count": 17,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-distortion-world-distortion-21-24-5dc87caf": {
+      "habitat": "distortion",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "distortion-world",
+      "kind": "authored_mmo_habitat",
+      "species_count": 22,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-distortion-world-distortion-21-24-7834dbb9": {
+      "habitat": "distortion",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "distortion-world",
+      "kind": "authored_mmo_habitat",
+      "species_count": 18,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-distortion-world-distortion-21-24-a46ecdb9": {
+      "habitat": "distortion",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "distortion-world",
+      "kind": "authored_mmo_habitat",
+      "species_count": 16,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-flower-paradise-meadow-21-24-113c0dbf": {
+      "habitat": "meadow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "flower-paradise",
+      "kind": "authored_mmo_habitat",
+      "species_count": 22,
+      "generations": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-flower-paradise-meadow-21-24-900467c0": {
+      "habitat": "meadow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "flower-paradise",
+      "kind": "authored_mmo_habitat",
+      "species_count": 19,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-flower-paradise-meadow-21-24-e64870e2": {
+      "habitat": "meadow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "flower-paradise",
+      "kind": "authored_mmo_habitat",
+      "species_count": 16,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-frost-mountain-mountain-12-16-34155587": {
+      "habitat": "mountain",
+      "min_level": 12,
+      "max_level": 16,
+      "group": "frost-mountain",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-frost-mountain-mountain-12-16-6811bfa3": {
+      "habitat": "mountain",
+      "min_level": 12,
+      "max_level": 16,
+      "group": "frost-mountain",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        1,
+        2,
+        4,
+        5
+      ]
+    },
+    "unbound-frost-mountain-mountain-12-16-ba21d4fc": {
+      "habitat": "mountain",
+      "min_level": 12,
+      "max_level": 16,
+      "group": "frost-mountain",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        2,
+        4,
+        5
+      ]
+    },
+    "unbound-frozen-forest-snow-21-24-4edd3948": {
+      "habitat": "snow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "frozen-forest",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    "unbound-frozen-tomb-snow-21-24-b8bcc9d2": {
+      "habitat": "snow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "frozen-tomb",
+      "kind": "authored_mmo_habitat",
+      "species_count": 12,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-fullmoon-island-meadow-21-24-761d3e4d": {
+      "habitat": "meadow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "fullmoon-island",
+      "kind": "authored_mmo_habitat",
+      "species_count": 19,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-fullmoon-island-meadow-21-24-f4c7d7c9": {
+      "habitat": "meadow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "fullmoon-island",
+      "kind": "authored_mmo_habitat",
+      "species_count": 18,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-great-desert-desert-21-24-9a08637a": {
+      "habitat": "desert",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "great-desert",
+      "kind": "authored_mmo_habitat",
+      "species_count": 23,
+      "generations": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-great-desert-desert-21-24-b200cfe2": {
+      "habitat": "desert",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "great-desert",
+      "kind": "authored_mmo_habitat",
+      "species_count": 30,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-great-desert-desert-21-24-f16e94b8": {
+      "habitat": "desert",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "great-desert",
+      "kind": "authored_mmo_habitat",
+      "species_count": 17,
+      "generations": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-grim-woods-dark-forest-5-10-7a2c72a9": {
+      "habitat": "dark-forest",
+      "min_level": 5,
+      "max_level": 10,
+      "group": "grim-woods",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-hidden-grotto-forest-21-24-c0028750": {
+      "habitat": "forest",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "hidden-grotto",
+      "kind": "authored_mmo_habitat",
+      "species_count": 37,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-hidden-grotto-meadow-21-24-31293597": {
+      "habitat": "meadow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "hidden-grotto",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-hidden-grotto-snow-21-24-b08ef6cb": {
+      "habitat": "snow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "hidden-grotto",
+      "kind": "authored_mmo_habitat",
+      "species_count": 16,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-icicle-cave-snow-3-6-10f623fb": {
+      "habitat": "snow",
+      "min_level": 3,
+      "max_level": 6,
+      "group": "icicle-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-icicle-cave-snow-3-6-120400cf": {
+      "habitat": "snow",
+      "min_level": 3,
+      "max_level": 6,
+      "group": "icicle-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        5,
+        6
+      ]
+    },
+    "unbound-icicle-cave-snow-3-6-3848ca56": {
+      "habitat": "snow",
+      "min_level": 3,
+      "max_level": 6,
+      "group": "icicle-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-icicle-cave-snow-3-6-5e37766f": {
+      "habitat": "snow",
+      "min_level": 3,
+      "max_level": 6,
+      "group": "icicle-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-icicle-cave-snow-3-6-6187a752": {
+      "habitat": "snow",
+      "min_level": 3,
+      "max_level": 6,
+      "group": "icicle-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        2,
+        3
+      ]
+    },
+    "unbound-icicle-cave-snow-3-6-948f4ee9": {
+      "habitat": "snow",
+      "min_level": 3,
+      "max_level": 6,
+      "group": "icicle-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-icicle-cave-snow-3-6-ba2db2f5": {
+      "habitat": "snow",
+      "min_level": 3,
+      "max_level": 6,
+      "group": "icicle-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-icicle-cave-snow-3-6-cbce2689": {
+      "habitat": "snow",
+      "min_level": 3,
+      "max_level": 6,
+      "group": "icicle-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    "unbound-icy-hole-snow-21-24-2bffb1b5": {
+      "habitat": "snow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "icy-hole",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-icy-hole-snow-21-24-8ba47646": {
+      "habitat": "snow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "icy-hole",
+      "kind": "authored_mmo_habitat",
+      "species_count": 12,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-island-cave-mountain-21-24-bf27c0f7": {
+      "habitat": "mountain",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "island-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-lost-tunnel-ruins-21-24-14079eeb": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "lost-tunnel",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-lost-tunnel-ruins-21-24-33403f45": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "lost-tunnel",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-magnolia-fields-grassland-21-24-bd7c8e9d": {
+      "habitat": "grassland",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "magnolia-fields",
+      "kind": "authored_mmo_habitat",
+      "species_count": 53,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-newmoon-island-dark-forest-21-24-89ae4554": {
+      "habitat": "dark-forest",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "newmoon-island",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-newmoon-island-dark-forest-21-24-ea39565e": {
+      "habitat": "dark-forest",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "newmoon-island",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-redwood-forest-forest-21-24-ea11128f": {
+      "habitat": "forest",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "redwood-forest",
+      "kind": "authored_mmo_habitat",
+      "species_count": 43,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-rift-cave-ruins-21-24-3e3d5bc1": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "rift-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-rift-cave-ruins-21-24-71c8dc05": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "rift-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-rift-cave-ruins-21-24-8886a7ef": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "rift-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-rift-cave-ruins-21-24-b76dc3de": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "rift-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-route-1-snow-2-5-2f0cdf15": {
+      "habitat": "snow",
+      "min_level": 2,
+      "max_level": 5,
+      "group": "route-1",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-route-10-freshwater-14-18-603d8867": {
+      "habitat": "freshwater",
+      "min_level": 14,
+      "max_level": 18,
+      "group": "route-10",
+      "kind": "authored_mmo_habitat",
+      "species_count": 19,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-11-mountain-15-19-a6fa1251": {
+      "habitat": "mountain",
+      "min_level": 15,
+      "max_level": 19,
+      "group": "route-11",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-route-12-coast-17-21-5f6f2459": {
+      "habitat": "coast",
+      "min_level": 17,
+      "max_level": 21,
+      "group": "route-12",
+      "kind": "authored_mmo_habitat",
+      "species_count": 51,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-13-ocean-21-24-1769159f": {
+      "habitat": "ocean",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-13",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    "unbound-route-13-ocean-21-24-1d277642": {
+      "habitat": "ocean",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-13",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    "unbound-route-14-ocean-21-24-49c6ac39": {
+      "habitat": "ocean",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-14",
+      "kind": "authored_mmo_habitat",
+      "species_count": 12,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-14-ocean-21-24-ad4e3408": {
+      "habitat": "ocean",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-14",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-route-14-ocean-21-24-bc658dc4": {
+      "habitat": "ocean",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-14",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-route-14-undersea-21-24-afd3ece4": {
+      "habitat": "undersea",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-14",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-route-14-undersea-21-24-d3cfd4a2": {
+      "habitat": "undersea",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-14",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    "unbound-route-15-ocean-21-24-f8926dfb": {
+      "habitat": "ocean",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-15",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        3,
+        6
+      ]
+    },
+    "unbound-route-16-coast-21-24-13183447": {
+      "habitat": "coast",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-16",
+      "kind": "authored_mmo_habitat",
+      "species_count": 43,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-16-undersea-21-24-ebb6dafb": {
+      "habitat": "undersea",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-16",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    "unbound-route-17-grassland-21-24-dfca34eb": {
+      "habitat": "grassland",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-17",
+      "kind": "authored_mmo_habitat",
+      "species_count": 50,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-17-mountain-21-24-56378d7d": {
+      "habitat": "mountain",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-17",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-route-17-undersea-21-24-a37d9e0e": {
+      "habitat": "undersea",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-17",
+      "kind": "authored_mmo_habitat",
+      "species_count": 12,
+      "generations": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "unbound-route-18-forest-21-24-8d23ecb6": {
+      "habitat": "forest",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-18",
+      "kind": "authored_mmo_habitat",
+      "species_count": 31,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-18-ocean-21-24-de49452f": {
+      "habitat": "ocean",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "route-18",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        3,
+        4,
+        6
+      ]
+    },
+    "unbound-route-2-grassland-3-6-3fcd51d0": {
+      "habitat": "grassland",
+      "min_level": 3,
+      "max_level": 6,
+      "group": "route-2",
+      "kind": "authored_mmo_habitat",
+      "species_count": 19,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-3-coast-4-7-cf2c216c": {
+      "habitat": "coast",
+      "min_level": 4,
+      "max_level": 7,
+      "group": "route-3",
+      "kind": "authored_mmo_habitat",
+      "species_count": 17,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-route-4-forest-5-9-8db8e595": {
+      "habitat": "forest",
+      "min_level": 5,
+      "max_level": 9,
+      "group": "route-4",
+      "kind": "authored_mmo_habitat",
+      "species_count": 18,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-5-meadow-7-11-96d0a654": {
+      "habitat": "meadow",
+      "min_level": 7,
+      "max_level": 11,
+      "group": "route-5",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-6-grassland-9-13-1c7ae76c": {
+      "habitat": "grassland",
+      "min_level": 9,
+      "max_level": 13,
+      "group": "route-6",
+      "kind": "authored_mmo_habitat",
+      "species_count": 18,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-7-mountain-11-15-23049a3b": {
+      "habitat": "mountain",
+      "min_level": 11,
+      "max_level": 15,
+      "group": "route-7",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-8-snow-12-16-7bfb273e": {
+      "habitat": "snow",
+      "min_level": 12,
+      "max_level": 16,
+      "group": "route-8",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-route-9-forest-13-17-7e3ce12e": {
+      "habitat": "forest",
+      "min_level": 13,
+      "max_level": 17,
+      "group": "route-9",
+      "kind": "authored_mmo_habitat",
+      "species_count": 28,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-12c8241d": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        5
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-13eb513f": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        5,
+        6
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-2a30816a": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-2addd70e": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-31d98cae": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-423777ed": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-472bbddb": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-668cb23e": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-cad9e3b4": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-e231337a": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-ruins-of-void-ruins-21-24-fa018da7": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-ruins-of-void-undersea-21-24-542343a4": {
+      "habitat": "undersea",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-ruins-of-void-undersea-21-24-c1a61ab9": {
+      "habitat": "undersea",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "ruins-of-void",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-25d32bdc": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-5d88b3e7": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-6a0fdffe": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-754fedd9": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-8ca962d8": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-8fde183a": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 12,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-92149737": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-99855b15": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        2,
+        4,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-abfa2ac2": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-acb8e169": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-c014c84b": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        3,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-de18edb7": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 14,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-thundercap-mt-electric-21-24-de260e93": {
+      "habitat": "electric",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "thundercap-mt",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "unbound-tomb-of-borrius-ruins-21-24-41d98fbe": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "tomb-of-borrius",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-tomb-of-borrius-ruins-21-24-735f911e": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "tomb-of-borrius",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-tomb-of-borrius-ruins-21-24-74a2c61e": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "tomb-of-borrius",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-tomb-of-borrius-ruins-21-24-eebbcd9d": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "tomb-of-borrius",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        2,
+        5,
+        6
+      ]
+    },
+    "unbound-tomb-of-borrius-ruins-21-24-fbe065b9": {
+      "habitat": "ruins",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "tomb-of-borrius",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-underwater-undersea-21-24-7b86ba59": {
+      "habitat": "undersea",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "underwater",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        3,
+        6
+      ]
+    },
+    "unbound-valley-cave-mountain-7-12-66c9c160": {
+      "habitat": "mountain",
+      "min_level": 7,
+      "max_level": 12,
+      "group": "valley-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 6,
+      "generations": [
+        1,
+        5
+      ]
+    },
+    "unbound-valley-cave-mountain-7-12-afa75007": {
+      "habitat": "mountain",
+      "min_level": 7,
+      "max_level": 12,
+      "group": "valley-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 7,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-valley-cave-mountain-7-12-d9cac51a": {
+      "habitat": "mountain",
+      "min_level": 7,
+      "max_level": 12,
+      "group": "valley-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 8,
+      "generations": [
+        1,
+        4,
+        5
+      ]
+    },
+    "unbound-valley-cave-mountain-7-12-f993a96c": {
+      "habitat": "mountain",
+      "min_level": 7,
+      "max_level": 12,
+      "group": "valley-cave",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-victory-road-forest-21-24-43a49b75": {
+      "habitat": "forest",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "victory-road",
+      "kind": "authored_mmo_habitat",
+      "species_count": 32,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-victory-road-mountain-21-24-17b2a424": {
+      "habitat": "mountain",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "victory-road",
+      "kind": "authored_mmo_habitat",
+      "species_count": 12,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-victory-road-mountain-21-24-45398e83": {
+      "habitat": "mountain",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "victory-road",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "unbound-victory-road-mountain-21-24-924e9e97": {
+      "habitat": "mountain",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "victory-road",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-victory-road-mountain-21-24-c7149f12": {
+      "habitat": "mountain",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "victory-road",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-victory-road-snow-21-24-133dcc83": {
+      "habitat": "snow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "victory-road",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-victory-road-snow-21-24-4a255b9f": {
+      "habitat": "snow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "victory-road",
+      "kind": "authored_mmo_habitat",
+      "species_count": 13,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-victory-road-snow-21-24-eab697cf": {
+      "habitat": "snow",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "victory-road",
+      "kind": "authored_mmo_habitat",
+      "species_count": 9,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "unbound-victory-road-volcano-21-24-783b913e": {
+      "habitat": "volcano",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "victory-road",
+      "kind": "authored_mmo_habitat",
+      "species_count": 14,
+      "generations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "unbound-vivill-town-undersea-21-24-c8d0bae6": {
+      "habitat": "undersea",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "vivill-town",
+      "kind": "authored_mmo_habitat",
+      "species_count": 11,
+      "generations": [
+        1,
+        3,
+        5
+      ]
+    },
+    "unbound-vivill-woods-dark-forest-21-24-e5f54482": {
+      "habitat": "dark-forest",
+      "min_level": 21,
+      "max_level": 24,
+      "group": "vivill-woods",
+      "kind": "authored_mmo_habitat",
+      "species_count": 10,
+      "generations": [
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  "playability_review_applied": true,
+  "unavailable_sources": [
+    "B00_M001_Dehara_Dept.png",
+    "B01_M056_Bellin_Town.png",
+    "B01_M070_Antisis_Sewers.png",
+    "B01_M071_Antisis_Sewers.png",
+    "B01_M073_Flower_Paradise.png",
+    "B02_M016_Cootes_Bog.png",
+    "B02_M017_Cootes_Bog.png",
+    "B02_M018_Cootes_Bog.png",
+    "B02_M019_Cootes_Bog.png",
+    "B02_M020_Cootes_Bog.png",
+    "B02_M021_Cootes_Bog.png",
+    "B02_M022_Cootes_Bog.png",
+    "B02_M023_Cootes_Bog.png",
+    "B02_M024_Cootes_Bog.png",
+    "B02_M025_Cootes_Bog.png",
+    "B02_M054_Antisis_City.png",
+    "B03_M044_Fallshore_City.png",
+    "B03_M048_Old_Map.png",
+    "B03_M052_Old_Map.png",
+    "B03_M053_Old_Map.png",
+    "B03_M057_Old_Map.png",
+    "B03_M059_Old_Map.png",
+    "B03_M065_Old_Map.png",
+    "B33_M016_Seaport_City.png",
+    "Extra_Layout_0004.png",
+    "Extra_Layout_0014.png",
+    "Extra_Layout_0016.png",
+    "Extra_Layout_0018.png",
+    "Extra_Layout_0019.png",
+    "Extra_Layout_0032.png",
+    "Extra_Layout_0033.png",
+    "Extra_Layout_0035.png",
+    "Extra_Layout_0046.png",
+    "Extra_Layout_0052.png",
+    "Extra_Layout_0053.png",
+    "Extra_Layout_0054.png",
+    "Extra_Layout_0055.png",
+    "Extra_Layout_0057.png",
+    "Extra_Layout_0062.png",
+    "Extra_Layout_0063.png",
+    "Extra_Layout_0064.png",
+    "Extra_Layout_0065.png",
+    "Extra_Layout_0066.png",
+    "Extra_Layout_0067.png",
+    "Extra_Layout_0068.png",
+    "Extra_Layout_0069.png",
+    "Extra_Layout_0071.png",
+    "Extra_Layout_0072.png",
+    "Extra_Layout_0073.png",
+    "Extra_Layout_0074.png",
+    "Extra_Layout_0075.png",
+    "Extra_Layout_0077.png",
+    "Extra_Layout_0261.png",
+    "Extra_Layout_0267.png",
+    "Extra_Layout_0268.png",
+    "Extra_Layout_0278.png",
+    "Extra_Layout_0279.png",
+    "Extra_Layout_0319.png",
+    "Extra_Layout_0366.png",
+    "Extra_Layout_0370.png",
+    "Extra_Layout_0371.png",
+    "Extra_Layout_0374.png",
+    "Extra_Layout_0378.png",
+    "Extra_Layout_0379.png",
+    "Extra_Layout_0387.png",
+    "Extra_Layout_0388.png",
+    "Extra_Layout_0389.png",
+    "Extra_Layout_0390.png",
+    "Extra_Layout_0392.png",
+    "Extra_Layout_0394.png",
+    "Extra_Layout_0416.png",
+    "Extra_Layout_0431.png",
+    "Extra_Layout_0432.png",
+    "Extra_Layout_0433.png",
+    "Extra_Layout_0434.png",
+    "Extra_Layout_0435.png"
+  ],
+  "policies": {
+    "source": "These are deliberately authored cross-generation MMO habitats derived from reviewed map artwork and the project guide/types. They are not original Unbound ROM encounter tables.",
+    "varieties": "Normal311/336; Shiny, Dark, Mystic, Metallic and Shadow each5/336, through the unchanged shared player/AI roller.",
+    "levels": "Early habitats start2–5. Progression rises to21–24 for high areas. Established evolution thresholds constrain low-area evolved species; values above24 compress to21. No wild entry exceeds24; owned progression stays unchanged.",
+    "coverage": "All ordinary guide species with six valid exact local GIF sprites receive at least one compatible habitat. Established legendary/mythical/Ultra-Beast special species stay reserved. The custom Darkrown is not added to regional wild pools.",
+    "terrain": "One profile applies to each entire map. Traversable grass, stairs and glass do not disable encounters. Furnished facilities, town streets, raid pens and unverified exports remain quiet; incidental water is not a land habitat.",
+    "gen7": "Existing Gen7 guide rows are audited individually. Only species with all six exact locally valid GIF sprites join generated habitat profiles. No runtime downloads, Normal-art substitution or database expansion.",
+    "neutral_forms": "16 already-supported neutral guide names receive byte-identical aliases of documented existing form art, with each of the six varieties preserved. This is a fixed display choice; seasonal/gender/stance/form changes are not simulated."
+  }
+}

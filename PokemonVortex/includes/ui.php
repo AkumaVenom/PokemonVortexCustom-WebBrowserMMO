@@ -67,7 +67,7 @@ function pv_page_start(string $title, string $active = '', bool $loggedIn = fals
 
     echo '<div class="pv-command-strip" aria-label="Explore regions">';
     echo '<span class="pv-command-state">' . ($loggedIn ? 'WORLD SELECT' : 'EXPLORE THE WORLD') . '</span>';
-    foreach (['vortex' => 'Vortex World', 'kanto' => 'Kanto', 'johto' => 'Johto', 'hoenn' => 'Hoenn'] as $world => $label) {
+    foreach (['vortex' => 'Vortex World', 'kanto' => 'Kanto', 'johto' => 'Johto', 'hoenn' => 'Hoenn', 'unbound' => 'Unbound'] as $world => $label) {
         echo '<a href="' . pv_h(pv_url('map_select.php?world=' . $world)) . '">' . pv_h($label) . '</a>';
     }
     echo '</div>';

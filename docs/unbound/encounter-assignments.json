@@ -1,0 +1,4166 @@
+{
+  "B03_M102_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M007_Antisis_Port.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M068_Antisis_Sewers.png": {
+    "encounter_profile": "unbound-antisis-sewers-sewer-18-23-6c9a6a15",
+    "policy": "authored_habitat",
+    "habitat": "sewer",
+    "note": "Reviewed sewer passages; pollution-tolerant species on walkable passages."
+  },
+  "B03_M082_Auburn_Waterway.png": {
+    "encounter_profile": "unbound-auburn-waterway-freshwater-15-19-2173f084",
+    "policy": "authored_habitat",
+    "habitat": "freshwater",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M119_Autl_Woods.png": {
+    "encounter_profile": "unbound-autl-woods-forest-16-20-c56e09b5",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M012_Battle_Circus.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M003_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M004_Battle_Mine.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M010_Battle_Tower.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M092_Battleground.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M068_Bellin_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M078_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M082_Cave_of_Being.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B45_M003_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-91137e35",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B52_M000_Cliff_Cave.png": {
+    "encounter_profile": "unbound-cliff-cave-mountain-18-23-1be722cb",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M001_Cootes_Bog.png": {
+    "encounter_profile": "unbound-cootes-bog-marsh-21-24-ddbe1d9b",
+    "policy": "authored_habitat",
+    "habitat": "marsh",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M074_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B56_M000_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-669c72c8",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M006_Cube_Corp.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M118_Cube_Space.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M089_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M000_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M051_Desert_Ruins.png": {
+    "encounter_profile": "unbound-desert-ruins-desert-21-24-ea635bf3",
+    "policy": "authored_habitat",
+    "habitat": "desert",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M024_Distortion_World.png": {
+    "encounter_profile": "unbound-distortion-world-distortion-21-24-a46ecdb9",
+    "policy": "authored_habitat",
+    "habitat": "distortion",
+    "note": "Authored nonlegendary spectral and psychic habitat on the floating walkways."
+  },
+  "B03_M071_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M086_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M084_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M017_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M004_Flower_Paradise.png": {
+    "encounter_profile": "unbound-flower-paradise-meadow-21-24-113c0dbf",
+    "policy": "authored_habitat",
+    "habitat": "meadow",
+    "note": "Authored island habitat; no guaranteed scripted or legendary encounter."
+  },
+  "B50_M000_Frost_Mountain.png": {
+    "encounter_profile": "unbound-frost-mountain-mountain-12-16-34155587",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M081_Frozen_Forest.png": {
+    "encounter_profile": "unbound-frozen-forest-snow-21-24-4edd3948",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M066_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M052_Frozen_Tomb.png": {
+    "encounter_profile": "unbound-frozen-tomb-snow-21-24-b8bcc9d2",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M000_Fullmoon_Island.png": {
+    "encounter_profile": "unbound-fullmoon-island-meadow-21-24-761d3e4d",
+    "policy": "authored_habitat",
+    "habitat": "meadow",
+    "note": "Authored island habitat; no guaranteed scripted or legendary encounter."
+  },
+  "B10_M014_Game_Corner.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M090_Great_Desert.png": {
+    "encounter_profile": "unbound-great-desert-desert-21-24-9a08637a",
+    "policy": "authored_habitat",
+    "habitat": "desert",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B45_M001_Grim_Woods.png": {
+    "encounter_profile": "unbound-grim-woods-dark-forest-5-10-7a2c72a9",
+    "policy": "authored_habitat",
+    "habitat": "dark-forest",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M098_Gurun_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M007_Hidden_Grotto.png": {
+    "encounter_profile": "unbound-hidden-grotto-meadow-21-24-31293597",
+    "policy": "authored_habitat",
+    "habitat": "meadow",
+    "note": "Reviewed natural grotto clearing; raid pens stay quiet."
+  },
+  "B43_M000_Icicle_Cave.png": {
+    "encounter_profile": "unbound-icicle-cave-snow-3-6-10f623fb",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M014_Icy_Hole.png": {
+    "encounter_profile": "unbound-icy-hole-snow-21-24-2bffb1b5",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M053_Island_Cave.png": {
+    "encounter_profile": "unbound-island-cave-mountain-21-24-bf27c0f7",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B46_M000_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M121_Lost_Tunnel.png": {
+    "encounter_profile": "unbound-lost-tunnel-ruins-21-24-14079eeb",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M004_Magnolia_Fields.png": {
+    "encounter_profile": "unbound-magnolia-fields-grassland-21-24-bd7c8e9d",
+    "policy": "authored_habitat",
+    "habitat": "grassland",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M002_Magnolia_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M002_Newmoon_Island.png": {
+    "encounter_profile": "unbound-newmoon-island-dark-forest-21-24-89ae4554",
+    "policy": "authored_habitat",
+    "habitat": "dark-forest",
+    "note": "Authored island habitat; no guaranteed scripted or legendary encounter."
+  },
+  "B01_M094_Pokemon_Day_Care.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M108_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M000_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M033_Redwood_Forest.png": {
+    "encounter_profile": "unbound-redwood-forest-forest-21-24-ea11128f",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M005_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M033_Rift_Cave.png": {
+    "encounter_profile": "unbound-rift-cave-ruins-21-24-8886a7ef",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M067_Route_1.png": {
+    "encounter_profile": "unbound-route-1-snow-2-5-2f0cdf15",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M081_Route_10.png": {
+    "encounter_profile": "unbound-route-10-freshwater-14-18-603d8867",
+    "policy": "authored_habitat",
+    "habitat": "freshwater",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M085_Route_11.png": {
+    "encounter_profile": "unbound-route-11-mountain-15-19-a6fa1251",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M088_Route_12.png": {
+    "encounter_profile": "unbound-route-12-coast-17-21-5f6f2459",
+    "policy": "authored_habitat",
+    "habitat": "coast",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M093_Route_13.png": {
+    "encounter_profile": "unbound-route-13-ocean-21-24-1d277642",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M095_Route_14.png": {
+    "encounter_profile": "unbound-route-14-ocean-21-24-bc658dc4",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M100_Route_15.png": {
+    "encounter_profile": "unbound-route-15-ocean-21-24-f8926dfb",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M101_Route_16.png": {
+    "encounter_profile": "unbound-route-16-coast-21-24-13183447",
+    "policy": "authored_habitat",
+    "habitat": "coast",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M104_Route_17.png": {
+    "encounter_profile": "unbound-route-17-grassland-21-24-dfca34eb",
+    "policy": "authored_habitat",
+    "habitat": "grassland",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M106_Route_18.png": {
+    "encounter_profile": "unbound-route-18-ocean-21-24-de49452f",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M069_Route_2.png": {
+    "encounter_profile": "unbound-route-2-grassland-3-6-3fcd51d0",
+    "policy": "authored_habitat",
+    "habitat": "grassland",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M070_Route_3.png": {
+    "encounter_profile": "unbound-route-3-coast-4-7-cf2c216c",
+    "policy": "authored_habitat",
+    "habitat": "coast",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M072_Route_4.png": {
+    "encounter_profile": "unbound-route-4-forest-5-9-8db8e595",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M073_Route_5.png": {
+    "encounter_profile": "unbound-route-5-meadow-7-11-96d0a654",
+    "policy": "authored_habitat",
+    "habitat": "meadow",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M075_Route_6.png": {
+    "encounter_profile": "unbound-route-6-grassland-9-13-1c7ae76c",
+    "policy": "authored_habitat",
+    "habitat": "grassland",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M076_Route_7.png": {
+    "encounter_profile": "unbound-route-7-mountain-11-15-23049a3b",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M077_Route_8.png": {
+    "encounter_profile": "unbound-route-8-snow-12-16-7bfb273e",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M079_Route_9.png": {
+    "encounter_profile": "unbound-route-9-forest-13-17-7e3ce12e",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B01_M109_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-31d98cae",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M039_S_S_Marine.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B20_M000_Safari_Zone.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M105_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M010_Shadow_Base.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M059_Tarmigan_Mansion.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M087_Tarmigan_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M080_Tehl_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B53_M000_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-99855b15",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M012_Tomb_of_Borrius.png": {
+    "encounter_profile": "unbound-tomb-of-borrius-ruins-21-24-41d98fbe",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M031_Underground_Pass.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M057_Underwater.png": {
+    "encounter_profile": "unbound-underwater-undersea-21-24-7b86ba59",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B47_M000_Valley_Cave.png": {
+    "encounter_profile": "unbound-valley-cave-mountain-7-12-66c9c160",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B55_M000_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-mountain-21-24-924e9e97",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M099_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M100_Vivill_Warehouse.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M099_Vivill_Woods.png": {
+    "encounter_profile": "unbound-vivill-woods-dark-forest-21-24-e5f54482",
+    "policy": "authored_habitat",
+    "habitat": "dark-forest",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B54_M002_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B17_M000_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M000_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B16_M000_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M001_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M054_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B06_M000_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M002_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M003_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B15_M001_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B18_M001_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B22_M000_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B22_M001_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B23_M002_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B25_M000_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B27_M000_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B30_M000_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B31_M001_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M003_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M004_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M005_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M009_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M010_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M011_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M012_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M013_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M014_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M015_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M016_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M037_Antisis_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B19_M000_Antisis_Port.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M035_Antisis_Port.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M008_Antisis_Port.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M070_Antisis_Sewers.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B01_M071_Antisis_Sewers.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B01_M069_Antisis_Sewers.png": {
+    "encounter_profile": "unbound-antisis-sewers-sewer-18-23-dee84903",
+    "policy": "authored_habitat",
+    "habitat": "sewer",
+    "note": "Reviewed sewer passages; pollution-tolerant species on walkable passages."
+  },
+  "B01_M072_Antisis_Sewers.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M083_Auburn_Waterway.png": {
+    "encounter_profile": "unbound-auburn-waterway-freshwater-15-19-88cf87a9",
+    "policy": "authored_habitat",
+    "habitat": "freshwater",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M120_Autl_Woods.png": {
+    "encounter_profile": "unbound-autl-woods-forest-16-20-6e599e16",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M003_Battle_Circus.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M006_Battle_Circus.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B24_M000_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M005_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M005_Battle_Mine.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M001_Battle_Tower.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M002_Battle_Tower.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M007_Battle_Tower.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M008_Battle_Tower.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M009_Battle_Tower.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M011_Battle_Tower.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M006_Battleground.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B05_M003_Bellin_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B05_M002_Bellin_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B05_M005_Bellin_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B37_M001_Bellin_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B05_M000_Bellin_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B05_M006_Bellin_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M056_Bellin_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B49_M002_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M000_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M001_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M001_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B15_M000_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B15_M002_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M003_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M004_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M005_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M006_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M007_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M008_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M009_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M010_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M011_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M013_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M014_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M015_Blizzard_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M029_Cinder_Volcano.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M046_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-e091328e",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M047_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-74408978",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M048_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-26621785",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M049_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-e36aa4e5",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M050_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-93d08dc7",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M051_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-4fc10870",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M052_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-d1d1150b",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M053_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-bdaa8de1",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M054_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-d30d818f",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B06_M012_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-15f0069f",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B45_M004_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-28ff3854",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B45_M005_Cinder_Volcano.png": {
+    "encounter_profile": "unbound-cinder-volcano-volcano-21-24-ab81ebfe",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B52_M001_Cliff_Cave.png": {
+    "encounter_profile": "unbound-cliff-cave-mountain-18-23-d6a42d54",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B52_M002_Cliff_Cave.png": {
+    "encounter_profile": "unbound-cliff-cave-mountain-18-23-a38e3cbd",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B35_M003_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M038_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M016_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B02_M017_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B02_M018_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B02_M019_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B02_M020_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B02_M021_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B02_M022_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B02_M023_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B02_M024_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B02_M025_Cootes_Bog.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B06_M003_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M010_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M011_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M013_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M002_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M004_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M006_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M007_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M008_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M009_Crater_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M024_Crystal_Peak.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M007_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-13cae063",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M013_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-576c0f28",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M015_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-8a9e6629",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M020_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-371d0f12",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M021_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-097cfa0d",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M028_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-1b9591ba",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M029_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-9eaebd41",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M040_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-669c72c8",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M041_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-aea3bc42",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M046_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-6a7b85e8",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M049_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-0bf5d29b",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M054_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-34f6395d",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M055_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-6c439987",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M001_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-371d0f12",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M002_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-8a9e6629",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M003_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-097cfa0d",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M004_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-0bf5d29b",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M005_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-34f6395d",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M006_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-576c0f28",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M007_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-6c439987",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M008_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-6a7b85e8",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M009_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-9eaebd41",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M010_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-1b9591ba",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M011_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-aea3bc42",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B56_M012_Crystal_Peak.png": {
+    "encounter_profile": "unbound-crystal-peak-crystal-21-24-13cae063",
+    "policy": "authored_habitat",
+    "habitat": "crystal",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B45_M000_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M012_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M013_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M007_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M008_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M009_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M010_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M011_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M015_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M016_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M017_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M018_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M019_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M020_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M021_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M022_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M023_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M024_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M025_Dehara_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M001_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M002_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M003_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M004_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M005_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B10_M006_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B00_M000_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B00_M001_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B00_M002_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B00_M003_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B00_M004_Dehara_Dept.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M063_Distortion_World.png": {
+    "encounter_profile": "unbound-distortion-world-distortion-21-24-5dc87caf",
+    "policy": "authored_habitat",
+    "habitat": "distortion",
+    "note": "Authored nonlegendary spectral and psychic habitat on the floating walkways."
+  },
+  "B01_M064_Distortion_World.png": {
+    "encounter_profile": "unbound-distortion-world-distortion-21-24-7834dbb9",
+    "policy": "authored_habitat",
+    "habitat": "distortion",
+    "note": "Authored nonlegendary spectral and psychic habitat on the floating walkways."
+  },
+  "B01_M065_Distortion_World.png": {
+    "encounter_profile": "unbound-distortion-world-distortion-21-24-a46ecdb9",
+    "policy": "authored_habitat",
+    "habitat": "distortion",
+    "note": "Authored nonlegendary spectral and psychic habitat on the floating walkways."
+  },
+  "B01_M066_Distortion_World.png": {
+    "encounter_profile": "unbound-distortion-world-distortion-21-24-206098b9",
+    "policy": "authored_habitat",
+    "habitat": "distortion",
+    "note": "Authored nonlegendary spectral and psychic habitat on the floating walkways."
+  },
+  "B01_M067_Distortion_World.png": {
+    "encounter_profile": "unbound-distortion-world-distortion-21-24-578946ba",
+    "policy": "authored_habitat",
+    "habitat": "distortion",
+    "note": "Authored nonlegendary spectral and psychic habitat on the floating walkways."
+  },
+  "B03_M025_Distortion_World.png": {
+    "encounter_profile": "unbound-distortion-world-distortion-21-24-578946ba",
+    "policy": "authored_habitat",
+    "habitat": "distortion",
+    "note": "Authored nonlegendary spectral and psychic habitat on the floating walkways."
+  },
+  "B07_M004_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M002_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M000_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M001_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M003_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M005_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M006_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M007_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M008_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M009_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M010_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B07_M011_Dresco_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M001_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M005_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M006_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M004_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M007_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M008_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M009_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M010_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M011_Epidimy_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M044_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B14_M005_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M006_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M007_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M000_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M001_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M002_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M003_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M004_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M008_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M009_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M010_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M011_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M012_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M013_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M014_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B14_M015_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B15_M003_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M056_Fallshore_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M043_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M044_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M045_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M046_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M047_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B23_M001_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M018_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M019_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M020_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M021_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M022_Ferrothorn_Turf.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M073_Flower_Paradise.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B01_M005_Flower_Paradise.png": {
+    "encounter_profile": "unbound-flower-paradise-meadow-21-24-e64870e2",
+    "policy": "authored_habitat",
+    "habitat": "meadow",
+    "note": "Authored island habitat; no guaranteed scripted or legendary encounter."
+  },
+  "B01_M006_Flower_Paradise.png": {
+    "encounter_profile": "unbound-flower-paradise-meadow-21-24-900467c0",
+    "policy": "authored_habitat",
+    "habitat": "meadow",
+    "note": "Authored island habitat; no guaranteed scripted or legendary encounter."
+  },
+  "B01_M026_Frost_Mountain.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B48_M001_Frost_Mountain.png": {
+    "encounter_profile": "unbound-frost-mountain-mountain-12-16-ba21d4fc",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B50_M001_Frost_Mountain.png": {
+    "encounter_profile": "unbound-frost-mountain-mountain-12-16-6811bfa3",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B04_M000_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M001_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M002_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M003_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M005_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M007_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M008_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M009_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M004_Frozen_Heights.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M001_Fullmoon_Island.png": {
+    "encounter_profile": "unbound-fullmoon-island-meadow-21-24-f4c7d7c9",
+    "policy": "authored_habitat",
+    "habitat": "meadow",
+    "note": "Authored island habitat; no guaranteed scripted or legendary encounter."
+  },
+  "B03_M061_Great_Desert.png": {
+    "encounter_profile": "unbound-great-desert-desert-21-24-f16e94b8",
+    "policy": "authored_habitat",
+    "habitat": "desert",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M062_Great_Desert.png": {
+    "encounter_profile": "unbound-great-desert-desert-21-24-9a08637a",
+    "policy": "authored_habitat",
+    "habitat": "desert",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M064_Great_Desert.png": {
+    "encounter_profile": "unbound-great-desert-desert-21-24-b200cfe2",
+    "policy": "authored_habitat",
+    "habitat": "desert",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M091_Great_Desert.png": {
+    "encounter_profile": "unbound-great-desert-desert-21-24-f16e94b8",
+    "policy": "authored_habitat",
+    "habitat": "desert",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M092_Great_Desert.png": {
+    "encounter_profile": "unbound-great-desert-desert-21-24-b200cfe2",
+    "policy": "authored_habitat",
+    "habitat": "desert",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B09_M002_Gurun_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B09_M000_Gurun_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B09_M001_Gurun_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B09_M007_Gurun_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B09_M003_Gurun_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B09_M004_Gurun_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B09_M005_Gurun_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B09_M006_Gurun_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M009_Hidden_Grotto.png": {
+    "encounter_profile": "unbound-hidden-grotto-forest-21-24-c0028750",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Reviewed natural grotto clearing; raid pens stay quiet."
+  },
+  "B01_M012_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M013_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M014_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M015_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M016_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M017_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M018_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M019_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M020_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M021_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M022_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M023_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M015_Hidden_Grotto.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M008_Hidden_Grotto.png": {
+    "encounter_profile": "unbound-hidden-grotto-snow-21-24-b08ef6cb",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Reviewed natural grotto clearing; raid pens stay quiet."
+  },
+  "B01_M093_Icicle_Cave.png": {
+    "encounter_profile": "unbound-icicle-cave-snow-3-6-120400cf",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M028_Icicle_Cave.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B43_M001_Icicle_Cave.png": {
+    "encounter_profile": "unbound-icicle-cave-snow-3-6-3848ca56",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B43_M002_Icicle_Cave.png": {
+    "encounter_profile": "unbound-icicle-cave-snow-3-6-6187a752",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B43_M003_Icicle_Cave.png": {
+    "encounter_profile": "unbound-icicle-cave-snow-3-6-ba2db2f5",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B43_M004_Icicle_Cave.png": {
+    "encounter_profile": "unbound-icicle-cave-snow-3-6-948f4ee9",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B43_M005_Icicle_Cave.png": {
+    "encounter_profile": "unbound-icicle-cave-snow-3-6-cbce2689",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B43_M007_Icicle_Cave.png": {
+    "encounter_profile": "unbound-icicle-cave-snow-3-6-120400cf",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B43_M006_Icicle_Cave.png": {
+    "encounter_profile": "unbound-icicle-cave-snow-3-6-5e37766f",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M000_Icy_Hole.png": {
+    "encounter_profile": "unbound-icy-hole-snow-21-24-8ba47646",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M058_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M008_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M026_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M027_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M060_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B46_M001_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B46_M002_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B46_M003_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B46_M004_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B46_M005_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B46_M006_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B46_M007_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B46_M008_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B46_M009_KBT_Expressway.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M059_Lost_Tunnel.png": {
+    "encounter_profile": "unbound-lost-tunnel-ruins-21-24-33403f45",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M038_Magnolia_Fields.png": {
+    "encounter_profile": "unbound-magnolia-fields-grassland-21-24-bd7c8e9d",
+    "policy": "authored_habitat",
+    "habitat": "grassland",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B35_M000_Magnolia_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B35_M001_Magnolia_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B35_M006_Magnolia_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B35_M002_Magnolia_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B35_M004_Magnolia_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B35_M005_Magnolia_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M003_Newmoon_Island.png": {
+    "encounter_profile": "unbound-newmoon-island-dark-forest-21-24-ea39565e",
+    "policy": "authored_habitat",
+    "habitat": "dark-forest",
+    "note": "Authored island habitat; no guaranteed scripted or legendary encounter."
+  },
+  "B45_M002_Pokemon_Day_Care.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B13_M001_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M074_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M075_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M076_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M077_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M078_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M079_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M080_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M091_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B13_M000_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M031_Pokemon_League.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M002_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M000_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M009_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M001_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B12_M000_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M003_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M004_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M006_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M007_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M008_Polder_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M098_Redwood_Forest.png": {
+    "encounter_profile": "unbound-redwood-forest-forest-21-24-ea11128f",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B36_M002_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M000_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M012_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M001_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M003_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M004_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M005_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M006_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M007_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M008_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M009_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M010_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B36_M011_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B38_M000_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B39_M000_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B40_M000_Redwood_Village.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M034_Rift_Cave.png": {
+    "encounter_profile": "unbound-rift-cave-ruins-21-24-3e3d5bc1",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M035_Rift_Cave.png": {
+    "encounter_profile": "unbound-rift-cave-ruins-21-24-71c8dc05",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M036_Rift_Cave.png": {
+    "encounter_profile": "unbound-rift-cave-ruins-21-24-b76dc3de",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B21_M000_ROUTE_10.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B21_M001_ROUTE_10.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B18_M000_Route_12.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B23_M000_Route_12.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M035_Route_13.png": {
+    "encounter_profile": "unbound-route-13-ocean-21-24-1769159f",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M045_Route_13.png": {
+    "encounter_profile": "unbound-route-13-ocean-21-24-1d277642",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M094_Route_13.png": {
+    "encounter_profile": "unbound-route-13-ocean-21-24-1769159f",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B02_M055_Route_14.png": {
+    "encounter_profile": "unbound-route-14-ocean-21-24-49c6ac39",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M023_Route_14.png": {
+    "encounter_profile": "unbound-route-14-ocean-21-24-bc658dc4",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M058_Route_14.png": {
+    "encounter_profile": "unbound-route-14-ocean-21-24-ad4e3408",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M096_Route_14.png": {
+    "encounter_profile": "unbound-route-14-ocean-21-24-49c6ac39",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M097_Route_14.png": {
+    "encounter_profile": "unbound-route-14-ocean-21-24-ad4e3408",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M014_Route_14.png": {
+    "encounter_profile": "unbound-route-14-undersea-21-24-afd3ece4",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M063_Route_14.png": {
+    "encounter_profile": "unbound-route-14-undersea-21-24-d3cfd4a2",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B32_M000_Route_14.png": {
+    "encounter_profile": "unbound-route-14-undersea-21-24-d3cfd4a2",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B32_M001_Route_14.png": {
+    "encounter_profile": "unbound-route-14-undersea-21-24-afd3ece4",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M039_Route_15.png": {
+    "encounter_profile": "unbound-route-15-ocean-21-24-f8926dfb",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B17_M001_Route_16.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B54_M006_Route_16.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M047_Route_16.png": {
+    "encounter_profile": "unbound-route-16-undersea-21-24-ebb6dafb",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B32_M005_Route_16.png": {
+    "encounter_profile": "unbound-route-16-undersea-21-24-ebb6dafb",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M010_Route_17.png": {
+    "encounter_profile": "unbound-route-17-grassland-21-24-dfca34eb",
+    "policy": "authored_habitat",
+    "habitat": "grassland",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B01_M037_Route_17.png": {
+    "encounter_profile": "unbound-route-17-mountain-21-24-56378d7d",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M056_Route_17.png": {
+    "encounter_profile": "unbound-route-17-undersea-21-24-a37d9e0e",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B32_M006_Route_17.png": {
+    "encounter_profile": "unbound-route-17-undersea-21-24-a37d9e0e",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B31_M003_Route_18.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B31_M004_Route_18.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M042_Route_18.png": {
+    "encounter_profile": "unbound-route-18-ocean-21-24-de49452f",
+    "policy": "authored_habitat",
+    "habitat": "ocean",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M043_Route_18.png": {
+    "encounter_profile": "unbound-route-18-forest-21-24-8d23ecb6",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B03_M107_Route_18.png": {
+    "encounter_profile": "unbound-route-18-forest-21-24-8d23ecb6",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation route habitat selected from visible terrain; no claim of native Unbound slots."
+  },
+  "B02_M027_Route_4.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B45_M006_Route_5.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B48_M003_Route_6.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B48_M002_Route_7.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B48_M000_Route_7.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B51_M000_Route_9.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B51_M001_Route_9.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M107_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-2a30816a",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M108_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-13eb513f",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M110_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-12c8241d",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M111_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-472bbddb",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M112_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-668cb23e",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M113_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-fa018da7",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M114_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-cad9e3b4",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M115_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-2addd70e",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M116_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-e231337a",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M117_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-ruins-21-24-423777ed",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M040_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-undersea-21-24-542343a4",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M030_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-undersea-21-24-c1a61ab9",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B32_M002_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-undersea-21-24-c1a61ab9",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B32_M003_Ruins_of_Void.png": {
+    "encounter_profile": "unbound-ruins-of-void-undersea-21-24-542343a4",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M040_S_S_Marine.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M041_S_S_Marine.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B34_M005_Safari_Zone.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B02_M026_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M002_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B31_M002_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M000_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M001_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B25_M002_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B26_M000_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B26_M001_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B28_M000_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B29_M000_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B31_M000_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M003_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M004_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M007_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M008_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M009_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M010_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M011_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M012_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M013_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M014_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M015_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M016_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B33_M017_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M018_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B42_M000_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M009_Seaport_City.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B49_M012_Shadow_Base.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M042_Shadow_Base.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M043_Shadow_Base.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M044_Shadow_Base.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M045_Shadow_Base.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M011_Shadow_Base.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B04_M012_Shadow_Base.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M060_Tarmigan_Mansion.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M061_Tarmigan_Mansion.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M062_Tarmigan_Mansion.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B12_M007_Tarmigan_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B12_M005_Tarmigan_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B12_M006_Tarmigan_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B12_M001_Tarmigan_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B12_M002_Tarmigan_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B12_M003_Tarmigan_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B12_M004_Tarmigan_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B12_M008_Tarmigan_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B08_M005_Tehl_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B08_M000_Tehl_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B08_M001_Tehl_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B08_M002_Tehl_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B08_M003_Tehl_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B08_M004_Tehl_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M096_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-8fde183a",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M010_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-8fde183a",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M010_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-8ca962d8",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M011_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-acb8e169",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M025_Thundercap_Mt.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M097_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-5d88b3e7",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M041_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-de260e93",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M011_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-25d32bdc",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M032_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-6a0fdffe",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M103_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-6a0fdffe",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M001_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-c014c84b",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M002_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-25d32bdc",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M003_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-8ca962d8",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M004_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-de260e93",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M005_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-de18edb7",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M006_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-754fedd9",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M007_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-abfa2ac2",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M008_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-acb8e169",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M009_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-5d88b3e7",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B53_M011_Thundercap_Mt.png": {
+    "encounter_profile": "unbound-thundercap-mt-electric-21-24-92149737",
+    "policy": "authored_habitat",
+    "habitat": "electric",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M083_Tomb_of_Borrius.png": {
+    "encounter_profile": "unbound-tomb-of-borrius-ruins-21-24-41d98fbe",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M084_Tomb_of_Borrius.png": {
+    "encounter_profile": "unbound-tomb-of-borrius-ruins-21-24-eebbcd9d",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M085_Tomb_of_Borrius.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M086_Tomb_of_Borrius.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M087_Tomb_of_Borrius.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M088_Tomb_of_Borrius.png": {
+    "encounter_profile": "unbound-tomb-of-borrius-ruins-21-24-fbe065b9",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M089_Tomb_of_Borrius.png": {
+    "encounter_profile": "unbound-tomb-of-borrius-ruins-21-24-74a2c61e",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M090_Tomb_of_Borrius.png": {
+    "encounter_profile": "unbound-tomb-of-borrius-ruins-21-24-735f911e",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M016_Tomb_of_Borrius.png": {
+    "encounter_profile": "unbound-tomb-of-borrius-ruins-21-24-eebbcd9d",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M017_Tomb_of_Borrius.png": {
+    "encounter_profile": "unbound-tomb-of-borrius-ruins-21-24-735f911e",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M018_Tomb_of_Borrius.png": {
+    "encounter_profile": "unbound-tomb-of-borrius-ruins-21-24-74a2c61e",
+    "policy": "authored_habitat",
+    "habitat": "ruins",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B03_M022_Tomb_of_Borrius.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M050_Tomb_of_Borrius.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M051_Tomb_of_Borrius.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M032_Underground_Pass.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M027_Valley_Cave.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B47_M001_Valley_Cave.png": {
+    "encounter_profile": "unbound-valley-cave-mountain-7-12-d9cac51a",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B47_M002_Valley_Cave.png": {
+    "encounter_profile": "unbound-valley-cave-mountain-7-12-afa75007",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B47_M003_Valley_Cave.png": {
+    "encounter_profile": "unbound-valley-cave-mountain-7-12-f993a96c",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M030_Victory_Road.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M055_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-forest-21-24-43a49b75",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M095_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-mountain-21-24-c7149f12",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M048_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-mountain-21-24-17b2a424",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M049_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-snow-21-24-133dcc83",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B02_M050_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-snow-21-24-eab697cf",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B55_M001_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-mountain-21-24-c7149f12",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B55_M002_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-volcano-21-24-783b913e",
+    "policy": "authored_habitat",
+    "habitat": "volcano",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B55_M003_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-mountain-21-24-45398e83",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B55_M004_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-forest-21-24-43a49b75",
+    "policy": "authored_habitat",
+    "habitat": "forest",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B55_M005_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-mountain-21-24-17b2a424",
+    "policy": "authored_habitat",
+    "habitat": "mountain",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B55_M006_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-snow-21-24-133dcc83",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B55_M007_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-snow-21-24-eab697cf",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B55_M008_Victory_Road.png": {
+    "encounter_profile": "unbound-victory-road-snow-21-24-4a255b9f",
+    "policy": "authored_habitat",
+    "habitat": "snow",
+    "note": "Authored mixed-generation habitat based on reviewed source artwork; furnished and scripted companion rooms remain quiet."
+  },
+  "B01_M122_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B25_M001_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B44_M002_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B44_M000_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B44_M001_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B44_M003_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B44_M004_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B44_M005_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M036_Vivill_Town.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M034_Vivill_Town.png": {
+    "encounter_profile": "unbound-vivill-town-undersea-21-24-c8d0bae6",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Source depicts an underwater companion section, not town streets."
+  },
+  "B32_M004_Vivill_Town.png": {
+    "encounter_profile": "unbound-vivill-town-undersea-21-24-c8d0bae6",
+    "policy": "authored_habitat",
+    "habitat": "undersea",
+    "note": "Source depicts an underwater companion section, not town streets."
+  },
+  "B01_M101_Vivill_Warehouse.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M102_Vivill_Warehouse.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M103_Vivill_Warehouse.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M104_Vivill_Warehouse.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M105_Vivill_Warehouse.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M106_Vivill_Warehouse.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B01_M058_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B37_M000_SIX_ISLAND.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M048_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B03_M052_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B03_M053_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B03_M057_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B03_M059_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B03_M065_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "B01_M057_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B05_M004_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B06_M005_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B05_M001_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B11_M000_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B24_M001_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B33_M019_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B41_M000_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B41_M001_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B03_M019_Old_Map.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0386.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0396.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0261.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0258.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0260.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0259.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0392.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0389.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0401.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0384.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0402.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0416.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0264.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0432.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0431.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0433.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0434.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0435.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0385.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0387.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0388.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0390.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0391.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0393.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0394.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0395.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B37_M004_SIX_ISLAND.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B37_M003_SIX_ISLAND.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "B37_M002_SIX_ISLAND.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Quiet facility, town, furnished interior, transit section or unverified export; no ordinary wild encounters."
+  },
+  "Extra_Layout_0004.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0014.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0016.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0018.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0019.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0032.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0033.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0035.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0046.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0052.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0053.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0054.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0055.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0057.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0062.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0063.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0064.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0065.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0066.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0067.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0068.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0069.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0071.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0072.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0073.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0074.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0075.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0077.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0267.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0268.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0278.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0279.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0319.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0366.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0370.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0371.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0374.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0378.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  },
+  "Extra_Layout_0379.png": {
+    "encounter_profile": "",
+    "policy": "no_random_wild",
+    "habitat": "",
+    "note": "Unavailable source after terrain review; no active encounter profile."
+  }
+}

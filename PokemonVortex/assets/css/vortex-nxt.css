@@ -249,6 +249,9 @@ body[data-nxt-section] .nxt-network-status .pv-status-row span { font-size:.75re
 .nxt-region-card > div { padding:20px 14px;min-width:0; }
 .nxt-region-card h2 { font-size:1.35rem!important;margin:3px 0 5px; }
 .nxt-region-card p { margin:0;color:#49687f;font-size:.875rem; }
+@media (min-width:701px) {
+  .nxt-region-cards > .nxt-region-card:last-child:nth-child(odd) { grid-column:1 / -1; }
+}
 body[data-nxt-section] .pv-home-banner { padding:20px;gap:20px;background:#eff7ff!important;border:2px solid #276495!important;border-radius:10px!important;box-shadow:var(--nxt-shadow)!important; }
 body[data-nxt-section] .pv-home-banner::before,body[data-nxt-section] .pv-home-banner::after { display:none; }
 /* Trainer home and collection: consistent specimen wells and team cards. */
@@ -272,11 +275,14 @@ body[data-nxt-section] :is(.pv-shop-buy,.pv-trade-offer-actions,.pv-team-builder
 
 /* Exploration: new expedition framing; native map pixels and actor layers untouched. */
 body[data-nxt-section] .pv-world-switcher { gap:14px; }
+@media (min-width:761px) {
+  body[data-nxt-section] .pv-world-switcher > .pv-world-card:last-child:nth-child(odd) { grid-column:1 / -1; }
+}
 @media (min-width:1180px) {
   body[data-nxt-section] .pv-world-switcher { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 body[data-nxt-section] .pv-world-card { border:2px solid #c2d9e9 !important; border-radius:10px !important; background:#fff !important; box-shadow:0 2px 0 #10396733 !important; }
-body[data-nxt-section] .pv-world-card.active { border-color:#3a8753 !important; background:#eef8e8 !important; box-shadow:0 3px 0 #c3dcc1 !important; }
+body[data-nxt-section] .pv-world-card.is-active { border-color:#3a8753 !important; background:#eef8e8 !important; box-shadow:0 3px 0 #c3dcc1 !important; }
 body[data-nxt-section] .pv-world-code { background:#e6f2ff !important; color:#205c94 !important; border-color:#c4dcec !important; }
 body[data-nxt-section] .pv-world-card-copy strong { font-size:1.1rem; }
 body[data-nxt-section] .pv-map-group-head { padding:14px 0; margin-top:14px; border-bottom:2px solid #d4e4ee; }

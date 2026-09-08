@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "source_based_visual_collision": true,
+  "native_rom_collision_metadata_supplied": false,
+  "maps": 694,
+  "reviewed_tile_signatures": 9767,
+  "arrivals": 1118,
+  "playable": 618,
+  "unavailable": 76,
+  "semantic_tiles": 52,
+  "approach_paths": 10
+}

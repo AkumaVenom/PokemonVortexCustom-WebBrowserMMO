@@ -1,0 +1,1547 @@
+{
+  "format_version": 1,
+  "status": "waiting_for_authentic_local_sprites",
+  "guide_species_count": 74,
+  "required_variety_prefixes": [
+    "",
+    "Shiny ",
+    "Dark ",
+    "Mystic ",
+    "Metallic ",
+    "Shadow "
+  ],
+  "missing_sprite_count": 444,
+  "acquisition_note": "A direct public sprite acquisition was not completed: the tool reported network approval was cancelled before a decision was returned. No cancelled route was retried or bypassed.",
+  "verified_public_reference": "https://www.pokemon-vortex.com/pokedex/Rowlet",
+  "import_command": "python tools/unbound_encounters_build.py --import-gen7 /path/to/authentic/gifs",
+  "species": [
+    {
+      "name": "Araquanid",
+      "generation": 7,
+      "types": [
+        "Water",
+        "Bug"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "freshwater",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Araquanid.gif",
+        "Shiny Araquanid.gif",
+        "Dark Araquanid.gif",
+        "Mystic Araquanid.gif",
+        "Metallic Araquanid.gif",
+        "Shadow Araquanid.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Bewear",
+      "generation": 7,
+      "types": [
+        "Normal",
+        "Fighting"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "meadow",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Bewear.gif",
+        "Shiny Bewear.gif",
+        "Dark Bewear.gif",
+        "Mystic Bewear.gif",
+        "Metallic Bewear.gif",
+        "Shadow Bewear.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Bounsweet",
+      "generation": 7,
+      "types": [
+        "Grass"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Bounsweet.gif",
+        "Shiny Bounsweet.gif",
+        "Dark Bounsweet.gif",
+        "Mystic Bounsweet.gif",
+        "Metallic Bounsweet.gif",
+        "Shadow Bounsweet.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Brionne",
+      "generation": 7,
+      "types": [
+        "Water"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Brionne.gif",
+        "Shiny Brionne.gif",
+        "Dark Brionne.gif",
+        "Mystic Brionne.gif",
+        "Metallic Brionne.gif",
+        "Shadow Brionne.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Bruxish",
+      "generation": 7,
+      "types": [
+        "Water",
+        "Psychic"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Bruxish.gif",
+        "Shiny Bruxish.gif",
+        "Dark Bruxish.gif",
+        "Mystic Bruxish.gif",
+        "Metallic Bruxish.gif",
+        "Shadow Bruxish.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Buzzwole",
+      "generation": 7,
+      "types": [
+        "Bug",
+        "Fighting"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Buzzwole.gif",
+        "Shiny Buzzwole.gif",
+        "Dark Buzzwole.gif",
+        "Mystic Buzzwole.gif",
+        "Metallic Buzzwole.gif",
+        "Shadow Buzzwole.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Celesteela",
+      "generation": 7,
+      "types": [
+        "Steel",
+        "Flying"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "electric",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Celesteela.gif",
+        "Shiny Celesteela.gif",
+        "Dark Celesteela.gif",
+        "Mystic Celesteela.gif",
+        "Metallic Celesteela.gif",
+        "Shadow Celesteela.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Charjabug",
+      "generation": 7,
+      "types": [
+        "Bug",
+        "Electric"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Charjabug.gif",
+        "Shiny Charjabug.gif",
+        "Dark Charjabug.gif",
+        "Mystic Charjabug.gif",
+        "Metallic Charjabug.gif",
+        "Shadow Charjabug.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Comfey",
+      "generation": 7,
+      "types": [
+        "Fairy"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "meadow",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Comfey.gif",
+        "Shiny Comfey.gif",
+        "Dark Comfey.gif",
+        "Mystic Comfey.gif",
+        "Metallic Comfey.gif",
+        "Shadow Comfey.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Crabominable",
+      "generation": 7,
+      "types": [
+        "Fighting",
+        "Ice"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "snow",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Crabominable.gif",
+        "Shiny Crabominable.gif",
+        "Dark Crabominable.gif",
+        "Mystic Crabominable.gif",
+        "Metallic Crabominable.gif",
+        "Shadow Crabominable.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Crabrawler",
+      "generation": 7,
+      "types": [
+        "Fighting"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Crabrawler.gif",
+        "Shiny Crabrawler.gif",
+        "Dark Crabrawler.gif",
+        "Mystic Crabrawler.gif",
+        "Metallic Crabrawler.gif",
+        "Shadow Crabrawler.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Cutiefly",
+      "generation": 7,
+      "types": [
+        "Bug",
+        "Fairy"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "meadow",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Cutiefly.gif",
+        "Shiny Cutiefly.gif",
+        "Dark Cutiefly.gif",
+        "Mystic Cutiefly.gif",
+        "Metallic Cutiefly.gif",
+        "Shadow Cutiefly.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Dartrix",
+      "generation": 7,
+      "types": [
+        "Grass",
+        "Flying"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Dartrix.gif",
+        "Shiny Dartrix.gif",
+        "Dark Dartrix.gif",
+        "Mystic Dartrix.gif",
+        "Metallic Dartrix.gif",
+        "Shadow Dartrix.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Decidueye",
+      "generation": 7,
+      "types": [
+        "Grass",
+        "Ghost"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Decidueye.gif",
+        "Shiny Decidueye.gif",
+        "Dark Decidueye.gif",
+        "Mystic Decidueye.gif",
+        "Metallic Decidueye.gif",
+        "Shadow Decidueye.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Dewpider",
+      "generation": 7,
+      "types": [
+        "Water",
+        "Bug"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "freshwater",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Dewpider.gif",
+        "Shiny Dewpider.gif",
+        "Dark Dewpider.gif",
+        "Mystic Dewpider.gif",
+        "Metallic Dewpider.gif",
+        "Shadow Dewpider.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Dhelmise",
+      "generation": 7,
+      "types": [
+        "Ghost",
+        "Grass"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ruins",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Dhelmise.gif",
+        "Shiny Dhelmise.gif",
+        "Dark Dhelmise.gif",
+        "Mystic Dhelmise.gif",
+        "Metallic Dhelmise.gif",
+        "Shadow Dhelmise.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Drampa",
+      "generation": 7,
+      "types": [
+        "Normal",
+        "Dragon"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "crystal",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Drampa.gif",
+        "Shiny Drampa.gif",
+        "Dark Drampa.gif",
+        "Mystic Drampa.gif",
+        "Metallic Drampa.gif",
+        "Shadow Drampa.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Fomantis",
+      "generation": 7,
+      "types": [
+        "Grass"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Fomantis.gif",
+        "Shiny Fomantis.gif",
+        "Dark Fomantis.gif",
+        "Mystic Fomantis.gif",
+        "Metallic Fomantis.gif",
+        "Shadow Fomantis.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Golisopod",
+      "generation": 7,
+      "types": [
+        "Bug",
+        "Water"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Golisopod.gif",
+        "Shiny Golisopod.gif",
+        "Dark Golisopod.gif",
+        "Mystic Golisopod.gif",
+        "Metallic Golisopod.gif",
+        "Shadow Golisopod.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Grubbin",
+      "generation": 7,
+      "types": [
+        "Bug"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Grubbin.gif",
+        "Shiny Grubbin.gif",
+        "Dark Grubbin.gif",
+        "Mystic Grubbin.gif",
+        "Metallic Grubbin.gif",
+        "Shadow Grubbin.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Gumshoos",
+      "generation": 7,
+      "types": [
+        "Normal"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "grassland",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Gumshoos.gif",
+        "Shiny Gumshoos.gif",
+        "Dark Gumshoos.gif",
+        "Mystic Gumshoos.gif",
+        "Metallic Gumshoos.gif",
+        "Shadow Gumshoos.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Guzzlord",
+      "generation": 7,
+      "types": [
+        "Dark",
+        "Dragon"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "crystal",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Guzzlord.gif",
+        "Shiny Guzzlord.gif",
+        "Dark Guzzlord.gif",
+        "Mystic Guzzlord.gif",
+        "Metallic Guzzlord.gif",
+        "Shadow Guzzlord.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Hakamo-o",
+      "generation": 7,
+      "types": [
+        "Dragon",
+        "Fighting"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Hakamo-o.gif",
+        "Shiny Hakamo-o.gif",
+        "Dark Hakamo-o.gif",
+        "Mystic Hakamo-o.gif",
+        "Metallic Hakamo-o.gif",
+        "Shadow Hakamo-o.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Incineroar",
+      "generation": 7,
+      "types": [
+        "Fire",
+        "Dark"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "volcano",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Incineroar.gif",
+        "Shiny Incineroar.gif",
+        "Dark Incineroar.gif",
+        "Mystic Incineroar.gif",
+        "Metallic Incineroar.gif",
+        "Shadow Incineroar.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Jangmo-o",
+      "generation": 7,
+      "types": [
+        "Dragon"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Jangmo-o.gif",
+        "Shiny Jangmo-o.gif",
+        "Dark Jangmo-o.gif",
+        "Mystic Jangmo-o.gif",
+        "Metallic Jangmo-o.gif",
+        "Shadow Jangmo-o.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Kartana",
+      "generation": 7,
+      "types": [
+        "Grass",
+        "Steel"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "electric",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Kartana.gif",
+        "Shiny Kartana.gif",
+        "Dark Kartana.gif",
+        "Mystic Kartana.gif",
+        "Metallic Kartana.gif",
+        "Shadow Kartana.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Komala",
+      "generation": 7,
+      "types": [
+        "Normal"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Komala.gif",
+        "Shiny Komala.gif",
+        "Dark Komala.gif",
+        "Mystic Komala.gif",
+        "Metallic Komala.gif",
+        "Shadow Komala.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Kommo-o",
+      "generation": 7,
+      "types": [
+        "Dragon",
+        "Fighting"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Kommo-o.gif",
+        "Shiny Kommo-o.gif",
+        "Dark Kommo-o.gif",
+        "Mystic Kommo-o.gif",
+        "Metallic Kommo-o.gif",
+        "Shadow Kommo-o.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Litten",
+      "generation": 7,
+      "types": [
+        "Fire"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "volcano",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Litten.gif",
+        "Shiny Litten.gif",
+        "Dark Litten.gif",
+        "Mystic Litten.gif",
+        "Metallic Litten.gif",
+        "Shadow Litten.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Lunala",
+      "generation": 7,
+      "types": [
+        "Psychic",
+        "Ghost"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ruins",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Lunala.gif",
+        "Shiny Lunala.gif",
+        "Dark Lunala.gif",
+        "Mystic Lunala.gif",
+        "Metallic Lunala.gif",
+        "Shadow Lunala.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Lurantis",
+      "generation": 7,
+      "types": [
+        "Grass"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Lurantis.gif",
+        "Shiny Lurantis.gif",
+        "Dark Lurantis.gif",
+        "Mystic Lurantis.gif",
+        "Metallic Lurantis.gif",
+        "Shadow Lurantis.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Lycanroc",
+      "generation": 7,
+      "types": [
+        "Rock"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Lycanroc.gif",
+        "Shiny Lycanroc.gif",
+        "Dark Lycanroc.gif",
+        "Mystic Lycanroc.gif",
+        "Metallic Lycanroc.gif",
+        "Shadow Lycanroc.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Magearna",
+      "generation": 7,
+      "types": [
+        "Steel",
+        "Fairy"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "electric",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Magearna.gif",
+        "Shiny Magearna.gif",
+        "Dark Magearna.gif",
+        "Mystic Magearna.gif",
+        "Metallic Magearna.gif",
+        "Shadow Magearna.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Mareanie",
+      "generation": 7,
+      "types": [
+        "Poison",
+        "Water"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Mareanie.gif",
+        "Shiny Mareanie.gif",
+        "Dark Mareanie.gif",
+        "Mystic Mareanie.gif",
+        "Metallic Mareanie.gif",
+        "Shadow Mareanie.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Marshadow",
+      "generation": 7,
+      "types": [
+        "Fighting",
+        "Ghost"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ruins",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Marshadow.gif",
+        "Shiny Marshadow.gif",
+        "Dark Marshadow.gif",
+        "Mystic Marshadow.gif",
+        "Metallic Marshadow.gif",
+        "Shadow Marshadow.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Mimikyu",
+      "generation": 7,
+      "types": [
+        "Ghost",
+        "Fairy"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "dark-forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Mimikyu.gif",
+        "Shiny Mimikyu.gif",
+        "Dark Mimikyu.gif",
+        "Mystic Mimikyu.gif",
+        "Metallic Mimikyu.gif",
+        "Shadow Mimikyu.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Minior",
+      "generation": 7,
+      "types": [
+        "Rock",
+        "Flying"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Minior.gif",
+        "Shiny Minior.gif",
+        "Dark Minior.gif",
+        "Mystic Minior.gif",
+        "Metallic Minior.gif",
+        "Shadow Minior.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Morelull",
+      "generation": 7,
+      "types": [
+        "Grass",
+        "Fairy"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "dark-forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Morelull.gif",
+        "Shiny Morelull.gif",
+        "Dark Morelull.gif",
+        "Mystic Morelull.gif",
+        "Metallic Morelull.gif",
+        "Shadow Morelull.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Mudbray",
+      "generation": 7,
+      "types": [
+        "Ground"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Mudbray.gif",
+        "Shiny Mudbray.gif",
+        "Dark Mudbray.gif",
+        "Mystic Mudbray.gif",
+        "Metallic Mudbray.gif",
+        "Shadow Mudbray.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Mudsdale",
+      "generation": 7,
+      "types": [
+        "Ground"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Mudsdale.gif",
+        "Shiny Mudsdale.gif",
+        "Dark Mudsdale.gif",
+        "Mystic Mudsdale.gif",
+        "Metallic Mudsdale.gif",
+        "Shadow Mudsdale.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Necrozma",
+      "generation": 7,
+      "types": [
+        "Psychic"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ruins",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Necrozma.gif",
+        "Shiny Necrozma.gif",
+        "Dark Necrozma.gif",
+        "Mystic Necrozma.gif",
+        "Metallic Necrozma.gif",
+        "Shadow Necrozma.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Nihilego",
+      "generation": 7,
+      "types": [
+        "Rock",
+        "Poison"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Nihilego.gif",
+        "Shiny Nihilego.gif",
+        "Dark Nihilego.gif",
+        "Mystic Nihilego.gif",
+        "Metallic Nihilego.gif",
+        "Shadow Nihilego.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Oranguru",
+      "generation": 7,
+      "types": [
+        "Normal",
+        "Psychic"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Oranguru.gif",
+        "Shiny Oranguru.gif",
+        "Dark Oranguru.gif",
+        "Mystic Oranguru.gif",
+        "Metallic Oranguru.gif",
+        "Shadow Oranguru.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Oricorio",
+      "generation": 7,
+      "types": [
+        "Fire",
+        "Flying"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "volcano",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Oricorio.gif",
+        "Shiny Oricorio.gif",
+        "Dark Oricorio.gif",
+        "Mystic Oricorio.gif",
+        "Metallic Oricorio.gif",
+        "Shadow Oricorio.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Palossand",
+      "generation": 7,
+      "types": [
+        "Ghost",
+        "Ground"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ruins",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Palossand.gif",
+        "Shiny Palossand.gif",
+        "Dark Palossand.gif",
+        "Mystic Palossand.gif",
+        "Metallic Palossand.gif",
+        "Shadow Palossand.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Passimian",
+      "generation": 7,
+      "types": [
+        "Fighting"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Passimian.gif",
+        "Shiny Passimian.gif",
+        "Dark Passimian.gif",
+        "Mystic Passimian.gif",
+        "Metallic Passimian.gif",
+        "Shadow Passimian.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Pheromosa",
+      "generation": 7,
+      "types": [
+        "Bug",
+        "Fighting"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Pheromosa.gif",
+        "Shiny Pheromosa.gif",
+        "Dark Pheromosa.gif",
+        "Mystic Pheromosa.gif",
+        "Metallic Pheromosa.gif",
+        "Shadow Pheromosa.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Pikipek",
+      "generation": 7,
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Pikipek.gif",
+        "Shiny Pikipek.gif",
+        "Dark Pikipek.gif",
+        "Mystic Pikipek.gif",
+        "Metallic Pikipek.gif",
+        "Shadow Pikipek.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Popplio",
+      "generation": 7,
+      "types": [
+        "Water"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Popplio.gif",
+        "Shiny Popplio.gif",
+        "Dark Popplio.gif",
+        "Mystic Popplio.gif",
+        "Metallic Popplio.gif",
+        "Shadow Popplio.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Primarina",
+      "generation": 7,
+      "types": [
+        "Water",
+        "Fairy"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Primarina.gif",
+        "Shiny Primarina.gif",
+        "Dark Primarina.gif",
+        "Mystic Primarina.gif",
+        "Metallic Primarina.gif",
+        "Shadow Primarina.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Pyukumuku",
+      "generation": 7,
+      "types": [
+        "Water"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Pyukumuku.gif",
+        "Shiny Pyukumuku.gif",
+        "Dark Pyukumuku.gif",
+        "Mystic Pyukumuku.gif",
+        "Metallic Pyukumuku.gif",
+        "Shadow Pyukumuku.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Ribombee",
+      "generation": 7,
+      "types": [
+        "Bug",
+        "Fairy"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "meadow",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Ribombee.gif",
+        "Shiny Ribombee.gif",
+        "Dark Ribombee.gif",
+        "Mystic Ribombee.gif",
+        "Metallic Ribombee.gif",
+        "Shadow Ribombee.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Rockruff",
+      "generation": 7,
+      "types": [
+        "Rock"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "mountain",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Rockruff.gif",
+        "Shiny Rockruff.gif",
+        "Dark Rockruff.gif",
+        "Mystic Rockruff.gif",
+        "Metallic Rockruff.gif",
+        "Shadow Rockruff.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Rowlet",
+      "generation": 7,
+      "types": [
+        "Grass",
+        "Flying"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Rowlet.gif",
+        "Shiny Rowlet.gif",
+        "Dark Rowlet.gif",
+        "Mystic Rowlet.gif",
+        "Metallic Rowlet.gif",
+        "Shadow Rowlet.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Salandit",
+      "generation": 7,
+      "types": [
+        "Poison",
+        "Fire"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "volcano",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Salandit.gif",
+        "Shiny Salandit.gif",
+        "Dark Salandit.gif",
+        "Mystic Salandit.gif",
+        "Metallic Salandit.gif",
+        "Shadow Salandit.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Salazzle",
+      "generation": 7,
+      "types": [
+        "Poison",
+        "Fire"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "volcano",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Salazzle.gif",
+        "Shiny Salazzle.gif",
+        "Dark Salazzle.gif",
+        "Mystic Salazzle.gif",
+        "Metallic Salazzle.gif",
+        "Shadow Salazzle.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Sandygast",
+      "generation": 7,
+      "types": [
+        "Ghost",
+        "Ground"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ruins",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Sandygast.gif",
+        "Shiny Sandygast.gif",
+        "Dark Sandygast.gif",
+        "Mystic Sandygast.gif",
+        "Metallic Sandygast.gif",
+        "Shadow Sandygast.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Shiinotic",
+      "generation": 7,
+      "types": [
+        "Grass",
+        "Fairy"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "dark-forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Shiinotic.gif",
+        "Shiny Shiinotic.gif",
+        "Dark Shiinotic.gif",
+        "Mystic Shiinotic.gif",
+        "Metallic Shiinotic.gif",
+        "Shadow Shiinotic.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Silvally",
+      "generation": 7,
+      "types": [
+        "Normal"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "grassland",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Silvally.gif",
+        "Shiny Silvally.gif",
+        "Dark Silvally.gif",
+        "Mystic Silvally.gif",
+        "Metallic Silvally.gif",
+        "Shadow Silvally.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Solgaleo",
+      "generation": 7,
+      "types": [
+        "Psychic",
+        "Steel"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "electric",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Solgaleo.gif",
+        "Shiny Solgaleo.gif",
+        "Dark Solgaleo.gif",
+        "Mystic Solgaleo.gif",
+        "Metallic Solgaleo.gif",
+        "Shadow Solgaleo.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Steenee",
+      "generation": 7,
+      "types": [
+        "Grass"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Steenee.gif",
+        "Shiny Steenee.gif",
+        "Dark Steenee.gif",
+        "Mystic Steenee.gif",
+        "Metallic Steenee.gif",
+        "Shadow Steenee.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Stufful",
+      "generation": 7,
+      "types": [
+        "Normal",
+        "Fighting"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "meadow",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Stufful.gif",
+        "Shiny Stufful.gif",
+        "Dark Stufful.gif",
+        "Mystic Stufful.gif",
+        "Metallic Stufful.gif",
+        "Shadow Stufful.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Togedemaru",
+      "generation": 7,
+      "types": [
+        "Electric",
+        "Steel"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "electric",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Togedemaru.gif",
+        "Shiny Togedemaru.gif",
+        "Dark Togedemaru.gif",
+        "Mystic Togedemaru.gif",
+        "Metallic Togedemaru.gif",
+        "Shadow Togedemaru.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Torracat",
+      "generation": 7,
+      "types": [
+        "Fire"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "volcano",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Torracat.gif",
+        "Shiny Torracat.gif",
+        "Dark Torracat.gif",
+        "Mystic Torracat.gif",
+        "Metallic Torracat.gif",
+        "Shadow Torracat.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Toucannon",
+      "generation": 7,
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Toucannon.gif",
+        "Shiny Toucannon.gif",
+        "Dark Toucannon.gif",
+        "Mystic Toucannon.gif",
+        "Metallic Toucannon.gif",
+        "Shadow Toucannon.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Toxapex",
+      "generation": 7,
+      "types": [
+        "Poison",
+        "Water"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Toxapex.gif",
+        "Shiny Toxapex.gif",
+        "Dark Toxapex.gif",
+        "Mystic Toxapex.gif",
+        "Metallic Toxapex.gif",
+        "Shadow Toxapex.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Trumbeak",
+      "generation": 7,
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Trumbeak.gif",
+        "Shiny Trumbeak.gif",
+        "Dark Trumbeak.gif",
+        "Mystic Trumbeak.gif",
+        "Metallic Trumbeak.gif",
+        "Shadow Trumbeak.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Tsareena",
+      "generation": 7,
+      "types": [
+        "Grass"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Tsareena.gif",
+        "Shiny Tsareena.gif",
+        "Dark Tsareena.gif",
+        "Mystic Tsareena.gif",
+        "Metallic Tsareena.gif",
+        "Shadow Tsareena.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Turtonator",
+      "generation": 7,
+      "types": [
+        "Fire",
+        "Dragon"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "volcano",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Turtonator.gif",
+        "Shiny Turtonator.gif",
+        "Dark Turtonator.gif",
+        "Mystic Turtonator.gif",
+        "Metallic Turtonator.gif",
+        "Shadow Turtonator.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Vikavolt",
+      "generation": 7,
+      "types": [
+        "Bug",
+        "Electric"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "forest",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Vikavolt.gif",
+        "Shiny Vikavolt.gif",
+        "Dark Vikavolt.gif",
+        "Mystic Vikavolt.gif",
+        "Metallic Vikavolt.gif",
+        "Shadow Vikavolt.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Wimpod",
+      "generation": 7,
+      "types": [
+        "Bug",
+        "Water"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Wimpod.gif",
+        "Shiny Wimpod.gif",
+        "Dark Wimpod.gif",
+        "Mystic Wimpod.gif",
+        "Metallic Wimpod.gif",
+        "Shadow Wimpod.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Wishiwashi",
+      "generation": 7,
+      "types": [
+        "Water"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "ocean",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Wishiwashi.gif",
+        "Shiny Wishiwashi.gif",
+        "Dark Wishiwashi.gif",
+        "Mystic Wishiwashi.gif",
+        "Metallic Wishiwashi.gif",
+        "Shadow Wishiwashi.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Xurkitree",
+      "generation": 7,
+      "types": [
+        "Electric"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "electric",
+      "reserved": true,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Xurkitree.gif",
+        "Shiny Xurkitree.gif",
+        "Dark Xurkitree.gif",
+        "Mystic Xurkitree.gif",
+        "Metallic Xurkitree.gif",
+        "Shadow Xurkitree.gif"
+      ],
+      "profiles": []
+    },
+    {
+      "name": "Yungoos",
+      "generation": 7,
+      "types": [
+        "Normal"
+      ],
+      "guide_source": "database/original_pguide.sql",
+      "habitat": "grassland",
+      "reserved": false,
+      "all_six_sprites_ready": false,
+      "missing_files": [
+        "Yungoos.gif",
+        "Shiny Yungoos.gif",
+        "Dark Yungoos.gif",
+        "Mystic Yungoos.gif",
+        "Metallic Yungoos.gif",
+        "Shadow Yungoos.gif"
+      ],
+      "profiles": []
+    }
+  ]
+}
