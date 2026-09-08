@@ -6,7 +6,7 @@ pv_page_start('About', 'about.php', pv_is_logged_in());
   <section class="pv-panel pv-prose">
     <span class="pv-eyebrow">ABOUT THE BATTLE ARENA</span>
     <h1>A Pokémon adventure built for the browser.</h1>
-    <p>Pokémon Vortex is a collection-focused browser RPG where trainers explore maps, encounter Pokémon, build teams and progress through battles, events and community features.</p>
+    <p>Pokemon Vortex NXT is a collection-focused browser RPG where trainers explore maps, encounter Pokémon, build teams and progress through battles, events and community features.</p>
     <div class="pv-feature-grid">
       <article class="pv-feature-card"><h3>Explore</h3><p>Travel across themed regions and search for wild Pokémon encounters.</p></article>
       <article class="pv-feature-card"><h3>Battle</h3><p>Build a six-Pokémon team and challenge gyms, trainers and special battle content.</p></article>

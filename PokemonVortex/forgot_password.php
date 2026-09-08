@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && $dbReady) {
                 $scheme=(!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS']!=='off')?'https':'http';
                 $host=(string)($_SERVER['HTTP_HOST']??'localhost');
                 $link=$scheme.'://'.$host.pv_url('forgot_password.php').'?u='.rawurlencode((string)$member['username']).'&token='.rawurlencode($token);
-                $subject='Pokémon Vortex password reset';
-                $body="A password reset was requested for your Pokémon Vortex trainer account.\n\nReset your password: {$link}\n\nThis link expires in one hour. If you did not request this, you can ignore this email.";
+                $subject='Pokemon Vortex NXT password reset';
+                $body="A password reset was requested for your Pokemon Vortex NXT trainer account.\n\nReset your password: {$link}\n\nThis link expires in one hour. If you did not request this, you can ignore this email.";
                 $from=(string)pv_config('mail.from','no-reply@localhost');
                 $sent=@mail((string)$member['email'],$subject,$body,'From: '.$from."\r\nContent-Type: text/plain; charset=UTF-8");
                 if(!$sent) pv_log('Password reset mail could not be sent for user id '.$uid.'. Configure PHP mail/sendmail to enable delivery.');

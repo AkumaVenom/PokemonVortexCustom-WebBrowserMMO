@@ -6,7 +6,7 @@ pv_page_start('Privacy', '', pv_is_logged_in());
   <section class="pv-panel pv-prose">
     <span class="pv-eyebrow">PRIVACY</span>
     <h1>Privacy Policy</h1>
-    <p>Pokémon Vortex stores the information required to provide trainer accounts and persistent gameplay.</p>
+    <p>Pokemon Vortex NXT stores the information required to provide trainer accounts and persistent gameplay.</p>
     <h2>Information stored</h2>
     <p>Account records may include your username, email address, password hash, sign-in metadata and gameplay information such as Pokémon, items, battles, messages, trades, clan membership and progress.</p>
     <h2>Authentication and cookies</h2>

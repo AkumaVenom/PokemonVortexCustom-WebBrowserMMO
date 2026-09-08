@@ -131,7 +131,7 @@ $assetVersion = rawurlencode((string)($config['asset_version'] ?? '9.0.0'));
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#07111f">
-<title>Pokémon Vortex Local Setup</title>
+<title>Pokemon Vortex NXT Local Setup</title>
 <link rel="stylesheet" href="<?=$base?>/assets/css/vortex-modern.css?v=<?=$assetVersion?>">
 <style>
 .pv-setup-choice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.pv-setup-box{padding:18px;border:1px solid rgba(91,194,236,.18);background:linear-gradient(145deg,#fff,#f3faff)}.pv-setup-box h2{margin:0 0 8px;font-size:16px}.pv-setup-box p{min-height:62px;margin:0 0 14px;color:#647f92;font-size:12px;line-height:1.55}.pv-setup-safe{border-top:2px solid rgba(77,230,166,.45)}.pv-setup-danger{border-top:2px solid rgba(236,175,74,.45)}.pv-setup-box button{width:100%}.pv-setup-details{max-height:220px;overflow:auto;margin-top:10px;padding-right:5px}.pv-setup-details span{display:block;padding:4px 0;color:#688094;font-size:10px}@media(max-width:760px){.pv-setup-choice{grid-template-columns:1fr}.pv-setup-box p{min-height:0}}
@@ -144,10 +144,10 @@ $assetVersion = rawurlencode((string)($config['asset_version'] ?? '9.0.0'));
 <span class="pv-eyebrow">LOCAL GAME SETUP</span>
 <h1>Prepare the<br><span style="color:#2a75bb">Battle Arena.</span></h1>
 <p class="pv-subtle">This maintenance screen is restricted to the local machine and is never linked from the player-facing game.</p>
-<img src="<?=$base?>/html/static/images/frontv3.png" alt="Pokémon Vortex">
+<?php pv_nxt_sprite_lineup(['Bulbasaur','Charmander','Squirtle'], 'nxt-auth-lineup'); ?>
 </section>
 <section class="pv-auth-panel">
-<div class="pv-brand"><span class="pv-brand-mark"><img src="<?=pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG'))?>" alt=""></span><span class="pv-brand-copy">LOCAL SETUP<small>PRIVATE MAINTENANCE</small></span></div>
+<div class="pv-brand"><span class="pv-brand-mark"><img src="<?=pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG'))?>" alt=""></span><?=pv_nxt_brand('LOCAL SETUP · PRIVATE MAINTENANCE')?></div>
 <br>
 <h1>Database maintenance</h1>
 <p>Use the safe upgrade when moving to a newer build. A fresh rebuild is only for a new installation or when you intentionally want to erase all trainer progress.</p>

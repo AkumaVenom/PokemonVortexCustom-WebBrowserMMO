@@ -156,6 +156,7 @@ pv_page_start('Wild Battle · ' . (string)$wild['display_name'], 'battle_select.
         </div>
     <?php endif; ?>
 
+    <div class="pv-combat-modern-surface nxt-wild-surface">
     <div class="pv-wild-arena <?= !$battleActive ? 'is-complete' : '' ?>" data-pv-battle-fx-stage>
         <article class="pv-wild-fighter pv-wild-enemy">
             <div class="pv-wild-fighter-hud">
@@ -228,6 +229,7 @@ pv_page_start('Wild Battle · ' . (string)$wild['display_name'], 'battle_select.
                 <div class="pv-wild-command-complete"><strong>Encounter complete</strong><p>Rewards and captures have already been recorded for this encounter.</p><a class="pv-button" href="<?=pv_h($returnUrl)?>">Return to Map</a></div>
             <?php endif; ?>
         </section>
+    </div>
     </div>
 </section>
 </main>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Pokémon Vortex local server console.
+ * Pokemon Vortex NXT local server console.
  * CLI-only live log viewer intended for the XAMPP host machine.
  */
 declare(strict_types=1);
@@ -188,7 +188,7 @@ $enabled = (bool)($consoleCfg['enabled'] ?? true);
 $requestLogging = (bool)($consoleCfg['request_logging'] ?? true);
 
 echo C_CYAN . "============================================================" . C_RESET . PHP_EOL;
-echo C_CYAN . "  POKEMON VORTEX - LOCAL WORLD SERVER CONSOLE" . C_RESET . PHP_EOL;
+echo C_CYAN . "  POKEMON VORTEX NXT - LOCAL WORLD SERVER CONSOLE" . C_RESET . PHP_EOL;
 echo C_CYAN . "============================================================" . C_RESET . PHP_EOL;
 echo "  Version            : " . $version . PHP_EOL;
 echo "  Application logging: " . ($enabled ? 'ENABLED' : 'DISABLED') . PHP_EOL;

@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 return [
-    'app_name' => 'Pokémon Vortex',
+    'app_name' => 'Pokemon Vortex NXT',
     'base_path' => '/PokemonVortex',
     'debug' => false,
-    'asset_version' => '25.3.0',
+    'asset_version' => '26.1.1',
     // Set to 'kyurem', 'pikachu2015', or 'none'. This private config controls the live Event Center rotation.
     'active_event' => 'none',
     'db' => [

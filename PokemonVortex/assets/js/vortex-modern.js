@@ -299,36 +299,54 @@
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const normalize = (value) => String(value ?? '').replace(/\s+/g, ' ').trim();
 
+  // Match includes/ui.php's shared navigation, including its local artwork.
+  const imageBase = body.dataset.nxtImages || 'html/static/images/';
+  const shellImage = (path) => esc(imageBase + path.split('/').map(encodeURIComponent).join('/'));
+  const primaryNavigation = [
+    ['dashboard.php','Dashboard','items/Poke Ball.png'],
+    ['map_select.php','Explore','pokemon/Eevee.gif'],
+    ['battle_select.php','Battle','misc/gym.gif'],
+    ['rival_hub.php','Rival Hub','items/Ultra Ball.png'],
+    ['rankings.php','Rankings','items/Master Ball.png'],
+    ['your_pokemon.php','Pokémon','pokemon/Pikachu.gif'],
+    ['trade.php','Trade','items/Great Ball.png'],
+    ['community.php','Community','sprites/2whole.gif'],
+  ];
   const header = make('header', 'pv-topbar pv-combat-topbar');
   header.innerHTML = `
-    <a class="pv-brand" href="dashboard.php"><span class="pv-brand-mark">PV</span><span class="pv-brand-copy">POKÉMON VORTEX<small>ONLINE BATTLE RPG</small></span></a>
+    <a class="pv-brand" href="dashboard.php"><span class="pv-brand-mark"><img src="${shellImage('items/Poke Ball.png')}" alt="" width="32" height="32"></span><span class="pv-brand-copy"><b class="nxt-brand-title">Pokemon Vortex <em>NXT</em></b><small>A WORLD OF POKÉMON</small></span></a>
     <button class="pv-nav-toggle" type="button" aria-expanded="false" aria-controls="pv-combat-primary-nav" data-pv-nav-toggle><span></span><span></span><span></span><b>Menu</b></button>
     <nav class="pv-nav" id="pv-combat-primary-nav" aria-label="Primary">
-      <a href="dashboard.php">Dashboard</a><a href="map_select.php">Explore</a><a class="active" href="battle_select.php">Battle</a><a href="your_pokemon.php">Pokémon</a><a href="trade.php">Trade</a><a href="community.php">Community</a>
+      ${primaryNavigation.map(([href,label,icon]) => `<a href="${href}"${href === 'battle_select.php' ? ' class="active" aria-current="page"' : ''}><img class="pv-nav-icon" src="${shellImage(icon)}" alt="" width="24" height="24"><span>${label}</span></a>`).join('')}
       <a class="pv-trainer-chip" href="your_account.php"><span>${esc(initial)}</span><em></em></a><a class="danger" href="logout.php">Log Out</a>
     </nav>`;
   const chip = header.querySelector('.pv-trainer-chip em');
   if (chip) chip.textContent = trainer;
 
   const strip = make('div', 'pv-command-strip pv-combat-command-strip', `
-    <span class="pv-command-state"><i></i>TRAINER SESSION ACTIVE</span><span>BATTLE // ${isLive ? 'LIVE PVP' : 'NPC NETWORK'}</span><span>MODE // SERVER AUTHORITATIVE</span><span class="pv-command-tail">SELECT · RESOLVE · PERSIST</span>`);
+    <span class="pv-command-state">WORLD SELECT</span><a href="map_select.php?world=vortex">Vortex World</a><a href="map_select.php?world=kanto">Kanto</a><a href="map_select.php?world=hoenn">Hoenn</a>`);
+  strip.setAttribute('aria-label', 'Explore regions');
 
   const side = make('aside', 'pv-side-menu pv-combat-side-menu');
+  side.setAttribute('aria-label', 'Game navigation');
   const profile = make('div', 'pv-side-profile');
-  profile.innerHTML = '<span class="pv-side-signal"><i></i>ONLINE</span><strong></strong><small>TRAINER NETWORK</small>';
+  profile.innerHTML = `<img class="pv-side-pokeball" src="${shellImage('items/Poke Ball.png')}" alt=""><span class="pv-side-signal"><i></i>ONLINE</span><strong></strong><small>TRAINER PROFILE</small>`;
   profile.querySelector('strong').textContent = trainer;
   side.appendChild(profile);
   const groups = [
-    ['Adventure', [['dashboard.php','Overview'],['map_select.php','World Maps'],['battle_select.php','Battle Arena'],['sidequest.php','Sidequests']]],
-    ['Collection', [['your_pokemon.php','Your Pokémon'],['change_team.php','Change Team'],['pokedex.php','Pokédex'],['items.php','Items & Shop'],['trade.php','Trade Center']]],
+    ['Adventure', [['dashboard.php','Trainer Home'],['map_select.php','World Maps'],['sidequest.php','Sidequests']]],
+    ['Competitive', [['rival_hub.php','Rival Hub'],['rankings.php','Trainer Rankings'],['ai_activity.php','AI Activity'],['battle_select.php','Battle Arena'],['live_battle_arena.php','Live PvP'],['event_center.php','Event Center']]],
+    ['Collection', [['your_pokemon.php','Your Pokémon'],['change_team.php','Change Team'],['pokedex.php','Pokédex'],['items.php','Items & Shop'],['fossil_lab.php','Fossil Lab'],['trade.php','Trade Center']]],
     ['Trainer Network', [['community.php','Community'],['messages.php','Messages'],['clans.php','Clans'],['members.php','Trainers']]],
     ['Account', [['your_account.php','Your Account'],['options.php','Options']]],
   ];
+  const groupIcons = {'Adventure':'Eevee','Competitive':'Lucario','Collection':'Pikachu','Trainer Network':'Chatot','Account':'Rotom'};
   groups.forEach(([label, links]) => {
     const group = make('div', 'pv-side-group');
-    const title = make('div', 'pv-side-label'); title.textContent = label; group.appendChild(title);
+    const title = make('div', 'pv-side-label'); title.innerHTML = `<img width="28" height="28" src="${shellImage('pokemon/' + groupIcons[label] + '.gif')}" alt="">${esc(label)}`; group.appendChild(title);
     links.forEach(([href, text]) => {
       const a = make('a', href === 'battle_select.php' ? 'active' : ''); a.href = href;
+      if (href === 'battle_select.php') a.setAttribute('aria-current', 'page');
       const s = document.createElement('span'); s.textContent = text; const i = document.createElement('i'); i.textContent = '›';
       a.append(s, i); group.appendChild(a);
     });
@@ -338,7 +356,7 @@
   const banner = make('section', 'pv-combat-runtime-banner');
   banner.innerHTML = `<div><span class="pv-eyebrow">BATTLE NETWORK // ${isLive ? 'TRAINER VS TRAINER' : 'TRAINER CHALLENGE'}</span><h1>${isLive ? 'Live Battle' : 'Trainer Battle'}</h1><p>${isLive ? 'Battle another trainer live with synchronized turns, team switches and shared results.' : 'Take on League, Event, Sidequest and rival trainers in the full animated battle arena.'}</p></div><div class="pv-combat-runtime-signal"><i></i><strong>BATTLE READY</strong><span>CONNECTED</span></div>`;
 
-  const footer = make('footer', 'pv-footer pv-combat-footer', '<div class="pv-footer-main"><strong>Pokémon Vortex</strong><span>Unified Combat Runtime</span></div><div class="pv-footer-links"><a href="battle_select.php">Battle Arena</a><a href="contactus.php">Support</a><a href="terms.php">Terms</a><a href="privacy.php">Privacy</a></div><div class="pv-footer-signal"><i></i><span>VORTEX NETWORK</span></div>');
+  const footer = make('footer', 'pv-footer pv-combat-footer', '<div class="pv-footer-main"><strong>Pokemon Vortex NXT</strong><span>Explore · Battle · Collect · Trade</span></div><div class="pv-footer-links"><button class="nxt-motion-toggle" type="button" data-nxt-motion aria-pressed="false" hidden>Pause motion</button><a href="contactus.php">Support</a><a href="terms.php">Terms</a><a href="privacy.php">Privacy</a><a href="legal.php">Legal</a><a href="credits.php">Credits</a></div><div class="pv-footer-signal"><i></i><span>Pokemon Vortex NXT</span></div>');
 
   const legacyHeader = document.getElementById('header');
   const legacyUser = document.getElementById('usernav');
@@ -680,6 +698,11 @@
     const reward = Array.from(ajax.querySelectorAll('p')).map(p => normalize(p.textContent)).find(t => /experience points|won.*to buy items/i.test(t)) || '';
     const participantImgs = Array.from(ajax.querySelectorAll('img[src*="/pokemon/"]')).slice(0, 6);
     const optionLinks = Array.from(ajax.querySelectorAll('.optionsList a')).filter(a => a.getAttribute('href'));
+    banner.querySelector('h1').textContent = 'Battle Result';
+    banner.querySelector('.pv-eyebrow').textContent = isLive ? 'LIVE BATTLE // RESULT' : 'TRAINER BATTLE // RESULT';
+    banner.querySelector('p').textContent = 'Your team’s result and rewards.';
+    banner.querySelector('.pv-combat-runtime-signal strong').textContent = won ? 'VICTORY' : 'DEFEAT';
+    banner.querySelector('.pv-combat-runtime-signal span').textContent = 'BATTLE COMPLETE';
     const surface = make('div', 'pv-combat-modern-surface pv-combat-outcome-surface');
     const result = make('div', `pv-wild-result ${won ? 'pv-wild-result-won' : 'pv-wild-result-lost'}`);
     result.innerHTML = `<span>${won ? 'VICTORY CONFIRMED' : 'DEFEAT RECORDED'}</span><h2>${esc(won ? 'Battle won' : 'Battle complete')}</h2><p>${esc(sub || normalize(heading.textContent))}</p>`;
@@ -688,7 +711,12 @@
     }
     if (participantImgs.length) {
       const roster = make('div', 'pv-combat-outcome-roster');
-      participantImgs.forEach(img => { const clone = img.cloneNode(true); clone.removeAttribute('align'); roster.appendChild(clone); });
+      participantImgs.forEach(img => {
+        const sprite = make('img'); sprite.src = img.getAttribute('src') || '';
+        sprite.alt = img.getAttribute('alt') || 'Participating Pokémon';
+        sprite.width = 112; sprite.height = 112; sprite.decoding = 'async';
+        roster.appendChild(sprite);
+      });
       result.appendChild(roster);
     }
     if (optionLinks.length) {

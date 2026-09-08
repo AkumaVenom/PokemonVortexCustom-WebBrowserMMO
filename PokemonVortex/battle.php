@@ -376,7 +376,7 @@ if($_SESSION['layout'] == '2'){
 })();
 </script>
 <noscript><style type="text/css">#nojs-solve{display:block !important;}</style></noscript>
-<title>Pok&eacute;mon Vortex - Battle</title>
+<title>Pokemon Vortex NXT - Battle</title>
 <style>
 .hidden
 {
@@ -403,7 +403,7 @@ include(__DIR__ . '/includes/ads/headerad.php');
 
 </div>
 <div id="title">
-<h1><a href="index.php"><em>Pokémon Vortex</em></a></h1>
+<h1><a href="index.php"><em>Pokemon Vortex NXT</em></a></h1>
 </div>
 <ul id="nav">
 <li><a href="map_select.php" id="mapsTab" class="deselected"><em>Maps</em></a></li>

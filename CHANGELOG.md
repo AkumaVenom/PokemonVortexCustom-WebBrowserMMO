@@ -1,3 +1,38 @@
+## v26.1.1 — Sprite Facing, Home Layout & Battle Results
+
+- Preserved the user-approved v26.1.0 visual direction and compact battle dimensions.
+- Mirrored only modern opponent sprite images through independent CSS scale, retaining runtime lunge, hit, faint, switch and capture transforms. All modern battle modes and target previews share this selector.
+- Replaced absolute home feature-card artwork with separate copy/art columns, preventing sprites from covering descriptions and actions.
+- Restyled Wild/Trainer outcome cards with matching pearl-blue surfaces and League trim; removed the inherited 420px minimum height, restored readable text and reward sizes, cleared dark miniature roster wells and corrected primary-button contrast.
+- Restyled actual Live result receipt article elements and terminal command copy. Settled Live receipts add one presentation class; server reconciliation and rewards are untouched.
+- Added all shared navigation icons, sidebar group sprites, profile Poké Ball, world links and matching footer links to the Trainer Battle shell. Completed battles now display result/completion headings and status.
+- Retained active adapters, form handlers, cinematic/replay runtime, pre-render PHP, original assets, gameplay services and schema 28. Asset cache advanced to 26.1.1.
+- Portable UI/source and NXT behavior checks pass; navigation parity and original-byte preservation verified. Browser rendering and XAMPP gameplay acceptance remain pending.
+
+## v26.1.0 — Bright League & Compact Battles
+
+- Rebuilt the rejected v26 presentation around the user’s preferred pearl blue/yellow screenshots, restoring multicolour League trims, soft orbit artwork, foreground sprites and blue scanline actions.
+- Reduced desktop navigation to a compact row, tightened page/section spacing and moved optional motion controls into the footer.
+- Removed the small framed map collages from page headers and sidebar. Reworked Dashboard with five foreground companions and direct actions; used wide regional art on public/account entry screens.
+- Placed commands beside the arena on desktop across Wild, Trainer and Live battles; retained two combatants across mobile and placed commands before the log below 901px. Reduced arena and title heights and removed inherited Trainer/Live minimum-height constraints.
+- Joined HUD, HP rail and sprite in adjacent grid rows so longer Pokémon names do not overlap health bars. Kept battle actor orientation, transforms, effects, forms, tokens and action handlers.
+- Reapplied common bright surfaces to collection, Pokédex, labs, shop/trades, social, ranked, account, utility and exploration screens.
+- Preserved schema 28, all original assets, gameplay services and selected map/network endpoints. Wild Battle PHP adds only an enclosing layout element. Asset version is 26.1.0.
+- Portable UI/behavior, ranked SQL/source, AI policy and original-byte integrity checks pass. PHP/MySQL, rendered viewport geometry and physical-device acceptance remain pending.
+
+## v26.0.0 — Pokemon Vortex NXT Full Visual Redesign
+
+- Renamed the visible game identity to **Pokemon Vortex NXT** across shared and standalone HTML, tab titles, footers, public/account copy, password-reset copy, Trainer Battle's dynamic shell and the local console/setup.
+- Added a canonical final NXT stylesheet covering the complete active website, with white Pokédex-like panels, blue controls, red branding, readable typography, consistent card/table/form states and section-specific accent palettes.
+- Rebuilt home around direct play/login access, a Pallet Town Pokémon scene, real service counts, the three existing worlds and game-specific entry cards. Removed speculative fallback live counts while services are unavailable.
+- Added authentic local map scenery and Pokémon companion lineups to section headers, public help pages, authentication, navigation and empty states. No original image is modified and no external asset dependency is introduced.
+- Restyled battle HUD/command/log/result surfaces, maps and encounter panels, collection/Pokédex/labs, shop/trading, social/account/utility pages and ranked/AI views. Native map dimensions and combat animation/action contracts remain intact.
+- Unified major navigation coverage between the standard and dynamically assembled Trainer Battle shell, including competitive destinations, Event Center and Fossil Lab. Preserved the existing 1100px menu behavior and native actions.
+- Added optional device-local decorative motion pause, live OS reduced-motion handling, hidden-document ambient pause, keyboard focus, signup label associations and a labelled starter fieldset. Decoration does not intercept game actions.
+- Added full-document-only theme integration after prior head styles, leaving JSON and action fragments bare.
+- Kept schema 28, database settings, all original asset bytes, native map engines, economy, battle authority and AI/ranked scheduling unchanged. Asset version advanced to 26.0.0.
+- Verified 69 mobile/UI, 24 NXT behavior, 31 ranked SQL/source and 51 AI-policy checks, plus baseline integrity/asset checks. Rendered browser/device acceptance and PHP/MySQL execution remain pending on XAMPP.
+
 ## v25.3.0 — Responsive Mobile & iPad UI
 
 - Added a zero-specificity input guard to the existing theme's hover selectors. Mouse input retains the desktop effects; touch/pen and non-hover input no longer trigger hover-driven target movement/reveals. Passive capture listeners retain native click, scrolling, zooming and form submission semantics.

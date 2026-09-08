@@ -84,7 +84,7 @@ pv_page_start('Live Battle Result', 'battle_select.php', true);
             <div class="pv-actions"><a class="pv-button" href="<?=pv_h(pv_url('live_battle.php'))?>">Return to Battle</a></div>
         </div>
     <?php else: ?>
-        <div class="pv-panel">
+        <div class="pv-panel nxt-outcome-panel">
             <div class="pv-section-heading"><div><span><?= $outcome==='win' ? 'VICTORY CONFIRMED' : 'DEFEAT RECORDED' ?></span><h2><?= $outcome==='win' ? 'You won the live battle' : 'The live battle is complete' ?></h2></div><small><?= $settledAt ? pv_h(date('Y-m-d H:i:s', $settledAt)) . ' UTC' : 'settled' ?></small></div>
             <div class="pv-live-result-grid">
                 <article><small>OPPONENT</small><strong><?=pv_h($opponentName)?></strong><span>Trainer-vs-trainer match</span></article>

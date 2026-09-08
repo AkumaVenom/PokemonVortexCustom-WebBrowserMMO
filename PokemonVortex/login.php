@@ -12,9 +12,9 @@ if (isset($_GET['expired'])) $messages[] = ['error','Your session expired. Pleas
 $dbReady = false;
 try { $dbReady = pv_table_exists('members'); } catch(Throwable $e) {}
 ?>
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#2a75bb"><title>Log In · Pokémon Vortex</title><link rel="stylesheet" href="<?= pv_h(pv_asset('css/vortex-modern.css')) ?>?v=<?= pv_asset_version() ?>"><script defer src="<?= pv_h(pv_asset('js/vortex-modern.js')) ?>?v=<?= pv_asset_version() ?>"></script></head>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#2a75bb"><title>Log In · Pokemon Vortex NXT</title><link rel="stylesheet" href="<?= pv_h(pv_asset('css/vortex-modern.css')) ?>?v=<?= pv_asset_version() ?>"><script defer src="<?= pv_h(pv_asset('js/vortex-modern.js')) ?>?v=<?= pv_asset_version() ?>"></script></head>
 <body class="pv-modern-page pv-auth-page"><a class="pv-skip-link" href="#auth-panel">Skip to login</a><div class="pv-atmosphere" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="pv-auth-wrap"><main class="pv-auth">
-<section class="pv-auth-side"><a class="pv-brand" href="<?= pv_h(pv_url('index.php')) ?>"><span class="pv-brand-mark"><img src="<?= pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG')) ?>" alt=""></span><span class="pv-brand-copy">POKÉMON VORTEX<small>BATTLE ARENA</small></span></a><h1 style="margin-top:44px">Welcome back,<br><span style="color:#2a75bb">Trainer.</span></h1><p class="pv-subtle">Your collection, team, map progress, items and battle history are waiting for you.</p><img src="<?= pv_h(pv_static('images/frontv3.png')) ?>" alt="Battle Arena"></section>
+<section class="pv-auth-side"><a class="pv-brand" href="<?= pv_h(pv_url('index.php')) ?>"><span class="pv-brand-mark"><img src="<?= pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG')) ?>" alt=""></span><?= pv_nxt_brand('WELCOME BACK, TRAINER') ?></a><h1 style="margin-top:44px">Welcome back,<br><span style="color:#2a75bb">Trainer.</span></h1><p class="pv-subtle">Your collection, team, map progress, items and battle history are waiting for you.</p><?php pv_nxt_sprite_lineup(['Bulbasaur','Charmander','Squirtle','Pikachu','Eevee'], 'nxt-auth-lineup'); ?></section>
 <section class="pv-auth-panel" id="auth-panel"><span class="pv-eyebrow">Trainer Access</span><h1>Log in</h1><p>Enter your trainer credentials to continue.</p>
 <?php foreach($messages as [$type,$text]): ?><div class="pv-flash <?= pv_h($type) ?>"><?= pv_h($text) ?></div><?php endforeach; ?>
 <?php if (!$dbReady): ?><div class="pv-flash error">Account services are temporarily unavailable. Please try again shortly.</div><?php endif; ?>
@@ -22,6 +22,6 @@ try { $dbReady = pv_table_exists('members'); } catch(Throwable $e) {}
 <?= pv_csrf_field() ?>
 <div class="pv-field"><label for="myusername">Username</label><input name="myusername" id="myusername" maxlength="30" autocomplete="username" required autofocus></div>
 <div class="pv-field"><label for="mypassword">Password</label><input name="mypassword" id="mypassword" type="password" autocomplete="current-password" required></div>
-<button type="submit" <?= !$dbReady?'disabled':'' ?>>Enter Battle Arena <span aria-hidden="true">→</span></button>
+<button type="submit" <?= !$dbReady?'disabled':'' ?>>Continue adventure <span aria-hidden="true">→</span></button>
 </form><div class="pv-auth-links"><a href="<?= pv_h(pv_url('signup.php')) ?>">Create an account</a><a href="<?= pv_h(pv_url('forgot_password.php')) ?>">Forgot password</a><a href="<?= pv_h(pv_url('index.php')) ?>">Back to home</a></div>
 </section></main></div></body></html>

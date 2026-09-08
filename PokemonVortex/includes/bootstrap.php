@@ -1,6 +1,6 @@
 <?php
 /**
- * Pokémon Vortex compatibility/bootstrap layer.
+ * Pokemon Vortex NXT compatibility/bootstrap layer.
  * Provides application bootstrap, security helpers and legacy PHP compatibility.
  */
 
@@ -316,6 +316,8 @@ if (!function_exists('mysql_connect')) {
     }
 }
 
+require_once __DIR__ . '/nxt_theme.php';
+
 /* ------------------------- Legacy output ------------------------- */
 function pv_output_filter(string $html): string {
     if ($html === '') return $html;
@@ -354,9 +356,9 @@ function pv_output_filter(string $html): string {
         'during the BETA of v3', 'during the Beta', 'during the BETA',
         'approved by an administrator', 'approved by the administrator', 'contact an administrator', 'site administrator'
     ], [
-        'Pok&eacute;mon Vortex', 'Pokémon Vortex', 'Pok&eacute;mon Vortex', 'Pokémon Vortex',
-        'Pokémon Vortex', 'Pokémon Vortex', 'Pokémon Vortex', 'Pokémon',
-        'Vortex Champion Challenge', 'Pok&eacute;mon Vortex Lottery', 'Pokémon Vortex Lottery',
+        'Pokemon Vortex NXT', 'Pokemon Vortex NXT', 'Pokemon Vortex NXT', 'Pokemon Vortex NXT',
+        'Pokemon Vortex NXT', 'Pokemon Vortex NXT', 'Pokemon Vortex NXT', 'Pokémon',
+        'Vortex Champion Challenge', 'Pokemon Vortex NXT Lottery', 'Pokemon Vortex NXT Lottery',
         'at this time', 'at this time', 'at this time',
         'available to players', 'available to players', 'contact support', 'support team'
     ], $html);
@@ -377,7 +379,7 @@ function pv_output_filter(string $html): string {
     $html = preg_replace('~<img\b[^>]*fbbanner\.png[^>]*>~is', '', $html);
 
     // Replace historic copyright/donation footers with a clean player-facing footer.
-    $legacyFooter = '<div id="copy">&copy; ' . date('Y') . ' Pokémon Vortex &nbsp;·&nbsp; '
+    $legacyFooter = '<div id="copy">&copy; ' . date('Y') . ' Pokemon Vortex NXT &nbsp;·&nbsp; '
         . '<a href="' . pv_url('contactus.php') . '">Support</a> &nbsp;·&nbsp; '
         . '<a href="' . pv_url('terms.php') . '">Terms</a> &nbsp;·&nbsp; '
         . '<a href="' . pv_url('privacy.php') . '">Privacy</a> &nbsp;·&nbsp; '
@@ -419,7 +421,7 @@ function pv_output_filter(string $html): string {
     if ($isDocument && stripos($html, 'vortex-modern.css') === false) {
         $html = preg_replace('~</head>~i', $injection . '</head>', $html, 1);
     }
-    return $html;
+    return pv_nxt_document($html);
 }
 
 if (!defined('PV_DISABLE_OUTPUT_FILTER')) {

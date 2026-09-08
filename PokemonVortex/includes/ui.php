@@ -2,7 +2,7 @@
 require_once __DIR__ . '/bootstrap.php';
 
 function pv_page_start(string $title, string $active = '', bool $loggedIn = false): void {
-    $app = pv_h((string)pv_config('app_name', 'Pokémon Vortex'));
+    $app = pv_h((string)pv_config('app_name', 'Pokemon Vortex NXT'));
     $version = pv_asset_version();
     $nav = $loggedIn ? [
         'dashboard.php' => ['Dashboard','images/items/Poke Ball.png'],
@@ -25,7 +25,7 @@ function pv_page_start(string $title, string $active = '', bool $loggedIn = fals
 
     echo '<!doctype html><html lang="en"><head><meta charset="utf-8">';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
-    echo '<meta name="color-scheme" content="light dark"><meta name="theme-color" content="#2a75bb">';
+    echo '<meta name="color-scheme" content="light"><meta name="theme-color" content="#2a75bb">';
     echo '<meta name="description" content="Explore, battle, collect and trade Pokémon in a persistent browser RPG.">';
     echo '<meta name="robots" content="index,follow">';
     echo '<title>' . pv_h($title) . ' · ' . $app . '</title>';
@@ -47,14 +47,15 @@ function pv_page_start(string $title, string $active = '', bool $loggedIn = fals
 
     echo '<header class="pv-topbar">';
     echo '<a class="pv-brand" href="' . pv_h(pv_url($loggedIn ? 'dashboard.php' : 'index.php')) . '">';
-    echo '<span class="pv-brand-mark"><img src="' . pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG')) . '" alt=""></span><span class="pv-brand-copy">POKÉMON VORTEX<small>TRAINER WORLD · BATTLE NETWORK</small></span></a>';
+    echo '<span class="pv-brand-mark"><img src="' . pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG')) . '" alt=""></span>' . pv_nxt_brand() . '</a>';
     echo '<button class="pv-nav-toggle" type="button" aria-expanded="false" aria-controls="pv-primary-nav" data-pv-nav-toggle><span></span><span></span><span></span><b>Menu</b></button>';
     echo '<nav class="pv-nav" id="pv-primary-nav" aria-label="Primary">';
     foreach ($nav as $href => $entry) {
         $label = is_array($entry) ? (string)$entry[0] : (string)$entry;
         $icon = is_array($entry) ? (string)($entry[1] ?? '') : '';
         $cls = ($active === $href) ? 'active' : '';
-        echo '<a class="' . $cls . '" href="' . pv_h(pv_url($href)) . '">';
+        $current = $active === $href ? ' aria-current="page"' : '';
+        echo '<a class="' . $cls . '"' . $current . ' href="' . pv_h(pv_url($href)) . '">';
         if ($icon !== '') echo '<img class="pv-nav-icon" src="' . pv_h(pv_static_file($icon,'images/items/Poke Ball.png')) . '" alt="">';
         echo '<span>' . pv_h($label) . '</span></a>';
     }
@@ -64,23 +65,26 @@ function pv_page_start(string $title, string $active = '', bool $loggedIn = fals
     }
     echo '</nav></header>';
 
-    echo '<div class="pv-command-strip" aria-label="Game status">';
-    echo '<span class="pv-command-state"><i></i>' . ($loggedIn ? 'TRAINER ONLINE' : 'START YOUR JOURNEY') . '</span>';
-    echo '<span><img src="' . pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG')) . '" alt=""> VORTEX WORLD</span><span><img src="' . pv_h(pv_static_file('images/items/Ultra Ball.png','images/Pokeball.PNG')) . '" alt=""> RIVAL NETWORK</span><span class="pv-command-tail">EXPLORE · BATTLE · COLLECT · CLIMB</span>';
+    echo '<div class="pv-command-strip" aria-label="Explore regions">';
+    echo '<span class="pv-command-state">' . ($loggedIn ? 'WORLD SELECT' : 'EXPLORE THE WORLD') . '</span>';
+    foreach (['vortex' => 'Vortex World', 'kanto' => 'Kanto', 'hoenn' => 'Hoenn'] as $world => $label) {
+        echo '<a href="' . pv_h(pv_url('map_select.php?world=' . $world)) . '">' . pv_h($label) . '</a>';
+    }
     echo '</div>';
     echo '<div id="pv-main-content" tabindex="-1"></div>';
 }
 
 function pv_page_end(): void {
     echo '<footer class="pv-footer">';
-    echo '<div class="pv-footer-main"><strong>Pokémon Vortex</strong><span>Explore · Battle · Collect · Trade</span></div>';
+    echo '<div class="pv-footer-main"><strong>Pokemon Vortex NXT</strong><span>Explore · Battle · Collect · Trade</span></div>';
     echo '<div class="pv-footer-links">';
+    echo '<button class="nxt-motion-toggle" type="button" data-nxt-motion aria-pressed="false" hidden>Pause motion</button>';
     echo '<a href="' . pv_h(pv_url('contactus.php')) . '">Support</a>';
     echo '<a href="' . pv_h(pv_url('terms.php')) . '">Terms</a>';
     echo '<a href="' . pv_h(pv_url('privacy.php')) . '">Privacy</a>';
     echo '<a href="' . pv_h(pv_url('legal.php')) . '">Legal</a>';
     echo '<a href="' . pv_h(pv_url('credits.php')) . '">Credits</a>';
-    echo '</div><div class="pv-footer-signal"><i></i><span>POKÉMON VORTEX</span></div>';
+    echo '</div><div class="pv-footer-signal"><i></i><span>Pokemon Vortex NXT</span></div>';
     echo '</footer></div></body></html>';
 }
 
@@ -97,12 +101,14 @@ function pv_game_side_menu(string $active = ''): void {
             'ai_activity.php' => 'AI Activity',
             'battle_select.php' => 'Battle Arena',
             'live_battle_arena.php' => 'Live PvP',
+            'event_center.php' => 'Event Center',
         ],
         'Collection' => [
             'your_pokemon.php' => 'Your Pokémon',
             'change_team.php' => 'Change Team',
             'pokedex.php' => 'Pokédex',
             'items.php' => 'Items & Shop',
+            'fossil_lab.php' => 'Fossil Lab',
             'trade.php' => 'Trade Center',
         ],
         'Trainer Network' => [
@@ -116,13 +122,14 @@ function pv_game_side_menu(string $active = ''): void {
             'options.php' => 'Options',
         ],
     ];
+    $icons = ['Adventure'=>'Eevee','Competitive'=>'Lucario','Collection'=>'Pikachu','Trainer Network'=>'Chatot','Account'=>'Rotom'];
     $trainer = trim((string)($_SESSION['myuser'] ?? 'Trainer'));
     echo '<aside class="pv-side-menu" aria-label="Game navigation">';
     echo '<div class="pv-side-profile"><img class="pv-side-pokeball" src="' . pv_h(pv_static_file('images/items/Poke Ball.png','images/Pokeball.PNG')) . '" alt=""><span class="pv-side-signal"><i></i>ONLINE</span><strong>' . pv_h($trainer ?: 'Trainer') . '</strong><small>TRAINER PROFILE</small></div>';
     foreach ($groups as $group => $links) {
-        echo '<div class="pv-side-group"><div class="pv-side-label">' . pv_h($group) . '</div>';
+        echo '<div class="pv-side-group"><div class="pv-side-label"><img width="28" height="28" src="' . pv_h(pv_static_file('images/pokemon/'.$icons[$group].'.gif')) . '" alt="">' . pv_h($group) . '</div>';
         foreach ($links as $href => $label) {
-            echo '<a class="' . ($active === $href ? 'active' : '') . '" href="' . pv_h(pv_url($href)) . '"><span>' . pv_h($label) . '</span><i>›</i></a>';
+            echo '<a class="' . ($active === $href ? 'active' : '') . '"' . ($active === $href ? ' aria-current="page"' : '') . ' href="' . pv_h(pv_url($href)) . '"><span>' . pv_h($label) . '</span><i>›</i></a>';
         }
         echo '</div>';
     }
@@ -132,7 +139,7 @@ function pv_game_side_menu(string $active = ''): void {
 function pv_pokemon_banner(string $eyebrow, string $title, string $description, array $pokemon = ['Pikachu','Eevee','Lucario']): void {
     echo '<section class="pv-pokemon-banner"><div class="pv-pokemon-banner-copy"><span class="pv-eyebrow">' . pv_h($eyebrow) . '</span><h1>' . pv_h($title) . '</h1><p>' . pv_h($description) . '</p></div><div class="pv-pokemon-banner-team" aria-hidden="true">';
     $slot=0;
-    foreach (array_slice($pokemon,0,5) as $name) {
+    foreach (array_slice($pokemon,0,3) as $name) {
         $slot++;
         echo '<span class="slot-'.$slot.'"><img src="' . pv_h(pv_static_file('images/pokemon/'.$name.'.gif','images/Pokeball.PNG')) . '" alt=""></span>';
     }
