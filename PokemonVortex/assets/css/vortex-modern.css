@@ -2604,7 +2604,7 @@ body.pv-legacy-battle-page #ajax p a:hover:where(html.pv-can-hover *) {
   transform:none !important;
   filter:none !important;
 }
-.pv-region-native-stage .pv-map-actor { width:var(--pv-world-actor-unit,32px); height:64px; }
+.pv-region-native-stage .pv-map-actor { width:var(--pv-world-actor-unit,32px); height:calc(var(--pv-world-actor-unit,32px) * 2); }
 .pv-region-native-stage .pv-map-actor img {
   width:var(--pv-world-actor-unit,32px) !important;
   height:var(--pv-world-actor-unit,32px) !important;
@@ -2613,8 +2613,17 @@ body.pv-legacy-battle-page #ajax p a:hover:where(html.pv-can-hover *) {
   image-rendering:crisp-edges !important;
 }
 .pv-region-native-stage .pv-map-sprite-bottom { top:var(--pv-world-actor-unit,32px); }
-.pv-region-native-stage .pv-map-actor b { bottom:66px; }
+.pv-region-native-stage .pv-map-actor b { bottom:calc(var(--pv-world-actor-unit,32px) * 2 + 2px); }
 .pv-world-connection-list{display:grid;gap:8px;margin-top:10px}
+.pv-region-search { display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px;align-items:center;margin:0 0 20px; }
+.pv-region-search label { grid-column:1/-1;font-weight:700; }
+.pv-region-search input { width:100%;min-width:0;min-height:44px; }
+.pv-region-search [role="status"] { font-size:12px; }
+.pv-region-search[hidden],#pv-region-area-results [hidden] { display:none !important; }
+.pv-world-entry-form { display:grid;gap:10px;margin-top:10px; }
+.pv-world-entry-form label { font-size:12px;line-height:1.5; }
+.pv-world-entry-form select,.pv-world-entry-form button { width:100%;min-width:0;min-height:44px; }
+@media(max-width:640px){.pv-region-search{grid-template-columns:1fr;}}
 .pv-world-connection-list a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;align-items:center;padding:10px 12px;border:1px solid rgba(82,203,255,.15);background:rgba(7,31,50,.68);text-decoration:none;transition:border-color .16s ease,background .16s ease}
 .pv-world-connection-list a span{grid-column:1;color:#638397;font-size:9px;letter-spacing:.17em;text-transform:uppercase}
 .pv-world-connection-list a strong{grid-column:1;color:#dcecf5;font-size:12px}

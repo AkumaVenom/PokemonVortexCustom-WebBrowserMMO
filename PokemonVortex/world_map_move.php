@@ -19,19 +19,23 @@ $nowMicro=microtime(true);$last=(float)($_SESSION['pv_last_world_map_move']??0.0
 try{$db=pv_db();}catch(Throwable $e){pv_log('World map DB unavailable: '.$e->getMessage());pv_world_json(['ok'=>false,'error'=>'service'],503);}
 $uid=(int)$_SESSION['myid'];$world=pv_world_normalize_key((string)($_SESSION['world_key']??''));$areaKey=pv_world_area_key((string)($_SESSION['world_area']??''));
 if(!pv_world_is_region_world($world)||$areaKey==='')pv_world_json(['ok'=>false,'error'=>'world'],409);
+// An old browser tab must not move the trainer on the newer tab's map.
+if((string)($_POST['world']??'')!==$world||(string)($_POST['area']??'')!==$areaKey)pv_world_json(['ok'=>false,'error'=>'area_changed'],409);
 $area=pv_world_area($world,$areaKey);if($area===null)pv_world_json(['ok'=>false,'error'=>'area'],409);
-[$x,$y]=pv_world_position($db,$uid,$world,$areaKey,(array)$area['spawn_points']);$tx=$x+$deltas[$direction][0];$ty=$y+$deltas[$direction][1];
-$transition=pv_world_transition($area,$tx,$ty);
+[$x,$y]=pv_world_position($db,$uid,$world,$areaKey,(array)$area['spawn_points']);
+$blocks=pv_world_blocks($db,$world,$areaKey);
+$walk=pv_world_walk_direction($area,$blocks,$x,$y,$deltas[$direction][0],$deltas[$direction][1]);
+if(!$walk['moved'])pv_world_json(['ok'=>true,'moved'=>false,'world'=>$world,'area'=>$areaKey,'x'=>$x,'y'=>$y,'blockedDirections'=>pv_world_blocked_directions($db,$area,$x,$y)]);
+$tx=$walk['x'];$ty=$walk['y'];$transition=$walk['transition'];
 if($transition){
     $target=pv_world_area((string)$transition['target_world'],(string)$transition['target_area']);
     if($target===null)pv_world_json(['ok'=>true,'moved'=>false,'world'=>$world,'area'=>$areaKey,'x'=>$x,'y'=>$y,'blockedDirections'=>pv_world_blocked_directions($db,$area,$x,$y)]);
     $nx=(int)$transition['target_x'];$ny=(int)$transition['target_y'];$targetBlocks=pv_world_blocks($db,(string)$target['world'],(string)$target['key']);
     if($nx<1||$nx>(int)$target['columns']||$ny<1||$ny>(int)$target['rows']||isset($targetBlocks[$nx.':'.$ny]))pv_world_json(['ok'=>true,'moved'=>false,'world'=>$world,'area'=>$areaKey,'x'=>$x,'y'=>$y,'blockedDirections'=>pv_world_blocked_directions($db,$area,$x,$y)]);
     pv_world_presence_upsert($db,$uid,(string)$target['world'],(string)$target['key'],$nx,$ny);
+    unset($_SESSION['wb'],$_SESSION['lvl'],$_SESSION['pv_pending_wild_encounter']);
     pv_world_json(['ok'=>true,'moved'=>true,'transition'=>true,'world'=>$target['world'],'area'=>$target['key'],'x'=>$nx,'y'=>$ny,'redirect'=>pv_world_area_url((string)$target['world'],(string)$target['key'])]);
 }
-$blocks=pv_world_blocks($db,$world,$areaKey);
-if(pv_world_step_blocked($area,$blocks,$x,$y,$tx,$ty))pv_world_json(['ok'=>true,'moved'=>false,'world'=>$world,'area'=>$areaKey,'x'=>$x,'y'=>$y,'blockedDirections'=>pv_world_blocked_directions($db,$area,$x,$y)]);
 pv_world_presence_upsert($db,$uid,$world,$areaKey,$tx,$ty);
 $encounter=pv_world_encounter_html($db,$area,$tx,$ty);
 pv_world_json(['ok'=>true,'moved'=>true,'transition'=>false,'world'=>$world,'area'=>$areaKey,'x'=>$tx,'y'=>$ty,'players'=>pv_world_players($db,$uid,$world,$areaKey),'encounter'=>$encounter,'blockedDirections'=>pv_world_blocked_directions($db,$area,$tx,$ty)]);

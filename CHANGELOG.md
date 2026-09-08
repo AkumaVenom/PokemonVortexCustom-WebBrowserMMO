@@ -1,3 +1,13 @@
+## v27.0.1 — Matching Map Scale & Safe Entrances
+
+- Installed the user's corrected half-size artwork for all 120 expansion maps, with regenerated previews and lossless render tiles. Preserved the other 110 regional images.
+- Matched established 32 × 64-pixel trainers and 32-pixel walking distance. Players, AI and direction hints use one shared movement helper that checks every intermediate collision cell and portal.
+- Audited all 230 regional arrival lists. Made main entrances deterministic, added Return to entrance, and recover saved blocked, isolated or reviewed unsuitable positions without resetting valid progress.
+- AI arrivals prefer available reviewed entrances. Captures, experience, evolution, six Vortex varieties and the wild level-24 cap remain unchanged.
+- Repaired old Hoenn Route 122 collision from aligned canonical data so the dry shore entrance connects to the ocean route while mountains and rocks stay blocked.
+- Versioned map image and preview URLs to invalidate previous oversized assets. Schema remains 28; no migration or AI reseed.
+- Added arrival recovery, movement and direction-hint gates. Executed validation is listed in RELEASE_VALIDATION_v27.0.1.json; live MySQL and browser/device acceptance remain pending.
+
 ## v26.1.1 — Sprite Facing, Home Layout & Battle Results
 
 - Preserved the user-approved v26.1.0 visual direction and compact battle dimensions.
@@ -8,6 +18,16 @@
 - Added all shared navigation icons, sidebar group sprites, profile Poké Ball, world links and matching footer links to the Trainer Battle shell. Completed battles now display result/completion headings and status.
 - Retained active adapters, form handlers, cinematic/replay runtime, pre-render PHP, original assets, gameplay services and schema 28. Asset cache advanced to 26.1.1.
 - Portable UI/source and NXT behavior checks pass; navigation parity and original-byte preservation verified. Browser rendering and XAMPP gameplay acceptance remain pending.
+
+## v27.0.0 — Kanto & Hoenn Native Map Expansion
+
+- Imported 120 missing areas from the supplied GBA map pack: 49 Kanto/Sevii and 71 Hoenn. All 129 source files are accounted for, including eight existing-area alternatives and one byte-identical duplicate.
+- Preserved every existing map image, coordinate scale and collision file. New art remains byte-identical at native size, with lightweight previews and complete 1024px lossless rendering tiles for large images.
+- Registered original authored map collision to the supplied crops and composites, with explicit reviewed artwork corrections. Added safe arrivals, section travel and mapped door/stair connections. Both players and AI obey the same collision and diagonal checks before exits.
+- Added 75 original-source habitat profiles with 444 weighted entries, all six Vortex varieties and a wild level cap of 24. New source slots above 24 roll 21–24; accepted old profiles and owned Pokémon progression remain unchanged.
+- Existing AI trainers can use regional connections, encounter and catch local varieties, earn experience and evolve without account reseeding. Stale blocked AI positions recover safely.
+- Added regional area search, correctly scaled trainer labels, request-local map/catalog caching, stale-tab movement scoping, and compatibility with the existing 45-character online activity field.
+- Added reproducible collision/source audits and PHP/asset/AI regression gates. Schema remains 28. XAMPP/MySQL persistence and browser/device acceptance are explicitly separate from executed local checks.
 
 ## v26.1.0 — Bright League & Compact Battles
 

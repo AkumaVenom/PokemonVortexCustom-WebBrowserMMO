@@ -1,0 +1,1479 @@
+{
+  "supplied_sources": 74,
+  "new_areas": 71,
+  "preserved_aliases": 3,
+  "final_area_count": 136,
+  "sources": [
+    {
+      "filename": "pokemon-emerald-version-abandoned-ship-1f-1-gba-map.webp",
+      "area_key": "abandoned-ship-1f-1",
+      "name": "Abandoned Ship — Main Corridors",
+      "category": "Ship",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "b0162844e3619afb7768ad27468c133e96caa40366e8866a196abc70c4a03399",
+      "source_dimensions": [
+        1248,
+        832
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-1f-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/abandoned-ship-1f-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AbandonedShip_Corridors_1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-abandoned-ship-1f-2-gba-map.webp",
+      "area_key": "abandoned-ship-1f-2",
+      "name": "Abandoned Ship — Upper Cabins",
+      "category": "Ship",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "905a1beb739771bb8afad7ab6a206e69a80ed8fb0e142fdbfc975bbe420dd084",
+      "source_dimensions": [
+        576,
+        1184
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-1f-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/abandoned-ship-1f-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AbandonedShip_Rooms2_1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-abandoned-ship-2f-gba-map.webp",
+      "area_key": "abandoned-ship-2f",
+      "name": "Abandoned Ship — Captain’s Office",
+      "category": "Ship",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "dca2f6ccaae1158c9b9a1f732ec5be15e7db9ae119735ad159782d0c1fae3719",
+      "source_dimensions": [
+        576,
+        448
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-2f.webp",
+      "collision_asset": "config/worlds/hoenn_collision/abandoned-ship-2f.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AbandonedShip_CaptainsOffice"
+    },
+    {
+      "filename": "pokemon-emerald-version-abandoned-ship-b1-1-gba-map.webp",
+      "area_key": "abandoned-ship-b1-1",
+      "name": "Abandoned Ship — Lower Corridors",
+      "category": "Ship",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "f7445f002c355cd29193b4e69333ac64d27256d808c51f197a29ba2e6b98e5f6",
+      "source_dimensions": [
+        896,
+        704
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b1-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/abandoned-ship-b1-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AbandonedShip_Corridors_B1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-abandoned-ship-b1-3-gba-map.webp",
+      "area_key": "abandoned-ship-b1-3",
+      "name": "Abandoned Ship — Storage Room",
+      "category": "Ship",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "9631df8523af26902dca722abb82bc9acd1386a6e2366cab6848b22c3297ad24",
+      "source_dimensions": [
+        576,
+        576
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b1-3.webp",
+      "collision_asset": "config/worlds/hoenn_collision/abandoned-ship-b1-3.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AbandonedShip_Room_B1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-abandoned-ship-b1-5-gba-map.webp",
+      "area_key": "abandoned-ship-b1-5",
+      "name": "Abandoned Ship — Hidden Corridors",
+      "category": "Ship",
+      "encounter_profile": "gba-abandoned-ship-hidden-floor-corridors",
+      "encounter_source_map": "MAP_ABANDONED_SHIP_HIDDEN_FLOOR_CORRIDORS",
+      "disposition": "new-native-area",
+      "source_sha256": "5e5af9d5460992af3d0b8c4d7737e180567066909a37e9928359adf241b23c20",
+      "source_dimensions": [
+        960,
+        872
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b1-5.webp",
+      "collision_asset": "config/worlds/hoenn_collision/abandoned-ship-b1-5.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AbandonedShip_HiddenFloorCorridors"
+    },
+    {
+      "filename": "pokemon-emerald-version-abandoned-ship-b2-1-gba-map.webp",
+      "area_key": "abandoned-ship-b2-1",
+      "name": "Abandoned Ship — Submerged Corridor",
+      "category": "Underwater",
+      "encounter_profile": "gba-abandoned-ship-rooms-b1f",
+      "encounter_source_map": "MAP_ABANDONED_SHIP_ROOMS_B1F",
+      "disposition": "new-native-area",
+      "source_sha256": "89027c44b0cc2087a72078baf03d0f6e904254ffb62b4b776654e47286cc8fdb",
+      "source_dimensions": [
+        1408,
+        576
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b2-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/abandoned-ship-b2-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AbandonedShip_Underwater2"
+    },
+    {
+      "filename": "pokemon-emerald-version-abandoned-ship-b2-2-gba-map.webp",
+      "area_key": "abandoned-ship-b2-2",
+      "name": "Abandoned Ship — Submerged Room",
+      "category": "Underwater",
+      "encounter_profile": "gba-abandoned-ship-rooms-b1f",
+      "encounter_source_map": "MAP_ABANDONED_SHIP_ROOMS_B1F",
+      "disposition": "new-native-area",
+      "source_sha256": "d4bbc6c5a31853c9bb5dc462028c567eb5882276662106aa786aec92930e0c04",
+      "source_dimensions": [
+        512,
+        508
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b2-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/abandoned-ship-b2-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AbandonedShip_Underwater1"
+    },
+    {
+      "filename": "pokemon-emerald-version-abandoned-ship-exterior-gba-map.webp",
+      "area_key": "abandoned-ship-exterior",
+      "name": "Abandoned Ship — Deck",
+      "category": "Ship",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "97fdb436b4ab548016546614f4ff9aae6416c640522dc37fe0bca3a682eb041f",
+      "source_dimensions": [
+        1472,
+        1152
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-exterior.webp",
+      "collision_asset": "config/worlds/hoenn_collision/abandoned-ship-exterior.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AbandonedShip_Deck"
+    },
+    {
+      "filename": "pokemon-emerald-version-cave-of-origin-1f-gba-map.webp",
+      "area_key": "cave-of-origin-1f",
+      "name": "Cave of Origin — Entrance",
+      "category": "Cave",
+      "encounter_profile": "gba-cave-of-origin-entrance",
+      "encounter_source_map": "MAP_CAVE_OF_ORIGIN_ENTRANCE",
+      "disposition": "new-native-area",
+      "source_sha256": "4a0de6fef530637a7d8a39a580ed50fdf5daaa92d33d17ee5fa8912cced67a47",
+      "source_dimensions": [
+        1216,
+        1664
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/cave-of-origin-1f.webp",
+      "collision_asset": "config/worlds/hoenn_collision/cave-of-origin-1f.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "CaveOfOrigin_Entrance"
+    },
+    {
+      "filename": "pokemon-emerald-version-cave-of-origin-b1-gba-map.webp",
+      "area_key": "cave-of-origin-b1",
+      "name": "Cave of Origin 1F",
+      "category": "Cave",
+      "encounter_profile": "gba-cave-of-origin-1f",
+      "encounter_source_map": "MAP_CAVE_OF_ORIGIN_1F",
+      "disposition": "new-native-area",
+      "source_sha256": "1e7cb34cc04f1341c424c83f73e637f82251cfdabac9998e73d6b609e6ae8d8b",
+      "source_dimensions": [
+        1472,
+        1472
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/cave-of-origin-b1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/cave-of-origin-b1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "CaveOfOrigin_1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-cave-of-origin-b2-gba-map.webp",
+      "area_key": "cave-of-origin-b2",
+      "name": "Cave of Origin B1F",
+      "category": "Cave",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "75386ff684ce15d91c0717bb732beef57b3560330afee764520db730e26f11b0",
+      "source_dimensions": [
+        1216,
+        1216
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/cave-of-origin-b2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/cave-of-origin-b2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "CaveOfOrigin_B1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-desert-underground-tunnel-gba-map.webp",
+      "area_key": "desert-underground-tunnel",
+      "name": "Desert Underpass",
+      "category": "Cave",
+      "encounter_profile": "gba-desert-underpass",
+      "encounter_source_map": "MAP_DESERT_UNDERPASS",
+      "disposition": "new-native-area",
+      "source_sha256": "39a719e13ee631cf3b7a39c4c93135290b7f798fe822ae1aff25f9909e2ab30b",
+      "source_dimensions": [
+        8896,
+        1472
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/desert-underground-tunnel.webp",
+      "collision_asset": "config/worlds/hoenn_collision/desert-underground-tunnel.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 18,
+      "canonical_layout": "DesertUnderpass"
+    },
+    {
+      "filename": "pokemon-emerald-version-hideout-aqua-1-gba-map.webp",
+      "area_key": "hideout-aqua-1",
+      "name": "Aqua Hideout 1F",
+      "category": "Hideout",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "9185e1e9ad9c9d1f0ffdb52eaeb9a1a2896d30f90b8b299e7d32723b19da65fa",
+      "source_dimensions": [
+        1664,
+        1920
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-aqua-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/hideout-aqua-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "AquaHideout_1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-hideout-aqua-2-gba-map.webp",
+      "area_key": "hideout-aqua-2",
+      "name": "Aqua Hideout B1F",
+      "category": "Hideout",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "b52ea9f3285d712e92ed9b45316413a60c144813649fb35ad787e7d0874fc6e8",
+      "source_dimensions": [
+        3264,
+        1536
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-aqua-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/hideout-aqua-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 8,
+      "canonical_layout": "AquaHideout_B1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-hideout-aqua-3-gba-map.webp",
+      "area_key": "hideout-aqua-3",
+      "name": "Aqua Hideout B2F",
+      "category": "Hideout",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "b739cdc4dd6e515969dbb07c0f5772b8b5c7e71aac86dec57d9ed9614e1bbf2a",
+      "source_dimensions": [
+        2176,
+        1536
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-aqua-3.webp",
+      "collision_asset": "config/worlds/hoenn_collision/hideout-aqua-3.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 6,
+      "canonical_layout": "AquaHideout_B2F"
+    },
+    {
+      "filename": "pokemon-emerald-version-hideout-magma-1-gba-map.webp",
+      "area_key": "hideout-magma-1",
+      "name": "Magma Hideout 1F",
+      "category": "Hideout",
+      "encounter_profile": "gba-magma-hideout-1f",
+      "encounter_source_map": "MAP_MAGMA_HIDEOUT_1F",
+      "disposition": "new-native-area",
+      "source_sha256": "5ff67f5d632f484e241d60238f25ef7dd6db43235b66729109d7c7c34c778718",
+      "source_dimensions": [
+        2368,
+        2400
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/hideout-magma-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 9,
+      "canonical_layout": "MagmaHideout_1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-hideout-magma-2-gba-map.webp",
+      "area_key": "hideout-magma-2",
+      "name": "Magma Hideout 2F — West",
+      "category": "Hideout",
+      "encounter_profile": "gba-magma-hideout-1f",
+      "encounter_source_map": "MAP_MAGMA_HIDEOUT_1F",
+      "disposition": "new-native-area",
+      "source_sha256": "a4d8119a1ba399ed4a30c2e9d13688059cb346b057827d1a73f68ed8f17af4ab",
+      "source_dimensions": [
+        1848,
+        2432
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/hideout-magma-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 6,
+      "canonical_layout": "MagmaHideout_2F_1R"
+    },
+    {
+      "filename": "pokemon-emerald-version-hideout-magma-3-gba-map.webp",
+      "area_key": "hideout-magma-3",
+      "name": "Magma Hideout 2F — East",
+      "category": "Hideout",
+      "encounter_profile": "gba-magma-hideout-1f",
+      "encounter_source_map": "MAP_MAGMA_HIDEOUT_1F",
+      "disposition": "new-native-area",
+      "source_sha256": "c7abc4c337eaa46c5383e83681f3caa96b268b42e7533c9868f754ea5ffeb8af",
+      "source_dimensions": [
+        3132,
+        1792
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-3.webp",
+      "collision_asset": "config/worlds/hoenn_collision/hideout-magma-3.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 8,
+      "canonical_layout": "MagmaHideout_2F_2R"
+    },
+    {
+      "filename": "pokemon-emerald-version-hideout-magma-4-gba-map.webp",
+      "area_key": "hideout-magma-4",
+      "name": "Magma Hideout 3F — West",
+      "category": "Hideout",
+      "encounter_profile": "gba-magma-hideout-1f",
+      "encounter_source_map": "MAP_MAGMA_HIDEOUT_1F",
+      "disposition": "new-native-area",
+      "source_sha256": "4763eccf892596a4fb2f1585adf1f65605a494ce0488d1514da923dd0b6e5bc2",
+      "source_dimensions": [
+        1784,
+        1472
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-4.webp",
+      "collision_asset": "config/worlds/hoenn_collision/hideout-magma-4.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MagmaHideout_3F_1R"
+    },
+    {
+      "filename": "pokemon-emerald-version-hideout-magma-5-gba-map.webp",
+      "area_key": "hideout-magma-5",
+      "name": "Magma Hideout 3F — East",
+      "category": "Hideout",
+      "encounter_profile": "gba-magma-hideout-1f",
+      "encounter_source_map": "MAP_MAGMA_HIDEOUT_1F",
+      "disposition": "new-native-area",
+      "source_sha256": "d852d6420522b661f9266ed08057e127685d8110e3ee61bd42174ae801c7ee0c",
+      "source_dimensions": [
+        1472,
+        1088
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-5.webp",
+      "collision_asset": "config/worlds/hoenn_collision/hideout-magma-5.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MagmaHideout_3F_2R"
+    },
+    {
+      "filename": "pokemon-emerald-version-hideout-magma-6-gba-map.webp",
+      "area_key": "hideout-magma-6",
+      "name": "Magma Hideout 4F",
+      "category": "Hideout",
+      "encounter_profile": "gba-magma-hideout-1f",
+      "encounter_source_map": "MAP_MAGMA_HIDEOUT_1F",
+      "disposition": "new-native-area",
+      "source_sha256": "343350bae641ae135ec0809190934c515063d72221052ec6bc2858aa12bf4435",
+      "source_dimensions": [
+        3776,
+        1792
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-6.webp",
+      "collision_asset": "config/worlds/hoenn_collision/hideout-magma-6.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 8,
+      "canonical_layout": "MagmaHideout_4F"
+    },
+    {
+      "filename": "pokemon-emerald-version-illusion-pillar-1f-gba-map.webp",
+      "area_key": "illusion-pillar-1f",
+      "name": "Mirage Tower 1F",
+      "category": "Landmark",
+      "encounter_profile": "gba-mirage-tower-1f",
+      "encounter_source_map": "MAP_MIRAGE_TOWER_1F",
+      "disposition": "new-native-area",
+      "source_sha256": "257117fce87a9c1f8ea3cc31119425748679ff59b737c1927909029ac75d1678",
+      "source_dimensions": [
+        1344,
+        1088
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/illusion-pillar-1f.webp",
+      "collision_asset": "config/worlds/hoenn_collision/illusion-pillar-1f.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MirageTower_1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-illusion-pillar-2f-gba-map.webp",
+      "area_key": "illusion-pillar-2f",
+      "name": "Mirage Tower 2F",
+      "category": "Landmark",
+      "encounter_profile": "gba-mirage-tower-2f",
+      "encounter_source_map": "MAP_MIRAGE_TOWER_2F",
+      "disposition": "new-native-area",
+      "source_sha256": "1cdd9835f1c1b50f0fd05b805e3e23f6f88c097cd9f41e3ee14f0302b49ee834",
+      "source_dimensions": [
+        1344,
+        1088
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/illusion-pillar-2f.webp",
+      "collision_asset": "config/worlds/hoenn_collision/illusion-pillar-2f.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MirageTower_2F"
+    },
+    {
+      "filename": "pokemon-emerald-version-illusion-pillar-3f-gba-map.webp",
+      "area_key": "illusion-pillar-3f",
+      "name": "Mirage Tower 3F",
+      "category": "Landmark",
+      "encounter_profile": "gba-mirage-tower-3f",
+      "encounter_source_map": "MAP_MIRAGE_TOWER_3F",
+      "disposition": "new-native-area",
+      "source_sha256": "e717f975be5c69c4be71a1d9046a5c84e1ef2a001769a8a7b8db60bb0db75fe0",
+      "source_dimensions": [
+        1344,
+        1088
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/illusion-pillar-3f.webp",
+      "collision_asset": "config/worlds/hoenn_collision/illusion-pillar-3f.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MirageTower_3F"
+    },
+    {
+      "filename": "pokemon-emerald-version-illusion-pillar-4f-gba-map.webp",
+      "area_key": "illusion-pillar-4f",
+      "name": "Mirage Tower 4F",
+      "category": "Landmark",
+      "encounter_profile": "gba-mirage-tower-4f",
+      "encounter_source_map": "MAP_MIRAGE_TOWER_4F",
+      "disposition": "new-native-area",
+      "source_sha256": "725c4e3974d9b57ddf8df5d6a4b0deb4bcaa3030163157b3e69abc2417f09458",
+      "source_dimensions": [
+        832,
+        640
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/illusion-pillar-4f.webp",
+      "collision_asset": "config/worlds/hoenn_collision/illusion-pillar-4f.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MirageTower_4F"
+    },
+    {
+      "filename": "pokemon-emerald-version-land-cave-1-gba-map.webp",
+      "area_key": "land-cave-1",
+      "name": "Terra Cave — Entrance",
+      "category": "Cave",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "0b0ae8988052e09219b551c01953b8492d4daee0d085be9dd093a84c643992ab",
+      "source_dimensions": [
+        1280,
+        1280
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/land-cave-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/land-cave-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "TerraCave_Entrance"
+    },
+    {
+      "filename": "pokemon-emerald-version-land-cave-2-gba-map.webp",
+      "area_key": "land-cave-2",
+      "name": "Terra Cave — Inner Chamber",
+      "category": "Cave",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "ef06937cafd072e9e4509425963fd633bf965327f82992a4b0ff1acfef361414",
+      "source_dimensions": [
+        1728,
+        1920
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/land-cave-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/land-cave-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "TerraCave_End"
+    },
+    {
+      "filename": "pokemon-emerald-version-meteor-falls-stevens-cave-gba-map.webp",
+      "area_key": "meteor-falls-stevens-cave",
+      "name": "Meteor Falls — Steven’s Cave",
+      "category": "Cave",
+      "encounter_profile": "gba-meteor-falls-stevens-cave",
+      "encounter_source_map": "MAP_METEOR_FALLS_STEVENS_CAVE",
+      "disposition": "new-native-area",
+      "source_sha256": "781bc83c1820c9b40be82ddc52b52180698d50ee9c74dafc8e723150d35a9114",
+      "source_dimensions": [
+        1920,
+        2048
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/meteor-falls-stevens-cave.webp",
+      "collision_asset": "config/worlds/hoenn_collision/meteor-falls-stevens-cave.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MeteorFalls_StevensCave"
+    },
+    {
+      "filename": "pokemon-emerald-version-mt-pyre-1f-gba-map.webp",
+      "area_key": "mt-pyre-1f",
+      "name": "Mt. Pyre 1F",
+      "category": "Mountain",
+      "encounter_profile": "mt-pyre",
+      "encounter_source_map": null,
+      "disposition": "existing-area-alias-preserved",
+      "source_sha256": "4f79d4730caca8ae5a48cc1749da5d3cf6378c78c69816623470093b5ad39fd1",
+      "source_dimensions": [
+        1216,
+        1216
+      ],
+      "preserved_asset": "images/worlds/hoenn/resized/mt-pyre-1f.png",
+      "preserved_display_tile_size": 32,
+      "preserved_collision_asset": "config/worlds/hoenn_collision/mt-pyre-1f.json"
+    },
+    {
+      "filename": "pokemon-emerald-version-mt-pyre-2f-gba-map.webp",
+      "area_key": "mt-pyre-2f",
+      "name": "Mt. Pyre 2F",
+      "category": "Mountain",
+      "encounter_profile": "mt-pyre",
+      "encounter_source_map": null,
+      "disposition": "existing-area-alias-preserved",
+      "source_sha256": "f7c778d4e4d12e19974915658c8db7b6a02c811fe6110a4cb9505a2b3f207915",
+      "source_dimensions": [
+        832,
+        832
+      ],
+      "preserved_asset": "images/worlds/hoenn/resized/mt-pyre-2f.png",
+      "preserved_display_tile_size": 32,
+      "preserved_collision_asset": "config/worlds/hoenn_collision/mt-pyre-2f.json"
+    },
+    {
+      "filename": "pokemon-emerald-version-mt-pyre-3f-gba-map.webp",
+      "area_key": "mt-pyre-3f",
+      "name": "Mt. Pyre 3F",
+      "category": "Mountain",
+      "encounter_profile": "gba-mt-pyre-3f",
+      "encounter_source_map": "MAP_MT_PYRE_3F",
+      "disposition": "new-native-area",
+      "source_sha256": "a3b5cd057785414e558d9b355853a003790a7289d7715abdcc24e09d66511445",
+      "source_dimensions": [
+        832,
+        832
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/mt-pyre-3f.webp",
+      "collision_asset": "config/worlds/hoenn_collision/mt-pyre-3f.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MtPyre_3F"
+    },
+    {
+      "filename": "pokemon-emerald-version-mt-pyre-4f-gba-map.webp",
+      "area_key": "mt-pyre-4f",
+      "name": "Mt. Pyre 4F",
+      "category": "Mountain",
+      "encounter_profile": "gba-mt-pyre-4f",
+      "encounter_source_map": "MAP_MT_PYRE_4F",
+      "disposition": "new-native-area",
+      "source_sha256": "c271c6df4378cf4764707299edc64f68bbbc9e3abb87472b4e1cef63d3be6657",
+      "source_dimensions": [
+        832,
+        832
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/mt-pyre-4f.webp",
+      "collision_asset": "config/worlds/hoenn_collision/mt-pyre-4f.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MtPyre_4F"
+    },
+    {
+      "filename": "pokemon-emerald-version-mt-pyre-5f-gba-map.webp",
+      "area_key": "mt-pyre-5f",
+      "name": "Mt. Pyre 5F",
+      "category": "Mountain",
+      "encounter_profile": "gba-mt-pyre-5f",
+      "encounter_source_map": "MAP_MT_PYRE_5F",
+      "disposition": "new-native-area",
+      "source_sha256": "b78c3d13ed173b6578b3437d601e7fe890877d1fca34004d6c41e52533b21b5c",
+      "source_dimensions": [
+        832,
+        832
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/mt-pyre-5f.webp",
+      "collision_asset": "config/worlds/hoenn_collision/mt-pyre-5f.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MtPyre_5F"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-107-gba-map.webp",
+      "area_key": "route-107",
+      "name": "Route 107",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route107",
+      "encounter_source_map": "MAP_ROUTE107",
+      "disposition": "new-native-area",
+      "source_sha256": "91e0fa14b9633cd863b9209210d3eac1e0b4dc92683defc39afef699d38a9531",
+      "source_dimensions": [
+        3840,
+        1280
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-107.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-107.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 8,
+      "canonical_layout": "Route107"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-108-gba-map.webp",
+      "area_key": "route-108",
+      "name": "Route 108",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route108",
+      "encounter_source_map": "MAP_ROUTE108",
+      "disposition": "new-native-area",
+      "source_sha256": "7d26dc9d63b87325311d4539fca08dd17b8d2c6c8dbcc3089d1c32bbef91716b",
+      "source_dimensions": [
+        3840,
+        1280
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-108.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-108.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 8,
+      "canonical_layout": "Route108"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-124-underwater-gba-map.webp",
+      "area_key": "route-124-underwater",
+      "name": "Route 124 — Underwater",
+      "category": "Underwater",
+      "encounter_profile": "gba-underwater-route124",
+      "encounter_source_map": "MAP_UNDERWATER_ROUTE124",
+      "disposition": "new-native-area",
+      "source_sha256": "17bacbd658d54c7c197b116b2fc5cf50fb49988c61c63bbaa4c65cba2cd5106d",
+      "source_dimensions": [
+        5120,
+        5120
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-124-underwater.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-124-underwater.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 25,
+      "canonical_layout": "Underwater_Route124"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-125-gba-map.webp",
+      "area_key": "route-125",
+      "name": "Route 125",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route125",
+      "encounter_source_map": "MAP_ROUTE125",
+      "disposition": "new-native-area",
+      "source_sha256": "bbc2e3f3e9594f0d4eab16196deed1590500296d6294beb63858a533b8d9b0d8",
+      "source_dimensions": [
+        5120,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-125.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-125.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 15,
+      "canonical_layout": "Route125"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-125-underwater-gba-map.webp",
+      "area_key": "route-125-underwater",
+      "name": "Route 125 — Underwater",
+      "category": "Underwater",
+      "encounter_profile": "gba-underwater-route124",
+      "encounter_source_map": "MAP_UNDERWATER_ROUTE124",
+      "disposition": "new-native-area",
+      "source_sha256": "8db8f3804b838b3e01be49e75675b522aefc4d0c9aaa6d2918c79e9fa974cae5",
+      "source_dimensions": [
+        5120,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-125-underwater.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-125-underwater.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 15,
+      "canonical_layout": "Underwater_Route125"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-126-gba-map.webp",
+      "area_key": "route-126",
+      "name": "Route 126",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route126",
+      "encounter_source_map": "MAP_ROUTE126",
+      "disposition": "new-native-area",
+      "source_sha256": "f142f765c7af558a8c16dc162e2b502c2f5176bc649756b414900cc93c1e3cab",
+      "source_dimensions": [
+        5120,
+        5120
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-126.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-126.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 25,
+      "canonical_layout": "Route126"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-126-underwater-gba-map.webp",
+      "area_key": "route-126-underwater",
+      "name": "Route 126 — Underwater",
+      "category": "Underwater",
+      "encounter_profile": "gba-underwater-route126",
+      "encounter_source_map": "MAP_UNDERWATER_ROUTE126",
+      "disposition": "new-native-area",
+      "source_sha256": "67e9ce23badf5d6e70bf10ad072b836f4dd3186c8cd2aa798167ea91ac2c9934",
+      "source_dimensions": [
+        5120,
+        5120
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-126-underwater.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-126-underwater.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 25,
+      "canonical_layout": "Underwater_Route126"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-127-gba-map.webp",
+      "area_key": "route-127",
+      "name": "Route 127",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route127",
+      "encounter_source_map": "MAP_ROUTE127",
+      "disposition": "new-native-area",
+      "source_sha256": "7d8f200ee99367ace172d076f5ec41c1d839ce2671af84f08a633bbd47765a3d",
+      "source_dimensions": [
+        5120,
+        5120
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-127.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-127.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 25,
+      "canonical_layout": "Route127"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-127-underwater-gba-map.webp",
+      "area_key": "route-127-underwater",
+      "name": "Route 127 — Underwater",
+      "category": "Underwater",
+      "encounter_profile": "gba-underwater-route124",
+      "encounter_source_map": "MAP_UNDERWATER_ROUTE124",
+      "disposition": "new-native-area",
+      "source_sha256": "0af33471027adff5eb69f93d7cc4fc285d99715b61a0e9b2a82c7938a2674930",
+      "source_dimensions": [
+        5120,
+        5120
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-127-underwater.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-127-underwater.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 25,
+      "canonical_layout": "Underwater_Route127"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-128-gba-map.webp",
+      "area_key": "route-128",
+      "name": "Route 128",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route128",
+      "encounter_source_map": "MAP_ROUTE128",
+      "disposition": "new-native-area",
+      "source_sha256": "8ed09bf7f3b8df56c708106e1413f3ae86185f496570b78526bb359266d1ed8a",
+      "source_dimensions": [
+        7680,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-128.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-128.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 24,
+      "canonical_layout": "Route128"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-128-underwater-cave-gba-map.webp",
+      "area_key": "route-128-underwater-cave",
+      "name": "Route 128 — Submarine Chamber",
+      "category": "Underwater",
+      "encounter_profile": "gba-underwater-route124",
+      "encounter_source_map": "MAP_UNDERWATER_ROUTE124",
+      "disposition": "new-native-area",
+      "source_sha256": "790512ea334fb16d2d65cf8903b1d098820b06ce30ba9ad6c7bb2b607db65a51",
+      "source_dimensions": [
+        896,
+        576
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-128-underwater-cave.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-128-underwater-cave.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "Underwater_SeafloorCavern"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-128-underwater-gba-map.webp",
+      "area_key": "route-128-underwater",
+      "name": "Route 128 — Underwater",
+      "category": "Underwater",
+      "encounter_profile": "gba-underwater-route124",
+      "encounter_source_map": "MAP_UNDERWATER_ROUTE124",
+      "disposition": "new-native-area",
+      "source_sha256": "f1665a42bbda6ef15132329de73e74a1d9dd3affd8df8b24fc635458be910c6e",
+      "source_dimensions": [
+        7680,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-128-underwater.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-128-underwater.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 24,
+      "canonical_layout": "Underwater_Route128"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-129-gba-map.webp",
+      "area_key": "route-129",
+      "name": "Route 129",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route129",
+      "encounter_source_map": "MAP_ROUTE129",
+      "disposition": "new-native-area",
+      "source_sha256": "c9505cfb4b685ecd56c7ebf7ff8a43bc2d6307508a9d98de802225cd86c4620c",
+      "source_dimensions": [
+        5120,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-129.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-129.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 15,
+      "canonical_layout": "Route129"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-129-underwater-gba-map.webp",
+      "area_key": "route-129-underwater",
+      "name": "Route 129 — Underwater",
+      "category": "Underwater",
+      "encounter_profile": "gba-underwater-route124",
+      "encounter_source_map": "MAP_UNDERWATER_ROUTE124",
+      "disposition": "new-native-area",
+      "source_sha256": "61591e4fab85d591b731cbc363b0ed2db554d84d3e56318745b2633bfd117bf9",
+      "source_dimensions": [
+        5120,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-129-underwater.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-129-underwater.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 15,
+      "canonical_layout": "Underwater_Route129"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-130-gba-map.webp",
+      "area_key": "route-130",
+      "name": "Route 130",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route130",
+      "encounter_source_map": "MAP_ROUTE130",
+      "disposition": "new-native-area",
+      "source_sha256": "3406186ed60529c096822c295914752e42a6f847ca5da536e878a15e77ae0eb1",
+      "source_dimensions": [
+        5120,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-130.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-130.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 15,
+      "canonical_layout": "Route130"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-131-gba-map.webp",
+      "area_key": "route-131",
+      "name": "Route 131",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route131",
+      "encounter_source_map": "MAP_ROUTE131",
+      "disposition": "new-native-area",
+      "source_sha256": "4f6f70542d9a4b0c5c438dea4fb1f3b6ef7e3d86b5097bcce8decb23d5a47559",
+      "source_dimensions": [
+        3840,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-131.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-131.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 12,
+      "canonical_layout": "Route131"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-132-gba-map.webp",
+      "area_key": "route-132",
+      "name": "Route 132",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route132",
+      "encounter_source_map": "MAP_ROUTE132",
+      "disposition": "new-native-area",
+      "source_sha256": "8ee100313e2541ef46e9f180097cafbf7a598e846d367c76f554834be263eded",
+      "source_dimensions": [
+        5120,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-132.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-132.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 15,
+      "canonical_layout": "Route132"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-133-gba-map.webp",
+      "area_key": "route-133",
+      "name": "Route 133",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route133",
+      "encounter_source_map": "MAP_ROUTE133",
+      "disposition": "new-native-area",
+      "source_sha256": "addc08bd2cad5b5a25e6c18db8ef3a78a0381c81dcaee10381b7a18c87a494ba",
+      "source_dimensions": [
+        5120,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-133.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-133.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 15,
+      "canonical_layout": "Route133"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-134-gba-map.webp",
+      "area_key": "route-134",
+      "name": "Route 134",
+      "category": "Sea Route",
+      "encounter_profile": "gba-route134",
+      "encounter_source_map": "MAP_ROUTE134",
+      "disposition": "new-native-area",
+      "source_sha256": "1a9f3db4c02fc34e82e5e07163b4a0f811c0e86fccc37a7461319da6f8d17543",
+      "source_dimensions": [
+        5120,
+        2560
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-134.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-134.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 15,
+      "canonical_layout": "Route134"
+    },
+    {
+      "filename": "pokemon-emerald-version-route-134-underwater-gba-map.webp",
+      "area_key": "route-134-underwater",
+      "name": "Route 134 — Underwater",
+      "category": "Underwater",
+      "encounter_profile": "gba-underwater-route124",
+      "encounter_source_map": "MAP_UNDERWATER_ROUTE124",
+      "disposition": "new-native-area",
+      "source_sha256": "81ab87b7ea02dc4000a318882dd962d446e5f06718184c912ba766dcbd777999",
+      "source_dimensions": [
+        1408,
+        3072
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-134-underwater.webp",
+      "collision_asset": "config/worlds/hoenn_collision/route-134-underwater.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 6,
+      "canonical_layout": "Underwater_SealedChamber"
+    },
+    {
+      "filename": "pokemon-emerald-version-sea-cave-1-gba-map.webp",
+      "area_key": "sea-cave-1",
+      "name": "Marine Cave — Entrance",
+      "category": "Cave",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "958c1f833a759be8d403ac7060256c1bcf586ae54bf3d172d102d6122062e4d5",
+      "source_dimensions": [
+        1280,
+        1280
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/sea-cave-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/sea-cave-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MarineCave_Entrance"
+    },
+    {
+      "filename": "pokemon-emerald-version-sea-cave-2-gba-map.webp",
+      "area_key": "sea-cave-2",
+      "name": "Marine Cave — Inner Chamber",
+      "category": "Cave",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "f4ca7ffda261e15ba1a6a655662fe000759c1b0a48c1177a572ce29f68dba0a5",
+      "source_dimensions": [
+        1728,
+        1984
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/sea-cave-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/sea-cave-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "MarineCave_End"
+    },
+    {
+      "filename": "pokemon-emerald-version-sea-cave-underwater-gba-map.webp",
+      "area_key": "sea-cave-underwater",
+      "name": "Marine Cave — Underwater Approach",
+      "category": "Underwater",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "d93ef65a7ec93e114a2d401ab343ff42182d7543ee928ecddad8750b7d24d817",
+      "source_dimensions": [
+        960,
+        640
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/sea-cave-underwater.webp",
+      "collision_asset": "config/worlds/hoenn_collision/sea-cave-underwater.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "Underwater_MarineCave"
+    },
+    {
+      "filename": "pokemon-emerald-version-seafloor-cavern-2-gba-map.webp",
+      "area_key": "seafloor-cavern-2",
+      "name": "Seafloor Cavern — Chamber 5",
+      "category": "Cave",
+      "encounter_profile": "gba-seafloor-cavern-room5",
+      "encounter_source_map": "MAP_SEAFLOOR_CAVERN_ROOM5",
+      "disposition": "new-native-area",
+      "source_sha256": "9e26338d888cfbac765511e40b683e092a396e019976480f578ea608dd08d1de",
+      "source_dimensions": [
+        1280,
+        1280
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/seafloor-cavern-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "SeafloorCavern_Room5"
+    },
+    {
+      "filename": "pokemon-emerald-version-seafloor-cavern-3-gba-map.webp",
+      "area_key": "seafloor-cavern-3",
+      "name": "Seafloor Cavern — Chamber 4",
+      "category": "Cave",
+      "encounter_profile": "gba-seafloor-cavern-room4",
+      "encounter_source_map": "MAP_SEAFLOOR_CAVERN_ROOM4",
+      "disposition": "new-native-area",
+      "source_sha256": "7bd1e6bde03d798a087558fa2b464915163c1724e0878f9aa42497bce71a2eb0",
+      "source_dimensions": [
+        1152,
+        1216
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-3.webp",
+      "collision_asset": "config/worlds/hoenn_collision/seafloor-cavern-3.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "SeafloorCavern_Room4"
+    },
+    {
+      "filename": "pokemon-emerald-version-seafloor-cavern-4-gba-map.webp",
+      "area_key": "seafloor-cavern-4",
+      "name": "Seafloor Cavern — Chamber 2",
+      "category": "Cave",
+      "encounter_profile": "gba-seafloor-cavern-room2",
+      "encounter_source_map": "MAP_SEAFLOOR_CAVERN_ROOM2",
+      "disposition": "new-native-area",
+      "source_sha256": "ad19d6b980010a23c799f3a8e4e0d8fa41ec884a9918ef8b29fa39efd2538742",
+      "source_dimensions": [
+        1152,
+        768
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-4.webp",
+      "collision_asset": "config/worlds/hoenn_collision/seafloor-cavern-4.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "SeafloorCavern_Room2"
+    },
+    {
+      "filename": "pokemon-emerald-version-seafloor-cavern-5-gba-map.webp",
+      "area_key": "seafloor-cavern-5",
+      "name": "Seafloor Cavern — Chamber 6",
+      "category": "Cave",
+      "encounter_profile": "gba-seafloor-cavern-room6",
+      "encounter_source_map": "MAP_SEAFLOOR_CAVERN_ROOM6",
+      "disposition": "new-native-area",
+      "source_sha256": "0bf8bcd81af755b62e6c4166229209ec112a5f0c267d1003020db68407271196",
+      "source_dimensions": [
+        1536,
+        1472
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-5.webp",
+      "collision_asset": "config/worlds/hoenn_collision/seafloor-cavern-5.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "SeafloorCavern_Room6"
+    },
+    {
+      "filename": "pokemon-emerald-version-seafloor-cavern-6-gba-map.webp",
+      "area_key": "seafloor-cavern-6",
+      "name": "Seafloor Cavern — Chamber 7",
+      "category": "Cave",
+      "encounter_profile": "gba-seafloor-cavern-room7",
+      "encounter_source_map": "MAP_SEAFLOOR_CAVERN_ROOM7",
+      "disposition": "new-native-area",
+      "source_sha256": "1222cf232ea3b1ef81b5f216c901e763fd2b0819c04bcdd487e3ca41a611cc39",
+      "source_dimensions": [
+        1472,
+        1600
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-6.webp",
+      "collision_asset": "config/worlds/hoenn_collision/seafloor-cavern-6.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "SeafloorCavern_Room7"
+    },
+    {
+      "filename": "pokemon-emerald-version-seafloor-cavern-7-gba-map.webp",
+      "area_key": "seafloor-cavern-7",
+      "name": "Seafloor Cavern — Chamber 3",
+      "category": "Cave",
+      "encounter_profile": "gba-seafloor-cavern-room3",
+      "encounter_source_map": "MAP_SEAFLOOR_CAVERN_ROOM3",
+      "disposition": "new-native-area",
+      "source_sha256": "717a26a47dc02bf9a59ffc4e21b181ecb29e1fd524fe3b92f6f66424fdca4582",
+      "source_dimensions": [
+        1024,
+        1088
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-7.webp",
+      "collision_asset": "config/worlds/hoenn_collision/seafloor-cavern-7.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "SeafloorCavern_Room3"
+    },
+    {
+      "filename": "pokemon-emerald-version-seafloor-cavern-8-gba-map.webp",
+      "area_key": "seafloor-cavern-8",
+      "name": "Seafloor Cavern — Chamber 8",
+      "category": "Cave",
+      "encounter_profile": "gba-seafloor-cavern-room8",
+      "encounter_source_map": "MAP_SEAFLOOR_CAVERN_ROOM8",
+      "disposition": "new-native-area",
+      "source_sha256": "f9e7919b8bb75c934a8076d10ec92dfabe15a4c9d67cfe2a9cf0e1a902fc9313",
+      "source_dimensions": [
+        704,
+        896
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-8.webp",
+      "collision_asset": "config/worlds/hoenn_collision/seafloor-cavern-8.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "SeafloorCavern_Room8"
+    },
+    {
+      "filename": "pokemon-emerald-version-seafloor-cavern-9-gba-map.webp",
+      "area_key": "seafloor-cavern-9",
+      "name": "Seafloor Cavern — Chamber 9",
+      "category": "Cave",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "20a3a0b0633f29a5b6c4de95709002e227599c32adc345338933ab84adfa09b5",
+      "source_dimensions": [
+        1728,
+        2944
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-9.webp",
+      "collision_asset": "config/worlds/hoenn_collision/seafloor-cavern-9.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 6,
+      "canonical_layout": "SeafloorCavern_Room9"
+    },
+    {
+      "filename": "pokemon-emerald-version-sealed-chamber-1f-1-gba-map.webp",
+      "area_key": "sealed-chamber-1f-1",
+      "name": "Sealed Chamber — Outer Chamber",
+      "category": "Cave",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "360a1724d290544dee82c8f7413d5a3f1abee6e9d3524c3907aa25c693d0f2b6",
+      "source_dimensions": [
+        1344,
+        1472
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/sealed-chamber-1f-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/sealed-chamber-1f-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "SealedChamber_OuterRoom"
+    },
+    {
+      "filename": "pokemon-emerald-version-sealed-chamber-1f-2-gba-map.webp",
+      "area_key": "sealed-chamber-1f-2",
+      "name": "Sealed Chamber — Inner Chamber",
+      "category": "Cave",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "7188c7f571ef7ed34e22403b2102cb3e9a0d82cea9daa5f825c02142956ec66c",
+      "source_dimensions": [
+        1344,
+        1472
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/sealed-chamber-1f-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/sealed-chamber-1f-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "SealedChamber_InnerRoom"
+    },
+    {
+      "filename": "pokemon-emerald-version-shoal-cave-1f-2-high-tide-gba-map.webp",
+      "area_key": "shoal-cave-1f-2-high-tide",
+      "name": "Shoal Cave — High Tide Inner Chamber",
+      "category": "Cave",
+      "encounter_profile": "gba-shoal-cave-low-tide-inner-room-water",
+      "encounter_source_map": "MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+      "disposition": "new-native-area",
+      "source_sha256": "77889999f6f4bfcd305ab094d89dd1963a5f08dd5bb0c13a5958943a0a2cf9ca",
+      "source_dimensions": [
+        2944,
+        2432
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/shoal-cave-1f-2-high-tide.webp",
+      "collision_asset": "config/worlds/hoenn_collision/shoal-cave-1f-2-high-tide.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 9,
+      "canonical_layout": "ShoalCave_HighTideInnerRoom"
+    },
+    {
+      "filename": "pokemon-emerald-version-shoal-cave-1f-2-low-tide-gba-map.webp",
+      "area_key": "shoal-cave-low-tide",
+      "name": "shoal-cave-1f-2-low-tide",
+      "category": "Cave",
+      "encounter_profile": "gba-shoal-cave-low-tide-inner-room",
+      "encounter_source_map": "MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
+      "disposition": "existing-area-alias-preserved",
+      "source_sha256": "3e03976c5e0b9cf5d887aeed945d1068ae2a28d1a2979eb6c68d97ab0b490c8b",
+      "source_dimensions": [
+        2944,
+        2432
+      ],
+      "preserved_asset": "images/worlds/hoenn/resized/shoal-cave-low-tide.png",
+      "preserved_display_tile_size": 32,
+      "preserved_collision_asset": "config/worlds/hoenn_collision/shoal-cave-low-tide.json"
+    },
+    {
+      "filename": "pokemon-emerald-version-shoal-cave-1f-3-gba-map.webp",
+      "area_key": "shoal-cave-1f-3",
+      "name": "Shoal Cave — Low Tide Lower Chamber",
+      "category": "Cave",
+      "encounter_profile": "gba-shoal-cave-low-tide-stairs-room",
+      "encounter_source_map": "MAP_SHOAL_CAVE_LOW_TIDE_STAIRS_ROOM",
+      "disposition": "new-native-area",
+      "source_sha256": "8ba4092331cda001d3835fa6167538ca3a4e565ae921dbf9cd79be920ac1aa54",
+      "source_dimensions": [
+        1984,
+        896
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/shoal-cave-1f-3.webp",
+      "collision_asset": "config/worlds/hoenn_collision/shoal-cave-1f-3.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "ShoalCave_LowTideLowerRoom"
+    },
+    {
+      "filename": "pokemon-emerald-version-studio-cave-1-gba-map.webp",
+      "area_key": "studio-cave-1",
+      "name": "Artisan Cave B1F",
+      "category": "Cave",
+      "encounter_profile": "gba-artisan-cave-b1f",
+      "encounter_source_map": "MAP_ARTISAN_CAVE_B1F",
+      "disposition": "new-native-area",
+      "source_sha256": "6393b52a90649eebe5b784d085aeb3298dc3c593efd06711f4b34c6ad2c5a981",
+      "source_dimensions": [
+        2944,
+        3456
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/studio-cave-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/studio-cave-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 12,
+      "canonical_layout": "ArtisanCave_B1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-studio-cave-2-gba-map.webp",
+      "area_key": "studio-cave-2",
+      "name": "Artisan Cave 1F",
+      "category": "Cave",
+      "encounter_profile": "gba-artisan-cave-1f",
+      "encounter_source_map": "MAP_ARTISAN_CAVE_1F",
+      "disposition": "new-native-area",
+      "source_sha256": "1e068797412b94617b1fd24e2f0be9363f7057e25d185c6bd5f65124adc7a9da",
+      "source_dimensions": [
+        960,
+        1216
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/studio-cave-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/studio-cave-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "ArtisanCave_1F"
+    },
+    {
+      "filename": "pokemon-emerald-version-worlds-edge-island-1-gba-map.webp",
+      "area_key": "worlds-edge-island-1",
+      "name": "Faraway Island — Coast",
+      "category": "Island",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "e58c7fa34b83554fc9db2ab654df556b4d68ad48d2e36308c331cfde5ae83403",
+      "source_dimensions": [
+        2176,
+        2944
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/worlds-edge-island-1.webp",
+      "collision_asset": "config/worlds/hoenn_collision/worlds-edge-island-1.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 9,
+      "canonical_layout": "FarawayIsland_Entrance"
+    },
+    {
+      "filename": "pokemon-emerald-version-worlds-edge-island-2-gba-map.webp",
+      "area_key": "worlds-edge-island-2",
+      "name": "Faraway Island — Forest",
+      "category": "Island",
+      "encounter_profile": "",
+      "encounter_source_map": null,
+      "disposition": "new-native-area",
+      "source_sha256": "673b21e26abd72cd2fc667b66dd329f4b7dbc80ef1108bafb85b4b01a08321ed",
+      "source_dimensions": [
+        1856,
+        1856
+      ],
+      "installed_asset": "images/worlds/hoenn/native-expansion/worlds-edge-island-2.webp",
+      "collision_asset": "config/worlds/hoenn_collision/worlds-edge-island-2.json",
+      "display_cell_size": 32,
+      "logical_cell_size": 8,
+      "render_tile_count": 0,
+      "canonical_layout": "FarawayIsland_Interior"
+    }
+  ]
+}

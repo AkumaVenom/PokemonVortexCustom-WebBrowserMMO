@@ -1,0 +1,4899 @@
+{
+  "revision": "27.0.1",
+  "source_pack": "pokemon-gba-map.zip",
+  "supplied_sources": 129,
+  "replaced_areas": 120,
+  "kanto_replaced": 49,
+  "hoenn_replaced": 71,
+  "existing_areas_preserved": 110,
+  "existing_asset_files_preserved": 374,
+  "existing_aliases_preserved": 8,
+  "duplicate_sources_skipped": 1,
+  "native_source_scale": 2,
+  "source_dimension_ratio": 0.5,
+  "display_cell_size": 16,
+  "logical_cell_size": 8,
+  "movement_step": 2,
+  "trainer_display_size": 32,
+  "movement_display_pixels": 32,
+  "previous_render_tile_count": 665,
+  "new_render_tile_count": 126,
+  "geometry_mutation": "None; collision, coordinates, spawns and transitions are preserved.",
+  "verification": "All source compressed streams, native file hashes, full render-tile pixels and preserved accepted asset hashes passed.",
+  "sources": [
+    {
+      "world": "kanto",
+      "area_key": "cerulean-cave-1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-cerulean-cave-1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "d023a5c3d47608a84b554624cd24ec596979484979814da097315875b3074d9d",
+      "previous_source_dimensions": [
+        2560,
+        1472
+      ],
+      "source_dimensions": [
+        1280,
+        736
+      ],
+      "source_sha256": "8f92eaa3276396c9cd612a060a32a7e698e49e3b62d8c9c9363f6fbfb754d32b",
+      "installed_asset": "images/worlds/kanto/native/cerulean-cave-1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/cerulean-cave-1f.webp",
+      "preview_dimensions": [
+        320,
+        184
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 80,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "cerulean-cave-2f",
+      "filename": "pokemon-firered-and-leafgreen-versions-cerulean-cave-2f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "03a9f12c78cad2f3dbf1fe6aeada4524ac471665af727bf3f9a10d05cc291c18",
+      "previous_source_dimensions": [
+        2176,
+        1376
+      ],
+      "source_dimensions": [
+        1088,
+        688
+      ],
+      "source_sha256": "f52dd51f11f995a504f436f3a8c930e25db35dcd43a0ba6e968cd59d43b57c5e",
+      "installed_asset": "images/worlds/kanto/native/cerulean-cave-2f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/cerulean-cave-2f.webp",
+      "preview_dimensions": [
+        320,
+        202
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 68,
+      "rows": 43,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "cerulean-cave-b1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-cerulean-cave-b1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "56f24f50d05d69302d9e9afbcc71207acc9a960ec323f1b17b531cae07931896",
+      "previous_source_dimensions": [
+        2560,
+        1472
+      ],
+      "source_dimensions": [
+        1280,
+        736
+      ],
+      "source_sha256": "b128291ed554b2968356145bb0ac5207e11f27d01ba329efb7db0fe674d550f6",
+      "installed_asset": "images/worlds/kanto/native/cerulean-cave-b1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/cerulean-cave-b1f.webp",
+      "preview_dimensions": [
+        320,
+        184
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 80,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-mansion-1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-mansion-1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "4c1cdb1e7a2b124677e32a9c747327c795dfe0aefc03f07833611bffc4d8087b",
+      "previous_source_dimensions": [
+        2432,
+        2240
+      ],
+      "source_dimensions": [
+        1216,
+        1120
+      ],
+      "source_sha256": "58093998775ae708f3aff242b0d581d8630bae45b4a17ce68bce2ef5ae7557d9",
+      "installed_asset": "images/worlds/kanto/native/pokemon-mansion-1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-mansion-1f.webp",
+      "preview_dimensions": [
+        261,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 70,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-mansion-2f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-mansion-2f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "7283500994548d3fa200b332b1dae529ef2efcd03637d9ac6efa48b4318564c8",
+      "previous_source_dimensions": [
+        2432,
+        2496
+      ],
+      "source_dimensions": [
+        1216,
+        1248
+      ],
+      "source_sha256": "fc584b49861697a27bbd898764cba42cc0e4548fd9169c64b901cd91a4fc0bd4",
+      "installed_asset": "images/worlds/kanto/native/pokemon-mansion-2f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-mansion-2f.webp",
+      "preview_dimensions": [
+        234,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 78,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-mansion-3f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-mansion-3f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "2d26f32f5254c0d81d414bf1b62f5df6af598515810344171072fab533b9d0d7",
+      "previous_source_dimensions": [
+        2432,
+        1664
+      ],
+      "source_dimensions": [
+        1216,
+        832
+      ],
+      "source_sha256": "8c294a1d545c7fb684810327262a77b0ff7705a8ec1fb67e546b88e8f846d516",
+      "installed_asset": "images/worlds/kanto/native/pokemon-mansion-3f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-mansion-3f.webp",
+      "preview_dimensions": [
+        320,
+        219
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 52,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-mansion-b1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-mansion-b1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "c0d8d10a97806a35e38af8a420315732a382c021a2bf3d9280229ba0c1496afb",
+      "previous_source_dimensions": [
+        2432,
+        2304
+      ],
+      "source_dimensions": [
+        1216,
+        1152
+      ],
+      "source_sha256": "adb85bdc0adfab1071fdbb27163f1ec92575da61e64313323ecbdc636a4edd73",
+      "installed_asset": "images/worlds/kanto/native/pokemon-mansion-b1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-mansion-b1f.webp",
+      "preview_dimensions": [
+        253,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 72,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-tower-1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "22e2d0d2ccd0547afe9ac7739d413c3b4557a5840d4bd16972fb7a4d475dcf10",
+      "previous_source_dimensions": [
+        1216,
+        1248
+      ],
+      "source_dimensions": [
+        608,
+        624
+      ],
+      "source_sha256": "f1c477e367dfd119f3cf97fd4fdb783f917856cd2069aa0f5285a3ca528c4340",
+      "installed_asset": "images/worlds/kanto/native/pokemon-tower-1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-tower-1f.webp",
+      "preview_dimensions": [
+        234,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 38,
+      "rows": 39,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-tower-2f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-2f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "f8cb1aab81c6424fb8af4117114942aafef1fe551b12c23adb50509847f0c566",
+      "previous_source_dimensions": [
+        1216,
+        1152
+      ],
+      "source_dimensions": [
+        608,
+        576
+      ],
+      "source_sha256": "869b171197b0d32b12c492ef9abcf2d760dce36fd955f1275ff0202eb19dd6a8",
+      "installed_asset": "images/worlds/kanto/native/pokemon-tower-2f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-tower-2f.webp",
+      "preview_dimensions": [
+        253,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 38,
+      "rows": 36,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-tower-3f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-3f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "ba76382394318222f6b315fb72fb89b4d79104497e86c63b41bf4957fd13a7fe",
+      "previous_source_dimensions": [
+        1216,
+        1152
+      ],
+      "source_dimensions": [
+        608,
+        576
+      ],
+      "source_sha256": "90a14ff31528cd7a2fbd2ce69356598b322615978042009fecc9bf3eb9837a84",
+      "installed_asset": "images/worlds/kanto/native/pokemon-tower-3f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-tower-3f.webp",
+      "preview_dimensions": [
+        253,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 38,
+      "rows": 36,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-tower-4f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-4f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "ed738b1923cbe41edec960a762834281e9b702def3b21ff3182d85be2da9f87d",
+      "previous_source_dimensions": [
+        1216,
+        1152
+      ],
+      "source_dimensions": [
+        608,
+        576
+      ],
+      "source_sha256": "f8d18424b357026d904af859da571fb94f1c31decf435013cafce89e44579a2a",
+      "installed_asset": "images/worlds/kanto/native/pokemon-tower-4f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-tower-4f.webp",
+      "preview_dimensions": [
+        253,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 38,
+      "rows": 36,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-tower-5f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-5f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "03c0814f2e45e8d3568464edd38add3b2f20b3d0c7d3b8b82e5aa2d6490fccd0",
+      "previous_source_dimensions": [
+        1216,
+        1152
+      ],
+      "source_dimensions": [
+        608,
+        576
+      ],
+      "source_sha256": "cc8f909f90150e4fb44378df01ad1e00c6161e2872e77d11ada75dd6cafb3dda",
+      "installed_asset": "images/worlds/kanto/native/pokemon-tower-5f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-tower-5f.webp",
+      "preview_dimensions": [
+        253,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 38,
+      "rows": 36,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-tower-6f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-6f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "b94882c23300c60c87195ab90fc26463c39b7d6952e8d1287146e83ecc8d3308",
+      "previous_source_dimensions": [
+        1216,
+        1152
+      ],
+      "source_dimensions": [
+        608,
+        576
+      ],
+      "source_sha256": "cfc76ac6085254f8267f957ddbfe05d328083171dc199d2a7c67cb0a8adf2bce",
+      "installed_asset": "images/worlds/kanto/native/pokemon-tower-6f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-tower-6f.webp",
+      "preview_dimensions": [
+        253,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 38,
+      "rows": 36,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "pokemon-tower-7f",
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-7f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "8e81dc77861a835b0b9fed6b0e7289cd300a3c68adb19787824b303d5264a693",
+      "previous_source_dimensions": [
+        1216,
+        1152
+      ],
+      "source_dimensions": [
+        608,
+        576
+      ],
+      "source_sha256": "3f8fba93e2fb76333dad3bb62dfd27464d755de24b6f3e7f3719c0d0b72d9c9a",
+      "installed_asset": "images/worlds/kanto/native/pokemon-tower-7f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/pokemon-tower-7f.webp",
+      "preview_dimensions": [
+        253,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 38,
+      "rows": 36,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "power-plant",
+      "filename": "pokemon-firered-and-leafgreen-versions-power-plant-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "f8428a176b3427d7e644daa9133089f1542df3eab1d726267e3c24e134a0e699",
+      "previous_source_dimensions": [
+        3072,
+        2496
+      ],
+      "source_dimensions": [
+        1536,
+        1248
+      ],
+      "source_sha256": "f4577775310e471c277794d421d226ff20da085695f71733747bd8ecb7dab470",
+      "installed_asset": "images/worlds/kanto/native/power-plant.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/power-plant.webp",
+      "preview_dimensions": [
+        295,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 96,
+      "rows": 78,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "rock-tunnel-1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-rock-tunnel-1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "590596edd8fcbe15a3e7edcccef155a16444b1d18745f75ef8e98e8891f3967e",
+      "previous_source_dimensions": [
+        3072,
+        2528
+      ],
+      "source_dimensions": [
+        1536,
+        1264
+      ],
+      "source_sha256": "d4fbbd0b74d7b3a03d7cd635dafe80dd7bb9bef7bc79d1132a735bb6cbb45552",
+      "installed_asset": "images/worlds/kanto/native/rock-tunnel-1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/rock-tunnel-1f.webp",
+      "preview_dimensions": [
+        292,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 96,
+      "rows": 79,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "rock-tunnel-b1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-rock-tunnel-b1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "d215a41fbf98bc472c315246f1ad9cdc205bf7ea73fb02aeabf3277722e77529",
+      "previous_source_dimensions": [
+        3072,
+        2528
+      ],
+      "source_dimensions": [
+        1536,
+        1264
+      ],
+      "source_sha256": "67d38ea7e2cf3ae87de92fc1efb950355cbe279a81438e8c21ed4b5d58e71e0a",
+      "installed_asset": "images/worlds/kanto/native/rock-tunnel-b1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/rock-tunnel-b1f.webp",
+      "preview_dimensions": [
+        292,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 96,
+      "rows": 79,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "rocket-hideout-b1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-rocket-hideout-b1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "2031b04d0b871c4d59d00b28005048b912ed5d305256d6ad3e5888f488f361f3",
+      "previous_source_dimensions": [
+        1792,
+        2224
+      ],
+      "source_dimensions": [
+        896,
+        1112
+      ],
+      "source_sha256": "1b407a4cc5980b032829f031db39079e1dad97ab079c41e916a30b4171b9188d",
+      "installed_asset": "images/worlds/kanto/native/rocket-hideout-b1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/rocket-hideout-b1f.webp",
+      "preview_dimensions": [
+        193,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 56,
+      "rows": 69,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "rocket-hideout-b2f",
+      "filename": "pokemon-firered-and-leafgreen-versions-rocket-hideout-b2f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "73d2f2d5b6d2d210bc0917babb1a622daeef6701aca28ec9eb7deea77d77e92a",
+      "previous_source_dimensions": [
+        2080,
+        1504
+      ],
+      "source_dimensions": [
+        1040,
+        752
+      ],
+      "source_sha256": "a558f8a715caa82b413a634667354c8ff64cf142efe9a2e8911dba80258b45e0",
+      "installed_asset": "images/worlds/kanto/native/rocket-hideout-b2f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/rocket-hideout-b2f.webp",
+      "preview_dimensions": [
+        320,
+        231
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 65,
+      "rows": 47,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "rocket-hideout-b3f",
+      "filename": "pokemon-firered-and-leafgreen-versions-rocket-hideout-b3f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "d723a83b355d158da42a9c1896f01b9d9dad4265d11e42483088654c9e9cd7ad",
+      "previous_source_dimensions": [
+        1408,
+        1792
+      ],
+      "source_dimensions": [
+        704,
+        896
+      ],
+      "source_sha256": "3894f7d4a4abd107f1f63c102798f6aeb87370761eeb5327763dc7fa78f4824e",
+      "installed_asset": "images/worlds/kanto/native/rocket-hideout-b3f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/rocket-hideout-b3f.webp",
+      "preview_dimensions": [
+        189,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 44,
+      "rows": 56,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "rocket-hideout-b4f",
+      "filename": "pokemon-firered-and-leafgreen-versions-rocket-hideout-b4f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "edbf29eacacb0d7d0e7c15039ee09a8571b6dc0516262527d888a0184ba82926",
+      "previous_source_dimensions": [
+        1536,
+        1728
+      ],
+      "source_dimensions": [
+        768,
+        864
+      ],
+      "source_sha256": "cddea5e054738162ab73826cc82b958d3999c6a06701c001da42d05964d9941f",
+      "installed_asset": "images/worlds/kanto/native/rocket-hideout-b4f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/rocket-hideout-b4f.webp",
+      "preview_dimensions": [
+        213,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 48,
+      "rows": 54,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "route-23",
+      "filename": "pokemon-firered-and-leafgreen-versions-route-23-gba-map.webp",
+      "historical_status": "existing-area-preserved",
+      "replace": false,
+      "previous_source_sha256": "00d682c9a6c6c4fd452b543afde955096efb8d741f8e9e973cb8404b4b5c98e0",
+      "previous_source_dimensions": [
+        1536,
+        11520
+      ],
+      "source_dimensions": [
+        768,
+        5760
+      ],
+      "source_sha256": "41dcbdac3d0c7583ee094ff8c1de2a9359922ac9bfcfc7d3be5d5a062cdf4b6e"
+    },
+    {
+      "world": "kanto",
+      "area_key": "route-25",
+      "filename": "pokemon-firered-and-leafgreen-versions-route-25-gba-map.webp",
+      "historical_status": "existing-area-preserved",
+      "replace": false,
+      "previous_source_sha256": "72e548487f76f1517049af1a4eab510d7054ce1d65b720e1d7f2977b74817fe9",
+      "previous_source_dimensions": [
+        4608,
+        1280
+      ],
+      "source_dimensions": [
+        2304,
+        640
+      ],
+      "source_sha256": "0e57ad97f6ce6159f04d822a1a53a4bc50d8c2444723ba53db114278ce07659d"
+    },
+    {
+      "world": "kanto",
+      "area_key": "safari-zone-area-1",
+      "filename": "pokemon-firered-and-leafgreen-versions-safari-zone-area-1-gba-map.webp",
+      "historical_status": "existing-area-preserved",
+      "replace": false,
+      "previous_source_sha256": "9d7fc356391ede4f8c56fdff7df7717fb2e9a96610191209d66e68dbcbadce34",
+      "previous_source_dimensions": [
+        3456,
+        2240
+      ],
+      "source_dimensions": [
+        1728,
+        1120
+      ],
+      "source_sha256": "09cd9c62eff3c54f40d20fb1319977903bb0856616383a9bef35d879baa3bf72"
+    },
+    {
+      "world": "kanto",
+      "area_key": "safari-zone-area-2",
+      "filename": "pokemon-firered-and-leafgreen-versions-safari-zone-area-2-gba-map.webp",
+      "historical_status": "existing-area-preserved",
+      "replace": false,
+      "previous_source_sha256": "9d35b85658f189ed98faa2ca7fa8295c2bb1374a96db76fe179834cf7beefa81",
+      "previous_source_dimensions": [
+        3648,
+        2560
+      ],
+      "source_dimensions": [
+        1824,
+        1280
+      ],
+      "source_sha256": "35c63c72c1c1d6573eded8366930f403e00ddcc85034c083c4019110158b451f"
+    },
+    {
+      "world": "kanto",
+      "area_key": "safari-zone-area-3",
+      "filename": "pokemon-firered-and-leafgreen-versions-safari-zone-area-3-gba-map.webp",
+      "historical_status": "existing-area-preserved",
+      "replace": false,
+      "previous_source_sha256": "dfecf2fe0709fcace8acfbffc3407b87ca3400f0731d5927ae35b58abc4e88fd",
+      "previous_source_dimensions": [
+        3072,
+        2304
+      ],
+      "source_dimensions": [
+        1536,
+        1152
+      ],
+      "source_sha256": "5a7f1b83378111f2319555e7aa4fc8072f8ee20498c4695fb09ca46d47d12be9"
+    },
+    {
+      "world": "kanto",
+      "area_key": "seafoam-islands-b1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-seafoam-islands-b1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "8fc0a1454e74df13e7311a702de7faf047d26a4a31e653d67bd2e7e98e5102fd",
+      "previous_source_dimensions": [
+        2432,
+        1536
+      ],
+      "source_dimensions": [
+        1216,
+        768
+      ],
+      "source_sha256": "6524eadcceef0431d518046ed0bd07bd3fddaa4fdf087cfc269a71eec542f8b8",
+      "installed_asset": "images/worlds/kanto/native/seafoam-islands-b1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/seafoam-islands-b1f.webp",
+      "preview_dimensions": [
+        320,
+        202
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 48,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "seafoam-islands-b2f",
+      "filename": "pokemon-firered-and-leafgreen-versions-seafoam-islands-b2f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "7fe6da53c56728a6afe70c210a940869e27340e8c41b9faef45f4d4f84a90558",
+      "previous_source_dimensions": [
+        2432,
+        1536
+      ],
+      "source_dimensions": [
+        1216,
+        768
+      ],
+      "source_sha256": "c57b33760a7d7fb496b7fe5f2a7c40d2e10f3cf82e0eb3a26567fb40b9d7a23e",
+      "installed_asset": "images/worlds/kanto/native/seafoam-islands-b2f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/seafoam-islands-b2f.webp",
+      "preview_dimensions": [
+        320,
+        202
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 48,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "seafoam-islands-b3f",
+      "filename": "pokemon-firered-and-leafgreen-versions-seafoam-islands-b3f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "8207e1c2faedc221f08d73d62461a68e2e4fe3d1bf18adac760afdcac0719384",
+      "previous_source_dimensions": [
+        2432,
+        1536
+      ],
+      "source_dimensions": [
+        1216,
+        768
+      ],
+      "source_sha256": "4192eb3b1cfe65efc996fa838a3b185e5e88c9554d04c4b12b38942d14a9ba45",
+      "installed_asset": "images/worlds/kanto/native/seafoam-islands-b3f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/seafoam-islands-b3f.webp",
+      "preview_dimensions": [
+        320,
+        202
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 48,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "seafoam-islands-b4f",
+      "filename": "pokemon-firered-and-leafgreen-versions-seafoam-islands-b4f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "5588ed4989d577306ea65f3404d2f0f5e1747a98b6a74465a7e81474a9da06b8",
+      "previous_source_dimensions": [
+        2432,
+        1472
+      ],
+      "source_dimensions": [
+        1216,
+        736
+      ],
+      "source_sha256": "9cb11973a3781bc7532c0594720fdafd006fd207899500696bd491503e2b56b3",
+      "installed_asset": "images/worlds/kanto/native/seafoam-islands-b4f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/seafoam-islands-b4f.webp",
+      "preview_dimensions": [
+        320,
+        194
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-birth-island",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-birth-island-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "2f152cc0f10c8acd7d7cc7499b80c67a362cf9a1bf10a521e870e3e2f4d909bf",
+      "previous_source_dimensions": [
+        1920,
+        1856
+      ],
+      "source_dimensions": [
+        960,
+        928
+      ],
+      "source_sha256": "812b1d60f1cedd1312a9dad142d45d7b0a5093b12fb0da092e1c058ea80a818a",
+      "installed_asset": "images/worlds/kanto/native/sevii-birth-island.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-birth-island.webp",
+      "preview_dimensions": [
+        248,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 60,
+      "rows": 58,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-five-island-rocket-warehouse",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-five-island-rocket-warehouse-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "b9bc0b6861472355ce4cfb410d33932903f92d95941ba3374ade665db6d5b5c1",
+      "previous_source_dimensions": [
+        1856,
+        1728
+      ],
+      "source_dimensions": [
+        928,
+        864
+      ],
+      "source_sha256": "37d0415c8d3f4eedb3f4d450c6dfe85a2966bbb27f8947f6a95f8f4270bbdfd6",
+      "installed_asset": "images/worlds/kanto/native/sevii-five-island-rocket-warehouse.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-five-island-rocket-warehouse.webp",
+      "preview_dimensions": [
+        258,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 58,
+      "rows": 54,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-four-island",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "17537637c45f9fba99aafba896bfcc2ceff38917443d76a27914296eda1556f9",
+      "previous_source_dimensions": [
+        3072,
+        2528
+      ],
+      "source_dimensions": [
+        1536,
+        1264
+      ],
+      "source_sha256": "0b180440b9c14c617d0d0b64ff6250facdc8c111ace5f6f6c81b3c866f7ffdba",
+      "installed_asset": "images/worlds/kanto/native/sevii-four-island.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-four-island.webp",
+      "preview_dimensions": [
+        292,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 96,
+      "rows": 79,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-four-island-icefall-cave-1",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-icefall-cave-1-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "7ee7c04a37528949e675492cb48ec0b5d75fba188c08b679295554d27dd3344d",
+      "previous_source_dimensions": [
+        1920,
+        2112
+      ],
+      "source_dimensions": [
+        960,
+        1056
+      ],
+      "source_sha256": "1e641ba5fa9029ea0f7416324138f1492b1a9eb28f64489474e5b2d34196e90f",
+      "installed_asset": "images/worlds/kanto/native/sevii-four-island-icefall-cave-1.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-four-island-icefall-cave-1.webp",
+      "preview_dimensions": [
+        218,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 60,
+      "rows": 66,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-four-island-icefall-cave-2",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-icefall-cave-2-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "a91567466da1b4b70be63c3f4a363dd2684af0f5888c6903735d4370d1580996",
+      "previous_source_dimensions": [
+        1280,
+        1280
+      ],
+      "source_dimensions": [
+        640,
+        640
+      ],
+      "source_sha256": "4d3bd1f8db8a7c29ff4b0f657fe98f854cc071a7e999742c34e1d89bac7ace75",
+      "installed_asset": "images/worlds/kanto/native/sevii-four-island-icefall-cave-2.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-four-island-icefall-cave-2.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 40,
+      "rows": 40,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-four-island-icefall-cave-3",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-icefall-cave-3-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "c242b056bc17c999e4eb1ec5ed12677ad7967cc3ae79567ac6ad6e332088a702",
+      "previous_source_dimensions": [
+        1152,
+        1280
+      ],
+      "source_dimensions": [
+        576,
+        640
+      ],
+      "source_sha256": "a4cfb38145e11419cf5bb5d0d623958023363480f5349817f85a6f0925101f04",
+      "installed_asset": "images/worlds/kanto/native/sevii-four-island-icefall-cave-3.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-four-island-icefall-cave-3.webp",
+      "preview_dimensions": [
+        216,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 36,
+      "rows": 40,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-four-island-icefall-cave-4",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-icefall-cave-4-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "04ce1ca08d03c97418c104d880d62fb3d21be82c0033244a9ab83712ce71af5a",
+      "previous_source_dimensions": [
+        1600,
+        1664
+      ],
+      "source_dimensions": [
+        800,
+        832
+      ],
+      "source_sha256": "30a979aeed60062b294951b2e1ee914c7e6d36485743b7270d96adcb7539818b",
+      "installed_asset": "images/worlds/kanto/native/sevii-four-island-icefall-cave-4.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-four-island-icefall-cave-4.webp",
+      "preview_dimensions": [
+        231,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 50,
+      "rows": 52,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-one-island",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "89626f9ce53bfcab9ca55d93dd0bfe6b9417fc9b111b6be8a9923f3e915f4781",
+      "previous_source_dimensions": [
+        3072,
+        11440
+      ],
+      "source_dimensions": [
+        1536,
+        5720
+      ],
+      "source_sha256": "48bbd5c4f41c13cf624f7c469d392f8c0759a8971a3a976ceeaa828e72831363",
+      "installed_asset": "images/worlds/kanto/native/sevii-one-island.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-one-island.webp",
+      "preview_dimensions": [
+        64,
+        240
+      ],
+      "render_tile_count": 12,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-0-0.png",
+          "sha256": "d72f1dd873f847a33c62b25158def16c6757a1694e69a786532a9673bba9c69b"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-1-0.png",
+          "sha256": "785382b9cb1f3aa3fd2e8ab81fad3e990aac6970f281b8e5d4714e2585b129f6"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-0-1.png",
+          "sha256": "1f69265add938a05ca502e930c9784dd0c516b967a3fd2a1f4717aa010888618"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-1-1.png",
+          "sha256": "9a1a4bd82122f6defd93e449fb69b7acc749d9d4963ca0efc078fa6c14e9e7d3"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-0-2.png",
+          "sha256": "8d648e1fc4129e6624e45299ca86ecca017e9136592b959ef1d26e898f6074f9"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-1-2.png",
+          "sha256": "31f977a537c2f108f5e36f0947075b3d0eba72e5997d0db46bbff001c12f60cb"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-0-3.png",
+          "sha256": "8ba717c5c6b7dee00c750b7f8c127401afdb6cf92ccf7dff7671da771431ba92"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-1-3.png",
+          "sha256": "8bfce28710bfca60513e6f72b35aecd7d224eb076cf11958b8b78a0cd38a9a79"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-0-4.png",
+          "sha256": "2c44f516129741f1fcc47d4ea252274a37f4223749f158be2b53e417f3a7cd28"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-1-4.png",
+          "sha256": "f4e2dd4f880c5b9d8254f7d1ca871ffbdf69d8eb1b7302122d244b7b05d3c1e8"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-0-5.png",
+          "sha256": "33aa7356882bdeef3b829f8fffbc53ec17ea05e55872f18e55ff4a7debad86ab"
+        },
+        {
+          "asset": "images/worlds/kanto/render-tiles/sevii-one-island/tile-1-5.png",
+          "sha256": "7e3854925c22b61890888c14864e800d05aaf69d05b33a2501d288f451788f18"
+        }
+      ],
+      "columns": 96,
+      "rows": 357,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-one-island-mt-ember-base",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-base-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "f70c9e44e0887cc496ea341dbc96bb56aaf4fdaac2d9fd0ff385d2540fcb07bf",
+      "previous_source_dimensions": [
+        3648,
+        3456
+      ],
+      "source_dimensions": [
+        1824,
+        1728
+      ],
+      "source_sha256": "033bcc30d78c224eaa6cde04bc64cebcca7dbdda403837fcfb8626773d443574",
+      "installed_asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-base.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-one-island-mt-ember-base.webp",
+      "preview_dimensions": [
+        253,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 114,
+      "rows": 108,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-1f",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "688aa7bfc9d73f0ea9a5a0e8404b55703f75364fcbefe01990fe66148b54e422",
+      "previous_source_dimensions": [
+        1920,
+        1280
+      ],
+      "source_dimensions": [
+        960,
+        640
+      ],
+      "source_sha256": "db304cf754511d444e8ad965085c45dca34f2eaa86ec3568241bda1bf34e6fde",
+      "installed_asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-1f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-one-island-mt-ember-braille-cave-1f.webp",
+      "preview_dimensions": [
+        320,
+        213
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 60,
+      "rows": 40,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-b1f-l",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-b1f-l-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "f77770dd6430413c72fed95ba649445f77bf50acfdb32f7eef3a0aeeca9f4f8a",
+      "previous_source_dimensions": [
+        960,
+        1536
+      ],
+      "source_dimensions": [
+        480,
+        768
+      ],
+      "source_sha256": "1f614f3b07c3b72eab64c1ba85ee6ef26c99ef1bfd6ee78178cc5d2a279acbc6",
+      "installed_asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-b1f-l.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-one-island-mt-ember-braille-cave-b1f-l.webp",
+      "preview_dimensions": [
+        150,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 30,
+      "rows": 48,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-b2f-l",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-b2f-l-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "e1416a256f3c077bb611876b4c3d33873926fa92cdfed8f478529845d7de2263",
+      "previous_source_dimensions": [
+        1024,
+        704
+      ],
+      "source_dimensions": [
+        512,
+        352
+      ],
+      "source_sha256": "c2fd9c7c97b5e50679dfbe35e0b36cf076531c44e73b99c90cf9c67b9e2162b7",
+      "installed_asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-b2f-l.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-one-island-mt-ember-braille-cave-b2f-l.webp",
+      "preview_dimensions": [
+        320,
+        220
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 32,
+      "rows": 22,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-b3f",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-b3f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "2c8dc878dd10c0b5fbd24c83ad7b6e86fbc06a1c9b2dc51625ed5a3ceea8e48a",
+      "previous_source_dimensions": [
+        1984,
+        1280
+      ],
+      "source_dimensions": [
+        992,
+        640
+      ],
+      "source_sha256": "dc4237a00b88305c624780e24bb72696e34f050d0ac298448f6cbff00d6cf1db",
+      "installed_asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-b3f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-one-island-mt-ember-braille-cave-b3f.webp",
+      "preview_dimensions": [
+        320,
+        206
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 62,
+      "rows": 40,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-b4f",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-b4f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "805923c9f5cc58cacfd8988eac73a17f2995d5350281b7c950323cd6c130304d",
+      "previous_source_dimensions": [
+        1276,
+        1088
+      ],
+      "source_dimensions": [
+        638,
+        544
+      ],
+      "source_sha256": "06e7b3396302c97aaa68c9a291cc7ad76f3f952b41ccbe4634ae7b02bce1553b",
+      "installed_asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-b4f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-one-island-mt-ember-braille-cave-b4f.webp",
+      "preview_dimensions": [
+        281,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 39,
+      "rows": 34,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-one-island-mt-ember-peak",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-peak-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "3df0bc928f1fdffde2407f7d0143662581deed7aee6e2342efc99f2e4853517f",
+      "previous_source_dimensions": [
+        1212,
+        1404
+      ],
+      "source_dimensions": [
+        606,
+        702
+      ],
+      "source_sha256": "9d2ad45ef36170b5e70ed625cbe1537437218a620395e129da748b96420951b4",
+      "installed_asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-peak.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-one-island-mt-ember-peak.webp",
+      "preview_dimensions": [
+        207,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 37,
+      "rows": 43,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-six-island-altering-cave",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-six-island-altering-cave-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "7f6df796e159a0012ea62cfb69e655ea2a557185ac10e686d929f1d491ed0065",
+      "previous_source_dimensions": [
+        2048,
+        1504
+      ],
+      "source_dimensions": [
+        1024,
+        752
+      ],
+      "source_sha256": "ea0281444429c708a1370601d4ee1b81cb250077af784133e79c6cdafbeef75b",
+      "installed_asset": "images/worlds/kanto/native/sevii-six-island-altering-cave.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-six-island-altering-cave.webp",
+      "preview_dimensions": [
+        320,
+        235
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 64,
+      "rows": 47,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-six-island-pattern-bush",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-six-island-berry-forest-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "684e65a0163e69351259c0bbda29456a8851701004de0be503174086bd1acf88",
+      "previous_source_dimensions": [
+        3840,
+        2048
+      ],
+      "source_dimensions": [
+        1920,
+        1024
+      ],
+      "source_sha256": "f5064fafc57caec6f292e94a1be10968943a6c664488ae45ee1e6976bca70e93",
+      "installed_asset": "images/worlds/kanto/native/sevii-six-island-pattern-bush.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-six-island-pattern-bush.webp",
+      "preview_dimensions": [
+        320,
+        171
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 120,
+      "rows": 64,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-three-island-berry-forest",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-three-island-pattern-forest-gba-map-1.webp",
+      "historical_status": "byte-identical-duplicate",
+      "replace": false,
+      "previous_source_sha256": "699f8cddf71ede437675ffeac164dbefdbee9a1510ba907aba7e4d241aa124de",
+      "previous_source_dimensions": [
+        3648,
+        3008
+      ],
+      "source_dimensions": [
+        1824,
+        1504
+      ],
+      "source_sha256": "4efc7bcd85f5552ba793d6a9bb90e71fddd765e8a02f2377204bb061df2b51a1"
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-three-island-berry-forest",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-three-island-pattern-forest-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "699f8cddf71ede437675ffeac164dbefdbee9a1510ba907aba7e4d241aa124de",
+      "previous_source_dimensions": [
+        3648,
+        3008
+      ],
+      "source_dimensions": [
+        1824,
+        1504
+      ],
+      "source_sha256": "4efc7bcd85f5552ba793d6a9bb90e71fddd765e8a02f2377204bb061df2b51a1",
+      "installed_asset": "images/worlds/kanto/native/sevii-three-island-berry-forest.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-three-island-berry-forest.webp",
+      "preview_dimensions": [
+        291,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 114,
+      "rows": 94,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "sevii-two-island",
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-two-island-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "ce568d8d4f8742080e43540a867fb79b595663b9dc232261a16edba7dc64e21e",
+      "previous_source_dimensions": [
+        3072,
+        3200
+      ],
+      "source_dimensions": [
+        1536,
+        1600
+      ],
+      "source_sha256": "e2e16a32f5abaa49bcd7108cb70e23fcb593772d256160487d72b9548ba30bcd",
+      "installed_asset": "images/worlds/kanto/native/sevii-two-island.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/sevii-two-island.webp",
+      "preview_dimensions": [
+        230,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 96,
+      "rows": 100,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "silph-co-01f",
+      "filename": "pokemon-firered-and-leafgreen-versions-silph-co-01f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "0bd0f1c79d9ee68391d34bbed3fdf6e2882134f8c884b0b22db07d6895f58bbe",
+      "previous_source_dimensions": [
+        2432,
+        1472
+      ],
+      "source_dimensions": [
+        1216,
+        736
+      ],
+      "source_sha256": "c4b97c370110b259f3ec055a1e1b19a78bc82c2e949eb0c71c8180b1ba1652a8",
+      "installed_asset": "images/worlds/kanto/native/silph-co-01f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/silph-co-01f.webp",
+      "preview_dimensions": [
+        320,
+        194
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "silph-co-02f",
+      "filename": "pokemon-firered-and-leafgreen-versions-silph-co-02f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "1a564a6b0d338a3db52dadbf35912467d4a72adb69dc3ee2881975bac4051779",
+      "previous_source_dimensions": [
+        2432,
+        1472
+      ],
+      "source_dimensions": [
+        1216,
+        736
+      ],
+      "source_sha256": "667887e0ab4b99a3f4f09efc64107594dae36b97a5b107168e7dec64faf148ac",
+      "installed_asset": "images/worlds/kanto/native/silph-co-02f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/silph-co-02f.webp",
+      "preview_dimensions": [
+        320,
+        194
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "silph-co-03f",
+      "filename": "pokemon-firered-and-leafgreen-versions-silph-co-03f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "a96ffdaf85aff0b142ecb1e85b5cc408dc0090b072fb71c3abcbc26128e82267",
+      "previous_source_dimensions": [
+        2432,
+        1472
+      ],
+      "source_dimensions": [
+        1216,
+        736
+      ],
+      "source_sha256": "5b6e419f99e2457a92dec3d64c352da170960ded209b65870bfce308efea6235",
+      "installed_asset": "images/worlds/kanto/native/silph-co-03f.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/silph-co-03f.webp",
+      "preview_dimensions": [
+        320,
+        194
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 76,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "victory-road-central-cavern",
+      "filename": "pokemon-firered-and-leafgreen-versions-victory-road-1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "b3cc08dbf4bf59bc5733671b063f24b77cdabe03f84cfbdb96291f7aa79b8389",
+      "previous_source_dimensions": [
+        3264,
+        1408
+      ],
+      "source_dimensions": [
+        1632,
+        704
+      ],
+      "source_sha256": "272a42a6cfe5342cd788ee6930d8d9d82a0cbd313c333626747511429ecff869",
+      "installed_asset": "images/worlds/kanto/native/victory-road-central-cavern.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/victory-road-central-cavern.webp",
+      "preview_dimensions": [
+        320,
+        138
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 102,
+      "rows": 44,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "kanto",
+      "area_key": "victory-road-entry-cavern",
+      "filename": "pokemon-firered-and-leafgreen-versions-victory-road-b1f-gba-map.webp",
+      "historical_status": "imported",
+      "replace": true,
+      "previous_source_sha256": "bee5bd7497dd4f6bab3bd77f06ec06cecb6a7d3058e73876168fee99880a6bb9",
+      "previous_source_dimensions": [
+        1600,
+        1408
+      ],
+      "source_dimensions": [
+        800,
+        704
+      ],
+      "source_sha256": "435d9b03db5273ec28d6e8d2bd75e9dcf5f1642ac5b4137e4d67e980481e9006",
+      "installed_asset": "images/worlds/kanto/native/victory-road-entry-cavern.webp",
+      "preview_asset": "images/worlds/kanto/thumbnails/victory-road-entry-cavern.webp",
+      "preview_dimensions": [
+        273,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 50,
+      "rows": 44,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "abandoned-ship-1f-1",
+      "filename": "pokemon-emerald-version-abandoned-ship-1f-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "b0162844e3619afb7768ad27468c133e96caa40366e8866a196abc70c4a03399",
+      "previous_source_dimensions": [
+        1248,
+        832
+      ],
+      "source_dimensions": [
+        624,
+        416
+      ],
+      "source_sha256": "7aaf301189ccaa29eb4381a9fe26ab219b95303c739cb2e539e52dee6f37ee17",
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-1f-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/abandoned-ship-1f-1.webp",
+      "preview_dimensions": [
+        320,
+        213
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 39,
+      "rows": 26,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "abandoned-ship-1f-2",
+      "filename": "pokemon-emerald-version-abandoned-ship-1f-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "905a1beb739771bb8afad7ab6a206e69a80ed8fb0e142fdbfc975bbe420dd084",
+      "previous_source_dimensions": [
+        576,
+        1184
+      ],
+      "source_dimensions": [
+        288,
+        592
+      ],
+      "source_sha256": "6d0eaabf7351eb00918415d5665c3006ff1cb340b1227a444fc415d77b8085f8",
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-1f-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/abandoned-ship-1f-2.webp",
+      "preview_dimensions": [
+        117,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 18,
+      "rows": 37,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "abandoned-ship-2f",
+      "filename": "pokemon-emerald-version-abandoned-ship-2f-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "dca2f6ccaae1158c9b9a1f732ec5be15e7db9ae119735ad159782d0c1fae3719",
+      "previous_source_dimensions": [
+        576,
+        448
+      ],
+      "source_dimensions": [
+        288,
+        224
+      ],
+      "source_sha256": "6ef916e567fc7a69e290de0ca0a650aa32de0a0c1a5a87688f4edb45e3a56252",
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-2f.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/abandoned-ship-2f.webp",
+      "preview_dimensions": [
+        288,
+        224
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 18,
+      "rows": 14,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "abandoned-ship-b1-1",
+      "filename": "pokemon-emerald-version-abandoned-ship-b1-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "f7445f002c355cd29193b4e69333ac64d27256d808c51f197a29ba2e6b98e5f6",
+      "previous_source_dimensions": [
+        896,
+        704
+      ],
+      "source_dimensions": [
+        448,
+        352
+      ],
+      "source_sha256": "32ac9b2b3387f55c0c8f0a826f1b7767cb093eeffbd8280aa1c5df302bc2b04d",
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b1-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/abandoned-ship-b1-1.webp",
+      "preview_dimensions": [
+        305,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 28,
+      "rows": 22,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "abandoned-ship-b1-3",
+      "filename": "pokemon-emerald-version-abandoned-ship-b1-3-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "9631df8523af26902dca722abb82bc9acd1386a6e2366cab6848b22c3297ad24",
+      "previous_source_dimensions": [
+        576,
+        576
+      ],
+      "source_dimensions": [
+        288,
+        288
+      ],
+      "source_sha256": "76efaef3f3336b0b965c12dfb42123125ceb9ce3c03baf60cf90e50c4027abac",
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b1-3.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/abandoned-ship-b1-3.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 18,
+      "rows": 18,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "abandoned-ship-b1-5",
+      "filename": "pokemon-emerald-version-abandoned-ship-b1-5-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "5e5af9d5460992af3d0b8c4d7737e180567066909a37e9928359adf241b23c20",
+      "previous_source_dimensions": [
+        960,
+        872
+      ],
+      "source_dimensions": [
+        480,
+        436
+      ],
+      "source_sha256": "b11d682e451f86f8b5da34f26def2df9bbc19fe2c5b775dd3de4ea02adc2402e",
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b1-5.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/abandoned-ship-b1-5.webp",
+      "preview_dimensions": [
+        264,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 30,
+      "rows": 27,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "abandoned-ship-b2-1",
+      "filename": "pokemon-emerald-version-abandoned-ship-b2-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "89027c44b0cc2087a72078baf03d0f6e904254ffb62b4b776654e47286cc8fdb",
+      "previous_source_dimensions": [
+        1408,
+        576
+      ],
+      "source_dimensions": [
+        704,
+        288
+      ],
+      "source_sha256": "97ea1e1b1534d3465513bdcd04fa8962b4d1e79d7615c8146b4c97f2abe2fa50",
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b2-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/abandoned-ship-b2-1.webp",
+      "preview_dimensions": [
+        320,
+        131
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 44,
+      "rows": 18,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "abandoned-ship-b2-2",
+      "filename": "pokemon-emerald-version-abandoned-ship-b2-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "d4bbc6c5a31853c9bb5dc462028c567eb5882276662106aa786aec92930e0c04",
+      "previous_source_dimensions": [
+        512,
+        508
+      ],
+      "source_dimensions": [
+        256,
+        254
+      ],
+      "source_sha256": "eba812399bcb31e6c6920afbb4f87c48551a79b05cc763106a3fd338d4659315",
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-b2-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/abandoned-ship-b2-2.webp",
+      "preview_dimensions": [
+        242,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 16,
+      "rows": 15,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "abandoned-ship-exterior",
+      "filename": "pokemon-emerald-version-abandoned-ship-exterior-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "97fdb436b4ab548016546614f4ff9aae6416c640522dc37fe0bca3a682eb041f",
+      "previous_source_dimensions": [
+        1472,
+        1152
+      ],
+      "source_dimensions": [
+        736,
+        576
+      ],
+      "source_sha256": "cc832a2559b2fd8be4c9c5613d480b0f1b6e7a6f31eba5d322564bd14d6a1705",
+      "installed_asset": "images/worlds/hoenn/native-expansion/abandoned-ship-exterior.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/abandoned-ship-exterior.webp",
+      "preview_dimensions": [
+        307,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 46,
+      "rows": 36,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "cave-of-origin-1f",
+      "filename": "pokemon-emerald-version-cave-of-origin-1f-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "4a0de6fef530637a7d8a39a580ed50fdf5daaa92d33d17ee5fa8912cced67a47",
+      "previous_source_dimensions": [
+        1216,
+        1664
+      ],
+      "source_dimensions": [
+        608,
+        832
+      ],
+      "source_sha256": "f909c8958255ff4d189fd9049f33f7b9e0c6291bba6e9e44efa4d13b567014ae",
+      "installed_asset": "images/worlds/hoenn/native-expansion/cave-of-origin-1f.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/cave-of-origin-1f.webp",
+      "preview_dimensions": [
+        175,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 38,
+      "rows": 52,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "cave-of-origin-b1",
+      "filename": "pokemon-emerald-version-cave-of-origin-b1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "1e7cb34cc04f1341c424c83f73e637f82251cfdabac9998e73d6b609e6ae8d8b",
+      "previous_source_dimensions": [
+        1472,
+        1472
+      ],
+      "source_dimensions": [
+        736,
+        736
+      ],
+      "source_sha256": "cd1240b8268ad9fb2a50ac4145fd4749370682cbd12a2ad1e235da299e409f6b",
+      "installed_asset": "images/worlds/hoenn/native-expansion/cave-of-origin-b1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/cave-of-origin-b1.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 46,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "cave-of-origin-b2",
+      "filename": "pokemon-emerald-version-cave-of-origin-b2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "75386ff684ce15d91c0717bb732beef57b3560330afee764520db730e26f11b0",
+      "previous_source_dimensions": [
+        1216,
+        1216
+      ],
+      "source_dimensions": [
+        608,
+        608
+      ],
+      "source_sha256": "a2f3b92f022eb6e55af73e9d8710135e25e2e790351e690363c9409a9ed5bab9",
+      "installed_asset": "images/worlds/hoenn/native-expansion/cave-of-origin-b2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/cave-of-origin-b2.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 38,
+      "rows": 38,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "desert-underground-tunnel",
+      "filename": "pokemon-emerald-version-desert-underground-tunnel-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "39a719e13ee631cf3b7a39c4c93135290b7f798fe822ae1aff25f9909e2ab30b",
+      "previous_source_dimensions": [
+        8896,
+        1472
+      ],
+      "source_dimensions": [
+        4448,
+        736
+      ],
+      "source_sha256": "d7a4e289ce39bdc1e2cb094040fd8658bf8efb080064ff29152bd6d6890fbeb7",
+      "installed_asset": "images/worlds/hoenn/native-expansion/desert-underground-tunnel.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/desert-underground-tunnel.webp",
+      "preview_dimensions": [
+        320,
+        53
+      ],
+      "render_tile_count": 5,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/desert-underground-tunnel/tile-0-0.png",
+          "sha256": "5c1ea978211e110f6c33618740e9d18998bebf183f5ae8edb39cac1eb07a2c15"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/desert-underground-tunnel/tile-1-0.png",
+          "sha256": "650e564e33913809e2e4bfe11dbae64c5c352896d5c755a70ced5b5b6c099890"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/desert-underground-tunnel/tile-2-0.png",
+          "sha256": "4cdaf32edf8f0ed2fb4fcf52015f75aa58746a3d5851642f3b85f36bde83e240"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/desert-underground-tunnel/tile-3-0.png",
+          "sha256": "d3f07525fa875be347961d1fbc7a0d4f71010e1b1005e632891943217ab4ef9b"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/desert-underground-tunnel/tile-4-0.png",
+          "sha256": "0b6ff63ba1504966564d2027a14dce26828b5e5241f8ee03f395875362cb7e81"
+        }
+      ],
+      "columns": 278,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "hideout-aqua-1",
+      "filename": "pokemon-emerald-version-hideout-aqua-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "9185e1e9ad9c9d1f0ffdb52eaeb9a1a2896d30f90b8b299e7d32723b19da65fa",
+      "previous_source_dimensions": [
+        1664,
+        1920
+      ],
+      "source_dimensions": [
+        832,
+        960
+      ],
+      "source_sha256": "1115b727a428126cd3293a78037c8cebe7e6a7ec40e1b84d5154e87171167a33",
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-aqua-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/hideout-aqua-1.webp",
+      "preview_dimensions": [
+        208,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 52,
+      "rows": 60,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "hideout-aqua-2",
+      "filename": "pokemon-emerald-version-hideout-aqua-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "b52ea9f3285d712e92ed9b45316413a60c144813649fb35ad787e7d0874fc6e8",
+      "previous_source_dimensions": [
+        3264,
+        1536
+      ],
+      "source_dimensions": [
+        1632,
+        768
+      ],
+      "source_sha256": "0bf036620572ce57f254b3022a9625c8d7ff5bff113617b4a273a1ff762f8020",
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-aqua-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/hideout-aqua-2.webp",
+      "preview_dimensions": [
+        320,
+        151
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 102,
+      "rows": 48,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "hideout-aqua-3",
+      "filename": "pokemon-emerald-version-hideout-aqua-3-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "b739cdc4dd6e515969dbb07c0f5772b8b5c7e71aac86dec57d9ed9614e1bbf2a",
+      "previous_source_dimensions": [
+        2176,
+        1536
+      ],
+      "source_dimensions": [
+        1088,
+        768
+      ],
+      "source_sha256": "beb8877ad84038871a0a07452a7dcdc17f3b6f4ecb8c9d0e4a449046eef5a9e4",
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-aqua-3.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/hideout-aqua-3.webp",
+      "preview_dimensions": [
+        320,
+        226
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 68,
+      "rows": 48,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "hideout-magma-1",
+      "filename": "pokemon-emerald-version-hideout-magma-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "5ff67f5d632f484e241d60238f25ef7dd6db43235b66729109d7c7c34c778718",
+      "previous_source_dimensions": [
+        2368,
+        2400
+      ],
+      "source_dimensions": [
+        1184,
+        1200
+      ],
+      "source_sha256": "07342b2c65f258108a5ab931b0f07577379a7729fb1c0881fab7a83ae83dcc66",
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/hideout-magma-1.webp",
+      "preview_dimensions": [
+        237,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 74,
+      "rows": 75,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "hideout-magma-2",
+      "filename": "pokemon-emerald-version-hideout-magma-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "a4d8119a1ba399ed4a30c2e9d13688059cb346b057827d1a73f68ed8f17af4ab",
+      "previous_source_dimensions": [
+        1848,
+        2432
+      ],
+      "source_dimensions": [
+        924,
+        1216
+      ],
+      "source_sha256": "386428906d5d3783d67bc72bd1fe34c372b5ec339f0147d64c0df07d12edf50e",
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/hideout-magma-2.webp",
+      "preview_dimensions": [
+        182,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 57,
+      "rows": 76,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "hideout-magma-3",
+      "filename": "pokemon-emerald-version-hideout-magma-3-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "c7abc4c337eaa46c5383e83681f3caa96b268b42e7533c9868f754ea5ffeb8af",
+      "previous_source_dimensions": [
+        3132,
+        1792
+      ],
+      "source_dimensions": [
+        1566,
+        896
+      ],
+      "source_sha256": "dcc23a5c08cc8a67f7d6c904af9804b5113f1ac3cdda1ea9307fb75b39b317b7",
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-3.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/hideout-magma-3.webp",
+      "preview_dimensions": [
+        320,
+        183
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 97,
+      "rows": 56,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "hideout-magma-4",
+      "filename": "pokemon-emerald-version-hideout-magma-4-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "4763eccf892596a4fb2f1585adf1f65605a494ce0488d1514da923dd0b6e5bc2",
+      "previous_source_dimensions": [
+        1784,
+        1472
+      ],
+      "source_dimensions": [
+        892,
+        736
+      ],
+      "source_sha256": "48ebd7531cac2ec6a9de988a764b160a2bf8b49685c0cef8f5486ef46e962d79",
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-4.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/hideout-magma-4.webp",
+      "preview_dimensions": [
+        291,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 55,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "hideout-magma-5",
+      "filename": "pokemon-emerald-version-hideout-magma-5-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "d852d6420522b661f9266ed08057e127685d8110e3ee61bd42174ae801c7ee0c",
+      "previous_source_dimensions": [
+        1472,
+        1088
+      ],
+      "source_dimensions": [
+        736,
+        544
+      ],
+      "source_sha256": "c26d3271fba64f365ae1885b11e6a5fbb1e6ba97ebf84081828409d97aa8560c",
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-5.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/hideout-magma-5.webp",
+      "preview_dimensions": [
+        320,
+        237
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 46,
+      "rows": 34,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "hideout-magma-6",
+      "filename": "pokemon-emerald-version-hideout-magma-6-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "343350bae641ae135ec0809190934c515063d72221052ec6bc2858aa12bf4435",
+      "previous_source_dimensions": [
+        3776,
+        1792
+      ],
+      "source_dimensions": [
+        1888,
+        896
+      ],
+      "source_sha256": "8f3655fca0b9cb6a3087102778a52adae2d98c1e065971df75cf57a7052a42dd",
+      "installed_asset": "images/worlds/hoenn/native-expansion/hideout-magma-6.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/hideout-magma-6.webp",
+      "preview_dimensions": [
+        320,
+        152
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 118,
+      "rows": 56,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "illusion-pillar-1f",
+      "filename": "pokemon-emerald-version-illusion-pillar-1f-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "257117fce87a9c1f8ea3cc31119425748679ff59b737c1927909029ac75d1678",
+      "previous_source_dimensions": [
+        1344,
+        1088
+      ],
+      "source_dimensions": [
+        672,
+        544
+      ],
+      "source_sha256": "4b28d03048daca3b951cc7a99e67b986ea4bde0e42533872b5b628dac7468320",
+      "installed_asset": "images/worlds/hoenn/native-expansion/illusion-pillar-1f.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/illusion-pillar-1f.webp",
+      "preview_dimensions": [
+        296,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 42,
+      "rows": 34,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "illusion-pillar-2f",
+      "filename": "pokemon-emerald-version-illusion-pillar-2f-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "1cdd9835f1c1b50f0fd05b805e3e23f6f88c097cd9f41e3ee14f0302b49ee834",
+      "previous_source_dimensions": [
+        1344,
+        1088
+      ],
+      "source_dimensions": [
+        672,
+        544
+      ],
+      "source_sha256": "08f64bb47f18e24b81cc3a12745e5a5bc98d08a511a1e82a9cbbdbac84319a7b",
+      "installed_asset": "images/worlds/hoenn/native-expansion/illusion-pillar-2f.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/illusion-pillar-2f.webp",
+      "preview_dimensions": [
+        296,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 42,
+      "rows": 34,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "illusion-pillar-3f",
+      "filename": "pokemon-emerald-version-illusion-pillar-3f-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "e717f975be5c69c4be71a1d9046a5c84e1ef2a001769a8a7b8db60bb0db75fe0",
+      "previous_source_dimensions": [
+        1344,
+        1088
+      ],
+      "source_dimensions": [
+        672,
+        544
+      ],
+      "source_sha256": "0deb6c24f6986fc773fce5feba05edfb831a2e026c77b21ae224118fbe366e0b",
+      "installed_asset": "images/worlds/hoenn/native-expansion/illusion-pillar-3f.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/illusion-pillar-3f.webp",
+      "preview_dimensions": [
+        296,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 42,
+      "rows": 34,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "illusion-pillar-4f",
+      "filename": "pokemon-emerald-version-illusion-pillar-4f-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "725c4e3974d9b57ddf8df5d6a4b0deb4bcaa3030163157b3e69abc2417f09458",
+      "previous_source_dimensions": [
+        832,
+        640
+      ],
+      "source_dimensions": [
+        416,
+        320
+      ],
+      "source_sha256": "f669db483170cda80596b72859d33947910c3c9c88a48f04170786d1607906f8",
+      "installed_asset": "images/worlds/hoenn/native-expansion/illusion-pillar-4f.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/illusion-pillar-4f.webp",
+      "preview_dimensions": [
+        312,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 26,
+      "rows": 20,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "land-cave-1",
+      "filename": "pokemon-emerald-version-land-cave-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "0b0ae8988052e09219b551c01953b8492d4daee0d085be9dd093a84c643992ab",
+      "previous_source_dimensions": [
+        1280,
+        1280
+      ],
+      "source_dimensions": [
+        640,
+        640
+      ],
+      "source_sha256": "12593dace03dd7e18c912e2a54aefa8e2d9b8f568d606352a16208110c8201e4",
+      "installed_asset": "images/worlds/hoenn/native-expansion/land-cave-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/land-cave-1.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 40,
+      "rows": 40,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "land-cave-2",
+      "filename": "pokemon-emerald-version-land-cave-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "ef06937cafd072e9e4509425963fd633bf965327f82992a4b0ff1acfef361414",
+      "previous_source_dimensions": [
+        1728,
+        1920
+      ],
+      "source_dimensions": [
+        864,
+        960
+      ],
+      "source_sha256": "aa276e88a7831f928c98b13f8b7ca4369ebfe3ab0a91fd4a3c836724a59eea0c",
+      "installed_asset": "images/worlds/hoenn/native-expansion/land-cave-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/land-cave-2.webp",
+      "preview_dimensions": [
+        216,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 54,
+      "rows": 60,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "meteor-falls-stevens-cave",
+      "filename": "pokemon-emerald-version-meteor-falls-stevens-cave-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "781bc83c1820c9b40be82ddc52b52180698d50ee9c74dafc8e723150d35a9114",
+      "previous_source_dimensions": [
+        1920,
+        2048
+      ],
+      "source_dimensions": [
+        960,
+        1024
+      ],
+      "source_sha256": "1f8e45a8e9c00d719a36bbe79a08df0d1ba3c8dc00a579851a2e6cd94662cff3",
+      "installed_asset": "images/worlds/hoenn/native-expansion/meteor-falls-stevens-cave.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/meteor-falls-stevens-cave.webp",
+      "preview_dimensions": [
+        225,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 60,
+      "rows": 64,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "mt-pyre-1f",
+      "filename": "pokemon-emerald-version-mt-pyre-1f-gba-map.webp",
+      "historical_status": "existing-area-alias-preserved",
+      "replace": false,
+      "previous_source_sha256": "4f79d4730caca8ae5a48cc1749da5d3cf6378c78c69816623470093b5ad39fd1",
+      "previous_source_dimensions": [
+        1216,
+        1216
+      ],
+      "source_dimensions": [
+        608,
+        608
+      ],
+      "source_sha256": "69d329ba95583d76f43c4194ebb5ec73bb5d9a4d0ddca7ac71845f0464b32e0a"
+    },
+    {
+      "world": "hoenn",
+      "area_key": "mt-pyre-2f",
+      "filename": "pokemon-emerald-version-mt-pyre-2f-gba-map.webp",
+      "historical_status": "existing-area-alias-preserved",
+      "replace": false,
+      "previous_source_sha256": "f7c778d4e4d12e19974915658c8db7b6a02c811fe6110a4cb9505a2b3f207915",
+      "previous_source_dimensions": [
+        832,
+        832
+      ],
+      "source_dimensions": [
+        416,
+        416
+      ],
+      "source_sha256": "0b3014ded75050888d0ad614ef286a3d60416010c3cd963ded6e80d3bc94d34a"
+    },
+    {
+      "world": "hoenn",
+      "area_key": "mt-pyre-3f",
+      "filename": "pokemon-emerald-version-mt-pyre-3f-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "a3b5cd057785414e558d9b355853a003790a7289d7715abdcc24e09d66511445",
+      "previous_source_dimensions": [
+        832,
+        832
+      ],
+      "source_dimensions": [
+        416,
+        416
+      ],
+      "source_sha256": "578fb7a5bf44829b770f84af26d171ef367e762ff6dfb564ec100eb6f0f25452",
+      "installed_asset": "images/worlds/hoenn/native-expansion/mt-pyre-3f.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/mt-pyre-3f.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 26,
+      "rows": 26,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "mt-pyre-4f",
+      "filename": "pokemon-emerald-version-mt-pyre-4f-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "c271c6df4378cf4764707299edc64f68bbbc9e3abb87472b4e1cef63d3be6657",
+      "previous_source_dimensions": [
+        832,
+        832
+      ],
+      "source_dimensions": [
+        416,
+        416
+      ],
+      "source_sha256": "e92984248b2b0f27c3ba485ac357eceef8858417fce6c182432b1a695f2d0ce1",
+      "installed_asset": "images/worlds/hoenn/native-expansion/mt-pyre-4f.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/mt-pyre-4f.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 26,
+      "rows": 26,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "mt-pyre-5f",
+      "filename": "pokemon-emerald-version-mt-pyre-5f-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "b78c3d13ed173b6578b3437d601e7fe890877d1fca34004d6c41e52533b21b5c",
+      "previous_source_dimensions": [
+        832,
+        832
+      ],
+      "source_dimensions": [
+        416,
+        416
+      ],
+      "source_sha256": "bb3baf69fe4cd8d7c4104cff8c88e142deb95e8e9123162e797caf2b03354757",
+      "installed_asset": "images/worlds/hoenn/native-expansion/mt-pyre-5f.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/mt-pyre-5f.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 26,
+      "rows": 26,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-107",
+      "filename": "pokemon-emerald-version-route-107-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "91e0fa14b9633cd863b9209210d3eac1e0b4dc92683defc39afef699d38a9531",
+      "previous_source_dimensions": [
+        3840,
+        1280
+      ],
+      "source_dimensions": [
+        1920,
+        640
+      ],
+      "source_sha256": "15d6edd6f916e7edf0e3a6fe04396f5f6808b11510b29a139010d3f861d73cc4",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-107.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-107.webp",
+      "preview_dimensions": [
+        320,
+        107
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 120,
+      "rows": 40,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-108",
+      "filename": "pokemon-emerald-version-route-108-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "7d26dc9d63b87325311d4539fca08dd17b8d2c6c8dbcc3089d1c32bbef91716b",
+      "previous_source_dimensions": [
+        3840,
+        1280
+      ],
+      "source_dimensions": [
+        1920,
+        640
+      ],
+      "source_sha256": "2e6b733732ba34e7cb1c75ffa37068cc86fa2affbfc74b1243d438f2f39a946f",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-108.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-108.webp",
+      "preview_dimensions": [
+        320,
+        107
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 120,
+      "rows": 40,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-124-underwater",
+      "filename": "pokemon-emerald-version-route-124-underwater-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "17bacbd658d54c7c197b116b2fc5cf50fb49988c61c63bbaa4c65cba2cd5106d",
+      "previous_source_dimensions": [
+        5120,
+        5120
+      ],
+      "source_dimensions": [
+        2560,
+        2560
+      ],
+      "source_sha256": "2d6318089be71df2d5db21794ba4d69ecd1edd4f69a7563579057610ef4e186b",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-124-underwater.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-124-underwater.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 9,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-124-underwater/tile-0-0.png",
+          "sha256": "0630735badd57d93ffb45ff7516101d8c742b49cb83e78b297fe6723168f9eef"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-124-underwater/tile-1-0.png",
+          "sha256": "bf824bb2d5f27e88e233515cc16c59e22a4d6ff43e465d741188ef6ced38ffe7"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-124-underwater/tile-2-0.png",
+          "sha256": "ac46361c76dbeefd377d924085863a0afb4d45bd6558377791009e4dfa856f78"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-124-underwater/tile-0-1.png",
+          "sha256": "3f519e3a377fadd7966dcd4f790d47f6cf0f5a49e772629e2b838af4058c9823"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-124-underwater/tile-1-1.png",
+          "sha256": "7bdde5eed04fa9ba8cc86bb2efbe2fbe92f0eecef6738095e79456cf69170af5"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-124-underwater/tile-2-1.png",
+          "sha256": "b8674930e4ddd2d4d2365b6fe0d55c499c92f3c9f71d0dcb3a24a64e14ffa1aa"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-124-underwater/tile-0-2.png",
+          "sha256": "078911b095e3189b6807b7655de52dd5d10faa91cad49e69ac590832ccb57ee0"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-124-underwater/tile-1-2.png",
+          "sha256": "bc61f6cdece8811a88735ed6bdc26397e62050901bf80421530228611eda54ea"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-124-underwater/tile-2-2.png",
+          "sha256": "22d62a1ed44d0d866d607cc630e24cb4e6b760b70a5797e5419f3d09637128d2"
+        }
+      ],
+      "columns": 160,
+      "rows": 160,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-125",
+      "filename": "pokemon-emerald-version-route-125-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "bbc2e3f3e9594f0d4eab16196deed1590500296d6294beb63858a533b8d9b0d8",
+      "previous_source_dimensions": [
+        5120,
+        2560
+      ],
+      "source_dimensions": [
+        2560,
+        1280
+      ],
+      "source_sha256": "2f34f10eb2089703c7bea67fc51ba925379ec6173ab8b9008c7bdba9d1afc014",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-125.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-125.webp",
+      "preview_dimensions": [
+        320,
+        160
+      ],
+      "render_tile_count": 6,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125/tile-0-0.png",
+          "sha256": "a874a9f51009852e8fdf88a544fb02b995103da1fade390e4a4ab411adc3e262"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125/tile-1-0.png",
+          "sha256": "556ec2c53cfa8e90bf4e5b8ab447ccdb24e19c3e2137895154bbec1eab961da4"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125/tile-2-0.png",
+          "sha256": "a14380c549a0b904f73f545722568931b0d24023009c0af19631c418214dd2dc"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125/tile-0-1.png",
+          "sha256": "90d0f87fb38e7d4b12d377a617a5b327e8c0c0e7741b318e9344ea6c6f84d831"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125/tile-1-1.png",
+          "sha256": "a48355665e96c82a7750a9c876cf1eb27d339ea15896758724e30fdad1d88b06"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125/tile-2-1.png",
+          "sha256": "8242faa1435a955124d01ec6b28acddfd5537075a1fa1c5b45b1c9130cbfc1d6"
+        }
+      ],
+      "columns": 160,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-125-underwater",
+      "filename": "pokemon-emerald-version-route-125-underwater-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "8db8f3804b838b3e01be49e75675b522aefc4d0c9aaa6d2918c79e9fa974cae5",
+      "previous_source_dimensions": [
+        5120,
+        2560
+      ],
+      "source_dimensions": [
+        2560,
+        1280
+      ],
+      "source_sha256": "f8d9bcee84a32321db479be463e8a1225e08262da1cfa494272afc5ede7437b4",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-125-underwater.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-125-underwater.webp",
+      "preview_dimensions": [
+        320,
+        160
+      ],
+      "render_tile_count": 6,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125-underwater/tile-0-0.png",
+          "sha256": "8480b1f3892e0b2094269601ff664c5c473c1df3646a11ecf8ff3a20887a149b"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125-underwater/tile-1-0.png",
+          "sha256": "d042043840b7e33d84a1d1276f0dd37ca723086b5945aceda36dc12879ae4b2c"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125-underwater/tile-2-0.png",
+          "sha256": "d1805d18de512ddda37e614a577666641160af6f2efc91d5d5b99fe23573763e"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125-underwater/tile-0-1.png",
+          "sha256": "f7c0b5040820aba242f69442ef5e511ce166cde83d2841e0d4fa74765a463213"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125-underwater/tile-1-1.png",
+          "sha256": "0c7b6e8d09b00ff57c2ad6cd2dabb3e2dee6b3c3d2f069181f5f524d9e8dcd35"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-125-underwater/tile-2-1.png",
+          "sha256": "64eec7e6b3931f5a45f46ede3a253733bc8c9cc65cfd6253610179873a7e30f2"
+        }
+      ],
+      "columns": 160,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-126",
+      "filename": "pokemon-emerald-version-route-126-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "f142f765c7af558a8c16dc162e2b502c2f5176bc649756b414900cc93c1e3cab",
+      "previous_source_dimensions": [
+        5120,
+        5120
+      ],
+      "source_dimensions": [
+        2560,
+        2560
+      ],
+      "source_sha256": "9ba2c673463655058e171a71b23953a8430453214a872518cb1d908e5473734f",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-126.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-126.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 9,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126/tile-0-0.png",
+          "sha256": "ce63dcc97776f30b565c0d4e99a1758608244749742b0b16ec26fb5f7b13a5dd"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126/tile-1-0.png",
+          "sha256": "37ef19e2787ebc5a5c7d3bad447d45dd7610bcbc2a26bb2c692241fe026137b8"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126/tile-2-0.png",
+          "sha256": "55dd327d238018e8b755dc2f7b0e08a94a2d7a5c2eaad7db7c70e519c0caeb3e"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126/tile-0-1.png",
+          "sha256": "ec86bd6d656e8d183cf3e554dfa61c18c32c4249ffb8db083501289141778bd8"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126/tile-1-1.png",
+          "sha256": "e9b1aabafd2eecc1f8831bc05cfa438b6b199a90904238f31dd0157aea8266c1"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126/tile-2-1.png",
+          "sha256": "a464bd2fb76e087664871867675cf8c3fe556522c0538ff9e28c851ed927b7f1"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126/tile-0-2.png",
+          "sha256": "ad2ce3a412cacf8c0214605d915d6faf75e6ed965a171b97b8211dd7d54db834"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126/tile-1-2.png",
+          "sha256": "80c51c43153597924ae13c519ae5bb7ab4056404648904e97f8933aedbac897a"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126/tile-2-2.png",
+          "sha256": "d3a56266e0648cb00354a5cbad995e9a1e9450275b23d7c003af316baff89ca2"
+        }
+      ],
+      "columns": 160,
+      "rows": 160,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-126-underwater",
+      "filename": "pokemon-emerald-version-route-126-underwater-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "67e9ce23badf5d6e70bf10ad072b836f4dd3186c8cd2aa798167ea91ac2c9934",
+      "previous_source_dimensions": [
+        5120,
+        5120
+      ],
+      "source_dimensions": [
+        2560,
+        2560
+      ],
+      "source_sha256": "3769317ff6ca86aab69dde83f190370bc69e5feb511d8393fbe64c215e99e050",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-126-underwater.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-126-underwater.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 9,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126-underwater/tile-0-0.png",
+          "sha256": "6a8898b876aa8c8db5d8fd3b544032f783140f9ea6b0353d143e80d0017295f7"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126-underwater/tile-1-0.png",
+          "sha256": "472b22b97dbf8e64fc17d47004f4932622f8b9e6f22605cfb04ad2a7cd2d3174"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126-underwater/tile-2-0.png",
+          "sha256": "3e28f006753ff01533c1117238b48f32612ccd6d2c6658cf3a2644d55ddd46e6"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126-underwater/tile-0-1.png",
+          "sha256": "314a9ce9d130e7db2ae81041fdd22e703258739d17fa2a7f16bcc5793c59983d"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126-underwater/tile-1-1.png",
+          "sha256": "6c3725892baa9d158d3c0b21e36b1dc9d100af2aa918ef1dd5bceaa054eb87f7"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126-underwater/tile-2-1.png",
+          "sha256": "d3f7907ab24334ca06d8059460b3ac0a29ea2df310df687d2ba6d65280202724"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126-underwater/tile-0-2.png",
+          "sha256": "ec018d7b72b4f1eb31b7175abb050dc2ff8fbb1db5ef7b5caf057e840f55abf0"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126-underwater/tile-1-2.png",
+          "sha256": "19aa4eed1b4ee2b96fb0ceb761db0ec1ed834a7f18c174a291aa61aed34dec5a"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-126-underwater/tile-2-2.png",
+          "sha256": "703fe3a55d891ffdbf85ef04411c27a97c570a59599d4268bf605b09feecc22f"
+        }
+      ],
+      "columns": 160,
+      "rows": 160,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-127",
+      "filename": "pokemon-emerald-version-route-127-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "7d8f200ee99367ace172d076f5ec41c1d839ce2671af84f08a633bbd47765a3d",
+      "previous_source_dimensions": [
+        5120,
+        5120
+      ],
+      "source_dimensions": [
+        2560,
+        2560
+      ],
+      "source_sha256": "bffddbec4ed5c6d8d9093026086bbb9caa3c1f551e55a541a72d3ad5125fabcd",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-127.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-127.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 9,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127/tile-0-0.png",
+          "sha256": "feddc8b5e247a97f6731bba533748e9876469726b6426cf15449d6b11460e57b"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127/tile-1-0.png",
+          "sha256": "23e89dbad7eaba42351ee98da487fbd3cb5fd731884b0cc222556f5a60b6c0d6"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127/tile-2-0.png",
+          "sha256": "10106aaecee402ff96872a4815efb1c9a8e3a9f8a5db6a0663ab29795adaf602"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127/tile-0-1.png",
+          "sha256": "856764cd223c2353f26957eed917a90d8add905d8914af2db0e1113d5fa21796"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127/tile-1-1.png",
+          "sha256": "70dab8721c300816e706634cd8af889349b4d53aa99fb2e565fec3d82c7816f0"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127/tile-2-1.png",
+          "sha256": "6259dc110260407e6f7bc8ab3334c4e9c3004cc3aebef8423b556ac1d9343a58"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127/tile-0-2.png",
+          "sha256": "c870dd2313af015a9facc83dac1ef4b188fd1b30df7ed53b1c3c07a6d0e399a0"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127/tile-1-2.png",
+          "sha256": "f337cf2e1f54cd83335b87fe082ea1f38a2bad9759da9828d2b0ef8344115b7f"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127/tile-2-2.png",
+          "sha256": "46fac45f9ba3b7fcb736da24826907d68491836efe95bd8cad230a81c3f0d15d"
+        }
+      ],
+      "columns": 160,
+      "rows": 160,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-127-underwater",
+      "filename": "pokemon-emerald-version-route-127-underwater-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "0af33471027adff5eb69f93d7cc4fc285d99715b61a0e9b2a82c7938a2674930",
+      "previous_source_dimensions": [
+        5120,
+        5120
+      ],
+      "source_dimensions": [
+        2560,
+        2560
+      ],
+      "source_sha256": "e392df3704625b7bd66b9788c354a4d651ba99eea0fc3359eb0a0bcf0146ac46",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-127-underwater.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-127-underwater.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 9,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127-underwater/tile-0-0.png",
+          "sha256": "60ad7757bad40b5adebdb36903e4c9148199c658000f17a194f2bc7651e0132e"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127-underwater/tile-1-0.png",
+          "sha256": "8be548d1048dd442af661e49c9ad322b07063f7cb7375f495eb4c7ac599b5106"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127-underwater/tile-2-0.png",
+          "sha256": "13188321abb796a852dae78b2b138e98acf244dc035eaf41d54db2f3f6400abc"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127-underwater/tile-0-1.png",
+          "sha256": "81fa5eb504f74cc195954c5def3511bac3b0c5a9ca77d4cea2bad91141d50aba"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127-underwater/tile-1-1.png",
+          "sha256": "adf9013f647f4775fc1c0411c9e96abc4085538cf4293dcd690939a58d65bad1"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127-underwater/tile-2-1.png",
+          "sha256": "36101d6fd643674ee5d6108b70bac5e849c0b285d51a122bd74ba49ed704d8cc"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127-underwater/tile-0-2.png",
+          "sha256": "7568d43e898d3cf8e52ca3672c681e3a440e18f8dcff0b7360ed30581d5efda8"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127-underwater/tile-1-2.png",
+          "sha256": "fb96b36c48623dc569c70ffd14887b6f2fecf8ac94d129c7117d86cb0eb009d0"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-127-underwater/tile-2-2.png",
+          "sha256": "38d2dc0ee08032e1ebb770dfd7376a5fbca0e35de22d2e9c9d464ae748137977"
+        }
+      ],
+      "columns": 160,
+      "rows": 160,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-128",
+      "filename": "pokemon-emerald-version-route-128-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "8ed09bf7f3b8df56c708106e1413f3ae86185f496570b78526bb359266d1ed8a",
+      "previous_source_dimensions": [
+        7680,
+        2560
+      ],
+      "source_dimensions": [
+        3840,
+        1280
+      ],
+      "source_sha256": "f5471cfe2ec597674b28758108eee13875c2ca661e29acc3b5c7bbef1e961687",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-128.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-128.webp",
+      "preview_dimensions": [
+        320,
+        107
+      ],
+      "render_tile_count": 8,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128/tile-0-0.png",
+          "sha256": "3b3f85684e368ab46e8ce6fec9f7aba7bcad619bc97748c769c00ec365e71644"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128/tile-1-0.png",
+          "sha256": "c270bc0bed60f3c25d9d0edb2c970278dd465c626aeef4b47f3abc3415191be8"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128/tile-2-0.png",
+          "sha256": "c698d5b6934f730fe8b858785041cc819be948f129fb16d380852e12f7aade04"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128/tile-3-0.png",
+          "sha256": "959902705e7feecfb80c4e655452d6ebb405c99af1f9c25120b8b7ba8feb2da6"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128/tile-0-1.png",
+          "sha256": "d56fa7a5cd4d0d6e2cb8bd6e09d2dd034d5d0995eafcbbd31bb6cf965d738a7c"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128/tile-1-1.png",
+          "sha256": "5fde4b6b37301f3c1efdc252e62d2c96950390f70ab3674d4b54aad461fc1c41"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128/tile-2-1.png",
+          "sha256": "5a43740e53bbf0901429cd3bddacbf167159851a1dfada6a4aec0ebf78d1d75c"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128/tile-3-1.png",
+          "sha256": "b337d6b031a8a70887b64148be6da0e4a610243d92c7b52a2a6344e755896d1c"
+        }
+      ],
+      "columns": 240,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-128-underwater-cave",
+      "filename": "pokemon-emerald-version-route-128-underwater-cave-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "790512ea334fb16d2d65cf8903b1d098820b06ce30ba9ad6c7bb2b607db65a51",
+      "previous_source_dimensions": [
+        896,
+        576
+      ],
+      "source_dimensions": [
+        448,
+        288
+      ],
+      "source_sha256": "68ed986fba74fcbc351b9248aec12feff93f7d5e2d3a3f690aa279efca73170c",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-128-underwater-cave.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-128-underwater-cave.webp",
+      "preview_dimensions": [
+        320,
+        206
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 28,
+      "rows": 18,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-128-underwater",
+      "filename": "pokemon-emerald-version-route-128-underwater-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "f1665a42bbda6ef15132329de73e74a1d9dd3affd8df8b24fc635458be910c6e",
+      "previous_source_dimensions": [
+        7680,
+        2560
+      ],
+      "source_dimensions": [
+        3840,
+        1280
+      ],
+      "source_sha256": "6857576d6f861c9c04885ee5a7d8b66d5fb943fcfa3ab9fed3f9e7ffff7edaf3",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-128-underwater.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-128-underwater.webp",
+      "preview_dimensions": [
+        320,
+        107
+      ],
+      "render_tile_count": 8,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128-underwater/tile-0-0.png",
+          "sha256": "6addbcd8aa57365de0cff305c8c155a37f4ad44ded1eeafe42f16e9e4fa8bc76"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128-underwater/tile-1-0.png",
+          "sha256": "466cfffc8ae3c1f0bf8b5c552cffbf2c00ddba11bb53e4e857ef7e34a851957b"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128-underwater/tile-2-0.png",
+          "sha256": "3ddd493e2c1aac3881f0d626d9d9a3ee9f1f4ce75878e13a89d3aa45eb9b7af4"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128-underwater/tile-3-0.png",
+          "sha256": "7b64d935af7a08ebac78d9db816d1dd6c2ba84d0fac9a4372af2d78beced487c"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128-underwater/tile-0-1.png",
+          "sha256": "411f3c0a80886a5b67ce704e639f955f6dd07ff2002e5cccbdb7f57f68d0c573"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128-underwater/tile-1-1.png",
+          "sha256": "ed516940ebf2a747473a043b380dbc174a3ae1eb4461442fe33a4635c8c776ce"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128-underwater/tile-2-1.png",
+          "sha256": "37cb0da14d875972702e744edb0b43eb4ff4580cd04b5d822d0aa268f78bf37a"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-128-underwater/tile-3-1.png",
+          "sha256": "1c494df6e5b13c330c0c03625b267f794fb76baeac72cd87059a571fb7dc25f4"
+        }
+      ],
+      "columns": 240,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-129",
+      "filename": "pokemon-emerald-version-route-129-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "c9505cfb4b685ecd56c7ebf7ff8a43bc2d6307508a9d98de802225cd86c4620c",
+      "previous_source_dimensions": [
+        5120,
+        2560
+      ],
+      "source_dimensions": [
+        2560,
+        1280
+      ],
+      "source_sha256": "06b0c037ae51f69521f97ac8c7a3613fdc7b998f5b941eb4bfb1a819c462c3c5",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-129.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-129.webp",
+      "preview_dimensions": [
+        320,
+        160
+      ],
+      "render_tile_count": 6,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129/tile-0-0.png",
+          "sha256": "ad75fedad96872ef5c366391372a58939b10660de0a2442146ba153419b4b44e"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129/tile-1-0.png",
+          "sha256": "c72ac49cac69bbff63798f5791ccede441e9bbff4c9b92e5d54cb2dc9fd5b107"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129/tile-2-0.png",
+          "sha256": "8cb8350173c4161f6b95c32014baa5bb41c4ead4312db86b44b9abd1ef9cd41a"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129/tile-0-1.png",
+          "sha256": "caf6a80e9202ca93537773605428b994bda5c48a314cd8cd003729740f07edad"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129/tile-1-1.png",
+          "sha256": "9040a5d7cf6b9de36c6536c01cbffe2739300f9c9cbc01d48ee158efbbda6929"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129/tile-2-1.png",
+          "sha256": "b1515f62f83083c3e4bb3a0275cc4bf0f3d8a81ce8b5ae323662c23452fc15cd"
+        }
+      ],
+      "columns": 160,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-129-underwater",
+      "filename": "pokemon-emerald-version-route-129-underwater-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "61591e4fab85d591b731cbc363b0ed2db554d84d3e56318745b2633bfd117bf9",
+      "previous_source_dimensions": [
+        5120,
+        2560
+      ],
+      "source_dimensions": [
+        2560,
+        1280
+      ],
+      "source_sha256": "9273262635ef5fedeee92bc4bbbd1b81945eeaf9be50d6496d9450780462bc92",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-129-underwater.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-129-underwater.webp",
+      "preview_dimensions": [
+        320,
+        160
+      ],
+      "render_tile_count": 6,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129-underwater/tile-0-0.png",
+          "sha256": "94e9f5e484bfd12e10194a26d3ddf290f9daa5a762164ba0d1d1fd5e9cc403f3"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129-underwater/tile-1-0.png",
+          "sha256": "aee5d666318b8e4f11546347bfcb2d99be12f538043c9cdb823393edd849c14e"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129-underwater/tile-2-0.png",
+          "sha256": "93487500428333df9f599c86f1cd9baeade58b874fcc044d5ba511fefc17d440"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129-underwater/tile-0-1.png",
+          "sha256": "a2423b2252fdaa671987e0bd3efe0fcb9e403151779bf0bfab7082d366e1fc3b"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129-underwater/tile-1-1.png",
+          "sha256": "89dd6ea10bedeed8bf5cc9d3a0e11468d016b84d8a2dd2b0a072c27d380256a7"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-129-underwater/tile-2-1.png",
+          "sha256": "255e7f463e563c8183a7876e6887e881bf142bfeacab2f60bb95e397a43942a1"
+        }
+      ],
+      "columns": 160,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-130",
+      "filename": "pokemon-emerald-version-route-130-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "3406186ed60529c096822c295914752e42a6f847ca5da536e878a15e77ae0eb1",
+      "previous_source_dimensions": [
+        5120,
+        2560
+      ],
+      "source_dimensions": [
+        2560,
+        1280
+      ],
+      "source_sha256": "7158eaf84ec178760ce1432e494b843dce6a5a47ccc791dd4a111d38b014a175",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-130.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-130.webp",
+      "preview_dimensions": [
+        320,
+        160
+      ],
+      "render_tile_count": 6,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-130/tile-0-0.png",
+          "sha256": "4ebcd16e9ee9e67e0fb903df1564fe43d0064572dce9a05eac552d380ec4d414"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-130/tile-1-0.png",
+          "sha256": "25a5c54426190e356fbb6144bd250a50679fb09aebbc07dbeaaf00b9e00977be"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-130/tile-2-0.png",
+          "sha256": "0d5434cccb026b4dd8fcb6ba2a25c804eb22c8891f323d02d3d46cb19fff9063"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-130/tile-0-1.png",
+          "sha256": "7af009ff6a768b80b6030a01f4e91819277780256f64f73eef4362b1958490a2"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-130/tile-1-1.png",
+          "sha256": "9297857adb4c3e9dd3c597784f7bbb7d227311971528e99a37d8a483df0ea54e"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-130/tile-2-1.png",
+          "sha256": "5caa32f427d08f13705ba55195dc08e633529765ce073eb80aac11b868fe807a"
+        }
+      ],
+      "columns": 160,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-131",
+      "filename": "pokemon-emerald-version-route-131-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "4f6f70542d9a4b0c5c438dea4fb1f3b6ef7e3d86b5097bcce8decb23d5a47559",
+      "previous_source_dimensions": [
+        3840,
+        2560
+      ],
+      "source_dimensions": [
+        1920,
+        1280
+      ],
+      "source_sha256": "322e8424fdd50691e5c44ce0e6963283a89528f48b2149c34477d262339ede38",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-131.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-131.webp",
+      "preview_dimensions": [
+        320,
+        213
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 120,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-132",
+      "filename": "pokemon-emerald-version-route-132-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "8ee100313e2541ef46e9f180097cafbf7a598e846d367c76f554834be263eded",
+      "previous_source_dimensions": [
+        5120,
+        2560
+      ],
+      "source_dimensions": [
+        2560,
+        1280
+      ],
+      "source_sha256": "8ac6f2435d65454a0d93c8741f0cc85f8ceca4ef6bec86fa620d510ed522e9aa",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-132.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-132.webp",
+      "preview_dimensions": [
+        320,
+        160
+      ],
+      "render_tile_count": 6,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-132/tile-0-0.png",
+          "sha256": "efc3f416fedc6a195a8b64f3fbbd3fcb23b34f93e7dd602fd8c295413d3fd9a8"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-132/tile-1-0.png",
+          "sha256": "46daa75070a30b2fdf2641db51cbe5e48d0f03b5ac5f5df6393a2bbb5a5d8f04"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-132/tile-2-0.png",
+          "sha256": "53d0533601bc85204f241b174409874aeb5313d11d30a152e314d516ae7203b7"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-132/tile-0-1.png",
+          "sha256": "9961297fba58fb29c463b779facb8cfaf81708ac0800afa5cb421a64950a0381"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-132/tile-1-1.png",
+          "sha256": "c0ea722397e966158cfcb00164688fe08c8eb8a1ec454c37a837b1624bb99f69"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-132/tile-2-1.png",
+          "sha256": "7d646cb4ac44d157c912e36e6c3e36138e9235d98679918e0801effcb2900c05"
+        }
+      ],
+      "columns": 160,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-133",
+      "filename": "pokemon-emerald-version-route-133-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "addc08bd2cad5b5a25e6c18db8ef3a78a0381c81dcaee10381b7a18c87a494ba",
+      "previous_source_dimensions": [
+        5120,
+        2560
+      ],
+      "source_dimensions": [
+        2560,
+        1280
+      ],
+      "source_sha256": "083580dd80d1b41f2910eec1b0f6ef6c5ae2191219789141249e0bb92e577895",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-133.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-133.webp",
+      "preview_dimensions": [
+        320,
+        160
+      ],
+      "render_tile_count": 6,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-133/tile-0-0.png",
+          "sha256": "c04db24b018c76a0a37e7ef77ca044e6407434d6c26e44113f1442168431019f"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-133/tile-1-0.png",
+          "sha256": "d208f74087bc539fd0f50839df0e3f23a9c3329f1728b582c63b9cf48eb4ad7e"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-133/tile-2-0.png",
+          "sha256": "3c3c7232ee2a053c61d75f9e24faf379b90f57d9074d4b07ef1515d8d6278ca6"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-133/tile-0-1.png",
+          "sha256": "1faa642928d80f423462c246bfb6197da47e6f1199d17b65f4a8d2cd7ea2c324"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-133/tile-1-1.png",
+          "sha256": "76862111b6aa5e23a0b1bf9ada6ec4a80d8d05e1d24df2623cc384efe8eabbd1"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-133/tile-2-1.png",
+          "sha256": "78f0f7f4424a3db320d469f0caaae8576bc9ddc621e1a149ceb1d0f4ff263c7e"
+        }
+      ],
+      "columns": 160,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-134",
+      "filename": "pokemon-emerald-version-route-134-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "1a9f3db4c02fc34e82e5e07163b4a0f811c0e86fccc37a7461319da6f8d17543",
+      "previous_source_dimensions": [
+        5120,
+        2560
+      ],
+      "source_dimensions": [
+        2560,
+        1280
+      ],
+      "source_sha256": "8809fea302e3c1cdd1e8a122812684c89e258b9a49faea3049686e4951d03e73",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-134.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-134.webp",
+      "preview_dimensions": [
+        320,
+        160
+      ],
+      "render_tile_count": 6,
+      "render_tiles": [
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-134/tile-0-0.png",
+          "sha256": "de944ec54fa3ff2ac541d5bec3f0beaea00eff7f056ce7e869c44913859a1aa9"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-134/tile-1-0.png",
+          "sha256": "5ffe7b0db26497820cc390196d144f457808bf898dfbe686d0be66988413ae25"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-134/tile-2-0.png",
+          "sha256": "69efb0bfe02e00a7ce31f97d14fef928a88b91427f768699bf46aeb62a806e83"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-134/tile-0-1.png",
+          "sha256": "69a70eab09bf5efefb0e6346f7469d209e88cd2d85f4934e1db34164c1993cfc"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-134/tile-1-1.png",
+          "sha256": "37a394b695e580fc8cf8792c3b45560b0b06c56c7cb180bec945923def05964c"
+        },
+        {
+          "asset": "images/worlds/hoenn/render-tiles/route-134/tile-2-1.png",
+          "sha256": "86677f8dbe449fed163b9ea89fdd76a8c5f50a84dc381ebb2d67e0f4e31eeb1e"
+        }
+      ],
+      "columns": 160,
+      "rows": 80,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "route-134-underwater",
+      "filename": "pokemon-emerald-version-route-134-underwater-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "81ab87b7ea02dc4000a318882dd962d446e5f06718184c912ba766dcbd777999",
+      "previous_source_dimensions": [
+        1408,
+        3072
+      ],
+      "source_dimensions": [
+        704,
+        1536
+      ],
+      "source_sha256": "7b0bdba1fef60e09a3688c985f63a30f06091c6a1d76c2c10c52577be656a747",
+      "installed_asset": "images/worlds/hoenn/native-expansion/route-134-underwater.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/route-134-underwater.webp",
+      "preview_dimensions": [
+        110,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 44,
+      "rows": 96,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "sea-cave-1",
+      "filename": "pokemon-emerald-version-sea-cave-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "958c1f833a759be8d403ac7060256c1bcf586ae54bf3d172d102d6122062e4d5",
+      "previous_source_dimensions": [
+        1280,
+        1280
+      ],
+      "source_dimensions": [
+        640,
+        640
+      ],
+      "source_sha256": "7a7745026e765c536befb6ac7fed94ffc21b93fb91c30ba75706b0b44b20f938",
+      "installed_asset": "images/worlds/hoenn/native-expansion/sea-cave-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/sea-cave-1.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 40,
+      "rows": 40,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "sea-cave-2",
+      "filename": "pokemon-emerald-version-sea-cave-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "f4ca7ffda261e15ba1a6a655662fe000759c1b0a48c1177a572ce29f68dba0a5",
+      "previous_source_dimensions": [
+        1728,
+        1984
+      ],
+      "source_dimensions": [
+        864,
+        992
+      ],
+      "source_sha256": "41a5f1b5f38cc0478ac1a6105aa801d559f78ab2e592b904f2cf3fa5cbdc1524",
+      "installed_asset": "images/worlds/hoenn/native-expansion/sea-cave-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/sea-cave-2.webp",
+      "preview_dimensions": [
+        209,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 54,
+      "rows": 62,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "sea-cave-underwater",
+      "filename": "pokemon-emerald-version-sea-cave-underwater-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "d93ef65a7ec93e114a2d401ab343ff42182d7543ee928ecddad8750b7d24d817",
+      "previous_source_dimensions": [
+        960,
+        640
+      ],
+      "source_dimensions": [
+        480,
+        320
+      ],
+      "source_sha256": "d97b7ee3723f87a5ed4df043a87a5bffceb4656066aa3381d17e90f24ba1c42b",
+      "installed_asset": "images/worlds/hoenn/native-expansion/sea-cave-underwater.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/sea-cave-underwater.webp",
+      "preview_dimensions": [
+        320,
+        213
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 30,
+      "rows": 20,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "seafloor-cavern-2",
+      "filename": "pokemon-emerald-version-seafloor-cavern-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "9e26338d888cfbac765511e40b683e092a396e019976480f578ea608dd08d1de",
+      "previous_source_dimensions": [
+        1280,
+        1280
+      ],
+      "source_dimensions": [
+        640,
+        640
+      ],
+      "source_sha256": "25d6383bd1db07aae842b9312148aa3bd24266f1df1f6b05b037f648f0958ae9",
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/seafloor-cavern-2.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 40,
+      "rows": 40,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "seafloor-cavern-3",
+      "filename": "pokemon-emerald-version-seafloor-cavern-3-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "7bd1e6bde03d798a087558fa2b464915163c1724e0878f9aa42497bce71a2eb0",
+      "previous_source_dimensions": [
+        1152,
+        1216
+      ],
+      "source_dimensions": [
+        576,
+        608
+      ],
+      "source_sha256": "1f9dd5184964a946993e69996972d3c2f82f53ce02bc3cb1f2cd672793aa58a8",
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-3.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/seafloor-cavern-3.webp",
+      "preview_dimensions": [
+        227,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 36,
+      "rows": 38,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "seafloor-cavern-4",
+      "filename": "pokemon-emerald-version-seafloor-cavern-4-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "ad19d6b980010a23c799f3a8e4e0d8fa41ec884a9918ef8b29fa39efd2538742",
+      "previous_source_dimensions": [
+        1152,
+        768
+      ],
+      "source_dimensions": [
+        576,
+        384
+      ],
+      "source_sha256": "e3ae90c6ba629ff441e0c428da3914f9cd1fdbcf3b3a8523674d0969a236fa1b",
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-4.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/seafloor-cavern-4.webp",
+      "preview_dimensions": [
+        320,
+        213
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 36,
+      "rows": 24,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "seafloor-cavern-5",
+      "filename": "pokemon-emerald-version-seafloor-cavern-5-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "0bf8bcd81af755b62e6c4166229209ec112a5f0c267d1003020db68407271196",
+      "previous_source_dimensions": [
+        1536,
+        1472
+      ],
+      "source_dimensions": [
+        768,
+        736
+      ],
+      "source_sha256": "01a9b7fda451c79086c39bbf99c95d89a8db2d1ae39b231d06ba2cb9e68251b9",
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-5.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/seafloor-cavern-5.webp",
+      "preview_dimensions": [
+        250,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 48,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "seafloor-cavern-6",
+      "filename": "pokemon-emerald-version-seafloor-cavern-6-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "1222cf232ea3b1ef81b5f216c901e763fd2b0819c04bcdd487e3ca41a611cc39",
+      "previous_source_dimensions": [
+        1472,
+        1600
+      ],
+      "source_dimensions": [
+        736,
+        800
+      ],
+      "source_sha256": "2d468905649e134f90c79f9b1cf4f4205b9b2f6aedae774360985438c9ee8ef7",
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-6.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/seafloor-cavern-6.webp",
+      "preview_dimensions": [
+        221,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 46,
+      "rows": 50,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "seafloor-cavern-7",
+      "filename": "pokemon-emerald-version-seafloor-cavern-7-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "717a26a47dc02bf9a59ffc4e21b181ecb29e1fd524fe3b92f6f66424fdca4582",
+      "previous_source_dimensions": [
+        1024,
+        1088
+      ],
+      "source_dimensions": [
+        512,
+        544
+      ],
+      "source_sha256": "e08765c77d3dd93dd51136847006b745cb7e73c5d4e3a7e9c4a8b2ace93544e4",
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-7.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/seafloor-cavern-7.webp",
+      "preview_dimensions": [
+        226,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 32,
+      "rows": 34,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "seafloor-cavern-8",
+      "filename": "pokemon-emerald-version-seafloor-cavern-8-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "f9e7919b8bb75c934a8076d10ec92dfabe15a4c9d67cfe2a9cf0e1a902fc9313",
+      "previous_source_dimensions": [
+        704,
+        896
+      ],
+      "source_dimensions": [
+        352,
+        448
+      ],
+      "source_sha256": "d85be95b24a219df2d2b0cadba3ac98853625e0344305a2466e39a0c2c3c9d20",
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-8.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/seafloor-cavern-8.webp",
+      "preview_dimensions": [
+        189,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 22,
+      "rows": 28,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "seafloor-cavern-9",
+      "filename": "pokemon-emerald-version-seafloor-cavern-9-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "20a3a0b0633f29a5b6c4de95709002e227599c32adc345338933ab84adfa09b5",
+      "previous_source_dimensions": [
+        1728,
+        2944
+      ],
+      "source_dimensions": [
+        864,
+        1472
+      ],
+      "source_sha256": "60b6556ad5fa34395552b2bf62530b497bfc371cfd7ae7bcacd28b12458bf06d",
+      "installed_asset": "images/worlds/hoenn/native-expansion/seafloor-cavern-9.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/seafloor-cavern-9.webp",
+      "preview_dimensions": [
+        141,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 54,
+      "rows": 92,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "sealed-chamber-1f-1",
+      "filename": "pokemon-emerald-version-sealed-chamber-1f-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "360a1724d290544dee82c8f7413d5a3f1abee6e9d3524c3907aa25c693d0f2b6",
+      "previous_source_dimensions": [
+        1344,
+        1472
+      ],
+      "source_dimensions": [
+        672,
+        736
+      ],
+      "source_sha256": "165aedbdac38a4826b2477bcaef9f4daa7a164acf7c1adbd809b75d9b1b756c7",
+      "installed_asset": "images/worlds/hoenn/native-expansion/sealed-chamber-1f-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/sealed-chamber-1f-1.webp",
+      "preview_dimensions": [
+        219,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 42,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "sealed-chamber-1f-2",
+      "filename": "pokemon-emerald-version-sealed-chamber-1f-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "7188c7f571ef7ed34e22403b2102cb3e9a0d82cea9daa5f825c02142956ec66c",
+      "previous_source_dimensions": [
+        1344,
+        1472
+      ],
+      "source_dimensions": [
+        672,
+        736
+      ],
+      "source_sha256": "0a294aaad0977948331a2c4852f1fa847c1b8413ed0bdf93925c8ba64e254a1b",
+      "installed_asset": "images/worlds/hoenn/native-expansion/sealed-chamber-1f-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/sealed-chamber-1f-2.webp",
+      "preview_dimensions": [
+        219,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 42,
+      "rows": 46,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "shoal-cave-1f-2-high-tide",
+      "filename": "pokemon-emerald-version-shoal-cave-1f-2-high-tide-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "77889999f6f4bfcd305ab094d89dd1963a5f08dd5bb0c13a5958943a0a2cf9ca",
+      "previous_source_dimensions": [
+        2944,
+        2432
+      ],
+      "source_dimensions": [
+        1472,
+        1216
+      ],
+      "source_sha256": "9b49f263d7df7fa5b2e3d10e87d025f24818516a97bc063240e80f2974d74015",
+      "installed_asset": "images/worlds/hoenn/native-expansion/shoal-cave-1f-2-high-tide.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/shoal-cave-1f-2-high-tide.webp",
+      "preview_dimensions": [
+        291,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 92,
+      "rows": 76,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "shoal-cave-low-tide",
+      "filename": "pokemon-emerald-version-shoal-cave-1f-2-low-tide-gba-map.webp",
+      "historical_status": "existing-area-alias-preserved",
+      "replace": false,
+      "previous_source_sha256": "3e03976c5e0b9cf5d887aeed945d1068ae2a28d1a2979eb6c68d97ab0b490c8b",
+      "previous_source_dimensions": [
+        2944,
+        2432
+      ],
+      "source_dimensions": [
+        1472,
+        1216
+      ],
+      "source_sha256": "e567ae1978d61e2a52aa28a77d44298fdb93f98b98ab0693db2718eb300f0775"
+    },
+    {
+      "world": "hoenn",
+      "area_key": "shoal-cave-1f-3",
+      "filename": "pokemon-emerald-version-shoal-cave-1f-3-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "8ba4092331cda001d3835fa6167538ca3a4e565ae921dbf9cd79be920ac1aa54",
+      "previous_source_dimensions": [
+        1984,
+        896
+      ],
+      "source_dimensions": [
+        992,
+        448
+      ],
+      "source_sha256": "f1aeb02738fd924fbc09018efba722bc0a48fff4b42eee2148b233f400f00a7a",
+      "installed_asset": "images/worlds/hoenn/native-expansion/shoal-cave-1f-3.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/shoal-cave-1f-3.webp",
+      "preview_dimensions": [
+        320,
+        145
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 62,
+      "rows": 28,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "studio-cave-1",
+      "filename": "pokemon-emerald-version-studio-cave-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "6393b52a90649eebe5b784d085aeb3298dc3c593efd06711f4b34c6ad2c5a981",
+      "previous_source_dimensions": [
+        2944,
+        3456
+      ],
+      "source_dimensions": [
+        1472,
+        1728
+      ],
+      "source_sha256": "e64ad6a8d55273732e960dbf033d50e80019c216f5bb5e4f3cd2caa3e543cbf4",
+      "installed_asset": "images/worlds/hoenn/native-expansion/studio-cave-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/studio-cave-1.webp",
+      "preview_dimensions": [
+        204,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 92,
+      "rows": 108,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "studio-cave-2",
+      "filename": "pokemon-emerald-version-studio-cave-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "1e068797412b94617b1fd24e2f0be9363f7057e25d185c6bd5f65124adc7a9da",
+      "previous_source_dimensions": [
+        960,
+        1216
+      ],
+      "source_dimensions": [
+        480,
+        608
+      ],
+      "source_sha256": "8218b3f54bb6f78e3bf981e3d96ed9859cc5eaae57fb2ea1cf75135043512898",
+      "installed_asset": "images/worlds/hoenn/native-expansion/studio-cave-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/studio-cave-2.webp",
+      "preview_dimensions": [
+        189,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 30,
+      "rows": 38,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "worlds-edge-island-1",
+      "filename": "pokemon-emerald-version-worlds-edge-island-1-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "e58c7fa34b83554fc9db2ab654df556b4d68ad48d2e36308c331cfde5ae83403",
+      "previous_source_dimensions": [
+        2176,
+        2944
+      ],
+      "source_dimensions": [
+        1088,
+        1472
+      ],
+      "source_sha256": "4c628b07aaa988187e7faeb0f7f405b0dd6b22195c32a5db2d8eeae733363476",
+      "installed_asset": "images/worlds/hoenn/native-expansion/worlds-edge-island-1.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/worlds-edge-island-1.webp",
+      "preview_dimensions": [
+        177,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 68,
+      "rows": 92,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    },
+    {
+      "world": "hoenn",
+      "area_key": "worlds-edge-island-2",
+      "filename": "pokemon-emerald-version-worlds-edge-island-2-gba-map.webp",
+      "historical_status": "new-native-area",
+      "replace": true,
+      "previous_source_sha256": "673b21e26abd72cd2fc667b66dd329f4b7dbc80ef1108bafb85b4b01a08321ed",
+      "previous_source_dimensions": [
+        1856,
+        1856
+      ],
+      "source_dimensions": [
+        928,
+        928
+      ],
+      "source_sha256": "f06a100a490bbbac684c92e2b1b74f0ef1994807dbd1acd89beee2ce2de7b2dc",
+      "installed_asset": "images/worlds/hoenn/native-expansion/worlds-edge-island-2.webp",
+      "preview_asset": "images/worlds/hoenn/thumbnails/worlds-edge-island-2.webp",
+      "preview_dimensions": [
+        240,
+        240
+      ],
+      "render_tile_count": 0,
+      "render_tiles": [],
+      "columns": 58,
+      "rows": 58,
+      "logical_cell_size": 8,
+      "display_cell_size": 16,
+      "movement_step": 2,
+      "trainer_display_size": 32,
+      "movement_display_pixels": 32,
+      "native_bytes_match": true,
+      "complete_stream_verified": true,
+      "render_pixels_match": true
+    }
+  ]
+}

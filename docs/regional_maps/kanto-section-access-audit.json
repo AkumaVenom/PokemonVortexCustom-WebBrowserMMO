@@ -1,0 +1,111 @@
+{
+  "meaningful_sections": 86,
+  "sections_reached_by_default_entries_and_authored_warps": 73,
+  "sections_requiring_explicit_entry_selection": [
+    {
+      "area": "pokemon-mansion-1f",
+      "spawn": [
+        47,
+        31
+      ],
+      "component_cells": 168
+    },
+    {
+      "area": "pokemon-mansion-1f",
+      "spawn": [
+        69,
+        62
+      ],
+      "component_cells": 140
+    },
+    {
+      "area": "pokemon-mansion-2f",
+      "spawn": [
+        12,
+        62
+      ],
+      "component_cells": 168
+    },
+    {
+      "area": "pokemon-mansion-b1f",
+      "spawn": [
+        13,
+        25
+      ],
+      "component_cells": 712
+    },
+    {
+      "area": "pokemon-tower-1f",
+      "spawn": [
+        32,
+        30
+      ],
+      "component_cells": 48
+    },
+    {
+      "area": "seafoam-islands-b3f",
+      "spawn": [
+        65,
+        39
+      ],
+      "component_cells": 40
+    },
+    {
+      "area": "sevii-four-island-icefall-cave-3",
+      "spawn": [
+        9,
+        21
+      ],
+      "component_cells": 140
+    },
+    {
+      "area": "sevii-one-island",
+      "spawn": [
+        46,
+        330
+      ],
+      "component_cells": 496
+    },
+    {
+      "area": "sevii-one-island",
+      "spawn": [
+        46,
+        247
+      ],
+      "component_cells": 56
+    },
+    {
+      "area": "sevii-one-island-mt-ember-braille-cave-1f",
+      "spawn": [
+        49,
+        13
+      ],
+      "component_cells": 80
+    },
+    {
+      "area": "sevii-three-island-berry-forest",
+      "spawn": [
+        61,
+        31
+      ],
+      "component_cells": 348
+    },
+    {
+      "area": "silph-co-01f",
+      "spawn": [
+        9,
+        16
+      ],
+      "component_cells": 92
+    },
+    {
+      "area": "victory-road-central-cavern",
+      "spawn": [
+        89,
+        22
+      ],
+      "component_cells": 200
+    }
+  ],
+  "decorative_edge_fragments_excluded_from_arrival_choices": 14
+}

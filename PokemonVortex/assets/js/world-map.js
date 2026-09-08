@@ -71,8 +71,10 @@
     const y = Number(player.y) || 1;
     const ratio = Math.max(1, state.tile / state.logicalTile);
     const unit = Math.round(16 * ratio);
-    const left = (x - 1) * state.tile + Math.max(0, (state.tile - unit) / 2);
-    const top = (y - 1) * state.tile - unit;
+    // New maps subdivide source metatiles for precise collision. A sprite can
+    // span two movement cells: center its feet on the authoritative cell.
+    const left = (x - 1) * state.tile + (state.tile - unit) / 2;
+    const top = y * state.tile - unit * 2;
     const previousX = Number(element.dataset.x) || x;
     const previousY = Number(element.dataset.y) || y;
     const changed = previousX !== x || previousY !== y;
@@ -256,6 +258,8 @@
       const body = new URLSearchParams();
       body.set('direction', String(direction));
       body.set('csrf_token', String(cfg.csrf || ''));
+      body.set('world', String(cfg.world || ''));
+      body.set('area', String(cfg.area || ''));
 
       const response = await fetch(cfg.moveUrl, {
         method: 'POST',
@@ -277,6 +281,10 @@
       }
 
       const data = await response.json();
+      if (data.error === 'area_changed') {
+        setStatus('Your trainer entered another area. Reload this page to return here.', 'notice');
+        return;
+      }
       if (!response.ok || !data.ok) throw new Error(data.error || `HTTP ${response.status}`);
       if (data.redirect) {
         setStatus('Entering connected area…', 'success');

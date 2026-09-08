@@ -1,0 +1,5375 @@
+{
+  "revision": "27.0.0",
+  "authored_warps": 217,
+  "status_counts": {
+    "destination-outside-new-source-set": 54,
+    "installed": 128,
+    "source-blocked-or-outside-supplied-crop": 34,
+    "target-blocked-or-outside-supplied-crop": 1
+  },
+  "installed_trigger_cells": 508,
+  "areas_with_transitions": 42,
+  "collision_cells_opened": 0,
+  "source_snapshots": [
+    {
+      "layout": "LAYOUT_CERULEAN_CAVE_1F",
+      "sha256": "42a7d49479544125aa08209126948e3f57ff6040a2f6c1b5289e498de39d4e5c",
+      "map_id": "MAP_CERULEAN_CAVE_1F"
+    },
+    {
+      "layout": "LAYOUT_CERULEAN_CAVE_2F",
+      "sha256": "2c6e7f32daefb68be4a39c7219682c3bb7b8c8ddb079db21226de4afa556f6ae",
+      "map_id": "MAP_CERULEAN_CAVE_2F"
+    },
+    {
+      "layout": "LAYOUT_CERULEAN_CAVE_B1F",
+      "sha256": "771c69cd177d040c0048fc9a4729525141d1844e18460448d48e1a1af405986a",
+      "map_id": "MAP_CERULEAN_CAVE_B1F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_MANSION_1F",
+      "sha256": "96788cd5e8758bbd19423cd153a2034e1b89b2f66b5463acb4a28e90d3cde019",
+      "map_id": "MAP_POKEMON_MANSION_1F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_MANSION_2F",
+      "sha256": "5dd26a290a4a605e280049c57c41d72d4043063234fea346c143fcdd9b3f48ce",
+      "map_id": "MAP_POKEMON_MANSION_2F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_MANSION_3F",
+      "sha256": "fcea30babbe644b0e71b3cda5ce34a4359719c15564a4350a5df40de9dec0ff4",
+      "map_id": "MAP_POKEMON_MANSION_3F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_MANSION_B1F",
+      "sha256": "4c4c7322e422d1a1fcf39d0bd86e10c0ee01eb6ea1e02f32c3c7824860fab1e2",
+      "map_id": "MAP_POKEMON_MANSION_B1F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_TOWER_1F",
+      "sha256": "c4b52c52ec9232d9fa05dcc2735d41ab186f0b5e0d6ad8835a863596ac5720f9",
+      "map_id": "MAP_POKEMON_TOWER_1F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_TOWER_2F",
+      "sha256": "6247fdef34a71ce450d97af0d2ca854c6dee7573f46a112ec2287977ed2f66ab",
+      "map_id": "MAP_POKEMON_TOWER_2F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_TOWER_3F",
+      "sha256": "1f00493afb6cd414d753bd05a49357cd2acb08dc3f78e579d57e3ab884284835",
+      "map_id": "MAP_POKEMON_TOWER_3F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_TOWER_4F",
+      "sha256": "db07e0e9f3498875dd82e4d7a2258fe25704c7e079b4c0bc4843bf111cd5f051",
+      "map_id": "MAP_POKEMON_TOWER_4F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_TOWER_5F",
+      "sha256": "6a7c648e7afbac0ec863e42622588871b5705fc93750841a15e922984f30ce52",
+      "map_id": "MAP_POKEMON_TOWER_5F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_TOWER_6F",
+      "sha256": "ed2db6909d066de716c74286527e59a17c0c9487eb689044f9f918b84f46a34e",
+      "map_id": "MAP_POKEMON_TOWER_6F"
+    },
+    {
+      "layout": "LAYOUT_POKEMON_TOWER_7F",
+      "sha256": "f58f5339a3acf0cafe66162f500093fed33c6a8e395260e3f4580a77f2340a55",
+      "map_id": "MAP_POKEMON_TOWER_7F"
+    },
+    {
+      "layout": "LAYOUT_POWER_PLANT",
+      "sha256": "2a33bb77406ca5fefc99b9adc48ef640f4143d990e9b02c4ba2e96f17be0a8cb",
+      "map_id": "MAP_POWER_PLANT"
+    },
+    {
+      "layout": "LAYOUT_ROCK_TUNNEL_1F",
+      "sha256": "bf89c9e78f7373691783428c0143b6ecaa52be67edf508859ec175c79701a468",
+      "map_id": "MAP_ROCK_TUNNEL_1F"
+    },
+    {
+      "layout": "LAYOUT_ROCK_TUNNEL_B1F",
+      "sha256": "668c7ede675ec83008984303faafef1d0b4d6ec5f11bcfb852e73a6280ad3cb8",
+      "map_id": "MAP_ROCK_TUNNEL_B1F"
+    },
+    {
+      "layout": "LAYOUT_ROCKET_HIDEOUT_B1F",
+      "sha256": "29ba997e9bc1a96276c8988c14a3d51f7746ca1ed7b202f360b7d61ac9cd4f59",
+      "map_id": "MAP_ROCKET_HIDEOUT_B1F"
+    },
+    {
+      "layout": "LAYOUT_ROCKET_HIDEOUT_B2F",
+      "sha256": "752bd46e5ba811b3051936c7459341f68f1b1e28334da9a68bf82e884b82994f",
+      "map_id": "MAP_ROCKET_HIDEOUT_B2F"
+    },
+    {
+      "layout": "LAYOUT_ROCKET_HIDEOUT_B3F",
+      "sha256": "bab8e306f05ad3a7ef46050e05f20dc593581b9d99d1652e77a3e060b7c4bef4",
+      "map_id": "MAP_ROCKET_HIDEOUT_B3F"
+    },
+    {
+      "layout": "LAYOUT_ROCKET_HIDEOUT_B4F",
+      "sha256": "2a40922d464585b7fdf3d6bfaaf54458586488ade634303953a8339168148235",
+      "map_id": "MAP_ROCKET_HIDEOUT_B4F"
+    },
+    {
+      "layout": "LAYOUT_SEAFOAM_ISLANDS_B1F",
+      "sha256": "222fb2c418959a1a7c7530ec2d32eb1d3765f18eb5b095521b9f66346b9b5946",
+      "map_id": "MAP_SEAFOAM_ISLANDS_B1F"
+    },
+    {
+      "layout": "LAYOUT_SEAFOAM_ISLANDS_B2F",
+      "sha256": "155cbdbd34193d1d8cd9cbc6a0aeb2e117e12159a5c6a86991a971c0a3ed2b52",
+      "map_id": "MAP_SEAFOAM_ISLANDS_B2F"
+    },
+    {
+      "layout": "LAYOUT_SEAFOAM_ISLANDS_B3F",
+      "sha256": "804c345bc4567176ebfc14f5bbaba324b955989316388f08f32865406695bd0b",
+      "map_id": "MAP_SEAFOAM_ISLANDS_B3F"
+    },
+    {
+      "layout": "LAYOUT_SEAFOAM_ISLANDS_B4F",
+      "sha256": "34d63e32310a54b52f0e188f0c06a05e5a57f6e57a46598e24137d16af30df71",
+      "map_id": "MAP_SEAFOAM_ISLANDS_B4F"
+    },
+    {
+      "layout": "LAYOUT_BIRTH_ISLAND_EXTERIOR",
+      "sha256": "0ff589880a1f5895a09d412a461867ff806daf0a42b5594f4a073a2e863d0a13",
+      "map_id": "MAP_BIRTH_ISLAND_EXTERIOR"
+    },
+    {
+      "layout": "LAYOUT_FIVE_ISLAND_ROCKET_WAREHOUSE",
+      "sha256": "cb7ace86537355b5c9c1a635a7304c1a3fabe751df1e2cb00d5efe323ec6bf66",
+      "map_id": "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE"
+    },
+    {
+      "layout": "LAYOUT_FOUR_ISLAND",
+      "sha256": "236e8409df865ad947ada59080cd187e490993d53658b059dc8849d1af66231c",
+      "map_id": "MAP_FOUR_ISLAND"
+    },
+    {
+      "layout": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "sha256": "5b3658a89b320938e4d7a0da8d37550d92e2461ce3134fa617edfd99f022157f",
+      "map_id": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE"
+    },
+    {
+      "layout": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "sha256": "6c9cdcdb338f317e623cad8e45b6a6e2a26fb51168d927bc6a2103e01ca14229",
+      "map_id": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F"
+    },
+    {
+      "layout": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+      "sha256": "31871f15ba5459dca8894203fd67499f9d4f9afa5d27b40f3f8353ea2848894a",
+      "map_id": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F"
+    },
+    {
+      "layout": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+      "sha256": "a61cd5b3426dcabec56b6a2d344e7c8657a8791d7f78422e85183039e80e0b65",
+      "map_id": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK"
+    },
+    {
+      "layout": "LAYOUT_ONE_ISLAND",
+      "sha256": "8ff9c70f1ba28578f506945a1dbbedc783837f54cbd141b23dd19e2abbd50d3e",
+      "map_id": "MAP_ONE_ISLAND"
+    },
+    {
+      "layout": "LAYOUT_ONE_ISLAND_KINDLE_ROAD",
+      "sha256": "c9f58a1ee4ee4d12c53dd4f88a9579309a284adb9dbdf0dd782ec4dd9187aaef",
+      "map_id": "MAP_ONE_ISLAND_KINDLE_ROAD"
+    },
+    {
+      "layout": "LAYOUT_ONE_ISLAND_TREASURE_BEACH",
+      "sha256": "7d504de2807aa569e7d103a119b1ffa04e89a2cf1f98c801fdb4146bac90dfcb",
+      "map_id": "MAP_ONE_ISLAND_TREASURE_BEACH"
+    },
+    {
+      "layout": "LAYOUT_MT_EMBER_EXTERIOR",
+      "sha256": "cb4a7e698ecf72390f25ba902d2a23028abed3071f51bf15070451eb63b07f6b",
+      "map_id": "MAP_MT_EMBER_EXTERIOR"
+    },
+    {
+      "layout": "LAYOUT_MT_EMBER_RUBY_PATH_1F",
+      "sha256": "5263ec6486246ff0b3d01ccbf73bb8e93c7aac3c2f4ed58285a5066ce13f3901",
+      "map_id": "MAP_MT_EMBER_RUBY_PATH_1F"
+    },
+    {
+      "layout": "LAYOUT_MT_EMBER_RUBY_PATH_B1F",
+      "sha256": "72172498573e2db9fd099a56f6d2459bc66d4fb8496af247d334ee3b1d18662c",
+      "map_id": "MAP_MT_EMBER_RUBY_PATH_B1F"
+    },
+    {
+      "layout": "LAYOUT_MT_EMBER_RUBY_PATH_B2F",
+      "sha256": "aaac153121a30ca95d16130d9e00f8127b4327510331a92610b759a26fb01342",
+      "map_id": "MAP_MT_EMBER_RUBY_PATH_B2F"
+    },
+    {
+      "layout": "LAYOUT_MT_EMBER_RUBY_PATH_B3F",
+      "sha256": "1e782bfcc8ef32db5db635f6163be68609969e56254927643a523e3bca0aa90f",
+      "map_id": "MAP_MT_EMBER_RUBY_PATH_B3F"
+    },
+    {
+      "layout": "LAYOUT_MT_EMBER_RUBY_PATH_B4F",
+      "sha256": "8cb031bb0ce1b6f62c559395bd63e56053c2c99e7915417cc651eb43ad20450f",
+      "map_id": "MAP_MT_EMBER_RUBY_PATH_B4F"
+    },
+    {
+      "layout": "LAYOUT_MT_EMBER_SUMMIT",
+      "sha256": "6ceb4f240a2a8812d18ceb2169651c19d3a94a0d7d17a9eeda027a44e9002335",
+      "map_id": "MAP_MT_EMBER_SUMMIT"
+    },
+    {
+      "layout": "LAYOUT_SIX_ISLAND_ALTERING_CAVE",
+      "sha256": "95caf7108769faed563f2f11cadae6967855319bbf71801ce3c75e1db4b57543",
+      "map_id": "MAP_SIX_ISLAND_ALTERING_CAVE"
+    },
+    {
+      "layout": "LAYOUT_SIX_ISLAND_PATTERN_BUSH",
+      "sha256": "83cc057bf82baec1de948473105c5eb2bf6c7fe2bc93ff106b3bc72a4ad5cbf1",
+      "map_id": "MAP_SIX_ISLAND_PATTERN_BUSH"
+    },
+    {
+      "layout": "LAYOUT_THREE_ISLAND_BERRY_FOREST",
+      "sha256": "82bcf506a75b06f5662e6619877cd322c4001e06e71d779c8546130f90bee813",
+      "map_id": "MAP_THREE_ISLAND_BERRY_FOREST"
+    },
+    {
+      "layout": "LAYOUT_TWO_ISLAND",
+      "sha256": "963a9c65a4db58d755f026e7c3247d58dabcd4904b04d214623d20373903b425",
+      "map_id": "MAP_TWO_ISLAND"
+    },
+    {
+      "layout": "LAYOUT_TWO_ISLAND_CAPE_BRINK",
+      "sha256": "142bb4d30a7c6ef74b3dc1c8c8b5e9ae4f85fb06da806864f5e0afdc13bc6d9b",
+      "map_id": "MAP_TWO_ISLAND_CAPE_BRINK"
+    },
+    {
+      "layout": "LAYOUT_SILPH_CO_1F",
+      "sha256": "65a659d9d28b7ff09cd4a30bfc7858b2f9ce90b2977749327ff44bf5bfaafbb5",
+      "map_id": "MAP_SILPH_CO_1F"
+    },
+    {
+      "layout": "LAYOUT_SILPH_CO_2F",
+      "sha256": "9351a47d3569cd858c3eb3d80e24c7e8fd0a06aa1e1893fcfd547b2051ede6b1",
+      "map_id": "MAP_SILPH_CO_2F"
+    },
+    {
+      "layout": "LAYOUT_SILPH_CO_3F",
+      "sha256": "7d57a23b7dfeadb66571ebf7e5d1418f25476c30d7145d236bdc5d82af8eca8e",
+      "map_id": "MAP_SILPH_CO_3F"
+    },
+    {
+      "layout": "LAYOUT_VICTORY_ROAD_2F",
+      "sha256": "4fc48795f3cf7a945e46bb0358dba23c50a6ede35c2875210f75b2195cc450d2",
+      "map_id": "MAP_VICTORY_ROAD_2F"
+    },
+    {
+      "layout": "LAYOUT_VICTORY_ROAD_1F",
+      "sha256": "3885d2cac79afe4ce663b776dca2b4b758a680a49c8c23dbb69bfcf9d9951d2e",
+      "map_id": "MAP_VICTORY_ROAD_1F"
+    }
+  ],
+  "warps": [
+    {
+      "source_area": "cerulean-cave-1f",
+      "source_map": "MAP_CERULEAN_CAVE_1F",
+      "source_warp_index": 0,
+      "source_x": 33,
+      "source_y": 21,
+      "target_map": "MAP_CERULEAN_CITY",
+      "target_warp_index": "7",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "cerulean-cave-1f",
+      "source_map": "MAP_CERULEAN_CAVE_1F",
+      "source_warp_index": 1,
+      "source_x": 34,
+      "source_y": 2,
+      "target_map": "MAP_CERULEAN_CAVE_2F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "cerulean-cave-2f",
+      "target_spawn": [
+        63,
+        6
+      ],
+      "trigger_cells": [
+        [
+          69,
+          5
+        ],
+        [
+          70,
+          5
+        ],
+        [
+          69,
+          6
+        ],
+        [
+          70,
+          6
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-1f",
+      "source_map": "MAP_CERULEAN_CAVE_1F",
+      "source_warp_index": 2,
+      "source_x": 1,
+      "source_y": 7,
+      "target_map": "MAP_CERULEAN_CAVE_B1F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "cerulean-cave-b1f",
+      "target_spawn": [
+        13,
+        15
+      ],
+      "trigger_cells": [
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          4,
+          16
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-1f",
+      "source_map": "MAP_CERULEAN_CAVE_1F",
+      "source_warp_index": 3,
+      "source_x": 10,
+      "source_y": 2,
+      "target_map": "MAP_CERULEAN_CAVE_2F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "cerulean-cave-2f",
+      "target_spawn": [
+        23,
+        6
+      ],
+      "trigger_cells": [
+        [
+          21,
+          5
+        ],
+        [
+          22,
+          5
+        ],
+        [
+          21,
+          6
+        ],
+        [
+          22,
+          6
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-1f",
+      "source_map": "MAP_CERULEAN_CAVE_1F",
+      "source_warp_index": 4,
+      "source_x": 5,
+      "source_y": 15,
+      "target_map": "MAP_CERULEAN_CAVE_2F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "cerulean-cave-2f",
+      "target_spawn": [
+        11,
+        26
+      ],
+      "trigger_cells": [
+        [
+          11,
+          31
+        ],
+        [
+          12,
+          31
+        ],
+        [
+          11,
+          32
+        ],
+        [
+          12,
+          32
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-1f",
+      "source_map": "MAP_CERULEAN_CAVE_1F",
+      "source_warp_index": 5,
+      "source_x": 30,
+      "source_y": 10,
+      "target_map": "MAP_CERULEAN_CAVE_2F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "cerulean-cave-2f",
+      "target_spawn": [
+        48,
+        18
+      ],
+      "trigger_cells": [
+        [
+          61,
+          21
+        ],
+        [
+          62,
+          21
+        ],
+        [
+          61,
+          22
+        ],
+        [
+          62,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-1f",
+      "source_map": "MAP_CERULEAN_CAVE_1F",
+      "source_warp_index": 6,
+      "source_x": 24,
+      "source_y": 11,
+      "target_map": "MAP_CERULEAN_CAVE_2F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "cerulean-cave-2f",
+      "target_spawn": [
+        43,
+        18
+      ],
+      "trigger_cells": [
+        [
+          49,
+          23
+        ],
+        [
+          50,
+          23
+        ],
+        [
+          49,
+          24
+        ],
+        [
+          50,
+          24
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-1f",
+      "source_map": "MAP_CERULEAN_CAVE_1F",
+      "source_warp_index": 7,
+      "source_x": 2,
+      "source_y": 4,
+      "target_map": "MAP_CERULEAN_CAVE_2F",
+      "target_warp_index": "5",
+      "status": "installed",
+      "target_area": "cerulean-cave-2f",
+      "target_spawn": [
+        7,
+        10
+      ],
+      "trigger_cells": [
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          10
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-2f",
+      "source_map": "MAP_CERULEAN_CAVE_2F",
+      "source_warp_index": 0,
+      "source_x": 33,
+      "source_y": 4,
+      "target_map": "MAP_CERULEAN_CAVE_1F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "cerulean-cave-1f",
+      "target_spawn": [
+        68,
+        5
+      ],
+      "trigger_cells": [
+        [
+          63,
+          7
+        ],
+        [
+          64,
+          7
+        ],
+        [
+          63,
+          8
+        ],
+        [
+          64,
+          8
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-2f",
+      "source_map": "MAP_CERULEAN_CAVE_2F",
+      "source_warp_index": 1,
+      "source_x": 13,
+      "source_y": 4,
+      "target_map": "MAP_CERULEAN_CAVE_1F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "cerulean-cave-1f",
+      "target_spawn": [
+        20,
+        5
+      ],
+      "trigger_cells": [
+        [
+          23,
+          7
+        ],
+        [
+          24,
+          7
+        ],
+        [
+          23,
+          8
+        ],
+        [
+          24,
+          8
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-2f",
+      "source_map": "MAP_CERULEAN_CAVE_2F",
+      "source_warp_index": 2,
+      "source_x": 7,
+      "source_y": 14,
+      "target_map": "MAP_CERULEAN_CAVE_1F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "cerulean-cave-1f",
+      "target_spawn": [
+        13,
+        31
+      ],
+      "trigger_cells": [
+        [
+          11,
+          27
+        ],
+        [
+          12,
+          27
+        ],
+        [
+          11,
+          28
+        ],
+        [
+          12,
+          28
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-2f",
+      "source_map": "MAP_CERULEAN_CAVE_2F",
+      "source_warp_index": 3,
+      "source_x": 26,
+      "source_y": 9,
+      "target_map": "MAP_CERULEAN_CAVE_1F",
+      "target_warp_index": "5",
+      "status": "installed",
+      "target_area": "cerulean-cave-1f",
+      "target_spawn": [
+        60,
+        21
+      ],
+      "trigger_cells": [
+        [
+          49,
+          17
+        ],
+        [
+          50,
+          17
+        ],
+        [
+          49,
+          18
+        ],
+        [
+          50,
+          18
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-2f",
+      "source_map": "MAP_CERULEAN_CAVE_2F",
+      "source_warp_index": 4,
+      "source_x": 23,
+      "source_y": 10,
+      "target_map": "MAP_CERULEAN_CAVE_1F",
+      "target_warp_index": "6",
+      "status": "installed",
+      "target_area": "cerulean-cave-1f",
+      "target_spawn": [
+        48,
+        23
+      ],
+      "trigger_cells": [
+        [
+          43,
+          19
+        ],
+        [
+          44,
+          19
+        ],
+        [
+          43,
+          20
+        ],
+        [
+          44,
+          20
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-2f",
+      "source_map": "MAP_CERULEAN_CAVE_2F",
+      "source_warp_index": 5,
+      "source_x": 5,
+      "source_y": 6,
+      "target_map": "MAP_CERULEAN_CAVE_1F",
+      "target_warp_index": "7",
+      "status": "installed",
+      "target_area": "cerulean-cave-1f",
+      "target_spawn": [
+        5,
+        11
+      ],
+      "trigger_cells": [
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          8,
+          12
+        ]
+      ]
+    },
+    {
+      "source_area": "cerulean-cave-b1f",
+      "source_map": "MAP_CERULEAN_CAVE_B1F",
+      "source_warp_index": 0,
+      "source_x": 5,
+      "source_y": 7,
+      "target_map": "MAP_CERULEAN_CAVE_1F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "cerulean-cave-1f",
+      "target_spawn": [
+        4,
+        14
+      ],
+      "trigger_cells": [
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          12,
+          16
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 0,
+      "source_x": 7,
+      "source_y": 33,
+      "target_map": "MAP_CINNABAR_ISLAND",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 1,
+      "source_x": 8,
+      "source_y": 33,
+      "target_map": "MAP_CINNABAR_ISLAND",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 2,
+      "source_x": 9,
+      "source_y": 33,
+      "target_map": "MAP_CINNABAR_ISLAND",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 3,
+      "source_x": 10,
+      "source_y": 13,
+      "target_map": "MAP_POKEMON_MANSION_2F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "pokemon-mansion-2f",
+      "target_spawn": [
+        15,
+        31
+      ],
+      "trigger_cells": [
+        [
+          21,
+          28
+        ],
+        [
+          22,
+          28
+        ],
+        [
+          21,
+          29
+        ],
+        [
+          22,
+          29
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 4,
+      "source_x": 25,
+      "source_y": 27,
+      "target_map": "MAP_POKEMON_MANSION_B1F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "pokemon-mansion-b1f",
+      "target_spawn": [
+        68,
+        61
+      ],
+      "trigger_cells": [
+        [
+          51,
+          56
+        ],
+        [
+          52,
+          56
+        ],
+        [
+          51,
+          57
+        ],
+        [
+          52,
+          57
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 5,
+      "source_x": 34,
+      "source_y": 33,
+      "target_map": "MAP_CINNABAR_ISLAND",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 6,
+      "source_x": 35,
+      "source_y": 34,
+      "target_map": "MAP_CINNABAR_ISLAND",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 7,
+      "source_x": 19,
+      "source_y": 22,
+      "target_map": "MAP_POKEMON_MANSION_3F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "pokemon-mansion-3f",
+      "target_spawn": [
+        38,
+        37
+      ],
+      "trigger_cells": [
+        [
+          39,
+          46
+        ],
+        [
+          40,
+          46
+        ],
+        [
+          39,
+          47
+        ],
+        [
+          40,
+          47
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 8,
+      "source_x": 20,
+      "source_y": 22,
+      "target_map": "MAP_POKEMON_MANSION_3F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "pokemon-mansion-3f",
+      "target_spawn": [
+        39,
+        37
+      ],
+      "trigger_cells": [
+        [
+          41,
+          46
+        ],
+        [
+          42,
+          46
+        ],
+        [
+          41,
+          47
+        ],
+        [
+          42,
+          47
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-1f",
+      "source_map": "MAP_POKEMON_MANSION_1F",
+      "source_warp_index": 9,
+      "source_x": 11,
+      "source_y": 13,
+      "target_map": "MAP_POKEMON_MANSION_2F",
+      "target_warp_index": "2",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "pokemon-mansion-2f",
+      "source_map": "MAP_POKEMON_MANSION_2F",
+      "source_warp_index": 0,
+      "source_x": 9,
+      "source_y": 3,
+      "target_map": "MAP_POKEMON_MANSION_3F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "pokemon-mansion-3f",
+      "target_spawn": [
+        19,
+        9
+      ],
+      "trigger_cells": [
+        [
+          19,
+          8
+        ],
+        [
+          20,
+          8
+        ],
+        [
+          19,
+          9
+        ],
+        [
+          20,
+          9
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-2f",
+      "source_map": "MAP_POKEMON_MANSION_2F",
+      "source_warp_index": 1,
+      "source_x": 34,
+      "source_y": 22,
+      "target_map": "MAP_POKEMON_MANSION_3F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "pokemon-mansion-3f",
+      "target_spawn": [
+        71,
+        39
+      ],
+      "trigger_cells": [
+        [
+          69,
+          46
+        ],
+        [
+          70,
+          46
+        ],
+        [
+          69,
+          47
+        ],
+        [
+          70,
+          47
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-2f",
+      "source_map": "MAP_POKEMON_MANSION_2F",
+      "source_warp_index": 2,
+      "source_x": 6,
+      "source_y": 14,
+      "target_map": "MAP_POKEMON_MANSION_1F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "pokemon-mansion-1f",
+      "target_spawn": [
+        20,
+        29
+      ],
+      "trigger_cells": [
+        [
+          13,
+          30
+        ],
+        [
+          14,
+          30
+        ],
+        [
+          13,
+          31
+        ],
+        [
+          14,
+          31
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-2f",
+      "source_map": "MAP_POKEMON_MANSION_2F",
+      "source_warp_index": 3,
+      "source_x": 9,
+      "source_y": 14,
+      "target_map": "MAP_POKEMON_MANSION_3F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "pokemon-mansion-3f",
+      "target_spawn": [
+        25,
+        25
+      ],
+      "trigger_cells": [
+        [
+          19,
+          30
+        ],
+        [
+          20,
+          30
+        ],
+        [
+          19,
+          31
+        ],
+        [
+          20,
+          31
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-2f",
+      "source_map": "MAP_POKEMON_MANSION_2F",
+      "source_warp_index": 4,
+      "source_x": 27,
+      "source_y": 17,
+      "target_map": "MAP_POKEMON_MANSION_3F",
+      "target_warp_index": "5",
+      "status": "installed",
+      "target_area": "pokemon-mansion-3f",
+      "target_spawn": [
+        48,
+        37
+      ],
+      "trigger_cells": [
+        [
+          55,
+          36
+        ],
+        [
+          56,
+          36
+        ],
+        [
+          55,
+          37
+        ],
+        [
+          56,
+          37
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-3f",
+      "source_map": "MAP_POKEMON_MANSION_3F",
+      "source_warp_index": 0,
+      "source_x": 8,
+      "source_y": 3,
+      "target_map": "MAP_POKEMON_MANSION_2F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "pokemon-mansion-2f",
+      "target_spawn": [
+        18,
+        9
+      ],
+      "trigger_cells": [
+        [
+          17,
+          8
+        ],
+        [
+          18,
+          8
+        ],
+        [
+          17,
+          9
+        ],
+        [
+          18,
+          9
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-3f",
+      "source_map": "MAP_POKEMON_MANSION_3F",
+      "source_warp_index": 1,
+      "source_x": 34,
+      "source_y": 18,
+      "target_map": "MAP_POKEMON_MANSION_2F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "pokemon-mansion-2f",
+      "target_spawn": [
+        68,
+        47
+      ],
+      "trigger_cells": [
+        [
+          69,
+          38
+        ],
+        [
+          70,
+          38
+        ],
+        [
+          69,
+          39
+        ],
+        [
+          70,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-3f",
+      "source_map": "MAP_POKEMON_MANSION_3F",
+      "source_warp_index": 2,
+      "source_x": 11,
+      "source_y": 11,
+      "target_map": "MAP_POKEMON_MANSION_2F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "pokemon-mansion-2f",
+      "target_spawn": [
+        18,
+        31
+      ],
+      "trigger_cells": [
+        [
+          23,
+          24
+        ],
+        [
+          24,
+          24
+        ],
+        [
+          23,
+          25
+        ],
+        [
+          24,
+          25
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-3f",
+      "source_map": "MAP_POKEMON_MANSION_3F",
+      "source_warp_index": 3,
+      "source_x": 18,
+      "source_y": 18,
+      "target_map": "MAP_POKEMON_MANSION_1F",
+      "target_warp_index": "7",
+      "status": "installed",
+      "target_area": "pokemon-mansion-1f",
+      "target_spawn": [
+        39,
+        45
+      ],
+      "trigger_cells": [
+        [
+          37,
+          38
+        ],
+        [
+          38,
+          38
+        ],
+        [
+          37,
+          39
+        ],
+        [
+          38,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-3f",
+      "source_map": "MAP_POKEMON_MANSION_3F",
+      "source_warp_index": 4,
+      "source_x": 19,
+      "source_y": 18,
+      "target_map": "MAP_POKEMON_MANSION_1F",
+      "target_warp_index": "8",
+      "status": "installed",
+      "target_area": "pokemon-mansion-1f",
+      "target_spawn": [
+        41,
+        45
+      ],
+      "trigger_cells": [
+        [
+          39,
+          38
+        ],
+        [
+          40,
+          38
+        ],
+        [
+          39,
+          39
+        ],
+        [
+          40,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-3f",
+      "source_map": "MAP_POKEMON_MANSION_3F",
+      "source_warp_index": 5,
+      "source_x": 23,
+      "source_y": 18,
+      "target_map": "MAP_POKEMON_MANSION_2F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "pokemon-mansion-2f",
+      "target_spawn": [
+        55,
+        35
+      ],
+      "trigger_cells": [
+        [
+          47,
+          38
+        ],
+        [
+          48,
+          38
+        ],
+        [
+          47,
+          39
+        ],
+        [
+          48,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-3f",
+      "source_map": "MAP_POKEMON_MANSION_3F",
+      "source_warp_index": 6,
+      "source_x": 20,
+      "source_y": 18,
+      "target_map": "MAP_POKEMON_MANSION_1F",
+      "target_warp_index": "8",
+      "status": "installed",
+      "target_area": "pokemon-mansion-1f",
+      "target_spawn": [
+        41,
+        45
+      ],
+      "trigger_cells": [
+        [
+          41,
+          38
+        ],
+        [
+          42,
+          38
+        ],
+        [
+          41,
+          39
+        ],
+        [
+          42,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-3f",
+      "source_map": "MAP_POKEMON_MANSION_3F",
+      "source_warp_index": 7,
+      "source_x": 24,
+      "source_y": 18,
+      "target_map": "MAP_POKEMON_MANSION_2F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "pokemon-mansion-2f",
+      "target_spawn": [
+        55,
+        35
+      ],
+      "trigger_cells": [
+        [
+          49,
+          38
+        ],
+        [
+          50,
+          38
+        ],
+        [
+          49,
+          39
+        ],
+        [
+          50,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-mansion-b1f",
+      "source_map": "MAP_POKEMON_MANSION_B1F",
+      "source_warp_index": 0,
+      "source_x": 34,
+      "source_y": 29,
+      "target_map": "MAP_POKEMON_MANSION_1F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "pokemon-mansion-1f",
+      "target_spawn": [
+        53,
+        57
+      ],
+      "trigger_cells": [
+        [
+          69,
+          60
+        ],
+        [
+          70,
+          60
+        ],
+        [
+          69,
+          61
+        ],
+        [
+          70,
+          61
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-1f",
+      "source_map": "MAP_POKEMON_TOWER_1F",
+      "source_warp_index": 0,
+      "source_x": 10,
+      "source_y": 19,
+      "target_map": "MAP_LAVENDER_TOWN",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "pokemon-tower-1f",
+      "source_map": "MAP_POKEMON_TOWER_1F",
+      "source_warp_index": 1,
+      "source_x": 11,
+      "source_y": 18,
+      "target_map": "MAP_LAVENDER_TOWN",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "pokemon-tower-1f",
+      "source_map": "MAP_POKEMON_TOWER_1F",
+      "source_warp_index": 2,
+      "source_x": 12,
+      "source_y": 19,
+      "target_map": "MAP_LAVENDER_TOWN",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "pokemon-tower-1f",
+      "source_map": "MAP_POKEMON_TOWER_1F",
+      "source_warp_index": 3,
+      "source_x": 18,
+      "source_y": 9,
+      "target_map": "MAP_POKEMON_TOWER_2F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "pokemon-tower-2f",
+      "target_spawn": [
+        33,
+        23
+      ],
+      "trigger_cells": [
+        [
+          33,
+          19
+        ],
+        [
+          34,
+          19
+        ],
+        [
+          33,
+          20
+        ],
+        [
+          34,
+          20
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-2f",
+      "source_map": "MAP_POKEMON_TOWER_2F",
+      "source_warp_index": 0,
+      "source_x": 4,
+      "source_y": 10,
+      "target_map": "MAP_POKEMON_TOWER_3F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "pokemon-tower-3f",
+      "target_spawn": [
+        6,
+        20
+      ],
+      "trigger_cells": [
+        [
+          5,
+          21
+        ],
+        [
+          6,
+          21
+        ],
+        [
+          5,
+          22
+        ],
+        [
+          6,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-2f",
+      "source_map": "MAP_POKEMON_TOWER_2F",
+      "source_warp_index": 1,
+      "source_x": 18,
+      "source_y": 10,
+      "target_map": "MAP_POKEMON_TOWER_1F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "pokemon-tower-1f",
+      "target_spawn": [
+        33,
+        18
+      ],
+      "trigger_cells": [
+        [
+          33,
+          21
+        ],
+        [
+          34,
+          21
+        ],
+        [
+          33,
+          22
+        ],
+        [
+          34,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-3f",
+      "source_map": "MAP_POKEMON_TOWER_3F",
+      "source_warp_index": 0,
+      "source_x": 4,
+      "source_y": 10,
+      "target_map": "MAP_POKEMON_TOWER_2F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "pokemon-tower-2f",
+      "target_spawn": [
+        6,
+        23
+      ],
+      "trigger_cells": [
+        [
+          5,
+          21
+        ],
+        [
+          6,
+          21
+        ],
+        [
+          5,
+          22
+        ],
+        [
+          6,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-3f",
+      "source_map": "MAP_POKEMON_TOWER_3F",
+      "source_warp_index": 1,
+      "source_x": 18,
+      "source_y": 10,
+      "target_map": "MAP_POKEMON_TOWER_4F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "pokemon-tower-4f",
+      "target_spawn": [
+        33,
+        20
+      ],
+      "trigger_cells": [
+        [
+          33,
+          21
+        ],
+        [
+          34,
+          21
+        ],
+        [
+          33,
+          22
+        ],
+        [
+          34,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-4f",
+      "source_map": "MAP_POKEMON_TOWER_4F",
+      "source_warp_index": 0,
+      "source_x": 4,
+      "source_y": 10,
+      "target_map": "MAP_POKEMON_TOWER_5F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "pokemon-tower-5f",
+      "target_spawn": [
+        5,
+        20
+      ],
+      "trigger_cells": [
+        [
+          5,
+          21
+        ],
+        [
+          6,
+          21
+        ],
+        [
+          5,
+          22
+        ],
+        [
+          6,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-4f",
+      "source_map": "MAP_POKEMON_TOWER_4F",
+      "source_warp_index": 1,
+      "source_x": 18,
+      "source_y": 10,
+      "target_map": "MAP_POKEMON_TOWER_3F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "pokemon-tower-3f",
+      "target_spawn": [
+        33,
+        20
+      ],
+      "trigger_cells": [
+        [
+          33,
+          21
+        ],
+        [
+          34,
+          21
+        ],
+        [
+          33,
+          22
+        ],
+        [
+          34,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-5f",
+      "source_map": "MAP_POKEMON_TOWER_5F",
+      "source_warp_index": 0,
+      "source_x": 4,
+      "source_y": 10,
+      "target_map": "MAP_POKEMON_TOWER_4F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "pokemon-tower-4f",
+      "target_spawn": [
+        6,
+        20
+      ],
+      "trigger_cells": [
+        [
+          5,
+          21
+        ],
+        [
+          6,
+          21
+        ],
+        [
+          5,
+          22
+        ],
+        [
+          6,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-5f",
+      "source_map": "MAP_POKEMON_TOWER_5F",
+      "source_warp_index": 1,
+      "source_x": 18,
+      "source_y": 10,
+      "target_map": "MAP_POKEMON_TOWER_6F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "pokemon-tower-6f",
+      "target_spawn": [
+        33,
+        20
+      ],
+      "trigger_cells": [
+        [
+          33,
+          21
+        ],
+        [
+          34,
+          21
+        ],
+        [
+          33,
+          22
+        ],
+        [
+          34,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-6f",
+      "source_map": "MAP_POKEMON_TOWER_6F",
+      "source_warp_index": 0,
+      "source_x": 11,
+      "source_y": 16,
+      "target_map": "MAP_POKEMON_TOWER_7F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "pokemon-tower-7f",
+      "target_spawn": [
+        20,
+        32
+      ],
+      "trigger_cells": [
+        [
+          19,
+          33
+        ],
+        [
+          20,
+          33
+        ],
+        [
+          19,
+          34
+        ],
+        [
+          20,
+          34
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-6f",
+      "source_map": "MAP_POKEMON_TOWER_6F",
+      "source_warp_index": 1,
+      "source_x": 18,
+      "source_y": 10,
+      "target_map": "MAP_POKEMON_TOWER_5F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "pokemon-tower-5f",
+      "target_spawn": [
+        33,
+        23
+      ],
+      "trigger_cells": [
+        [
+          33,
+          21
+        ],
+        [
+          34,
+          21
+        ],
+        [
+          33,
+          22
+        ],
+        [
+          34,
+          22
+        ]
+      ]
+    },
+    {
+      "source_area": "pokemon-tower-7f",
+      "source_map": "MAP_POKEMON_TOWER_7F",
+      "source_warp_index": 0,
+      "source_x": 11,
+      "source_y": 16,
+      "target_map": "MAP_POKEMON_TOWER_6F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "pokemon-tower-6f",
+      "target_spawn": [
+        20,
+        32
+      ],
+      "trigger_cells": [
+        [
+          19,
+          33
+        ],
+        [
+          20,
+          33
+        ],
+        [
+          19,
+          34
+        ],
+        [
+          20,
+          34
+        ]
+      ]
+    },
+    {
+      "source_area": "power-plant",
+      "source_map": "MAP_POWER_PLANT",
+      "source_warp_index": 0,
+      "source_x": 4,
+      "source_y": 39,
+      "target_map": "MAP_ROUTE10",
+      "target_warp_index": "2",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "power-plant",
+      "source_map": "MAP_POWER_PLANT",
+      "source_warp_index": 1,
+      "source_x": 5,
+      "source_y": 38,
+      "target_map": "MAP_ROUTE10",
+      "target_warp_index": "2",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "power-plant",
+      "source_map": "MAP_POWER_PLANT",
+      "source_warp_index": 2,
+      "source_x": 6,
+      "source_y": 39,
+      "target_map": "MAP_ROUTE10",
+      "target_warp_index": "2",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "power-plant",
+      "source_map": "MAP_POWER_PLANT",
+      "source_warp_index": 3,
+      "source_x": 1,
+      "source_y": 11,
+      "target_map": "MAP_ROUTE10",
+      "target_warp_index": "4",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "power-plant",
+      "source_map": "MAP_POWER_PLANT",
+      "source_warp_index": 4,
+      "source_x": 0,
+      "source_y": 13,
+      "target_map": "MAP_ROUTE10",
+      "target_warp_index": "2",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "rock-tunnel-1f",
+      "source_map": "MAP_ROCK_TUNNEL_1F",
+      "source_warp_index": 0,
+      "source_x": 17,
+      "source_y": 2,
+      "target_map": "MAP_ROUTE10",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "rock-tunnel-1f",
+      "source_map": "MAP_ROCK_TUNNEL_1F",
+      "source_warp_index": 1,
+      "source_x": 45,
+      "source_y": 2,
+      "target_map": "MAP_ROCK_TUNNEL_B1F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "rock-tunnel-b1f",
+      "target_spawn": [
+        76,
+        57
+      ],
+      "trigger_cells": [
+        [
+          91,
+          5
+        ],
+        [
+          92,
+          5
+        ],
+        [
+          91,
+          6
+        ],
+        [
+          92,
+          6
+        ]
+      ]
+    },
+    {
+      "source_area": "rock-tunnel-1f",
+      "source_map": "MAP_ROCK_TUNNEL_1F",
+      "source_warp_index": 2,
+      "source_x": 4,
+      "source_y": 2,
+      "target_map": "MAP_ROCK_TUNNEL_B1F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "rock-tunnel-b1f",
+      "target_spawn": [
+        66,
+        7
+      ],
+      "trigger_cells": [
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          6
+        ]
+      ]
+    },
+    {
+      "source_area": "rock-tunnel-1f",
+      "source_map": "MAP_ROCK_TUNNEL_1F",
+      "source_warp_index": 3,
+      "source_x": 20,
+      "source_y": 13,
+      "target_map": "MAP_ROCK_TUNNEL_B1F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "rock-tunnel-b1f",
+      "target_spawn": [
+        54,
+        25
+      ],
+      "trigger_cells": [
+        [
+          41,
+          27
+        ],
+        [
+          42,
+          27
+        ],
+        [
+          41,
+          28
+        ],
+        [
+          42,
+          28
+        ]
+      ]
+    },
+    {
+      "source_area": "rock-tunnel-1f",
+      "source_map": "MAP_ROCK_TUNNEL_1F",
+      "source_warp_index": 4,
+      "source_x": 45,
+      "source_y": 21,
+      "target_map": "MAP_ROCK_TUNNEL_B1F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "rock-tunnel-b1f",
+      "target_spawn": [
+        4,
+        7
+      ],
+      "trigger_cells": [
+        [
+          91,
+          43
+        ],
+        [
+          92,
+          43
+        ],
+        [
+          91,
+          44
+        ],
+        [
+          92,
+          44
+        ]
+      ]
+    },
+    {
+      "source_area": "rock-tunnel-1f",
+      "source_map": "MAP_ROCK_TUNNEL_1F",
+      "source_warp_index": 5,
+      "source_x": 18,
+      "source_y": 37,
+      "target_map": "MAP_ROUTE10",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "rock-tunnel-b1f",
+      "source_map": "MAP_ROCK_TUNNEL_B1F",
+      "source_warp_index": 0,
+      "source_x": 38,
+      "source_y": 28,
+      "target_map": "MAP_ROCK_TUNNEL_1F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "rock-tunnel-1f",
+      "target_spawn": [
+        91,
+        4
+      ],
+      "trigger_cells": [
+        [
+          77,
+          57
+        ],
+        [
+          78,
+          57
+        ],
+        [
+          77,
+          58
+        ],
+        [
+          78,
+          58
+        ]
+      ]
+    },
+    {
+      "source_area": "rock-tunnel-b1f",
+      "source_map": "MAP_ROCK_TUNNEL_B1F",
+      "source_warp_index": 1,
+      "source_x": 33,
+      "source_y": 3,
+      "target_map": "MAP_ROCK_TUNNEL_1F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "rock-tunnel-1f",
+      "target_spawn": [
+        9,
+        4
+      ],
+      "trigger_cells": [
+        [
+          67,
+          7
+        ],
+        [
+          68,
+          7
+        ],
+        [
+          67,
+          8
+        ],
+        [
+          68,
+          8
+        ]
+      ]
+    },
+    {
+      "source_area": "rock-tunnel-b1f",
+      "source_map": "MAP_ROCK_TUNNEL_B1F",
+      "source_warp_index": 2,
+      "source_x": 27,
+      "source_y": 12,
+      "target_map": "MAP_ROCK_TUNNEL_1F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "rock-tunnel-1f",
+      "target_spawn": [
+        41,
+        26
+      ],
+      "trigger_cells": [
+        [
+          55,
+          25
+        ],
+        [
+          56,
+          25
+        ],
+        [
+          55,
+          26
+        ],
+        [
+          56,
+          26
+        ]
+      ]
+    },
+    {
+      "source_area": "rock-tunnel-b1f",
+      "source_map": "MAP_ROCK_TUNNEL_B1F",
+      "source_warp_index": 3,
+      "source_x": 2,
+      "source_y": 3,
+      "target_map": "MAP_ROCK_TUNNEL_1F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "rock-tunnel-1f",
+      "target_spawn": [
+        91,
+        42
+      ],
+      "trigger_cells": [
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ]
+      ]
+    },
+    {
+      "source_area": "rocket-hideout-b1f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B1F",
+      "source_warp_index": 0,
+      "source_x": 12,
+      "source_y": 2,
+      "target_map": "MAP_CELADON_CITY_GAME_CORNER",
+      "target_warp_index": "3",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "rocket-hideout-b1f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B1F",
+      "source_warp_index": 1,
+      "source_x": 17,
+      "source_y": 2,
+      "target_map": "MAP_ROCKET_HIDEOUT_B2F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "rocket-hideout-b2f",
+      "target_spawn": [
+        57,
+        7
+      ],
+      "trigger_cells": [
+        [
+          35,
+          6
+        ],
+        [
+          36,
+          6
+        ],
+        [
+          35,
+          7
+        ],
+        [
+          36,
+          7
+        ]
+      ]
+    },
+    {
+      "source_area": "rocket-hideout-b1f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B1F",
+      "source_warp_index": 2,
+      "source_x": 15,
+      "source_y": 30,
+      "target_map": "MAP_ROCKET_HIDEOUT_B2F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "rocket-hideout-b2f",
+      "target_spawn": [
+        47,
+        27
+      ],
+      "trigger_cells": [
+        [
+          31,
+          62
+        ],
+        [
+          32,
+          62
+        ],
+        [
+          31,
+          63
+        ],
+        [
+          32,
+          63
+        ]
+      ]
+    },
+    {
+      "source_area": "rocket-hideout-b1f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B1F",
+      "source_warp_index": 3,
+      "source_x": 23,
+      "source_y": 25,
+      "target_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
+      "target_warp_index": "1",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "rocket-hideout-b1f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B1F",
+      "source_warp_index": 4,
+      "source_x": 24,
+      "source_y": 25,
+      "target_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
+      "target_warp_index": "1",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "rocket-hideout-b1f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B1F",
+      "source_warp_index": 5,
+      "source_x": 25,
+      "source_y": 25,
+      "target_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
+      "target_warp_index": "1",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "rocket-hideout-b2f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B2F",
+      "source_warp_index": 0,
+      "source_x": 21,
+      "source_y": 2,
+      "target_map": "MAP_ROCKET_HIDEOUT_B3F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "rocket-hideout-b3f",
+      "target_spawn": [
+        36,
+        7
+      ],
+      "trigger_cells": [
+        [
+          44,
+          6
+        ],
+        [
+          45,
+          6
+        ],
+        [
+          44,
+          7
+        ],
+        [
+          45,
+          7
+        ]
+      ]
+    },
+    {
+      "source_area": "rocket-hideout-b2f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B2F",
+      "source_warp_index": 1,
+      "source_x": 28,
+      "source_y": 2,
+      "target_map": "MAP_ROCKET_HIDEOUT_B1F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "rocket-hideout-b1f",
+      "target_spawn": [
+        34,
+        7
+      ],
+      "trigger_cells": [
+        [
+          58,
+          6
+        ],
+        [
+          59,
+          6
+        ],
+        [
+          58,
+          7
+        ],
+        [
+          59,
+          7
+        ]
+      ]
+    },
+    {
+      "source_area": "rocket-hideout-b2f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B2F",
+      "source_warp_index": 2,
+      "source_x": 23,
+      "source_y": 12,
+      "target_map": "MAP_ROCKET_HIDEOUT_B1F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "rocket-hideout-b1f",
+      "target_spawn": [
+        30,
+        63
+      ],
+      "trigger_cells": [
+        [
+          48,
+          26
+        ],
+        [
+          49,
+          26
+        ],
+        [
+          48,
+          27
+        ],
+        [
+          49,
+          27
+        ]
+      ]
+    },
+    {
+      "source_area": "rocket-hideout-b2f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B2F",
+      "source_warp_index": 3,
+      "source_x": 28,
+      "source_y": 16,
+      "target_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
+      "target_warp_index": "1",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "rocket-hideout-b2f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B2F",
+      "source_warp_index": 4,
+      "source_x": 29,
+      "source_y": 16,
+      "target_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
+      "target_warp_index": "1",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "rocket-hideout-b3f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B3F",
+      "source_warp_index": 0,
+      "source_x": 18,
+      "source_y": 2,
+      "target_map": "MAP_ROCKET_HIDEOUT_B2F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "rocket-hideout-b2f",
+      "target_spawn": [
+        43,
+        7
+      ],
+      "trigger_cells": [
+        [
+          37,
+          6
+        ],
+        [
+          38,
+          6
+        ],
+        [
+          37,
+          7
+        ],
+        [
+          38,
+          7
+        ]
+      ]
+    },
+    {
+      "source_area": "rocket-hideout-b3f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B3F",
+      "source_warp_index": 1,
+      "source_x": 15,
+      "source_y": 18,
+      "target_map": "MAP_ROCKET_HIDEOUT_B4F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "rocket-hideout-b4f",
+      "target_spawn": [
+        23,
+        31
+      ],
+      "trigger_cells": [
+        [
+          31,
+          38
+        ],
+        [
+          32,
+          38
+        ],
+        [
+          31,
+          39
+        ],
+        [
+          32,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "rocket-hideout-b4f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B4F",
+      "source_warp_index": 0,
+      "source_x": 11,
+      "source_y": 15,
+      "target_map": "MAP_ROCKET_HIDEOUT_B3F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "rocket-hideout-b3f",
+      "target_spawn": [
+        33,
+        39
+      ],
+      "trigger_cells": [
+        [
+          23,
+          32
+        ],
+        [
+          24,
+          32
+        ],
+        [
+          23,
+          33
+        ],
+        [
+          24,
+          33
+        ]
+      ]
+    },
+    {
+      "source_area": "rocket-hideout-b4f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B4F",
+      "source_warp_index": 1,
+      "source_x": 20,
+      "source_y": 23,
+      "target_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
+      "target_warp_index": "1",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "rocket-hideout-b4f",
+      "source_map": "MAP_ROCKET_HIDEOUT_B4F",
+      "source_warp_index": 2,
+      "source_x": 21,
+      "source_y": 23,
+      "target_map": "MAP_ROCKET_HIDEOUT_ELEVATOR",
+      "target_warp_index": "1",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 0,
+      "source_x": 10,
+      "source_y": 6,
+      "target_map": "MAP_SEAFOAM_ISLANDS_1F",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 1,
+      "source_x": 31,
+      "source_y": 4,
+      "target_map": "MAP_SEAFOAM_ISLANDS_1F",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 2,
+      "source_x": 28,
+      "source_y": 19,
+      "target_map": "MAP_SEAFOAM_ISLANDS_1F",
+      "target_warp_index": "2",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 3,
+      "source_x": 7,
+      "source_y": 3,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        12,
+        10
+      ],
+      "trigger_cells": [
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          16,
+          9
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 4,
+      "source_x": 17,
+      "source_y": 9,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        32,
+        20
+      ],
+      "trigger_cells": [
+        [
+          35,
+          20
+        ],
+        [
+          36,
+          20
+        ],
+        [
+          35,
+          21
+        ],
+        [
+          36,
+          21
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 5,
+      "source_x": 25,
+      "source_y": 19,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "5",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        48,
+        40
+      ],
+      "trigger_cells": [
+        [
+          51,
+          40
+        ],
+        [
+          52,
+          40
+        ],
+        [
+          51,
+          41
+        ],
+        [
+          52,
+          41
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 6,
+      "source_x": 32,
+      "source_y": 14,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "6",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        62,
+        30
+      ],
+      "trigger_cells": [
+        [
+          65,
+          30
+        ],
+        [
+          66,
+          30
+        ],
+        [
+          65,
+          31
+        ],
+        [
+          66,
+          31
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 7,
+      "source_x": 23,
+      "source_y": 8,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "7",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        43,
+        15
+      ],
+      "trigger_cells": [
+        [
+          47,
+          18
+        ],
+        [
+          48,
+          18
+        ],
+        [
+          47,
+          19
+        ],
+        [
+          48,
+          19
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 8,
+      "source_x": 28,
+      "source_y": 8,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "8",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        56,
+        19
+      ],
+      "trigger_cells": [
+        [
+          57,
+          18
+        ],
+        [
+          58,
+          18
+        ],
+        [
+          57,
+          19
+        ],
+        [
+          58,
+          19
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 9,
+      "source_x": 21,
+      "source_y": 8,
+      "target_map": "MAP_SEAFOAM_ISLANDS_1F",
+      "target_warp_index": "5",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "seafoam-islands-b1f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "source_warp_index": 10,
+      "source_x": 29,
+      "source_y": 8,
+      "target_map": "MAP_SEAFOAM_ISLANDS_1F",
+      "target_warp_index": "6",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 0,
+      "source_x": 7,
+      "source_y": 17,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "seafoam-islands-b3f",
+      "target_spawn": [
+        16,
+        30
+      ],
+      "trigger_cells": [
+        [
+          13,
+          36
+        ],
+        [
+          14,
+          36
+        ],
+        [
+          13,
+          37
+        ],
+        [
+          14,
+          37
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 1,
+      "source_x": 32,
+      "source_y": 4,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "seafoam-islands-b3f",
+      "target_spawn": [
+        62,
+        10
+      ],
+      "trigger_cells": [
+        [
+          63,
+          10
+        ],
+        [
+          64,
+          10
+        ],
+        [
+          63,
+          11
+        ],
+        [
+          64,
+          11
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 2,
+      "source_x": 31,
+      "source_y": 17,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "seafoam-islands-b3f",
+      "target_spawn": [
+        62,
+        34
+      ],
+      "trigger_cells": [
+        [
+          61,
+          36
+        ],
+        [
+          62,
+          36
+        ],
+        [
+          61,
+          37
+        ],
+        [
+          62,
+          37
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 3,
+      "source_x": 7,
+      "source_y": 4,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "seafoam-islands-b1f",
+      "target_spawn": [
+        14,
+        9
+      ],
+      "trigger_cells": [
+        [
+          13,
+          10
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          13,
+          11
+        ],
+        [
+          14,
+          11
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 4,
+      "source_x": 17,
+      "source_y": 9,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "seafoam-islands-b1f",
+      "target_spawn": [
+        35,
+        19
+      ],
+      "trigger_cells": [
+        [
+          33,
+          20
+        ],
+        [
+          34,
+          20
+        ],
+        [
+          33,
+          21
+        ],
+        [
+          34,
+          21
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 5,
+      "source_x": 25,
+      "source_y": 19,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "target_warp_index": "5",
+      "status": "installed",
+      "target_area": "seafoam-islands-b1f",
+      "target_spawn": [
+        51,
+        39
+      ],
+      "trigger_cells": [
+        [
+          49,
+          40
+        ],
+        [
+          50,
+          40
+        ],
+        [
+          49,
+          41
+        ],
+        [
+          50,
+          41
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 6,
+      "source_x": 32,
+      "source_y": 14,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "target_warp_index": "6",
+      "status": "installed",
+      "target_area": "seafoam-islands-b1f",
+      "target_spawn": [
+        65,
+        29
+      ],
+      "trigger_cells": [
+        [
+          63,
+          30
+        ],
+        [
+          64,
+          30
+        ],
+        [
+          63,
+          31
+        ],
+        [
+          64,
+          31
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 7,
+      "source_x": 22,
+      "source_y": 7,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "target_warp_index": "7",
+      "status": "installed",
+      "target_area": "seafoam-islands-b1f",
+      "target_spawn": [
+        47,
+        17
+      ],
+      "trigger_cells": [
+        [
+          43,
+          16
+        ],
+        [
+          44,
+          16
+        ],
+        [
+          43,
+          17
+        ],
+        [
+          44,
+          17
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 8,
+      "source_x": 29,
+      "source_y": 8,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B1F",
+      "target_warp_index": "8",
+      "status": "installed",
+      "target_area": "seafoam-islands-b1f",
+      "target_spawn": [
+        57,
+        17
+      ],
+      "trigger_cells": [
+        [
+          57,
+          18
+        ],
+        [
+          58,
+          18
+        ],
+        [
+          57,
+          19
+        ],
+        [
+          58,
+          19
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 9,
+      "source_x": 24,
+      "source_y": 8,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "target_warp_index": "5",
+      "status": "installed",
+      "target_area": "seafoam-islands-b3f",
+      "target_spawn": [
+        48,
+        19
+      ],
+      "trigger_cells": [
+        [
+          47,
+          18
+        ],
+        [
+          48,
+          18
+        ],
+        [
+          47,
+          19
+        ],
+        [
+          48,
+          19
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b2f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "source_warp_index": 10,
+      "source_x": 27,
+      "source_y": 8,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "target_warp_index": "6",
+      "status": "installed",
+      "target_area": "seafoam-islands-b3f",
+      "target_spawn": [
+        49,
+        19
+      ],
+      "trigger_cells": [
+        [
+          53,
+          18
+        ],
+        [
+          54,
+          18
+        ],
+        [
+          53,
+          19
+        ],
+        [
+          54,
+          19
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b3f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "source_warp_index": 0,
+      "source_x": 8,
+      "source_y": 14,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        13,
+        35
+      ],
+      "trigger_cells": [
+        [
+          17,
+          30
+        ],
+        [
+          18,
+          30
+        ],
+        [
+          17,
+          31
+        ],
+        [
+          18,
+          31
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b3f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "source_warp_index": 1,
+      "source_x": 31,
+      "source_y": 4,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        63,
+        9
+      ],
+      "trigger_cells": [
+        [
+          63,
+          10
+        ],
+        [
+          64,
+          10
+        ],
+        [
+          63,
+          11
+        ],
+        [
+          64,
+          11
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b3f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "source_warp_index": 2,
+      "source_x": 31,
+      "source_y": 16,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        61,
+        35
+      ],
+      "trigger_cells": [
+        [
+          63,
+          34
+        ],
+        [
+          64,
+          34
+        ],
+        [
+          63,
+          35
+        ],
+        [
+          64,
+          35
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b3f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "source_warp_index": 3,
+      "source_x": 12,
+      "source_y": 9,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "seafoam-islands-b4f",
+      "target_spawn": [
+        33,
+        20
+      ],
+      "trigger_cells": [
+        [
+          25,
+          20
+        ],
+        [
+          26,
+          20
+        ],
+        [
+          25,
+          21
+        ],
+        [
+          26,
+          21
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b3f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "source_warp_index": 4,
+      "source_x": 29,
+      "source_y": 5,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "seafoam-islands-b4f",
+      "target_spawn": [
+        64,
+        12
+      ],
+      "trigger_cells": [
+        [
+          59,
+          12
+        ],
+        [
+          60,
+          12
+        ],
+        [
+          59,
+          13
+        ],
+        [
+          60,
+          13
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b3f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "source_warp_index": 5,
+      "source_x": 23,
+      "source_y": 9,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "7",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        43,
+        15
+      ],
+      "trigger_cells": [
+        [
+          47,
+          20
+        ],
+        [
+          48,
+          20
+        ],
+        [
+          47,
+          21
+        ],
+        [
+          48,
+          21
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b3f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "source_warp_index": 6,
+      "source_x": 24,
+      "source_y": 9,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B2F",
+      "target_warp_index": "8",
+      "status": "installed",
+      "target_area": "seafoam-islands-b2f",
+      "target_spawn": [
+        56,
+        19
+      ],
+      "trigger_cells": [
+        [
+          49,
+          20
+        ],
+        [
+          50,
+          20
+        ],
+        [
+          49,
+          21
+        ],
+        [
+          50,
+          21
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b3f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "source_warp_index": 7,
+      "source_x": 6,
+      "source_y": 18,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "seafoam-islands-b4f",
+      "target_spawn": [
+        17,
+        35
+      ],
+      "trigger_cells": [
+        [
+          13,
+          38
+        ],
+        [
+          14,
+          38
+        ],
+        [
+          13,
+          39
+        ],
+        [
+          14,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b3f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "source_warp_index": 8,
+      "source_x": 9,
+      "source_y": 18,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "seafoam-islands-b4f",
+      "target_spawn": [
+        19,
+        35
+      ],
+      "trigger_cells": [
+        [
+          19,
+          38
+        ],
+        [
+          20,
+          38
+        ],
+        [
+          19,
+          39
+        ],
+        [
+          20,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b4f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "source_warp_index": 0,
+      "source_x": 15,
+      "source_y": 9,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "seafoam-islands-b3f",
+      "target_spawn": [
+        24,
+        20
+      ],
+      "trigger_cells": [
+        [
+          31,
+          20
+        ],
+        [
+          32,
+          20
+        ],
+        [
+          31,
+          21
+        ],
+        [
+          32,
+          21
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b4f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "source_warp_index": 1,
+      "source_x": 32,
+      "source_y": 5,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "seafoam-islands-b3f",
+      "target_spawn": [
+        59,
+        11
+      ],
+      "trigger_cells": [
+        [
+          65,
+          12
+        ],
+        [
+          66,
+          12
+        ],
+        [
+          65,
+          13
+        ],
+        [
+          66,
+          13
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b4f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "source_warp_index": 2,
+      "source_x": 8,
+      "source_y": 17,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "target_warp_index": "7",
+      "status": "installed",
+      "target_area": "seafoam-islands-b3f",
+      "target_spawn": [
+        13,
+        37
+      ],
+      "trigger_cells": [
+        [
+          17,
+          36
+        ],
+        [
+          18,
+          36
+        ],
+        [
+          17,
+          37
+        ],
+        [
+          18,
+          37
+        ]
+      ]
+    },
+    {
+      "source_area": "seafoam-islands-b4f",
+      "source_map": "MAP_SEAFOAM_ISLANDS_B4F",
+      "source_warp_index": 3,
+      "source_x": 9,
+      "source_y": 17,
+      "target_map": "MAP_SEAFOAM_ISLANDS_B3F",
+      "target_warp_index": "8",
+      "status": "installed",
+      "target_area": "seafoam-islands-b3f",
+      "target_spawn": [
+        19,
+        37
+      ],
+      "trigger_cells": [
+        [
+          19,
+          36
+        ],
+        [
+          20,
+          36
+        ],
+        [
+          19,
+          37
+        ],
+        [
+          20,
+          37
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-birth-island",
+      "source_map": "MAP_BIRTH_ISLAND_EXTERIOR",
+      "source_warp_index": 0,
+      "source_x": 15,
+      "source_y": 24,
+      "target_map": "MAP_BIRTH_ISLAND_HARBOR",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-five-island-rocket-warehouse",
+      "source_map": "MAP_FIVE_ISLAND_ROCKET_WAREHOUSE",
+      "source_warp_index": 0,
+      "source_x": 24,
+      "source_y": 25,
+      "target_map": "MAP_FIVE_ISLAND_MEADOW",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-four-island",
+      "source_map": "MAP_FOUR_ISLAND",
+      "source_warp_index": 0,
+      "source_x": 18,
+      "source_y": 20,
+      "target_map": "MAP_FOUR_ISLAND_POKEMON_CENTER_1F",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-four-island",
+      "source_map": "MAP_FOUR_ISLAND",
+      "source_warp_index": 1,
+      "source_x": 12,
+      "source_y": 13,
+      "target_map": "MAP_FOUR_ISLAND_POKEMON_DAY_CARE",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-four-island",
+      "source_map": "MAP_FOUR_ISLAND",
+      "source_warp_index": 2,
+      "source_x": 25,
+      "source_y": 14,
+      "target_map": "MAP_FOUR_ISLAND_HOUSE1",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-four-island",
+      "source_map": "MAP_FOUR_ISLAND",
+      "source_warp_index": 3,
+      "source_x": 38,
+      "source_y": 12,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-1",
+      "target_spawn": [
+        35,
+        55
+      ],
+      "trigger_cells": [
+        [
+          77,
+          25
+        ],
+        [
+          78,
+          25
+        ],
+        [
+          77,
+          26
+        ],
+        [
+          78,
+          26
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island",
+      "source_map": "MAP_FOUR_ISLAND",
+      "source_warp_index": 4,
+      "source_x": 33,
+      "source_y": 23,
+      "target_map": "MAP_FOUR_ISLAND_LORELEIS_HOUSE",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-four-island",
+      "source_map": "MAP_FOUR_ISLAND",
+      "source_warp_index": 5,
+      "source_x": 25,
+      "source_y": 26,
+      "target_map": "MAP_FOUR_ISLAND_HOUSE2",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-four-island",
+      "source_map": "MAP_FOUR_ISLAND",
+      "source_warp_index": 6,
+      "source_x": 10,
+      "source_y": 28,
+      "target_map": "MAP_FOUR_ISLAND_HARBOR",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-four-island",
+      "source_map": "MAP_FOUR_ISLAND",
+      "source_warp_index": 7,
+      "source_x": 22,
+      "source_y": 26,
+      "target_map": "MAP_FOUR_ISLAND_MART",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-1",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "source_warp_index": 0,
+      "source_x": 17,
+      "source_y": 30,
+      "target_map": "MAP_FOUR_ISLAND",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "sevii-four-island",
+      "target_spawn": [
+        77,
+        27
+      ],
+      "trigger_cells": [
+        [
+          35,
+          56
+        ],
+        [
+          36,
+          56
+        ],
+        [
+          35,
+          57
+        ],
+        [
+          36,
+          57
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-1",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "source_warp_index": 1,
+      "source_x": 10,
+      "source_y": 21,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-2",
+      "target_spawn": [
+        7,
+        35
+      ],
+      "trigger_cells": [
+        [
+          21,
+          38
+        ],
+        [
+          22,
+          38
+        ],
+        [
+          21,
+          39
+        ],
+        [
+          22,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-1",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "source_warp_index": 2,
+      "source_x": 9,
+      "source_y": 7,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-2",
+      "target_spawn": [
+        7,
+        18
+      ],
+      "trigger_cells": [
+        [
+          19,
+          10
+        ],
+        [
+          20,
+          10
+        ],
+        [
+          19,
+          11
+        ],
+        [
+          20,
+          11
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-2",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "source_warp_index": 0,
+      "source_x": 3,
+      "source_y": 17,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-1",
+      "target_spawn": [
+        21,
+        40
+      ],
+      "trigger_cells": [
+        [
+          7,
+          36
+        ],
+        [
+          8,
+          36
+        ],
+        [
+          7,
+          37
+        ],
+        [
+          8,
+          37
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-2",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "source_warp_index": 1,
+      "source_x": 2,
+      "source_y": 8,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-1",
+      "target_spawn": [
+        19,
+        9
+      ],
+      "trigger_cells": [
+        [
+          5,
+          18
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          5,
+          19
+        ],
+        [
+          6,
+          19
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-2",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "source_warp_index": 2,
+      "source_x": 12,
+      "source_y": 12,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-3",
+      "target_spawn": [
+        12,
+        26
+      ],
+      "trigger_cells": [
+        [
+          25,
+          26
+        ],
+        [
+          26,
+          26
+        ],
+        [
+          25,
+          27
+        ],
+        [
+          26,
+          27
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-2",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "source_warp_index": 3,
+      "source_x": 12,
+      "source_y": 3,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-3",
+      "target_spawn": [
+        12,
+        9
+      ],
+      "trigger_cells": [
+        [
+          25,
+          8
+        ],
+        [
+          26,
+          8
+        ],
+        [
+          25,
+          9
+        ],
+        [
+          26,
+          9
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-2",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "source_warp_index": 4,
+      "source_x": 15,
+      "source_y": 16,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-3",
+      "target_spawn": [
+        18,
+        34
+      ],
+      "trigger_cells": [
+        [
+          31,
+          34
+        ],
+        [
+          32,
+          34
+        ],
+        [
+          31,
+          35
+        ],
+        [
+          32,
+          35
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-2",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "source_warp_index": 5,
+      "source_x": 3,
+      "source_y": 6,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-4",
+      "target_spawn": [
+        25,
+        46
+      ],
+      "trigger_cells": [
+        [
+          7,
+          14
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          15
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-3",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+      "source_warp_index": 0,
+      "source_x": 12,
+      "source_y": 12,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-2",
+      "target_spawn": [
+        25,
+        25
+      ],
+      "trigger_cells": [
+        [
+          13,
+          26
+        ],
+        [
+          14,
+          26
+        ],
+        [
+          13,
+          27
+        ],
+        [
+          14,
+          27
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-3",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+      "source_warp_index": 1,
+      "source_x": 12,
+      "source_y": 3,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-2",
+      "target_spawn": [
+        27,
+        8
+      ],
+      "trigger_cells": [
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          14,
+          9
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-3",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+      "source_warp_index": 2,
+      "source_x": 15,
+      "source_y": 16,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-2",
+      "target_spawn": [
+        31,
+        33
+      ],
+      "trigger_cells": [
+        [
+          19,
+          34
+        ],
+        [
+          20,
+          34
+        ],
+        [
+          19,
+          35
+        ],
+        [
+          20,
+          35
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-four-island-icefall-cave-4",
+      "source_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+      "source_warp_index": 0,
+      "source_x": 12,
+      "source_y": 23,
+      "target_map": "MAP_FOUR_ISLAND_ICEFALL_CAVE_1F",
+      "target_warp_index": "5",
+      "status": "installed",
+      "target_area": "sevii-four-island-icefall-cave-2",
+      "target_spawn": [
+        8,
+        16
+      ],
+      "trigger_cells": [
+        [
+          25,
+          47
+        ],
+        [
+          26,
+          47
+        ],
+        [
+          25,
+          48
+        ],
+        [
+          26,
+          48
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island",
+      "source_map": "MAP_ONE_ISLAND",
+      "source_warp_index": 0,
+      "source_x": 14,
+      "source_y": 5,
+      "target_map": "MAP_ONE_ISLAND_POKEMON_CENTER_1F",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-one-island",
+      "source_map": "MAP_ONE_ISLAND",
+      "source_warp_index": 1,
+      "source_x": 19,
+      "source_y": 9,
+      "target_map": "MAP_ONE_ISLAND_HOUSE1",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-one-island",
+      "source_map": "MAP_ONE_ISLAND",
+      "source_warp_index": 2,
+      "source_x": 8,
+      "source_y": 11,
+      "target_map": "MAP_ONE_ISLAND_HOUSE2",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-one-island",
+      "source_map": "MAP_ONE_ISLAND",
+      "source_warp_index": 3,
+      "source_x": 12,
+      "source_y": 18,
+      "target_map": "MAP_ONE_ISLAND_HARBOR",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-one-island",
+      "source_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+      "source_warp_index": 0,
+      "source_x": 11,
+      "source_y": 6,
+      "target_map": "MAP_MT_EMBER_EXTERIOR",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-base",
+      "target_spawn": [
+        57,
+        96
+      ],
+      "trigger_cells": [
+        [
+          71,
+          12
+        ],
+        [
+          72,
+          12
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island",
+      "source_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+      "source_warp_index": 1,
+      "source_x": 12,
+      "source_y": 6,
+      "target_map": "MAP_MT_EMBER_EXTERIOR",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-base",
+      "target_spawn": [
+        59,
+        96
+      ],
+      "trigger_cells": [
+        [
+          73,
+          12
+        ],
+        [
+          74,
+          12
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island",
+      "source_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+      "source_warp_index": 2,
+      "source_x": 15,
+      "source_y": 58,
+      "target_map": "MAP_ONE_ISLAND_KINDLE_ROAD_EMBER_SPA",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-base",
+      "source_map": "MAP_MT_EMBER_EXTERIOR",
+      "source_warp_index": 0,
+      "source_x": 28,
+      "source_y": 48,
+      "target_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-one-island",
+      "target_spawn": [
+        72,
+        13
+      ],
+      "trigger_cells": [
+        [
+          57,
+          97
+        ],
+        [
+          58,
+          97
+        ],
+        [
+          57,
+          98
+        ],
+        [
+          58,
+          98
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-base",
+      "source_map": "MAP_MT_EMBER_EXTERIOR",
+      "source_warp_index": 1,
+      "source_x": 29,
+      "source_y": 48,
+      "target_map": "MAP_ONE_ISLAND_KINDLE_ROAD",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "sevii-one-island",
+      "target_spawn": [
+        73,
+        13
+      ],
+      "trigger_cells": [
+        [
+          59,
+          97
+        ],
+        [
+          60,
+          97
+        ],
+        [
+          59,
+          98
+        ],
+        [
+          60,
+          98
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-base",
+      "source_map": "MAP_MT_EMBER_EXTERIOR",
+      "source_warp_index": 2,
+      "source_x": 14,
+      "source_y": 24,
+      "target_map": "MAP_MT_EMBER_SUMMIT_PATH_1F",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-base",
+      "source_map": "MAP_MT_EMBER_EXTERIOR",
+      "source_warp_index": 3,
+      "source_x": 39,
+      "source_y": 19,
+      "target_map": "MAP_MT_EMBER_SUMMIT_PATH_3F",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-base",
+      "source_map": "MAP_MT_EMBER_EXTERIOR",
+      "source_warp_index": 4,
+      "source_x": 29,
+      "source_y": 7,
+      "target_map": "MAP_MT_EMBER_SUMMIT",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-peak",
+      "target_spawn": [
+        19,
+        30
+      ],
+      "trigger_cells": [
+        [
+          59,
+          15
+        ],
+        [
+          60,
+          15
+        ],
+        [
+          59,
+          16
+        ],
+        [
+          60,
+          16
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-base",
+      "source_map": "MAP_MT_EMBER_EXTERIOR",
+      "source_warp_index": 5,
+      "source_x": 42,
+      "source_y": 39,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_1F",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-1f",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_1F",
+      "source_warp_index": 0,
+      "source_x": 22,
+      "source_y": 17,
+      "target_map": "MAP_MT_EMBER_EXTERIOR",
+      "target_warp_index": "5",
+      "status": "target-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-1f",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_1F",
+      "source_warp_index": 1,
+      "source_x": 1,
+      "source_y": 1,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B1F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-braille-cave-b1f-l",
+      "target_spawn": [
+        24,
+        44
+      ],
+      "trigger_cells": [
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-1f",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_1F",
+      "source_warp_index": 2,
+      "source_x": 24,
+      "source_y": 5,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-b1f-l",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_B1F",
+      "source_warp_index": 0,
+      "source_x": 9,
+      "source_y": 21,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_1F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-braille-cave-1f",
+      "target_spawn": [
+        5,
+        5
+      ],
+      "trigger_cells": [
+        [
+          25,
+          44
+        ],
+        [
+          26,
+          44
+        ],
+        [
+          25,
+          45
+        ],
+        [
+          26,
+          45
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-b1f-l",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_B1F",
+      "source_warp_index": 1,
+      "source_x": 6,
+      "source_y": 1,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-braille-cave-b2f-l",
+      "target_spawn": [
+        5,
+        17
+      ],
+      "trigger_cells": [
+        [
+          19,
+          4
+        ],
+        [
+          20,
+          4
+        ],
+        [
+          19,
+          5
+        ],
+        [
+          20,
+          5
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-b2f-l",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
+      "source_warp_index": 0,
+      "source_x": 1,
+      "source_y": 7,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B1F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-braille-cave-b1f-l",
+      "target_spawn": [
+        19,
+        6
+      ],
+      "trigger_cells": [
+        [
+          3,
+          16
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          4,
+          17
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-b2f-l",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
+      "source_warp_index": 1,
+      "source_x": 13,
+      "source_y": 9,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-braille-cave-b3f",
+      "target_spawn": [
+        5,
+        9
+      ],
+      "trigger_cells": [
+        [
+          27,
+          20
+        ],
+        [
+          28,
+          20
+        ],
+        [
+          27,
+          21
+        ],
+        [
+          28,
+          21
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-b3f",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
+      "source_warp_index": 0,
+      "source_x": 1,
+      "source_y": 4,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B2F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-braille-cave-b2f-l",
+      "target_spawn": [
+        28,
+        19
+      ],
+      "trigger_cells": [
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-b3f",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
+      "source_warp_index": 1,
+      "source_x": 19,
+      "source_y": 19,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-b3f",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
+      "source_warp_index": 2,
+      "source_x": 5,
+      "source_y": 19,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B4F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-braille-cave-b4f",
+      "target_spawn": [
+        10,
+        7
+      ],
+      "trigger_cells": [
+        [
+          11,
+          38
+        ],
+        [
+          12,
+          38
+        ],
+        [
+          11,
+          39
+        ],
+        [
+          12,
+          39
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-b4f",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_B4F",
+      "source_warp_index": 0,
+      "source_x": 14,
+      "source_y": 14,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B5F",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-braille-cave-b4f",
+      "source_map": "MAP_MT_EMBER_RUBY_PATH_B4F",
+      "source_warp_index": 1,
+      "source_x": 4,
+      "source_y": 2,
+      "target_map": "MAP_MT_EMBER_RUBY_PATH_B3F",
+      "target_warp_index": "2",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-braille-cave-b3f",
+      "target_spawn": [
+        11,
+        37
+      ],
+      "trigger_cells": [
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-one-island-mt-ember-peak",
+      "source_map": "MAP_MT_EMBER_SUMMIT",
+      "source_warp_index": 0,
+      "source_x": 9,
+      "source_y": 15,
+      "target_map": "MAP_MT_EMBER_EXTERIOR",
+      "target_warp_index": "4",
+      "status": "installed",
+      "target_area": "sevii-one-island-mt-ember-base",
+      "target_spawn": [
+        61,
+        16
+      ],
+      "trigger_cells": [
+        [
+          19,
+          31
+        ],
+        [
+          20,
+          31
+        ],
+        [
+          19,
+          32
+        ],
+        [
+          20,
+          32
+        ]
+      ]
+    },
+    {
+      "source_area": "sevii-six-island-altering-cave",
+      "source_map": "MAP_SIX_ISLAND_ALTERING_CAVE",
+      "source_warp_index": 0,
+      "source_x": 18,
+      "source_y": 22,
+      "target_map": "MAP_SIX_ISLAND_OUTCAST_ISLAND",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-six-island-pattern-bush",
+      "source_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
+      "source_warp_index": 0,
+      "source_x": 54,
+      "source_y": 26,
+      "target_map": "MAP_SIX_ISLAND_GREEN_PATH",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-six-island-pattern-bush",
+      "source_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
+      "source_warp_index": 1,
+      "source_x": 55,
+      "source_y": 26,
+      "target_map": "MAP_SIX_ISLAND_GREEN_PATH",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-six-island-pattern-bush",
+      "source_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
+      "source_warp_index": 2,
+      "source_x": 56,
+      "source_y": 26,
+      "target_map": "MAP_SIX_ISLAND_GREEN_PATH",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-six-island-pattern-bush",
+      "source_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
+      "source_warp_index": 3,
+      "source_x": 3,
+      "source_y": 26,
+      "target_map": "MAP_SIX_ISLAND_GREEN_PATH",
+      "target_warp_index": "2",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-six-island-pattern-bush",
+      "source_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
+      "source_warp_index": 4,
+      "source_x": 4,
+      "source_y": 26,
+      "target_map": "MAP_SIX_ISLAND_GREEN_PATH",
+      "target_warp_index": "2",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-six-island-pattern-bush",
+      "source_map": "MAP_SIX_ISLAND_PATTERN_BUSH",
+      "source_warp_index": 5,
+      "source_x": 5,
+      "source_y": 26,
+      "target_map": "MAP_SIX_ISLAND_GREEN_PATH",
+      "target_warp_index": "3",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-three-island-berry-forest",
+      "source_map": "MAP_THREE_ISLAND_BERRY_FOREST",
+      "source_warp_index": 0,
+      "source_x": 43,
+      "source_y": 41,
+      "target_map": "MAP_THREE_ISLAND_BOND_BRIDGE",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-three-island-berry-forest",
+      "source_map": "MAP_THREE_ISLAND_BERRY_FOREST",
+      "source_warp_index": 1,
+      "source_x": 42,
+      "source_y": 41,
+      "target_map": "MAP_THREE_ISLAND_BOND_BRIDGE",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-three-island-berry-forest",
+      "source_map": "MAP_THREE_ISLAND_BERRY_FOREST",
+      "source_warp_index": 2,
+      "source_x": 44,
+      "source_y": 41,
+      "target_map": "MAP_THREE_ISLAND_BOND_BRIDGE",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-two-island",
+      "source_map": "MAP_TWO_ISLAND",
+      "source_warp_index": 0,
+      "source_x": 39,
+      "source_y": 9,
+      "target_map": "MAP_TWO_ISLAND_JOYFUL_GAME_CORNER",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-two-island",
+      "source_map": "MAP_TWO_ISLAND",
+      "source_warp_index": 1,
+      "source_x": 33,
+      "source_y": 9,
+      "target_map": "MAP_TWO_ISLAND_HOUSE",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-two-island",
+      "source_map": "MAP_TWO_ISLAND",
+      "source_warp_index": 2,
+      "source_x": 21,
+      "source_y": 7,
+      "target_map": "MAP_TWO_ISLAND_POKEMON_CENTER_1F",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "sevii-two-island",
+      "source_map": "MAP_TWO_ISLAND",
+      "source_warp_index": 3,
+      "source_x": 10,
+      "source_y": 8,
+      "target_map": "MAP_TWO_ISLAND_HARBOR",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "sevii-two-island",
+      "source_map": "MAP_TWO_ISLAND_CAPE_BRINK",
+      "source_warp_index": 0,
+      "source_x": 12,
+      "source_y": 16,
+      "target_map": "MAP_TWO_ISLAND_CAPE_BRINK_HOUSE",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "silph-co-01f",
+      "source_map": "MAP_SILPH_CO_1F",
+      "source_warp_index": 0,
+      "source_x": 7,
+      "source_y": 21,
+      "target_map": "MAP_SAFFRON_CITY",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "silph-co-01f",
+      "source_map": "MAP_SILPH_CO_1F",
+      "source_warp_index": 1,
+      "source_x": 8,
+      "source_y": 20,
+      "target_map": "MAP_SAFFRON_CITY",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-01f",
+      "source_map": "MAP_SILPH_CO_1F",
+      "source_warp_index": 2,
+      "source_x": 9,
+      "source_y": 20,
+      "target_map": "MAP_SAFFRON_CITY",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-01f",
+      "source_map": "MAP_SILPH_CO_1F",
+      "source_warp_index": 3,
+      "source_x": 31,
+      "source_y": 2,
+      "target_map": "MAP_SILPH_CO_2F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "silph-co-02f",
+      "target_spawn": [
+        62,
+        7
+      ],
+      "trigger_cells": [
+        [
+          65,
+          8
+        ],
+        [
+          66,
+          8
+        ],
+        [
+          65,
+          9
+        ],
+        [
+          66,
+          9
+        ]
+      ]
+    },
+    {
+      "source_area": "silph-co-01f",
+      "source_map": "MAP_SILPH_CO_1F",
+      "source_warp_index": 4,
+      "source_x": 22,
+      "source_y": 3,
+      "target_map": "MAP_SILPH_CO_ELEVATOR",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "silph-co-02f",
+      "source_map": "MAP_SILPH_CO_2F",
+      "source_warp_index": 0,
+      "source_x": 28,
+      "source_y": 2,
+      "target_map": "MAP_SILPH_CO_3F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "silph-co-03f",
+      "target_spawn": [
+        61,
+        7
+      ],
+      "trigger_cells": [
+        [
+          59,
+          6
+        ],
+        [
+          60,
+          6
+        ],
+        [
+          59,
+          7
+        ],
+        [
+          60,
+          7
+        ]
+      ]
+    },
+    {
+      "source_area": "silph-co-02f",
+      "source_map": "MAP_SILPH_CO_2F",
+      "source_warp_index": 1,
+      "source_x": 2,
+      "source_y": 6,
+      "target_map": "MAP_SILPH_CO_3F",
+      "target_warp_index": "8",
+      "status": "installed",
+      "target_area": "silph-co-03f",
+      "target_spawn": [
+        69,
+        11
+      ],
+      "trigger_cells": [
+        [
+          7,
+          14
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          15
+        ]
+      ]
+    },
+    {
+      "source_area": "silph-co-02f",
+      "source_map": "MAP_SILPH_CO_2F",
+      "source_warp_index": 2,
+      "source_x": 15,
+      "source_y": 6,
+      "target_map": "MAP_SILPH_CO_8F",
+      "target_warp_index": "5",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-02f",
+      "source_map": "MAP_SILPH_CO_2F",
+      "source_warp_index": 3,
+      "source_x": 30,
+      "source_y": 2,
+      "target_map": "MAP_SILPH_CO_1F",
+      "target_warp_index": "3",
+      "status": "installed",
+      "target_area": "silph-co-01f",
+      "target_spawn": [
+        64,
+        9
+      ],
+      "trigger_cells": [
+        [
+          63,
+          6
+        ],
+        [
+          64,
+          6
+        ],
+        [
+          63,
+          7
+        ],
+        [
+          64,
+          7
+        ]
+      ]
+    },
+    {
+      "source_area": "silph-co-02f",
+      "source_map": "MAP_SILPH_CO_2F",
+      "source_warp_index": 4,
+      "source_x": 7,
+      "source_y": 19,
+      "target_map": "MAP_SILPH_CO_6F",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-02f",
+      "source_map": "MAP_SILPH_CO_2F",
+      "source_warp_index": 5,
+      "source_x": 33,
+      "source_y": 19,
+      "target_map": "MAP_SILPH_CO_8F",
+      "target_warp_index": "2",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-02f",
+      "source_map": "MAP_SILPH_CO_2F",
+      "source_warp_index": 6,
+      "source_x": 22,
+      "source_y": 3,
+      "target_map": "MAP_SILPH_CO_ELEVATOR",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 0,
+      "source_x": 28,
+      "source_y": 2,
+      "target_map": "MAP_SILPH_CO_2F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "silph-co-02f",
+      "target_spawn": [
+        61,
+        7
+      ],
+      "trigger_cells": [
+        [
+          59,
+          6
+        ],
+        [
+          60,
+          6
+        ],
+        [
+          59,
+          7
+        ],
+        [
+          60,
+          7
+        ]
+      ]
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 1,
+      "source_x": 4,
+      "source_y": 6,
+      "target_map": "MAP_SILPH_CO_5F",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 2,
+      "source_x": 13,
+      "source_y": 14,
+      "target_map": "MAP_SILPH_CO_7F",
+      "target_warp_index": "4",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 3,
+      "source_x": 30,
+      "source_y": 2,
+      "target_map": "MAP_SILPH_CO_4F",
+      "target_warp_index": "2",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 4,
+      "source_x": 2,
+      "source_y": 14,
+      "target_map": "MAP_SILPH_CO_9F",
+      "target_warp_index": "2",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 5,
+      "source_x": 3,
+      "source_y": 20,
+      "target_map": "MAP_SILPH_CO_5F",
+      "target_warp_index": "4",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 6,
+      "source_x": 29,
+      "source_y": 14,
+      "target_map": "MAP_SILPH_CO_3F",
+      "target_warp_index": "7",
+      "status": "installed",
+      "target_area": "silph-co-03f",
+      "target_spawn": [
+        67,
+        41
+      ],
+      "trigger_cells": [
+        [
+          61,
+          30
+        ],
+        [
+          62,
+          30
+        ],
+        [
+          61,
+          31
+        ],
+        [
+          62,
+          31
+        ]
+      ]
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 7,
+      "source_x": 32,
+      "source_y": 20,
+      "target_map": "MAP_SILPH_CO_3F",
+      "target_warp_index": "6",
+      "status": "installed",
+      "target_area": "silph-co-03f",
+      "target_spawn": [
+        61,
+        29
+      ],
+      "trigger_cells": [
+        [
+          67,
+          42
+        ],
+        [
+          68,
+          42
+        ],
+        [
+          67,
+          43
+        ],
+        [
+          68,
+          43
+        ]
+      ]
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 8,
+      "source_x": 33,
+      "source_y": 5,
+      "target_map": "MAP_SILPH_CO_2F",
+      "target_warp_index": "1",
+      "status": "installed",
+      "target_area": "silph-co-02f",
+      "target_spawn": [
+        7,
+        13
+      ],
+      "trigger_cells": [
+        [
+          69,
+          12
+        ],
+        [
+          70,
+          12
+        ],
+        [
+          69,
+          13
+        ],
+        [
+          70,
+          13
+        ]
+      ]
+    },
+    {
+      "source_area": "silph-co-03f",
+      "source_map": "MAP_SILPH_CO_3F",
+      "source_warp_index": 9,
+      "source_x": 22,
+      "source_y": 3,
+      "target_map": "MAP_SILPH_CO_ELEVATOR",
+      "target_warp_index": "0",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "victory-road-central-cavern",
+      "source_map": "MAP_VICTORY_ROAD_2F",
+      "source_warp_index": 0,
+      "source_x": 1,
+      "source_y": 9,
+      "target_map": "MAP_VICTORY_ROAD_1F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "victory-road-entry-cavern",
+      "target_spawn": [
+        9,
+        7
+      ],
+      "trigger_cells": [
+        [
+          3,
+          20
+        ],
+        [
+          4,
+          20
+        ],
+        [
+          3,
+          21
+        ],
+        [
+          4,
+          21
+        ]
+      ]
+    },
+    {
+      "source_area": "victory-road-central-cavern",
+      "source_map": "MAP_VICTORY_ROAD_2F",
+      "source_warp_index": 1,
+      "source_x": 3,
+      "source_y": 3,
+      "target_map": "MAP_VICTORY_ROAD_3F",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "victory-road-central-cavern",
+      "source_map": "MAP_VICTORY_ROAD_2F",
+      "source_warp_index": 2,
+      "source_x": 34,
+      "source_y": 9,
+      "target_map": "MAP_VICTORY_ROAD_3F",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "victory-road-central-cavern",
+      "source_map": "MAP_VICTORY_ROAD_2F",
+      "source_warp_index": 3,
+      "source_x": 38,
+      "source_y": 9,
+      "target_map": "MAP_VICTORY_ROAD_3F",
+      "target_warp_index": "2",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "victory-road-central-cavern",
+      "source_map": "MAP_VICTORY_ROAD_2F",
+      "source_warp_index": 4,
+      "source_x": 36,
+      "source_y": 17,
+      "target_map": "MAP_VICTORY_ROAD_3F",
+      "target_warp_index": "3",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "victory-road-central-cavern",
+      "source_map": "MAP_VICTORY_ROAD_2F",
+      "source_warp_index": 5,
+      "source_x": 49,
+      "source_y": 13,
+      "target_map": "MAP_ROUTE23",
+      "target_warp_index": "1",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "victory-road-central-cavern",
+      "source_map": "MAP_VICTORY_ROAD_2F",
+      "source_warp_index": 6,
+      "source_x": 48,
+      "source_y": 12,
+      "target_map": "MAP_ROUTE23",
+      "target_warp_index": "1",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "victory-road-central-cavern",
+      "source_map": "MAP_VICTORY_ROAD_2F",
+      "source_warp_index": 7,
+      "source_x": 47,
+      "source_y": 13,
+      "target_map": "MAP_ROUTE23",
+      "target_warp_index": "1",
+      "status": "source-blocked-or-outside-supplied-crop"
+    },
+    {
+      "source_area": "victory-road-central-cavern",
+      "source_map": "MAP_VICTORY_ROAD_2F",
+      "source_warp_index": 8,
+      "source_x": 34,
+      "source_y": 19,
+      "target_map": "MAP_VICTORY_ROAD_3F",
+      "target_warp_index": "4",
+      "status": "destination-outside-new-source-set"
+    },
+    {
+      "source_area": "victory-road-entry-cavern",
+      "source_map": "MAP_VICTORY_ROAD_1F",
+      "source_warp_index": 0,
+      "source_x": 3,
+      "source_y": 2,
+      "target_map": "MAP_VICTORY_ROAD_2F",
+      "target_warp_index": "0",
+      "status": "installed",
+      "target_area": "victory-road-central-cavern",
+      "target_spawn": [
+        4,
+        19
+      ],
+      "trigger_cells": [
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ]
+      ]
+    },
+    {
+      "source_area": "victory-road-entry-cavern",
+      "source_map": "MAP_VICTORY_ROAD_1F",
+      "source_warp_index": 1,
+      "source_x": 11,
+      "source_y": 20,
+      "target_map": "MAP_ROUTE23",
+      "target_warp_index": "0",
+      "status": "destination-outside-new-source-set"
+    }
+  ]
+}

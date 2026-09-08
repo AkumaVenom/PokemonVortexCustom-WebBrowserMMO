@@ -404,23 +404,51 @@ function pv_bot_spawn_for(mysqli $db, string $world, string $mapKey, int $seed =
     $mapKey = (string)$area['key'];
     $blocks = pv_world_blocks($db, $world, $mapKey);
     $occupied = pv_bot_spawn_occupied($db, $world, $mapKey);
-    $columns = max(1, (int)$area['columns']);
-    $rows = max(1, (int)$area['rows']);
-    $total = $columns * $rows;
-    $start = (($seed * 73) % $total);
-    for ($i = 0; $i < $total; $i++) {
-        $cell = ($start + $i) % $total;
-        $x = ($cell % $columns) + 1;
-        $y = intdiv($cell, $columns) + 1;
-        if (!isset($blocks[$x.':'.$y]) && !isset($occupied[$x.':'.$y])) return [$x,$y];
+    $point = pv_bot_region_spawn_from_points($area, $blocks, $occupied, $seed);
+    if ($point === null) {
+        throw new RuntimeException('No accessible AI spawn in ' . $world . '/' . $mapKey . '.');
     }
-    // Extremely dense maps retain the existing safe-spawn fallback rather than
-    // failing population repair merely because every open tile is occupied.
-    foreach ((array)$area['spawn_points'] as $point) {
+    return $point;
+}
+
+/**
+ * Spawn only in components reachable from authored entrances. Original GBA
+ * maps contain decorative islands/plateaus with passable pixels but no actual
+ * entrance; scanning arbitrary open cells would strand trainers on those.
+ */
+function pv_bot_region_spawn_from_points(array $area, array $blocks, array $occupied, int $seed): ?array
+{
+    $anchors = array_values((array)($area['spawn_points'] ?? []));
+    if ($anchors === []) return null;
+    $offset = max(0, $seed) % count($anchors);
+    $anchors = array_merge(array_slice($anchors, $offset), array_slice($anchors, 0, $offset));
+    $queue = []; $visited = []; $candidates = []; $fallback = null;
+    foreach ($anchors as $point) {
         $x = (int)($point[0] ?? 0); $y = (int)($point[1] ?? 0);
-        if ($x >= 1 && $x <= $columns && $y >= 1 && $y <= $rows && !isset($blocks[$x.':'.$y])) return [$x,$y];
+        if (!pv_bot_region_position_open($area, $blocks, $x, $y)) continue;
+        $key = $x.':'.$y;
+        if (isset($visited[$key])) continue;
+        // Prefer an audited route/entrance tile before spreading nearby. A
+        // passable cell elsewhere in the entrance component may be water or
+        // decorative terrain even though it shares a walkable connection.
+        if (!isset($occupied[$key])) return [$x,$y];
+        $visited[$key] = true; $queue[] = [$x,$y];
+        $fallback ??= [$x,$y];
     }
-    return [1,1];
+    // Bounded breadth-first placement spreads local arrivals while never
+    // crossing a blocked wall or visiting an isolated decorative component.
+    for ($head = 0; $head < count($queue) && $head < 4096 && count($candidates) < 64; $head++) {
+        [$x,$y] = $queue[$head];
+        if (!isset($occupied[$x.':'.$y])) $candidates[] = [$x,$y];
+        foreach ([[0,-1],[0,1],[-1,0],[1,0]] as [$dx,$dy]) {
+            $tx = $x + $dx; $ty = $y + $dy; $key = $tx.':'.$ty;
+            if (isset($visited[$key]) || !pv_bot_region_position_open($area, $blocks, $tx, $ty)) continue;
+            $visited[$key] = true; $queue[] = [$tx,$ty];
+        }
+    }
+    // A fully occupied entrance component may share a legal tile, matching the
+    // existing presence behavior, but can never force a spawn into collision.
+    return $candidates === [] ? $fallback : $candidates[(max(0, $seed) * 73) % count($candidates)];
 }
 
 function pv_bot_random_ability(mysqli $db, string $species): string
@@ -617,14 +645,89 @@ function pv_bot_move_vortex(mysqli $db,array $bot): array
 
 function pv_bot_move_region(mysqli $db,array $bot): array
 {
-    $world=pv_world_normalize_key((string)$bot['world_key']);$mapKey=pv_world_area_key((string)$bot['map_key']);$area=pv_world_area($world,$mapKey);
-    if(!$area){[$world,$mapKey]=pv_bot_region_assignment((int)$bot['bot_index']);[$x,$y]=pv_bot_spawn_for($db,$world,$mapKey,(int)$bot['bot_index']);return['world'=>$world,'map'=>$mapKey,'x'=>$x,'y'=>$y,'moved'=>true];}
-    $x=(int)$bot['x'];$y=(int)$bot['y'];$directions=[1,2,3,4,5,6,7,8];shuffle($directions);$deltas=[1=>[0,-1],2=>[0,1],3=>[-1,0],4=>[1,0],5=>[-1,-1],6=>[-1,1],7=>[1,-1],8=>[1,1]];$blocks=pv_world_blocks($db,$world,$mapKey);
-    foreach($directions as $direction){$tx=$x+$deltas[$direction][0];$ty=$y+$deltas[$direction][1];$transition=pv_world_transition($area,$tx,$ty);
-        if($transition){$target=pv_world_area((string)$transition['target_world'],(string)$transition['target_area']);if(!$target)continue;$nx=(int)$transition['target_x'];$ny=(int)$transition['target_y'];$targetBlocks=pv_world_blocks($db,(string)$target['world'],(string)$target['key']);if($nx>=1&&$nx<=(int)$target['columns']&&$ny>=1&&$ny<=(int)$target['rows']&&!isset($targetBlocks[$nx.':'.$ny]))return['world'=>(string)$target['world'],'map'=>(string)$target['key'],'x'=>$nx,'y'=>$ny,'moved'=>true];continue;}
-        if(!pv_world_step_blocked($area,$blocks,$x,$y,$tx,$ty))return['world'=>$world,'map'=>$mapKey,'x'=>$tx,'y'=>$ty,'moved'=>true];
+    $world = pv_world_normalize_key((string)$bot['world_key']);
+    $mapKey = pv_world_area_key((string)$bot['map_key']);
+    $area = pv_world_area($world, $mapKey);
+    if (!$area) {
+        [$world,$mapKey] = pv_bot_region_assignment((int)$bot['bot_index']);
+        [$x,$y] = pv_bot_spawn_for($db, $world, $mapKey, (int)$bot['bot_index']);
+        return ['world'=>$world,'map'=>$mapKey,'x'=>$x,'y'=>$y,'moved'=>true];
     }
-    return['world'=>$world,'map'=>$mapKey,'x'=>$x,'y'=>$y,'moved'=>false];
+    $x = (int)$bot['x']; $y = (int)$bot['y'];
+    $blocks = pv_world_blocks($db, $world, $mapKey);
+    // A repaired collision mask can invalidate a saved bot tile. Recover before
+    // moving so old rows cannot remain inside newly corrected buildings/walls.
+    if (!pv_bot_region_position_open($area, $blocks, $x, $y)) {
+        [$x,$y] = pv_bot_spawn_for($db, $world, $mapKey, (int)$bot['bot_index']);
+        if (!pv_bot_region_position_open($area, $blocks, $x, $y)) {
+            throw new RuntimeException('No safe AI position in ' . $world . '/' . $mapKey . '.');
+        }
+        return ['world'=>$world,'map'=>$mapKey,'x'=>$x,'y'=>$y,'moved'=>true];
+    }
+    $directions = [1,2,3,4,5,6,7,8]; shuffle($directions);
+    foreach ($directions as $direction) {
+        $delta = pv_map_direction_delta($direction);
+        if (!$delta) continue;
+        // Use the player's movement stride and validate every fine-grid cell.
+        // Resized expansion maps take two 16px steps to match the original
+        // maps' 32px walking distance, stopping at walls and stair triggers.
+        $walk = pv_world_walk_direction($area, $blocks, $x, $y, (int)$delta[0], (int)$delta[1]);
+        if (empty($walk['moved'])) continue;
+        $tx = (int)$walk['x']; $ty = (int)$walk['y'];
+        $transition = $walk['transition'];
+        if ($transition) {
+            $target = pv_world_area((string)$transition['target_world'], (string)$transition['target_area']);
+            if (!$target) continue;
+            $nx = (int)$transition['target_x']; $ny = (int)$transition['target_y'];
+            $targetBlocks = pv_world_blocks($db, (string)$target['world'], (string)$target['key']);
+            if (pv_bot_region_position_open($target, $targetBlocks, $nx, $ny)) {
+                return ['world'=>(string)$target['world'],'map'=>(string)$target['key'],'x'=>$nx,'y'=>$ny,'moved'=>true];
+            }
+            continue;
+        }
+        return ['world'=>$world,'map'=>$mapKey,'x'=>$tx,'y'=>$ty,'moved'=>true];
+    }
+    return ['world'=>$world,'map'=>$mapKey,'x'=>$x,'y'=>$y,'moved'=>false];
+}
+
+function pv_bot_region_position_open(array $area, array $blocks, int $x, int $y): bool
+{
+    return $x >= 1 && $x <= (int)($area['columns'] ?? 0)
+        && $y >= 1 && $y <= (int)($area['rows'] ?? 0) && !isset($blocks[$x.':'.$y]);
+}
+
+/** The same connected-area links available to human regional explorers. */
+function pv_bot_region_travel_targets(array $area): array
+{
+    $targets = [];
+    foreach (pv_world_connected_areas($area) as $target) {
+        if ((string)$target['key'] === (string)$area['key']) continue;
+        $targets[pv_bot_population_count_key((string)$target['world'], (string)$target['key'])] = $target;
+    }
+    return array_values($targets);
+}
+
+/**
+ * Occasional map-link travel gives the existing persistent population access to
+ * newly added routes, rooms and dungeon floors without reseeding identities or
+ * resetting their collections. Walking still uses the same collision masks as
+ * players, and every destination is resolved from the playable world catalog.
+ */
+function pv_bot_travel_region(mysqli $db, array $bot): ?array
+{
+    $area = pv_world_area((string)$bot['world_key'], (string)$bot['map_key']);
+    if (!$area) return null;
+    $targets = pv_bot_region_travel_targets($area);
+    if ($targets === []) return null;
+    shuffle($targets);
+    foreach ($targets as $target) {
+        $world = (string)$target['world']; $mapKey = (string)$target['key'];
+        [$x,$y] = pv_bot_spawn_for($db, $world, $mapKey, max(1, (int)$bot['bot_index']));
+        $blocks = pv_world_blocks($db, $world, $mapKey);
+        if (!pv_bot_region_position_open($target, $blocks, $x, $y)) continue;
+        return ['world'=>$world,'map'=>$mapKey,'x'=>$x,'y'=>$y,'moved'=>true];
+    }
+    return null;
 }
 
 function pv_bot_roll_wild(mysqli $db,string $world,string $mapKey,int $x,int $y,int $encounterChance=16): ?array
@@ -650,13 +753,24 @@ function pv_bot_roll_wild(mysqli $db,string $world,string $mapKey,int $x,int $y,
 function pv_bot_move_burst(mysqli $db,array $bot,int $steps): array
 {
     $steps=max(1,min(8,$steps));$current=$bot;$movedSteps=0;$last=['world'=>(string)($bot['world_key']??'vortex'),'map'=>(string)($bot['map_key']??'1'),'x'=>(int)($bot['x']??1),'y'=>(int)($bot['y']??1),'moved'=>false];
+    $travelled = false;
+    // Roll once per scheduled action, never once per footstep. No population
+    // migration or schema update is needed to start visiting expanded maps.
+    if (pv_world_is_region_world((string)$current['world_key']) && random_int(1,24) === 1) {
+        $travel = pv_bot_travel_region($db, $current);
+        if ($travel !== null) {
+            $last = $travel; $travelled = true;
+            $current['world_key'] = (string)$travel['world']; $current['map_key'] = (string)$travel['map'];
+            $current['x'] = (int)$travel['x']; $current['y'] = (int)$travel['y'];
+        }
+    }
     for($i=0;$i<$steps;$i++){
         $last=(string)($current['world_key']??'vortex')==='vortex'?pv_bot_move_vortex($db,$current):pv_bot_move_region($db,$current);
         if(empty($last['moved']))break;
         $movedSteps++;
         $current['world_key']=(string)$last['world'];$current['map_key']=(string)$last['map'];$current['x']=(int)$last['x'];$current['y']=(int)$last['y'];
     }
-    $last['moved']=$movedSteps>0;$last['moved_steps']=$movedSteps;
+    $last['moved']=$travelled||$movedSteps>0;$last['moved_steps']=$movedSteps;$last['travelled']=$travelled;
     return $last;
 }
 
@@ -675,7 +789,7 @@ function pv_bot_active_team_ids(mysqli $db,int $uid): array
 function pv_bot_award_wild_training(mysqli $db,int $uid,int $wildLevel,float $multiplier=1.0): array
 {
     $ids=pv_bot_active_team_ids($db,$uid);if($ids===[])return['exp'=>0,'level_ups'=>0,'team_ids'=>[]];
-    $wildLevel=max(1,min(100,$wildLevel));$multiplier=max(0.75,min(1.5,$multiplier));
+    $wildLevel=pv_wild_capped_level($wildLevel,1);$multiplier=max(0.75,min(1.5,$multiplier));
     $expGain=max(75,(int)round($wildLevel*55*$multiplier));$idList=implode(',',array_map('intval',$ids));$levelUps=0;
     $db->begin_transaction();
     try{
@@ -723,7 +837,7 @@ function pv_bot_team_average_level(mysqli $db,int $uid): float
 
 function pv_bot_simulate_wild(mysqli $db,array $bot,array $wild,array $activityProfile=[]): array
 {
-    $uid=(int)$bot['user_id'];$username=(string)$bot['username'];$level=max(2,(int)$wild['level']);
+    $uid=(int)$bot['user_id'];$username=(string)$bot['username'];$level=pv_wild_capped_level((int)$wild['level'],2);
     if($activityProfile===[])$activityProfile=pv_bot_activity_profile(max(1,(int)($bot['bot_index']??1)));
     $avg=pv_bot_team_average_level($db,$uid);$classBonus=(float)($activityProfile['ranked_win_bonus']??0.0)*0.45;
     $winChance=max(54,min(97,(int)round(74+($avg-$level)*2.2+$classBonus)));$won=random_int(1,100)<=$winChance;$captured=false;$pokemonId=0;
@@ -743,7 +857,7 @@ function pv_bot_simulate_wild(mysqli $db,array $bot,array $wild,array $activityP
                 $stmt=$db->prepare('UPDATE members SET total_poke=total_poke+1 WHERE id=?');if(!$stmt)throw new RuntimeException('Could not prepare bot collection count update.');$stmt->bind_param('i',$uid);if(!$stmt->execute()||$stmt->affected_rows!==1){$error=$stmt->error;$stmt->close();throw new RuntimeException('Could not update bot collection count: '.$error);}$stmt->close();
                 $stmt=$db->prepare('UPDATE pguide SET amount=amount+1 WHERE id=?');if(!$stmt)throw new RuntimeException('Could not prepare captured-species population update.');$pid=(int)$wild['guide']['id'];$stmt->bind_param('i',$pid);if(!$stmt->execute()){$error=$stmt->error;$stmt->close();throw new RuntimeException('Could not update captured-species population: '.$error);}$stmt->close();
                 $db->commit();$captured=true;
-            }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}pv_log('Bot capture failed for '.$uid.': '.$e->getMessage());}
+            }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}$pokemonId=0;pv_log('Bot capture failed for '.$uid.': '.$e->getMessage());}
         }
         try{pv_recalculate_trainer_progress($db,$uid,false);}catch(Throwable $e){pv_log('AI trainer progress refresh failed for '.$uid.': '.$e->getMessage());}
     }else{

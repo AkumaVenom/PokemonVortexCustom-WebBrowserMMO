@@ -27,15 +27,33 @@ catch(Throwable $e){pv_log('World map DB unavailable: '.$e->getMessage());pv_red
 $uid=(int)$_SESSION['myid'];
 [$x,$y]=pv_world_position($db,$uid,$world,$areaKey,(array)$area['spawn_points']);
 $areaBlocks=pv_world_blocks($db,$world,$areaKey);
-$positionInvalid=$x<1||$x>(int)$area['columns']||$y<1||$y>(int)$area['rows']||isset($areaBlocks[$x.':'.$y]);
+$entryPoints=[];
+foreach((array)$area['spawn_points'] as $point){
+    $sx=(int)($point[0]??0);$sy=(int)($point[1]??0);
+    if($sx>=1&&$sx<=(int)$area['columns']&&$sy>=1&&$sy<=(int)$area['rows']&&!isset($areaBlocks[$sx.':'.$sy])&&!pv_world_unsuitable_arrival($area,$sx,$sy))$entryPoints[]=[$sx,$sy];
+}
+// Authored caves and islands contain separate walkable sections. Use only
+// collision-validated map arrivals, never caller-supplied coordinates.
+if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'&&isset($_POST['entry_point'])&&pv_verify_csrf()){
+    $entryIndex=filter_var($_POST['entry_point'],FILTER_VALIDATE_INT);
+    if(is_int($entryIndex)&&isset($entryPoints[$entryIndex])){
+        [$x,$y]=$entryPoints[$entryIndex];
+        unset($_SESSION['wb'],$_SESSION['lvl'],$_SESSION['pv_pending_wild_encounter']);
+    }
+}
+$positionInvalid=pv_world_arrival_needs_recovery($area,$areaBlocks,$x,$y);
 if($positionInvalid){
     $safeSpawn=null;
-    foreach((array)$area['spawn_points'] as $spawn){
+    foreach($entryPoints as $spawn){
         $sx=(int)($spawn[0]??0);$sy=(int)($spawn[1]??0);
         if($sx>=1&&$sx<=(int)$area['columns']&&$sy>=1&&$sy<=(int)$area['rows']&&!isset($areaBlocks[$sx.':'.$sy])){$safeSpawn=[$sx,$sy];break;}
     }
     if($safeSpawn===null)pv_redirect('map_select.php?world='.rawurlencode($world).'&status=unavailable');
     [$x,$y]=$safeSpawn;
+    unset($_SESSION['wb'],$_SESSION['lvl'],$_SESSION['pv_pending_wild_encounter']);
+}
+if((string)($_SESSION['world_key']??'')!==$world||(string)($_SESSION['world_area']??'')!==$areaKey){
+    unset($_SESSION['wb'],$_SESSION['lvl'],$_SESSION['pv_pending_wild_encounter']);
 }
 pv_world_presence_upsert($db,$uid,$world,$areaKey,$x,$y);
 pv_bot_tick($db,48,$world,$areaKey,45);
@@ -68,11 +86,11 @@ pv_page_start((string)$area['name'],'map_select.php',true);
                     <?php if($renderTiles!==[]):?>
                     <div class="pv-world-map-tile-layer" id="pv-world-map-art" aria-hidden="true" data-world-map-tile-count="<?=count($renderTiles)?>">
                         <?php foreach($renderTiles as $tile):?>
-                        <img class="pv-world-map-render-tile" data-world-map-image src="<?=pv_h(pv_static((string)$tile['asset']))?>" alt="" draggable="false" loading="eager" decoding="async" width="<?=(int)$tile['width']?>" height="<?=(int)$tile['height']?>" style="left:<?=(int)$tile['left']?>px;top:<?=(int)$tile['top']?>px;--pv-map-render-tile-width:<?=(int)$tile['width']?>px;--pv-map-render-tile-height:<?=(int)$tile['height']?>px">
+                        <img class="pv-world-map-render-tile" data-world-map-image src="<?=pv_h(pv_static((string)$tile['asset']).'?v='.pv_asset_version())?>" alt="" draggable="false" loading="eager" decoding="async" width="<?=(int)$tile['width']?>" height="<?=(int)$tile['height']?>" style="left:<?=(int)$tile['left']?>px;top:<?=(int)$tile['top']?>px;--pv-map-render-tile-width:<?=(int)$tile['width']?>px;--pv-map-render-tile-height:<?=(int)$tile['height']?>px">
                         <?php endforeach;?>
                     </div>
                     <?php else:?>
-                    <img class="pv-world-map-art pv-region-native-art" id="pv-world-map-art" data-world-map-image src="<?=pv_h(pv_static((string)$area['asset']))?>" alt="<?=pv_h((string)$area['name'])?> map" draggable="false" loading="eager" decoding="async" width="<?=(int)$area['width']?>" height="<?=(int)$area['height']?>">
+                    <img class="pv-world-map-art pv-region-native-art" id="pv-world-map-art" data-world-map-image src="<?=pv_h(pv_static((string)$area['asset']).'?v='.pv_asset_version())?>" alt="<?=pv_h((string)$area['name'])?> map" draggable="false" loading="eager" decoding="async" width="<?=(int)$area['width']?>" height="<?=(int)$area['height']?>">
                     <?php endif;?>
                     <div class="pv-map-actors" id="pv-world-map-actors"></div>
                 </div>
@@ -88,6 +106,7 @@ pv_page_start((string)$area['name'],'map_select.php',true);
             </div><p>Use the movement pad or keyboard to follow open paths, avoid blocked terrain and travel through connected exits.</p></section>
             <section class="pv-map-encounter-panel"><div class="pv-map-panel-label">WILD ENCOUNTER SCANNER</div><div id="pv-world-map-encounter" aria-live="polite"><div class="pv-map-quiet"><?php if($hasEncounters):?><strong>Wild Pokémon can appear here.</strong><span>Move through the area to search for wild Pokémon found around this location.</span><?php else:?><strong>No roaming habitat in this area.</strong><span>Try a connected route or wild area to find Pokémon.</span><?php endif;?></div></div></section>
             <?php if($connectedAreas):?><section class="pv-map-region-panel pv-world-connections"><div class="pv-map-panel-label">CONNECTED AREAS</div><div class="pv-world-connection-list"><?php foreach($connectedAreas as $connected):?><a href="<?=pv_h(pv_world_area_url($world,(string)$connected['key']))?>"><span><?=pv_h((string)$connected['category'])?></span><strong><?=pv_h((string)$connected['name'])?></strong><b>TRAVEL ›</b></a><?php endforeach;?></div></section><?php endif;?>
+            <section class="pv-map-region-panel"><div class="pv-map-panel-label">AREA TRAVEL</div><form class="pv-world-entry-form" method="post" action="<?=pv_h(pv_world_area_url($world,$areaKey))?>"><?=pv_csrf_field()?><?php if(count($entryPoints)>1):?><label for="pv-world-entry">Choose an entrance or section</label><select name="entry_point" id="pv-world-entry"><?php foreach($entryPoints as $index=>$point):?><option value="<?=$index?>"><?=$index===0?'Main entrance':'Section '.($index+1)?></option><?php endforeach;?></select><button class="pv-button pv-button-secondary" type="submit">Travel to selected entry</button><?php else:?><input type="hidden" name="entry_point" value="0"><button class="pv-button pv-button-secondary" type="submit">Return to entrance</button><?php endif;?></form></section>
             <section class="pv-map-region-panel"><div class="pv-map-panel-label">AREA INFO</div><dl><div><dt>World</dt><dd><?=pv_h($worldLabel)?></dd></div><div><dt>Area</dt><dd><?=pv_h((string)$area['name'])?></dd></div><div><dt>Type</dt><dd><?=pv_h((string)$area['category'])?></dd></div><div><dt>Trainers visible</dt><dd><?=count($players)+1?></dd></div></dl></section>
         </aside>
     </div>

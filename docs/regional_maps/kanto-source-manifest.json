@@ -1,0 +1,1336 @@
+{
+  "revision": "27.0.0",
+  "existing_areas_preserved": 45,
+  "new_areas": 49,
+  "total_areas": 94,
+  "supplied_sources": 55,
+  "logical_cell_size": 8,
+  "display_cell_size": 32,
+  "native_source_scale": 4,
+  "source_notes": [
+    "Source forest filenames are transposed: Six Island art is Pattern Bush; Three Island art is Berry Forest. Names and encounter pools follow canonical art.",
+    "Supplied Victory Road 1F is the central canonical2F map; B1F is a crop of the canonical1F entry cavern. Existing accepted map retained; new labels use Central Cavern / Entry Cavern.",
+    "Native source dimensions and bytes are preserved, including source padding and partial edge pixels.",
+    "Collision is authored original map flags0x0C00, registered to each crop using hundreds of agreeing visual feature matches; composite maps use all visible source layouts."
+  ],
+  "collision_reference": "https://github.com/pret/pokefirered/blob/master/include/global.fieldmap.h",
+  "records": [
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-cerulean-cave-1f-gba-map.webp",
+      "sha256": "d023a5c3d47608a84b554624cd24ec596979484979814da097315875b3074d9d",
+      "width": 2560,
+      "height": 1472,
+      "status": "imported",
+      "area_key": "cerulean-cave-1f",
+      "name": "Cerulean Cave 1F",
+      "encounter_profile": "gba-cerulean-cave-1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_CERULEAN_CAVE_1F",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 777,
+          "layout_width": 40,
+          "layout_height": 23,
+          "blockdata_filepath": "data/layouts/CeruleanCave_1F/map.bin",
+          "blockdata_sha256": "3112b1de08a8ced107ad478b03fce9af7339f9934d54259aa1f0f6b058637629"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/cerulean-cave-1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-cerulean-cave-2f-gba-map.webp",
+      "sha256": "03a9f12c78cad2f3dbf1fe6aeada4524ac471665af727bf3f9a10d05cc291c18",
+      "width": 2176,
+      "height": 1376,
+      "status": "imported",
+      "area_key": "cerulean-cave-2f",
+      "name": "Cerulean Cave 2F",
+      "encounter_profile": "gba-cerulean-cave-2f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_CERULEAN_CAVE_2F",
+          "offset_gba_px": [
+            -32,
+            -16
+          ],
+          "evidence_matches": 549,
+          "layout_width": 40,
+          "layout_height": 23,
+          "blockdata_filepath": "data/layouts/CeruleanCave_2F/map.bin",
+          "blockdata_sha256": "3d6ac3d48983ed93cc84d52a075333ce53ab6dddc69c8f4366b9c336a63011a3"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/cerulean-cave-2f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-cerulean-cave-b1f-gba-map.webp",
+      "sha256": "56f24f50d05d69302d9e9afbcc71207acc9a960ec323f1b17b531cae07931896",
+      "width": 2560,
+      "height": 1472,
+      "status": "imported",
+      "area_key": "cerulean-cave-b1f",
+      "name": "Cerulean Cave B1F",
+      "encounter_profile": "gba-cerulean-cave-b1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_CERULEAN_CAVE_B1F",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 710,
+          "layout_width": 40,
+          "layout_height": 23,
+          "blockdata_filepath": "data/layouts/CeruleanCave_B1F/map.bin",
+          "blockdata_sha256": "211323100413f1390b64120f1587eb6c79f59d928ea1b363be23e416bc9da7b8"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/cerulean-cave-b1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-mansion-1f-gba-map.webp",
+      "sha256": "4c1cdb1e7a2b124677e32a9c747327c795dfe0aefc03f07833611bffc4d8087b",
+      "width": 2432,
+      "height": 2240,
+      "status": "imported",
+      "area_key": "pokemon-mansion-1f",
+      "name": "Pokémon Mansion 1F",
+      "encounter_profile": "gba-pokemon-mansion-1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_MANSION_1F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 901,
+          "layout_width": 38,
+          "layout_height": 35,
+          "blockdata_filepath": "data/layouts/PokemonMansion_1F/map.bin",
+          "blockdata_sha256": "234317c5764211a9d8235c8ecc49c0b8b64a77fef498b34597e96f7e625133c5"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-mansion-1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-mansion-2f-gba-map.webp",
+      "sha256": "7283500994548d3fa200b332b1dae529ef2efcd03637d9ac6efa48b4318564c8",
+      "width": 2432,
+      "height": 2496,
+      "status": "imported",
+      "area_key": "pokemon-mansion-2f",
+      "name": "Pokémon Mansion 2F",
+      "encounter_profile": "gba-pokemon-mansion-2f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_MANSION_2F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 936,
+          "layout_width": 38,
+          "layout_height": 38,
+          "blockdata_filepath": "data/layouts/PokemonMansion_2F/map.bin",
+          "blockdata_sha256": "7c00caec46c39b8247af2ffe933e8c94a96a259f25d403552dc13e31dbb86b4d"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-mansion-2f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-mansion-3f-gba-map.webp",
+      "sha256": "2d26f32f5254c0d81d414bf1b62f5df6af598515810344171072fab533b9d0d7",
+      "width": 2432,
+      "height": 1664,
+      "status": "imported",
+      "area_key": "pokemon-mansion-3f",
+      "name": "Pokémon Mansion 3F",
+      "encounter_profile": "gba-pokemon-mansion-3f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_MANSION_3F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 964,
+          "layout_width": 38,
+          "layout_height": 35,
+          "blockdata_filepath": "data/layouts/PokemonMansion_3F/map.bin",
+          "blockdata_sha256": "d147a368c05d269e2e45f478d4f0a8239ef9db2da3dc1659c573c426af8729e0"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-mansion-3f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-mansion-b1f-gba-map.webp",
+      "sha256": "c0d8d10a97806a35e38af8a420315732a382c021a2bf3d9280229ba0c1496afb",
+      "width": 2432,
+      "height": 2304,
+      "status": "imported",
+      "area_key": "pokemon-mansion-b1f",
+      "name": "Pokémon Mansion B1F",
+      "encounter_profile": "gba-pokemon-mansion-b1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_MANSION_B1F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 225,
+          "layout_width": 38,
+          "layout_height": 35,
+          "blockdata_filepath": "data/layouts/PokemonMansion_B1F/map.bin",
+          "blockdata_sha256": "a49d9a78ca03785b77b880cb25819aedc6b21dbd5d6f9e679c8158dec040d600"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-mansion-b1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-1f-gba-map.webp",
+      "sha256": "22e2d0d2ccd0547afe9ac7739d413c3b4557a5840d4bd16972fb7a4d475dcf10",
+      "width": 1216,
+      "height": 1248,
+      "status": "imported",
+      "area_key": "pokemon-tower-1f",
+      "name": "Pokémon Tower 1F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_TOWER_1F",
+          "offset_gba_px": [
+            -32,
+            0
+          ],
+          "evidence_matches": 160,
+          "layout_width": 24,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/PokemonTower_1F/map.bin",
+          "blockdata_sha256": "989f1ce2c599087707617b303e5c0f1ef1da270b4e6b8e8dad4bb50235dc9b80"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-tower-1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-2f-gba-map.webp",
+      "sha256": "f8cb1aab81c6424fb8af4117114942aafef1fe551b12c23adb50509847f0c566",
+      "width": 1216,
+      "height": 1152,
+      "status": "imported",
+      "area_key": "pokemon-tower-2f",
+      "name": "Pokémon Tower 2F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_TOWER_2F",
+          "offset_gba_px": [
+            -32,
+            0
+          ],
+          "evidence_matches": 287,
+          "layout_width": 24,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/PokemonTower_2F/map.bin",
+          "blockdata_sha256": "f397c5f8dac0096767b867c0b95f6c6976c378a7c01631452409058a5bbf4954"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-tower-2f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-3f-gba-map.webp",
+      "sha256": "ba76382394318222f6b315fb72fb89b4d79104497e86c63b41bf4957fd13a7fe",
+      "width": 1216,
+      "height": 1152,
+      "status": "imported",
+      "area_key": "pokemon-tower-3f",
+      "name": "Pokémon Tower 3F",
+      "encounter_profile": "gba-pokemon-tower-3f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_TOWER_3F",
+          "offset_gba_px": [
+            -32,
+            0
+          ],
+          "evidence_matches": 281,
+          "layout_width": 24,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/PokemonTower_3F/map.bin",
+          "blockdata_sha256": "a0e643a4c8779f99bbc1ac74ad476b773326e41601bffedfdf70e57aeeba3411"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-tower-3f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-4f-gba-map.webp",
+      "sha256": "ed738b1923cbe41edec960a762834281e9b702def3b21ff3182d85be2da9f87d",
+      "width": 1216,
+      "height": 1152,
+      "status": "imported",
+      "area_key": "pokemon-tower-4f",
+      "name": "Pokémon Tower 4F",
+      "encounter_profile": "gba-pokemon-tower-4f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_TOWER_4F",
+          "offset_gba_px": [
+            -32,
+            0
+          ],
+          "evidence_matches": 318,
+          "layout_width": 24,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/PokemonTower_4F/map.bin",
+          "blockdata_sha256": "9931259746947deb4aaa0946967a8f087d013d6e8fbd18dda1963a444d710ee4"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-tower-4f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-5f-gba-map.webp",
+      "sha256": "03c0814f2e45e8d3568464edd38add3b2f20b3d0c7d3b8b82e5aa2d6490fccd0",
+      "width": 1216,
+      "height": 1152,
+      "status": "imported",
+      "area_key": "pokemon-tower-5f",
+      "name": "Pokémon Tower 5F",
+      "encounter_profile": "gba-pokemon-tower-5f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_TOWER_5F",
+          "offset_gba_px": [
+            -32,
+            0
+          ],
+          "evidence_matches": 323,
+          "layout_width": 24,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/PokemonTower_5F/map.bin",
+          "blockdata_sha256": "1800acfbda336a9a734703c4a9d85f7d31d94e8744697a2d663a35add56f43de"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-tower-5f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-6f-gba-map.webp",
+      "sha256": "b94882c23300c60c87195ab90fc26463c39b7d6952e8d1287146e83ecc8d3308",
+      "width": 1216,
+      "height": 1152,
+      "status": "imported",
+      "area_key": "pokemon-tower-6f",
+      "name": "Pokémon Tower 6F",
+      "encounter_profile": "gba-pokemon-tower-6f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_TOWER_6F",
+          "offset_gba_px": [
+            -32,
+            0
+          ],
+          "evidence_matches": 318,
+          "layout_width": 24,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/PokemonTower_6F/map.bin",
+          "blockdata_sha256": "b1dd1b2b5d9d5f72cb46c35ccdd435b093b3d6d69c817951313b4a8fa14e1623"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-tower-6f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-pokemon-tower-7f-gba-map.webp",
+      "sha256": "8e81dc77861a835b0b9fed6b0e7289cd300a3c68adb19787824b303d5264a693",
+      "width": 1216,
+      "height": 1152,
+      "status": "imported",
+      "area_key": "pokemon-tower-7f",
+      "name": "Pokémon Tower 7F",
+      "encounter_profile": "gba-pokemon-tower-7f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POKEMON_TOWER_7F",
+          "offset_gba_px": [
+            -32,
+            0
+          ],
+          "evidence_matches": 573,
+          "layout_width": 24,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/PokemonTower_7F/map.bin",
+          "blockdata_sha256": "57471cfd3e6914620484fcc1b441125866bf001cb7dc948303abfc044fd6cb0e"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/pokemon-tower-7f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-power-plant-gba-map.webp",
+      "sha256": "f8428a176b3427d7e644daa9133089f1542df3eab1d726267e3c24e134a0e699",
+      "width": 3072,
+      "height": 2496,
+      "status": "imported",
+      "area_key": "power-plant",
+      "name": "Power Plant",
+      "encounter_profile": "gba-power-plant",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_POWER_PLANT",
+          "offset_gba_px": [
+            -8,
+            -8
+          ],
+          "evidence_matches": 848,
+          "layout_width": 49,
+          "layout_height": 40,
+          "blockdata_filepath": "data/layouts/PowerPlant/map.bin",
+          "blockdata_sha256": "135354bc7340649e86181caee2578feec928328a7f99e5885bd492544aad5467"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/power-plant.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-rock-tunnel-1f-gba-map.webp",
+      "sha256": "590596edd8fcbe15a3e7edcccef155a16444b1d18745f75ef8e98e8891f3967e",
+      "width": 3072,
+      "height": 2528,
+      "status": "imported",
+      "area_key": "rock-tunnel-1f",
+      "name": "Rock Tunnel 1F",
+      "encounter_profile": "gba-rock-tunnel-1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_ROCK_TUNNEL_1F",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 613,
+          "layout_width": 48,
+          "layout_height": 40,
+          "blockdata_filepath": "data/layouts/RockTunnel_1F/map.bin",
+          "blockdata_sha256": "f67035528dc6b2c72375bcdf81651f93994b48faaa90825bf46e99aaf9f74c77"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/rock-tunnel-1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-rock-tunnel-b1f-gba-map.webp",
+      "sha256": "d215a41fbf98bc472c315246f1ad9cdc205bf7ea73fb02aeabf3277722e77529",
+      "width": 3072,
+      "height": 2528,
+      "status": "imported",
+      "area_key": "rock-tunnel-b1f",
+      "name": "Rock Tunnel B1F",
+      "encounter_profile": "gba-rock-tunnel-b1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_ROCK_TUNNEL_B1F",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 769,
+          "layout_width": 48,
+          "layout_height": 40,
+          "blockdata_filepath": "data/layouts/RockTunnel_B1F/map.bin",
+          "blockdata_sha256": "5d2b8d2acc400d6212b9b909d4043ba5e07ff37e69d9e0fb4f01d1cb5df868d6"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/rock-tunnel-b1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-rocket-hideout-b1f-gba-map.webp",
+      "sha256": "2031b04d0b871c4d59d00b28005048b912ed5d305256d6ad3e5888f488f361f3",
+      "width": 1792,
+      "height": 2224,
+      "status": "imported",
+      "area_key": "rocket-hideout-b1f",
+      "name": "Rocket Hideout B1F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_ROCKET_HIDEOUT_B1F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 318,
+          "layout_width": 28,
+          "layout_height": 34,
+          "blockdata_filepath": "data/layouts/RocketHideout_B1F/map.bin",
+          "blockdata_sha256": "0f178fada61e1e58f1e8c58ca72322feb4ff4293593158fc7b22ff1e4ad7f233"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/rocket-hideout-b1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-rocket-hideout-b2f-gba-map.webp",
+      "sha256": "73d2f2d5b6d2d210bc0917babb1a622daeef6701aca28ec9eb7deea77d77e92a",
+      "width": 2080,
+      "height": 1504,
+      "status": "imported",
+      "area_key": "rocket-hideout-b2f",
+      "name": "Rocket Hideout B2F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_ROCKET_HIDEOUT_B2F",
+          "offset_gba_px": [
+            8,
+            8
+          ],
+          "evidence_matches": 386,
+          "layout_width": 32,
+          "layout_height": 22,
+          "blockdata_filepath": "data/layouts/RocketHideout_B2F/map.bin",
+          "blockdata_sha256": "76d589e8ca01f327c3bee02cdd57b22826dbd50277989e2deded03df47e164d2"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/rocket-hideout-b2f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-rocket-hideout-b3f-gba-map.webp",
+      "sha256": "d723a83b355d158da42a9c1896f01b9d9dad4265d11e42483088654c9e9cd7ad",
+      "width": 1408,
+      "height": 1792,
+      "status": "imported",
+      "area_key": "rocket-hideout-b3f",
+      "name": "Rocket Hideout B3F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_ROCKET_HIDEOUT_B3F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 313,
+          "layout_width": 22,
+          "layout_height": 27,
+          "blockdata_filepath": "data/layouts/RocketHideout_B3F/map.bin",
+          "blockdata_sha256": "b9989a7ec3c883c83b50101adb036fdb8a997e141efee972d487d707e9dec7df"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/rocket-hideout-b3f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-rocket-hideout-b4f-gba-map.webp",
+      "sha256": "edbf29eacacb0d7d0e7c15039ee09a8571b6dc0516262527d888a0184ba82926",
+      "width": 1536,
+      "height": 1728,
+      "status": "imported",
+      "area_key": "rocket-hideout-b4f",
+      "name": "Rocket Hideout B4F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_ROCKET_HIDEOUT_B4F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 375,
+          "layout_width": 24,
+          "layout_height": 26,
+          "blockdata_filepath": "data/layouts/RocketHideout_B4F/map.bin",
+          "blockdata_sha256": "6d6ac7bcbe1b244904c656c77b209c35241d0d249991d40af815dfb860d2e2bb"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/rocket-hideout-b4f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-route-23-gba-map.webp",
+      "sha256": "00d682c9a6c6c4fd452b543afde955096efb8d741f8e9e973cb8404b4b5c98e0",
+      "width": 1536,
+      "height": 11520,
+      "status": "existing-area-preserved",
+      "area_key": "route-23",
+      "notes": "Supplied alternate-resolution area overlaps accepted baseline; existing art, coordinates and collision preserved."
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-route-25-gba-map.webp",
+      "sha256": "72e548487f76f1517049af1a4eab510d7054ce1d65b720e1d7f2977b74817fe9",
+      "width": 4608,
+      "height": 1280,
+      "status": "existing-area-preserved",
+      "area_key": "route-25",
+      "notes": "Supplied alternate-resolution area overlaps accepted baseline; existing art, coordinates and collision preserved."
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-safari-zone-area-1-gba-map.webp",
+      "sha256": "9d7fc356391ede4f8c56fdff7df7717fb2e9a96610191209d66e68dbcbadce34",
+      "width": 3456,
+      "height": 2240,
+      "status": "existing-area-preserved",
+      "area_key": "safari-zone-area-1",
+      "notes": "Supplied alternate-resolution area overlaps accepted baseline; existing art, coordinates and collision preserved."
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-safari-zone-area-2-gba-map.webp",
+      "sha256": "9d35b85658f189ed98faa2ca7fa8295c2bb1374a96db76fe179834cf7beefa81",
+      "width": 3648,
+      "height": 2560,
+      "status": "existing-area-preserved",
+      "area_key": "safari-zone-area-2",
+      "notes": "Supplied alternate-resolution area overlaps accepted baseline; existing art, coordinates and collision preserved."
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-safari-zone-area-3-gba-map.webp",
+      "sha256": "dfecf2fe0709fcace8acfbffc3407b87ca3400f0731d5927ae35b58abc4e88fd",
+      "width": 3072,
+      "height": 2304,
+      "status": "existing-area-preserved",
+      "area_key": "safari-zone-area-3",
+      "notes": "Supplied alternate-resolution area overlaps accepted baseline; existing art, coordinates and collision preserved."
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-seafoam-islands-b1f-gba-map.webp",
+      "sha256": "8fc0a1454e74df13e7311a702de7faf047d26a4a31e653d67bd2e7e98e5102fd",
+      "width": 2432,
+      "height": 1536,
+      "status": "imported",
+      "area_key": "seafoam-islands-b1f",
+      "name": "Seafoam Islands B1F",
+      "encounter_profile": "gba-seafoam-islands-b1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_SEAFOAM_ISLANDS_B1F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 638,
+          "layout_width": 38,
+          "layout_height": 23,
+          "blockdata_filepath": "data/layouts/SeafoamIslands_B1F/map.bin",
+          "blockdata_sha256": "6f88217e2426864c31caa0a4fe3bf08e1e74df07fbf3167b4f096e213489b3bf"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/seafoam-islands-b1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-seafoam-islands-b2f-gba-map.webp",
+      "sha256": "7fe6da53c56728a6afe70c210a940869e27340e8c41b9faef45f4d4f84a90558",
+      "width": 2432,
+      "height": 1536,
+      "status": "imported",
+      "area_key": "seafoam-islands-b2f",
+      "name": "Seafoam Islands B2F",
+      "encounter_profile": "gba-seafoam-islands-b2f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_SEAFOAM_ISLANDS_B2F",
+          "offset_gba_px": [
+            -16,
+            8
+          ],
+          "evidence_matches": 683,
+          "layout_width": 38,
+          "layout_height": 24,
+          "blockdata_filepath": "data/layouts/SeafoamIslands_B2F/map.bin",
+          "blockdata_sha256": "ae6b58c2f529911333a5703c7b272baf81086ca4e8cf658fc180a15047f292e4"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/seafoam-islands-b2f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-seafoam-islands-b3f-gba-map.webp",
+      "sha256": "8207e1c2faedc221f08d73d62461a68e2e4fe3d1bf18adac760afdcac0719384",
+      "width": 2432,
+      "height": 1536,
+      "status": "imported",
+      "area_key": "seafoam-islands-b3f",
+      "name": "Seafoam Islands B3F",
+      "encounter_profile": "gba-seafoam-islands-b3f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_SEAFOAM_ISLANDS_B3F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 792,
+          "layout_width": 38,
+          "layout_height": 24,
+          "blockdata_filepath": "data/layouts/SeafoamIslands_B3F/map.bin",
+          "blockdata_sha256": "70f300607e0e46c661c62edaa2fb359eb387bcd297f43be25293d55a5f8787f7"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/seafoam-islands-b3f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-seafoam-islands-b4f-gba-map.webp",
+      "sha256": "5588ed4989d577306ea65f3404d2f0f5e1747a98b6a74465a7e81474a9da06b8",
+      "width": 2432,
+      "height": 1472,
+      "status": "imported",
+      "area_key": "seafoam-islands-b4f",
+      "name": "Seafoam Islands B4F",
+      "encounter_profile": "gba-seafoam-islands-b4f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_SEAFOAM_ISLANDS_B4F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 377,
+          "layout_width": 38,
+          "layout_height": 24,
+          "blockdata_filepath": "data/layouts/SeafoamIslands_B4F/map.bin",
+          "blockdata_sha256": "8449b44cce4cfd061ca4de9a061a72504dfef5b9277cffeef9a5763540c6aebd"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/seafoam-islands-b4f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-birth-island-gba-map.webp",
+      "sha256": "2f152cc0f10c8acd7d7cc7499b80c67a362cf9a1bf10a521e870e3e2f4d909bf",
+      "width": 1920,
+      "height": 1856,
+      "status": "imported",
+      "area_key": "sevii-birth-island",
+      "name": "Birth Island",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_BIRTH_ISLAND_EXTERIOR",
+          "offset_gba_px": [
+            0,
+            -8
+          ],
+          "evidence_matches": 414,
+          "layout_width": 30,
+          "layout_height": 30,
+          "blockdata_filepath": "data/layouts/BirthIsland_Exterior/map.bin",
+          "blockdata_sha256": "73897427ffc744c601b42da54fc59f93c3bb6e4caee5425f4693387076f80ff7"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-birth-island.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-five-island-rocket-warehouse-gba-map.webp",
+      "sha256": "b9bc0b6861472355ce4cfb410d33932903f92d95941ba3374ade665db6d5b5c1",
+      "width": 1856,
+      "height": 1728,
+      "status": "imported",
+      "area_key": "sevii-five-island-rocket-warehouse",
+      "name": "Five Island · Rocket Warehouse",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_FIVE_ISLAND_ROCKET_WAREHOUSE",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 715,
+          "layout_width": 29,
+          "layout_height": 27,
+          "blockdata_filepath": "data/layouts/FiveIsland_RocketWarehouse/map.bin",
+          "blockdata_sha256": "3709bd1556fa0a1fbefb0b3660da55dbe94efb927aa2cc9ec035f6f750b918fa"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-five-island-rocket-warehouse.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-gba-map.webp",
+      "sha256": "17537637c45f9fba99aafba896bfcc2ceff38917443d76a27914296eda1556f9",
+      "width": 3072,
+      "height": 2528,
+      "status": "imported",
+      "area_key": "sevii-four-island",
+      "name": "Four Island",
+      "encounter_profile": "gba-four-island",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_FOUR_ISLAND",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 1249,
+          "layout_width": 48,
+          "layout_height": 40,
+          "blockdata_filepath": "data/layouts/FourIsland/map.bin",
+          "blockdata_sha256": "afc338d34731aece79809d65d7c729c3030ca5974d24c704f60f2bf6f8236951"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-four-island.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-icefall-cave-1-gba-map.webp",
+      "sha256": "7ee7c04a37528949e675492cb48ec0b5d75fba188c08b679295554d27dd3344d",
+      "width": 1920,
+      "height": 2112,
+      "status": "imported",
+      "area_key": "sevii-four-island-icefall-cave-1",
+      "name": "Four Island · Icefall Cave Entrance",
+      "encounter_profile": "gba-four-island-icefall-cave-entrance",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE",
+          "offset_gba_px": [
+            0,
+            -40
+          ],
+          "evidence_matches": 513,
+          "layout_width": 30,
+          "layout_height": 36,
+          "blockdata_filepath": "data/layouts/FourIsland_IcefallCave_Entrance/map.bin",
+          "blockdata_sha256": "1432f79f9293bb437a35144567f16cbc3c3dc063fcdaebbb720f1c4e83d73b75"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-four-island-icefall-cave-1.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-icefall-cave-2-gba-map.webp",
+      "sha256": "a91567466da1b4b70be63c3f4a363dd2684af0f5888c6903735d4370d1580996",
+      "width": 1280,
+      "height": 1280,
+      "status": "imported",
+      "area_key": "sevii-four-island-icefall-cave-2",
+      "name": "Four Island · Icefall Cave 1F",
+      "encounter_profile": "gba-four-island-icefall-cave-1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_1F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 481,
+          "layout_width": 20,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/FourIsland_IcefallCave_1F/map.bin",
+          "blockdata_sha256": "821ac75b6ad7a6991ac540d8462f61b81896b31426fc71e8893072e44e2a7f77"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-four-island-icefall-cave-2.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-icefall-cave-3-gba-map.webp",
+      "sha256": "c242b056bc17c999e4eb1ec5ed12677ad7967cc3ae79567ac6ad6e332088a702",
+      "width": 1152,
+      "height": 1280,
+      "status": "imported",
+      "area_key": "sevii-four-island-icefall-cave-3",
+      "name": "Four Island · Icefall Cave B1F",
+      "encounter_profile": "gba-four-island-icefall-cave-b1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_B1F",
+          "offset_gba_px": [
+            -96,
+            8
+          ],
+          "evidence_matches": 422,
+          "layout_width": 24,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/FourIsland_IcefallCave_B1F/map.bin",
+          "blockdata_sha256": "cd43b29f7b200391f346a926be6625541def6ca362412e90bc229a1001b950b6"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-four-island-icefall-cave-3.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-four-island-icefall-cave-4-gba-map.webp",
+      "sha256": "04ce1ca08d03c97418c104d880d62fb3d21be82c0033244a9ab83712ce71af5a",
+      "width": 1600,
+      "height": 1664,
+      "status": "imported",
+      "area_key": "sevii-four-island-icefall-cave-4",
+      "name": "Four Island · Icefall Cave Back Chamber",
+      "encounter_profile": "gba-four-island-icefall-cave-back",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_FOUR_ISLAND_ICEFALL_CAVE_BACK",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 281,
+          "layout_width": 25,
+          "layout_height": 26,
+          "blockdata_filepath": "data/layouts/FourIsland_IcefallCave_Back/map.bin",
+          "blockdata_sha256": "be4c429f3a8f974ec9d9a1b6e2fc10bab08e4c6a9102bf1c10c172a2ac8b8691"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-four-island-icefall-cave-4.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-gba-map.webp",
+      "sha256": "89626f9ce53bfcab9ca55d93dd0bfe6b9417fc9b111b6be8a9923f3e915f4781",
+      "width": 3072,
+      "height": 11440,
+      "status": "imported",
+      "area_key": "sevii-one-island",
+      "name": "One Island · Kindle Road & Treasure Beach",
+      "encounter_profile": "gba-one-island",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_ONE_ISLAND",
+          "offset_gba_px": [
+            0,
+            1908
+          ],
+          "evidence_matches": 387,
+          "layout_width": 24,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/OneIsland/map.bin",
+          "blockdata_sha256": "8464f4675d6049e54d55bc8fb7a13445a280b637bdbff3e541985871f4f6e3a0"
+        },
+        {
+          "layout": "LAYOUT_ONE_ISLAND_KINDLE_ROAD",
+          "offset_gba_px": [
+            384,
+            -12
+          ],
+          "evidence_matches": 1347,
+          "layout_width": 24,
+          "layout_height": 140,
+          "blockdata_filepath": "data/layouts/OneIsland_KindleRoad/map.bin",
+          "blockdata_sha256": "0c39b58ca418fcd29c894196a8bb3bb3e7de45b6f31bb5ba7f2285094f85e160"
+        },
+        {
+          "layout": "LAYOUT_ONE_ISLAND_TREASURE_BEACH",
+          "offset_gba_px": [
+            0,
+            2228
+          ],
+          "evidence_matches": 370,
+          "layout_width": 24,
+          "layout_height": 40,
+          "blockdata_filepath": "data/layouts/OneIsland_TreasureBeach/map.bin",
+          "blockdata_sha256": "94557bcab422102acecd0e7adfb2b0b0d30610f9f61cad343eb71955443b4d3c"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-one-island.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-base-gba-map.webp",
+      "sha256": "f70c9e44e0887cc496ea341dbc96bb56aaf4fdaac2d9fd0ff385d2540fcb07bf",
+      "width": 3648,
+      "height": 3456,
+      "status": "imported",
+      "area_key": "sevii-one-island-mt-ember-base",
+      "name": "One Island · Mt. Ember Base",
+      "encounter_profile": "gba-mt-ember-exterior",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_MT_EMBER_EXTERIOR",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 2266,
+          "layout_width": 57,
+          "layout_height": 54,
+          "blockdata_filepath": "data/layouts/MtEmber_Exterior/map.bin",
+          "blockdata_sha256": "4c5fe95ed02bc1ee28cb168831f08af4d294ba45b87df2939f755533218e30e7"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-base.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-1f-gba-map.webp",
+      "sha256": "688aa7bfc9d73f0ea9a5a0e8404b55703f75364fcbefe01990fe66148b54e422",
+      "width": 1920,
+      "height": 1280,
+      "status": "imported",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-1f",
+      "name": "One Island · Mt. Ember Ruby Path 1F",
+      "encounter_profile": "gba-mt-ember-ruby-path-1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_MT_EMBER_RUBY_PATH_1F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 153,
+          "repeat_column_gba_px": 240,
+          "repeat_width_gba_px": 16,
+          "layout_width": 27,
+          "layout_height": 19,
+          "blockdata_filepath": "data/layouts/MtEmber_RubyPath_1F/map.bin",
+          "blockdata_sha256": "c4881290befcbd3ba0e8d4d14ab5c0720dfe2d7b8ed508897df9fce8d885c8bf"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-1f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-b1f-l-gba-map.webp",
+      "sha256": "f77770dd6430413c72fed95ba649445f77bf50acfdb32f7eef3a0aeeca9f4f8a",
+      "width": 960,
+      "height": 1536,
+      "status": "imported",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-b1f-l",
+      "name": "One Island · Mt. Ember Ruby Path B1F",
+      "encounter_profile": "gba-mt-ember-ruby-path-b1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_MT_EMBER_RUBY_PATH_B1F",
+          "offset_gba_px": [
+            48,
+            8
+          ],
+          "evidence_matches": 159,
+          "layout_width": 11,
+          "layout_height": 23,
+          "blockdata_filepath": "data/layouts/MtEmber_RubyPath_B1F/map.bin",
+          "blockdata_sha256": "1b296b0c69f042dcbdc3bbf6ff236c060cefa86fd1e4bef5902c86d478a348d4"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-b1f-l.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-b2f-l-gba-map.webp",
+      "sha256": "e1416a256f3c077bb611876b4c3d33873926fa92cdfed8f478529845d7de2263",
+      "width": 1024,
+      "height": 704,
+      "status": "imported",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-b2f-l",
+      "name": "One Island · Mt. Ember Ruby Path B2F",
+      "encounter_profile": "gba-mt-ember-ruby-path-b2f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_MT_EMBER_RUBY_PATH_B2F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 186,
+          "layout_width": 16,
+          "layout_height": 11,
+          "blockdata_filepath": "data/layouts/MtEmber_RubyPath_B2F/map.bin",
+          "blockdata_sha256": "68558d523d0a10abcbadbb45de39d4524f8e19873e93dada194756ca1756d571"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-b2f-l.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-b3f-gba-map.webp",
+      "sha256": "2c8dc878dd10c0b5fbd24c83ad7b6e86fbc06a1c9b2dc51625ed5a3ceea8e48a",
+      "width": 1984,
+      "height": 1280,
+      "status": "imported",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-b3f",
+      "name": "One Island · Mt. Ember Ruby Path B3F",
+      "encounter_profile": "gba-mt-ember-ruby-path-b3f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_MT_EMBER_RUBY_PATH_B3F",
+          "offset_gba_px": [
+            0,
+            -8
+          ],
+          "evidence_matches": 477,
+          "layout_width": 31,
+          "layout_height": 23,
+          "blockdata_filepath": "data/layouts/MtEmber_RubyPath_B3F/map.bin",
+          "blockdata_sha256": "d3c091a1f772a4f94e0616ac6942b4c72b32d7cabe5e6cc3f3e258b4ad9f5316"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-b3f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-braille-cave-b4f-gba-map.webp",
+      "sha256": "805923c9f5cc58cacfd8988eac73a17f2995d5350281b7c950323cd6c130304d",
+      "width": 1276,
+      "height": 1088,
+      "status": "imported",
+      "area_key": "sevii-one-island-mt-ember-braille-cave-b4f",
+      "name": "One Island · Mt. Ember Ruby Path B4F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_MT_EMBER_RUBY_PATH_B4F",
+          "offset_gba_px": [
+            16,
+            8
+          ],
+          "evidence_matches": 129,
+          "layout_width": 18,
+          "layout_height": 16,
+          "blockdata_filepath": "data/layouts/MtEmber_RubyPath_B4F/map.bin",
+          "blockdata_sha256": "2fe87f543a2c590ecd8684f2502a117a7982c9d947c03be0e5c782da9f0cd158"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-braille-cave-b4f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-one-island-mt-ember-peak-gba-map.webp",
+      "sha256": "3df0bc928f1fdffde2407f7d0143662581deed7aee6e2342efc99f2e4853517f",
+      "width": 1212,
+      "height": 1404,
+      "status": "imported",
+      "area_key": "sevii-one-island-mt-ember-peak",
+      "name": "One Island · Mt. Ember Peak",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_MT_EMBER_SUMMIT",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 500,
+          "layout_width": 19,
+          "layout_height": 22,
+          "blockdata_filepath": "data/layouts/MtEmber_Summit/map.bin",
+          "blockdata_sha256": "0efd4f245616c42d6afef63f885491271d8abf41879eb998ffa1c08263e8027c"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-one-island-mt-ember-peak.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-six-island-altering-cave-gba-map.webp",
+      "sha256": "7f6df796e159a0012ea62cfb69e655ea2a557185ac10e686d929f1d491ed0065",
+      "width": 2048,
+      "height": 1504,
+      "status": "imported",
+      "area_key": "sevii-six-island-altering-cave",
+      "name": "Six Island · Altering Cave",
+      "encounter_profile": "gba-six-island-altering-cave",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_SIX_ISLAND_ALTERING_CAVE",
+          "offset_gba_px": [
+            0,
+            -16
+          ],
+          "evidence_matches": 362,
+          "layout_width": 32,
+          "layout_height": 24,
+          "blockdata_filepath": "data/layouts/SixIsland_AlteringCave/map.bin",
+          "blockdata_sha256": "907078a38b89ca3feb34971c853a5dee1fb331b631bf96ad39179e17b4564726"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-six-island-altering-cave.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-six-island-berry-forest-gba-map.webp",
+      "sha256": "684e65a0163e69351259c0bbda29456a8851701004de0be503174086bd1acf88",
+      "width": 3840,
+      "height": 2048,
+      "status": "imported",
+      "area_key": "sevii-six-island-pattern-bush",
+      "name": "Six Island · Pattern Bush",
+      "encounter_profile": "gba-six-island-pattern-bush",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_SIX_ISLAND_PATTERN_BUSH",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 1232,
+          "layout_width": 60,
+          "layout_height": 32,
+          "blockdata_filepath": "data/layouts/SixIsland_PatternBush/map.bin",
+          "blockdata_sha256": "5a3356ad4bdba1fbd86267629ad6bd012e26c28964ef539e074e9878bdfb7797"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-six-island-pattern-bush.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-three-island-pattern-forest-gba-map-1.webp",
+      "sha256": "699f8cddf71ede437675ffeac164dbefdbee9a1510ba907aba7e4d241aa124de",
+      "width": 3648,
+      "height": 3008,
+      "status": "byte-identical-duplicate",
+      "area_key": "sevii-three-island-berry-forest",
+      "notes": "SHA256 matches the supplied sibling without -1; imported once."
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-three-island-pattern-forest-gba-map.webp",
+      "sha256": "699f8cddf71ede437675ffeac164dbefdbee9a1510ba907aba7e4d241aa124de",
+      "width": 3648,
+      "height": 3008,
+      "status": "imported",
+      "area_key": "sevii-three-island-berry-forest",
+      "name": "Three Island · Berry Forest",
+      "encounter_profile": "gba-three-island-berry-forest",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_THREE_ISLAND_BERRY_FOREST",
+          "offset_gba_px": [
+            0,
+            0
+          ],
+          "evidence_matches": 1949,
+          "layout_width": 57,
+          "layout_height": 47,
+          "blockdata_filepath": "data/layouts/ThreeIsland_BerryForest/map.bin",
+          "blockdata_sha256": "4b4aacbd692b2a54a9e88c5594e144a22cb0eb63cb4186490ea235551b6e9a09"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-three-island-berry-forest.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-sevii-islands-two-island-gba-map.webp",
+      "sha256": "ce568d8d4f8742080e43540a867fb79b595663b9dc232261a16edba7dc64e21e",
+      "width": 3072,
+      "height": 3200,
+      "status": "imported",
+      "area_key": "sevii-two-island",
+      "name": "Two Island · Cape Brink",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_TWO_ISLAND",
+          "offset_gba_px": [
+            0,
+            488
+          ],
+          "evidence_matches": 592,
+          "layout_width": 48,
+          "layout_height": 20,
+          "blockdata_filepath": "data/layouts/TwoIsland/map.bin",
+          "blockdata_sha256": "0c0bc7ac68719e088258efbaabbc3d6a57ba5009a9581731d6aa6b55ecff7b30"
+        },
+        {
+          "layout": "LAYOUT_TWO_ISLAND_CAPE_BRINK",
+          "offset_gba_px": [
+            384,
+            -152
+          ],
+          "evidence_matches": 576,
+          "layout_width": 24,
+          "layout_height": 40,
+          "blockdata_filepath": "data/layouts/TwoIsland_CapeBrink/map.bin",
+          "blockdata_sha256": "212c786812d95500e15c886cd4154a0864d8acba31779cfccaf5b96ca8a4d240"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/sevii-two-island.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-silph-co-01f-gba-map.webp",
+      "sha256": "0bd0f1c79d9ee68391d34bbed3fdf6e2882134f8c884b0b22db07d6895f58bbe",
+      "width": 2432,
+      "height": 1472,
+      "status": "imported",
+      "area_key": "silph-co-01f",
+      "name": "Silph Co. 1F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_SILPH_CO_1F",
+          "offset_gba_px": [
+            16,
+            24
+          ],
+          "evidence_matches": 284,
+          "layout_width": 36,
+          "layout_height": 22,
+          "blockdata_filepath": "data/layouts/SilphCo_1F/map.bin",
+          "blockdata_sha256": "2ca9889ba636e4a86364b9069663e9c41aa77150f6c008f29caef4e7ef59df6b"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/silph-co-01f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-silph-co-02f-gba-map.webp",
+      "sha256": "1a564a6b0d338a3db52dadbf35912467d4a72adb69dc3ee2881975bac4051779",
+      "width": 2432,
+      "height": 1472,
+      "status": "imported",
+      "area_key": "silph-co-02f",
+      "name": "Silph Co. 2F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_SILPH_CO_2F",
+          "offset_gba_px": [
+            16,
+            8
+          ],
+          "evidence_matches": 382,
+          "layout_width": 36,
+          "layout_height": 22,
+          "blockdata_filepath": "data/layouts/SilphCo_2F/map.bin",
+          "blockdata_sha256": "652233e3c23fa74e45a09eebf9b6c52c74e3c7ab1d072686abdc4938a7c6fb37"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/silph-co-02f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-silph-co-03f-gba-map.webp",
+      "sha256": "a96ffdaf85aff0b142ecb1e85b5cc408dc0090b072fb71c3abcbc26128e82267",
+      "width": 2432,
+      "height": 1472,
+      "status": "imported",
+      "area_key": "silph-co-03f",
+      "name": "Silph Co. 3F",
+      "encounter_profile": "",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_SILPH_CO_3F",
+          "offset_gba_px": [
+            16,
+            8
+          ],
+          "evidence_matches": 425,
+          "layout_width": 36,
+          "layout_height": 22,
+          "blockdata_filepath": "data/layouts/SilphCo_3F/map.bin",
+          "blockdata_sha256": "6333b7e8ab0dee8a4690c04f941ef771d84616b245cf5c00cba4311ec18d7bf8"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/silph-co-03f.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-victory-road-1f-gba-map.webp",
+      "sha256": "b3cc08dbf4bf59bc5733671b063f24b77cdabe03f84cfbdb96291f7aa79b8389",
+      "width": 3264,
+      "height": 1408,
+      "status": "imported",
+      "area_key": "victory-road-central-cavern",
+      "name": "Victory Road · Central Cavern",
+      "encounter_profile": "gba-victory-road-2f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_VICTORY_ROAD_2F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 740,
+          "layout_width": 51,
+          "layout_height": 22,
+          "blockdata_filepath": "data/layouts/VictoryRoad_2F/map.bin",
+          "blockdata_sha256": "04326db6afd4aecfc4e520e50b40da0b0c52fcab39b25f37e325a38f730e98b8"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/victory-road-central-cavern.webp"
+    },
+    {
+      "filename": "pokemon-firered-and-leafgreen-versions-victory-road-b1f-gba-map.webp",
+      "sha256": "bee5bd7497dd4f6bab3bd77f06ec06cecb6a7d3058e73876168fee99880a6bb9",
+      "width": 1600,
+      "height": 1408,
+      "status": "imported",
+      "area_key": "victory-road-entry-cavern",
+      "name": "Victory Road · Entry Cavern",
+      "encounter_profile": "gba-victory-road-1f",
+      "canonical_layers": [
+        {
+          "layout": "LAYOUT_VICTORY_ROAD_1F",
+          "offset_gba_px": [
+            0,
+            8
+          ],
+          "evidence_matches": 690,
+          "layout_width": 48,
+          "layout_height": 22,
+          "blockdata_filepath": "data/layouts/VictoryRoad_1F/map.bin",
+          "blockdata_sha256": "79baa78c852bab39265cd53773c8607e0d78f81d81d04a15a1458fa14fb0e00e"
+        }
+      ],
+      "asset": "images/worlds/kanto/native/victory-road-entry-cavern.webp"
+    }
+  ]
+}

@@ -1,0 +1,1877 @@
+{
+  "transitions": 130,
+  "records": [
+    {
+      "area": "abandoned-ship-1f-1",
+      "warp_event": 0,
+      "source_cell": [
+        21,
+        25
+      ],
+      "target_area": "abandoned-ship-exterior",
+      "target_cell": [
+        28,
+        21
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_DECK"
+    },
+    {
+      "area": "abandoned-ship-1f-1",
+      "warp_event": 1,
+      "source_cell": [
+        19,
+        25
+      ],
+      "target_area": "abandoned-ship-exterior",
+      "target_cell": [
+        28,
+        21
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_DECK"
+    },
+    {
+      "area": "abandoned-ship-1f-1",
+      "warp_event": 2,
+      "source_cell": [
+        3,
+        25
+      ],
+      "target_area": "abandoned-ship-exterior",
+      "target_cell": [
+        18,
+        21
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_DECK"
+    },
+    {
+      "area": "abandoned-ship-1f-1",
+      "warp_event": 3,
+      "source_cell": [
+        5,
+        25
+      ],
+      "target_area": "abandoned-ship-exterior",
+      "target_cell": [
+        18,
+        21
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_DECK"
+    },
+    {
+      "area": "abandoned-ship-1f-1",
+      "warp_event": 9,
+      "source_cell": [
+        35,
+        7
+      ],
+      "target_area": "abandoned-ship-b1-1",
+      "target_cell": [
+        19,
+        8
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_B1F"
+    },
+    {
+      "area": "abandoned-ship-1f-1",
+      "warp_event": 10,
+      "source_cell": [
+        13,
+        7
+      ],
+      "target_area": "abandoned-ship-b1-1",
+      "target_cell": [
+        3,
+        8
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_B1F"
+    },
+    {
+      "area": "abandoned-ship-1f-1",
+      "warp_event": 11,
+      "source_cell": [
+        9,
+        9
+      ],
+      "target_area": "abandoned-ship-1f-2",
+      "target_cell": [
+        10,
+        6
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_ROOMS2_1F"
+    },
+    {
+      "area": "abandoned-ship-1f-2",
+      "warp_event": 0,
+      "source_cell": [
+        10,
+        35
+      ],
+      "target_area": "abandoned-ship-1f-1",
+      "target_cell": [
+        9,
+        22
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_1F"
+    },
+    {
+      "area": "abandoned-ship-1f-2",
+      "warp_event": 1,
+      "source_cell": [
+        12,
+        35
+      ],
+      "target_area": "abandoned-ship-1f-1",
+      "target_cell": [
+        9,
+        22
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_1F"
+    },
+    {
+      "area": "abandoned-ship-2f",
+      "warp_event": 0,
+      "source_cell": [
+        16,
+        14
+      ],
+      "target_area": "abandoned-ship-exterior",
+      "target_cell": [
+        26,
+        13
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_DECK"
+    },
+    {
+      "area": "abandoned-ship-2f",
+      "warp_event": 1,
+      "source_cell": [
+        18,
+        14
+      ],
+      "target_area": "abandoned-ship-exterior",
+      "target_cell": [
+        26,
+        13
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_DECK"
+    },
+    {
+      "area": "abandoned-ship-b1-1",
+      "warp_event": 6,
+      "source_cell": [
+        3,
+        7
+      ],
+      "target_area": "abandoned-ship-1f-1",
+      "target_cell": [
+        13,
+        8
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_1F"
+    },
+    {
+      "area": "abandoned-ship-b1-1",
+      "warp_event": 7,
+      "source_cell": [
+        19,
+        7
+      ],
+      "target_area": "abandoned-ship-1f-1",
+      "target_cell": [
+        35,
+        8
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_1F"
+    },
+    {
+      "area": "abandoned-ship-b1-3",
+      "warp_event": 0,
+      "source_cell": [
+        10,
+        17
+      ],
+      "target_area": "abandoned-ship-b1-1",
+      "target_cell": [
+        25,
+        12
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_B1F"
+    },
+    {
+      "area": "abandoned-ship-b1-3",
+      "warp_event": 1,
+      "source_cell": [
+        12,
+        17
+      ],
+      "target_area": "abandoned-ship-b1-1",
+      "target_cell": [
+        25,
+        12
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_B1F"
+    },
+    {
+      "area": "abandoned-ship-b2-1",
+      "warp_event": 0,
+      "source_cell": [
+        9,
+        7
+      ],
+      "target_area": "abandoned-ship-b2-2",
+      "target_cell": [
+        9,
+        15
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_UNDERWATER1"
+    },
+    {
+      "area": "abandoned-ship-b2-2",
+      "warp_event": 0,
+      "source_cell": [
+        8,
+        15
+      ],
+      "target_area": "abandoned-ship-b2-1",
+      "target_cell": [
+        9,
+        8
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_UNDERWATER2"
+    },
+    {
+      "area": "abandoned-ship-b2-2",
+      "warp_event": 1,
+      "source_cell": [
+        10,
+        15
+      ],
+      "target_area": "abandoned-ship-b2-1",
+      "target_cell": [
+        9,
+        8
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_UNDERWATER2"
+    },
+    {
+      "area": "abandoned-ship-exterior",
+      "warp_event": 2,
+      "source_cell": [
+        28,
+        20
+      ],
+      "target_area": "abandoned-ship-1f-1",
+      "target_cell": [
+        20,
+        25
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_1F"
+    },
+    {
+      "area": "abandoned-ship-exterior",
+      "warp_event": 3,
+      "source_cell": [
+        18,
+        20
+      ],
+      "target_area": "abandoned-ship-1f-1",
+      "target_cell": [
+        4,
+        25
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CORRIDORS_1F"
+    },
+    {
+      "area": "abandoned-ship-exterior",
+      "warp_event": 4,
+      "source_cell": [
+        26,
+        12
+      ],
+      "target_area": "abandoned-ship-2f",
+      "target_cell": [
+        17,
+        14
+      ],
+      "canonical_destination": "MAP_ABANDONED_SHIP_CAPTAINS_OFFICE"
+    },
+    {
+      "area": "cave-of-origin-1f",
+      "warp_event": 1,
+      "source_cell": [
+        20,
+        12
+      ],
+      "target_area": "cave-of-origin-b1",
+      "target_cell": [
+        25,
+        36
+      ],
+      "canonical_destination": "MAP_CAVE_OF_ORIGIN_1F"
+    },
+    {
+      "area": "cave-of-origin-b1",
+      "warp_event": 0,
+      "source_cell": [
+        24,
+        36
+      ],
+      "target_area": "cave-of-origin-1f",
+      "target_cell": [
+        20,
+        13
+      ],
+      "canonical_destination": "MAP_CAVE_OF_ORIGIN_ENTRANCE"
+    },
+    {
+      "area": "cave-of-origin-b1",
+      "warp_event": 1,
+      "source_cell": [
+        30,
+        12
+      ],
+      "target_area": "cave-of-origin-b2",
+      "target_cell": [
+        20,
+        9
+      ],
+      "canonical_destination": "MAP_CAVE_OF_ORIGIN_B1F"
+    },
+    {
+      "area": "cave-of-origin-b2",
+      "warp_event": 0,
+      "source_cell": [
+        20,
+        8
+      ],
+      "target_area": "cave-of-origin-b1",
+      "target_cell": [
+        30,
+        13
+      ],
+      "canonical_destination": "MAP_CAVE_OF_ORIGIN_1F"
+    },
+    {
+      "area": "hideout-aqua-1",
+      "warp_event": 2,
+      "source_cell": [
+        44,
+        4
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        60,
+        5
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 0,
+      "source_cell": [
+        60,
+        4
+      ],
+      "target_area": "hideout-aqua-1",
+      "target_cell": [
+        44,
+        5
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 1,
+      "source_cell": [
+        38,
+        4
+      ],
+      "target_area": "hideout-aqua-3",
+      "target_cell": [
+        38,
+        5
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B2F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 2,
+      "source_cell": [
+        26,
+        4
+      ],
+      "target_area": "hideout-aqua-3",
+      "target_cell": [
+        26,
+        5
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B2F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 3,
+      "source_cell": [
+        8,
+        8
+      ],
+      "target_area": "hideout-aqua-3",
+      "target_cell": [
+        8,
+        9
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B2F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 4,
+      "source_cell": [
+        64,
+        10
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        56,
+        27
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 5,
+      "source_cell": [
+        56,
+        10
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        9,
+        32
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 6,
+      "source_cell": [
+        42,
+        10
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        66,
+        41
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 7,
+      "source_cell": [
+        56,
+        26
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        64,
+        11
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 8,
+      "source_cell": [
+        8,
+        32
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        56,
+        11
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 9,
+      "source_cell": [
+        8,
+        42
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        92,
+        9
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 10,
+      "source_cell": [
+        66,
+        40
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        42,
+        11
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 11,
+      "source_cell": [
+        48,
+        22
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        86,
+        37
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 12,
+      "source_cell": [
+        92,
+        8
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        8,
+        43
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 13,
+      "source_cell": [
+        86,
+        12
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        99,
+        20
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 14,
+      "source_cell": [
+        92,
+        12
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        92,
+        9
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 15,
+      "source_cell": [
+        98,
+        12
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        87,
+        20
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 16,
+      "source_cell": [
+        86,
+        20
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        99,
+        12
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 17,
+      "source_cell": [
+        92,
+        20
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        93,
+        28
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 18,
+      "source_cell": [
+        98,
+        20
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        87,
+        12
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 19,
+      "source_cell": [
+        86,
+        28
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        98,
+        37
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 20,
+      "source_cell": [
+        92,
+        28
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        93,
+        20
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 21,
+      "source_cell": [
+        98,
+        28
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        92,
+        9
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 22,
+      "source_cell": [
+        86,
+        36
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        48,
+        23
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 23,
+      "source_cell": [
+        92,
+        36
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        93,
+        20
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-2",
+      "warp_event": 24,
+      "source_cell": [
+        98,
+        36
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        87,
+        28
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 0,
+      "source_cell": [
+        38,
+        4
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        38,
+        5
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 1,
+      "source_cell": [
+        26,
+        4
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        26,
+        5
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 2,
+      "source_cell": [
+        8,
+        8
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        8,
+        9
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 3,
+      "source_cell": [
+        64,
+        18
+      ],
+      "target_area": "hideout-aqua-3",
+      "target_cell": [
+        12,
+        19
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B2F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 4,
+      "source_cell": [
+        18,
+        18
+      ],
+      "target_area": "hideout-aqua-3",
+      "target_cell": [
+        65,
+        36
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B2F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 5,
+      "source_cell": [
+        12,
+        18
+      ],
+      "target_area": "hideout-aqua-3",
+      "target_cell": [
+        64,
+        19
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B2F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 6,
+      "source_cell": [
+        38,
+        28
+      ],
+      "target_area": "hideout-aqua-3",
+      "target_cell": [
+        26,
+        29
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B2F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 7,
+      "source_cell": [
+        26,
+        28
+      ],
+      "target_area": "hideout-aqua-3",
+      "target_cell": [
+        38,
+        29
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B2F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 8,
+      "source_cell": [
+        64,
+        36
+      ],
+      "target_area": "hideout-aqua-3",
+      "target_cell": [
+        18,
+        19
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B2F"
+    },
+    {
+      "area": "hideout-aqua-3",
+      "warp_event": 9,
+      "source_cell": [
+        66,
+        42
+      ],
+      "target_area": "hideout-aqua-2",
+      "target_cell": [
+        64,
+        11
+      ],
+      "canonical_destination": "MAP_AQUA_HIDEOUT_B1F"
+    },
+    {
+      "area": "hideout-magma-1",
+      "warp_event": 1,
+      "source_cell": [
+        52,
+        70
+      ],
+      "target_area": "hideout-magma-2",
+      "target_cell": [
+        14,
+        5
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_2F_1R"
+    },
+    {
+      "area": "hideout-magma-1",
+      "warp_event": 2,
+      "source_cell": [
+        64,
+        8
+      ],
+      "target_area": "hideout-magma-3",
+      "target_cell": [
+        75,
+        10
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_2F_2R"
+    },
+    {
+      "area": "hideout-magma-2",
+      "warp_event": 0,
+      "source_cell": [
+        20,
+        46
+      ],
+      "target_area": "hideout-magma-3",
+      "target_cell": [
+        23,
+        46
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_2F_2R"
+    },
+    {
+      "area": "hideout-magma-2",
+      "warp_event": 1,
+      "source_cell": [
+        14,
+        4
+      ],
+      "target_area": "hideout-magma-1",
+      "target_cell": [
+        53,
+        70
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_1F"
+    },
+    {
+      "area": "hideout-magma-2",
+      "warp_event": 2,
+      "source_cell": [
+        32,
+        66
+      ],
+      "target_area": "hideout-magma-4",
+      "target_cell": [
+        48,
+        9
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_3F_1R"
+    },
+    {
+      "area": "hideout-magma-3",
+      "warp_event": 0,
+      "source_cell": [
+        22,
+        46
+      ],
+      "target_area": "hideout-magma-2",
+      "target_cell": [
+        20,
+        47
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_2F_1R"
+    },
+    {
+      "area": "hideout-magma-3",
+      "warp_event": 1,
+      "source_cell": [
+        74,
+        10
+      ],
+      "target_area": "hideout-magma-1",
+      "target_cell": [
+        64,
+        9
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_1F"
+    },
+    {
+      "area": "hideout-magma-4",
+      "warp_event": 0,
+      "source_cell": [
+        16,
+        44
+      ],
+      "target_area": "hideout-magma-6",
+      "target_cell": [
+        94,
+        17
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_4F"
+    },
+    {
+      "area": "hideout-magma-4",
+      "warp_event": 1,
+      "source_cell": [
+        44,
+        20
+      ],
+      "target_area": "hideout-magma-5",
+      "target_cell": [
+        25,
+        32
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_3F_2R"
+    },
+    {
+      "area": "hideout-magma-4",
+      "warp_event": 2,
+      "source_cell": [
+        48,
+        8
+      ],
+      "target_area": "hideout-magma-2",
+      "target_cell": [
+        33,
+        66
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_2F_1R"
+    },
+    {
+      "area": "hideout-magma-5",
+      "warp_event": 0,
+      "source_cell": [
+        24,
+        32
+      ],
+      "target_area": "hideout-magma-4",
+      "target_cell": [
+        44,
+        21
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_3F_1R"
+    },
+    {
+      "area": "hideout-magma-6",
+      "warp_event": 0,
+      "source_cell": [
+        94,
+        16
+      ],
+      "target_area": "hideout-magma-4",
+      "target_cell": [
+        17,
+        44
+      ],
+      "canonical_destination": "MAP_MAGMA_HIDEOUT_3F_1R"
+    },
+    {
+      "area": "land-cave-1",
+      "warp_event": 1,
+      "source_cell": [
+        30,
+        4
+      ],
+      "target_area": "land-cave-2",
+      "target_cell": [
+        13,
+        11
+      ],
+      "canonical_destination": "MAP_TERRA_CAVE_END"
+    },
+    {
+      "area": "land-cave-2",
+      "warp_event": 0,
+      "source_cell": [
+        12,
+        11
+      ],
+      "target_area": "land-cave-1",
+      "target_cell": [
+        30,
+        5
+      ],
+      "canonical_destination": "MAP_TERRA_CAVE_ENTRANCE"
+    },
+    {
+      "area": "sea-cave-1",
+      "warp_event": 0,
+      "source_cell": [
+        30,
+        5
+      ],
+      "target_area": "sea-cave-2",
+      "target_cell": [
+        43,
+        11
+      ],
+      "canonical_destination": "MAP_MARINE_CAVE_END"
+    },
+    {
+      "area": "sea-cave-2",
+      "warp_event": 0,
+      "source_cell": [
+        42,
+        11
+      ],
+      "target_area": "sea-cave-1",
+      "target_cell": [
+        30,
+        6
+      ],
+      "canonical_destination": "MAP_MARINE_CAVE_ENTRANCE"
+    },
+    {
+      "area": "sealed-chamber-1f-1",
+      "warp_event": 0,
+      "source_cell": [
+        22,
+        6
+      ],
+      "target_area": "sealed-chamber-1f-2",
+      "target_cell": [
+        23,
+        40
+      ],
+      "canonical_destination": "MAP_SEALED_CHAMBER_INNER_ROOM"
+    },
+    {
+      "area": "sealed-chamber-1f-2",
+      "warp_event": 0,
+      "source_cell": [
+        22,
+        40
+      ],
+      "target_area": "sealed-chamber-1f-1",
+      "target_cell": [
+        22,
+        7
+      ],
+      "canonical_destination": "MAP_SEALED_CHAMBER_OUTER_ROOM"
+    },
+    {
+      "area": "shoal-cave-1f-3",
+      "warp_event": 0,
+      "source_cell": [
+        16,
+        6
+      ],
+      "target_area": "shoal-cave-low-tide",
+      "target_cell": [
+        20,
+        16
+      ],
+      "canonical_destination": "MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM"
+    },
+    {
+      "area": "shoal-cave-1f-3",
+      "warp_event": 1,
+      "source_cell": [
+        6,
+        14
+      ],
+      "target_area": "shoal-cave-low-tide",
+      "target_cell": [
+        16,
+        21
+      ],
+      "canonical_destination": "MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM"
+    },
+    {
+      "area": "shoal-cave-1f-3",
+      "warp_event": 2,
+      "source_cell": [
+        40,
+        24
+      ],
+      "target_area": "shoal-cave-low-tide",
+      "target_cell": [
+        31,
+        27
+      ],
+      "canonical_destination": "MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM"
+    },
+    {
+      "area": "studio-cave-1",
+      "warp_event": 1,
+      "source_cell": [
+        78,
+        13
+      ],
+      "target_area": "studio-cave-2",
+      "target_cell": [
+        8,
+        9
+      ],
+      "canonical_destination": "MAP_ARTISAN_CAVE_1F"
+    },
+    {
+      "area": "studio-cave-2",
+      "warp_event": 1,
+      "source_cell": [
+        8,
+        8
+      ],
+      "target_area": "studio-cave-1",
+      "target_cell": [
+        78,
+        14
+      ],
+      "canonical_destination": "MAP_ARTISAN_CAVE_B1F"
+    },
+    {
+      "area": "worlds-edge-island-1",
+      "warp_event": 0,
+      "source_cell": [
+        46,
+        16
+      ],
+      "target_area": "worlds-edge-island-2",
+      "target_cell": [
+        27,
+        40
+      ],
+      "canonical_destination": "MAP_FARAWAY_ISLAND_INTERIOR"
+    },
+    {
+      "area": "worlds-edge-island-1",
+      "warp_event": 1,
+      "source_cell": [
+        48,
+        16
+      ],
+      "target_area": "worlds-edge-island-2",
+      "target_cell": [
+        27,
+        40
+      ],
+      "canonical_destination": "MAP_FARAWAY_ISLAND_INTERIOR"
+    },
+    {
+      "area": "worlds-edge-island-2",
+      "warp_event": 0,
+      "source_cell": [
+        26,
+        40
+      ],
+      "target_area": "worlds-edge-island-1",
+      "target_cell": [
+        46,
+        17
+      ],
+      "canonical_destination": "MAP_FARAWAY_ISLAND_ENTRANCE"
+    },
+    {
+      "area": "worlds-edge-island-2",
+      "warp_event": 1,
+      "source_cell": [
+        28,
+        40
+      ],
+      "target_area": "worlds-edge-island-1",
+      "target_cell": [
+        48,
+        17
+      ],
+      "canonical_destination": "MAP_FARAWAY_ISLAND_ENTRANCE"
+    },
+    {
+      "area": "illusion-pillar-1f",
+      "warp_event": 1,
+      "source_cell": [
+        32,
+        6
+      ],
+      "target_area": "illusion-pillar-2f",
+      "target_cell": [
+        32,
+        7
+      ],
+      "canonical_destination": "MAP_MIRAGE_TOWER_2F"
+    },
+    {
+      "area": "illusion-pillar-2f",
+      "warp_event": 0,
+      "source_cell": [
+        38,
+        26
+      ],
+      "target_area": "illusion-pillar-3f",
+      "target_cell": [
+        37,
+        26
+      ],
+      "canonical_destination": "MAP_MIRAGE_TOWER_3F"
+    },
+    {
+      "area": "illusion-pillar-2f",
+      "warp_event": 1,
+      "source_cell": [
+        32,
+        6
+      ],
+      "target_area": "illusion-pillar-1f",
+      "target_cell": [
+        32,
+        7
+      ],
+      "canonical_destination": "MAP_MIRAGE_TOWER_1F"
+    },
+    {
+      "area": "illusion-pillar-3f",
+      "warp_event": 0,
+      "source_cell": [
+        38,
+        26
+      ],
+      "target_area": "illusion-pillar-2f",
+      "target_cell": [
+        37,
+        26
+      ],
+      "canonical_destination": "MAP_MIRAGE_TOWER_2F"
+    },
+    {
+      "area": "illusion-pillar-3f",
+      "warp_event": 1,
+      "source_cell": [
+        6,
+        10
+      ],
+      "target_area": "illusion-pillar-4f",
+      "target_cell": [
+        4,
+        11
+      ],
+      "canonical_destination": "MAP_MIRAGE_TOWER_4F"
+    },
+    {
+      "area": "illusion-pillar-4f",
+      "warp_event": 0,
+      "source_cell": [
+        4,
+        10
+      ],
+      "target_area": "illusion-pillar-3f",
+      "target_cell": [
+        6,
+        11
+      ],
+      "canonical_destination": "MAP_MIRAGE_TOWER_3F"
+    },
+    {
+      "area": "mt-pyre-1f",
+      "warp_event": 4,
+      "source_cell": [
+        9,
+        2
+      ],
+      "target_area": "mt-pyre-2f",
+      "target_cell": [
+        3,
+        3
+      ],
+      "canonical_destination": "MAP_MT_PYRE_2F"
+    },
+    {
+      "area": "mt-pyre-1f",
+      "warp_event": 5,
+      "source_cell": [
+        18,
+        10
+      ],
+      "target_area": "mt-pyre-2f",
+      "target_cell": [
+        12,
+        11
+      ],
+      "canonical_destination": "MAP_MT_PYRE_2F"
+    },
+    {
+      "area": "mt-pyre-2f",
+      "warp_event": 1,
+      "source_cell": [
+        11,
+        2
+      ],
+      "target_area": "mt-pyre-3f",
+      "target_cell": [
+        22,
+        5
+      ],
+      "canonical_destination": "MAP_MT_PYRE_3F"
+    },
+    {
+      "area": "mt-pyre-3f",
+      "warp_event": 0,
+      "source_cell": [
+        22,
+        4
+      ],
+      "target_area": "mt-pyre-2f",
+      "target_cell": [
+        11,
+        3
+      ],
+      "canonical_destination": "MAP_MT_PYRE_2F"
+    },
+    {
+      "area": "mt-pyre-3f",
+      "warp_event": 1,
+      "source_cell": [
+        6,
+        4
+      ],
+      "target_area": "mt-pyre-4f",
+      "target_cell": [
+        6,
+        13
+      ],
+      "canonical_destination": "MAP_MT_PYRE_4F"
+    },
+    {
+      "area": "mt-pyre-3f",
+      "warp_event": 2,
+      "source_cell": [
+        20,
+        22
+      ],
+      "target_area": "mt-pyre-4f",
+      "target_cell": [
+        21,
+        22
+      ],
+      "canonical_destination": "MAP_MT_PYRE_4F"
+    },
+    {
+      "area": "mt-pyre-3f",
+      "warp_event": 3,
+      "source_cell": [
+        4,
+        26
+      ],
+      "target_area": "mt-pyre-4f",
+      "target_cell": [
+        7,
+        26
+      ],
+      "canonical_destination": "MAP_MT_PYRE_4F"
+    },
+    {
+      "area": "mt-pyre-3f",
+      "warp_event": 4,
+      "source_cell": [
+        22,
+        26
+      ],
+      "target_area": "mt-pyre-2f",
+      "target_cell": [
+        11,
+        12
+      ],
+      "canonical_destination": "MAP_MT_PYRE_2F"
+    },
+    {
+      "area": "mt-pyre-3f",
+      "warp_event": 5,
+      "source_cell": [
+        14,
+        26
+      ],
+      "target_area": "mt-pyre-2f",
+      "target_cell": [
+        7,
+        12
+      ],
+      "canonical_destination": "MAP_MT_PYRE_2F"
+    },
+    {
+      "area": "mt-pyre-4f",
+      "warp_event": 0,
+      "source_cell": [
+        22,
+        4
+      ],
+      "target_area": "mt-pyre-5f",
+      "target_cell": [
+        22,
+        13
+      ],
+      "canonical_destination": "MAP_MT_PYRE_5F"
+    },
+    {
+      "area": "mt-pyre-4f",
+      "warp_event": 1,
+      "source_cell": [
+        6,
+        12
+      ],
+      "target_area": "mt-pyre-3f",
+      "target_cell": [
+        6,
+        5
+      ],
+      "canonical_destination": "MAP_MT_PYRE_3F"
+    },
+    {
+      "area": "mt-pyre-4f",
+      "warp_event": 2,
+      "source_cell": [
+        26,
+        22
+      ],
+      "target_area": "mt-pyre-5f",
+      "target_cell": [
+        25,
+        22
+      ],
+      "canonical_destination": "MAP_MT_PYRE_5F"
+    },
+    {
+      "area": "mt-pyre-4f",
+      "warp_event": 3,
+      "source_cell": [
+        26,
+        26
+      ],
+      "target_area": "mt-pyre-5f",
+      "target_cell": [
+        25,
+        26
+      ],
+      "canonical_destination": "MAP_MT_PYRE_5F"
+    },
+    {
+      "area": "mt-pyre-4f",
+      "warp_event": 4,
+      "source_cell": [
+        20,
+        22
+      ],
+      "target_area": "mt-pyre-3f",
+      "target_cell": [
+        20,
+        23
+      ],
+      "canonical_destination": "MAP_MT_PYRE_3F"
+    },
+    {
+      "area": "mt-pyre-4f",
+      "warp_event": 5,
+      "source_cell": [
+        6,
+        26
+      ],
+      "target_area": "mt-pyre-3f",
+      "target_cell": [
+        5,
+        26
+      ],
+      "canonical_destination": "MAP_MT_PYRE_3F"
+    },
+    {
+      "area": "mt-pyre-5f",
+      "warp_event": 1,
+      "source_cell": [
+        22,
+        12
+      ],
+      "target_area": "mt-pyre-4f",
+      "target_cell": [
+        22,
+        5
+      ],
+      "canonical_destination": "MAP_MT_PYRE_4F"
+    },
+    {
+      "area": "mt-pyre-5f",
+      "warp_event": 3,
+      "source_cell": [
+        26,
+        22
+      ],
+      "target_area": "mt-pyre-4f",
+      "target_cell": [
+        25,
+        22
+      ],
+      "canonical_destination": "MAP_MT_PYRE_4F"
+    },
+    {
+      "area": "mt-pyre-5f",
+      "warp_event": 4,
+      "source_cell": [
+        26,
+        26
+      ],
+      "target_area": "mt-pyre-4f",
+      "target_cell": [
+        25,
+        26
+      ],
+      "canonical_destination": "MAP_MT_PYRE_4F"
+    },
+    {
+      "area": "seafloor-cavern-2",
+      "warp_event": 1,
+      "source_cell": [
+        32,
+        26
+      ],
+      "target_area": "seafloor-cavern-3",
+      "target_cell": [
+        10,
+        5
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM4"
+    },
+    {
+      "area": "seafloor-cavern-2",
+      "warp_event": 2,
+      "source_cell": [
+        16,
+        36
+      ],
+      "target_area": "seafloor-cavern-3",
+      "target_cell": [
+        20,
+        23
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM4"
+    },
+    {
+      "area": "seafloor-cavern-3",
+      "warp_event": 0,
+      "source_cell": [
+        28,
+        4
+      ],
+      "target_area": "seafloor-cavern-4",
+      "target_cell": [
+        11,
+        22
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM2"
+    },
+    {
+      "area": "seafloor-cavern-3",
+      "warp_event": 1,
+      "source_cell": [
+        10,
+        4
+      ],
+      "target_area": "seafloor-cavern-2",
+      "target_cell": [
+        33,
+        26
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM5"
+    },
+    {
+      "area": "seafloor-cavern-3",
+      "warp_event": 2,
+      "source_cell": [
+        20,
+        22
+      ],
+      "target_area": "seafloor-cavern-2",
+      "target_cell": [
+        17,
+        36
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM5"
+    },
+    {
+      "area": "seafloor-cavern-4",
+      "warp_event": 1,
+      "source_cell": [
+        10,
+        22
+      ],
+      "target_area": "seafloor-cavern-3",
+      "target_cell": [
+        28,
+        5
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM4"
+    },
+    {
+      "area": "seafloor-cavern-4",
+      "warp_event": 2,
+      "source_cell": [
+        14,
+        4
+      ],
+      "target_area": "seafloor-cavern-5",
+      "target_cell": [
+        25,
+        44
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM6"
+    },
+    {
+      "area": "seafloor-cavern-4",
+      "warp_event": 3,
+      "source_cell": [
+        24,
+        4
+      ],
+      "target_area": "seafloor-cavern-6",
+      "target_cell": [
+        9,
+        48
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM7"
+    },
+    {
+      "area": "seafloor-cavern-5",
+      "warp_event": 0,
+      "source_cell": [
+        24,
+        44
+      ],
+      "target_area": "seafloor-cavern-4",
+      "target_cell": [
+        14,
+        5
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM2"
+    },
+    {
+      "area": "seafloor-cavern-5",
+      "warp_event": 1,
+      "source_cell": [
+        10,
+        4
+      ],
+      "target_area": "seafloor-cavern-7",
+      "target_cell": [
+        11,
+        32
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM3"
+    },
+    {
+      "area": "seafloor-cavern-6",
+      "warp_event": 0,
+      "source_cell": [
+        8,
+        48
+      ],
+      "target_area": "seafloor-cavern-4",
+      "target_cell": [
+        24,
+        5
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM2"
+    },
+    {
+      "area": "seafloor-cavern-6",
+      "warp_event": 1,
+      "source_cell": [
+        12,
+        4
+      ],
+      "target_area": "seafloor-cavern-7",
+      "target_cell": [
+        21,
+        28
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM3"
+    },
+    {
+      "area": "seafloor-cavern-7",
+      "warp_event": 0,
+      "source_cell": [
+        18,
+        4
+      ],
+      "target_area": "seafloor-cavern-8",
+      "target_cell": [
+        13,
+        26
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM8"
+    },
+    {
+      "area": "seafloor-cavern-7",
+      "warp_event": 1,
+      "source_cell": [
+        20,
+        28
+      ],
+      "target_area": "seafloor-cavern-6",
+      "target_cell": [
+        12,
+        5
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM7"
+    },
+    {
+      "area": "seafloor-cavern-7",
+      "warp_event": 2,
+      "source_cell": [
+        10,
+        32
+      ],
+      "target_area": "seafloor-cavern-5",
+      "target_cell": [
+        10,
+        5
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM6"
+    },
+    {
+      "area": "seafloor-cavern-8",
+      "warp_event": 0,
+      "source_cell": [
+        12,
+        6
+      ],
+      "target_area": "seafloor-cavern-9",
+      "target_cell": [
+        13,
+        10
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM9"
+    },
+    {
+      "area": "seafloor-cavern-8",
+      "warp_event": 1,
+      "source_cell": [
+        12,
+        26
+      ],
+      "target_area": "seafloor-cavern-7",
+      "target_cell": [
+        18,
+        5
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM3"
+    },
+    {
+      "area": "seafloor-cavern-9",
+      "warp_event": 0,
+      "source_cell": [
+        12,
+        10
+      ],
+      "target_area": "seafloor-cavern-8",
+      "target_cell": [
+        12,
+        7
+      ],
+      "canonical_destination": "MAP_SEAFLOOR_CAVERN_ROOM8"
+    }
+  ],
+  "omitted_solid_events": [
+    {
+      "area": "abandoned-ship-1f-1",
+      "warp": 8,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    },
+    {
+      "area": "abandoned-ship-1f-2",
+      "warp": 2,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    },
+    {
+      "area": "abandoned-ship-b1-1",
+      "warp": 5,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    },
+    {
+      "area": "shoal-cave-low-tide",
+      "warp": 3,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    },
+    {
+      "area": "shoal-cave-low-tide",
+      "warp": 4,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    },
+    {
+      "area": "shoal-cave-low-tide",
+      "warp": 5,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    },
+    {
+      "area": "mt-pyre-2f",
+      "warp": 0,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    },
+    {
+      "area": "mt-pyre-2f",
+      "warp": 2,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    },
+    {
+      "area": "mt-pyre-2f",
+      "warp": 3,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    },
+    {
+      "area": "mt-pyre-2f",
+      "warp": 4,
+      "reason": "Original door/event trigger is solid in the preserved collision grid; use regional connection."
+    }
+  ]
+}

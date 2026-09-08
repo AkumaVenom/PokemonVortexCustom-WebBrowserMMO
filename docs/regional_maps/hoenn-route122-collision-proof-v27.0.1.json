@@ -1,0 +1,71 @@
+{
+  "source_repository": "https://github.com/pret/pokeemerald",
+  "source_revision": "5eff78649e7170a877b961ef0b3da13b81a16038",
+  "source_layout": "Route122_Layout",
+  "source_map_sha256": "ae966105f4ec3b21aeb164719f77c28870b49f1ad004af4090570b8bf0156544",
+  "native_image_sha256": "9b28fb6d1d2786ab6872d423b40a73ff4bd8ae83925f994d56dbe6cef6b57f25",
+  "source_metatile_dimensions": [
+    40,
+    40
+  ],
+  "image_dimensions": [
+    1280,
+    1280
+  ],
+  "cell_pixels": 32,
+  "logical_tile_size": 16,
+  "alignment": {
+    "offset_original_pixels": [
+      0,
+      0
+    ],
+    "edge_correlation": 0.9646752562030558,
+    "method": "Render original Emerald Route122 metatiles, downsample existing 2x image to 640x640, correlate edges. Shore, cave, mountain contours and outer rock positions coincide without offsets."
+  },
+  "method": "One original 16px metatile corresponds to one existing 32px collision cell. Block original 0x0C00 collision flags and canonical MB_MOUNTAIN_TOP (0x0C); retain sealed outer perimeter. Existing browser surface-ocean traversal remains available. No spawn-based clearing and no guessed pixel classifications.",
+  "blocked_cells": 906,
+  "walkable_cells": 694,
+  "connected_component_sizes": [
+    587,
+    38,
+    24,
+    20,
+    19,
+    2,
+    2,
+    2
+  ],
+  "spawn_points": [
+    [
+      24,
+      32
+    ]
+  ],
+  "spawn_component_cells": 587,
+  "spawn_component_ocean_cells": 568,
+  "dry_spawn_behavior": "MB_NORMAL (0x00)",
+  "ocean_behavior": "MB_OCEAN_WATER (0x15)",
+  "proof_path_from_dry_spawn_to_ocean": [
+    [
+      24,
+      32
+    ],
+    [
+      24,
+      33
+    ],
+    [
+      24,
+      34
+    ],
+    [
+      24,
+      35
+    ],
+    [
+      24,
+      36
+    ]
+  ],
+  "legacy_problem": "Previous art-classified mask left dry shore in a 10-cell island and opened mountain-top pixels while blocking all sea."
+}

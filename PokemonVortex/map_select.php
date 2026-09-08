@@ -107,13 +107,21 @@ pv_page_start('World Maps','map_select.php',true);
             :'Travel through Kanto cities, routes, caves and landmarks, with wild Pokémon suited to each location.';
     ?>
         <div class="pv-world-section-head"><div><span>ACTIVE REGION</span><h2><?=pv_h($label)?></h2><p><?=pv_h((string)$worldDef['description'])?></p></div><strong><?=count($areas)?> AREAS ONLINE</strong></div>
+        <div class="pv-region-search" hidden>
+            <label for="pv-region-search">Find an area in <?=pv_h($label)?></label>
+            <input id="pv-region-search" type="search" placeholder="Search routes, islands, caves or floors…" autocomplete="off" aria-controls="pv-region-area-results">
+            <span id="pv-region-search-count" role="status" aria-live="polite"><?=count($areas)?> areas</span>
+        </div>
         <?php if(!empty($manifest['master_asset'])):?><section class="pv-region-overworld-source"><img src="<?=pv_h(pv_static((string)$manifest['master_asset']))?>" alt="<?=pv_h($label)?> overworld"><div><span class="pv-eyebrow"><?=pv_h($upper)?> REGION OVERVIEW</span><h2><?=pv_h($heroTitle)?></h2><p><?=pv_h($heroBody)?></p><div class="pv-region-readiness"><span><i></i> Full-size regional maps</span><span><i></i> Quick area previews</span><span><i></i> Saved trainer positions</span><span><i></i> <?=pv_h($label)?> wild habitats</span></div></div></section><?php endif;?>
+        <div id="pv-region-area-results">
         <?php foreach($areaGroups as $groupName=>$groupAreas):if(!$groupAreas)continue;$code=$groupName==='Settlements'?'CTY':($groupName==='Caves & Landmarks'?'LMK':'RTE');?>
             <section class="pv-map-group"><div class="pv-map-group-head"><div class="pv-map-group-code"><?=pv_h($code)?></div><div><span><?=pv_h($upper)?> AREAS</span><h2><?=pv_h($groupName)?></h2><p><?=$groupName==='Settlements'?'Cities and towns across '.$label.'.':($groupName==='Caves & Landmarks'?'Caves, mountains, dungeons and major landmarks to explore.':'Routes, forests and sea areas with their own wild Pokémon.')?></p></div></div><div class="pv-map-card-grid">
             <?php foreach($groupAreas as $key=>$area):$preview=(string)($area['preview_asset']??'');if($preview==='')$preview=(string)($area['logical_asset']??'');if($preview==='')$preview=(string)$area['asset'];?>
-                <a class="pv-map-card" href="<?=pv_h(pv_world_area_url($selectedWorld,$key))?>"><span class="pv-map-card-image"><img src="<?=pv_h(pv_static($preview))?>" alt="<?=pv_h((string)$area['name'])?> preview" loading="lazy"></span><span class="pv-map-card-body"><small><?=pv_h($upper)?> // <?=pv_h(strtoupper($key))?></small><strong><?=pv_h((string)$area['name'])?></strong><em><?=(int)($regionCounts[$key]??0)?> trainer<?=((int)($regionCounts[$key]??0)===1)?'':'s'?> active<?=trim((string)($area['encounter_profile']??''))!==''?' · wild habitat':''?></em></span><b>ENTER ›</b></a>
+                <a class="pv-map-card" href="<?=pv_h(pv_world_area_url($selectedWorld,$key))?>"><span class="pv-map-card-image"><img src="<?=pv_h(pv_static($preview).'?v='.pv_asset_version())?>" alt="<?=pv_h((string)$area['name'])?> preview" loading="lazy"></span><span class="pv-map-card-body"><small><?=pv_h($upper)?> // <?=pv_h(strtoupper($key))?></small><strong><?=pv_h((string)$area['name'])?></strong><em><?=(int)($regionCounts[$key]??0)?> trainer<?=((int)($regionCounts[$key]??0)===1)?'':'s'?> active<?=trim((string)($area['encounter_profile']??''))!==''?' · wild habitat':''?></em></span><b>ENTER ›</b></a>
             <?php endforeach;?></div></section>
         <?php endforeach;?>
+        </div>
+        <script defer src="<?=pv_h(pv_asset('js/world-catalog.js'))?>?v=<?=pv_asset_version()?>"></script>
     <?php endif;?>
 </section>
 </main>

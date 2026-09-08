@@ -1,0 +1,4330 @@
+{
+  "region": "hoenn",
+  "revision": "27.0.1-reviewed-arrivals",
+  "area_count": 136,
+  "changed_area_count": 68,
+  "review": "All 136 default locations and all retained new-area secondary spawns visually reviewed against supplied or preserved artwork. Grid coordinates remain unchanged by the new artwork resizing. Default player/AI arrival must use the first reviewed point, with remaining points reserved for explicit section travel.",
+  "areas": {
+    "altering-cave": {
+      "spawn_points": [
+        [
+          19,
+          22
+        ]
+      ],
+      "reason": "Dry cave floor immediately inside southern entrance; avoids a narrow bend beside boulders.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=422",
+      "bad_previous_defaults": [
+        [
+          17,
+          13
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          17,
+          13
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 422
+      }
+    },
+    "dewford-town": {
+      "spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=194",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 194
+      }
+    },
+    "ever-grande-city": {
+      "spawn_points": [
+        [
+          19,
+          44
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=160",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          19,
+          44
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 160
+      }
+    },
+    "fallarbor-town": {
+      "spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=213",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 213
+      }
+    },
+    "fiery-path": {
+      "spawn_points": [
+        [
+          15,
+          18
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=732",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          15,
+          18
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 732
+      }
+    },
+    "fortree-city": {
+      "spawn_points": [
+        [
+          24,
+          13
+        ]
+      ],
+      "reason": "Open grass outside the gym entrance, clear of the previous tree edge.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=375",
+      "bad_previous_defaults": [
+        [
+          19,
+          11
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          19,
+          11
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 375
+      }
+    },
+    "granite-cave-1f": {
+      "spawn_points": [
+        [
+          22,
+          8
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=451",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          22,
+          8
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 451
+      }
+    },
+    "granite-cave-b1": {
+      "spawn_points": [
+        [
+          17,
+          14
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=477",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          17,
+          14
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 477
+      }
+    },
+    "granite-cave-b2": {
+      "spawn_points": [
+        [
+          17,
+          14
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=116",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          17,
+          14
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 116
+      }
+    },
+    "jagged-pass": {
+      "spawn_points": [
+        [
+          15,
+          23
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=307",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          15,
+          23
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 307
+      }
+    },
+    "lavaridge-town": {
+      "spawn_points": [
+        [
+          11,
+          11
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=196",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          11,
+          11
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 196
+      }
+    },
+    "lilycove-city": {
+      "spawn_points": [
+        [
+          40,
+          20
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-0.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1620",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          40,
+          20
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1620
+      }
+    },
+    "littleroot-town": {
+      "spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=263",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 263
+      }
+    },
+    "mauville-city": {
+      "spawn_points": [
+        [
+          20,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=516",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          20,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 516
+      }
+    },
+    "meteor-falls-1f": {
+      "spawn_points": [
+        [
+          12,
+          39
+        ]
+      ],
+      "reason": "Dry floor at the lower main entrance, on the 150-cell entrance component.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=150",
+      "bad_previous_defaults": [
+        [
+          15,
+          21
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          15,
+          21
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 150
+      }
+    },
+    "meteor-falls-1f-2": {
+      "spawn_points": [
+        [
+          15,
+          17
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=417",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          15,
+          17
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 417
+      }
+    },
+    "meteor-falls-b1": {
+      "spawn_points": [
+        [
+          15,
+          20
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=324",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          15,
+          20
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 324
+      }
+    },
+    "mossdeep-city": {
+      "spawn_points": [
+        [
+          40,
+          20
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1199",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          40,
+          20
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1199
+      }
+    },
+    "mt-chimney-peak": {
+      "spawn_points": [
+        [
+          20,
+          39
+        ]
+      ],
+      "reason": "Cable car station forecourt on actual ground; replaces an upper cliff lip.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=193",
+      "bad_previous_defaults": [
+        [
+          19,
+          22
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          19,
+          22
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 193
+      }
+    },
+    "mt-pyre-1f": {
+      "spawn_points": [
+        [
+          12,
+          10
+        ]
+      ],
+      "reason": "Open central aisle on tiled floor, clear of gravestones.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=158",
+      "bad_previous_defaults": [
+        [
+          10,
+          10
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 158
+      }
+    },
+    "mt-pyre-2f": {
+      "spawn_points": [
+        [
+          7,
+          7
+        ]
+      ],
+      "reason": "Open central aisle on tiled floor, clear of gravestones.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=113",
+      "bad_previous_defaults": [
+        [
+          6,
+          6
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          6,
+          6
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 113
+      }
+    },
+    "mt-pyre-peak-lower": {
+      "spawn_points": [
+        [
+          20,
+          28
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=373",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          20,
+          28
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 373
+      }
+    },
+    "mt-pyre-peak-upper": {
+      "spawn_points": [
+        [
+          25,
+          19
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=510",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          25,
+          19
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 510
+      }
+    },
+    "oldale-town": {
+      "spawn_points": [
+        [
+          11,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-12.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=256",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          11,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 256
+      }
+    },
+    "pacifidlog-town": {
+      "spawn_points": [
+        [
+          10,
+          18
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=141",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          18
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 141
+      }
+    },
+    "petalburg-city": {
+      "spawn_points": [
+        [
+          16,
+          15
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=436",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          16,
+          15
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 436
+      }
+    },
+    "petalburg-woods": {
+      "spawn_points": [
+        [
+          27,
+          22
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1276",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          27,
+          22
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1276
+      }
+    },
+    "route-101": {
+      "spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=258",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 258
+      }
+    },
+    "route-102": {
+      "spawn_points": [
+        [
+          25,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=620",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          25,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 620
+      }
+    },
+    "route-103": {
+      "spawn_points": [
+        [
+          51,
+          11
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=144",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          51,
+          11
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 144
+      }
+    },
+    "route-104": {
+      "spawn_points": [
+        [
+          20,
+          54
+        ]
+      ],
+      "reason": "Open ground in front of the route building; previous coordinate was on its facade.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1636",
+      "bad_previous_defaults": [
+        [
+          19,
+          51
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          19,
+          51
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1636
+      }
+    },
+    "route-105": {
+      "spawn_points": [
+        [
+          18,
+          46
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1608",
+      "bad_previous_defaults": [],
+      "class": "surface-sea",
+      "previous_spawn_points": [
+        [
+          18,
+          46
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1608
+      }
+    },
+    "route-106": {
+      "spawn_points": [
+        [
+          60,
+          16
+        ]
+      ],
+      "reason": "Broad sandy coastal approach near Dewford, instead of a one-tile strip against sea and cliff.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=862",
+      "bad_previous_defaults": [
+        [
+          42,
+          12
+        ]
+      ],
+      "class": "surface-sea",
+      "previous_spawn_points": [
+        [
+          42,
+          12
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 862
+      }
+    },
+    "route-109": {
+      "spawn_points": [
+        [
+          20,
+          25
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1607",
+      "bad_previous_defaults": [],
+      "class": "surface-sea",
+      "previous_spawn_points": [
+        [
+          20,
+          25
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1607
+      }
+    },
+    "route-110": {
+      "spawn_points": [
+        [
+          20,
+          53
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=2050",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          20,
+          53
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 2050
+      }
+    },
+    "route-111": {
+      "spawn_points": [
+        [
+          20,
+          65
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-24.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=2486",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          20,
+          65
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 2486
+      }
+    },
+    "route-112": {
+      "spawn_points": [
+        [
+          23,
+          50
+        ]
+      ],
+      "reason": "Open ground at the lower route bend; previous coordinate was inside trees.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=495",
+      "bad_previous_defaults": [
+        [
+          22,
+          30
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          22,
+          30
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 495
+      }
+    },
+    "route-113": {
+      "spawn_points": [
+        [
+          50,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=840",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          50,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 840
+      }
+    },
+    "route-114": {
+      "spawn_points": [
+        [
+          20,
+          40
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1088",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          20,
+          40
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1088
+      }
+    },
+    "route-115": {
+      "spawn_points": [
+        [
+          19,
+          44
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=722",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          19,
+          44
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 722
+      }
+    },
+    "route-116": {
+      "spawn_points": [
+        [
+          47,
+          11
+        ]
+      ],
+      "reason": "Clear ground approaching the cave entrance, away from the wall and sign.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=686",
+      "bad_previous_defaults": [
+        [
+          50,
+          10
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          50,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 686
+      }
+    },
+    "route-117": {
+      "spawn_points": [
+        [
+          30,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=642",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          30,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 642
+      }
+    },
+    "route-118": {
+      "spawn_points": [
+        [
+          40,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=503",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          40,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 503
+      }
+    },
+    "route-119": {
+      "spawn_points": [
+        [
+          19,
+          136
+        ]
+      ],
+      "reason": "Southern route path within the 2625-cell traversable component; replaces an isolated 3-cell riverbank.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=2625",
+      "bad_previous_defaults": [
+        [
+          21,
+          76
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          21,
+          76
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 2625
+      }
+    },
+    "route-120": {
+      "spawn_points": [
+        [
+          20,
+          50
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1091",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          20,
+          50
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1091
+      }
+    },
+    "route-121": {
+      "spawn_points": [
+        [
+          40,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=785",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          40,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 785
+      }
+    },
+    "route-122": {
+      "spawn_points": [
+        [
+          24,
+          32
+        ]
+      ],
+      "reason": "Dry grassy coastal landing below Mt. Pyre, connected to the main navigable ocean route by the audited canonical Route122 collision repair.",
+      "evidence": "qa/hoenn-route122-collision-proof.json; exact40x40 Emerald layout aligned to1280x1280 preserved artwork at zero offset; visually reviewed cave, shore, rocks and mountain contours.",
+      "bad_previous_defaults": [
+        [
+          19,
+          20
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          19,
+          20
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 587,
+        "default_component_ocean_cells": 568
+      },
+      "collision_patch": "qa/hoenn-route122-collision-v27_0_1.json"
+    },
+    "route-123": {
+      "spawn_points": [
+        [
+          75,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-36.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1565",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          75,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1565
+      }
+    },
+    "route-124": {
+      "spawn_points": [
+        [
+          72,
+          51
+        ]
+      ],
+      "reason": "Dry sandy landing outside the island house, in the main navigable coastal component; replaces an enclosed shallow-water pocket.",
+      "evidence": "qa/old-hoenn-route124-final.png; native 32-pixel tile close-up and collision flood fill; connected_cells=2595",
+      "bad_previous_defaults": [
+        [
+          32,
+          54
+        ]
+      ],
+      "class": "surface-sea",
+      "previous_spawn_points": [
+        [
+          32,
+          54
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 2595
+      }
+    },
+    "rustboro-city": {
+      "spawn_points": [
+        [
+          21,
+          30
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1323",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          21,
+          30
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1323
+      }
+    },
+    "rusturf-tunnel": {
+      "spawn_points": [
+        [
+          19,
+          16
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=497",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          19,
+          16
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 497
+      }
+    },
+    "safari-zone": {
+      "spawn_points": [
+        [
+          57,
+          38
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=5427",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          57,
+          38
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 5427
+      }
+    },
+    "seafloor-cavern-depths": {
+      "spawn_points": [
+        [
+          5,
+          18
+        ]
+      ],
+      "reason": "Dry lower entrance passage, clear of raised platform edges.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=123",
+      "bad_previous_defaults": [
+        [
+          10,
+          10
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 123
+      }
+    },
+    "seafloor-cavern-entrance": {
+      "spawn_points": [
+        [
+          11,
+          5
+        ]
+      ],
+      "reason": "Dry sand below the northern cave entrance; replaces shallow water.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=145",
+      "bad_previous_defaults": [
+        [
+          10,
+          10
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 145
+      }
+    },
+    "shoal-cave-b1": {
+      "spawn_points": [
+        [
+          10,
+          15
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=308",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          15
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 308
+      }
+    },
+    "shoal-cave-b1-inner": {
+      "spawn_points": [
+        [
+          11,
+          3
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=25",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          11,
+          3
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 25
+      }
+    },
+    "shoal-cave-low-tide": {
+      "spawn_points": [
+        [
+          23,
+          19
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=967",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          23,
+          19
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 967
+      }
+    },
+    "sky-pillar-1f": {
+      "spawn_points": [
+        [
+          7,
+          5
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=78",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          7,
+          5
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 78
+      }
+    },
+    "sky-pillar-exterior": {
+      "spawn_points": [
+        [
+          14,
+          12
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=88",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          14,
+          12
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 88
+      }
+    },
+    "slateport-city": {
+      "spawn_points": [
+        [
+          21,
+          30
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-48.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1674",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          21,
+          30
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1674
+      }
+    },
+    "sootopolis-city": {
+      "spawn_points": [
+        [
+          45,
+          33
+        ]
+      ],
+      "reason": "City pavement in front of the Pokemon Center, in the main 1978-cell component; replaces the isolated gym island.",
+      "evidence": "qa/old-hoenn-chosen-60.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=1978",
+      "bad_previous_defaults": [
+        [
+          30,
+          34
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          30,
+          34
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1978
+      }
+    },
+    "verdanturf-town": {
+      "spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "reason": "Retained established spawn after checking native-size artwork: usable ground, path, beach, boardwalk, or cave floor with connected walking space.",
+      "evidence": "qa/old-hoenn-chosen-60.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=217",
+      "bad_previous_defaults": [],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          10,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 217
+      }
+    },
+    "victory-road-1f": {
+      "spawn_points": [
+        [
+          24,
+          39
+        ]
+      ],
+      "reason": "Open lower cave floor near stairs, clear of raised ledges.",
+      "evidence": "qa/old-hoenn-chosen-60.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=971",
+      "bad_previous_defaults": [
+        [
+          23,
+          27
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          23,
+          27
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 971
+      }
+    },
+    "victory-road-b1": {
+      "spawn_points": [
+        [
+          28,
+          29
+        ]
+      ],
+      "reason": "Wide dry lower cave floor, clear of the former narrow central edge.",
+      "evidence": "qa/old-hoenn-chosen-60.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=839",
+      "bad_previous_defaults": [
+        [
+          22,
+          17
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          22,
+          17
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 839
+      }
+    },
+    "victory-road-b2": {
+      "spawn_points": [
+        [
+          26,
+          21
+        ]
+      ],
+      "reason": "Dry central platform floor, away from the river edge.",
+      "evidence": "qa/old-hoenn-chosen-60.jpg; native 32-pixel tile close-up and collision flood fill; connected_cells=603",
+      "bad_previous_defaults": [
+        [
+          24,
+          17
+        ]
+      ],
+      "class": "dry-ground-or-floor",
+      "previous_spawn_points": [
+        [
+          24,
+          17
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 603
+      }
+    },
+    "abandoned-ship-1f-1": {
+      "spawn_points": [
+        [
+          20,
+          22
+        ],
+        [
+          13,
+          22
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AbandonedShip_Corridors_1F warp event 0 to MAP_ABANDONED_SHIP_DECK, translated with [8, 8] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          25,
+          23
+        ],
+        [
+          13,
+          22
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 252
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "abandoned-ship-1f-2": {
+      "spawn_points": [
+        [
+          11,
+          32
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AbandonedShip_Rooms2_1F warp event 0 to MAP_ABANDONED_SHIP_CORRIDORS_1F, translated with [0, 8] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          11,
+          11
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 312
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "abandoned-ship-2f": {
+      "spawn_points": [
+        [
+          16,
+          10
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AbandonedShip_CaptainsOffice warp event 0 to MAP_ABANDONED_SHIP_DECK, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          13,
+          9
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 148
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "abandoned-ship-b1-1": {
+      "spawn_points": [
+        [
+          15,
+          15
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AbandonedShip_Corridors_B1F warp event 0 to MAP_ABANDONED_SHIP_ROOMS2_B1F, translated with [8, 8] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          7,
+          16
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 228
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "abandoned-ship-b1-3": {
+      "spawn_points": [
+        [
+          10,
+          13
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AbandonedShip_Room_B1F warp event 0 to MAP_ABANDONED_SHIP_CORRIDORS_B1F, translated with [0, 8] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          9,
+          11
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 164
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "abandoned-ship-b1-5": {
+      "spawn_points": [
+        [
+          8,
+          9
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AbandonedShip_HiddenFloorCorridors warp event 3 to MAP_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS, translated with [16, 24] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          25,
+          23
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 276
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "abandoned-ship-b2-1": {
+      "spawn_points": [
+        [
+          9,
+          11
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AbandonedShip_Underwater2 warp event 0 to MAP_ABANDONED_SHIP_UNDERWATER1, translated with [8, 24] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          9,
+          12
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 424
+      },
+      "class": "underwater-floor"
+    },
+    "abandoned-ship-b2-2": {
+      "spawn_points": [
+        [
+          8,
+          11
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AbandonedShip_Underwater1 warp event 0 to MAP_ABANDONED_SHIP_UNDERWATER2, translated with [0, -1] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          8,
+          10
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 176
+      },
+      "class": "underwater-floor"
+    },
+    "abandoned-ship-exterior": {
+      "spawn_points": [
+        [
+          29,
+          25
+        ],
+        [
+          18,
+          22
+        ]
+      ],
+      "reason": "Clear lower deck at the boarding stairs, away from deck holes.",
+      "evidence": "Visually reviewed supplied 50%-dimension map artwork and unchanged Emerald collision grid.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          18,
+          22
+        ],
+        [
+          29,
+          24
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 60
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "cave-of-origin-1f": {
+      "spawn_points": [
+        [
+          20,
+          38
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "CaveOfOrigin_Entrance warp event 0 to MAP_SOOTOPOLIS_CITY, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          19,
+          27
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 304
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "cave-of-origin-b1": {
+      "spawn_points": [
+        [
+          23,
+          33
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "CaveOfOrigin_1F warp event 0 to MAP_CAVE_OF_ORIGIN_ENTRANCE, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          15,
+          18
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 360
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "cave-of-origin-b2": {
+      "spawn_points": [
+        [
+          17,
+          9
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "CaveOfOrigin_B1F warp event 0 to MAP_CAVE_OF_ORIGIN_1F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          18,
+          17
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 344
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "desert-underground-tunnel": {
+      "spawn_points": [
+        [
+          22,
+          22
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "DesertUnderpass warp event 0 to MAP_ROUTE114_FOSSIL_MANIACS_TUNNEL, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          264,
+          22
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 2636
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "hideout-aqua-1": {
+      "spawn_points": [
+        [
+          26,
+          21
+        ]
+      ],
+      "reason": "Dry central corridor directly above the dock stairs; replaces the water-pool default.",
+      "evidence": "Visually reviewed supplied 50%-dimension map artwork and unchanged Emerald collision grid.",
+      "bad_previous_defaults": [
+        [
+          26,
+          44
+        ]
+      ],
+      "previous_spawn_points": [
+        [
+          26,
+          44
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1680
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "hideout-aqua-2": {
+      "spawn_points": [
+        [
+          60,
+          8
+        ],
+        [
+          57,
+          38
+        ],
+        [
+          20,
+          12
+        ],
+        [
+          46,
+          21
+        ],
+        [
+          38,
+          8
+        ],
+        [
+          57,
+          24
+        ],
+        [
+          90,
+          9
+        ],
+        [
+          88,
+          36
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AquaHideout_B1F warp event 0 to MAP_AQUA_HIDEOUT_1F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [
+        [
+          43,
+          21
+        ],
+        [
+          91,
+          36
+        ]
+      ],
+      "previous_spawn_points": [
+        [
+          57,
+          38
+        ],
+        [
+          20,
+          12
+        ],
+        [
+          43,
+          21
+        ],
+        [
+          38,
+          8
+        ],
+        [
+          57,
+          24
+        ],
+        [
+          59,
+          8
+        ],
+        [
+          90,
+          9
+        ],
+        [
+          91,
+          36
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 100
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "hideout-aqua-3": {
+      "spawn_points": [
+        [
+          38,
+          8
+        ],
+        [
+          54,
+          39
+        ],
+        [
+          20,
+          10
+        ],
+        [
+          15,
+          27
+        ],
+        [
+          10,
+          12
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "AquaHideout_B2F warp event 0 to MAP_AQUA_HIDEOUT_B1F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [
+        [
+          30,
+          40
+        ]
+      ],
+      "previous_spawn_points": [
+        [
+          30,
+          40
+        ],
+        [
+          39,
+          25
+        ],
+        [
+          20,
+          10
+        ],
+        [
+          15,
+          27
+        ],
+        [
+          10,
+          12
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 720
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "hideout-magma-1": {
+      "spawn_points": [
+        [
+          22,
+          66
+        ],
+        [
+          41,
+          47
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MagmaHideout_1F warp event 0 to MAP_JAGGED_PASS, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [
+        [
+          12,
+          15
+        ]
+      ],
+      "previous_spawn_points": [
+        [
+          48,
+          25
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          41,
+          47
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1196
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "hideout-magma-2": {
+      "spawn_points": [
+        [
+          20,
+          50
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MagmaHideout_2F_1R warp event 0 to MAP_MAGMA_HIDEOUT_2F_2R, translated with [-32, -16] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          40,
+          34
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1532
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "hideout-magma-3": {
+      "spawn_points": [
+        [
+          22,
+          42
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MagmaHideout_2F_2R warp event 0 to MAP_MAGMA_HIDEOUT_2F_1R, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          52,
+          20
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 948
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "hideout-magma-4": {
+      "spawn_points": [
+        [
+          15,
+          41
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MagmaHideout_3F_1R warp event 0 to MAP_MAGMA_HIDEOUT_4F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          47,
+          12
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 616
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "hideout-magma-5": {
+      "spawn_points": [
+        [
+          24,
+          28
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MagmaHideout_3F_2R warp event 0 to MAP_MAGMA_HIDEOUT_3F_1R, translated with [-16, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          17,
+          26
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 444
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "hideout-magma-6": {
+      "spawn_points": [
+        [
+          94,
+          20
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MagmaHideout_4F warp event 0 to MAP_MAGMA_HIDEOUT_3F_1R, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          23,
+          43
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1172
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "illusion-pillar-1f": {
+      "spawn_points": [
+        [
+          20,
+          28
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MirageTower_1F warp event 0 to MAP_ROUTE111, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          12,
+          8
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 440
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "illusion-pillar-2f": {
+      "spawn_points": [
+        [
+          35,
+          25
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MirageTower_2F warp event 0 to MAP_MIRAGE_TOWER_3F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          12,
+          8
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 424
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "illusion-pillar-3f": {
+      "spawn_points": [
+        [
+          36,
+          24
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MirageTower_3F warp event 0 to MAP_MIRAGE_TOWER_2F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          12,
+          8
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 436
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "illusion-pillar-4f": {
+      "spawn_points": [
+        [
+          5,
+          13
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MirageTower_4F warp event 0 to MAP_MIRAGE_TOWER_3F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          14,
+          9
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 256
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "land-cave-1": {
+      "spawn_points": [
+        [
+          18,
+          34
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "TerraCave_Entrance warp event 0 to MAP_DYNAMIC, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          21,
+          31
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 484
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "land-cave-2": {
+      "spawn_points": [
+        [
+          9,
+          10
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "TerraCave_End warp event 0 to MAP_TERRA_CAVE_ENTRANCE, translated with [0, 8] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          20,
+          27
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 620
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "meteor-falls-stevens-cave": {
+      "spawn_points": [
+        [
+          21,
+          57
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MeteorFalls_StevensCave warp event 0 to MAP_METEOR_FALLS_1F_1R, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          35,
+          43
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 604
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "mt-pyre-3f": {
+      "spawn_points": [
+        [
+          22,
+          8
+        ],
+        [
+          4,
+          23
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MtPyre_3F warp event 0 to MAP_MT_PYRE_2F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          21,
+          13
+        ],
+        [
+          4,
+          23
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 280
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "mt-pyre-4f": {
+      "spawn_points": [
+        [
+          22,
+          8
+        ],
+        [
+          10,
+          24
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MtPyre_4F warp event 0 to MAP_MT_PYRE_5F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          21,
+          17
+        ],
+        [
+          10,
+          24
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 184
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "mt-pyre-5f": {
+      "spawn_points": [
+        [
+          5,
+          7
+        ],
+        [
+          15,
+          24
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MtPyre_5F warp event 0 to MAP_MT_PYRE_6F, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          6,
+          17
+        ],
+        [
+          15,
+          24
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 176
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "route-107": {
+      "spawn_points": [
+        [
+          99,
+          16
+        ],
+        [
+          60,
+          19
+        ],
+        [
+          53,
+          21
+        ],
+        [
+          79,
+          18
+        ],
+        [
+          93,
+          35
+        ],
+        [
+          27,
+          6
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          99,
+          16
+        ],
+        [
+          60,
+          19
+        ],
+        [
+          53,
+          21
+        ],
+        [
+          79,
+          18
+        ],
+        [
+          93,
+          35
+        ],
+        [
+          27,
+          6
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 2180
+      },
+      "class": "surface-sea"
+    },
+    "route-108": {
+      "spawn_points": [
+        [
+          40,
+          21
+        ],
+        [
+          46,
+          18
+        ],
+        [
+          70,
+          20
+        ],
+        [
+          32,
+          22
+        ],
+        [
+          65,
+          37
+        ],
+        [
+          73,
+          4
+        ],
+        [
+          22,
+          5
+        ],
+        [
+          9,
+          36
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          40,
+          21
+        ],
+        [
+          46,
+          18
+        ],
+        [
+          70,
+          20
+        ],
+        [
+          32,
+          22
+        ],
+        [
+          65,
+          37
+        ],
+        [
+          73,
+          4
+        ],
+        [
+          22,
+          5
+        ],
+        [
+          9,
+          36
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 2588
+      },
+      "class": "surface-sea"
+    },
+    "route-124-underwater": {
+      "spawn_points": [
+        [
+          68,
+          32
+        ],
+        [
+          98,
+          35
+        ],
+        [
+          55,
+          13
+        ],
+        [
+          87,
+          13
+        ],
+        [
+          81,
+          100
+        ],
+        [
+          31,
+          67
+        ],
+        [
+          120,
+          31
+        ],
+        [
+          108,
+          146
+        ],
+        [
+          128,
+          107
+        ],
+        [
+          106,
+          98
+        ],
+        [
+          132,
+          68
+        ],
+        [
+          140,
+          78
+        ],
+        [
+          142,
+          130
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          68,
+          32
+        ],
+        [
+          98,
+          35
+        ],
+        [
+          55,
+          13
+        ],
+        [
+          87,
+          13
+        ],
+        [
+          81,
+          100
+        ],
+        [
+          31,
+          67
+        ],
+        [
+          120,
+          31
+        ],
+        [
+          108,
+          146
+        ],
+        [
+          128,
+          107
+        ],
+        [
+          106,
+          98
+        ],
+        [
+          132,
+          68
+        ],
+        [
+          140,
+          78
+        ],
+        [
+          142,
+          130
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1116
+      },
+      "class": "underwater-floor"
+    },
+    "route-125": {
+      "spawn_points": [
+        [
+          34,
+          54
+        ],
+        [
+          68,
+          67
+        ],
+        [
+          26,
+          62
+        ],
+        [
+          83,
+          45
+        ],
+        [
+          143,
+          37
+        ],
+        [
+          19,
+          13
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          34,
+          54
+        ],
+        [
+          68,
+          67
+        ],
+        [
+          26,
+          62
+        ],
+        [
+          83,
+          45
+        ],
+        [
+          143,
+          37
+        ],
+        [
+          19,
+          13
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 5116
+      },
+      "class": "surface-sea"
+    },
+    "route-125-underwater": {
+      "spawn_points": [
+        [
+          24,
+          33
+        ],
+        [
+          37,
+          30
+        ],
+        [
+          15,
+          40
+        ],
+        [
+          48,
+          25
+        ],
+        [
+          149,
+          40
+        ],
+        [
+          109,
+          48
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          24,
+          33
+        ],
+        [
+          37,
+          30
+        ],
+        [
+          15,
+          40
+        ],
+        [
+          48,
+          25
+        ],
+        [
+          149,
+          40
+        ],
+        [
+          109,
+          48
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 588
+      },
+      "class": "underwater-floor"
+    },
+    "route-126": {
+      "spawn_points": [
+        [
+          111,
+          26
+        ],
+        [
+          140,
+          86
+        ],
+        [
+          141,
+          118
+        ],
+        [
+          40,
+          118
+        ],
+        [
+          21,
+          68
+        ],
+        [
+          146,
+          150
+        ],
+        [
+          11,
+          154
+        ],
+        [
+          54,
+          7
+        ],
+        [
+          25,
+          7
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          111,
+          26
+        ],
+        [
+          140,
+          86
+        ],
+        [
+          141,
+          118
+        ],
+        [
+          40,
+          118
+        ],
+        [
+          21,
+          68
+        ],
+        [
+          146,
+          150
+        ],
+        [
+          11,
+          154
+        ],
+        [
+          54,
+          7
+        ],
+        [
+          25,
+          7
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 12604
+      },
+      "class": "surface-sea"
+    },
+    "route-126-underwater": {
+      "spawn_points": [
+        [
+          101,
+          56
+        ],
+        [
+          124,
+          66
+        ],
+        [
+          91,
+          140
+        ],
+        [
+          46,
+          124
+        ],
+        [
+          18,
+          139
+        ],
+        [
+          49,
+          7
+        ],
+        [
+          23,
+          75
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          101,
+          56
+        ],
+        [
+          124,
+          66
+        ],
+        [
+          91,
+          140
+        ],
+        [
+          46,
+          124
+        ],
+        [
+          18,
+          139
+        ],
+        [
+          49,
+          7
+        ],
+        [
+          23,
+          75
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 5172
+      },
+      "class": "underwater-floor"
+    },
+    "route-127": {
+      "spawn_points": [
+        [
+          65,
+          107
+        ],
+        [
+          64,
+          76
+        ],
+        [
+          86,
+          96
+        ],
+        [
+          36,
+          103
+        ],
+        [
+          131,
+          93
+        ],
+        [
+          6,
+          146
+        ],
+        [
+          154,
+          154
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          65,
+          107
+        ],
+        [
+          64,
+          76
+        ],
+        [
+          86,
+          96
+        ],
+        [
+          36,
+          103
+        ],
+        [
+          131,
+          93
+        ],
+        [
+          6,
+          146
+        ],
+        [
+          154,
+          154
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 15220
+      },
+      "class": "surface-sea"
+    },
+    "route-127-underwater": {
+      "spawn_points": [
+        [
+          64,
+          117
+        ],
+        [
+          58,
+          91
+        ],
+        [
+          67,
+          146
+        ],
+        [
+          57,
+          58
+        ],
+        [
+          99,
+          90
+        ],
+        [
+          32,
+          105
+        ],
+        [
+          145,
+          34
+        ],
+        [
+          144,
+          104
+        ],
+        [
+          125,
+          65
+        ],
+        [
+          116,
+          21
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          64,
+          117
+        ],
+        [
+          58,
+          91
+        ],
+        [
+          67,
+          146
+        ],
+        [
+          57,
+          58
+        ],
+        [
+          99,
+          90
+        ],
+        [
+          32,
+          105
+        ],
+        [
+          145,
+          34
+        ],
+        [
+          144,
+          104
+        ],
+        [
+          125,
+          65
+        ],
+        [
+          116,
+          21
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 2600
+      },
+      "class": "underwater-floor"
+    },
+    "route-128": {
+      "spawn_points": [
+        [
+          77,
+          25
+        ],
+        [
+          106,
+          30
+        ],
+        [
+          87,
+          63
+        ],
+        [
+          144,
+          43
+        ],
+        [
+          191,
+          19
+        ],
+        [
+          21,
+          41
+        ],
+        [
+          167,
+          70
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          77,
+          25
+        ],
+        [
+          106,
+          30
+        ],
+        [
+          87,
+          63
+        ],
+        [
+          144,
+          43
+        ],
+        [
+          191,
+          19
+        ],
+        [
+          21,
+          41
+        ],
+        [
+          167,
+          70
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 8200
+      },
+      "class": "surface-sea"
+    },
+    "route-128-underwater-cave": {
+      "spawn_points": [
+        [
+          14,
+          13
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          14,
+          13
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 76
+      },
+      "class": "underwater-floor"
+    },
+    "route-128-underwater": {
+      "spawn_points": [
+        [
+          85,
+          62
+        ],
+        [
+          70,
+          17
+        ],
+        [
+          103,
+          34
+        ],
+        [
+          99,
+          49
+        ],
+        [
+          146,
+          43
+        ],
+        [
+          77,
+          39
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          85,
+          62
+        ],
+        [
+          70,
+          17
+        ],
+        [
+          103,
+          34
+        ],
+        [
+          99,
+          49
+        ],
+        [
+          146,
+          43
+        ],
+        [
+          77,
+          39
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1680
+      },
+      "class": "underwater-floor"
+    },
+    "route-129": {
+      "spawn_points": [
+        [
+          130,
+          51
+        ],
+        [
+          133,
+          38
+        ],
+        [
+          118,
+          57
+        ],
+        [
+          138,
+          59
+        ],
+        [
+          84,
+          23
+        ],
+        [
+          13,
+          12
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          130,
+          51
+        ],
+        [
+          133,
+          38
+        ],
+        [
+          118,
+          57
+        ],
+        [
+          138,
+          59
+        ],
+        [
+          84,
+          23
+        ],
+        [
+          13,
+          12
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 5876
+      },
+      "class": "surface-sea"
+    },
+    "route-129-underwater": {
+      "spawn_points": [
+        [
+          36,
+          32
+        ],
+        [
+          43,
+          22
+        ],
+        [
+          50,
+          13
+        ],
+        [
+          58,
+          21
+        ],
+        [
+          85,
+          43
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          36,
+          32
+        ],
+        [
+          43,
+          22
+        ],
+        [
+          50,
+          13
+        ],
+        [
+          58,
+          21
+        ],
+        [
+          85,
+          43
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 432
+      },
+      "class": "underwater-floor"
+    },
+    "route-130": {
+      "spawn_points": [
+        [
+          53,
+          48
+        ],
+        [
+          93,
+          57
+        ],
+        [
+          108,
+          56
+        ],
+        [
+          41,
+          53
+        ],
+        [
+          86,
+          20
+        ],
+        [
+          21,
+          73
+        ],
+        [
+          140,
+          73
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          53,
+          48
+        ],
+        [
+          93,
+          57
+        ],
+        [
+          108,
+          56
+        ],
+        [
+          41,
+          53
+        ],
+        [
+          86,
+          20
+        ],
+        [
+          21,
+          73
+        ],
+        [
+          140,
+          73
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 4704
+      },
+      "class": "surface-sea"
+    },
+    "route-131": {
+      "spawn_points": [
+        [
+          20,
+          43
+        ],
+        [
+          39,
+          48
+        ],
+        [
+          83,
+          56
+        ],
+        [
+          51,
+          56
+        ],
+        [
+          69,
+          17
+        ],
+        [
+          75,
+          74
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          20,
+          43
+        ],
+        [
+          39,
+          48
+        ],
+        [
+          83,
+          56
+        ],
+        [
+          51,
+          56
+        ],
+        [
+          69,
+          17
+        ],
+        [
+          75,
+          74
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 3904
+      },
+      "class": "surface-sea"
+    },
+    "route-132": {
+      "spawn_points": [
+        [
+          52,
+          54
+        ],
+        [
+          38,
+          52
+        ],
+        [
+          68,
+          50
+        ],
+        [
+          143,
+          43
+        ],
+        [
+          7,
+          55
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          52,
+          54
+        ],
+        [
+          38,
+          52
+        ],
+        [
+          68,
+          50
+        ],
+        [
+          143,
+          43
+        ],
+        [
+          7,
+          55
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 8908
+      },
+      "class": "surface-sea"
+    },
+    "route-133": {
+      "spawn_points": [
+        [
+          121,
+          25
+        ],
+        [
+          135,
+          23
+        ],
+        [
+          18,
+          44
+        ],
+        [
+          105,
+          19
+        ],
+        [
+          154,
+          57
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          121,
+          25
+        ],
+        [
+          135,
+          23
+        ],
+        [
+          18,
+          44
+        ],
+        [
+          105,
+          19
+        ],
+        [
+          154,
+          57
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 9028
+      },
+      "class": "surface-sea"
+    },
+    "route-134": {
+      "spawn_points": [
+        [
+          101,
+          25
+        ],
+        [
+          140,
+          41
+        ],
+        [
+          30,
+          25
+        ],
+        [
+          40,
+          47
+        ],
+        [
+          15,
+          66
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          101,
+          25
+        ],
+        [
+          140,
+          41
+        ],
+        [
+          30,
+          25
+        ],
+        [
+          40,
+          47
+        ],
+        [
+          15,
+          66
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 8372
+      },
+      "class": "surface-sea"
+    },
+    "route-134-underwater": {
+      "spawn_points": [
+        [
+          17,
+          36
+        ],
+        [
+          21,
+          55
+        ],
+        [
+          19,
+          49
+        ],
+        [
+          15,
+          30
+        ]
+      ],
+      "reason": "Preserved visually audited sea traversal / underwater floor entry and section spawns.",
+      "evidence": "Canonical Emerald source-art collision; prior spawn list reviewed against uploaded artwork.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          17,
+          36
+        ],
+        [
+          21,
+          55
+        ],
+        [
+          19,
+          49
+        ],
+        [
+          15,
+          30
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1264
+      },
+      "class": "underwater-floor"
+    },
+    "sea-cave-1": {
+      "spawn_points": [
+        [
+          30,
+          9
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MarineCave_Entrance warp event 0 to MAP_MARINE_CAVE_END, translated with [0, 8] GBA-pixel source offset.",
+      "bad_previous_defaults": [
+        [
+          22,
+          26
+        ]
+      ],
+      "previous_spawn_points": [
+        [
+          22,
+          26
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 704
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "sea-cave-2": {
+      "spawn_points": [
+        [
+          41,
+          8
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "MarineCave_End warp event 0 to MAP_MARINE_CAVE_ENTRANCE, translated with [0, 8] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          26,
+          13
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 732
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "sea-cave-underwater": {
+      "spawn_points": [
+        [
+          15,
+          14
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "Underwater_MarineCave warp event 0 to MAP_DYNAMIC, translated with [-32, -8] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          15,
+          14
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 36
+      },
+      "class": "underwater-floor"
+    },
+    "seafloor-cavern-2": {
+      "spawn_points": [
+        [
+          9,
+          7
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "SeafloorCavern_Room5 warp event 0 to MAP_SEAFLOOR_CAVERN_ROOM1, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          17,
+          8
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 344
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "seafloor-cavern-3": {
+      "spawn_points": [
+        [
+          28,
+          8
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          23,
+          30
+        ],
+        [
+          9,
+          6
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "SeafloorCavern_Room4 warp event 0 to MAP_SEAFLOOR_CAVERN_ROOM2, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          28,
+          14
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          23,
+          30
+        ],
+        [
+          9,
+          6
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 188
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "seafloor-cavern-4": {
+      "spawn_points": [
+        [
+          23,
+          14
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "SeafloorCavern_Room2 warp event 0 to MAP_SEAFLOOR_CAVERN_ROOM1, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          10,
+          14
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 200
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "seafloor-cavern-5": {
+      "spawn_points": [
+        [
+          24,
+          42
+        ]
+      ],
+      "reason": "Dry entry ledge above the southern doorway; replaces the central water-current default.",
+      "evidence": "Visually reviewed supplied 50%-dimension map artwork and unchanged Emerald collision grid.",
+      "bad_previous_defaults": [
+        [
+          18,
+          27
+        ]
+      ],
+      "previous_spawn_points": [
+        [
+          18,
+          27
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1384
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "seafloor-cavern-6": {
+      "spawn_points": [
+        [
+          9,
+          45
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "SeafloorCavern_Room7 warp event 0 to MAP_SEAFLOOR_CAVERN_ROOM2, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [
+        [
+          23,
+          27
+        ]
+      ],
+      "previous_spawn_points": [
+        [
+          23,
+          27
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1580
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "seafloor-cavern-7": {
+      "spawn_points": [
+        [
+          18,
+          8
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "SeafloorCavern_Room3 warp event 0 to MAP_SEAFLOOR_CAVERN_ROOM8, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          13,
+          23
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 400
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "seafloor-cavern-8": {
+      "spawn_points": [
+        [
+          12,
+          10
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "SeafloorCavern_Room8 warp event 0 to MAP_SEAFLOOR_CAVERN_ROOM9, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          11,
+          16
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 184
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "seafloor-cavern-9": {
+      "spawn_points": [
+        [
+          11,
+          7
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "SeafloorCavern_Room9 warp event 0 to MAP_SEAFLOOR_CAVERN_ROOM8, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          25,
+          54
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 932
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "sealed-chamber-1f-1": {
+      "spawn_points": [
+        [
+          21,
+          9
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "SealedChamber_OuterRoom warp event 0 to MAP_SEALED_CHAMBER_INNER_ROOM, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          31,
+          35
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 656
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "sealed-chamber-1f-2": {
+      "spawn_points": [
+        [
+          22,
+          36
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "SealedChamber_InnerRoom warp event 0 to MAP_SEALED_CHAMBER_OUTER_ROOM, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          21,
+          24
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 732
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "shoal-cave-1f-2-high-tide": {
+      "spawn_points": [
+        [
+          29,
+          65
+        ]
+      ],
+      "reason": "Dry southwest entrance ledge above the doorway, instead of the tidal pool.",
+      "evidence": "Visually reviewed supplied 50%-dimension map artwork and unchanged Emerald collision grid.",
+      "bad_previous_defaults": [
+        [
+          44,
+          21
+        ]
+      ],
+      "previous_spawn_points": [
+        [
+          44,
+          21
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 3932
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "shoal-cave-1f-3": {
+      "spawn_points": [
+        [
+          16,
+          10
+        ],
+        [
+          37,
+          13
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "ShoalCave_LowTideLowerRoom warp event 0 to MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          24,
+          10
+        ],
+        [
+          37,
+          13
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 324
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "studio-cave-1": {
+      "spawn_points": [
+        [
+          18,
+          95
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "ArtisanCave_B1F warp event 0 to MAP_BATTLE_FRONTIER_OUTSIDE_WEST, translated with [0, 8] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          33,
+          92
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 2264
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "studio-cave-2": {
+      "spawn_points": [
+        [
+          15,
+          29
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "ArtisanCave_1F warp event 0 to MAP_BATTLE_FRONTIER_OUTSIDE_EAST, translated with [-48, -32] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          10,
+          23
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 164
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "worlds-edge-island-1": {
+      "spawn_points": [
+        [
+          32,
+          65
+        ]
+      ],
+      "reason": "Preserved clear arrival trail north of the boat landing; the forest exit is not the arrival point.",
+      "evidence": "Visually reviewed supplied 50%-dimension map artwork and unchanged Emerald collision grid.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          32,
+          65
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 1000
+      },
+      "class": "dry-ground-or-floor"
+    },
+    "worlds-edge-island-2": {
+      "spawn_points": [
+        [
+          26,
+          36
+        ]
+      ],
+      "reason": "Entry floor adjacent to an authored doorway/stair; other reachable sections retained.",
+      "evidence": "FarawayIsland_Interior warp event 0 to MAP_FARAWAY_ISLAND_ENTRANCE, translated with [0, 0] GBA-pixel source offset.",
+      "bad_previous_defaults": [],
+      "previous_spawn_points": [
+        [
+          34,
+          25
+        ]
+      ],
+      "validation": {
+        "all_spawns_collision_clear": true,
+        "all_spawns_off_portal_triggers": true,
+        "default_component_cells": 720
+      },
+      "class": "dry-ground-or-floor"
+    }
+  }
+}

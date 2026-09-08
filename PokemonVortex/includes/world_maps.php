@@ -45,6 +45,8 @@ function pv_world_kanto_manifest(): array { return pv_world_manifest('kanto'); }
 function pv_world_hoenn_manifest(): array { return pv_world_manifest('hoenn'); }
 
 function pv_world_catalog(): array {
+    static $cached = null;
+    if (is_array($cached)) return $cached;
     $catalog = [
         'vortex' => [
             'key'=>'vortex','label'=>'Vortex World','subtitle'=>'Original World',
@@ -68,7 +70,7 @@ function pv_world_catalog(): array {
             'ready_count'=>$ready,
         ];
     }
-    return $catalog;
+    return $cached = $catalog;
 }
 
 function pv_world_definition(string $world): ?array {
@@ -78,9 +80,15 @@ function pv_world_definition(string $world): ?array {
 }
 
 function pv_world_area(string $world, string $area): ?array {
+    // One filesystem validation per area/request, including collision headers.
+    // AI ticks and encounter generation reuse this expanded regional catalogue.
+    static $cache = [];
     $world = pv_world_normalize_key($world);
     $area = pv_world_area_key($area);
     if (!pv_world_is_region_world($world) || $area === '') return null;
+    $cacheKey = $world . '/' . $area;
+    if (array_key_exists($cacheKey, $cache)) return $cache[$cacheKey];
+    $cache[$cacheKey] = null;
 
     $manifest = pv_world_manifest($world);
     $raw = $manifest['areas'][$area] ?? null;
@@ -95,8 +103,8 @@ function pv_world_area(string $world, string $area): ?array {
     $assetAbs = $root ? realpath($root . '/' . $asset) : false;
     if (!$root || !$assetAbs || !str_starts_with($assetAbs, $root . DIRECTORY_SEPARATOR) || !is_file($assetAbs)) return null;
 
-    // Logical movement stays on the original 16px GBA tile grid while Kanto
-    // and Hoenn may display user-supplied enlarged artwork at 32px per tile.
+    // Each image retains its native dimensions. Logical and display tile sizes
+    // are explicit so original grids and subdivided collision stay aligned.
     $tileSize = max(8,min(64,(int)($raw['tile_size'] ?? $manifest['tile_size'] ?? 16)));
     $displayTileSize = max($tileSize,min(128,(int)($raw['display_tile_size'] ?? $manifest['display_tile_size'] ?? $tileSize)));
     $columns = max(0,(int)($raw['columns'] ?? 0));
@@ -128,7 +136,7 @@ function pv_world_area(string $world, string $area): ?array {
         if(!$publicRoot||!$resolved||!str_starts_with($resolved,$publicRoot.DIRECTORY_SEPARATOR)||!is_file($resolved))return null;
         $collisionAbs=$resolved;
         $collisionData=json_decode((string)@file_get_contents($resolved),true);
-        if(!is_array($collisionData)||(int)($collisionData['columns']??0)!==$columns||(int)($collisionData['rows']??0)!==$rows)return null;
+        if(!is_array($collisionData)||!isset($collisionData['blocked'])||!is_array($collisionData['blocked'])||(int)($collisionData['columns']??0)!==$columns||(int)($collisionData['rows']??0)!==$rows)return null;
     }
 
     $transitions=[];
@@ -147,14 +155,17 @@ function pv_world_area(string $world, string $area): ?array {
         return str_contains($rel,'..')?'':$rel;
     };
 
-    return [
+    return $cache[$cacheKey] = [
         'world'=>$world,'key'=>$area,'name'=>$name,'category'=>$category,
         'asset'=>$asset,'asset_abs'=>$assetAbs,
         'logical_asset'=>$cleanAsset($raw['logical_asset']??''),
         'preview_asset'=>$cleanAsset($raw['preview_asset']??''),
         'tile_size'=>$tileSize,'display_tile_size'=>$displayTileSize,
+        'movement_step'=>max(1,min(2,(int)($raw['movement_step']??1))),
         'columns'=>$columns,'rows'=>$rows,'width'=>$width,'height'=>$height,
         'spawn_points'=>$spawnPoints,'transitions'=>$transitions,
+        'unsafe_arrival_points'=>(array)($raw['unsafe_arrival_points']??[]),
+        'unsafe_arrival_regions'=>(array)($raw['unsafe_arrival_regions']??[]),
         'encounter_profile'=>trim((string)($raw['encounter_profile']??'')),
         'collision_asset'=>$collisionRel,'collision_asset_abs'=>$collisionAbs,
         'connections'=>array_values(array_filter(array_map('pv_world_area_key',(array)($raw['connections']??[])))),
@@ -260,7 +271,8 @@ function pv_world_presence_upsert(mysqli $db, int $uid, string $world, string $a
     $now=time();
     $stmt=$db->prepare('INSERT INTO world_map_positions (user_id,world_key,area_key,x,y,updated_at) VALUES (?,?,?,?,?,?) ON DUPLICATE KEY UPDATE x=VALUES(x),y=VALUES(y),updated_at=VALUES(updated_at)');
     if($stmt){$stmt->bind_param('issiii',$uid,$world,$area,$x,$y,$now);$stmt->execute();$stmt->close();}
-    $activity='Exploring '.ucfirst($world).' / '.$area;
+    // Recovered online.activity is VARCHAR(45), even though area_key is wider.
+    $activity=substr('Exploring '.ucfirst($world).' / '.$area,0,45);
     $stmt=$db->prepare('UPDATE online SET activity=?,time=? WHERE id=?');
     if($stmt){$stmt->bind_param('sii',$activity,$now,$uid);$stmt->execute();$stmt->close();}
     $_SESSION['world_key']=$world;
@@ -275,7 +287,9 @@ function pv_world_position(mysqli $db, int $uid, string $world, string $area, ar
         $stmt=$db->prepare('SELECT x,y FROM mapusers WHERE id=? AND world_key=? AND map=? LIMIT 1');
         if($stmt){$stmt->bind_param('iss',$uid,$world,$area);$stmt->execute();$row=$stmt->get_result()->fetch_assoc();$stmt->close();if($row)return[(int)$row['x'],(int)$row['y']];}
     }
-    return $spawnPoints[array_rand($spawnPoints)];
+    // First visit uses the reviewed route entrance. Other sections are an
+    // explicit travel choice rather than a random new-player arrival.
+    return array_values($spawnPoints)[0];
 }
 
 function pv_world_players(mysqli $db, int $uid, string $world, string $area): array {
@@ -342,8 +356,10 @@ function pv_world_blocks(mysqli $db, string $world, string $area): array {
  */
 function pv_world_step_blocked(array $area, array $blocks, int $x, int $y, int $tx, int $ty): bool {
     $columns=(int)($area['columns']??0);$rows=(int)($area['rows']??0);
+    if($x<1||$x>$columns||$y<1||$y>$rows||isset($blocks[$x.':'.$y]))return true;
     if($tx<1||$tx>$columns||$ty<1||$ty>$rows||isset($blocks[$tx.':'.$ty]))return true;
     $dx=$tx-$x;$dy=$ty-$y;
+    if(abs($dx)>1||abs($dy)>1||($dx===0&&$dy===0))return true;
     if(abs($dx)===1&&abs($dy)===1){
         $sideAX=$x+$dx;$sideAY=$y;
         $sideBX=$x;$sideBY=$y+$dy;
@@ -351,6 +367,81 @@ function pv_world_step_blocked(array $area, array $blocks, int $x, int $y, int $
         if($sideBX<1||$sideBX>$columns||$sideBY<1||$sideBY>$rows||isset($blocks[$sideBX.':'.$sideBY]))return true;
     }
     return false;
+}
+
+/**
+ * One visual footstep, checked at every collision subdivision. New half-size
+ * artwork uses two 16px cells; established maps use one 32px cell. Stop at the
+ * first door/stair trigger and never tunnel through an intermediate obstacle.
+ * A wall in the second subdivision allows the first safe half-step, retaining
+ * access to narrow cropped approaches and the section arrival coordinates.
+ *
+ * @return array{x:int,y:int,moved:bool,transition:?array}
+ */
+function pv_world_walk_direction(array $area, array $blocks, int $x, int $y, int $dx, int $dy): array {
+    $result=['x'=>$x,'y'=>$y,'moved'=>false,'transition'=>null];
+    if(abs($dx)>1||abs($dy)>1||($dx===0&&$dy===0))return $result;
+    $steps=max(1,min(2,(int)($area['movement_step']??1)));
+    for($step=0;$step<$steps;$step++){
+        $tx=$result['x']+$dx;$ty=$result['y']+$dy;
+        if(pv_world_step_blocked($area,$blocks,$result['x'],$result['y'],$tx,$ty))break;
+        $result=['x'=>$tx,'y'=>$ty,'moved'=>true,'transition'=>pv_world_transition($area,$tx,$ty)];
+        if($result['transition']!==null)break;
+    }
+    return $result;
+}
+
+/** Water/decorative landing cells reviewed for this area; movement is separate. */
+function pv_world_unsuitable_arrival(array $area, int $x, int $y): bool {
+    foreach((array)($area['unsafe_arrival_points']??[]) as $point){
+        if(is_array($point)&&count($point)>=2&&(int)$point[0]===$x&&(int)$point[1]===$y)return true;
+    }
+    foreach((array)($area['unsafe_arrival_regions']??[]) as $box){
+        if(!is_array($box)||count($box)<4)continue;
+        if($x>=(int)$box[0]&&$x<=(int)$box[2]&&$y>=(int)$box[1]&&$y<=(int)$box[3])return true;
+    }
+    return false;
+}
+
+/**
+ * Validate a restored arrival on page entry. A saved lake or decorative island
+ * must not override a corrected route entrance. Valid progress remains saved.
+ * Checked against current DB collision too, so later tuning cannot strand an
+ * account behind newly added blockers. This is not run on every footstep.
+ */
+function pv_world_arrival_needs_recovery(array $area, array $blocks, int $x, int $y): bool {
+    $columns=(int)($area['columns']??0);$rows=(int)($area['rows']??0);
+    if($x<1||$x>$columns||$y<1||$y>$rows||isset($blocks[$x.':'.$y])||pv_world_unsuitable_arrival($area,$x,$y))return true;
+    $seeds=(array)($area['spawn_points']??[]);
+    // A legitimate stair landing may enter a separate section without its own
+    // selector entry. Keep that saved progress when any installed warp reaches it.
+    foreach(pv_world_region_keys() as $world){
+        foreach((array)(pv_world_manifest($world)['areas']??[]) as $source){
+            foreach((array)($source['transitions']??[]) as $transition){
+                if((string)($transition['target_world']??$world)===(string)($area['world']??'')&&(string)($transition['target_area']??'')===(string)($area['key']??'')){
+                    $seeds[]=[(int)($transition['target_x']??0),(int)($transition['target_y']??0)];
+                }
+            }
+        }
+    }
+    $targets=[];
+    foreach($seeds as $point){
+        if(!is_array($point)||count($point)<2)continue;
+        $sx=(int)$point[0];$sy=(int)$point[1];
+        if($sx>=1&&$sx<=$columns&&$sy>=1&&$sy<=$rows&&!isset($blocks[$sx.':'.$sy])&&!pv_world_unsuitable_arrival($area,$sx,$sy))$targets[$sx.':'.$sy]=true;
+    }
+    if($targets===[])return true;
+    $queue=[[$x,$y]];$seen=[$x.':'.$y=>true];
+    for($head=0;$head<count($queue);$head++){
+        [$cx,$cy]=$queue[$head];
+        if(isset($targets[$cx.':'.$cy]))return false;
+        foreach([[0,-1],[0,1],[-1,0],[1,0]] as $delta){
+            $nx=$cx+$delta[0];$ny=$cy+$delta[1];$key=$nx.':'.$ny;
+            if($nx<1||$nx>$columns||$ny<1||$ny>$rows||isset($seen[$key])||isset($blocks[$key]))continue;
+            $seen[$key]=true;$queue[]=[$nx,$ny];
+        }
+    }
+    return true;
 }
 
 function pv_world_connected_areas(array $area): array {
@@ -396,7 +487,8 @@ function pv_world_vortex_variant_roll(): string {
 function pv_world_encounter_html(mysqli $db,array $area,int $x,int $y): string {
     unset($_SESSION['wb'],$_SESSION['lvl'],$_SESSION['pv_pending_wild_encounter']);
     $world=pv_world_normalize_key((string)($area['world']??''));
-    $worldDef=pv_world_definition($world);$worldLabel=(string)($worldDef['label']??ucfirst($world));
+    // The scanner needs only the region label, not every area's image/collision.
+    $worldDef=pv_world_manifest($world);$worldLabel=(string)($worldDef['label']??ucfirst($world));
     $profileKey=trim((string)($area['encounter_profile']??''));
     if($profileKey==='')return '<div class="pv-map-quiet"><strong>No wild habitat detected.</strong><span>Wild Pokémon do not appear in this settlement or landmark.</span></div>';
     $profiles=pv_world_encounter_profiles($world);$profile=$profiles[$profileKey]??null;
@@ -450,8 +542,10 @@ function pv_world_transition(array $area, int $x, int $y): ?array {
 function pv_world_blocked_directions(mysqli $db, array $area, int $x, int $y): array {
     $deltas=[1=>[0,-1],2=>[0,1],3=>[-1,0],4=>[1,0],5=>[-1,-1],6=>[-1,1],7=>[1,-1],8=>[1,1]];
     $blocks=pv_world_blocks($db,(string)$area['world'],(string)$area['key']);$blocked=[];
-    foreach($deltas as $direction=>$delta){$tx=$x+$delta[0];$ty=$y+$delta[1];
-        $transition=pv_world_transition($area,$tx,$ty);
+    foreach($deltas as $direction=>$delta){
+        $walk=pv_world_walk_direction($area,$blocks,$x,$y,$delta[0],$delta[1]);
+        if(!$walk['moved']){$blocked[]=$direction;continue;}
+        $transition=$walk['transition'];
         if($transition){
             $target=pv_world_area((string)$transition['target_world'],(string)$transition['target_area']);
             if($target===null){$blocked[]=$direction;continue;}
@@ -460,7 +554,6 @@ function pv_world_blocked_directions(mysqli $db, array $area, int $x, int $y): a
             if($targetX<1||$targetX>(int)$target['columns']||$targetY<1||$targetY>(int)$target['rows']||isset($targetBlocks[$targetX.':'.$targetY]))$blocked[]=$direction;
             continue;
         }
-        if(pv_world_step_blocked($area,$blocks,$x,$y,$tx,$ty))$blocked[]=$direction;
     }
     return$blocked;
 }

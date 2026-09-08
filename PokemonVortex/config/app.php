@@ -5,7 +5,7 @@ return [
     'app_name' => 'Pokemon Vortex NXT',
     'base_path' => '/PokemonVortex',
     'debug' => false,
-    'asset_version' => '26.1.1',
+    'asset_version' => '27.0.1',
     // Set to 'kyurem', 'pikachu2015', or 'none'. This private config controls the live Event Center rotation.
     'active_event' => 'none',
     'db' => [

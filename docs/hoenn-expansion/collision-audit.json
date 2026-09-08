@@ -1,0 +1,1879 @@
+[
+  {
+    "area": "abandoned-ship-1f-1",
+    "columns": 39,
+    "rows": 26,
+    "walkable_cells": 448,
+    "blocked_cells": 566,
+    "spawn_points": [
+      [
+        25,
+        23
+      ],
+      [
+        13,
+        22
+      ]
+    ],
+    "source_size": [
+      1248,
+      832
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AbandonedShip_Corridors_1F"
+  },
+  {
+    "area": "abandoned-ship-1f-2",
+    "columns": 18,
+    "rows": 37,
+    "walkable_cells": 312,
+    "blocked_cells": 354,
+    "spawn_points": [
+      [
+        11,
+        11
+      ]
+    ],
+    "source_size": [
+      576,
+      1184
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AbandonedShip_Rooms2_1F"
+  },
+  {
+    "area": "abandoned-ship-2f",
+    "columns": 18,
+    "rows": 14,
+    "walkable_cells": 148,
+    "blocked_cells": 104,
+    "spawn_points": [
+      [
+        13,
+        9
+      ]
+    ],
+    "source_size": [
+      576,
+      448
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AbandonedShip_CaptainsOffice"
+  },
+  {
+    "area": "abandoned-ship-b1-1",
+    "columns": 28,
+    "rows": 22,
+    "walkable_cells": 228,
+    "blocked_cells": 388,
+    "spawn_points": [
+      [
+        7,
+        16
+      ]
+    ],
+    "source_size": [
+      896,
+      704
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AbandonedShip_Corridors_B1F"
+  },
+  {
+    "area": "abandoned-ship-b1-3",
+    "columns": 18,
+    "rows": 18,
+    "walkable_cells": 164,
+    "blocked_cells": 160,
+    "spawn_points": [
+      [
+        9,
+        11
+      ]
+    ],
+    "source_size": [
+      576,
+      576
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AbandonedShip_Room_B1F"
+  },
+  {
+    "area": "abandoned-ship-b1-5",
+    "columns": 30,
+    "rows": 27,
+    "walkable_cells": 276,
+    "blocked_cells": 534,
+    "spawn_points": [
+      [
+        25,
+        23
+      ]
+    ],
+    "source_size": [
+      960,
+      872
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AbandonedShip_HiddenFloorCorridors"
+  },
+  {
+    "area": "abandoned-ship-b2-1",
+    "columns": 44,
+    "rows": 18,
+    "walkable_cells": 424,
+    "blocked_cells": 368,
+    "spawn_points": [
+      [
+        9,
+        12
+      ]
+    ],
+    "source_size": [
+      1408,
+      576
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AbandonedShip_Underwater2"
+  },
+  {
+    "area": "abandoned-ship-b2-2",
+    "columns": 16,
+    "rows": 15,
+    "walkable_cells": 176,
+    "blocked_cells": 64,
+    "spawn_points": [
+      [
+        8,
+        10
+      ]
+    ],
+    "source_size": [
+      512,
+      508
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AbandonedShip_Underwater1"
+  },
+  {
+    "area": "abandoned-ship-exterior",
+    "columns": 46,
+    "rows": 36,
+    "walkable_cells": 240,
+    "blocked_cells": 1416,
+    "spawn_points": [
+      [
+        18,
+        22
+      ],
+      [
+        29,
+        24
+      ]
+    ],
+    "source_size": [
+      1472,
+      1152
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AbandonedShip_Deck"
+  },
+  {
+    "area": "cave-of-origin-1f",
+    "columns": 38,
+    "rows": 52,
+    "walkable_cells": 304,
+    "blocked_cells": 1672,
+    "spawn_points": [
+      [
+        19,
+        27
+      ]
+    ],
+    "source_size": [
+      1216,
+      1664
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "CaveOfOrigin_Entrance"
+  },
+  {
+    "area": "cave-of-origin-b1",
+    "columns": 46,
+    "rows": 46,
+    "walkable_cells": 360,
+    "blocked_cells": 1756,
+    "spawn_points": [
+      [
+        15,
+        18
+      ]
+    ],
+    "source_size": [
+      1472,
+      1472
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "CaveOfOrigin_1F"
+  },
+  {
+    "area": "cave-of-origin-b2",
+    "columns": 38,
+    "rows": 38,
+    "walkable_cells": 344,
+    "blocked_cells": 1100,
+    "spawn_points": [
+      [
+        18,
+        17
+      ]
+    ],
+    "source_size": [
+      1216,
+      1216
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "CaveOfOrigin_B1F"
+  },
+  {
+    "area": "desert-underground-tunnel",
+    "columns": 278,
+    "rows": 46,
+    "walkable_cells": 2708,
+    "blocked_cells": 10080,
+    "spawn_points": [
+      [
+        264,
+        22
+      ]
+    ],
+    "source_size": [
+      8896,
+      1472
+    ],
+    "render_tiles": 18,
+    "canonical_layout": "DesertUnderpass"
+  },
+  {
+    "area": "hideout-aqua-1",
+    "columns": 52,
+    "rows": 60,
+    "walkable_cells": 1760,
+    "blocked_cells": 1360,
+    "spawn_points": [
+      [
+        26,
+        44
+      ]
+    ],
+    "source_size": [
+      1664,
+      1920
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "AquaHideout_1F"
+  },
+  {
+    "area": "hideout-aqua-2",
+    "columns": 102,
+    "rows": 48,
+    "walkable_cells": 1976,
+    "blocked_cells": 2920,
+    "spawn_points": [
+      [
+        57,
+        38
+      ],
+      [
+        20,
+        12
+      ],
+      [
+        43,
+        21
+      ],
+      [
+        38,
+        8
+      ],
+      [
+        57,
+        24
+      ],
+      [
+        59,
+        8
+      ],
+      [
+        90,
+        9
+      ],
+      [
+        91,
+        36
+      ]
+    ],
+    "source_size": [
+      3264,
+      1536
+    ],
+    "render_tiles": 8,
+    "canonical_layout": "AquaHideout_B1F"
+  },
+  {
+    "area": "hideout-aqua-3",
+    "columns": 68,
+    "rows": 48,
+    "walkable_cells": 1952,
+    "blocked_cells": 1312,
+    "spawn_points": [
+      [
+        30,
+        40
+      ],
+      [
+        39,
+        25
+      ],
+      [
+        20,
+        10
+      ],
+      [
+        15,
+        27
+      ],
+      [
+        10,
+        12
+      ]
+    ],
+    "source_size": [
+      2176,
+      1536
+    ],
+    "render_tiles": 6,
+    "canonical_layout": "AquaHideout_B2F"
+  },
+  {
+    "area": "hideout-magma-1",
+    "columns": 74,
+    "rows": 75,
+    "walkable_cells": 1512,
+    "blocked_cells": 4038,
+    "spawn_points": [
+      [
+        48,
+        25
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        41,
+        47
+      ]
+    ],
+    "source_size": [
+      2368,
+      2400
+    ],
+    "render_tiles": 9,
+    "canonical_layout": "MagmaHideout_1F"
+  },
+  {
+    "area": "hideout-magma-2",
+    "columns": 57,
+    "rows": 76,
+    "walkable_cells": 1536,
+    "blocked_cells": 2796,
+    "spawn_points": [
+      [
+        40,
+        34
+      ]
+    ],
+    "source_size": [
+      1848,
+      2432
+    ],
+    "render_tiles": 6,
+    "canonical_layout": "MagmaHideout_2F_1R"
+  },
+  {
+    "area": "hideout-magma-3",
+    "columns": 97,
+    "rows": 56,
+    "walkable_cells": 1008,
+    "blocked_cells": 4424,
+    "spawn_points": [
+      [
+        52,
+        20
+      ]
+    ],
+    "source_size": [
+      3132,
+      1792
+    ],
+    "render_tiles": 8,
+    "canonical_layout": "MagmaHideout_2F_2R"
+  },
+  {
+    "area": "hideout-magma-4",
+    "columns": 55,
+    "rows": 46,
+    "walkable_cells": 620,
+    "blocked_cells": 1910,
+    "spawn_points": [
+      [
+        47,
+        12
+      ]
+    ],
+    "source_size": [
+      1784,
+      1472
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MagmaHideout_3F_1R"
+  },
+  {
+    "area": "hideout-magma-5",
+    "columns": 46,
+    "rows": 34,
+    "walkable_cells": 452,
+    "blocked_cells": 1112,
+    "spawn_points": [
+      [
+        17,
+        26
+      ]
+    ],
+    "source_size": [
+      1472,
+      1088
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MagmaHideout_3F_2R"
+  },
+  {
+    "area": "hideout-magma-6",
+    "columns": 118,
+    "rows": 56,
+    "walkable_cells": 1248,
+    "blocked_cells": 5360,
+    "spawn_points": [
+      [
+        23,
+        43
+      ]
+    ],
+    "source_size": [
+      3776,
+      1792
+    ],
+    "render_tiles": 8,
+    "canonical_layout": "MagmaHideout_4F"
+  },
+  {
+    "area": "illusion-pillar-1f",
+    "columns": 42,
+    "rows": 34,
+    "walkable_cells": 608,
+    "blocked_cells": 820,
+    "spawn_points": [
+      [
+        12,
+        8
+      ]
+    ],
+    "source_size": [
+      1344,
+      1088
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MirageTower_1F"
+  },
+  {
+    "area": "illusion-pillar-2f",
+    "columns": 42,
+    "rows": 34,
+    "walkable_cells": 592,
+    "blocked_cells": 836,
+    "spawn_points": [
+      [
+        12,
+        8
+      ]
+    ],
+    "source_size": [
+      1344,
+      1088
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MirageTower_2F"
+  },
+  {
+    "area": "illusion-pillar-3f",
+    "columns": 42,
+    "rows": 34,
+    "walkable_cells": 604,
+    "blocked_cells": 824,
+    "spawn_points": [
+      [
+        12,
+        8
+      ]
+    ],
+    "source_size": [
+      1344,
+      1088
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MirageTower_3F"
+  },
+  {
+    "area": "illusion-pillar-4f",
+    "columns": 26,
+    "rows": 20,
+    "walkable_cells": 264,
+    "blocked_cells": 256,
+    "spawn_points": [
+      [
+        14,
+        9
+      ]
+    ],
+    "source_size": [
+      832,
+      640
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MirageTower_4F"
+  },
+  {
+    "area": "land-cave-1",
+    "columns": 40,
+    "rows": 40,
+    "walkable_cells": 484,
+    "blocked_cells": 1116,
+    "spawn_points": [
+      [
+        21,
+        31
+      ]
+    ],
+    "source_size": [
+      1280,
+      1280
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "TerraCave_Entrance"
+  },
+  {
+    "area": "land-cave-2",
+    "columns": 54,
+    "rows": 60,
+    "walkable_cells": 632,
+    "blocked_cells": 2608,
+    "spawn_points": [
+      [
+        20,
+        27
+      ]
+    ],
+    "source_size": [
+      1728,
+      1920
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "TerraCave_End"
+  },
+  {
+    "area": "meteor-falls-stevens-cave",
+    "columns": 60,
+    "rows": 64,
+    "walkable_cells": 604,
+    "blocked_cells": 3236,
+    "spawn_points": [
+      [
+        35,
+        43
+      ]
+    ],
+    "source_size": [
+      1920,
+      2048
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MeteorFalls_StevensCave"
+  },
+  {
+    "area": "mt-pyre-3f",
+    "columns": 26,
+    "rows": 26,
+    "walkable_cells": 348,
+    "blocked_cells": 328,
+    "spawn_points": [
+      [
+        21,
+        13
+      ],
+      [
+        4,
+        23
+      ]
+    ],
+    "source_size": [
+      832,
+      832
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MtPyre_3F"
+  },
+  {
+    "area": "mt-pyre-4f",
+    "columns": 26,
+    "rows": 26,
+    "walkable_cells": 268,
+    "blocked_cells": 408,
+    "spawn_points": [
+      [
+        21,
+        17
+      ],
+      [
+        10,
+        24
+      ]
+    ],
+    "source_size": [
+      832,
+      832
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MtPyre_4F"
+  },
+  {
+    "area": "mt-pyre-5f",
+    "columns": 26,
+    "rows": 26,
+    "walkable_cells": 292,
+    "blocked_cells": 384,
+    "spawn_points": [
+      [
+        6,
+        17
+      ],
+      [
+        15,
+        24
+      ]
+    ],
+    "source_size": [
+      832,
+      832
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MtPyre_5F"
+  },
+  {
+    "area": "route-107",
+    "columns": 120,
+    "rows": 40,
+    "walkable_cells": 3432,
+    "blocked_cells": 1368,
+    "spawn_points": [
+      [
+        99,
+        16
+      ],
+      [
+        60,
+        19
+      ],
+      [
+        53,
+        21
+      ],
+      [
+        79,
+        18
+      ],
+      [
+        93,
+        35
+      ],
+      [
+        27,
+        6
+      ]
+    ],
+    "source_size": [
+      3840,
+      1280
+    ],
+    "render_tiles": 8,
+    "canonical_layout": "Route107"
+  },
+  {
+    "area": "route-108",
+    "columns": 120,
+    "rows": 40,
+    "walkable_cells": 3648,
+    "blocked_cells": 1152,
+    "spawn_points": [
+      [
+        40,
+        21
+      ],
+      [
+        46,
+        18
+      ],
+      [
+        70,
+        20
+      ],
+      [
+        32,
+        22
+      ],
+      [
+        65,
+        37
+      ],
+      [
+        73,
+        4
+      ],
+      [
+        22,
+        5
+      ],
+      [
+        9,
+        36
+      ]
+    ],
+    "source_size": [
+      3840,
+      1280
+    ],
+    "render_tiles": 8,
+    "canonical_layout": "Route108"
+  },
+  {
+    "area": "route-124-underwater",
+    "columns": 160,
+    "rows": 160,
+    "walkable_cells": 3608,
+    "blocked_cells": 21992,
+    "spawn_points": [
+      [
+        68,
+        32
+      ],
+      [
+        98,
+        35
+      ],
+      [
+        55,
+        13
+      ],
+      [
+        87,
+        13
+      ],
+      [
+        81,
+        100
+      ],
+      [
+        31,
+        67
+      ],
+      [
+        120,
+        31
+      ],
+      [
+        108,
+        146
+      ],
+      [
+        128,
+        107
+      ],
+      [
+        106,
+        98
+      ],
+      [
+        132,
+        68
+      ],
+      [
+        140,
+        78
+      ],
+      [
+        142,
+        130
+      ]
+    ],
+    "source_size": [
+      5120,
+      5120
+    ],
+    "render_tiles": 25,
+    "canonical_layout": "Underwater_Route124"
+  },
+  {
+    "area": "route-125",
+    "columns": 160,
+    "rows": 80,
+    "walkable_cells": 9376,
+    "blocked_cells": 3424,
+    "spawn_points": [
+      [
+        34,
+        54
+      ],
+      [
+        68,
+        67
+      ],
+      [
+        26,
+        62
+      ],
+      [
+        83,
+        45
+      ],
+      [
+        143,
+        37
+      ],
+      [
+        19,
+        13
+      ]
+    ],
+    "source_size": [
+      5120,
+      2560
+    ],
+    "render_tiles": 15,
+    "canonical_layout": "Route125"
+  },
+  {
+    "area": "route-125-underwater",
+    "columns": 160,
+    "rows": 80,
+    "walkable_cells": 2848,
+    "blocked_cells": 9952,
+    "spawn_points": [
+      [
+        24,
+        33
+      ],
+      [
+        37,
+        30
+      ],
+      [
+        15,
+        40
+      ],
+      [
+        48,
+        25
+      ],
+      [
+        149,
+        40
+      ],
+      [
+        109,
+        48
+      ]
+    ],
+    "source_size": [
+      5120,
+      2560
+    ],
+    "render_tiles": 15,
+    "canonical_layout": "Underwater_Route125"
+  },
+  {
+    "area": "route-126",
+    "columns": 160,
+    "rows": 160,
+    "walkable_cells": 16768,
+    "blocked_cells": 8832,
+    "spawn_points": [
+      [
+        111,
+        26
+      ],
+      [
+        140,
+        86
+      ],
+      [
+        141,
+        118
+      ],
+      [
+        40,
+        118
+      ],
+      [
+        21,
+        68
+      ],
+      [
+        146,
+        150
+      ],
+      [
+        11,
+        154
+      ],
+      [
+        54,
+        7
+      ],
+      [
+        25,
+        7
+      ]
+    ],
+    "source_size": [
+      5120,
+      5120
+    ],
+    "render_tiles": 25,
+    "canonical_layout": "Route126"
+  },
+  {
+    "area": "route-126-underwater",
+    "columns": 160,
+    "rows": 160,
+    "walkable_cells": 5872,
+    "blocked_cells": 19728,
+    "spawn_points": [
+      [
+        101,
+        56
+      ],
+      [
+        124,
+        66
+      ],
+      [
+        91,
+        140
+      ],
+      [
+        46,
+        124
+      ],
+      [
+        18,
+        139
+      ],
+      [
+        49,
+        7
+      ],
+      [
+        23,
+        75
+      ]
+    ],
+    "source_size": [
+      5120,
+      5120
+    ],
+    "render_tiles": 25,
+    "canonical_layout": "Underwater_Route126"
+  },
+  {
+    "area": "route-127",
+    "columns": 160,
+    "rows": 160,
+    "walkable_cells": 18108,
+    "blocked_cells": 7492,
+    "spawn_points": [
+      [
+        65,
+        107
+      ],
+      [
+        64,
+        76
+      ],
+      [
+        86,
+        96
+      ],
+      [
+        36,
+        103
+      ],
+      [
+        131,
+        93
+      ],
+      [
+        6,
+        146
+      ],
+      [
+        154,
+        154
+      ]
+    ],
+    "source_size": [
+      5120,
+      5120
+    ],
+    "render_tiles": 25,
+    "canonical_layout": "Route127"
+  },
+  {
+    "area": "route-127-underwater",
+    "columns": 160,
+    "rows": 160,
+    "walkable_cells": 4760,
+    "blocked_cells": 20840,
+    "spawn_points": [
+      [
+        64,
+        117
+      ],
+      [
+        58,
+        91
+      ],
+      [
+        67,
+        146
+      ],
+      [
+        57,
+        58
+      ],
+      [
+        99,
+        90
+      ],
+      [
+        32,
+        105
+      ],
+      [
+        145,
+        34
+      ],
+      [
+        144,
+        104
+      ],
+      [
+        125,
+        65
+      ],
+      [
+        116,
+        21
+      ]
+    ],
+    "source_size": [
+      5120,
+      5120
+    ],
+    "render_tiles": 25,
+    "canonical_layout": "Underwater_Route127"
+  },
+  {
+    "area": "route-128",
+    "columns": 240,
+    "rows": 80,
+    "walkable_cells": 16192,
+    "blocked_cells": 3008,
+    "spawn_points": [
+      [
+        77,
+        25
+      ],
+      [
+        106,
+        30
+      ],
+      [
+        87,
+        63
+      ],
+      [
+        144,
+        43
+      ],
+      [
+        191,
+        19
+      ],
+      [
+        21,
+        41
+      ],
+      [
+        167,
+        70
+      ]
+    ],
+    "source_size": [
+      7680,
+      2560
+    ],
+    "render_tiles": 24,
+    "canonical_layout": "Route128"
+  },
+  {
+    "area": "route-128-underwater-cave",
+    "columns": 28,
+    "rows": 18,
+    "walkable_cells": 76,
+    "blocked_cells": 428,
+    "spawn_points": [
+      [
+        14,
+        13
+      ]
+    ],
+    "source_size": [
+      896,
+      576
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "Underwater_SeafloorCavern"
+  },
+  {
+    "area": "route-128-underwater",
+    "columns": 240,
+    "rows": 80,
+    "walkable_cells": 1968,
+    "blocked_cells": 17232,
+    "spawn_points": [
+      [
+        85,
+        62
+      ],
+      [
+        70,
+        17
+      ],
+      [
+        103,
+        34
+      ],
+      [
+        99,
+        49
+      ],
+      [
+        146,
+        43
+      ],
+      [
+        77,
+        39
+      ]
+    ],
+    "source_size": [
+      7680,
+      2560
+    ],
+    "render_tiles": 24,
+    "canonical_layout": "Underwater_Route128"
+  },
+  {
+    "area": "route-129",
+    "columns": 160,
+    "rows": 80,
+    "walkable_cells": 10728,
+    "blocked_cells": 2072,
+    "spawn_points": [
+      [
+        130,
+        51
+      ],
+      [
+        133,
+        38
+      ],
+      [
+        118,
+        57
+      ],
+      [
+        138,
+        59
+      ],
+      [
+        84,
+        23
+      ],
+      [
+        13,
+        12
+      ]
+    ],
+    "source_size": [
+      5120,
+      2560
+    ],
+    "render_tiles": 15,
+    "canonical_layout": "Route129"
+  },
+  {
+    "area": "route-129-underwater",
+    "columns": 160,
+    "rows": 80,
+    "walkable_cells": 660,
+    "blocked_cells": 12140,
+    "spawn_points": [
+      [
+        36,
+        32
+      ],
+      [
+        43,
+        22
+      ],
+      [
+        50,
+        13
+      ],
+      [
+        58,
+        21
+      ],
+      [
+        85,
+        43
+      ]
+    ],
+    "source_size": [
+      5120,
+      2560
+    ],
+    "render_tiles": 15,
+    "canonical_layout": "Underwater_Route129"
+  },
+  {
+    "area": "route-130",
+    "columns": 160,
+    "rows": 80,
+    "walkable_cells": 10332,
+    "blocked_cells": 2468,
+    "spawn_points": [
+      [
+        53,
+        48
+      ],
+      [
+        93,
+        57
+      ],
+      [
+        108,
+        56
+      ],
+      [
+        41,
+        53
+      ],
+      [
+        86,
+        20
+      ],
+      [
+        21,
+        73
+      ],
+      [
+        140,
+        73
+      ]
+    ],
+    "source_size": [
+      5120,
+      2560
+    ],
+    "render_tiles": 15,
+    "canonical_layout": "Route130"
+  },
+  {
+    "area": "route-131",
+    "columns": 120,
+    "rows": 80,
+    "walkable_cells": 6868,
+    "blocked_cells": 2732,
+    "spawn_points": [
+      [
+        20,
+        43
+      ],
+      [
+        39,
+        48
+      ],
+      [
+        83,
+        56
+      ],
+      [
+        51,
+        56
+      ],
+      [
+        69,
+        17
+      ],
+      [
+        75,
+        74
+      ]
+    ],
+    "source_size": [
+      3840,
+      2560
+    ],
+    "render_tiles": 12,
+    "canonical_layout": "Route131"
+  },
+  {
+    "area": "route-132",
+    "columns": 160,
+    "rows": 80,
+    "walkable_cells": 9744,
+    "blocked_cells": 3056,
+    "spawn_points": [
+      [
+        52,
+        54
+      ],
+      [
+        38,
+        52
+      ],
+      [
+        68,
+        50
+      ],
+      [
+        143,
+        43
+      ],
+      [
+        7,
+        55
+      ]
+    ],
+    "source_size": [
+      5120,
+      2560
+    ],
+    "render_tiles": 15,
+    "canonical_layout": "Route132"
+  },
+  {
+    "area": "route-133",
+    "columns": 160,
+    "rows": 80,
+    "walkable_cells": 9664,
+    "blocked_cells": 3136,
+    "spawn_points": [
+      [
+        121,
+        25
+      ],
+      [
+        135,
+        23
+      ],
+      [
+        18,
+        44
+      ],
+      [
+        105,
+        19
+      ],
+      [
+        154,
+        57
+      ]
+    ],
+    "source_size": [
+      5120,
+      2560
+    ],
+    "render_tiles": 15,
+    "canonical_layout": "Route133"
+  },
+  {
+    "area": "route-134",
+    "columns": 160,
+    "rows": 80,
+    "walkable_cells": 10220,
+    "blocked_cells": 2580,
+    "spawn_points": [
+      [
+        101,
+        25
+      ],
+      [
+        140,
+        41
+      ],
+      [
+        30,
+        25
+      ],
+      [
+        40,
+        47
+      ],
+      [
+        15,
+        66
+      ],
+      [
+        9,
+        5
+      ]
+    ],
+    "source_size": [
+      5120,
+      2560
+    ],
+    "render_tiles": 15,
+    "canonical_layout": "Route134"
+  },
+  {
+    "area": "route-134-underwater",
+    "columns": 44,
+    "rows": 96,
+    "walkable_cells": 1264,
+    "blocked_cells": 2960,
+    "spawn_points": [
+      [
+        17,
+        36
+      ],
+      [
+        21,
+        55
+      ],
+      [
+        19,
+        49
+      ],
+      [
+        15,
+        30
+      ]
+    ],
+    "source_size": [
+      1408,
+      3072
+    ],
+    "render_tiles": 6,
+    "canonical_layout": "Underwater_SealedChamber"
+  },
+  {
+    "area": "sea-cave-1",
+    "columns": 40,
+    "rows": 40,
+    "walkable_cells": 704,
+    "blocked_cells": 896,
+    "spawn_points": [
+      [
+        22,
+        26
+      ]
+    ],
+    "source_size": [
+      1280,
+      1280
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MarineCave_Entrance"
+  },
+  {
+    "area": "sea-cave-2",
+    "columns": 54,
+    "rows": 62,
+    "walkable_cells": 852,
+    "blocked_cells": 2496,
+    "spawn_points": [
+      [
+        26,
+        13
+      ]
+    ],
+    "source_size": [
+      1728,
+      1984
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "MarineCave_End"
+  },
+  {
+    "area": "sea-cave-underwater",
+    "columns": 30,
+    "rows": 20,
+    "walkable_cells": 36,
+    "blocked_cells": 564,
+    "spawn_points": [
+      [
+        15,
+        14
+      ]
+    ],
+    "source_size": [
+      960,
+      640
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "Underwater_MarineCave"
+  },
+  {
+    "area": "seafloor-cavern-2",
+    "columns": 40,
+    "rows": 40,
+    "walkable_cells": 344,
+    "blocked_cells": 1256,
+    "spawn_points": [
+      [
+        17,
+        8
+      ]
+    ],
+    "source_size": [
+      1280,
+      1280
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "SeafloorCavern_Room5"
+  },
+  {
+    "area": "seafloor-cavern-3",
+    "columns": 36,
+    "rows": 38,
+    "walkable_cells": 432,
+    "blocked_cells": 936,
+    "spawn_points": [
+      [
+        28,
+        14
+      ],
+      [
+        9,
+        16
+      ],
+      [
+        23,
+        30
+      ],
+      [
+        9,
+        6
+      ]
+    ],
+    "source_size": [
+      1152,
+      1216
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "SeafloorCavern_Room4"
+  },
+  {
+    "area": "seafloor-cavern-4",
+    "columns": 36,
+    "rows": 24,
+    "walkable_cells": 200,
+    "blocked_cells": 664,
+    "spawn_points": [
+      [
+        10,
+        14
+      ]
+    ],
+    "source_size": [
+      1152,
+      768
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "SeafloorCavern_Room2"
+  },
+  {
+    "area": "seafloor-cavern-5",
+    "columns": 48,
+    "rows": 46,
+    "walkable_cells": 1384,
+    "blocked_cells": 824,
+    "spawn_points": [
+      [
+        18,
+        27
+      ]
+    ],
+    "source_size": [
+      1536,
+      1472
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "SeafloorCavern_Room6"
+  },
+  {
+    "area": "seafloor-cavern-6",
+    "columns": 46,
+    "rows": 50,
+    "walkable_cells": 1580,
+    "blocked_cells": 720,
+    "spawn_points": [
+      [
+        23,
+        27
+      ]
+    ],
+    "source_size": [
+      1472,
+      1600
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "SeafloorCavern_Room7"
+  },
+  {
+    "area": "seafloor-cavern-7",
+    "columns": 32,
+    "rows": 34,
+    "walkable_cells": 400,
+    "blocked_cells": 688,
+    "spawn_points": [
+      [
+        13,
+        23
+      ]
+    ],
+    "source_size": [
+      1024,
+      1088
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "SeafloorCavern_Room3"
+  },
+  {
+    "area": "seafloor-cavern-8",
+    "columns": 22,
+    "rows": 28,
+    "walkable_cells": 192,
+    "blocked_cells": 424,
+    "spawn_points": [
+      [
+        11,
+        16
+      ]
+    ],
+    "source_size": [
+      704,
+      896
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "SeafloorCavern_Room8"
+  },
+  {
+    "area": "seafloor-cavern-9",
+    "columns": 54,
+    "rows": 92,
+    "walkable_cells": 1192,
+    "blocked_cells": 3776,
+    "spawn_points": [
+      [
+        25,
+        54
+      ]
+    ],
+    "source_size": [
+      1728,
+      2944
+    ],
+    "render_tiles": 6,
+    "canonical_layout": "SeafloorCavern_Room9"
+  },
+  {
+    "area": "sealed-chamber-1f-1",
+    "columns": 42,
+    "rows": 46,
+    "walkable_cells": 656,
+    "blocked_cells": 1276,
+    "spawn_points": [
+      [
+        31,
+        35
+      ]
+    ],
+    "source_size": [
+      1344,
+      1472
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "SealedChamber_OuterRoom"
+  },
+  {
+    "area": "sealed-chamber-1f-2",
+    "columns": 42,
+    "rows": 46,
+    "walkable_cells": 732,
+    "blocked_cells": 1200,
+    "spawn_points": [
+      [
+        21,
+        24
+      ]
+    ],
+    "source_size": [
+      1344,
+      1472
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "SealedChamber_InnerRoom"
+  },
+  {
+    "area": "shoal-cave-1f-2-high-tide",
+    "columns": 92,
+    "rows": 76,
+    "walkable_cells": 3932,
+    "blocked_cells": 3060,
+    "spawn_points": [
+      [
+        44,
+        21
+      ]
+    ],
+    "source_size": [
+      2944,
+      2432
+    ],
+    "render_tiles": 9,
+    "canonical_layout": "ShoalCave_HighTideInnerRoom"
+  },
+  {
+    "area": "shoal-cave-1f-3",
+    "columns": 62,
+    "rows": 28,
+    "walkable_cells": 384,
+    "blocked_cells": 1352,
+    "spawn_points": [
+      [
+        24,
+        10
+      ],
+      [
+        37,
+        13
+      ]
+    ],
+    "source_size": [
+      1984,
+      896
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "ShoalCave_LowTideLowerRoom"
+  },
+  {
+    "area": "studio-cave-1",
+    "columns": 92,
+    "rows": 108,
+    "walkable_cells": 3214,
+    "blocked_cells": 6722,
+    "spawn_points": [
+      [
+        33,
+        92
+      ]
+    ],
+    "source_size": [
+      2944,
+      3456
+    ],
+    "render_tiles": 12,
+    "canonical_layout": "ArtisanCave_B1F"
+  },
+  {
+    "area": "studio-cave-2",
+    "columns": 30,
+    "rows": 38,
+    "walkable_cells": 164,
+    "blocked_cells": 976,
+    "spawn_points": [
+      [
+        10,
+        23
+      ]
+    ],
+    "source_size": [
+      960,
+      1216
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "ArtisanCave_1F"
+  },
+  {
+    "area": "worlds-edge-island-1",
+    "columns": 68,
+    "rows": 92,
+    "walkable_cells": 2952,
+    "blocked_cells": 3304,
+    "spawn_points": [
+      [
+        32,
+        65
+      ]
+    ],
+    "source_size": [
+      2176,
+      2944
+    ],
+    "render_tiles": 9,
+    "canonical_layout": "FarawayIsland_Entrance"
+  },
+  {
+    "area": "worlds-edge-island-2",
+    "columns": 58,
+    "rows": 58,
+    "walkable_cells": 1808,
+    "blocked_cells": 1556,
+    "spawn_points": [
+      [
+        34,
+        25
+      ]
+    ],
+    "source_size": [
+      1856,
+      1856
+    ],
+    "render_tiles": 0,
+    "canonical_layout": "FarawayIsland_Interior"
+  }
+]
