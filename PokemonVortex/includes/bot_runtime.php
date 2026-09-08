@@ -707,6 +707,78 @@ function pv_bot_region_travel_targets(array $area): array
     return array_values($targets);
 }
 
+/** Cache only regions with playable destinations, as in the player selector. */
+function pv_bot_region_admission_areas(): array
+{
+    static $regions = null;
+    if (is_array($regions)) return $regions;
+    $regions = [];
+    foreach (pv_world_region_keys() as $world) {
+        $areas = pv_world_ready_areas((string)$world);
+        if ($areas !== []) $regions[(string)$world] = array_values($areas);
+    }
+    return $regions;
+}
+
+/**
+ * Regional trainers may choose another world just as players can. Keep Vortex
+ * identities at home, and preserve populated regions by moving only one bot
+ * from above its fair regional share into a less populated registered region.
+ * No rows, identities, collections, or deterministic initial placements reset.
+ */
+function pv_bot_region_admission_choice(array $counts, string $currentWorld, int $seed): ?string
+{
+    $regions = pv_bot_region_admission_areas();
+    $currentWorld = pv_world_normalize_key($currentWorld);
+    if (!isset($regions[$currentWorld]) || count($regions) < 2) return null;
+    $total = 0;
+    foreach ($regions as $world => $areas) $total += max(0, (int)($counts[$world] ?? 0));
+    $currentCount = max(0, (int)($counts[$currentWorld] ?? 0));
+    if ($total <= 0 || $currentCount <= (int)ceil($total / count($regions))) return null;
+    $lowest = $currentCount; $targets = [];
+    foreach ($regions as $world => $areas) {
+        if ($world === $currentWorld) continue;
+        $count = max(0, (int)($counts[$world] ?? 0));
+        if ($count < $lowest) { $lowest = $count; $targets = [$world]; }
+        elseif ($count === $lowest) $targets[] = $world;
+    }
+    return $targets === [] ? null : (string)$targets[max(0, $seed) % count($targets)];
+}
+
+/** A rare scheduled world-selection action, not a migration or a map warp. */
+function pv_bot_admit_region(mysqli $db, array $bot): ?array
+{
+    $currentWorld = pv_world_normalize_key((string)($bot['world_key'] ?? ''));
+    if (!pv_world_is_region_world($currentWorld)) return null;
+    $counts = [];
+    try { $result = $db->query('SELECT world_key,COUNT(*) AS bot_count FROM bot_trainers WHERE enabled=1 GROUP BY world_key'); }
+    catch (mysqli_sql_exception $error) { return null; }
+    // A failed population read must never be treated as an empty new world.
+    if (!$result) return null;
+    while ($row = $result->fetch_assoc()) {
+        $world = pv_world_normalize_key((string)($row['world_key'] ?? ''));
+        $counts[$world] = max(0, (int)($row['bot_count'] ?? 0));
+    }
+    $result->free();
+    $seed = max(1, (int)($bot['bot_index'] ?? 1));
+    $world = pv_bot_region_admission_choice($counts, $currentWorld, $seed);
+    if ($world === null) return null;
+    $areas = pv_bot_region_admission_areas()[$world];
+    $offset = $seed % count($areas);
+    // Bound recovery work if operator collision overrides temporarily close
+    // entrances. A later scheduled action can retry without disrupting walking.
+    for ($attempt = 0; $attempt < min(8, count($areas)); $attempt++) {
+        $area = $areas[($offset + $attempt) % count($areas)];
+        $mapKey = (string)$area['key'];
+        try { [$x,$y] = pv_bot_spawn_for($db, $world, $mapKey, $seed); }
+        catch (RuntimeException $error) { continue; }
+        $blocks = pv_world_blocks($db, $world, $mapKey);
+        if (!pv_bot_region_position_open($area, $blocks, $x, $y)) continue;
+        return ['world'=>$world,'map'=>$mapKey,'x'=>$x,'y'=>$y,'moved'=>true];
+    }
+    return null;
+}
+
 /**
  * Occasional map-link travel gives the existing persistent population access to
  * newly added routes, rooms and dungeon floors without reseeding identities or
@@ -754,10 +826,11 @@ function pv_bot_move_burst(mysqli $db,array $bot,int $steps): array
 {
     $steps=max(1,min(8,$steps));$current=$bot;$movedSteps=0;$last=['world'=>(string)($bot['world_key']??'vortex'),'map'=>(string)($bot['map_key']??'1'),'x'=>(int)($bot['x']??1),'y'=>(int)($bot['y']??1),'moved'=>false];
     $travelled = false;
-    // Roll once per scheduled action, never once per footstep. No population
-    // migration or schema update is needed to start visiting expanded maps.
-    if (pv_world_is_region_world((string)$current['world_key']) && random_int(1,24) === 1) {
-        $travel = pv_bot_travel_region($db, $current);
+    // Roll once per scheduled action, never once per footstep. Population reads
+    // occur only on rare world-selection attempts; ordinary walking is unchanged.
+    if (pv_world_is_region_world((string)$current['world_key'])) {
+        $travel = random_int(1,96) === 1 ? pv_bot_admit_region($db, $current) : null;
+        if ($travel === null && random_int(1,24) === 1) $travel = pv_bot_travel_region($db, $current);
         if ($travel !== null) {
             $last = $travel; $travelled = true;
             $current['world_key'] = (string)$travel['world']; $current['map_key'] = (string)$travel['map'];

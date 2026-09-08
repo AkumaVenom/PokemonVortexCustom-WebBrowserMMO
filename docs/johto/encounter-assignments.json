@@ -1,0 +1,2349 @@
+{
+  "000_000_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "000_001_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "000_002_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "000_003_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "000_004_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "000_009_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "000_010_Navel_Island.png": {
+    "encounter_profile": "johto-adapted-navel-ice-mountain",
+    "habitat": "ice-mountain",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 cold mountain/cave adaptation for Navel Island artwork; unrelated to a canonical Gold/Silver location."
+  },
+  "001_004_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_005_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_006_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_007_Route_31.png": {
+    "encounter_profile": "johto-gs-route-31-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_31"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_31 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "001_008_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_009_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_010_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_011_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_012_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_013_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_014_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_015_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_016_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_017_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_018_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_019_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_020_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_021_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_022_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_023_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_024_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_025_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_032_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Small Faraway event cave is quiet."
+  },
+  "001_033_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Small Faraway event cave is quiet."
+  },
+  "001_034_Archaic_Enclosure.png": {
+    "encounter_profile": "johto-adapted-archaic-highlands",
+    "habitat": "rocky-highland",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 dry highland and ruin-approach pool for Archaic Enclosure outdoor terrain; no canonical Gold/Silver area equivalence is claimed."
+  },
+  "001_035_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_039_Mikan_Island.png": {
+    "encounter_profile": "johto-adapted-orange-tropical-woodland",
+    "habitat": "island-forest",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 tropical woodland/coastal adaptation for the uploaded Orange Islands. These are habitat choices, not a claimed original Gold/Silver table; no regional form or legendary is invented."
+  },
+  "001_040_Mikan_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_041_Navel_Island.png": {
+    "encounter_profile": "johto-adapted-navel-ice-mountain",
+    "habitat": "ice-mountain",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 cold mountain/cave adaptation for Navel Island artwork; unrelated to a canonical Gold/Silver location."
+  },
+  "001_042_Rocket_Secret_Base.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_043_Rocket_Secret_Base.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_044_Rocket_Secret_Base.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_045_Rocket_Secret_Base.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_046_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_069_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_070_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_088_Cianwood_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_089_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Small Faraway event cave is quiet."
+  },
+  "001_090_Mt._Silver.png": {
+    "encounter_profile": "johto-gs-mt-silver-chambers-land",
+    "habitat": "mountain-cave",
+    "policy": "original_gs_composite",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "SILVER_CAVE_ROOM_1"
+      },
+      {
+        "method": "grass",
+        "area": "SILVER_CAVE_ROOM_2"
+      }
+    ],
+    "note": "The uploaded Mt. Silver cavern combines rooms with water and rocky terrain. Original Room 1 and Room 2 land tables are folded equally, preserving species and slot weights; original levels above 24 become 21–24."
+  },
+  "001_091_Mt._Silver.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Mt. Silver summit trainer/event landmark: no random wild encounter is invented."
+  },
+  "001_092_New_Bark_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_093_New_Bark_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_096_Whirl_Islands.png": {
+    "encounter_profile": "johto-gs-whirl-islands-entrances-land",
+    "habitat": "sea-cave",
+    "policy": "locality_extension",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_NW"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_NE"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_SW"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_SE"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_CAVE"
+      }
+    ],
+    "note": "Whirl Islands shore/deep approach artwork uses the explicitly combined original entrance-floor pool; the exact source floor is unverified. No Lugia event is converted into random roaming."
+  },
+  "001_097_Archaic_Enclosure.png": {
+    "encounter_profile": "johto-adapted-archaic-caverns",
+    "habitat": "ancient-cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 cave/ancient ruin pool for the natural labyrinth caverns of Archaic Enclosure; sealed altar and facility rooms remain quiet."
+  },
+  "001_098_Whirl_Islands.png": {
+    "encounter_profile": "johto-gs-whirl-islands-entrances-land",
+    "habitat": "sea-cave",
+    "policy": "original_gs_composite",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_NW"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_NE"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_SW"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_SE"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_CAVE"
+      }
+    ],
+    "note": "Entrance artwork is identifiable as Whirl Islands but its exact original entrance is not verified; an explicitly combined original entrance-floor pool is used, rather than claiming a guessed exact floor."
+  },
+  "001_099_Whirl_Islands.png": {
+    "encounter_profile": "johto-gs-whirl-island-b1f-land",
+    "habitat": "sea-cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_B1F"
+      }
+    ],
+    "note": "Original Gold/Silver WHIRL_ISLAND_B1F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "001_100_Alola_Islands.png": {
+    "encounter_profile": "johto-adapted-alola-caves",
+    "habitat": "cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 dry island cave pool for the custom Alola-labelled caverns; no original Gold/Silver location correspondence is claimed."
+  },
+  "001_101_Alola_Islands.png": {
+    "encounter_profile": "johto-adapted-alola-caves",
+    "habitat": "cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 dry island cave pool for the custom Alola-labelled caverns; no original Gold/Silver location correspondence is claimed."
+  },
+  "001_103_Whirl_Islands.png": {
+    "encounter_profile": "johto-gs-whirl-island-b2f-land",
+    "habitat": "sea-cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_B2F"
+      }
+    ],
+    "note": "Original Gold/Silver WHIRL_ISLAND_B2F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "001_104_Whirl_Islands.png": {
+    "encounter_profile": "johto-gs-whirl-islands-entrances-land",
+    "habitat": "sea-cave",
+    "policy": "locality_extension",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_NW"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_NE"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_SW"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_SE"
+      },
+      {
+        "method": "grass",
+        "area": "WHIRL_ISLAND_CAVE"
+      }
+    ],
+    "note": "Whirl Islands shore/deep approach artwork uses the explicitly combined original entrance-floor pool; the exact source floor is unverified. No Lugia event is converted into random roaming."
+  },
+  "001_106_Alola_Islands.png": {
+    "encounter_profile": "johto-adapted-alola-caves",
+    "habitat": "cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 dry island cave pool for the custom Alola-labelled caverns; no original Gold/Silver location correspondence is claimed."
+  },
+  "001_107_Whirl_Islands.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Tiny isolated Whirl Islands hidden/event chamber: no random wild encounter is invented."
+  },
+  "001_108_Undersea_Lymph.png": {
+    "encounter_profile": "johto-adapted-undersea-reef",
+    "habitat": "undersea",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 underwater reef pool for Undersea Lymph, an extra area without Gold/Silver underwater gameplay or canonical encounter data."
+  },
+  "001_111_Trovita_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_112_Kumquat_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_113_Kumquat_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_114_Rocket_Secret_Base.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "001_115_Ice_Path.png": {
+    "encounter_profile": "johto-gs-ice-path-1f-land",
+    "habitat": "ice-cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ICE_PATH_1F"
+      }
+    ],
+    "note": "Original Gold/Silver ICE_PATH_1F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "001_116_Ice_Path.png": {
+    "encounter_profile": "johto-gs-ice-path-b1f-land",
+    "habitat": "ice-cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ICE_PATH_B1F"
+      }
+    ],
+    "note": "Original Gold/Silver ICE_PATH_B1F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "001_117_Ice_Path.png": {
+    "encounter_profile": "johto-gs-ice-path-b2f-mahogany-side-land",
+    "habitat": "ice-cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ICE_PATH_B2F_MAHOGANY_SIDE"
+      }
+    ],
+    "note": "Original Gold/Silver ICE_PATH_B2F_MAHOGANY_SIDE grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "001_118_Ice_Path.png": {
+    "encounter_profile": "johto-gs-ice-path-lower-chambers-land",
+    "habitat": "ice-cave",
+    "policy": "original_gs_composite",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ICE_PATH_B2F_BLACKTHORN_SIDE"
+      },
+      {
+        "method": "grass",
+        "area": "ICE_PATH_B3F"
+      }
+    ],
+    "note": "This artwork has multiple disconnected lower Ice Path chambers; original B2F Blackthorn-side and B3F tables are folded equally instead of asserting a single exact floor."
+  },
+  "002_001_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_002_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_003_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_004_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_005_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_006_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_007_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_008_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_009_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_010_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_011_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_012_Route_30.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_013_Ruins_Of_Alph.png": {
+    "encounter_profile": "johto-gs-ruins-of-alph-outside-land",
+    "habitat": "ruins-grass",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "RUINS_OF_ALPH_OUTSIDE"
+      }
+    ],
+    "note": "Original Gold/Silver RUINS_OF_ALPH_OUTSIDE grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_014_Union_Cave.png": {
+    "encounter_profile": "johto-gs-union-cave-1f-land",
+    "habitat": "cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "UNION_CAVE_1F"
+      }
+    ],
+    "note": "Original Gold/Silver UNION_CAVE_1F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_015_Union_Cave.png": {
+    "encounter_profile": "johto-gs-union-cave-b1f-land",
+    "habitat": "cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "UNION_CAVE_B1F"
+      }
+    ],
+    "note": "Original Gold/Silver UNION_CAVE_B1F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_016_Union_Cave.png": {
+    "encounter_profile": "johto-gs-union-cave-b2f-land",
+    "habitat": "cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "UNION_CAVE_B2F"
+      }
+    ],
+    "note": "Original Gold/Silver UNION_CAVE_B2F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_017_Slowpoke_Well.png": {
+    "encounter_profile": "johto-gs-slowpoke-well-chambers-land",
+    "habitat": "cave",
+    "policy": "original_gs_composite",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "SLOWPOKE_WELL_B1F"
+      },
+      {
+        "method": "grass",
+        "area": "SLOWPOKE_WELL_B2F"
+      }
+    ],
+    "note": "Artwork combines the two Slowpoke Well floors; the two original floor land tables are folded equally. The original gifted/event Slowpoke storyline is not a random encounter."
+  },
+  "002_018_Ilex_Forest.png": {
+    "encounter_profile": "johto-gs-ilex-forest-land",
+    "habitat": "forest",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ILEX_FOREST"
+      }
+    ],
+    "note": "Original Gold/Silver ILEX_FOREST grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_019_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_020_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_021_Route_35.png": {
+    "encounter_profile": "johto-gs-route-35-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_35"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_35 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_023_Route_36.png": {
+    "encounter_profile": "johto-gs-route-36-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_36"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_36 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_025_S.S._Aqua_Marine.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_026_Route_30.png": {
+    "encounter_profile": "johto-gs-route-30-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_30"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_30 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_027_National_Park.png": {
+    "encounter_profile": "johto-gs-national-park-land",
+    "habitat": "park",
+    "policy": "locality_extension",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "NATIONAL_PARK"
+      }
+    ],
+    "note": "The supplied park garden/woodland extension uses the same locality’s original Gold/Silver regular park pool. Bug-catching contest and headbutt encounters are not simulated."
+  },
+  "002_028_Archaic_Enclosure.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_029_Undersea_Lymph.png": {
+    "encounter_profile": "johto-adapted-undersea-reef",
+    "habitat": "undersea",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 underwater reef pool for Undersea Lymph, an extra area without Gold/Silver underwater gameplay or canonical encounter data."
+  },
+  "002_030_Archaic_Enclosure.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_031_Archaic_Enclosure.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_032_Archaic_Enclosure.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_033_Archaic_Enclosure.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_035_Archaic_Enclosure.png": {
+    "encounter_profile": "johto-adapted-archaic-caverns",
+    "habitat": "ancient-cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 cave/ancient ruin pool for the natural labyrinth caverns of Archaic Enclosure; sealed altar and facility rooms remain quiet."
+  },
+  "002_036_Ruins_Of_Alph.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_038_Faraway_Zone.png": {
+    "encounter_profile": "johto-adapted-faraway-cavern-chambers",
+    "habitat": "cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 rocky cave pool for the Faraway Zone canvas of ladder-linked cavern rooms separated by void. This extra map has no Gold/Silver source table."
+  },
+  "002_039_Ruins_Of_Alph.png": {
+    "encounter_profile": "johto-gs-ruins-of-alph-inner-chamber-land",
+    "habitat": "ruins",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "RUINS_OF_ALPH_INNER_CHAMBER"
+      }
+    ],
+    "note": "Original Gold/Silver RUINS_OF_ALPH_INNER_CHAMBER grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_040_Ruins_Of_Alph.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_041_Route_37.png": {
+    "encounter_profile": "johto-gs-route-37-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_37"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_37 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_043_Route_39.png": {
+    "encounter_profile": "johto-gs-route-39-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_39"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_39 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_044_Route_45.png": {
+    "encounter_profile": "johto-gs-route-45-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_45"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_45 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_045_Route_40.png": {
+    "encounter_profile": "johto-gs-route-40-water",
+    "habitat": "ocean",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "water",
+        "area": "ROUTE_40"
+      }
+    ],
+    "note": "Original Gold/Silver surfing table for this sea route; scanner uses the aquatic habitat across the entire sea-route area, including its shore. Original surf level bonuses are expanded into weighted fixed levels before the 24 cap."
+  },
+  "002_046_Route_41.png": {
+    "encounter_profile": "johto-gs-route-41-water",
+    "habitat": "ocean",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "water",
+        "area": "ROUTE_41"
+      }
+    ],
+    "note": "Original Gold/Silver surfing table for this sea route; scanner uses the aquatic habitat across the entire sea-route area, including its shore. Original surf level bonuses are expanded into weighted fixed levels before the 24 cap."
+  },
+  "002_047_Mt._Mortar.png": {
+    "encounter_profile": "johto-gs-mount-mortar-1f-outside-land",
+    "habitat": "cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "MOUNT_MORTAR_1F_OUTSIDE"
+      }
+    ],
+    "note": "Original Gold/Silver MOUNT_MORTAR_1F_OUTSIDE grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_048_Mt._Mortar.png": {
+    "encounter_profile": "johto-gs-mount-mortar-1f-inside-land",
+    "habitat": "cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "MOUNT_MORTAR_1F_INSIDE"
+      }
+    ],
+    "note": "Original Gold/Silver MOUNT_MORTAR_1F_INSIDE grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_049_Mt._Mortar.png": {
+    "encounter_profile": "johto-gs-mount-mortar-2f-inside-land",
+    "habitat": "cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "MOUNT_MORTAR_2F_INSIDE"
+      }
+    ],
+    "note": "Original Gold/Silver MOUNT_MORTAR_2F_INSIDE grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_050_Mt._Mortar.png": {
+    "encounter_profile": "johto-gs-mount-mortar-b1f-land",
+    "habitat": "cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "MOUNT_MORTAR_B1F"
+      }
+    ],
+    "note": "Original Gold/Silver MOUNT_MORTAR_B1F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_051_Lake_Of_Rage.png": {
+    "encounter_profile": "johto-gs-lake-of-rage-water",
+    "habitat": "lake",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "water",
+        "area": "LAKE_OF_RAGE"
+      }
+    ],
+    "note": "Original Gold/Silver Lake of Rage surf slots, including ordinary Gyarados at its original rarity. The scripted Red Gyarados event is not an added random legendary or shiny guarantee. The shoreline shares the whole-area aquatic pool."
+  },
+  "002_052_Lake_Of_Rage.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_053_Lake_Of_Rage.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_054_Lake_Of_Rage.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_055_Route_44.png": {
+    "encounter_profile": "johto-gs-route-44-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_44"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_44 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_061_Dragon_s_Den.png": {
+    "encounter_profile": "johto-gs-dragons-den-b1f-water",
+    "habitat": "lake-cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "water",
+        "area": "DRAGONS_DEN_B1F"
+      }
+    ],
+    "note": "The named Dragon’s Den chamber uses its original Gold/Silver water table (Magikarp and rare Dratini). This uploaded canvas also contains side rooms; the current scanner is area-wide, not tile- or room-specific."
+  },
+  "002_063_Ruins_Of_Alph.png": {
+    "encounter_profile": "johto-gs-ruins-of-alph-inner-chamber-land",
+    "habitat": "ruins",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "RUINS_OF_ALPH_INNER_CHAMBER"
+      }
+    ],
+    "note": "Original Gold/Silver RUINS_OF_ALPH_INNER_CHAMBER grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_064_Ruins_Of_Alph.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_065_Route_29.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_066_Dark_Cave.png": {
+    "encounter_profile": "johto-gs-dark-cave-violet-entrance-land",
+    "habitat": "cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "DARK_CAVE_VIOLET_ENTRANCE"
+      }
+    ],
+    "note": "Original Gold/Silver DARK_CAVE_VIOLET_ENTRANCE grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_067_Dark_Cave.png": {
+    "encounter_profile": "johto-gs-dark-cave-blackthorn-entrance-land",
+    "habitat": "cave",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "DARK_CAVE_BLACKTHORN_ENTRANCE"
+      }
+    ],
+    "note": "Original Gold/Silver DARK_CAVE_BLACKTHORN_ENTRANCE grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_069_Route_33.png": {
+    "encounter_profile": "johto-gs-route-33-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_33"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_33 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_071_Violet_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_072_Sprout_Tower.png": {
+    "encounter_profile": "johto-gs-sprout-tower-chambers-land",
+    "habitat": "tower",
+    "policy": "original_gs_composite",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "SPROUT_TOWER_2F"
+      },
+      {
+        "method": "grass",
+        "area": "SPROUT_TOWER_3F"
+      }
+    ],
+    "note": "Artwork combines the Sprout Tower rooms. Its two original upper-floor tables are identical; Rattata/Gastly remain the roaming species. The shared scanner applies the combined habitat to the canvas."
+  },
+  "002_073_Route_35.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_074_Route_46.png": {
+    "encounter_profile": "johto-gs-route-46-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_46"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_46 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_075_Ecruteak_City.png": {
+    "encounter_profile": "johto-gs-burned-tower-1f-land",
+    "habitat": "ruins",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "BURNED_TOWER_1F"
+      }
+    ],
+    "note": "Original Gold/Silver BURNED_TOWER_1F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_076_Ecruteak_City.png": {
+    "encounter_profile": "johto-gs-burned-tower-b1f-land",
+    "habitat": "ruins",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "BURNED_TOWER_B1F"
+      }
+    ],
+    "note": "Original Gold/Silver BURNED_TOWER_B1F grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "002_077_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_081_Lighthouse.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_082_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_083_Mahogany_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_084_Mahogany_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_085_Route_43.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "002_088_National_Park.png": {
+    "encounter_profile": "johto-gs-national-park-land",
+    "habitat": "park",
+    "policy": "locality_extension",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "NATIONAL_PARK"
+      }
+    ],
+    "note": "The supplied park garden/woodland extension uses the same locality’s original Gold/Silver regular park pool. Bug-catching contest and headbutt encounters are not simulated."
+  },
+  "003_000_New_Bark_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_013_Violet_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_014_Azalea_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_015_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_016_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_017_Cianwood_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_018_Olivine_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_045_National_Park.png": {
+    "encounter_profile": "johto-gs-national-park-land",
+    "habitat": "park",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "NATIONAL_PARK"
+      }
+    ],
+    "note": "Original Gold/Silver NATIONAL_PARK grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "003_046_Route_29.png": {
+    "encounter_profile": "johto-gs-route-29-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_29"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_29 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "003_047_Cherrygrove_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_048_Route_42.png": {
+    "encounter_profile": "johto-gs-route-42-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_42"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_42 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "003_049_Route_32.png": {
+    "encounter_profile": "johto-gs-route-32-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_32"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_32 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "003_050_Dim_Deep_Cave.png": {
+    "encounter_profile": "johto-adapted-dim-deep-caverns",
+    "habitat": "deep-cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 deep rocky cave pool for the custom Dim Deep Cave maps; Larvitar is rare ordinary cave wildlife, not a legendary."
+  },
+  "003_051_Route_34.png": {
+    "encounter_profile": "johto-gs-route-34-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_34"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_34 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "003_052_Alola_Islands.png": {
+    "encounter_profile": "johto-adapted-alola-island",
+    "habitat": "tropical-coast",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 tropical shore and island vegetation pool for the custom Alola-labelled map. This is a Johto-era species adaptation, not Sun/Moon data or Alolan forms."
+  },
+  "003_053_Mellsweet_Island.png": {
+    "encounter_profile": "johto-adapted-orange-tropical-woodland",
+    "habitat": "island-forest",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 tropical woodland/coastal adaptation for the uploaded Orange Islands. These are habitat choices, not a claimed original Gold/Silver table; no regional form or legendary is invented."
+  },
+  "003_054_Navel_Island.png": {
+    "encounter_profile": "johto-adapted-navel-ice-mountain",
+    "habitat": "ice-mountain",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 cold mountain/cave adaptation for Navel Island artwork; unrelated to a canonical Gold/Silver location."
+  },
+  "003_055_Mahogany_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_056_Blackthorn_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed settlement or facility artwork has no roaming land habitat; water-only original town encounters are not spread across streets by the whole-area scanner."
+  },
+  "003_057_Undersea_Lymph.png": {
+    "encounter_profile": "johto-adapted-undersea-reef",
+    "habitat": "undersea",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 underwater reef pool for Undersea Lymph, an extra area without Gold/Silver underwater gameplay or canonical encounter data."
+  },
+  "003_058_National_Park.png": {
+    "encounter_profile": "johto-gs-national-park-land",
+    "habitat": "park",
+    "policy": "locality_extension",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "NATIONAL_PARK"
+      }
+    ],
+    "note": "The supplied park garden/woodland extension uses the same locality’s original Gold/Silver regular park pool. Bug-catching contest and headbutt encounters are not simulated."
+  },
+  "003_060_Dim_Deep_Cave.png": {
+    "encounter_profile": "johto-adapted-volcanic-chasms",
+    "habitat": "volcanic-cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 volcanic/deep-earth cave pool inferred from the red rock and chasm artwork; no canonical Faraway Zone or Dim Deep Cave table exists."
+  },
+  "003_061_Kumquat_Island.png": {
+    "encounter_profile": "johto-adapted-orange-tropical-woodland",
+    "habitat": "island-forest",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 tropical woodland/coastal adaptation for the uploaded Orange Islands. These are habitat choices, not a claimed original Gold/Silver table; no regional form or legendary is invented."
+  },
+  "003_062_Route_38.png": {
+    "encounter_profile": "johto-gs-route-38-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_38"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_38 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "003_063_Trovita_Island.png": {
+    "encounter_profile": "johto-adapted-orange-tropical-woodland",
+    "habitat": "island-forest",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 tropical woodland/coastal adaptation for the uploaded Orange Islands. These are habitat choices, not a claimed original Gold/Silver table; no regional form or legendary is invented."
+  },
+  "003_064_Route_43.png": {
+    "encounter_profile": "johto-gs-route-43-land",
+    "habitat": "grassland",
+    "policy": "original_gs",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "ROUTE_43"
+      }
+    ],
+    "note": "Original Gold/Silver ROUTE_43 grass slots; both versions and all original time periods are folded equally into one area pool."
+  },
+  "003_065_Archaic_Enclosure.png": {
+    "encounter_profile": "johto-adapted-archaic-highlands",
+    "habitat": "rocky-highland",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 dry highland and ruin-approach pool for Archaic Enclosure outdoor terrain; no canonical Gold/Silver area equivalence is claimed."
+  },
+  "004_002_Dragon_s_Den.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Additional Dragon’s Den puzzle/event cavern has no verified Gold/Silver roaming land table; kept quiet."
+  },
+  "004_003_New_Bark_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "005_002_Violet_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "007_001_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "007_006_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "008_004_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "010_008_Faraway_Zone.png": {
+    "encounter_profile": "johto-adapted-faraway-wetlands",
+    "habitat": "wetland",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 wetland and island grass pool for the Faraway Zone outdoor maps; Mew and other event legends are deliberately absent."
+  },
+  "010_009_Faraway_Zone.png": {
+    "encounter_profile": "johto-adapted-faraway-dusk-islets",
+    "habitat": "dusk-islands",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 nocturnal/ghost habitat inferred from floating pink islands in a starry void; not a canonical encounter list or a source of random event legendaries."
+  },
+  "010_018_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "011_008_Faraway_Zone.png": {
+    "encounter_profile": "johto-adapted-faraway-wetlands",
+    "habitat": "wetland",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 wetland and island grass pool for the Faraway Zone outdoor maps; Mew and other event legends are deliberately absent."
+  },
+  "014_004_Blackthorn_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "016_000_Mahogany_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "016_001_Mahogany_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "018_001_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "021_000_Blackthorn_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "021_001_Blackthorn_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "022_000_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "022_001_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "023_000_Alola_Islands.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "028_000_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "029_000_Blackthorn_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "031_000_Ruins_Of_Alph.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Ruins of Alph puzzle, inscription and reward chambers: Unown remain in the separately identified inner chamber maps."
+  },
+  "031_001_Dim_Deep_Cave.png": {
+    "encounter_profile": "johto-adapted-dim-deep-caverns",
+    "habitat": "deep-cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 deep rocky cave pool for the custom Dim Deep Cave maps; Larvitar is rare ordinary cave wildlife, not a legendary."
+  },
+  "031_002_Blackthorn_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "031_003_Cianwood_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "031_004_Cianwood_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "031_005_Cianwood_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "031_006_Cianwood_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "032_000_Cherrygrove_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "032_001_Cherrygrove_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "032_002_New_Bark_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "032_003_Cianwood_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "032_004_Route_39.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "033_000_New_Bark_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "033_002_Violet_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "033_003_Violet_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "033_004_Cherrygrove_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "033_006_Ruins_Of_Alph.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_000_Route_30.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_001_Azalea_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_002_Azalea_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_003_Violet_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_007_Faraway_Zone.png": {
+    "encounter_profile": "johto-adapted-volcanic-chasms",
+    "habitat": "volcanic-cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 volcanic/deep-earth cave pool inferred from the red rock and chasm artwork; no canonical Faraway Zone or Dim Deep Cave table exists."
+  },
+  "034_008_Violet_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_009_Cherrygrove_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_010_Route_32.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_011_Route_32.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_012_Azalea_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_013_Azalea_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_014_Azalea_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_016_Azalea_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_017_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_018_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_020_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_021_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_022_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_023_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_024_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_025_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_026_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_027_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_028_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_029_Radio_Tower.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_031_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_032_National_Park.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_034_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_035_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_036_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_037_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_038_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_039_Route_39.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_040_Archaic_Enclosure.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_041_Olivine_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_042_Olivine_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_043_Olivine_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_044_Cianwood_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_045_Cianwood_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_046_Mahogany_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_047_Radio_Tower.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_051_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_052_Ecruteak_City.png": {
+    "encounter_profile": "johto-gs-tin-tower-chambers-land",
+    "habitat": "tower",
+    "policy": "original_gs_composite",
+    "source_tables": [
+      {
+        "method": "grass",
+        "area": "TIN_TOWER_2F"
+      },
+      {
+        "method": "grass",
+        "area": "TIN_TOWER_3F"
+      },
+      {
+        "method": "grass",
+        "area": "TIN_TOWER_4F"
+      },
+      {
+        "method": "grass",
+        "area": "TIN_TOWER_5F"
+      },
+      {
+        "method": "grass",
+        "area": "TIN_TOWER_6F"
+      },
+      {
+        "method": "grass",
+        "area": "TIN_TOWER_7F"
+      },
+      {
+        "method": "grass",
+        "area": "TIN_TOWER_8F"
+      },
+      {
+        "method": "grass",
+        "area": "TIN_TOWER_9F"
+      }
+    ],
+    "note": "Bell/Tin Tower artwork combines the upper-floor rooms. Their original Gold/Silver tables are folded equally. Ho-Oh is a scripted rooftop event and is never inserted into the random table."
+  },
+  "034_053_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Bell Tower rooftop Ho-Oh event landmark: no random wild encounter or random legendary is invented."
+  },
+  "034_054_Blackthorn_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_055_Blackthorn_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "034_057_Faraway_Zone.png": {
+    "encounter_profile": "johto-adapted-volcanic-chasms",
+    "habitat": "volcanic-cave",
+    "policy": "authored_adaptation",
+    "source_tables": [],
+    "note": "Authored Gen 1/2 volcanic/deep-earth cave pool inferred from the red rock and chasm artwork; no canonical Faraway Zone or Dim Deep Cave table exists."
+  },
+  "035_000_Route_34.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "035_001_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "035_002_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "035_004_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "035_005_Goldenrod_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "035_007_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "036_000_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "036_001_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "036_002_Olivine_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "036_003_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "036_004_Ecruteak_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "037_000_Olivine_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "037_001_Olivine_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "037_002_Olivine_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "037_004_Olivine_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "038_000_Mahogany_Town.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "039_000_Faraway_Zone.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "040_000_Cherrygrove_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "041_000_Lake_Of_Rage.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_003_Kumquat_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_004_Kumquat_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_005_Kumquat_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_006_Kumquat_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_007_Kumquat_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_008_Kumquat_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_009_Trovita_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_010_Trovita_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_011_Trovita_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_012_Trovita_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_013_Trovita_Island.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_014_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_015_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_016_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "042_017_Battle_Frontier.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  },
+  "043_004_Blackthorn_City.png": {
+    "encounter_profile": "",
+    "habitat": "quiet",
+    "policy": "no_random_wild",
+    "source_tables": [],
+    "note": "Reviewed furnished interior, transit room, facility, puzzle or event landmark has no roaming wild habitat."
+  }
+}

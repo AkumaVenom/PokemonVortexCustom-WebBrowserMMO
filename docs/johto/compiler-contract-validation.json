@@ -1,0 +1,9 @@
+{
+  "pending_data_is_never_an_intentional_exclusion": true,
+  "strict_build_rejects_missing_review_for_all_285_sources": true,
+  "strict_failure_writes_no_world_manifest": true,
+  "reviewed_placeholder_requires_empty_arrivals_and_transitions": true,
+  "reviewed_placeholder_requires_fully_blocked_mask": true,
+  "two_confirmed_placeholder_removals_leave_283_connected_maps": true,
+  "remaining_graph_reciprocal_edges": 304
+}

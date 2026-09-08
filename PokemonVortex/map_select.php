@@ -38,9 +38,11 @@ $regionData=[];
 foreach(pv_world_region_keys() as $regionKey){
     $areas=pv_world_ready_areas($regionKey);$manifest=pv_world_manifest($regionKey);
     $areaGroups=['Settlements'=>[],'Routes & Wild Areas'=>[],'Caves & Landmarks'=>[]];
+    if($regionKey==='johto')$areaGroups['Frontier & Expeditions']=[];
     foreach($areas as $key=>$area){
         $cat=(string)($area['category']??'Area');
-        if(in_array($cat,['City','Town'],true))$areaGroups['Settlements'][$key]=$area;
+        if($regionKey==='johto'&&!empty($area['is_extra']))$areaGroups['Frontier & Expeditions'][$key]=$area;
+        elseif(in_array($cat,['City','Town'],true))$areaGroups['Settlements'][$key]=$area;
         elseif(in_array($cat,['Route','Forest','Sea Route','Coast'],true))$areaGroups['Routes & Wild Areas'][$key]=$area;
         else $areaGroups['Caves & Landmarks'][$key]=$area;
     }
@@ -70,7 +72,7 @@ pv_page_start('World Maps','map_select.php',true);
     <div class="pv-world-switcher" aria-label="World selection">
         <?php foreach($worlds as $key=>$world):$active=$selectedWorld===$key;$prepared=($world['status']??'')==='prepared';?>
             <a class="pv-world-card<?=$active?' is-active':''?><?=$prepared?' is-prepared':''?>" href="<?=pv_h(pv_url('map_select.php?world='.$key))?>">
-                <span class="pv-world-code"><?=pv_h($key==='vortex'?'VOR':($key==='kanto'?'KAN':'HON'))?></span>
+                <span class="pv-world-code"><?=pv_h(['vortex'=>'VOR','kanto'=>'KAN','johto'=>'JOH','hoenn'=>'HON'][$key]??strtoupper(substr($key,0,3)))?></span>
                 <span class="pv-world-card-copy"><small><?=pv_h((string)$world['subtitle'])?></small><strong><?=pv_h((string)$world['label'])?></strong><em><?=pv_h((string)$world['description'])?></em></span>
                 <b><?=$prepared?'PREPARED':'ENTER'?></b>
             </a>
@@ -99,12 +101,10 @@ pv_page_start('World Maps','map_select.php',true);
         $data=$regionData[$selectedWorld]??['areas'=>[],'manifest'=>[],'groups'=>[],'counts'=>[]];
         $areas=$data['areas'];$manifest=$data['manifest'];$areaGroups=$data['groups'];$regionCounts=$data['counts'];
         $worldDef=$worlds[$selectedWorld];$label=(string)$worldDef['label'];$upper=strtoupper($label);
-        $isHoenn=$selectedWorld==='hoenn';
-        $sourceName=$isHoenn?'Pokémon Emerald':'FireRed/LeafGreen';
-        $heroTitle=$isHoenn?'Explore Hoenn':'Explore Kanto';
-        $heroBody=$isHoenn
-            ?'Travel through Hoenn cities, routes, caves and landmarks, with wild Pokémon suited to each location.'
-            :'Travel through Kanto cities, routes, caves and landmarks, with wild Pokémon suited to each location.';
+        $heroTitle='Explore '.$label;
+        $heroBody=$selectedWorld==='johto'
+            ?'Set out from New Bark Town, discover ancient towers and woodland trails, and meet the Pokémon of Johto. Continue your journey with island expeditions and Frontier destinations.'
+            :'Travel through '.$label.' cities, routes, caves and landmarks, with wild Pokémon suited to each location.';
     ?>
         <div class="pv-world-section-head"><div><span>ACTIVE REGION</span><h2><?=pv_h($label)?></h2><p><?=pv_h((string)$worldDef['description'])?></p></div><strong><?=count($areas)?> AREAS ONLINE</strong></div>
         <div class="pv-region-search" hidden>
@@ -112,10 +112,17 @@ pv_page_start('World Maps','map_select.php',true);
             <input id="pv-region-search" type="search" placeholder="Search routes, islands, caves or floors…" autocomplete="off" aria-controls="pv-region-area-results">
             <span id="pv-region-search-count" role="status" aria-live="polite"><?=count($areas)?> areas</span>
         </div>
-        <?php if(!empty($manifest['master_asset'])):?><section class="pv-region-overworld-source"><img src="<?=pv_h(pv_static((string)$manifest['master_asset']))?>" alt="<?=pv_h($label)?> overworld"><div><span class="pv-eyebrow"><?=pv_h($upper)?> REGION OVERVIEW</span><h2><?=pv_h($heroTitle)?></h2><p><?=pv_h($heroBody)?></p><div class="pv-region-readiness"><span><i></i> Full-size regional maps</span><span><i></i> Quick area previews</span><span><i></i> Saved trainer positions</span><span><i></i> <?=pv_h($label)?> wild habitats</span></div></div></section><?php endif;?>
+        <?php if(!empty($manifest['master_asset'])):?><section class="pv-region-overworld-source"><img src="<?=pv_h(pv_static((string)$manifest['master_asset']).'?v='.pv_asset_version())?>" alt="<?=pv_h($label)?> overworld"><div><span class="pv-eyebrow"><?=pv_h($upper)?> REGION OVERVIEW</span><h2><?=pv_h($heroTitle)?></h2><p><?=pv_h($heroBody)?></p><div class="pv-region-readiness"><span><i></i> Full-size regional maps</span><span><i></i> Quick area previews</span><span><i></i> Saved trainer positions</span><span><i></i> <?=pv_h($label)?> wild habitats</span></div><?php if($selectedWorld==='johto'):?><div class="pv-actions"><a class="pv-button" href="<?=pv_h(pv_world_area_url('johto','new-bark-town'))?>">Enter New Bark Town</a></div><?php endif;?></div></section><?php endif;?>
         <div id="pv-region-area-results">
-        <?php foreach($areaGroups as $groupName=>$groupAreas):if(!$groupAreas)continue;$code=$groupName==='Settlements'?'CTY':($groupName==='Caves & Landmarks'?'LMK':'RTE');?>
-            <section class="pv-map-group"><div class="pv-map-group-head"><div class="pv-map-group-code"><?=pv_h($code)?></div><div><span><?=pv_h($upper)?> AREAS</span><h2><?=pv_h($groupName)?></h2><p><?=$groupName==='Settlements'?'Cities and towns across '.$label.'.':($groupName==='Caves & Landmarks'?'Caves, mountains, dungeons and major landmarks to explore.':'Routes, forests and sea areas with their own wild Pokémon.')?></p></div></div><div class="pv-map-card-grid">
+        <?php foreach($areaGroups as $groupName=>$groupAreas):if(!$groupAreas)continue;
+            [$code,$groupDescription]=match($groupName){
+                'Settlements'=>['CTY','Cities and towns across '.$label.'.'],
+                'Caves & Landmarks'=>['LMK','Caves, mountains, dungeons and major landmarks to explore.'],
+                'Frontier & Expeditions'=>['EXP','Island journeys, Frontier destinations and further places to discover.'],
+                default=>['RTE','Routes, forests and sea areas with their own wild Pokémon.'],
+            };
+        ?>
+            <section class="pv-map-group"><div class="pv-map-group-head"><div class="pv-map-group-code"><?=pv_h($code)?></div><div><span><?=pv_h($upper)?> AREAS</span><h2><?=pv_h($groupName)?></h2><p><?=pv_h($groupDescription)?></p></div></div><div class="pv-map-card-grid">
             <?php foreach($groupAreas as $key=>$area):$preview=(string)($area['preview_asset']??'');if($preview==='')$preview=(string)($area['logical_asset']??'');if($preview==='')$preview=(string)$area['asset'];?>
                 <a class="pv-map-card" href="<?=pv_h(pv_world_area_url($selectedWorld,$key))?>"><span class="pv-map-card-image"><img src="<?=pv_h(pv_static($preview).'?v='.pv_asset_version())?>" alt="<?=pv_h((string)$area['name'])?> preview" loading="lazy"></span><span class="pv-map-card-body"><small><?=pv_h($upper)?> // <?=pv_h(strtoupper($key))?></small><strong><?=pv_h((string)$area['name'])?></strong><em><?=(int)($regionCounts[$key]??0)?> trainer<?=((int)($regionCounts[$key]??0)===1)?'':'s'?> active<?=trim((string)($area['encounter_profile']??''))!==''?' · wild habitat':''?></em></span><b>ENTER ›</b></a>
             <?php endforeach;?></div></section>

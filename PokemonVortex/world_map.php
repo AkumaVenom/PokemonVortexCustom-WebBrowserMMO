@@ -14,7 +14,6 @@ if(!pv_world_is_region_world($world)||$area===null||!is_array($worldDef)){
 }
 $worldLabel=(string)($worldDef['label']??ucfirst($world));
 $worldSubtitle=(string)($worldDef['subtitle']??($worldLabel.' World'));
-$sourceLabel=$world==='hoenn'?'Pokémon Emerald':'FireRed/LeafGreen';
 $renderTiles=pv_world_render_tiles($area);
 $renderMode=$renderTiles!==[]?'tiled':'single';
 if(pv_world_needs_render_tiles($area)&&$renderTiles===[]){

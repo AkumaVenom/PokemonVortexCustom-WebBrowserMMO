@@ -6,7 +6,7 @@ require_once __DIR__ . '/wild_level_balance.php';
  * Multi-world exploration registry.
  *
  * Vortex keeps its recovered numeric 1-25 runtime in map.php. Region worlds
- * (Kanto, Hoenn, and future additions) use stable world/area namespaces so
+ * (Kanto, Johto, Hoenn, and future additions) use stable world/area namespaces so
  * their maps, saved positions, collision and multiplayer presence never
  * collide with the original Vortex network.
  */
@@ -21,7 +21,7 @@ function pv_world_area_key(string $area): string {
 }
 
 function pv_world_region_keys(): array {
-    return ['kanto','hoenn'];
+    return ['kanto','johto','hoenn'];
 }
 
 function pv_world_is_region_world(string $world): bool {
@@ -42,6 +42,7 @@ function pv_world_manifest(string $world): array {
 }
 
 function pv_world_kanto_manifest(): array { return pv_world_manifest('kanto'); }
+function pv_world_johto_manifest(): array { return pv_world_manifest('johto'); }
 function pv_world_hoenn_manifest(): array { return pv_world_manifest('hoenn'); }
 
 function pv_world_catalog(): array {
@@ -157,6 +158,7 @@ function pv_world_area(string $world, string $area): ?array {
 
     return $cache[$cacheKey] = [
         'world'=>$world,'key'=>$area,'name'=>$name,'category'=>$category,
+        'is_extra'=>!empty($raw['is_extra']),
         'asset'=>$asset,'asset_abs'=>$assetAbs,
         'logical_asset'=>$cleanAsset($raw['logical_asset']??''),
         'preview_asset'=>$cleanAsset($raw['preview_asset']??''),

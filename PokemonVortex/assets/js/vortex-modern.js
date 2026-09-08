@@ -324,7 +324,7 @@
   if (chip) chip.textContent = trainer;
 
   const strip = make('div', 'pv-command-strip pv-combat-command-strip', `
-    <span class="pv-command-state">WORLD SELECT</span><a href="map_select.php?world=vortex">Vortex World</a><a href="map_select.php?world=kanto">Kanto</a><a href="map_select.php?world=hoenn">Hoenn</a>`);
+    <span class="pv-command-state">WORLD SELECT</span><a href="map_select.php?world=vortex">Vortex World</a><a href="map_select.php?world=kanto">Kanto</a><a href="map_select.php?world=johto">Johto</a><a href="map_select.php?world=hoenn">Hoenn</a>`);
   strip.setAttribute('aria-label', 'Explore regions');
 
   const side = make('aside', 'pv-side-menu pv-combat-side-menu');

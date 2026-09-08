@@ -1,3 +1,13 @@
+## v28.0.0 — Johto & Island Expeditions
+
+- Added Johto to Explore, shared region navigation and the home region cards, using the supplied overview and matching existing presentation.
+- Installed all 285 nonblank supplied images at exact native dimensions, with 283 usable maps enabled. Two repeated-fragment placeholders remain disabled with no invented floors. Preserved their PNG bytes and all pre-existing regional artwork; generated small previews and exact large-map rendering tiles.
+- Added reviewed terrain collision and safe entry data, using shared server-authoritative walking and saved-position recovery. Connected Areas expose cities, routes, interiors, caves and extra expedition destinations.
+- Added Gold/Silver-based local encounter profiles with documented custom-habitat adaptations. All six Vortex varieties and the wild level-24 cap are retained; owned Pokémon can continue leveling above 24.
+- Enabled gradual AI region admission during normal activity without reseeding accounts or resetting collections/ranked records.
+- Extended current runtime, scale, arrival, rendering and capture gates to all registered regions; added Johto encounter and AI admission checks. Optional MySQL persistence acceptance now includes Johto.
+- Asset version is 28.0.0. Database schema remains 28 and existing configuration credentials are retained.
+
 ## v27.0.1 — Matching Map Scale & Safe Entrances
 
 - Installed the user's corrected half-size artwork for all 120 expansion maps, with regenerated previews and lossless render tiles. Preserved the other 110 regional images.

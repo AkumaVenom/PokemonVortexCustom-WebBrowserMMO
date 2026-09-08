@@ -1,0 +1,4934 @@
+{
+  "schema_version": 1,
+  "contract": "Reciprocal Connected Areas menu. Geographic links are locality-level travel; all custom, remote, and missing-approach travel is documented as an expedition transfer. No pixel-level door, edge, or stair warp is guessed.",
+  "area_count": 283,
+  "connected_components": 1,
+  "reciprocal": true,
+  "inventory_area_count": 285,
+  "expected_playable_count": 283,
+  "reviewed_unplayable_count": 2,
+  "pending_review_count": 0,
+  "authored_inventory_edges": [
+    {
+      "areas": [
+        "alola-islands",
+        "alola-islands-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "alola-islands",
+        "alola-islands-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "alola-islands",
+        "alola-islands-area-03"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "alola-islands",
+        "alola-islands-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "alola-islands",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island collection."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-08"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "ruins-of-alph"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Archaeological expedition from Johto’s ruins to the extra ruins collection."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "ilex-forest"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "route-33"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "slowpoke-well"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-10"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-14"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-15"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-16"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-17"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-18"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-19"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-20"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-21"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-22"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-23"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-24"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-25"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "route-40"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Frontier excursion from the western coast; supplied facility content is grouped as an extra."
+    },
+    {
+      "areas": [
+        "battle-frontier-area-22",
+        "battle-frontier-area-23"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "battle-frontier-area-23",
+        "battle-frontier-area-24"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "battle-frontier-area-24",
+        "battle-frontier-area-25"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "dragons-den"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "ice-path"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "route-45"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "blackthorn-city-area-06",
+        "blackthorn-city-area-07"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "blackthorn-city-area-07",
+        "blackthorn-city-area-08"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "route-29"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "route-30"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "route-41"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "dark-cave",
+        "dark-cave-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "dark-cave",
+        "route-31"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "dark-cave",
+        "route-45"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "dark-cave",
+        "route-46"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "dim-deep-cave",
+        "dim-deep-cave-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "dim-deep-cave",
+        "mt-silver"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Cave expedition from the mountain hub to the supplied extra cave collection."
+    },
+    {
+      "areas": [
+        "dim-deep-cave-area-01",
+        "dim-deep-cave-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "dragons-den",
+        "dragons-den-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-10"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-14"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-15"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "route-37"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "route-38"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "route-42"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ecruteak-city-area-01",
+        "ecruteak-city-area-02"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "ecruteak-city-area-07",
+        "ecruteak-city-area-08"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "ecruteak-city-area-08",
+        "ecruteak-city-area-09"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "ecruteak-city-area-09",
+        "ecruteak-city-area-10"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-03"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-07"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-08"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-09"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-10"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-14"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-15"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-16"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra coastal collection."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-10"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-14"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-15"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-16"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-17"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-18"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-19"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-20"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "radio-tower"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "route-34"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "route-35"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-07",
+        "goldenrod-city-area-08"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-08",
+        "goldenrod-city-area-09"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-09",
+        "goldenrod-city-area-10"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-10",
+        "goldenrod-city-area-11"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-11",
+        "goldenrod-city-area-12"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "ice-path",
+        "ice-path-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "ice-path",
+        "route-44"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ice-path-area-01",
+        "ice-path-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "ice-path-area-02",
+        "ice-path-area-03"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "ilex-forest",
+        "route-34"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "lake-of-rage-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "lake-of-rage-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "lake-of-rage-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "lake-of-rage-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "route-43"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "lake-of-rage-area-01",
+        "lake-of-rage-area-02"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "lake-of-rage-area-02",
+        "lake-of-rage-area-03"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "lighthouse",
+        "olivine-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "rocket-secret-base"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "route-42"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "route-43"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "route-44"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mellsweet-island",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "mikan-island",
+        "mikan-island-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mikan-island",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "mikan-island",
+        "undersea-lymph"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Reef expedition from the extra island hub."
+    },
+    {
+      "areas": [
+        "mt-mortar",
+        "mt-mortar-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "mt-mortar",
+        "route-42"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mt-mortar-area-01",
+        "mt-mortar-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "mt-mortar-area-02",
+        "mt-mortar-area-03"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "mt-silver",
+        "mt-silver-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "mt-silver",
+        "new-bark-town"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Regional mountain journey via the eastern approach; intervening Kanto approach routes are not included in the supplied collection."
+    },
+    {
+      "areas": [
+        "national-park",
+        "national-park-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "national-park",
+        "national-park-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "national-park",
+        "national-park-area-03"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "national-park",
+        "national-park-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "national-park",
+        "route-35"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "national-park",
+        "route-36"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "navel-island",
+        "navel-island-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "navel-island",
+        "navel-island-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "navel-island",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "route-29"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "route-39"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "route-40"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Harbor travel to the supplied ship interiors."
+    },
+    {
+      "areas": [
+        "radio-tower",
+        "radio-tower-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "rocket-secret-base",
+        "rocket-secret-base-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "rocket-secret-base",
+        "rocket-secret-base-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "rocket-secret-base",
+        "rocket-secret-base-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "rocket-secret-base",
+        "rocket-secret-base-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-29",
+        "route-29-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-29",
+        "route-46"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-30",
+        "route-30-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-30",
+        "route-30-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-30",
+        "route-31"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-31",
+        "violet-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-32",
+        "route-32-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-32",
+        "route-32-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-32",
+        "ruins-of-alph"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-32",
+        "union-cave"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-32",
+        "violet-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-33",
+        "union-cave"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-34",
+        "route-34-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-35",
+        "route-35-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-35",
+        "route-36"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-36",
+        "route-37"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-36",
+        "ruins-of-alph"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-36",
+        "violet-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-38",
+        "route-39"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-39",
+        "route-39-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-39",
+        "route-39-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-40",
+        "route-41"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-41",
+        "whirl-islands"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-43",
+        "route-43-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-45",
+        "route-46"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-10"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-14"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-15"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-16"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-17"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-18"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-19"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-20"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-21"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "trovita-island"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "sprout-tower",
+        "violet-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "undersea-lymph",
+        "undersea-lymph-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "undersea-lymph",
+        "undersea-lymph-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "union-cave",
+        "union-cave-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "union-cave-area-01",
+        "union-cave-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "whirl-islands",
+        "whirl-islands-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "whirl-islands-area-01",
+        "whirl-islands-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "whirl-islands-area-02",
+        "whirl-islands-area-03"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "whirl-islands-area-03",
+        "whirl-islands-area-04"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "whirl-islands-area-04",
+        "whirl-islands-area-05"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    }
+  ],
+  "edges": [
+    {
+      "areas": [
+        "alola-islands",
+        "alola-islands-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "alola-islands",
+        "alola-islands-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "alola-islands",
+        "alola-islands-area-03"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "alola-islands",
+        "alola-islands-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "alola-islands",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island collection."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-08"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "archaic-enclosure-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "archaic-enclosure",
+        "ruins-of-alph"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Archaeological expedition from Johto’s ruins to the extra ruins collection."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "azalea-town-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "ilex-forest"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "route-33"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "azalea-town",
+        "slowpoke-well"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-10"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-14"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-15"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-16"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-17"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-18"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-19"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-20"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-21"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-22"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-23"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-24"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "battle-frontier-area-25"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "battle-frontier",
+        "route-40"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Frontier excursion from the western coast; supplied facility content is grouped as an extra."
+    },
+    {
+      "areas": [
+        "battle-frontier-area-22",
+        "battle-frontier-area-23"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "battle-frontier-area-23",
+        "battle-frontier-area-24"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "battle-frontier-area-24",
+        "battle-frontier-area-25"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "blackthorn-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "dragons-den"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "ice-path"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "blackthorn-city",
+        "route-45"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "blackthorn-city-area-06",
+        "blackthorn-city-area-07"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "blackthorn-city-area-07",
+        "blackthorn-city-area-08"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "cherrygrove-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "route-29"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "cherrygrove-city",
+        "route-30"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "cianwood-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "cianwood-city",
+        "route-41"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "dark-cave",
+        "dark-cave-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "dark-cave",
+        "route-31"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "dark-cave",
+        "route-45"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "dark-cave",
+        "route-46"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "dim-deep-cave",
+        "dim-deep-cave-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "dim-deep-cave",
+        "mt-silver"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Cave expedition from the mountain hub to the supplied extra cave collection."
+    },
+    {
+      "areas": [
+        "dim-deep-cave-area-01",
+        "dim-deep-cave-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "dragons-den",
+        "dragons-den-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-10"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-14"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "ecruteak-city-area-15"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "route-37"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "route-38"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ecruteak-city",
+        "route-42"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ecruteak-city-area-01",
+        "ecruteak-city-area-02"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "ecruteak-city-area-07",
+        "ecruteak-city-area-08"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "ecruteak-city-area-08",
+        "ecruteak-city-area-09"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "ecruteak-city-area-09",
+        "ecruteak-city-area-10"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-03"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-07"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-08"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-09"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-10"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-14"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-15"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "faraway-zone-area-16"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "faraway-zone",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra coastal collection."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-10"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-14"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-15"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-16"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-17"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-18"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-19"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "goldenrod-city-area-20"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "radio-tower"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "route-34"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "goldenrod-city",
+        "route-35"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-07",
+        "goldenrod-city-area-08"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-08",
+        "goldenrod-city-area-09"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-09",
+        "goldenrod-city-area-10"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-10",
+        "goldenrod-city-area-11"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "goldenrod-city-area-11",
+        "goldenrod-city-area-12"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "ice-path",
+        "ice-path-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "ice-path",
+        "route-44"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ice-path-area-01",
+        "ice-path-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "ice-path-area-02",
+        "ice-path-area-03"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "ilex-forest",
+        "route-34"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "kumquat-island-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "kumquat-island",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "lake-of-rage-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "lake-of-rage-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "lake-of-rage-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "lake-of-rage-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "lake-of-rage",
+        "route-43"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "lake-of-rage-area-01",
+        "lake-of-rage-area-02"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "lake-of-rage-area-02",
+        "lake-of-rage-area-03"
+      ],
+      "kind": "related-sections",
+      "note": "Related visually identified building chambers; section access uses independently reviewed arrivals."
+    },
+    {
+      "areas": [
+        "lighthouse",
+        "olivine-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "mahogany-town-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "rocket-secret-base"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "route-42"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "route-43"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mahogany-town",
+        "route-44"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mellsweet-island",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "mikan-island",
+        "mikan-island-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "mikan-island",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "mikan-island",
+        "undersea-lymph"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Reef expedition from the extra island hub."
+    },
+    {
+      "areas": [
+        "mt-mortar",
+        "mt-mortar-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "mt-mortar",
+        "route-42"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "mt-mortar-area-01",
+        "mt-mortar-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "mt-mortar-area-02",
+        "mt-mortar-area-03"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "mt-silver",
+        "mt-silver-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "mt-silver",
+        "new-bark-town"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Regional mountain journey via the eastern approach; intervening Kanto approach routes are not included in the supplied collection."
+    },
+    {
+      "areas": [
+        "national-park",
+        "national-park-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "national-park",
+        "national-park-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "national-park",
+        "national-park-area-03"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "national-park",
+        "national-park-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "national-park",
+        "route-35"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "national-park",
+        "route-36"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "navel-island",
+        "navel-island-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "navel-island",
+        "navel-island-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "navel-island",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "new-bark-town-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "new-bark-town",
+        "route-29"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "olivine-city-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "route-39"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "route-40"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "olivine-city",
+        "s-s-aqua-marine"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Harbor travel to the supplied ship interiors."
+    },
+    {
+      "areas": [
+        "radio-tower",
+        "radio-tower-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "rocket-secret-base",
+        "rocket-secret-base-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "rocket-secret-base",
+        "rocket-secret-base-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "rocket-secret-base",
+        "rocket-secret-base-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "rocket-secret-base",
+        "rocket-secret-base-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-29",
+        "route-29-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-29",
+        "route-46"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-30",
+        "route-30-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-30",
+        "route-30-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-30",
+        "route-31"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-31",
+        "violet-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-32",
+        "route-32-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-32",
+        "route-32-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-32",
+        "ruins-of-alph"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-32",
+        "union-cave"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-32",
+        "violet-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-33",
+        "union-cave"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-34",
+        "route-34-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-35",
+        "route-35-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-35",
+        "route-36"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-36",
+        "route-37"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-36",
+        "ruins-of-alph"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-36",
+        "violet-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-38",
+        "route-39"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-39",
+        "route-39-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-39",
+        "route-39-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-40",
+        "route-41"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-41",
+        "whirl-islands"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "route-43",
+        "route-43-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "route-45",
+        "route-46"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "ruins-of-alph",
+        "ruins-of-alph-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-07"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-08"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-09"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-10"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-11"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-12"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-13"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-14"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-15"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-16"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-17"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-18"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-19"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-20"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "s-s-aqua-marine-area-21"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "s-s-aqua-marine",
+        "trovita-island"
+      ],
+      "kind": "expedition-transfer",
+      "note": "Ship expedition to the supplied extra island."
+    },
+    {
+      "areas": [
+        "sprout-tower",
+        "violet-city"
+      ],
+      "kind": "regional-geography",
+      "note": "Connected Areas travel between Johto neighboring localities; does not assert a particular image-edge or door warp."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "trovita-island",
+        "trovita-island-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "undersea-lymph",
+        "undersea-lymph-area-01"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "undersea-lymph",
+        "undersea-lymph-area-02"
+      ],
+      "kind": "locality-section",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "union-cave",
+        "union-cave-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "union-cave-area-01",
+        "union-cave-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-01"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-02"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-03"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-04"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-05"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "violet-city",
+        "violet-city-area-06"
+      ],
+      "kind": "locality-interior",
+      "note": "Companion map shares the source locality name and is reachable through that locality’s Connected Areas menu."
+    },
+    {
+      "areas": [
+        "whirl-islands",
+        "whirl-islands-area-01"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "whirl-islands-area-01",
+        "whirl-islands-area-02"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "whirl-islands-area-02",
+        "whirl-islands-area-03"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "whirl-islands-area-03",
+        "whirl-islands-area-04"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    },
+    {
+      "areas": [
+        "whirl-islands-area-04",
+        "whirl-islands-area-05"
+      ],
+      "kind": "dungeon-section",
+      "note": "Reviewed locality grouping; safe arrivals provide section access. No exact stairs or source floor numbering is inferred."
+    }
+  ],
+  "unplayable_sources": [
+    {
+      "source": "014_004_Blackthorn_City.png",
+      "key": "blackthorn-city-area-01",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Malformed source consists of99repetitions of the same furnishing/wall fragment with no floor, doorway or usable movement area. Artwork retained for traceability.",
+      "evidence": {
+        "method": "Exact native rendered metatile signature matched to a visually reviewed collision atlas; no ROM/native collision metadata available.",
+        "native_pixels_sha256": "6287df129df3136b1d2ef2e6fe2ec6c2f3dd213c7a9ffb2e51623231e4fbade0",
+        "source_sha256": "ff7bce056bb72fd88b15aa5df8a6186a1cf765d6204a1b5ff60977c70d4bb895",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 99
+        },
+        "water_policy": "incidental water blocked",
+        "arrival_reviewed": true,
+        "review_note": "Empty/no-floor placeholder reviewed; keep unplayable."
+      }
+    },
+    {
+      "source": "008_004_Goldenrod_City.png",
+      "key": "goldenrod-city-area-03",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Malformed source consists of99repetitions of the same furnishing/wall fragment with no floor, doorway or usable movement area. Artwork retained for traceability.",
+      "evidence": {
+        "method": "Exact native rendered metatile signature matched to a visually reviewed collision atlas; no ROM/native collision metadata available.",
+        "native_pixels_sha256": "6287df129df3136b1d2ef2e6fe2ec6c2f3dd213c7a9ffb2e51623231e4fbade0",
+        "source_sha256": "ff7bce056bb72fd88b15aa5df8a6186a1cf765d6204a1b5ff60977c70d4bb895",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 99
+        },
+        "water_policy": "incidental water blocked",
+        "arrival_reviewed": true,
+        "review_note": "Empty/no-floor placeholder reviewed; keep unplayable."
+      }
+    }
+  ],
+  "active_contract": "Only reviewed playable areas participate in active connections. Reviewed no-floor placeholders retain original source artwork but have no arrivals, encounters, transitions, or active navigation edges. Pending review is never an intentional exclusion."
+}

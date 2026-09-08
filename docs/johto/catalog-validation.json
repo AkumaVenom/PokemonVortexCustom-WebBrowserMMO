@@ -1,0 +1,30 @@
+{
+  "native_files_verified": 285,
+  "source_count": 286,
+  "byte_identical_native": true,
+  "source_overview_byte_identical": true,
+  "render_tiles_pixel_verified": 309,
+  "all_previews_within_320": true,
+  "source_map_dimensions_native_grid": true,
+  "navigation_edges": 304,
+  "navigation_components": 1,
+  "stable_keys_unique": true,
+  "player_titles_omit_source_codes": true,
+  "source_inventory_count": 285,
+  "expected_playable_count": 283,
+  "playable_maps_verified": 283,
+  "intentionally_unplayable_count": 2,
+  "pending_review_count": 0,
+  "readiness_review_complete": true,
+  "unplayable_sources": [
+    "014_004_Blackthorn_City.png",
+    "008_004_Goldenrod_City.png"
+  ],
+  "unready_has_no_active_connections": true,
+  "final_native_byte_check": true,
+  "final_render_crop_pixel_check": true,
+  "final_verified_native_count": 285,
+  "final_verified_render_tile_count": 309,
+  "safe_arrival_count": 902,
+  "national_park_grass_samples_walkable": true
+}

@@ -1,0 +1,1759 @@
+{
+  "schema_version": 1,
+  "source_inventory_count": 285,
+  "expected_playable_count": 283,
+  "reviewed_playable_count": 283,
+  "reviewed_unplayable_count": 2,
+  "pending_review_count": 0,
+  "review_complete": true,
+  "unplayable_sources": [
+    {
+      "source": "014_004_Blackthorn_City.png",
+      "key": "blackthorn-city-area-01",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Malformed source consists of99repetitions of the same furnishing/wall fragment with no floor, doorway or usable movement area. Artwork retained for traceability.",
+      "evidence": {
+        "method": "Exact native rendered metatile signature matched to a visually reviewed collision atlas; no ROM/native collision metadata available.",
+        "native_pixels_sha256": "6287df129df3136b1d2ef2e6fe2ec6c2f3dd213c7a9ffb2e51623231e4fbade0",
+        "source_sha256": "ff7bce056bb72fd88b15aa5df8a6186a1cf765d6204a1b5ff60977c70d4bb895",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 99
+        },
+        "water_policy": "incidental water blocked",
+        "arrival_reviewed": true,
+        "review_note": "Empty/no-floor placeholder reviewed; keep unplayable."
+      }
+    },
+    {
+      "source": "008_004_Goldenrod_City.png",
+      "key": "goldenrod-city-area-03",
+      "disposition": "source-placeholder-no-walkable-floor",
+      "reason": "Malformed source consists of99repetitions of the same furnishing/wall fragment with no floor, doorway or usable movement area. Artwork retained for traceability.",
+      "evidence": {
+        "method": "Exact native rendered metatile signature matched to a visually reviewed collision atlas; no ROM/native collision metadata available.",
+        "native_pixels_sha256": "6287df129df3136b1d2ef2e6fe2ec6c2f3dd213c7a9ffb2e51623231e4fbade0",
+        "source_sha256": "ff7bce056bb72fd88b15aa5df8a6186a1cf765d6204a1b5ff60977c70d4bb895",
+        "atlas_version": 1,
+        "tile_classes": {
+          "obstacle": 99
+        },
+        "water_policy": "incidental water blocked",
+        "arrival_reviewed": true,
+        "review_note": "Empty/no-floor placeholder reviewed; keep unplayable."
+      }
+    }
+  ],
+  "areas": [
+    {
+      "source": "003_014_Azalea_Town.png",
+      "key": "azalea-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_056_Blackthorn_City.png",
+      "key": "blackthorn-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_047_Cherrygrove_City.png",
+      "key": "cherrygrove-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_017_Cianwood_City.png",
+      "key": "cianwood-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_066_Dark_Cave.png",
+      "key": "dark-cave",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_061_Dragon_s_Den.png",
+      "key": "dragons-den",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_016_Ecruteak_City.png",
+      "key": "ecruteak-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_015_Goldenrod_City.png",
+      "key": "goldenrod-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_115_Ice_Path.png",
+      "key": "ice-path",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_018_Ilex_Forest.png",
+      "key": "ilex-forest",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_051_Lake_Of_Rage.png",
+      "key": "lake-of-rage",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_081_Lighthouse.png",
+      "key": "lighthouse",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_055_Mahogany_Town.png",
+      "key": "mahogany-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_047_Mt._Mortar.png",
+      "key": "mt-mortar",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_090_Mt._Silver.png",
+      "key": "mt-silver",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_045_National_Park.png",
+      "key": "national-park",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_000_New_Bark_Town.png",
+      "key": "new-bark-town",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_018_Olivine_City.png",
+      "key": "olivine-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_029_Radio_Tower.png",
+      "key": "radio-tower",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_042_Rocket_Secret_Base.png",
+      "key": "rocket-secret-base",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_046_Route_29.png",
+      "key": "route-29",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_026_Route_30.png",
+      "key": "route-30",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_007_Route_31.png",
+      "key": "route-31",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_049_Route_32.png",
+      "key": "route-32",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_069_Route_33.png",
+      "key": "route-33",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_051_Route_34.png",
+      "key": "route-34",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_021_Route_35.png",
+      "key": "route-35",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_023_Route_36.png",
+      "key": "route-36",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_041_Route_37.png",
+      "key": "route-37",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_062_Route_38.png",
+      "key": "route-38",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_043_Route_39.png",
+      "key": "route-39",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_045_Route_40.png",
+      "key": "route-40",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_046_Route_41.png",
+      "key": "route-41",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_048_Route_42.png",
+      "key": "route-42",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_064_Route_43.png",
+      "key": "route-43",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_055_Route_44.png",
+      "key": "route-44",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_044_Route_45.png",
+      "key": "route-45",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_074_Route_46.png",
+      "key": "route-46",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_013_Ruins_Of_Alph.png",
+      "key": "ruins-of-alph",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_025_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_017_Slowpoke_Well.png",
+      "key": "slowpoke-well",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_072_Sprout_Tower.png",
+      "key": "sprout-tower",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_014_Union_Cave.png",
+      "key": "union-cave",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_013_Violet_City.png",
+      "key": "violet-city",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_099_Whirl_Islands.png",
+      "key": "whirl-islands",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_016_Azalea_Town.png",
+      "key": "azalea-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_014_Azalea_Town.png",
+      "key": "azalea-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_013_Azalea_Town.png",
+      "key": "azalea-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_001_Azalea_Town.png",
+      "key": "azalea-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_002_Azalea_Town.png",
+      "key": "azalea-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_012_Azalea_Town.png",
+      "key": "azalea-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_054_Blackthorn_City.png",
+      "key": "blackthorn-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_055_Blackthorn_City.png",
+      "key": "blackthorn-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "043_004_Blackthorn_City.png",
+      "key": "blackthorn-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "029_000_Blackthorn_City.png",
+      "key": "blackthorn-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "014_004_Blackthorn_City.png",
+      "key": "blackthorn-city-area-01",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "031_002_Blackthorn_City.png",
+      "key": "blackthorn-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "021_000_Blackthorn_City.png",
+      "key": "blackthorn-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "021_001_Blackthorn_City.png",
+      "key": "blackthorn-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "033_004_Cherrygrove_City.png",
+      "key": "cherrygrove-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "040_000_Cherrygrove_City.png",
+      "key": "cherrygrove-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "032_000_Cherrygrove_City.png",
+      "key": "cherrygrove-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "032_001_Cherrygrove_City.png",
+      "key": "cherrygrove-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_009_Cherrygrove_City.png",
+      "key": "cherrygrove-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_088_Cianwood_City.png",
+      "key": "cianwood-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "031_005_Cianwood_City.png",
+      "key": "cianwood-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "031_006_Cianwood_City.png",
+      "key": "cianwood-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "032_003_Cianwood_City.png",
+      "key": "cianwood-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "031_003_Cianwood_City.png",
+      "key": "cianwood-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "031_004_Cianwood_City.png",
+      "key": "cianwood-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_044_Cianwood_City.png",
+      "key": "cianwood-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_045_Cianwood_City.png",
+      "key": "cianwood-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_067_Dark_Cave.png",
+      "key": "dark-cave-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "004_002_Dragon_s_Den.png",
+      "key": "dragons-den-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_052_Ecruteak_City.png",
+      "key": "ecruteak-city-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_053_Ecruteak_City.png",
+      "key": "ecruteak-city-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_076_Ecruteak_City.png",
+      "key": "ecruteak-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_075_Ecruteak_City.png",
+      "key": "ecruteak-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_034_Ecruteak_City.png",
+      "key": "ecruteak-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_077_Ecruteak_City.png",
+      "key": "ecruteak-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_082_Ecruteak_City.png",
+      "key": "ecruteak-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_035_Ecruteak_City.png",
+      "key": "ecruteak-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "036_003_Ecruteak_City.png",
+      "key": "ecruteak-city-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "036_004_Ecruteak_City.png",
+      "key": "ecruteak-city-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "035_007_Ecruteak_City.png",
+      "key": "ecruteak-city-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "036_000_Ecruteak_City.png",
+      "key": "ecruteak-city-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "036_001_Ecruteak_City.png",
+      "key": "ecruteak-city-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_036_Ecruteak_City.png",
+      "key": "ecruteak-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_038_Ecruteak_City.png",
+      "key": "ecruteak-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "035_004_Goldenrod_City.png",
+      "key": "goldenrod-city-area-19",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_028_Goldenrod_City.png",
+      "key": "goldenrod-city-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_022_Goldenrod_City.png",
+      "key": "goldenrod-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_023_Goldenrod_City.png",
+      "key": "goldenrod-city-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_024_Goldenrod_City.png",
+      "key": "goldenrod-city-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_025_Goldenrod_City.png",
+      "key": "goldenrod-city-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_026_Goldenrod_City.png",
+      "key": "goldenrod-city-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_027_Goldenrod_City.png",
+      "key": "goldenrod-city-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_021_Goldenrod_City.png",
+      "key": "goldenrod-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_019_Goldenrod_City.png",
+      "key": "goldenrod-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_031_Goldenrod_City.png",
+      "key": "goldenrod-city-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "035_005_Goldenrod_City.png",
+      "key": "goldenrod-city-area-20",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "008_004_Goldenrod_City.png",
+      "key": "goldenrod-city-area-03",
+      "state": "source-placeholder-no-walkable-floor",
+      "ready": false
+    },
+    {
+      "source": "035_001_Goldenrod_City.png",
+      "key": "goldenrod-city-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "035_002_Goldenrod_City.png",
+      "key": "goldenrod-city-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_020_Goldenrod_City.png",
+      "key": "goldenrod-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_051_Goldenrod_City.png",
+      "key": "goldenrod-city-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_017_Goldenrod_City.png",
+      "key": "goldenrod-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_018_Goldenrod_City.png",
+      "key": "goldenrod-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_020_Goldenrod_City.png",
+      "key": "goldenrod-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_116_Ice_Path.png",
+      "key": "ice-path-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_117_Ice_Path.png",
+      "key": "ice-path-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_118_Ice_Path.png",
+      "key": "ice-path-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "041_000_Lake_Of_Rage.png",
+      "key": "lake-of-rage-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_052_Lake_Of_Rage.png",
+      "key": "lake-of-rage-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_053_Lake_Of_Rage.png",
+      "key": "lake-of-rage-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_054_Lake_Of_Rage.png",
+      "key": "lake-of-rage-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_084_Mahogany_Town.png",
+      "key": "mahogany-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_046_Mahogany_Town.png",
+      "key": "mahogany-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "038_000_Mahogany_Town.png",
+      "key": "mahogany-town-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "016_000_Mahogany_Town.png",
+      "key": "mahogany-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "016_001_Mahogany_Town.png",
+      "key": "mahogany-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_083_Mahogany_Town.png",
+      "key": "mahogany-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_048_Mt._Mortar.png",
+      "key": "mt-mortar-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_049_Mt._Mortar.png",
+      "key": "mt-mortar-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_050_Mt._Mortar.png",
+      "key": "mt-mortar-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_091_Mt._Silver.png",
+      "key": "mt-silver-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_027_National_Park.png",
+      "key": "national-park-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_032_National_Park.png",
+      "key": "national-park-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_088_National_Park.png",
+      "key": "national-park-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_058_National_Park.png",
+      "key": "national-park-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_092_New_Bark_Town.png",
+      "key": "new-bark-town-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_093_New_Bark_Town.png",
+      "key": "new-bark-town-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "032_002_New_Bark_Town.png",
+      "key": "new-bark-town-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "033_000_New_Bark_Town.png",
+      "key": "new-bark-town-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "004_003_New_Bark_Town.png",
+      "key": "new-bark-town-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_042_Olivine_City.png",
+      "key": "olivine-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_043_Olivine_City.png",
+      "key": "olivine-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_041_Olivine_City.png",
+      "key": "olivine-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "036_002_Olivine_City.png",
+      "key": "olivine-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "037_002_Olivine_City.png",
+      "key": "olivine-city-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "037_004_Olivine_City.png",
+      "key": "olivine-city-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "037_000_Olivine_City.png",
+      "key": "olivine-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "037_001_Olivine_City.png",
+      "key": "olivine-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_047_Radio_Tower.png",
+      "key": "radio-tower-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_043_Rocket_Secret_Base.png",
+      "key": "rocket-secret-base-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_044_Rocket_Secret_Base.png",
+      "key": "rocket-secret-base-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_045_Rocket_Secret_Base.png",
+      "key": "rocket-secret-base-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_114_Rocket_Secret_Base.png",
+      "key": "rocket-secret-base-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_065_Route_29.png",
+      "key": "route-29-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_012_Route_30.png",
+      "key": "route-30-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_000_Route_30.png",
+      "key": "route-30-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_011_Route_32.png",
+      "key": "route-32-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_010_Route_32.png",
+      "key": "route-32-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "035_000_Route_34.png",
+      "key": "route-34-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_073_Route_35.png",
+      "key": "route-35-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_039_Route_39.png",
+      "key": "route-39-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "032_004_Route_39.png",
+      "key": "route-39-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_085_Route_43.png",
+      "key": "route-43-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "031_000_Ruins_Of_Alph.png",
+      "key": "ruins-of-alph-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_064_Ruins_Of_Alph.png",
+      "key": "ruins-of-alph-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "033_006_Ruins_Of_Alph.png",
+      "key": "ruins-of-alph-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_036_Ruins_Of_Alph.png",
+      "key": "ruins-of-alph-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_040_Ruins_Of_Alph.png",
+      "key": "ruins-of-alph-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_039_Ruins_Of_Alph.png",
+      "key": "ruins-of-alph-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_063_Ruins_Of_Alph.png",
+      "key": "ruins-of-alph-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_005_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_008_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_012_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_021_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_022_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_023_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-19",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_024_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-20",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_025_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-21",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_013_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_014_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_015_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_016_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_017_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_018_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_019_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_020_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_006_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_009_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_010_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_011_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_004_S.S._Aqua_Marine.png",
+      "key": "s-s-aqua-marine-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_015_Union_Cave.png",
+      "key": "union-cave-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_016_Union_Cave.png",
+      "key": "union-cave-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_071_Violet_City.png",
+      "key": "violet-city-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_008_Violet_City.png",
+      "key": "violet-city-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_003_Violet_City.png",
+      "key": "violet-city-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "033_002_Violet_City.png",
+      "key": "violet-city-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "033_003_Violet_City.png",
+      "key": "violet-city-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "005_002_Violet_City.png",
+      "key": "violet-city-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_104_Whirl_Islands.png",
+      "key": "whirl-islands-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_107_Whirl_Islands.png",
+      "key": "whirl-islands-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_098_Whirl_Islands.png",
+      "key": "whirl-islands-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_096_Whirl_Islands.png",
+      "key": "whirl-islands-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_103_Whirl_Islands.png",
+      "key": "whirl-islands-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_052_Alola_Islands.png",
+      "key": "alola-islands",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_065_Archaic_Enclosure.png",
+      "key": "archaic-enclosure",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "000_009_Battle_Frontier.png",
+      "key": "battle-frontier",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_050_Dim_Deep_Cave.png",
+      "key": "dim-deep-cave",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "011_008_Faraway_Zone.png",
+      "key": "faraway-zone",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_061_Kumquat_Island.png",
+      "key": "kumquat-island",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_053_Mellsweet_Island.png",
+      "key": "mellsweet-island",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_039_Mikan_Island.png",
+      "key": "mikan-island",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_054_Navel_Island.png",
+      "key": "navel-island",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_063_Trovita_Island.png",
+      "key": "trovita-island",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_057_Undersea_Lymph.png",
+      "key": "undersea-lymph",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_100_Alola_Islands.png",
+      "key": "alola-islands-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_101_Alola_Islands.png",
+      "key": "alola-islands-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_106_Alola_Islands.png",
+      "key": "alola-islands-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "023_000_Alola_Islands.png",
+      "key": "alola-islands-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_034_Archaic_Enclosure.png",
+      "key": "archaic-enclosure-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_030_Archaic_Enclosure.png",
+      "key": "archaic-enclosure-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_031_Archaic_Enclosure.png",
+      "key": "archaic-enclosure-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_032_Archaic_Enclosure.png",
+      "key": "archaic-enclosure-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_033_Archaic_Enclosure.png",
+      "key": "archaic-enclosure-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_040_Archaic_Enclosure.png",
+      "key": "archaic-enclosure-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_035_Archaic_Enclosure.png",
+      "key": "archaic-enclosure-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_097_Archaic_Enclosure.png",
+      "key": "archaic-enclosure-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_028_Archaic_Enclosure.png",
+      "key": "archaic-enclosure-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "000_004_Battle_Frontier.png",
+      "key": "battle-frontier-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "000_000_Battle_Frontier.png",
+      "key": "battle-frontier-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "000_003_Battle_Frontier.png",
+      "key": "battle-frontier-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "007_006_Battle_Frontier.png",
+      "key": "battle-frontier-area-18",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_009_Battle_Frontier.png",
+      "key": "battle-frontier-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_014_Battle_Frontier.png",
+      "key": "battle-frontier-area-22",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_015_Battle_Frontier.png",
+      "key": "battle-frontier-area-23",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_016_Battle_Frontier.png",
+      "key": "battle-frontier-area-24",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_017_Battle_Frontier.png",
+      "key": "battle-frontier-area-25",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "007_001_Battle_Frontier.png",
+      "key": "battle-frontier-area-17",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "000_001_Battle_Frontier.png",
+      "key": "battle-frontier-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_037_Battle_Frontier.png",
+      "key": "battle-frontier-area-21",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_001_Battle_Frontier.png",
+      "key": "battle-frontier-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_002_Battle_Frontier.png",
+      "key": "battle-frontier-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_003_Battle_Frontier.png",
+      "key": "battle-frontier-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_004_Battle_Frontier.png",
+      "key": "battle-frontier-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_005_Battle_Frontier.png",
+      "key": "battle-frontier-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_006_Battle_Frontier.png",
+      "key": "battle-frontier-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_007_Battle_Frontier.png",
+      "key": "battle-frontier-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_008_Battle_Frontier.png",
+      "key": "battle-frontier-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "010_018_Battle_Frontier.png",
+      "key": "battle-frontier-area-19",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "028_000_Battle_Frontier.png",
+      "key": "battle-frontier-area-20",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_011_Battle_Frontier.png",
+      "key": "battle-frontier-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_010_Battle_Frontier.png",
+      "key": "battle-frontier-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "000_002_Battle_Frontier.png",
+      "key": "battle-frontier-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "003_060_Dim_Deep_Cave.png",
+      "key": "dim-deep-cave-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "031_001_Dim_Deep_Cave.png",
+      "key": "dim-deep-cave-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_038_Faraway_Zone.png",
+      "key": "faraway-zone-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "010_009_Faraway_Zone.png",
+      "key": "faraway-zone-area-10",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "022_000_Faraway_Zone.png",
+      "key": "faraway-zone-area-12",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_069_Faraway_Zone.png",
+      "key": "faraway-zone-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_070_Faraway_Zone.png",
+      "key": "faraway-zone-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "039_000_Faraway_Zone.png",
+      "key": "faraway-zone-area-16",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "010_008_Faraway_Zone.png",
+      "key": "faraway-zone-area-09",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_046_Faraway_Zone.png",
+      "key": "faraway-zone-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "022_001_Faraway_Zone.png",
+      "key": "faraway-zone-area-13",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "018_001_Faraway_Zone.png",
+      "key": "faraway-zone-area-11",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_032_Faraway_Zone.png",
+      "key": "faraway-zone-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_033_Faraway_Zone.png",
+      "key": "faraway-zone-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_089_Faraway_Zone.png",
+      "key": "faraway-zone-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_035_Faraway_Zone.png",
+      "key": "faraway-zone-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_007_Faraway_Zone.png",
+      "key": "faraway-zone-area-14",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "034_057_Faraway_Zone.png",
+      "key": "faraway-zone-area-15",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_006_Kumquat_Island.png",
+      "key": "kumquat-island-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_003_Kumquat_Island.png",
+      "key": "kumquat-island-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_112_Kumquat_Island.png",
+      "key": "kumquat-island-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_005_Kumquat_Island.png",
+      "key": "kumquat-island-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_007_Kumquat_Island.png",
+      "key": "kumquat-island-area-07",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_008_Kumquat_Island.png",
+      "key": "kumquat-island-area-08",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_004_Kumquat_Island.png",
+      "key": "kumquat-island-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_113_Kumquat_Island.png",
+      "key": "kumquat-island-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_040_Mikan_Island.png",
+      "key": "mikan-island-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_041_Navel_Island.png",
+      "key": "navel-island-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "000_010_Navel_Island.png",
+      "key": "navel-island-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_011_Trovita_Island.png",
+      "key": "trovita-island-area-04",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_012_Trovita_Island.png",
+      "key": "trovita-island-area-05",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_013_Trovita_Island.png",
+      "key": "trovita-island-area-06",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_111_Trovita_Island.png",
+      "key": "trovita-island-area-01",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_010_Trovita_Island.png",
+      "key": "trovita-island-area-03",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "042_009_Trovita_Island.png",
+      "key": "trovita-island-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "002_029_Undersea_Lymph.png",
+      "key": "undersea-lymph-area-02",
+      "state": "playable",
+      "ready": true
+    },
+    {
+      "source": "001_108_Undersea_Lymph.png",
+      "key": "undersea-lymph-area-01",
+      "state": "playable",
+      "ready": true
+    }
+  ]
+}

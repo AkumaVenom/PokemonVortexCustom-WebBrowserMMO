@@ -18,7 +18,7 @@ pv_page_start('Home', 'index.php', pv_is_logged_in());
   <div class="pv-hero-copy">
     <span class="pv-eyebrow">YOUR POKÉMON ADVENTURE · PLAY IN YOUR BROWSER</span>
     <h1>Pokemon<br><span>Vortex <em>NXT</em></span></h1>
-    <p>One trainer. A world of possibilities. Explore Vortex, Kanto and Hoenn, find your favourite Pokémon, and take your team all the way to the top.</p>
+    <p>One trainer. A world of possibilities. Explore Vortex, Kanto, Johto and Hoenn, find your favourite Pokémon, and take your team all the way to the top.</p>
     <div class="pv-actions">
       <?php if (pv_is_logged_in()): ?>
         <a class="pv-btn" href="<?= pv_h(pv_url('dashboard.php')) ?>">Continue adventure <span aria-hidden="true">→</span></a>
@@ -52,6 +52,7 @@ pv_page_start('Home', 'index.php', pv_is_logged_in());
 <?php foreach ([
   ['vortex','Vortex World','25 areas to discover.','images/maps/v3/map1.png','Eevee'],
   ['kanto','Kanto','Your classic adventure.','images/worlds/kanto/Kanto_Overworld.jpg','Pikachu'],
+  ['johto','Johto','Ancient towers and new discoveries.','images/worlds/johto/JohtoWorldMap.png','Cyndaquil'],
   ['hoenn','Hoenn','A whole region to explore.','images/worlds/hoenn/Hoenn_Overworld.jpg','Mudkip']
 ] as [$world,$label,$copy,$mapArt,$partner]): ?>
   <a class="nxt-region-card" href="<?=pv_h(pv_url('map_select.php?world='.$world))?>">
