@@ -1,3 +1,20 @@
+## v31.0.0 — 10,000 Trainer World
+
+- Added 5,000 more beginner AI trainers, raising the managed population from 5,000 to 10,000. New identities 5001–10000 start with a level-18 partner and 9000 EXP, like the accepted previous batch. Existing identities, Pokémon, teams, levels, captures, rankings and enabled/disabled state carry over.
+- Directed the entire new batch to the least-populated playable maps in Kanto, Hoenn, Johto and Unbound. The regional pool contains 1131 maps; even an empty original Vortex map cannot take a new regional arrival. Existing first-5000 placement rules remain available when repairing missing old identities.
+- New trainers use the same server-authoritative walking, shared collision, connected-map travel, local encounters, six Vortex varieties, catches, active-team training, eligible level evolutions, Rival Network and player battles.
+- Extended ranked field rotation across all 10,000 identities while retaining existing cooldowns, defender shields, match budgets and the shared 16-result-per-minute autonomous quota. There are still 24 Master and 72 Elite Rivals; 9904 trainers use the ordinary Active Rival class.
+- Retained per-trainer transactions, safe username collision handling, resumable Upgrade / Repair and bounded collision caches. Map artwork, scale, movement rules, encounter profiles, wild level-24 cap, database dumps and original launchers retain their accepted bytes.
+
+## v30.0.0 — 5,000 Trainer World
+
+- Added 3,000 new beginner trainers, bringing the managed population to 5,000. New indexes 2001–5000 start with one level-18 Pokémon, matching human signup. Existing trainer identities, teams, catches, levels and earned ranked results are retained.
+- New arrivals choose the least-populated playable maps using current AI counts. All 1,156 playable maps participate, including Johto and Unbound. Later regional visits account for the number of playable maps so large regions retain a useful share of trainers.
+- New trainers use the same persistent AI movement, collision, local wild encounters, six Vortex varieties, catches, active-team training, eligible level evolutions, Rival Network and player battle systems. Wild Pokémon remain capped at 24; owned teams can keep leveling to 100.
+- Preserved 24 Master Rivals and 72 Elite Rivals; the additional trainers join the ordinary Active Rival class, now 4,904 trainers. Ranked selection covers all 5,000 indexes with the accepted cooldowns, player protection and shared match quota.
+- Bounded regional collision caches to twelve recent maps per layer, preserving terrain and database overrides while avoiding full-field memory growth.
+- Upgrade / Repair creates only missing identities. Creation commits one complete trainer at a time, resumes after interruption, refuses competing population repairs and protects names already held by players.
+
 ## v29.0.0 — Unbound
 
 - Added Unbound as the fifth Explore region, with searchable map groups, Connected Areas and Frozen Heights as its native location preview.

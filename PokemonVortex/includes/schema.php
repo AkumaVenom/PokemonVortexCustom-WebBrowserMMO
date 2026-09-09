@@ -854,7 +854,7 @@ function pv_apply_schema_migrations(mysqli $db): array
 
     // Population repair is idempotent: interrupted local setup runs can resume
     // without duplicating bots or touching human trainer progress.
-    $botPopulation = pv_bot_ensure_population($db, 2000);
+    $botPopulation = pv_bot_ensure_population($db, PV_BOT_POPULATION_TARGET);
 
     // Create one ranked state row for every human and autonomous trainer. The
     // deterministic initial spread is only a bootstrap; subsequent movement is
@@ -874,6 +874,7 @@ function pv_apply_schema_migrations(mysqli $db): array
     if ((int)($botPopulation['created'] ?? 0) > 0) {
         $changes[] = 'Seeded ' . (int)$botPopulation['created'] . ' autonomous trainer bot account(s)';
     }
+    $changes[] = 'Autonomous trainer population verified: ' . (int)$botPopulation['total'] . ' accounts (target ' . PV_BOT_POPULATION_TARGET . '); existing identities and progression preserved';
 
     // Recalculate the account collection count only when the source tables exist.
     if (pv_schema_table_exists($db, 'members') && pv_schema_table_exists($db, 'pokemon') && pv_schema_column_exists($db, 'members', 'total_poke')) {

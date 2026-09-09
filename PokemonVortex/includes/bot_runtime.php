@@ -4,6 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/map_runtime.php';
 require_once __DIR__ . '/rival_runtime.php';
 require_once __DIR__ . '/evolution.php';
+require_once __DIR__ . '/bot_population.php';
 
 /**
  * Persistent server-authoritative autonomous trainer runtime.
@@ -79,7 +80,7 @@ function pv_bot_starter_names(): array
 /**
  * v25.2 activity classes. The first 24 identities are persistent Master Rivals,
  * the next 72 are Elite Rivals, and the remainder are regular rivals. The
- * classification is deterministic so an existing 2,000-trainer database gains
+ * classification is deterministic so an existing trainer database gains
  * the new behavior immediately without a destructive migration.
  */
 function pv_bot_activity_profile(int $botIndex): array
@@ -162,12 +163,12 @@ function pv_bot_ranked_remaining(int $settled, int $maxOperations): int
 function pv_bot_ranked_cooldown_sql(): string
 {
     $clauses = [];
-    foreach ([24, 96, 2000] as $index) {
+    foreach ([24, 96, PV_BOT_POPULATION_TARGET] as $index) {
         $profile = pv_bot_activity_profile($index);
         $min = max(60, (int)$profile['rank_cooldown_min']);
         $span = max(1, (int)$profile['rank_cooldown_max'] - $min + 1);
         $expression = '(' . $min . ' + MOD(b.bot_index*197,' . $span . '))';
-        $clauses[] = $index === 2000 ? 'ELSE ' . $expression : 'WHEN b.bot_index<=' . $index . ' THEN ' . $expression;
+        $clauses[] = $index === PV_BOT_POPULATION_TARGET ? 'ELSE ' . $expression : 'WHEN b.bot_index<=' . $index . ' THEN ' . $expression;
     }
     return '(CASE ' . implode(' ', $clauses) . ' END)';
 }
@@ -191,7 +192,7 @@ function pv_bot_ranked_candidates_sql(string $lane, int $now, int $bucket): stri
     $sql .= $lane === 'contender'
         ? 'ORDER BY rs.rating DESC,COALESCE(rs.last_attack_at,0) ASC,rs.ranked_wins DESC, '
         : 'ORDER BY COALESCE(rs.last_attack_at,0) ASC, ';
-    return $sql . 'MOD(b.bot_index*37+' . max(0, $bucket) . ',2003) ASC,b.user_id ASC LIMIT 48';
+    return $sql . 'MOD(b.bot_index*37+' . max(0, $bucket) . ',10007) ASC,b.user_id ASC LIMIT 48';
 }
 
 /**
@@ -227,7 +228,7 @@ function pv_bot_ranked_pulse(mysqli $db, int $maxOperations = PV_BOT_RANKED_PULS
         if ($needed <= 0) return 0;
 
         // Paid only when this minute still needs work; map polling after quota
-        // completion does not repeatedly seed/normalize all 2,000 rank states.
+        // completion does not repeatedly seed/normalize the entire population.
         pv_rival_ensure_all_states($db);
         $lanes = ['contender','featured','field'];
         $pools = [];
@@ -305,7 +306,7 @@ function pv_bot_region_assignment(int $index): array
 
     // Database-free fallback for tooling/tests. Runtime seeding for identities
     // above 1,000 uses pv_bot_lowest_population_assignment() below.
-    $maps = pv_bot_population_maps();
+    $maps = pv_bot_population_maps_for_index($index);
     if ($maps === []) return ['vortex', (string)(((($index - 1) % 25) + 1))];
     $choice = $maps[($index - 1001) % count($maps)];
     return [(string)$choice['world'], (string)$choice['map']];
@@ -325,6 +326,22 @@ function pv_bot_population_maps(): array
     return $maps;
 }
 
+/** New expansion identities populate regional maps even if Vortex is empty. */
+function pv_bot_population_maps_for_index(int $index): array
+{
+    $maps = pv_bot_population_maps();
+    if ($index < PV_BOT_REGIONAL_EXPANSION_START) return $maps;
+    static $regionalMaps = null;
+    if ($regionalMaps === null) {
+        $regionalMaps = array_values(array_filter($maps,
+            static fn(array $map): bool => pv_world_is_region_world((string)$map['world'])));
+    }
+    if ($regionalMaps === []) {
+        throw new RuntimeException('No playable regional maps are available for the new trainer population.');
+    }
+    return $regionalMaps;
+}
+
 function pv_bot_population_count_key(string $world, string $mapKey): string
 {
     return pv_world_normalize_key($world) . "\0" . (string)$mapKey;
@@ -332,7 +349,7 @@ function pv_bot_population_count_key(string $world, string $mapKey): string
 
 function pv_bot_lowest_population_choice(array $counts, int $index): array
 {
-    $maps = pv_bot_population_maps();
+    $maps = pv_bot_population_maps_for_index($index);
     if ($maps === []) return pv_bot_region_assignment($index);
     $lowest = PHP_INT_MAX;
     $candidates = [];
@@ -354,16 +371,7 @@ function pv_bot_lowest_population_choice(array $counts, int $index): array
 
 function pv_bot_lowest_population_assignment(mysqli $db, int $index): array
 {
-    $counts = [];
-    $result = $db->query('SELECT world_key,map_key,COUNT(*) AS bot_count FROM bot_trainers WHERE enabled=1 GROUP BY world_key,map_key');
-    if ($result) {
-        while ($row = $result->fetch_assoc()) {
-            $key = pv_bot_population_count_key((string)($row['world_key'] ?? ''), (string)($row['map_key'] ?? ''));
-            $counts[$key] = max(0, (int)($row['bot_count'] ?? 0));
-        }
-        $result->free();
-    }
-    return pv_bot_lowest_population_choice($counts, $index);
+    return pv_bot_lowest_population_choice(pv_bot_population_counts($db), $index);
 }
 
 function pv_bot_spawn_occupied(mysqli $db, string $world, string $mapKey): array
@@ -532,91 +540,6 @@ function pv_bot_assign_team_slot(mysqli $db, int $userId, int $pokemonId, int $l
     }
 }
 
-function pv_bot_seed_one(mysqli $db, int $index): int
-{
-    $username = pv_bot_username($index);
-    $stmt=$db->prepare('SELECT b.user_id FROM bot_trainers b WHERE b.bot_index=? LIMIT 1');
-    if($stmt){$stmt->bind_param('i',$index);$stmt->execute();$row=$stmt->get_result()->fetch_assoc();$stmt->close();if($row)return(int)$row['user_id'];}
-    $stmt=$db->prepare('SELECT id FROM members WHERE username=? LIMIT 1');
-    if($stmt){$stmt->bind_param('s',$username);$stmt->execute();$row=$stmt->get_result()->fetch_assoc();$stmt->close();if($row){
-        // Never commandeer a pre-existing human identity. Probe deterministic
-        // fallback names until a free identity is found.
-        $base='PVAI'.str_pad((string)$index,4,'0',STR_PAD_LEFT);
-        $username=$base.'N';
-        for($suffix=1;$suffix<=99;$suffix++){
-            $check=$db->prepare('SELECT id FROM members WHERE username=? LIMIT 1');
-            if(!$check)throw new RuntimeException('Could not verify bot fallback identity.');
-            $check->bind_param('s',$username);$check->execute();$collision=(bool)$check->get_result()->fetch_row();$check->close();
-            if(!$collision)break;
-            $username=$base.'N'.$suffix;
-            if($suffix===99)throw new RuntimeException('No safe fallback username is available for bot '.$index.'.');
-        }
-    }}
-
-    [$world,$mapKey]=$index<=1000?pv_bot_region_assignment($index):pv_bot_lowest_population_assignment($db,$index);
-    [$x,$y]=pv_bot_spawn_for($db,$world,$mapKey,$index);
-    $trainer=(($index-1)%28)+1;
-    $starters=pv_bot_starter_names();$starter=$starters[($index-1)%count($starters)];
-    $stmt=$db->prepare('SELECT id,name,type1,type2,a1,a2,a3,a4 FROM pguide WHERE name=? LIMIT 1');
-    if(!$stmt)throw new RuntimeException('Bot starter lookup is unavailable.');
-    $stmt->bind_param('s',$starter);$stmt->execute();$guide=$stmt->get_result()->fetch_assoc();$stmt->close();
-    if(!$guide)throw new RuntimeException('Bot starter data is unavailable for '.$starter.'.');
-
-    $now=time();
-    $password=pv_bot_disabled_password_hash();
-    $email='bot-'.$index.'@vortex.invalid';$registered=(string)$now;$last=(string)$now;$ip='bot';$eb='1';$number=(string)((($index-1)%18)+1);$secret=bin2hex(random_bytes(20));
-    $db->begin_transaction();
-    try{
-        $stmt=$db->prepare('INSERT INTO members (username,password,email,registered,llogin,last_login,ip,eb,number,secret_key,total_poke,sidequest,money,battle,wins,losses) VALUES (?,?,?,?,?,?,?,?,?,?,0,1,0,0,0,0)');
-        if(!$stmt)throw new RuntimeException('Could not prepare bot trainer account.');
-        $stmt->bind_param('ssssisssss',$username,$password,$email,$registered,$now,$last,$ip,$eb,$number,$secret);
-        if(!$stmt->execute())throw new RuntimeException('Could not create bot trainer account: '.$stmt->error);
-        $uid=(int)$db->insert_id;$stmt->close();
-
-        $forum='';$skype='';$display='No';$memonmap=1;$messonoff=0;$notify=0;$layout=2;
-        $stmt=$db->prepare('INSERT INTO members_options (id,trainer,forum,skype,display,memonmap,messonoff,messnotifyonoff,layout) VALUES (?,?,?,?,?,?,?,?,?)');
-        if(!$stmt)throw new RuntimeException('Could not prepare bot trainer options.');
-        $stmt->bind_param('iisssiiii',$uid,$trainer,$forum,$skype,$display,$memonmap,$messonoff,$notify,$layout);$stmt->execute();$stmt->close();
-        foreach([['badges','id'],['events','id'],['comments','userid'],['items','uid']] as [$table,$column]){
-            if(!pv_bot_table_exists($db,$table))continue;
-            $sql='INSERT INTO `'.$table.'` (`'.$column.'`) VALUES (?)';$stmt=$db->prepare($sql);
-            if(!$stmt)throw new RuntimeException('Could not prepare bot account defaults for '.$table.'.');
-            $stmt->bind_param('i',$uid);
-            if(!$stmt->execute()){$error=$stmt->error;$stmt->close();throw new RuntimeException('Could not create bot account defaults for '.$table.': '.$error);}
-            $stmt->close();
-        }
-        $starterLevel=12+(($index-1)%17);
-        $pokemonId=pv_bot_create_pokemon($db,$uid,$username,$guide,$starterLevel,$starter);
-        $stmt=$db->prepare('UPDATE members SET s1=?,total_poke=1 WHERE id=?');
-        if(!$stmt)throw new RuntimeException('Could not assign bot starter team.');
-        $stmt->bind_param('ii',$pokemonId,$uid);$stmt->execute();$stmt->close();
-        $stmt=$db->prepare('UPDATE pguide SET amount=amount+1 WHERE id=?');if(!$stmt)throw new RuntimeException('Could not prepare bot Pokédex population update.');$pid=(int)$guide['id'];$stmt->bind_param('i',$pid);if(!$stmt->execute()){$error=$stmt->error;$stmt->close();throw new RuntimeException('Could not update bot Pokédex population: '.$error);}$stmt->close();
-        $next=$now+random_int(5,45);$lastAction='spawned';
-        $stmt=$db->prepare('INSERT INTO bot_trainers (user_id,bot_index,enabled,trainer_sprite,world_key,map_key,x,y,next_action_at,last_action_at,last_action,last_wild_name,last_wild_level,wild_battles,wild_wins,captures,player_battles,player_wins,player_losses,created_at,updated_at) VALUES (?,?,1,?,?,?,?,?,?,?,? ,\'\',0,0,0,0,0,0,0,?,?)');
-        if(!$stmt)throw new RuntimeException('Could not prepare bot registry row.');
-        $stmt->bind_param('iiissiiiisii',$uid,$index,$trainer,$world,$mapKey,$x,$y,$next,$now,$lastAction,$now,$now);
-        if(!$stmt->execute())throw new RuntimeException('Could not create bot registry row: '.$stmt->error);$stmt->close();
-        pv_bot_write_presence($db,$uid,$username,$trainer,$world,$mapKey,$x,$y,$now);
-        $db->commit();
-        return $uid;
-    }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}throw $e;}
-}
-
-function pv_bot_ensure_population(mysqli $db, int $target=2000): array
-{
-    if(!pv_bot_registry_ready($db))throw new RuntimeException('Bot trainer registry is unavailable.');
-    $target=max(0,min(2000,$target));
-    $existingIndexes=[];$existing=0;
-    $r=$db->query('SELECT bot_index FROM bot_trainers ORDER BY bot_index');
-    if($r){while($row=$r->fetch_assoc()){$index=(int)$row['bot_index'];$existingIndexes[$index]=true;$existing++;}$r->free();}
-    $created=0;
-    for($index=1;$index<=$target;$index++){
-        if(isset($existingIndexes[$index]))continue;
-        pv_bot_seed_one($db,$index);$created++;
-    }
-    return ['target'=>$target,'existing'=>$existing,'created'=>$created,'total'=>$existing+$created];
-}
-
 function pv_bot_write_presence(mysqli $db,int $uid,string $username,int $trainer,string $world,string $mapKey,int $x,int $y,int $now): void
 {
     if(!pv_world_map_column_available($db))return;
@@ -721,28 +644,53 @@ function pv_bot_region_admission_areas(): array
 }
 
 /**
- * Regional trainers may choose another world just as players can. Keep Vortex
- * identities at home, and preserve populated regions by moving only one bot
- * from above its fair regional share into a less populated registered region.
- * No rows, identities, collections, or deterministic initial placements reset.
+ * Give each playable map the same regional population share. A large region
+ * needs more trainers than a small one; only regions above their rounded-up
+ * share supply visitors. Vortex home identities retain their existing policy.
  */
 function pv_bot_region_admission_choice(array $counts, string $currentWorld, int $seed): ?string
 {
     $regions = pv_bot_region_admission_areas();
     $currentWorld = pv_world_normalize_key($currentWorld);
     if (!isset($regions[$currentWorld]) || count($regions) < 2) return null;
-    $total = 0;
-    foreach ($regions as $world => $areas) $total += max(0, (int)($counts[$world] ?? 0));
+    $total = 0; $mapTotal = 0;
+    foreach ($regions as $world => $areas) {
+        $total += max(0, (int)($counts[$world] ?? 0));
+        $mapTotal += count($areas);
+    }
+    if ($total <= 0 || $mapTotal <= 0) return null;
     $currentCount = max(0, (int)($counts[$currentWorld] ?? 0));
-    if ($total <= 0 || $currentCount <= (int)ceil($total / count($regions))) return null;
-    $lowest = $currentCount; $targets = [];
+    $share = (int)ceil($total * count($regions[$currentWorld]) / $mapTotal);
+    if ($currentCount <= $share) return null;
+    $lowestCount = 0; $lowestMaps = 1; $targets = [];
     foreach ($regions as $world => $areas) {
         if ($world === $currentWorld) continue;
         $count = max(0, (int)($counts[$world] ?? 0));
-        if ($count < $lowest) { $lowest = $count; $targets = [$world]; }
-        elseif ($count === $lowest) $targets[] = $world;
+        $mapCount = count($areas);
+        if ($count >= (int)ceil($total * $mapCount / $mapTotal)) continue;
+        // Compare density with integer cross-products; rotate equally sparse ties.
+        $comparison = $count * $lowestMaps <=> $lowestCount * $mapCount;
+        if ($targets === [] || $comparison < 0) {
+            $lowestCount = $count; $lowestMaps = $mapCount; $targets = [$world];
+        } elseif ($comparison === 0) $targets[] = $world;
     }
     return $targets === [] ? null : (string)$targets[max(0, $seed) % count($targets)];
+}
+
+/** Least-occupied playable destinations first, with stable rotating ties. */
+function pv_bot_region_admission_destinations(string $world, array $counts, int $seed): array
+{
+    $areas = pv_bot_region_admission_areas()[$world] ?? [];
+    if ($areas === []) return [];
+    $offset = max(0, $seed) % count($areas);
+    $ranked = [];
+    for ($i = 0; $i < count($areas); $i++) {
+        $area = $areas[($offset + $i) % count($areas)];
+        $key = pv_bot_population_count_key($world, (string)$area['key']);
+        $ranked[] = ['area'=>$area, 'count'=>max(0, (int)($counts[$key] ?? 0)), 'tie'=>$i];
+    }
+    usort($ranked, static fn(array $a, array $b): int => ($a['count'] <=> $b['count']) ?: ($a['tie'] <=> $b['tie']));
+    return array_column($ranked, 'area');
 }
 
 /** A rare scheduled world-selection action, not a migration or a map warp. */
@@ -763,12 +711,13 @@ function pv_bot_admit_region(mysqli $db, array $bot): ?array
     $seed = max(1, (int)($bot['bot_index'] ?? 1));
     $world = pv_bot_region_admission_choice($counts, $currentWorld, $seed);
     if ($world === null) return null;
-    $areas = pv_bot_region_admission_areas()[$world];
-    $offset = $seed % count($areas);
+    try { $mapCounts = pv_bot_population_counts($db); }
+    catch (Throwable $error) { return null; }
+    $areas = pv_bot_region_admission_destinations($world, $mapCounts, $seed);
     // Bound recovery work if operator collision overrides temporarily close
     // entrances. A later scheduled action can retry without disrupting walking.
     for ($attempt = 0; $attempt < min(8, count($areas)); $attempt++) {
-        $area = $areas[($offset + $attempt) % count($areas)];
+        $area = $areas[$attempt];
         $mapKey = (string)$area['key'];
         try { [$x,$y] = pv_bot_spawn_for($db, $world, $mapKey, $seed); }
         catch (RuntimeException $error) { continue; }

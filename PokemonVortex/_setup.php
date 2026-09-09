@@ -173,7 +173,7 @@ $assetVersion = rawurlencode((string)($config['asset_version'] ?? '9.0.0'));
 <form method="post" class="pv-setup-box pv-setup-safe">
 <input type="hidden" name="action" value="upgrade">
 <h2>Upgrade / Repair</h2>
-<p>Adds missing compatibility fields and indexes without deleting trainers, Pokémon, inventory or progression.</p>
+<p>Adds missing compatibility fields and indexes, and completes the 10,000-trainer AI population. Existing trainers, Pokémon, inventory and progression are preserved. An interrupted population repair can be run again to resume.</p>
 <div class="pv-field"><label>Confirmation</label><input name="confirm" autocomplete="off" placeholder="Type UPGRADE" required></div>
 <button type="submit">Upgrade Existing Database</button>
 </form>

@@ -317,29 +317,52 @@ function pv_world_players(mysqli $db, int $uid, string $world, string $area): ar
     return$players;
 }
 
+/**
+ * Retain only a small working set of regional masks. Bulk AI creation and the
+ * background worker visit every map in one process; retaining every decoded
+ * string-key mask would grow with the entire region catalog. Twelve recent
+ * maps still cover ordinary player walking, linked arrivals and AI bursts.
+ */
+function pv_world_collision_cache_limit(): int { return 12; }
+
 function pv_world_blocks(mysqli $db, string $world, string $area): array {
     $world = pv_world_normalize_key($world);
     $area = pv_world_area_key($area);
     static $runtimeCache=[];
-    $runtimeKey=spl_object_id($db).'|'.$world.'|'.$area;
-    if(isset($runtimeCache[$runtimeKey]))return $runtimeCache[$runtimeKey];
+    static $staticCollisionCache=[];
+    static $connectionKeys=null;
+    static $nextConnectionKey=0;
+    // Weak keys avoid keeping connections alive. Monotonic tokens prevent a
+    // newly allocated mysqli object from reusing an evicted object's overrides.
+    if (!$connectionKeys instanceof WeakMap) $connectionKeys=new WeakMap();
+    if (!isset($connectionKeys[$db])) $connectionKeys[$db]=++$nextConnectionKey;
+    $runtimeKey=$connectionKeys[$db].'|'.$world.'|'.$area;
+    if(isset($runtimeCache[$runtimeKey])){
+        $blocks=$runtimeCache[$runtimeKey];
+        unset($runtimeCache[$runtimeKey]);
+        $runtimeCache[$runtimeKey]=$blocks;
+        return $blocks;
+    }
     $blocks=[];
 
-    // Static region collision ships with each Kanto/Hoenn area. Database rows remain an additive runtime-tuning layer.
+    // Shipped terrain and database overrides remain the same additive layers.
     $definition = pv_world_area($world, $area);
     $collisionAbs = trim((string)($definition['collision_asset_abs'] ?? ''));
     if ($collisionAbs !== '') {
-        static $staticCollisionCache=[];
         $cacheKey=$world.'|'.$area.'|'.$collisionAbs;
-        if(!isset($staticCollisionCache[$cacheKey])){
-            $local=[];$decoded=json_decode((string)@file_get_contents($collisionAbs),true);
+        if(isset($staticCollisionCache[$cacheKey])){
+            $blocks=$staticCollisionCache[$cacheKey];
+            unset($staticCollisionCache[$cacheKey]);
+        }else{
+            $decoded=json_decode((string)@file_get_contents($collisionAbs),true);
             if(is_array($decoded))foreach((array)($decoded['blocked']??[]) as $point){
                 if(!is_array($point)||count($point)<2)continue;$x=(int)$point[0];$y=(int)$point[1];
-                if($x>=1&&$x<=(int)($definition['columns']??0)&&$y>=1&&$y<=(int)($definition['rows']??0))$local[$x.':'.$y]=true;
+                if($x>=1&&$x<=(int)($definition['columns']??0)&&$y>=1&&$y<=(int)($definition['rows']??0))$blocks[$x.':'.$y]=true;
             }
-            $staticCollisionCache[$cacheKey]=$local;
+            unset($decoded);
         }
-        $blocks=$staticCollisionCache[$cacheKey];
+        $staticCollisionCache[$cacheKey]=$blocks;
+        while(count($staticCollisionCache)>pv_world_collision_cache_limit())unset($staticCollisionCache[array_key_first($staticCollisionCache)]);
     }
 
     $stmt=$db->prepare('SELECT xblock,yblock FROM world_map_blocks WHERE world_key=? AND area_key=?');
@@ -348,7 +371,9 @@ function pv_world_blocks(mysqli $db, string $world, string $area): array {
         while($row=$r->fetch_assoc())$blocks[(int)$row['xblock'].':'.(int)$row['yblock']]=true;
         $stmt->close();
     }
-    return $runtimeCache[$runtimeKey]=$blocks;
+    $runtimeCache[$runtimeKey]=$blocks;
+    while(count($runtimeCache)>pv_world_collision_cache_limit())unset($runtimeCache[array_key_first($runtimeCache)]);
+    return $blocks;
 }
 
 /**

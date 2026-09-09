@@ -156,7 +156,7 @@ if ($scope === 'human') {
 } else {
     $ladderEyebrow = 'TOP 100 GLOBAL · LIVE 1-MINUTE REFRESH';
     $ladderTitle = 'Global Trainer Ladder';
-    $ladderCopy = 'The Top 100 is ordered by rating points. AI rivals compete throughout each active minute, with repeat opportunities for leading contenders. Wins earn RP and losses cost RP; opponent rating determines the amount. Every eligible player is also surfaced above it with their true global rank so human trainers can never disappear inside the 2,000-trainer AI field.';
+    $ladderCopy = 'The Top 100 is ordered by rating points. AI rivals compete throughout each active minute, with repeat opportunities for leading contenders. Wins earn RP and losses cost RP; opponent rating determines the amount. Every eligible player is also surfaced above it with their true global rank so human trainers can never disappear inside the 10,000-trainer AI field.';
 }
 
 pv_page_start('Trainer Rankings', 'rankings.php', true);
