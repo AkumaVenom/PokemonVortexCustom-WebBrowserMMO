@@ -1,0 +1,66 @@
+{
+  "kanto": {
+    "ready_areas": 94,
+    "assigned_areas": 94,
+    "unique_day_tracks": 23,
+    "night_variants": 0,
+    "assignment_basis": {
+      "verified-metadata": 93,
+      "adaptation": 1
+    }
+  },
+  "hoenn": {
+    "ready_areas": 136,
+    "assigned_areas": 136,
+    "unique_day_tracks": 32,
+    "night_variants": 0,
+    "assignment_basis": {
+      "native-title": 73,
+      "adaptation": 37,
+      "regional-family": 26
+    }
+  },
+  "johto": {
+    "ready_areas": 283,
+    "assigned_areas": 283,
+    "unique_day_tracks": 30,
+    "night_variants": 0,
+    "assignment_basis": {
+      "verified-metadata": 49,
+      "inherited-locality": 107,
+      "native-title": 43,
+      "adaptation": 84
+    }
+  },
+  "unbound": {
+    "ready_areas": 618,
+    "assigned_areas": 618,
+    "unique_day_tracks": 74,
+    "night_variants": 224,
+    "assignment_basis": {
+      "native-title": 172,
+      "adaptation": 42,
+      "inherited-locality": 404
+    }
+  },
+  "vortex": {
+    "ready_areas": 25,
+    "assigned_areas": 25,
+    "unique_day_tracks": 25,
+    "night_variants": 0,
+    "assignment_basis": {
+      "adaptation": 25
+    }
+  },
+  "total_areas": 1156,
+  "notes": [
+    "Only ready=true regional areas are included; future non-ready rooms are intentionally excluded.",
+    "All 25 original Vortex habitats are adaptations, numbered with the existing numeric map keys.",
+    "Kanto mappings use supplied verified map_music.csv; one Birth Island adaptation fills absent area music.",
+    "Johto canonical map headers come from supplied Crystal track_catalog.json; generic/custom rooms inherit locality.",
+    "Hoenn uses supplied named tracks, route families, and explicit cave/island adaptations where exact source music is unverified.",
+    "Unbound unknown/locality-only rooms are marked inherited or adaptation; no unsupported claim that generic room artwork identifies a gym.",
+    "Unbound day/night variants are provided only when explicitly named in the supplied track catalog; story dark/light variants are not guessed.",
+    "No remote files are required; every referenced source file is asserted present."
+  ]
+}

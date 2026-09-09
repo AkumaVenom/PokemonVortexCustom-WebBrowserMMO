@@ -317,6 +317,7 @@ if (!function_exists('mysql_connect')) {
 }
 
 require_once __DIR__ . '/nxt_theme.php';
+require_once __DIR__ . '/audio.php';
 
 /* ------------------------- Legacy output ------------------------- */
 function pv_output_filter(string $html): string {
@@ -421,7 +422,7 @@ function pv_output_filter(string $html): string {
     if ($isDocument && stripos($html, 'vortex-modern.css') === false) {
         $html = preg_replace('~</head>~i', $injection . '</head>', $html, 1);
     }
-    return pv_nxt_document($html);
+    return pv_audio_document(pv_nxt_document($html));
 }
 
 if (!defined('PV_DISABLE_OUTPUT_FILTER')) {

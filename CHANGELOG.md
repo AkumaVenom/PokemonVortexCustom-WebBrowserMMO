@@ -1,3 +1,25 @@
+## v32.0.1 — Sound Startup & Preference Recovery
+
+- Removed document-focus gating that could leave a visible game page silent until a click. Hidden pages still pause; visible startup, page restoration and running AudioContext transitions recover music automatically.
+- Kept Sound on/off independent of browser playback permission. Sound defaults on only when no saved choice exists; an explicit mute survives. A separate Play sound control resumes playback when browser policy requires activation.
+- Preserved unsaved account edits across navigation and network failures with a local/session journal, without the former 60-second expiry. In-memory fallback keeps controls usable when browser storage is blocked.
+- Added monotonic revision handling and per-edit acknowledgements so late reads, retries or older pages cannot undo newer mute/volume choices. Retried CSRF failures once after a same-account refresh; rejected writes intended for a different signed-in account.
+- Advanced the changed audio controller and dock asset cache versions to 32.0.1; the global application asset version remains 32.0.0. Existing audio assets, assignments, battle adapters, gameplay and schema 29 are retained; install as a small overlay over v32.0.0.
+- Added focused startup and persistence regressions. PHP/MySQL execution and real-browser listening remain target-environment checks; browser autoplay permission and full-document navigation gaps remain platform constraints.
+
+## v32.0.0 — World Soundtrack & Battle Audio
+
+- Added the seven supplied audio collections: 463 original audio files, including 15 battle themes, 25 jingles and 161 battle/capture effects. Audio assets are local, content-addressed and loaded on demand.
+- Assigned music to every one of the 1,156 playable maps across Vortex, Kanto, Hoenn, Johto and Unbound. Original supplied map metadata drives known assignments; locality inheritance and documented adaptations cover custom areas. Unbound includes 224 area/room night variants.
+- Added shared page themes for Trainer Home, exploration selection, Battle Arena, Rival Hub, collections, shops, community and account pages, including the recovered trainer battle shell.
+- Added one global Sound toggle and music/effects sliders. Signed-in choices persist to each account; guest choices remain device-local. Schema 29 adds four defaulted member fields through the existing Upgrade / Repair flow. CSRF, session ownership and revision checks protect preference writes.
+- Plays attack/move, normal/resisted/super-effective impact, miss, heal, send-out, faint, flee, ball throw/absorb/bounce/shake/click/breakout and result audio from confirmed server outcomes. Named move effects fall back to an appropriate one of all 18 types. Wild, trainer, ranked snapshot, live human and live bot battles share the mixer.
+- Added per-account, per-tab event/turn/result replay protection, reduced-motion audio, browser gesture activation, focus/visibility pause, bounded effect voices/cache, cross-page track-position recovery and independent music/effects muting. Stale tabs merge only the preference fields they changed.
+- Preserved source audio bytes. Native loop tags drive exact loop scheduling; 22 Crystal recording loops use reviewed analysis and a 25 ms boundary blend. Other Crystal recordings retain their supplied fade-repeat behavior, documented without claiming original loop metadata.
+- Preserved the complete v31 trainer population, progression, map artwork, collision, network endpoints, database dumps and original launchers. Combat changes only add presentation metadata; existing reward and inventory authority remains in place.
+
+**Install:** back up the current installation/database, copy the complete `public_html` contents while retaining local configuration overrides, run **Upgrade / Repair once**, then refresh. See [TESTING_v32.0.0.md](TESTING_v32.0.0.md), [sound system guide](Audio_System_README.md) and [validation report](RELEASE_VALIDATION_v32.0.0.json). PHP/MySQL execution and real-browser listening remain target-environment acceptance checks.
+
 ## v31.0.0 — 10,000 Trainer World
 
 - Added 5,000 more beginner AI trainers, raising the managed population from 5,000 to 10,000. New identities 5001–10000 start with a level-18 partner and 9000 EXP, like the accepted previous batch. Existing identities, Pokémon, teams, levels, captures, rankings and enabled/disabled state carry over.

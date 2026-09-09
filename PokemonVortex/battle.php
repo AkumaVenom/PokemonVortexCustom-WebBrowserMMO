@@ -27,6 +27,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 		pv_redirect('battle.php');
 	}
 
+	$GLOBALS['pv_audio_event_id'] = hash('sha256', (string)$_POST['battle_action_token']);
+
 	// Recovered battle forms are treated only as commands. Move slots, item names
 	// and team selections are validated against server-owned session state before
 	// the legacy combat engine sees them.
@@ -293,6 +295,7 @@ if($battleStartRequested){
     } else {
         unset($_SESSION['pv_rival_battle']);
     }
+	$_SESSION['pv_audio_standard_id'] = bin2hex(random_bytes(16));
 	// Unset previous battle sessions only after the new route has been validated.
 	unset($_SESSION['opponent_profile'],$_SESSION['s1'],$_SESSION['s2'],$_SESSION['s3'],$_SESSION['s4'],$_SESSION['s5'],$_SESSION['s6'],$_SESSION['ops1'],$_SESSION['ops2'],$_SESSION['ops3'],$_SESSION['ops4'],$_SESSION['ops5'],$_SESSION['ops6'],$_SESSION['position'],$_SESSION['your_profile'],$_SESSION['y_p']);
 	// The recovered engine treats this ten-element array as a tiny move cache.
@@ -948,6 +951,7 @@ if(($_SESSION['position'] ?? 0) == 2 && !isset($_POST['choose'])){
 			$itemColumn = (string)$itemMap[$requestedItem][1];
 			$uid = (int)$_SESSION['myid'];
 			if (pv_battle_runtime_consume_item($battleDb, $uid, $itemColumn)) {
+                $GLOBALS['pv_audio_item_accepted'] = true;
 				$_SESSION['items'][$itemIndex] = max(0, (int)$_SESSION['items'][$itemIndex] - 1);
 				if ($healAmount > 0) $_SESSION['s'.$u][10] += $healAmount;
 				elseif (in_array($i_u, array('Full Heal','Awakening','Parlyz Heal','Paralyze Heal','Antidote','Burn Heal','Ice Heal'), true)) unset($_SESSION['s'.$u][14]);
@@ -1875,6 +1879,7 @@ if(($_SESSION['position'] ?? 0) == 2 && !isset($_POST['choose'])){
 		if($atp == $_SESSION['s6'][1]){ // slot 6
 			$_SESSION['y_p'][0] = 6;
 		}
+		$GLOBALS['pv_audio_switch_accepted'] = true;
 		$opponentCount = (int)($_SESSION['opponent_profile'][2] ?? 0);
 		$spot = pv_battle_first_alive_slot('ops', $opponentCount);
 		// A living opponent must exist while selecting a combatant. If the party
@@ -2438,7 +2443,9 @@ if($battleStartRequested){
 						<a href="items.php" class="deselected">Pok&eacute;mart</a></p>';
 					}
 					else{
-						echo '<h2>Congratulations! You won the battle!</h2>
+						$GLOBALS['pv_audio_battle_status'] = 'won';
+                        $GLOBALS['pv_audio_kind'] = pv_audio_battle_kind();
+                        echo '<h2>Congratulations! You won the battle!</h2>
 						<h3>Your team beat ' . htmlentities($_SESSION['opponent_profile'][1]) . '\'s team.</h3>';
 						
 						for($sa=1;$sa<=6;$sa++){
@@ -2603,7 +2610,9 @@ if($battleStartRequested){
 								pv_battle_runtime_record_defeat($battleDb, $trainerId, (int)$time, $clanName);
 								if(($_SESSION['opponent_profile'][3] ?? '') === 'clan') unset($_SESSION['clan_battle']);
 
-								echo '<h2>Sorry, you lost the battle.</h2>
+								$GLOBALS['pv_audio_battle_status'] = 'lost';
+                                $GLOBALS['pv_audio_kind'] = pv_audio_battle_kind();
+                                echo '<h2>Sorry, you lost the battle.</h2>
 								<h3>Your team lost to ' . htmlentities($_SESSION['opponent_profile'][1]) . '\'s team.</h3>';
 								echo '<p class="optionsList autowidth"><strong>Options:</strong><br />';
 								if($_SESSION['opponent_profile'][3] == 'gym'){

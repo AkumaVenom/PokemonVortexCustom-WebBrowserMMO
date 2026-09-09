@@ -1,0 +1,13 @@
+<IfModule mod_mime.c>
+    AddType audio/ogg .opus
+    AddType audio/webm .webm
+    AddType application/json .json
+</IfModule>
+<IfModule mod_headers.c>
+    <FilesMatch "-[a-f0-9]{12}\.(opus|webm)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <Files "manifest.json">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </Files>
+</IfModule>

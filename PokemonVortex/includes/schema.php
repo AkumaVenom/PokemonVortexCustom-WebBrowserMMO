@@ -135,6 +135,11 @@ function pv_apply_schema_migrations(mysqli $db): array
         'messonoff' => 'TINYINT NOT NULL DEFAULT 1',
         'messnotifyonoff' => 'TINYINT NOT NULL DEFAULT 1',
         'messnotify' => 'TINYINT NOT NULL DEFAULT 0',
+        // v32 account-persistent audio; additive defaults also cover new signups.
+        'sound_enabled' => 'TINYINT UNSIGNED NOT NULL DEFAULT 1',
+        'music_volume' => 'TINYINT UNSIGNED NOT NULL DEFAULT 35',
+        'sfx_volume' => 'TINYINT UNSIGNED NOT NULL DEFAULT 70',
+        'audio_revision' => 'BIGINT UNSIGNED NOT NULL DEFAULT 0',
     ];
     foreach ($memberColumns as $column => $definition) {
         pv_schema_add_column($db, 'members', $column, $definition, $changes);
@@ -882,7 +887,7 @@ function pv_apply_schema_migrations(mysqli $db): array
     }
 
     if (pv_schema_table_exists($db, 'pv_schema_meta')) {
-        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,28,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
+        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,29,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
     }
 
     return $changes;

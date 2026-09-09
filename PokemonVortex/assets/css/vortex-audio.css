@@ -1,0 +1,17 @@
+/* v32: one accessible sound dock shared by modern and recovered pages. */
+.pv-audio-dock{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:1500;font:600 14px/1.45 system-ui,sans-serif;color:#163951;max-width:calc(100vw - 24px)}
+.pv-audio-buttons{display:flex;justify-content:flex-end;gap:4px}
+.pv-audio-dock [hidden]{display:none!important}
+.pv-audio-dock button{min-height:44px;border:2px solid #2a75bb;border-radius:14px;padding:8px 14px;background:#fff;color:#163951;cursor:pointer;box-shadow:0 4px 16px #16395126;font:inherit}
+.pv-audio-dock button[aria-pressed=true]{background:#236aa9;color:#fff}
+.pv-audio-dock button:disabled{opacity:.65;cursor:default}
+.pv-audio-dock button:focus-visible,.pv-audio-dock input:focus-visible{outline:3px solid #e7b51e;outline-offset:3px}
+.pv-audio-panel{position:absolute;bottom:54px;right:0;width:280px;max-width:calc(100vw - 28px);box-sizing:border-box;border:2px solid #2a75bb;border-radius:18px;padding:18px;background:#fff;box-shadow:0 10px 36px #16395133}
+.pv-audio-panel[hidden]{display:none!important}
+.pv-audio-panel strong{display:block;font-size:17px;margin-bottom:12px}.pv-audio-panel label{display:flex;justify-content:space-between;margin-top:10px}
+.pv-audio-panel input[type=range]{display:block;width:100%;height:36px;accent-color:#2a75bb;cursor:pointer}
+.pv-audio-panel p{font-size:13px;line-height:1.45;margin:9px 0 0;color:#506c80;overflow-wrap:anywhere}
+.pv-audio-panel #pv-audio-track{color:#255f8f}
+body{padding-bottom:68px}
+@media(max-width:600px){.pv-audio-dock{right:12px;bottom:max(10px,env(safe-area-inset-bottom))}.pv-audio-dock button{padding:8px 11px}}
+@media print{.pv-audio-dock{display:none}body{padding-bottom:0}}

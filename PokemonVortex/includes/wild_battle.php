@@ -260,6 +260,7 @@ function pv_wild_attack_turn(mysqli $db, array &$state, int $attackerId, string 
         pv_wild_log($state,$msg,$result['effectiveness']>=2?'good':'neutral');
     }
     if((int)$wild['hp']<=0){
+        $state['fx']['enemy_fainted']=true;
         pv_wild_finalize_win($db,$state);
         return;
     }
@@ -300,10 +301,12 @@ function pv_wild_enemy_turn(mysqli $db, array &$state): void
     }
 
     if((int)$player['hp']<=0){
+        $state['fx']['player_fainted']=true;
         pv_wild_log($state,$player['name'].' fainted.','danger');
         foreach($state['team'] as $id=>$member){
             if((int)$member['hp']>0){
                 $state['active_id']=(int)$id;
+                $state['fx']['auto_switch']=['name'=>(string)$member['name'],'pokemon_id'=>(int)$id];
                 $state['participants'][(int)$id]=true;
                 pv_wild_log($state,$member['name'].' entered the battle.','accent');
                 return;
