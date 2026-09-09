@@ -1,4 +1,4 @@
-/* v32.0.1 — persistent account preference and automatic playback recovery. All audio is presentation-only and local to this origin. */
+/* v32.0.3 — public audio access diagnostics and recoverable manifest/track loading. All audio is presentation-only and local to this origin. */
 (() => {
   'use strict';
   const node = document.getElementById('pv-audio-config');
@@ -17,6 +17,8 @@
   if(cached && (!config.account || Number(cached.revision)>saved.revision)) prefs=saved=clean(cached);
   let ctx, master, musicBus, effectsBus, musicVoice, musicKey = '', desired = config.context.track;
   let manifest = {tracks:{},aliases:{},moves:{},types:{}}, loadEpoch = 0, cueEpoch = 0;
+  let manifestLoaded=false, manifestPending=null, manifestFailure=null, playbackMessage='';
+  const failedTracks=new Set();
   let unlocked = false, gone = false, failed = false;
   let saving = false, dirty = false, editCount = 0, conflicts = 0, retries = 0, saveTimer, musicLoading = '';
   let activationAttempt=false;
@@ -31,6 +33,45 @@
   // or an actually suspended audio context should silence an enabled game page.
   const usable = () => prefs.enabled && !document.hidden && !gone && unlocked && ctx?.state === 'running';
   const message = text => { if ($('pv-audio-status')) $('pv-audio-status').textContent = text; };
+  function audioFailure(stage, status=0) {
+    const error=new Error(stage);error.audioStage=stage;error.audioStatus=status;return error;
+  }
+  function reportFailure(error) {
+    failed=true;
+    const stage=error?.audioStage || 'track-playback', status=Number(error?.audioStatus)||0;
+    const label=stage.startsWith('manifest')?'audio manifest':'audio track';
+    if(status===401 || status===403) playbackMessage=`The server denied access to the ${label} (HTTP ${status}). Retry after access is restored.`;
+    else if(status===404) playbackMessage=`The ${label} was not found on the server (HTTP 404). Restore the audio files, then retry.`;
+    else if(stage==='manifest-invalid') playbackMessage='The audio manifest response is invalid. Retry after the audio files are restored.';
+    else if(stage==='manifest-entry') playbackMessage='This music is missing from the audio manifest. Restore the matching audio files and retry.';
+    else if(stage==='track-decode') playbackMessage='The audio track downloaded but could not be decoded. Retry playback to download it again.';
+    else playbackMessage=`The ${label} could not load${status?` (HTTP ${status})`:''}. Please retry playback.`;
+    message(playbackMessage);paint();
+  }
+  function loadManifest(force=false) {
+    if(manifestLoaded) return Promise.resolve(true);
+    if(manifestPending) return manifestPending;
+    // A failed initial request is retried by the user, not by every focus event.
+    if(manifestFailure && !force) return Promise.resolve(false);
+    manifestPending=(async()=>{
+      try {
+        const response=await fetch(config.manifest,{credentials:'same-origin',cache:force?'reload':'no-cache'});
+        if(!response.ok) throw audioFailure('manifest-download',response.status);
+        let data;
+        try {data=await response.json();} catch (_) {throw audioFailure('manifest-invalid');}
+        const record=value=>value && typeof value==='object' && !Array.isArray(value);
+        if(!record(data) || !['tracks','aliases','moves','types'].every(key=>record(data[key])) || !Object.keys(data.tracks).length)
+          throw audioFailure('manifest-invalid');
+        manifest=data;manifestLoaded=true;manifestFailure=null;failed=false;
+        if(playbackMessage && $('pv-audio-status')?.textContent===playbackMessage) message('Audio files are ready.');
+        playbackMessage='';paint();return true;
+      } catch(error) {
+        manifestFailure=error?.audioStage?error:audioFailure('manifest-download');
+        reportFailure(manifestFailure);return false;
+      } finally {manifestPending=null;}
+    })();
+    return manifestPending;
+  }
   const later = (fn, ms, group='effects') => { const id=setTimeout(()=>{timers.delete(id);fn();},Math.max(0,ms));timers.set(id,group);return id; };
   function paint() {
     const toggle=$('pv-audio-toggle'); if (!toggle) return;
@@ -91,13 +132,15 @@
     key=resolve(key);
     if(buffers.has(key)) { const b=buffers.get(key);buffers.delete(key);buffers.set(key,b);return b; }
     if(pending.has(key)) return pending.get(key);
-    const track=manifest.tracks[key];if(!track || !ctx) throw new Error('Audio asset missing');
+    const track=manifest.tracks[key];if(!track || typeof track.file!=='string' || !ctx) throw audioFailure('manifest-entry');
     const promise=(async()=>{
       const url=new URL(track.file,new URL(config.manifest,location.href));
       if(url.origin!==location.origin) throw new Error('Audio origin mismatch');
-      const response=await fetch(url.href,{credentials:'same-origin',cache:'force-cache'});
-      if(!response.ok) throw new Error('Audio download unavailable');
-      const decoded=await ctx.decodeAudioData(await response.arrayBuffer());
+      const response=await fetch(url.href,{credentials:'same-origin',cache:failedTracks.has(key)?'reload':'force-cache'});
+      if(!response.ok) throw audioFailure('track-download',response.status);
+      const bytes=await response.arrayBuffer();
+      let decoded;
+      try {decoded=await ctx.decodeAudioData(bytes);} catch (_) {throw audioFailure('track-decode');}
       // Crystal recordings have no engine loop tags; only reviewed regions are blended.
       if(track.boundaryBlend || track.edgeFade) {
         const end=Math.min(decoded.length,Math.floor((track.loopEnd||decoded.duration)*decoded.sampleRate));
@@ -112,10 +155,10 @@
           }
         }
       }
-      buffers.set(key,decoded);evict();return decoded;
+      buffers.set(key,decoded);failedTracks.delete(key);evict();return decoded;
     })();
     pending.set(key,promise);
-    try { return await promise; } finally { pending.delete(key); }
+    try { return await promise; } catch(error) {failedTracks.add(key);throw error;} finally { pending.delete(key); }
   }
   function createVoice(decoded,bus,offset=0,loop=false,track={}) {
     const source=ctx.createBufferSource(), gain=ctx.createGain();
@@ -124,12 +167,13 @@
     source.connect(gain);gain.connect(bus);
     const voice={source,gain,offset,started:ctx.currentTime,bus};voices.add(voice);
     source.onended=()=>{voices.delete(voice);try{source.disconnect();gain.disconnect();}catch(_){}};
-    source.start(0,Math.min(Math.max(0,offset),decoded.duration-.001));
+    try {source.start(0,Math.min(Math.max(0,offset),decoded.duration-.001));}
+    catch(error) {stopVoice(voice);throw error;}
     return voice;
   }
   async function setMusic(key) {
     desired=resolve(key);paint();
-    if(!usable() || prefs.music===0 || musicKey===desired || musicLoading===desired) return;
+    if(!manifestLoaded || !usable() || prefs.music===0 || musicKey===desired || musicLoading===desired) return;
     const epoch=++loadEpoch, requested=desired;musicLoading=requested;
     try {
       const decoded=await buffer(requested);
@@ -137,16 +181,18 @@
       remember(); const previous=musicVoice;
       const savedPosition=safeRead('sessionStorage',scope+':position:'+requested,null);
       const offset=savedPosition && Date.now()-savedPosition.at<2*60*60*1000 ? Number(savedPosition.offset)||0 : 0;
-      musicKey=requested; musicVoice=createVoice(decoded,musicBus,requested==='jingle.391'?0:offset,requested!=='jingle.391',manifest.tracks[requested]);
+      const nextVoice=createVoice(decoded,musicBus,requested==='jingle.391'?0:offset,requested!=='jingle.391',manifest.tracks[requested]);
+      musicKey=requested;musicVoice=nextVoice;
       if(requested==='jingle.391') {
         const voice=musicVoice, cleanup=voice.source.onended;
         voice.source.onended=()=>{cleanup();if(musicVoice===voice){musicVoice=null;musicKey='';void setMusic('emerald.400');}};
       }
       musicVoice.gain.gain.setValueAtTime(0,ctx.currentTime);ramp(musicVoice.gain.gain,1,.32);
       if(previous) { ramp(previous.gain.gain,0,.32);setTimeout(()=>stopVoice(previous),360); }
-      failed=false;paint();evict();
-    } catch (_) {
-      if(epoch===loadEpoch) { failed=true;message('This track could not play. Check the audio files or try sound again.');paint(); }
+      if(playbackMessage && $('pv-audio-status')?.textContent===playbackMessage) message('Music is playing.');
+      playbackMessage='';failed=false;paint();evict();
+    } catch(error) {
+      if(epoch===loadEpoch) reportFailure(error);
     } finally { if(epoch===loadEpoch) musicLoading=''; }
   }
   async function unlock(fromGesture=false) {
@@ -161,7 +207,7 @@
         if(typeof ctx.createDynamicsCompressor==='function') {
           const limiter=ctx.createDynamicsCompressor();limiter.threshold.value=-6;limiter.knee.value=4;limiter.ratio.value=12;limiter.attack.value=.005;limiter.release.value=.12;master.connect(limiter);limiter.connect(ctx.destination);
         } else master.connect(ctx.destination);
-        ctx.onstatechange=()=>{unlocked=ctx.state==='running';gains();paint();if(unlocked)void ready.then(()=>setMusic(desired));};
+        ctx.onstatechange=()=>{unlocked=ctx.state==='running';gains();paint();if(unlocked && manifestLoaded)void setMusic(desired);};
       }
       // Called directly during trusted gestures, with an automatic best-effort resume on navigation.
       activationAttempt=true;
@@ -169,9 +215,9 @@
       setTimeout(()=>{activationAttempt=false;},120);
       await resume;
       activationAttempt=false;
-      unlocked=ctx.state==='running';failed=false;gains();paint();
-      await ready;
-      if(usable()) void setMusic(desired);
+      unlocked=ctx.state==='running';gains();paint();
+      const loaded=await loadManifest(fromGesture);
+      if(loaded && usable()) void setMusic(desired);
     } catch (_) { activationAttempt=false;unlocked=false;message('Sound is on. Your browser may require Play sound or permission to autoplay.');paint(); }
   }
   function claim(key) {
@@ -349,7 +395,7 @@
     } else dirty=true;
     gains();paint();clearTimeout(saveTimer);saveTimer=setTimeout(save,180);
   }
-  const ready=fetch(config.manifest,{credentials:'same-origin',cache:'force-cache'}).then(r=>{if(!r.ok)throw new Error();return r.json();}).then(data=>{manifest=data;paint();return true;}).catch(()=>{failed=true;message('Game audio files are unavailable.');paint();return false;});
+  const ready=loadManifest();
   let settleInitialResume;
   const initialResume=new Promise(resolve=>{settleInitialResume=resolve;});
   window.PVAudio={ready:Promise.all([ready,initialResume]),claim,cue,strike,result,setMusic,

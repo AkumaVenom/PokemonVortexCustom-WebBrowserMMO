@@ -95,11 +95,11 @@ function pv_audio_document(string $html): string {
     $context = pv_audio_context();
     $config = ['account'=>$uid,'base'=>pv_base(),'preferences'=>$prefs,'available'=>$available,
         'csrf'=>pv_csrf_token(),'endpoint'=>pv_url('audio_settings.php'),
-        'manifest'=>pv_asset('audio/manifest.json').'?v=32.0.0','context'=>$context];
+        'manifest'=>pv_asset('audio/manifest.json').'?v=32.0.3','context'=>$context];
     $json = json_encode($config,JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
     $head = '<link rel="stylesheet" href="'.pv_h(pv_asset('css/vortex-audio.css')).'?v=32.0.1">'
         .'<script type="application/json" id="pv-audio-config">'.$json.'</script>'
-        .'<script defer src="'.pv_h(pv_asset('js/vortex-audio.js')).'?v=32.0.1"></script>'
+        .'<script defer src="'.pv_h(pv_asset('js/vortex-audio.js')).'?v=32.0.3"></script>'
         .'<script defer src="'.pv_h(pv_asset('js/vortex-battle-audio.js')).'?v=32.0.0"></script>';
     $html = preg_replace('~</head>~i',$head.'</head>',$html,1) ?? $html;
     $control = '<aside class="pv-audio-dock" id="pv-audio-dock" aria-label="Game sound">'

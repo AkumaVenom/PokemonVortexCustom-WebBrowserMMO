@@ -1,3 +1,11 @@
+# Public soundtrack catalog/media only. Keep private project files protected.
+<Files "manifest.json">
+    Require all granted
+</Files>
+<FilesMatch "^[0-9]+-[a-f0-9]{12}\.(?:opus|webm)$">
+    Require all granted
+</FilesMatch>
+
 <IfModule mod_mime.c>
     AddType audio/ogg .opus
     AddType audio/webm .webm

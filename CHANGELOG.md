@@ -1,3 +1,11 @@
+## v32.0.3 — Public Audio Access & Playback Retry
+
+- Added explicit public Apache grants only for the audio directory's exact `manifest.json` and numeric, 12-character content-hashed `.opus` / `.webm` filenames. This targets the user's reported manifest permission denial without opening unrelated files. The upstream denying rule and deployed result remain unverified; server-level restrictions may require administrator correction.
+- Made failed manifest loading retryable through Retry playback, sharing pending requests and keeping successfully loaded manifests. Failed track downloads can be requested again; HTTP access/missing errors, invalid manifests and decode failures now retain distinct diagnostics.
+- Cleaned up failed music-source startup so it cannot leave playback falsely active, and preserved page-lifecycle guards during delayed manifest recovery.
+- Versioned the changed audio controller and manifest URLs as 32.0.3 while retaining the global 32.0.2 asset version. Database credentials, setup layout, schema 29, gameplay, map display dimensions and packaged audio bytes are unchanged from v32.0.2.
+- Added eight focused Node recovery regressions; these and all 21 existing startup/preference tests passed. Apache/PHP execution, deployed HTTP behavior and real-browser listening remain host acceptance checks. The small overlay needs no database repair, rebuild or media recopy; see TESTING_v32.0.3.md.
+
 ## v32.0.1 — Sound Startup & Preference Recovery
 
 - Removed document-focus gating that could leave a visible game page silent until a click. Hidden pages still pause; visible startup, page restoration and running AudioContext transitions recover music automatically.
