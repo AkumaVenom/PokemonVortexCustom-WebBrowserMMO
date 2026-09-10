@@ -29,6 +29,7 @@ $_SESSION['pv_last_map_move'] = $nowMicro;
 try { $db = pv_db(); }
 catch (Throwable $e) { pv_log('Map DB unavailable: '.$e->getMessage()); pv_map_json(['ok'=>false,'error'=>'service'], 503); }
 
+pv_admin_world_follow_teleport();
 $uid = (int)$_SESSION['myid'];
 $worldKey = (string)($_SESSION['world_key'] ?? 'vortex');
 if ($worldKey !== 'vortex') pv_map_json(['ok'=>false,'error'=>'world'], 409);

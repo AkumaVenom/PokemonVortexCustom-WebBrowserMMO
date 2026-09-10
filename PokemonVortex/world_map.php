@@ -23,6 +23,7 @@ if(pv_world_needs_render_tiles($area)&&$renderTiles===[]){
 try{$db=pv_db();}
 catch(Throwable $e){pv_log('World map DB unavailable: '.$e->getMessage());pv_redirect('dashboard.php?service=unavailable');}
 
+pv_admin_world_follow_teleport();
 $uid=(int)$_SESSION['myid'];
 [$x,$y]=pv_world_position($db,$uid,$world,$areaKey,(array)$area['spawn_points']);
 $areaBlocks=pv_world_blocks($db,$world,$areaKey);
@@ -62,8 +63,11 @@ $connectedAreas=pv_world_connected_areas($area);
 $hasEncounters=trim((string)($area['encounter_profile']??''))!=='';
 $trainer=max(1,min(29,(int)($_SESSION['map_preferences'][2]??1)));
 
+$environment = pv_admin_world_environment($db);
+$selfMeta = pv_admin_world_player_meta($db,$uid);
 pv_page_start((string)$area['name'],'map_select.php',true);
 ?>
+<link rel="stylesheet" href="<?=pv_h(pv_asset('css/console-world.css'))?>?v=<?=pv_asset_version()?>">
 <div class="pv-game-layout">
 <?php pv_game_side_menu('map_select.php'); ?>
 <main class="pv-main-column">
@@ -116,7 +120,7 @@ pv_page_start((string)$area['name'],'map_select.php',true);
 window.PV_WORLD_MAP_CONFIG = <?=json_encode([
     'base'=>pv_base(),'world'=>$world,'worldLabel'=>$worldLabel,'area'=>$areaKey,'x'=>$x,'y'=>$y,
     'columns'=>(int)$area['columns'],'rows'=>(int)$area['rows'],'tileSize'=>(int)$area['display_tile_size'],'logicalTileSize'=>(int)$area['tile_size'],
-    'trainer'=>$trainer,'players'=>$players,'blockedDirections'=>$blockedDirections,
+    'trainer'=>$trainer,'players'=>$players,'locationRevision'=>(int)($_SESSION['pv_console_location_revision']??0),'selfMeta'=>$selfMeta,'environment'=>$environment,'blockedDirections'=>$blockedDirections,
     'moveUrl'=>pv_url('world_map_move.php'),'presenceUrl'=>pv_url('world_map_presence.php'),'presenceInterval'=>2000,
     'botProfileBase'=>pv_url('bot_trainer.php?id='),
     'csrf'=>pv_csrf_token(),'spriteBase'=>pv_static('images/sprites/'),'renderMode'=>$renderMode,'renderImageCount'=>$renderTiles!==[]?count($renderTiles):1,

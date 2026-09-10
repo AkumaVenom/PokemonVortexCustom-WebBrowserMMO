@@ -1,3 +1,13 @@
+## v33.0.0 — Interactive local server command system
+
+- Extended the existing CMD/PHP console with editable input, concurrent filtered activity, safe in-memory history, aliases, quoted arguments, selected trainer context, detailed help and process reloads. Added Windows PowerShell keyboard handling and a Unix launcher/editor.
+- Implemented the complete non-chat proposal through account, Pokémon, inventory, economy, moderation, world, event, social, diagnostics and isolated battle-testing handlers. Explicit architecture-specific behavior is documented in `docs/SERVER_COMMANDS.md`.
+- Restricted command execution to the local CLI process; HTTP routes and command handlers reject browser execution. Stored trainer ranks do not create a remote command privilege.
+- Added per-command configuration, local rank gates, production developer opt-in, bound one-use confirmations, credential-safe audits, transaction validation, player request synchronization and stale-session invalidation.
+- Integrated timed bans, session revocation, lock/freeze/jail restrictions, collision-aware teleporting, catchable one-use spawns, map weather/period overrides, titles/poses, Event Center controls and trade blocks with existing authoritative gameplay.
+- Retained normal live combat balance, original assets, native map sizing, existing messaging and shared XAMPP service ownership. Developer duel commands use explicitly isolated persistent snapshots.
+- Added additive/idempotent console migrations to the existing setup repair path, automatic console upgrade detection, operator documentation and guarded disposable-database regression tests.
+
 ## v32.0.3 — Public Audio Access & Playback Retry
 
 - Added explicit public Apache grants only for the audio directory's exact `manifest.json` and numeric, 12-character content-hashed `.opus` / `.webm` filenames. This targets the user's reported manifest permission denial without opening unrelated files. The upstream denying rule and deployed result remain unverified; server-level restrictions may require administrator correction.

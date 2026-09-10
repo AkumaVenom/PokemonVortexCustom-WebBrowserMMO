@@ -5,7 +5,7 @@ DirectoryIndex index.php
 RewriteEngine On
 
 # Never expose private application internals directly.
-RewriteRule ^(?:config|includes|storage|_private)(?:/|$) - [F,L,NC]
+RewriteRule ^(?:config|includes|storage|tools|_private)(?:/|$) - [F,L,NC]
 # Recovered AJAX/stat helper trees are retained only as historical source material.
 # The modern runtime does not address them over HTTP; direct access would bypass
 # current CSRF, movement and account boundaries.
@@ -75,6 +75,6 @@ ErrorDocument 404 /PokemonVortex/404.php
 <FilesMatch "^(?i:server_console\.php|PokemonVortex_ServerConsole\.cmd)$">
   Require all denied
 </FilesMatch>
-<FilesMatch "(?i)\.(?:cmd|bat|ps1)$">
+<FilesMatch "(?i)\.(?:cmd|bat|ps1|sh)$">
   Require all denied
 </FilesMatch>

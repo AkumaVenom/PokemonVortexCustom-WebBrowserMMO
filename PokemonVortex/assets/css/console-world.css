@@ -1,0 +1,17 @@
+/* Local server administration: additive map atmosphere and trainer cosmetics. */
+.pv-console-weather{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.pv-console-weather[data-period="night"]{background-color:rgba(15,23,61,.19)}
+.pv-console-weather[data-weather="sun"]{background:rgba(255,219,134,.11)}
+.pv-console-weather[data-weather="fog"]{background:rgba(217,234,241,.28)}
+.pv-console-weather[data-weather="rain"],.pv-console-weather[data-weather="storm"]{background-image:repeating-linear-gradient(110deg,transparent 0,transparent 42px,rgba(169,217,251,.22) 43px,transparent 45px);background-size:70px 100px;animation:pvConsoleRain 1.3s linear infinite}
+.pv-console-weather[data-weather="storm"]{background-color:rgba(23,37,65,.28)}
+.pv-console-weather[data-weather="snow"]{background-image:radial-gradient(circle at 10px 10px,rgba(255,255,255,.75) 1.5px,transparent 2px);background-size:38px 42px;animation:pvConsoleSnow 4s linear infinite}
+.pv-map-actor[data-pose="sit"] .pv-map-sprite-top{transform:translateY(4px)}
+.pv-map-actor[data-pose="sit"] .pv-map-sprite-bottom{transform:scaleY(.65);transform-origin:bottom}
+.pv-map-actor[data-pose="dance"] img{animation:pvConsoleDance .7s ease-in-out infinite alternate!important}
+.pv-map-actor .pv-console-title{display:block;max-width:220px;white-space:normal;text-align:center;font-size:9px;color:#ffd675}
+.pv-map-actor.is-afk{opacity:.7}
+@keyframes pvConsoleRain{to{background-position:-18px 100px}}
+@keyframes pvConsoleSnow{to{background-position:14px 42px}}
+@keyframes pvConsoleDance{from{transform:translateX(-2px) rotate(-5deg)}to{transform:translateX(2px) rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.pv-console-weather,.pv-map-actor[data-pose="dance"] img{animation:none!important}}

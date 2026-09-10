@@ -53,7 +53,7 @@ function pv_collection_rows(mysqli $db,int $uid,string $search='',string $varian
                  COALESCE(ps.nature,'') nature,COALESCE(ps.ability,'') ability,COALESCE(ps.happiness,0) happiness,
                  COALESCE(ps.display_form,'') display_form,COALESCE(ps.hp_iv,0) hp_iv,COALESCE(ps.attack_iv,0) attack_iv,
                  COALESCE(ps.defense_iv,0) defense_iv,COALESCE(ps.spatk_iv,0) spatk_iv,COALESCE(ps.spdef_iv,0) spdef_iv,
-                 COALESCE(ps.speed_iv,0) speed_iv
+                 COALESCE(ps.speed_iv,0) speed_iv,COALESCE(ps.nickname,'') nickname,COALESCE(ps.hp_ev,0) hp_ev,COALESCE(ps.attack_ev,0) attack_ev,COALESCE(ps.defense_ev,0) defense_ev,COALESCE(ps.spatk_ev,0) spatk_ev,COALESCE(ps.spdef_ev,0) spdef_ev,COALESCE(ps.speed_ev,0) speed_ev
           FROM pokemon p LEFT JOIN pokemon_stats ps ON ps.id=p.id WHERE {$whereSql} ORDER BY {$order} LIMIT ? OFFSET ?";
     $stmt=$db->prepare($sql);if(!$stmt)return ['rows'=>[],'total'=>$total,'page'=>$page,'pages'=>$pages];
     $types2=$types.'ii';$args2=[...$args,$perPage,$offset];$stmt->bind_param($types2,...$args2);$stmt->execute();$r=$stmt->get_result();$rows=[];
@@ -67,7 +67,7 @@ function pv_collection_pokemon(mysqli $db,int $uid,int $pokemonId,bool $forUpdat
     $sql="SELECT p.*,COALESCE(ps.nature,'') nature,COALESCE(ps.ability,'') ability,COALESCE(ps.happiness,0) happiness,
                 COALESCE(ps.display_form,'') display_form,COALESCE(ps.hp_iv,0) hp_iv,COALESCE(ps.attack_iv,0) attack_iv,
                 COALESCE(ps.defense_iv,0) defense_iv,COALESCE(ps.spatk_iv,0) spatk_iv,COALESCE(ps.spdef_iv,0) spdef_iv,
-                COALESCE(ps.speed_iv,0) speed_iv
+                COALESCE(ps.speed_iv,0) speed_iv,COALESCE(ps.nickname,'') nickname,COALESCE(ps.hp_ev,0) hp_ev,COALESCE(ps.attack_ev,0) attack_ev,COALESCE(ps.defense_ev,0) defense_ev,COALESCE(ps.spatk_ev,0) spatk_ev,COALESCE(ps.spdef_ev,0) spdef_ev,COALESCE(ps.speed_ev,0) speed_ev
          FROM pokemon p LEFT JOIN pokemon_stats ps ON ps.id=p.id WHERE p.id=? AND CAST(p.owner AS UNSIGNED)=? LIMIT 1".($forUpdate?' FOR UPDATE':'');
     $stmt=$db->prepare($sql);if(!$stmt)return null;$stmt->bind_param('ii',$pokemonId,$uid);$stmt->execute();$row=$stmt->get_result()->fetch_assoc();$stmt->close();return $row?:null;
 }

@@ -222,6 +222,7 @@ function pv_wild_start(mysqli $db, int $uid, string $token): array
     ];
     pv_wild_log($state,'Wild '.$display.' appeared at level '.$level.'.','accent');
     pv_wild_log($state,'Go, '.$team[$activeId]['name'].'!');
+    pv_admin_world_claim_spawn($db,$uid,$pending);
     $_SESSION['pv_pending_wild_encounter']['consumed']=true;
     pv_wild_save($state);
     return $state;

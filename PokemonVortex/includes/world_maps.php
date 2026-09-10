@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/bootstrap.php';
 require_once __DIR__ . '/wild_level_balance.php';
+require_once __DIR__ . '/admin/world_runtime.php';
 
 /**
  * Multi-world exploration registry.
@@ -260,6 +261,11 @@ function pv_world_map_column_available(mysqli $db): bool {
 }
 
 function pv_world_presence_upsert(mysqli $db, int $uid, string $world, string $area, int $x, int $y): void {
+    if (pv_admin_world_table_ready($db,'console_player_state')) {
+        $poseStmt=$db->prepare("UPDATE console_player_state s JOIN mapusers m ON m.id=s.user_id SET s.pose='standing' WHERE s.user_id=? AND (m.x<>? OR m.y<>? OR m.world_key<>? OR m.map<>?)");
+        $poseMap=(string)$area;
+        $poseStmt->bind_param('iiiss',$uid,$x,$y,$world,$poseMap);$poseStmt->execute();$poseStmt->close();
+    }
     $world = pv_world_normalize_key($world);
     $area = substr(pv_world_area_key($area), 0, 45);
     if ($uid <= 0 || $area === '') throw new RuntimeException('Invalid world presence state.');
@@ -314,7 +320,7 @@ function pv_world_players(mysqli $db, int $uid, string $world, string $area): ar
         $stmt=$db->prepare('SELECT b.user_id AS id,m.username,b.trainer_sprite AS trainer,b.x,b.y FROM bot_trainers b INNER JOIN members m ON m.id=b.user_id WHERE b.enabled=1 AND b.world_key=? AND b.map_key=? AND b.user_id<>? ORDER BY b.bot_index LIMIT '.(int)$remaining);
         if($stmt){$stmt->bind_param('ssi',$world,$area,$uid);$stmt->execute();$r=$stmt->get_result();while($row=$r->fetch_assoc())$players[]=['id'=>(int)$row['id'],'username'=>(string)$row['username'],'trainer'=>max(1,min(29,(int)$row['trainer'])),'x'=>(int)$row['x'],'y'=>(int)$row['y'],'bot'=>true];$stmt->close();}
     }
-    return$players;
+    return pv_admin_world_presence_filter($db,$players);
 }
 
 /**
@@ -515,6 +521,8 @@ function pv_world_vortex_variant_roll(): string {
 function pv_world_encounter_html(mysqli $db,array $area,int $x,int $y): string {
     unset($_SESSION['wb'],$_SESSION['lvl'],$_SESSION['pv_pending_wild_encounter']);
     $world=pv_world_normalize_key((string)($area['world']??''));
+    $spawn=pv_admin_world_spawn_html($db,(int)($_SESSION['myid']??0),$world,(string)$area['key'],$x,$y);
+    if($spawn!==null)return $spawn;
     // The scanner needs only the region label, not every area's image/collision.
     $worldDef=pv_world_manifest($world);$worldLabel=(string)($worldDef['label']??ucfirst($world));
     $profileKey=trim((string)($area['encounter_profile']??''));

@@ -1,0 +1,341 @@
+{
+  "release": "33.0.0",
+  "source_baseline": "32.0.0 supplied eight-part archive",
+  "source_archive_sha256": "56920885fd59e649338d253f5ab25d6742949876bf92cf4fe5a3da799af2846c",
+  "canonical_commands": 128,
+  "aliases": 6,
+  "removed_files": [],
+  "changes": [
+    {
+      "path": "CHANGELOG.md",
+      "kind": "modified",
+      "sha256": "9c21b5f440cffa55c1bd20189a91aa0906b9fb43645d038c2ea407119ee8c8a4",
+      "bytes": 144493
+    },
+    {
+      "path": "PokemonVortex/.htaccess",
+      "kind": "modified",
+      "sha256": "d6767ee7e68890f3c1e8244e41885bc9fec912e1ddadf7d072e8832d64f6f798",
+      "bytes": 2837
+    },
+    {
+      "path": "PokemonVortex/PokemonVortex_ServerConsole.cmd",
+      "kind": "modified",
+      "sha256": "86c1b9beaf13c05461cdc0aafbcfd659a0c0b163137352d5fd8ac390b36675d3",
+      "bytes": 1302
+    },
+    {
+      "path": "PokemonVortex/PokemonVortex_ServerConsole.ps1",
+      "kind": "added",
+      "sha256": "d00e997a1c3691ea146f660d6d5d8987676857e61094f67cf2de3abd57006108",
+      "bytes": 15014
+    },
+    {
+      "path": "PokemonVortex/PokemonVortex_ServerConsole.sh",
+      "kind": "added",
+      "sha256": "6ed1f8380ad838b67e0a25cdccf6c3e15f9b5f51e63a6b0213d463592e64cea6",
+      "bytes": 647
+    },
+    {
+      "path": "PokemonVortex/assets/css/console-world.css",
+      "kind": "added",
+      "sha256": "789824598b0d18fd1967a6b79b596455163824529ab0e06c9b4e3bfc39ae0981",
+      "bytes": 1777
+    },
+    {
+      "path": "PokemonVortex/assets/js/vortex-map.js",
+      "kind": "modified",
+      "sha256": "e73d5f56faa5434b3bc55e4cc9d73583cdf749ae75c37c554d434eec3552d8fc",
+      "bytes": 16437
+    },
+    {
+      "path": "PokemonVortex/assets/js/world-map.js",
+      "kind": "modified",
+      "sha256": "26a2ba8a298c413f3865e8c5993b064192d7658f9b7eb878b0811eeb17ca51fe",
+      "bytes": 18426
+    },
+    {
+      "path": "PokemonVortex/checklogin.php",
+      "kind": "modified",
+      "sha256": "a5136c3c647798f07d9569f489175f49f9929fd134ffe6cc83f76f0c476942f7",
+      "bytes": 5518
+    },
+    {
+      "path": "PokemonVortex/config/app.php",
+      "kind": "modified",
+      "sha256": "e4c9fa9e9b23833c7b34627cba8c24ade6de713519bb8dc97e7e6c09a9c22c96",
+      "bytes": 1890
+    },
+    {
+      "path": "PokemonVortex/event_center.php",
+      "kind": "modified",
+      "sha256": "55ab898baf8a67b521c7a255d03b65e420e90d717ee60ea8183c470c98ceb7df",
+      "bytes": 13024
+    },
+    {
+      "path": "PokemonVortex/includes/admin/accounts.php",
+      "kind": "added",
+      "sha256": "93e23d5661a009906d64cf87d5a02673eb3ea54c8cf5be0558e8399e51a2ab31",
+      "bytes": 27423
+    },
+    {
+      "path": "PokemonVortex/includes/admin/accounts_schema.php",
+      "kind": "added",
+      "sha256": "a70644da928695d142fa6131fbea95b6b51d776941a44467fa92a568af573630",
+      "bytes": 2990
+    },
+    {
+      "path": "PokemonVortex/includes/admin/activity_runtime.php",
+      "kind": "added",
+      "sha256": "003a09228dab8a76c2338553af076788bc03e030d95c973858d33e0bc95e6c8e",
+      "bytes": 3456
+    },
+    {
+      "path": "PokemonVortex/includes/admin/core.php",
+      "kind": "added",
+      "sha256": "d0e9698757133093caf6f62796d8a8402d76763c556ecf91b0dc718f3bb6dc02",
+      "bytes": 20128
+    },
+    {
+      "path": "PokemonVortex/includes/admin/live_accept_runtime.php",
+      "kind": "added",
+      "sha256": "d76946e2c335bb37f86d7899638d53fe647f084c6d219ec94f4a664e32540fc0",
+      "bytes": 3131
+    },
+    {
+      "path": "PokemonVortex/includes/admin/pokemon.php",
+      "kind": "added",
+      "sha256": "30d76eda77a147fd12208bb7efb3a2c3c0b10518e35a181a02f3146b2aca9cd5",
+      "bytes": 40754
+    },
+    {
+      "path": "PokemonVortex/includes/admin/pokemon_schema.php",
+      "kind": "added",
+      "sha256": "21805bd4be9d0a9874cb756bbc65e3ef7426cb54f95e8869eee5d3da6897b208",
+      "bytes": 1083
+    },
+    {
+      "path": "PokemonVortex/includes/admin/runtime.php",
+      "kind": "added",
+      "sha256": "f6fabafb995be30656f1acb3d7b16eba70a4c280bbc42b1158076dd1625cdfc1",
+      "bytes": 14980
+    },
+    {
+      "path": "PokemonVortex/includes/admin/schema.php",
+      "kind": "added",
+      "sha256": "281b454c1b29cac28dc2c9b0067d2b1e1eb4ab0abd8b8075d540ee8d8bd2383f",
+      "bytes": 1584
+    },
+    {
+      "path": "PokemonVortex/includes/admin/social.php",
+      "kind": "added",
+      "sha256": "4bc1712ddfbded2446b012692e4267dcd63699675e8a47a1cc67a4c8687d1393",
+      "bytes": 14755
+    },
+    {
+      "path": "PokemonVortex/includes/admin/social_runtime.php",
+      "kind": "added",
+      "sha256": "1b379dea84dd70ae145708cc9e614ae70d427ae723306be607ba4480cbebbee8",
+      "bytes": 1722
+    },
+    {
+      "path": "PokemonVortex/includes/admin/social_schema.php",
+      "kind": "added",
+      "sha256": "3d039f03df3b33ee35f2099ee1c8b522f076478e457541b0ab6fbdbdba585eb8",
+      "bytes": 1740
+    },
+    {
+      "path": "PokemonVortex/includes/admin/system.php",
+      "kind": "added",
+      "sha256": "f7dc202624490f91a6a98aa2e35bbf67ef01b13806e180db6aa9b915243d1186",
+      "bytes": 17794
+    },
+    {
+      "path": "PokemonVortex/includes/admin/system_runtime.php",
+      "kind": "added",
+      "sha256": "ca99b5c847c631191bc88552b39e281e09d19ccc9b51ff85ab8f7f92e6b9f34c",
+      "bytes": 3482
+    },
+    {
+      "path": "PokemonVortex/includes/admin/world.php",
+      "kind": "added",
+      "sha256": "9025329ba3dcd32cb9a53e8afe963c8eafd39bca8233913c3a96a911b4889b33",
+      "bytes": 23338
+    },
+    {
+      "path": "PokemonVortex/includes/admin/world_runtime.php",
+      "kind": "added",
+      "sha256": "064826cfaa69d2c823d9720c8dfb9050ce28db80eace5f7b71836c9d26529d09",
+      "bytes": 9248
+    },
+    {
+      "path": "PokemonVortex/includes/admin/world_schema.php",
+      "kind": "added",
+      "sha256": "9eda192924d0e678739d71add85d4ae32786a48bf07ca47bfab86828bd356b26",
+      "bytes": 2431
+    },
+    {
+      "path": "PokemonVortex/includes/admin_pokemon_runtime.php",
+      "kind": "added",
+      "sha256": "fd0f2b176cac39398acb1db6211e060e216fb84d7b4f4c81d0ee525542e5b27b",
+      "bytes": 1611
+    },
+    {
+      "path": "PokemonVortex/includes/bootstrap.php",
+      "kind": "modified",
+      "sha256": "a328fba6e109f517f412121bcb5579c94b20da1dee1c59c213e5416e40f9174a",
+      "bytes": 20915
+    },
+    {
+      "path": "PokemonVortex/includes/bot_runtime.php",
+      "kind": "modified",
+      "sha256": "6fd924308dad49c9d9e6f45bf7dbafe8c52b4f7a037ed0c07e02be6263a5d5df",
+      "bytes": 60941
+    },
+    {
+      "path": "PokemonVortex/includes/collection.php",
+      "kind": "modified",
+      "sha256": "34333d9137fdb8f3c65df461704de5b3b49246810add53c28fe0f2e6a536d4a8",
+      "bytes": 14177
+    },
+    {
+      "path": "PokemonVortex/includes/events.php",
+      "kind": "modified",
+      "sha256": "4b556d444e52302e630116ac42e60058aa2230428f702ddf389d654aeaa30003",
+      "bytes": 16905
+    },
+    {
+      "path": "PokemonVortex/includes/gameplay.php",
+      "kind": "modified",
+      "sha256": "0e032530fad5ecffcab7e5f04bdcd959e2ba8978841907028a94affdc20df3f4",
+      "bytes": 29503
+    },
+    {
+      "path": "PokemonVortex/includes/map_runtime.php",
+      "kind": "modified",
+      "sha256": "61af372dfbba33892b9aa280b6e2c68e863a34511c09d44fe26f6d7ffb46db7b",
+      "bytes": 31277
+    },
+    {
+      "path": "PokemonVortex/includes/network.php",
+      "kind": "modified",
+      "sha256": "f6644bf963d4f59a5f517568ab7ad3ee97f679c4bbbfc22f0515156e5181b098",
+      "bytes": 23851
+    },
+    {
+      "path": "PokemonVortex/includes/rival_runtime.php",
+      "kind": "modified",
+      "sha256": "abfbfb6c3a4f7b04d354cf2ddf6787f8da303b28597e7b0c7eeddfb0c1cbc897",
+      "bytes": 42266
+    },
+    {
+      "path": "PokemonVortex/includes/schema.php",
+      "kind": "modified",
+      "sha256": "e627ac6bcb7be412401c37a188084c2dee02d1e8eb0a82e29d14c37813c4c50e",
+      "bytes": 49463
+    },
+    {
+      "path": "PokemonVortex/includes/wild_battle.php",
+      "kind": "modified",
+      "sha256": "c9b79d5467cd290e596d31f2ac77faec53ec2112afa5104a38baae71c1e00bf7",
+      "bytes": 33015
+    },
+    {
+      "path": "PokemonVortex/includes/world_maps.php",
+      "kind": "modified",
+      "sha256": "21024fc03e88a14c0a2b64f80c690dc26c1528626d4b68f0332d1ab1250f948a",
+      "bytes": 33392
+    },
+    {
+      "path": "PokemonVortex/live_battle_arena.php",
+      "kind": "modified",
+      "sha256": "101cbdd58d7972f7c8cefec34a5d4d4bba846dee7742c3344738a8e34d194525",
+      "bytes": 19969
+    },
+    {
+      "path": "PokemonVortex/map.php",
+      "kind": "modified",
+      "sha256": "e2a8b2897b5a4e30dcca4f1840b9cb8081c3cfed78dedbe2033d38c658d11ca9",
+      "bytes": 7473
+    },
+    {
+      "path": "PokemonVortex/map_move.php",
+      "kind": "modified",
+      "sha256": "c7e36c524250a5b5fba55b0e221609f0aafd2846b7d205afe07432f9b300b904",
+      "bytes": 3742
+    },
+    {
+      "path": "PokemonVortex/map_presence.php",
+      "kind": "modified",
+      "sha256": "26901317bd8cde4994abf3f80a743d214e037b4db369c1f7af0008b5808970f3",
+      "bytes": 1447
+    },
+    {
+      "path": "PokemonVortex/pokedex.php",
+      "kind": "modified",
+      "sha256": "f1a88f6c09f9c94a8351ffe4ee1761ee42d1538caa543cfa7c17dd904f88673f",
+      "bytes": 17710
+    },
+    {
+      "path": "PokemonVortex/server_console.php",
+      "kind": "modified",
+      "sha256": "a4c5407a619859839b2593041d131c8b22a36c6b1372747e36de7d0ed5fc814b",
+      "bytes": 31211
+    },
+    {
+      "path": "PokemonVortex/signup.php",
+      "kind": "modified",
+      "sha256": "ad17b30e5d8b6b1083c90142eae908c36f1bd11b161f79531b32482c21c3bace",
+      "bytes": 14783
+    },
+    {
+      "path": "PokemonVortex/tools/test_admin_activity.php",
+      "kind": "added",
+      "sha256": "3f588053463aa89a8c2d9c0060c173d1b50c82930f9d63f0da942e60fe1cdc20",
+      "bytes": 1742
+    },
+    {
+      "path": "PokemonVortex/tools/test_admin_console.php",
+      "kind": "added",
+      "sha256": "54edd202051a80267cf303d08c397965e6ad3d1073265872e1431c08b88b52ed",
+      "bytes": 28205
+    },
+    {
+      "path": "PokemonVortex/world_map.php",
+      "kind": "modified",
+      "sha256": "7d1c64a2476db3f5fe38c8d142c5323192c08ac2e7627b05193d9147643e1747",
+      "bytes": 11370
+    },
+    {
+      "path": "PokemonVortex/world_map_move.php",
+      "kind": "modified",
+      "sha256": "7ed4bd7f0890033d9c42e57440bc091447e0ad4966ec5790b5ed27eb5fb4606e",
+      "bytes": 3873
+    },
+    {
+      "path": "PokemonVortex/world_map_presence.php",
+      "kind": "modified",
+      "sha256": "1c388dc7cb510579db527c56a4a564ceccd68a1722ec3599be04f69345a3615a",
+      "bytes": 1426
+    },
+    {
+      "path": "README.md",
+      "kind": "modified",
+      "sha256": "b7ccbd7a2b275deb63c521f46b6cdbe7c1f27984a263d0cdc6a40562440b8fac",
+      "bytes": 27955
+    },
+    {
+      "path": "docs/SERVER_COMMANDS.md",
+      "kind": "added",
+      "sha256": "a7f91867357adb7909fdb42945e24bf86954f2d5f8a7c80cca21c51da0b58b76",
+      "bytes": 28425
+    },
+    {
+      "path": "docs/server-console/VALIDATION.md",
+      "kind": "added",
+      "sha256": "08d9ba1072a11e4839c77357d86612325f481d001e5c466a5c73bd4f73f268e5",
+      "bytes": 4160
+    }
+  ],
+  "note": "Manifest omits its own hash. Original media and map-data preserved; test-generated logs restored to supplied baseline bytes."
+}

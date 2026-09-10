@@ -17,6 +17,13 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && $dbReady) {
     if (!$error && !in_array($starter,$starterNames,true)) $error='Choose one of the available starter Pokémon.';
     if (!$error && ($trainer<1 || $trainer>28)) $error='Choose a valid trainer sprite.';
     if (!$error && !$terms) $error='Please accept the Terms of Service to create the account.';
+    // The local console uses this same reservation, closing signup/admin name races.
+    $accountCreationLock = null;
+    if (!$error) {
+        try { $accountCreationLock = pv_admin_account_name_lock($db, $username); }
+        catch (Throwable $e) { $error = 'This trainer name is being registered. Please retry shortly.'; }
+    }
+    try {
     if (!$error) {
         $stmt=$db->prepare('SELECT id FROM members WHERE username=? LIMIT 1'); $stmt->bind_param('s',$username); $stmt->execute(); $exists=$stmt->get_result()->num_rows>0; $stmt->close();
         if($exists) $error='That username is already in use.';
@@ -115,8 +122,12 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && $dbReady) {
         }
         if (!empty($registrationComplete)) {
             pv_server_event('AUTH','Trainer account created',['username'=>$username,'uid'=>$uid,'starter'=>$starter]);
+            if ($accountCreationLock !== null) pv_admin_account_name_unlock($db, $accountCreationLock);
             pv_redirect('login.php?reg=1');
         }
+    }
+    } finally {
+        if ($accountCreationLock !== null) pv_admin_account_name_unlock($db, $accountCreationLock);
     }
 }
 ?>

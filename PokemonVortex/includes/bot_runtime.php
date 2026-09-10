@@ -178,14 +178,15 @@ function pv_bot_ranked_cooldown_sql(): string
  * Every lane validates owned active teams. Ratings are earned by settlement;
  * being selected here does not award points or guarantee a victory.
  */
-function pv_bot_ranked_candidates_sql(string $lane, int $now, int $bucket): string
+function pv_bot_ranked_candidates_sql(string $lane, int $now, int $bucket, bool $adminReady = false): string
 {
     if (!in_array($lane, ['contender','featured','field'], true)) throw new InvalidArgumentException('Invalid ranked candidate lane.');
     $cooldown = $lane === 'contender' ? (string)PV_BOT_RANKED_CONTENDER_COOLDOWN : pv_bot_ranked_cooldown_sql();
     $sql = 'SELECT b.*,m.username,rs.rating,COALESCE(rs.last_attack_at,0) rank_last_attack_at '
         . 'FROM bot_trainers b JOIN members m ON m.id=b.user_id '
         . 'JOIN trainer_rank_state rs ON rs.user_id=b.user_id '
-        . 'WHERE b.enabled=1 AND COALESCE(m.s1,0)>0 '
+        . pv_admin_activity_join($adminReady)
+        . 'WHERE b.enabled=1 AND COALESCE(m.s1,0)>0 AND ' . pv_admin_activity_where($adminReady, $now) . ' '
         . 'AND COALESCE(rs.last_attack_at,0)<=' . max(0, $now) . '-' . $cooldown . ' '
         . 'AND EXISTS (SELECT 1 FROM pokemon ap WHERE ap.id=m.s1 AND CAST(ap.owner AS UNSIGNED)=m.id) ';
     if ($lane === 'featured') $sql .= 'AND b.bot_index<=96 ';
@@ -203,7 +204,7 @@ function pv_bot_ranked_candidates_sql(string $lane, int $now, int $bucket): stri
  */
 function pv_bot_ranked_pulse(mysqli $db, int $maxOperations = PV_BOT_RANKED_PULSE_MAX_OPERATIONS, int $budgetMs = 1200): int
 {
-    if (!pv_bot_registry_ready($db) || !pv_rival_ready($db) || $maxOperations <= 0) return 0;
+    if (!pv_bot_registry_ready($db) || !pv_rival_ready($db) || $maxOperations <= 0 || !pv_admin_activity_server_open($db)) return 0;
     $maxOperations = min(PV_BOT_RANKED_PULSE_MAX_OPERATIONS, $maxOperations);
     $budgetMs = max(150, min(2000, $budgetMs));
     $lock = $db->query("SELECT GET_LOCK('pokemon_vortex_ranked_pulse',0) AS acquired");
@@ -234,7 +235,7 @@ function pv_bot_ranked_pulse(mysqli $db, int $maxOperations = PV_BOT_RANKED_PULS
         $pools = [];
         foreach ($lanes as $lane) {
             if (((microtime(true) - $started) * 1000.0) >= $budgetMs || time() >= $bucketEnd) return 0;
-            $result = $db->query(pv_bot_ranked_candidates_sql($lane, $now, (int)$cycle['bucket_id']));
+            $result = $db->query(pv_bot_ranked_candidates_sql($lane, $now, (int)$cycle['bucket_id'], pv_admin_runtime_ready($db)));
             if (!$result) throw new RuntimeException('Could not load ranked competitors.');
             $pools[$lane] = $result->fetch_all(MYSQLI_ASSOC);
             $result->free();
@@ -757,7 +758,7 @@ function pv_bot_roll_wild(mysqli $db,string $world,string $mapKey,int $x,int $y,
     if($encounterChance<=0||random_int(1,100)>$encounterChance)return null;
     if($world==='vortex'){
         $map=max(1,min(25,(int)$mapKey));
-        try{$rolled=pv_vortex_encounter_roll(pv_map_encounter_mode($map,$x,$y),false,false,random_int(665,1000));}catch(Throwable $e){return null;}
+        try{$rolled=pv_vortex_encounter_roll(pv_map_encounter_mode($map,$x,$y),pv_admin_world_night($db,false),false,random_int(665,1000));}catch(Throwable $e){return null;}
         $display=trim((string)($rolled['display_name']??''));if($display==='')return null;$guide=pv_map_resolve_species($db,$display);if(!$guide)return null;
         return['guide'=>$guide,'display'=>$display,'level'=>pv_wild_capped_level((int)($rolled['level']??5),5)];
     }
@@ -890,15 +891,18 @@ function pv_bot_simulate_wild(mysqli $db,array $bot,array $wild,array $activityP
 
 function pv_bot_tick(mysqli $db,int $limit=24,string $focusWorld='',string $focusMap='',int $budgetMs=65): int
 {
-    if(!pv_bot_registry_ready($db))return 0;$limit=max(1,min(64,$limit));$budgetMs=max(15,min(150,$budgetMs));
+    if(!pv_bot_registry_ready($db)||!pv_admin_activity_server_open($db))return 0;$limit=max(1,min(64,$limit));$budgetMs=max(15,min(150,$budgetMs));
     $focusWorld=trim($focusWorld);$focusMap=trim($focusMap);
     $lock=$db->query("SELECT GET_LOCK('pokemon_vortex_bot_tick',0) AS acquired");$acquired=$lock?(int)($lock->fetch_assoc()['acquired']??0):0;if($lock)$lock->free();if($acquired!==1)return 0;
     $processed=0;$now=time();$started=microtime(true);
     try{
         $rankReady=pv_rival_ready($db);
-        $base=$rankReady
-            ? 'SELECT b.*,m.username,COALESCE(rs.last_attack_at,0) rank_last_attack_at FROM bot_trainers b JOIN members m ON m.id=b.user_id LEFT JOIN trainer_rank_state rs ON rs.user_id=b.user_id WHERE b.enabled=1 AND b.next_action_at<='.(int)$now.' '
-            : 'SELECT b.*,m.username,0 rank_last_attack_at FROM bot_trainers b JOIN members m ON m.id=b.user_id WHERE b.enabled=1 AND b.next_action_at<='.(int)$now.' ';
+        $adminReady=pv_admin_runtime_ready($db);
+        $base='SELECT b.*,m.username,'.($rankReady?'COALESCE(rs.last_attack_at,0)':'0').' rank_last_attack_at '
+            .'FROM bot_trainers b JOIN members m ON m.id=b.user_id '
+            .($rankReady?'LEFT JOIN trainer_rank_state rs ON rs.user_id=b.user_id ':'')
+            .pv_admin_activity_join($adminReady)
+            .'WHERE b.enabled=1 AND b.next_action_at<='.(int)$now.' AND '.pv_admin_activity_where($adminReady,$now).' ';
         if($focusWorld!==''&&$focusMap!==''){
             $stmt=$db->prepare($base.'ORDER BY CASE WHEN b.world_key=? AND b.map_key=? THEN 0 ELSE 1 END,b.next_action_at,CASE WHEN b.bot_index<=24 THEN 0 WHEN b.bot_index<=96 THEN 1 ELSE 2 END,b.bot_index LIMIT '.(int)$limit);
             if($stmt){$stmt->bind_param('ss',$focusWorld,$focusMap);$stmt->execute();$bots=$stmt->get_result()->fetch_all(MYSQLI_ASSOC);$stmt->close();}else $bots=[];
@@ -908,7 +912,14 @@ function pv_bot_tick(mysqli $db,int $limit=24,string $focusWorld='',string $focu
         foreach($bots as $bot){
             if($processed>0&&((microtime(true)-$started)*1000.0)>=$budgetMs)break;
             $uid=(int)($bot['user_id']??0);
+            $accountLock=pv_admin_activity_lock($db,$uid);
+            if($accountLock===null)continue;
             try{
+                if(!pv_admin_activity_allowed($db,$uid))continue;
+                // Re-read after the lock: an administrator may have teleported,
+                // reset or deleted this trainer after the candidate query.
+                $freshBot=pv_bot_profile($db,$uid);if(!$freshBot)continue;
+                $bot=array_replace($bot,$freshBot);
                 $profile=pv_bot_activity_profile(max(1,(int)($bot['bot_index']??1)));$steps=random_int((int)$profile['movement_min'],(int)$profile['movement_max']);
                 $move=pv_bot_move_burst($db,$bot,$steps);
                 $world=(string)$move['world'];$mapKey=(string)$move['map'];$x=(int)$move['x'];$y=(int)$move['y'];$wild=pv_bot_roll_wild($db,$world,$mapKey,$x,$y,(int)$profile['wild_chance']);$wildResult=null;$action=!empty($move['moved'])?'move':'idle';
@@ -929,7 +940,7 @@ function pv_bot_tick(mysqli $db,int $limit=24,string $focusWorld='',string $focu
             }catch(Throwable $e){
                 pv_log('Autonomous trainer tick failed for '.$uid.': '.$e->getMessage());
                 $retry=$now+180;$idle='idle';$stmt=$db->prepare('UPDATE bot_trainers SET next_action_at=?,last_action_at=?,last_action=?,updated_at=? WHERE user_id=? AND enabled=1');if($stmt){$stmt->bind_param('iisii',$retry,$now,$idle,$now,$uid);$stmt->execute();$stmt->close();}
-            }
+            }finally{pv_admin_activity_unlock($db,$accountLock);}
         }
         // Active-world requests also service the shared one-minute Ranked bucket.
         // This prevents autonomous Ranked play from depending on somebody having
@@ -958,16 +969,22 @@ function pv_bot_live_choose_action(mysqli $db,array $state,int $botSlot): ?array
 function pv_bot_live_autoplay(mysqli $db,int $battleId,int $botSlot,int $humanSlot,int $botId,int $humanId,int $maxSteps=8): array
 {
     $state=pv_live_runtime_load($db,$battleId,$botSlot,$humanSlot,$botId,$humanId);
-    for($step=0;$step<$maxSteps;$step++){
-        if(($state['phase']??'')==='complete')break;$choice=pv_bot_live_choose_action($db,$state,$botSlot);if(!$choice)break;
-        $state=pv_live_runtime_submit($db,$battleId,$botSlot,$humanSlot,$botId,$humanId,(string)$choice['action'],(array)$choice['payload']);
-        // Stop when the bot is waiting on the human command/selection. Continue
-        // only to cover automatic replacement selection after a resolved turn.
-        $botParticipant=$state['participants'][(string)$botSlot]??[];$phase=(string)($state['phase']??'');
-        if($phase==='command' && is_array($botParticipant['command']??null))break;
-        if(in_array($phase,['select','switch'],true) && pv_live_runtime_active_is_ready((array)$botParticipant))break;
-    }
-    return $state;
+    if(!pv_admin_activity_server_open($db))return $state;
+    $accountLock=pv_admin_activity_lock($db,$botId);
+    if($accountLock===null)return $state;
+    try{
+        if(!pv_admin_activity_allowed($db,$botId))return $state;
+        for($step=0;$step<$maxSteps;$step++){
+            if(($state['phase']??'')==='complete')break;$choice=pv_bot_live_choose_action($db,$state,$botSlot);if(!$choice)break;
+            $state=pv_live_runtime_submit($db,$battleId,$botSlot,$humanSlot,$botId,$humanId,(string)$choice['action'],(array)$choice['payload']);
+            // Stop when the bot is waiting on the human command/selection. Continue
+            // only to cover automatic replacement selection after a resolved turn.
+            $botParticipant=$state['participants'][(string)$botSlot]??[];$phase=(string)($state['phase']??'');
+            if($phase==='command' && is_array($botParticipant['command']??null))break;
+            if(in_array($phase,['select','switch'],true) && pv_live_runtime_active_is_ready((array)$botParticipant))break;
+        }
+        return $state;
+    }finally{pv_admin_activity_unlock($db,$accountLock);}
 }
 
 function pv_bot_settle_live_result(mysqli $db,int $battleId,int $botSlot,int $humanSlot,int $botId,int $humanId,string $outcome): void

@@ -26,23 +26,47 @@ function pv_network_are_friends(mysqli $db,int $a,int $b): bool
     $stmt=$db->prepare('SELECT 1 FROM trainer_friends WHERE user_id=? AND friend_id=? LIMIT 1');if(!$stmt)return false;$stmt->bind_param('ii',$a,$b);$stmt->execute();$yes=(bool)$stmt->get_result()->fetch_row();$stmt->close();return $yes;
 }
 
-function pv_network_friend_request(mysqli $db,int $uid,int $target): void
+function pv_network_friend_request(mysqli $db, int $uid, int $target): void
 {
-    if($uid===$target||$target<=0)throw new RuntimeException('Choose another trainer.');
-    if(!pv_network_user($db,$target))throw new RuntimeException('That trainer could not be found.');
-    if(pv_network_is_blocked($db,$uid,$target))throw new RuntimeException('A block is active between these trainers.');
-    if(pv_network_are_friends($db,$uid,$target))throw new RuntimeException('You are already friends with that trainer.');
-    $stmt=$db->prepare("SELECT id FROM friend_requests WHERE status='pending' AND ((sender_id=? AND receiver_id=?) OR (sender_id=? AND receiver_id=?)) LIMIT 1");
-    if($stmt){$stmt->bind_param('iiii',$uid,$target,$target,$uid);$stmt->execute();$existing=(bool)$stmt->get_result()->fetch_row();$stmt->close();if($existing)throw new RuntimeException('A friend request is already pending between these trainers.');}
-    $now=time();$stmt=$db->prepare("INSERT INTO friend_requests (sender_id,receiver_id,status,created_at,resolved_at) VALUES (?,?,'pending',?,0)");
-    if(!$stmt)throw new RuntimeException('The friend request could not be created.');$stmt->bind_param('iii',$uid,$target,$now);if(!$stmt->execute()){ $stmt->close();throw new RuntimeException('The friend request could not be created.');}$stmt->close();pv_server_event('SOCIAL','Friend request sent',['target_uid'=>$target]);
+    if ($uid === $target || $target <= 0) throw new RuntimeException('Choose another trainer.');
+    $db->begin_transaction();
+    try {
+        pv_console_lock_social_pair($db, $uid, $target);
+        if (pv_network_is_blocked($db, $uid, $target)) throw new RuntimeException('A block is active between these trainers.');
+        if (pv_network_are_friends($db, $uid, $target)) throw new RuntimeException('You are already friends with that trainer.');
+        $stmt = $db->prepare("SELECT id FROM friend_requests WHERE status='pending' AND ((sender_id=? AND receiver_id=?) OR (sender_id=? AND receiver_id=?)) LIMIT 1 FOR UPDATE");
+        if (!$stmt) throw new RuntimeException('Friend requests could not be checked.');
+        $stmt->bind_param('iiii', $uid, $target, $target, $uid);
+        $stmt->execute();
+        $existing = (bool)$stmt->get_result()->fetch_row();
+        $stmt->close();
+        if ($existing) throw new RuntimeException('A friend request is already pending between these trainers.');
+        $now = time();
+        $stmt = $db->prepare("INSERT INTO friend_requests (sender_id,receiver_id,status,created_at,resolved_at) VALUES (?,?,'pending',?,0)");
+        if (!$stmt) throw new RuntimeException('The friend request could not be created.');
+        $stmt->bind_param('iii', $uid, $target, $now);
+        if (!$stmt->execute()) throw new RuntimeException('The friend request could not be created.');
+        $stmt->close();
+        $db->commit();
+    } catch (Throwable $e) {
+        $db->rollback();
+        if ($e instanceof RuntimeException) throw $e;
+        pv_log('Friend request creation failure: '.$e->getMessage());
+        throw new RuntimeException('The friend request could not be created. Please try again.');
+    }
+    pv_server_event('SOCIAL', 'Friend request sent', ['target_uid'=>$target]);
 }
 
 function pv_network_resolve_friend_request(mysqli $db,int $uid,int $requestId,string $decision): void
 {
     if(!in_array($decision,['accepted','declined'],true))throw new RuntimeException('Choose a valid friend-request action.');
+    $stmt=$db->prepare('SELECT sender_id FROM friend_requests WHERE id=? AND receiver_id=? LIMIT 1');
+    if(!$stmt)throw new RuntimeException('The friend request could not be loaded.');
+    $stmt->bind_param('ii',$requestId,$uid);$stmt->execute();$initial=$stmt->get_result()->fetch_assoc();$stmt->close();
+    if(!$initial)throw new RuntimeException('That friend request could not be found.');
     $db->begin_transaction();
     try{
+        pv_console_lock_social_pair($db,$uid,(int)$initial['sender_id']);
         $stmt=$db->prepare("SELECT sender_id,receiver_id,status FROM friend_requests WHERE id=? AND receiver_id=? FOR UPDATE");if(!$stmt)throw new RuntimeException('The friend request could not be loaded.');$stmt->bind_param('ii',$requestId,$uid);$stmt->execute();$row=$stmt->get_result()->fetch_assoc();$stmt->close();if(!$row||$row['status']!=='pending')throw new RuntimeException('That friend request is no longer pending.');
         $sender=(int)$row['sender_id'];if(pv_network_is_blocked($db,$uid,$sender))$decision='declined';$now=time();
         $stmt=$db->prepare('UPDATE friend_requests SET status=?,resolved_at=? WHERE id=? AND status=\'pending\'');if(!$stmt)throw new RuntimeException('The friend request could not be updated.');$stmt->bind_param('sii',$decision,$now,$requestId);$stmt->execute();$stmt->close();
@@ -54,9 +78,23 @@ function pv_network_resolve_friend_request(mysqli $db,int $uid,int $requestId,st
     }catch(Throwable $e){$db->rollback();if($e instanceof RuntimeException)throw $e;pv_log('Friend request resolution failure: '.$e->getMessage());throw new RuntimeException('The friend request could not be updated. Please try again.');}
 }
 
-function pv_network_remove_friend(mysqli $db,int $uid,int $friendId): void
+function pv_network_remove_friend(mysqli $db, int $uid, int $friendId): void
 {
-    $stmt=$db->prepare('DELETE FROM trainer_friends WHERE (user_id=? AND friend_id=?) OR (user_id=? AND friend_id=?)');if(!$stmt)throw new RuntimeException('The friendship could not be updated.');$stmt->bind_param('iiii',$uid,$friendId,$friendId,$uid);$stmt->execute();$stmt->close();pv_server_event('SOCIAL','Friend removed',['friend_uid'=>$friendId]);
+    $db->begin_transaction();
+    try {
+        pv_console_lock_social_pair($db, $uid, $friendId);
+        $stmt = $db->prepare('DELETE FROM trainer_friends WHERE (user_id=? AND friend_id=?) OR (user_id=? AND friend_id=?)');
+        if (!$stmt) throw new RuntimeException('The friendship could not be updated.');
+        $stmt->bind_param('iiii', $uid, $friendId, $friendId, $uid);
+        if (!$stmt->execute()) throw new RuntimeException('The friendship could not be updated.');
+        $stmt->close();
+        $db->commit();
+    } catch (Throwable $e) {
+        $db->rollback();
+        if ($e instanceof RuntimeException) throw $e;
+        throw new RuntimeException('The friendship could not be updated. Please try again.');
+    }
+    pv_server_event('SOCIAL', 'Friend removed', ['friend_uid'=>$friendId]);
 }
 
 function pv_network_block(mysqli $db,int $uid,int $target): void
@@ -64,6 +102,7 @@ function pv_network_block(mysqli $db,int $uid,int $target): void
     if($target<=0||$target===$uid)throw new RuntimeException('Choose another trainer.');
     $db->begin_transaction();
     try{
+        pv_console_lock_social_pair($db,$uid,$target);
         $now=time();$stmt=$db->prepare('INSERT IGNORE INTO trainer_blocks (user_id,blocked_user_id,created_at) VALUES (?,?,?)');if(!$stmt)throw new RuntimeException('The block could not be saved.');$stmt->bind_param('iii',$uid,$target,$now);$stmt->execute();$stmt->close();
         $stmt=$db->prepare('DELETE FROM trainer_friends WHERE (user_id=? AND friend_id=?) OR (user_id=? AND friend_id=?)');if($stmt){$stmt->bind_param('iiii',$uid,$target,$target,$uid);$stmt->execute();$stmt->close();}
         $stmt=$db->prepare("UPDATE friend_requests SET status='declined',resolved_at=? WHERE status='pending' AND ((sender_id=? AND receiver_id=?) OR (sender_id=? AND receiver_id=?))");if($stmt){$stmt->bind_param('iiiii',$now,$uid,$target,$target,$uid);$stmt->execute();$stmt->close();}

@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/admin/activity_runtime.php';
 
 /**
  * Ranked Rival Network runtime (v25).
@@ -217,6 +218,26 @@ function pv_rival_open_retaliation(mysqli $db, int $retaliationId, int $defender
 }
 
 function pv_rival_begin_attack(mysqli $db, int $attackerId, int $defenderId, int $retaliationId = 0): array
+{
+    $locks = [];
+    try {
+        $ids = array_unique([$attackerId, $defenderId]); sort($ids, SORT_NUMERIC);
+        foreach ($ids as $uid) {
+            $lock = pv_admin_activity_lock($db, $uid);
+            if ($lock === null) throw new RuntimeException('That rival is unavailable. Please choose another target or retry shortly.');
+            $locks[] = $lock;
+        }
+        if (!pv_admin_activity_allowed($db, $attackerId) || !pv_admin_activity_allowed($db, $defenderId, true)) {
+            throw new RuntimeException('That ranked battle is unavailable while a participant is under an administrative restriction.');
+        }
+        return pv_rival_begin_attack_locked($db, $attackerId, $defenderId, $retaliationId);
+    } finally {
+        foreach (array_reverse($locks) as $lock) pv_admin_activity_unlock($db, $lock);
+    }
+}
+
+/** Participant administrative locks are held by pv_rival_begin_attack(). */
+function pv_rival_begin_attack_locked(mysqli $db, int $attackerId, int $defenderId, int $retaliationId = 0): array
 {
     if (!pv_rival_retry_pending_result($db, $attackerId)) {
         throw new RuntimeException('Your completed ranked result is still waiting to save. Return to Trainer Rankings and try again.');
@@ -549,6 +570,20 @@ function pv_rival_retry_pending_result(mysqli $db, int $userId): bool
 
 function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeconds = PV_RIVAL_BOT_ATTACK_COOLDOWN): ?array
 {
+    $botId = max(0, (int)($bot['user_id'] ?? 0));
+    $lock = pv_admin_activity_lock($db, $botId);
+    if ($lock === null) return null;
+    try {
+        if (!pv_admin_activity_allowed($db, $botId)) return null;
+        return pv_rival_bot_ranked_operation_locked($db, $bot, $cooldownSeconds);
+    } finally {
+        pv_admin_activity_unlock($db, $lock);
+    }
+}
+
+/** The autonomous actor's administrative lock is held by its public entry point. */
+function pv_rival_bot_ranked_operation_locked(mysqli $db, array $bot, int $cooldownSeconds = PV_RIVAL_BOT_ATTACK_COOLDOWN): ?array
+{
     if (!pv_rival_ready($db)) return null;
     $botId = max(0, (int)($bot['user_id'] ?? 0));
     if ($botId <= 0 || !pv_rival_has_team($db, $botId)) return null;
@@ -560,6 +595,8 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeco
     if (!$state) return null;
     if ((int)($state['last_attack_at'] ?? 0) > $now - $cooldownSeconds) return null;
 
+    $adminReady = pv_admin_runtime_ready($db);
+    $eligibility = pv_admin_activity_where($adminReady, $now, true);
     $rating = max(100, (int)$state['rating']);
     $low = max(100, $rating - 260);
     $high = $rating + 260;
@@ -567,9 +604,11 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeco
         'SELECT r.user_id,r.rating,m.username,CASE WHEN b.user_id IS NULL THEN 0 ELSE 1 END is_bot '
         . 'FROM trainer_rank_state r JOIN members m ON m.id=r.user_id '
         . 'LEFT JOIN bot_trainers b ON b.user_id=r.user_id AND b.enabled=1 '
+        . pv_admin_activity_join($adminReady)
         . 'WHERE r.user_id<>? AND r.rating BETWEEN ? AND ? AND r.shield_until<=? '
         . 'AND COALESCE(m.s1,0)>0 '
         . 'AND EXISTS (SELECT 1 FROM pokemon tp WHERE tp.id=m.s1 AND CAST(tp.owner AS UNSIGNED)=m.id) '
+        . 'AND '.$eligibility.' '
         . 'ORDER BY CASE WHEN b.user_id IS NULL THEN 0 ELSE 1 END ASC, ABS(r.rating-?) ASC, MOD(r.user_id*31+?,97) ASC LIMIT 18'
     );
     if (!$stmt) return null;
@@ -587,8 +626,10 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeco
             'SELECT r.user_id,r.rating,m.username,CASE WHEN b.user_id IS NULL THEN 0 ELSE 1 END is_bot '
             . 'FROM trainer_rank_state r JOIN members m ON m.id=r.user_id '
             . 'LEFT JOIN bot_trainers b ON b.user_id=r.user_id AND b.enabled=1 '
+            . pv_admin_activity_join($adminReady)
             . 'WHERE r.user_id<>? AND r.shield_until<=? AND COALESCE(m.s1,0)>0 '
             . 'AND EXISTS (SELECT 1 FROM pokemon tp WHERE tp.id=m.s1 AND CAST(tp.owner AS UNSIGNED)=m.id) '
+            . 'AND '.$eligibility.' '
             . 'ORDER BY ABS(r.rating-?) ASC, CASE WHEN b.user_id IS NULL THEN 0 ELSE 1 END ASC, MOD(r.user_id*31+?,97) ASC LIMIT 24'
         );
         if (!$stmt) return null;
@@ -611,37 +652,45 @@ function pv_rival_bot_ranked_operation(mysqli $db, array $bot, int $cooldownSeco
     $offset = (($botId * 17) + intdiv($now, 45)) % count($pool);
     $target = $pool[$offset];
     $targetId = max(0, (int)$target['user_id']);
-    if ($targetId <= 0 || !pv_rival_has_team($db, $targetId)) return null;
-
-    // Autonomous operations resolve immediately. Their own shield is cleared by
-    // the same transactional settlement that records the match, so a race-lost
-    // target does not expose the AI without an actual completed operation.
-    $botPower = pv_rival_team_power($db, $botId);
-    $targetPower = pv_rival_team_power($db, $targetId);
-    $targetRating = max(100, (int)$target['rating']);
-    $chance = 50.0 + (($botPower - $targetPower) / 11.0) + (($rating - $targetRating) / 32.0) + (float)($bot['ranked_win_bonus'] ?? 0.0);
-    $chance = max(22.0, min(78.0, $chance));
-    $won = random_int(1,10000) <= (int)round($chance * 100);
-    $winnerId = $won ? $botId : $targetId;
-
+    if ($targetId <= 0) return null;
+    $targetLock = pv_admin_activity_lock($db, $targetId);
+    if ($targetLock === null) return null;
     try {
-        $result = pv_rival_record_match(
-            $db,
-            $botId,
-            $targetId,
-            $winnerId,
-            'autonomous',
-            0,
-            'Autonomous AI ranked operation resolved from persisted team strength and ladder rating.',
-            (int)($target['is_bot'] ?? 0) === 0
-        );
-        $result['target_id'] = $targetId;
-        $result['target_name'] = (string)$target['username'];
-        $result['won'] = $won;
-        return $result;
-    } catch (Throwable $e) {
-        pv_log('Autonomous ranked operation failed for '.$botId.': '.$e->getMessage());
-        return null;
+        // A target may have been frozen, banned or removed after the candidate read.
+        if (!pv_admin_activity_allowed($db, $targetId, true) || !pv_rival_has_team($db, $targetId)) return null;
+
+        // Autonomous operations resolve immediately. Their own shield is cleared by
+        // the same transactional settlement that records the match, so a race-lost
+        // target does not expose the AI without an actual completed operation.
+        $botPower = pv_rival_team_power($db, $botId);
+        $targetPower = pv_rival_team_power($db, $targetId);
+        $targetRating = max(100, (int)$target['rating']);
+        $chance = 50.0 + (($botPower - $targetPower) / 11.0) + (($rating - $targetRating) / 32.0) + (float)($bot['ranked_win_bonus'] ?? 0.0);
+        $chance = max(22.0, min(78.0, $chance));
+        $won = random_int(1,10000) <= (int)round($chance * 100);
+        $winnerId = $won ? $botId : $targetId;
+
+        try {
+            $result = pv_rival_record_match(
+                $db,
+                $botId,
+                $targetId,
+                $winnerId,
+                'autonomous',
+                0,
+                'Autonomous AI ranked operation resolved from persisted team strength and ladder rating.',
+                (int)($target['is_bot'] ?? 0) === 0
+            );
+            $result['target_id'] = $targetId;
+            $result['target_name'] = (string)$target['username'];
+            $result['won'] = $won;
+            return $result;
+        } catch (Throwable $e) {
+            pv_log('Autonomous ranked operation failed for '.$botId.': '.$e->getMessage());
+            return null;
+        }
+    } finally {
+        pv_admin_activity_unlock($db, $targetLock);
     }
 }
 

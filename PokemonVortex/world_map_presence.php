@@ -9,7 +9,8 @@ function pv_world_presence_json(array $payload,int $status=200):never{http_respo
 if(!pv_is_logged_in())pv_world_presence_json(['ok'=>false,'error'=>'session'],401);
 if(($_SERVER['REQUEST_METHOD']??'GET')!=='GET')pv_world_presence_json(['ok'=>false,'error'=>'method'],405);
 try{$db=pv_db();}catch(Throwable $e){pv_log('World presence DB unavailable: '.$e->getMessage());pv_world_presence_json(['ok'=>false,'error'=>'service'],503);}
+pv_admin_world_follow_teleport();
 $uid=(int)$_SESSION['myid'];$world=pv_world_normalize_key((string)($_SESSION['world_key']??''));$area=pv_world_area_key((string)($_SESSION['world_area']??''));
 if(!pv_world_is_region_world($world)||$area===''||pv_world_area($world,$area)===null)pv_world_presence_json(['ok'=>false,'error'=>'world'],409);
 pv_bot_tick($db,48,$world,$area,45);
-pv_world_presence_json(['ok'=>true,'world'=>$world,'area'=>$area,'players'=>pv_world_players($db,$uid,$world,$area)]);
+pv_world_presence_json(['ok'=>true,'world'=>$world,'area'=>$area,'players'=>pv_world_players($db,$uid,$world,$area),'selfMeta'=>pv_admin_world_player_meta($db,$uid),'environment'=>pv_admin_world_environment($db)]);

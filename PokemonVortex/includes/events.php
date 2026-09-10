@@ -1,8 +1,9 @@
 <?php
 require_once __DIR__ . '/gameplay.php';
+require_once __DIR__ . '/admin/world_runtime.php';
 
 function pv_event_catalog(): array {
-    return [
+    $catalog = [
         'pikachu2015' => [
             'label' => 'Cosplay Pikachu Collection Challenge',
             'image' => 'images/newyear2015.png',
@@ -14,10 +15,11 @@ function pv_event_catalog(): array {
             'summary' => 'Acquire DNA Splicers and fuse a reserve Kyurem with a matching-form Reshiram or Zekrom.',
         ],
     ];
+    return $catalog + pv_admin_world_custom_events(pv_db());
 }
 
 function pv_active_event_key(): string {
-    $key = strtolower(trim((string)pv_config('active_event', 'none')));
+    $key = strtolower(trim((string)pv_admin_world_setting(pv_db(), 'active_event', pv_config('active_event', 'none'))));
     return array_key_exists($key, pv_event_catalog()) ? $key : 'none';
 }
 

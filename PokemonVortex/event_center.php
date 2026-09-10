@@ -119,6 +119,13 @@ pv_page_start('Event Center','battle_select.php',true);
                 <form method="post"><?=pv_csrf_field()?><button class="pv-button" type="submit" name="claim_cosplay" value="1" <?=(int)$status['count']<28?'disabled':''?>>Verify Collection & Claim Code</button></form>
             <?php endif;?>
         </section>
+    <?php elseif(!empty($catalog[$eventKey]['custom'])):
+        $rewardStmt=$db->prepare('SELECT reward_json,granted_at FROM console_event_rewards WHERE event_key=? AND user_id=? ORDER BY id DESC LIMIT 30');
+        $rewardStmt->bind_param('si',$eventKey,$uid);$rewardStmt->execute();$eventRewards=$rewardStmt->get_result()->fetch_all(MYSQLI_ASSOC);$rewardStmt->close();
+    ?>
+        <section class="pv-panel"><div class="pv-section-heading"><div><span>STAFF-HOSTED CHALLENGE</span><h2><?=pv_h($catalog[$eventKey]['label'])?></h2></div></div><p><?=pv_h($catalog[$eventKey]['summary'])?></p><p class="pv-subtle">Your participation is active. Follow the event's challenge instructions; the server operator awards completed rewards.</p>
+        <h3>Your awarded rewards</h3><?php if(!$eventRewards):?><p class="pv-subtle">No rewards have been awarded yet.</p><?php else:?><ul><?php foreach($eventRewards as $reward):$detail=json_decode((string)$reward['reward_json'],true)?:[];?><li><?=pv_h(ucfirst((string)($detail['type']??'Reward')).': '.implode(' · ',(array)($detail['arguments']??[])))?> <small>— <?=pv_h(gmdate('Y-m-d H:i',(int)$reward['granted_at']))?> UTC</small></li><?php endforeach;?></ul><?php endif;?>
+        </section>
     <?php endif;?>
 
     <section class="pv-panel"><div class="pv-section-heading"><div><span>EVENT RULES</span><h2>How access works</h2></div></div><div class="pv-event-rules"><p><strong>Event Tickets stay in your inventory until used.</strong> One ticket is spent when you unlock an active event for the first time.</p><p><strong>Meet the event requirements to claim rewards.</strong> Make sure you have the required Pokémon, items or money before starting an event action.</p><p><strong>No active event means no ticket is spent.</strong> The unlock button only becomes available when an event is running.</p></div></section>

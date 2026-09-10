@@ -23,12 +23,14 @@ if ($member && pv_table_exists('bot_trainers')) {
     $stmt=$db->prepare('SELECT 1 FROM bot_trainers WHERE user_id=? AND enabled=1 LIMIT 1');
     if($stmt){$stmt->bind_param('i',$botUid);$stmt->execute();$isBot=(bool)$stmt->get_result()->fetch_row();$stmt->close();if($isBot)$member=null;}
 }
+$consoleState = $member ? pv_admin_login_state($db, $member) : null;
 if (!$member || !pv_password_matches($password,(string)$member['password'])) {
     $stmt=$db->prepare('INSERT INTO login_trys (ip,username,time,attempts) VALUES (?,?,?,1) ON DUPLICATE KEY UPDATE username=VALUES(username),time=VALUES(time),attempts=attempts+1');
     $stmt->bind_param('ssi',$ip,$username,$now); $stmt->execute(); $stmt->close();
     pv_server_event('AUTH','Login failed',['username'=>$username,'reason'=>'invalid_credentials'],'WARN');
     pv_redirect('login.php?error=1');
 }
+if ($consoleState && ((int)$consoleState['locked'] || (int)$consoleState['ban_until'] !== 0)) pv_redirect('login.php?action=Banned');
 if ((string)($member['banned']??'0') === '1') { pv_server_event('AUTH','Banned trainer login rejected',['username'=>$username,'uid'=>(int)$member['id']],'WARN'); pv_redirect('login.php?action=Banned'); }
 
 // Seamlessly upgrade old MD5 passwords the first time an old account signs in.
@@ -39,6 +41,10 @@ if (strlen((string)$member['password']) === 32 && ctype_xdigit((string)$member['
 
 session_regenerate_id(true);
 $uid=(int)$member['id'];
+if ($consoleState) pv_admin_state_update($uid, ['last_seen'=>$now]);
+$_SESSION['pv_console_epoch']=(int)($consoleState['session_epoch']??0);
+$_SESSION['pv_console_revision']=(int)($consoleState['data_revision']??0);
+$_SESSION['pv_console_heal_revision']=(int)($consoleState['heal_revision']??0);
 $settings=['layout'=>2,'messnotifyonoff'=>0,'memonmap'=>1,'trainer'=>1];
 $stmt=$db->prepare('SELECT * FROM members_options WHERE id=? LIMIT 1'); $stmt->bind_param('i',$uid); $stmt->execute(); $r=$stmt->get_result()->fetch_assoc(); if($r)$settings=array_merge($settings,$r); $stmt->close();
 $_SESSION['myuser']=$member['username']; $_SESSION['myid']=$uid; $_SESSION['myeb']=$member['eb']??'1'; $_SESSION['access']=9; $_SESSION['sidequest']=$member['sidequest']??0;

@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+if (!defined('PV_SCHEMA_MIGRATIONS')) define('PV_SCHEMA_MIGRATIONS', true);
 require_once __DIR__ . '/battle_catalog.php';
 require_once __DIR__ . '/event_battle_catalog.php';
 require_once __DIR__ . '/sidequest_catalog.php';
@@ -889,6 +890,10 @@ function pv_apply_schema_migrations(mysqli $db): array
     if (pv_schema_table_exists($db, 'pv_schema_meta')) {
         $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,29,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
     }
+
+    // v33 local operator console: shared additive fresh-install/upgrade repair path.
+    require_once __DIR__ . '/admin/schema.php';
+    pv_admin_schema_migrate($db, $changes);
 
     return $changes;
 }

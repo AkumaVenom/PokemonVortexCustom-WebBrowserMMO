@@ -403,6 +403,11 @@ function pv_map_blocked_directions(mysqli $db, int $map, int $x, int $y): array 
 }
 
 function pv_map_upsert_player(mysqli $db, int $uid, int $map, int $x, int $y, string $world = 'vortex'): void {
+    if (pv_admin_world_table_ready($db,'console_player_state')) {
+        $poseStmt=$db->prepare("UPDATE console_player_state s JOIN mapusers m ON m.id=s.user_id SET s.pose='standing' WHERE s.user_id=? AND (m.x<>? OR m.y<>? OR m.world_key<>? OR m.map<>?)");
+        $poseMap=(string)$map;
+        $poseStmt->bind_param('iiiss',$uid,$x,$y,$world,$poseMap);$poseStmt->execute();$poseStmt->close();
+    }
     $world = pv_world_normalize_key($world);
     $username = substr((string)($_SESSION['myuser'] ?? 'Trainer'), 0, 45);
     $trainer = max(1, min(29, (int)($_SESSION['map_preferences'][2] ?? 1)));
@@ -544,7 +549,7 @@ function pv_map_players(mysqli $db, int $uid, int $map, string $world = 'vortex'
             $stmt->close();
         }
     }
-    return $players;
+    return pv_admin_world_presence_filter($db, $players);
 }
 
 function pv_map_species_candidates(string $displayName): array {
@@ -620,13 +625,15 @@ function pv_map_encounter_sprite_name(string $displayName, string $canonicalName
 
 function pv_map_encounter_html(int $map, int $x, int $y): string {
     unset($_SESSION['wb'], $_SESSION['lvl'], $_SESSION['pv_pending_wild_encounter']);
+    $spawn = pv_admin_world_spawn_html(pv_db(), (int)($_SESSION['myid']??0), 'vortex', (string)$map, $x, $y);
+    if ($spawn !== null) return $spawn;
     $rand_num = random_int(0, 1000);
     if ($rand_num <= 664) {
         return '<div class="pv-map-quiet"><strong>No wild Pokémon appeared.</strong><span>Keep exploring — encounters are random.</span></div>';
     }
 
     $mode = pv_map_encounter_mode($map, $x, $y);
-    $night = (int)($_SESSION['night'] ?? 0) === 1;
+    $night = pv_admin_world_night(pv_db(), (int)($_SESSION['night'] ?? 0) === 1);
     $legendaryUnlocked = (int)($_SESSION['map_preferences'][0] ?? 0) === 1;
 
     try {

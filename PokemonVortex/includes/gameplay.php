@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/admin/social_runtime.php';
 
 /**
  * Shared gameplay integrity helpers for reconstructed legacy systems.
@@ -286,7 +287,7 @@ function pv_trade_release_offer_items_locked(mysqli $db, int $offerId): array
     return array_keys($owners);
 }
 
-function pv_trade_create_offer(mysqli $db, int $listingPokemonId, int $offererId, array $pokemonIds): int
+function pv_trade_create_offer(mysqli $db, int $listingPokemonId, int $offererId, array $pokemonIds, int $expectedListingOwnerId = 0): int
 {
     $listingPokemonId = max(1, $listingPokemonId);
     $offererId = max(1, $offererId);
@@ -312,6 +313,8 @@ function pv_trade_create_offer(mysqli $db, int $listingPokemonId, int $offererId
         $listingId = (int)$listing['id'];
         $listingOwnerId = (int)$listing['owner'];
         if ($listingOwnerId === $offererId) throw new RuntimeException('You cannot make an offer on your own Pokémon.');
+        if ($expectedListingOwnerId > 0 && $listingOwnerId !== $expectedListingOwnerId) throw new RuntimeException('The listing owner changed before this offer could be created.');
+        pv_console_assert_trade_allowed($db, $offererId, $listingOwnerId);
 
         $stmt = $db->prepare("SELECT id FROM trade_offers WHERE listing_id=? AND offerer_id=? AND status='pending' LIMIT 1 FOR UPDATE");
         if (!$stmt) throw new RuntimeException('The Trade Center could not validate your offer.');
@@ -427,6 +430,8 @@ function pv_trade_resolve_offer(mysqli $db, int $offerId, int $actorId, string $
             foreach ($affected as $uid) pv_recalculate_trainer_progress($db, (int)$uid, (int)$uid === $actorId);
             return ['status'=>$status,'listing_pokemon_id'=>$listingPokemonId,'seller_id'=>$sellerId,'offerer_id'=>$offererId];
         }
+
+        pv_console_assert_trade_allowed($db, $sellerId, $offererId);
 
         if ((int)($offer['live_pid'] ?? 0) !== $listingPokemonId || (int)($offer['live_listing_owner'] ?? 0) !== $sellerId) {
             throw new RuntimeException('This trade listing is no longer available.');

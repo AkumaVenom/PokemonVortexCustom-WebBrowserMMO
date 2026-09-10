@@ -17,6 +17,7 @@ $deltas=[1=>[0,-1],2=>[0,1],3=>[-1,0],4=>[1,0],5=>[-1,-1],6=>[-1,1],7=>[1,-1],8=
 if(!is_int($direction)||!isset($deltas[$direction]))pv_world_json(['ok'=>false,'error'=>'direction'],422);
 $nowMicro=microtime(true);$last=(float)($_SESSION['pv_last_world_map_move']??0.0);if(($nowMicro-$last)<0.055)pv_world_json(['ok'=>false,'error'=>'rate'],429);$_SESSION['pv_last_world_map_move']=$nowMicro;
 try{$db=pv_db();}catch(Throwable $e){pv_log('World map DB unavailable: '.$e->getMessage());pv_world_json(['ok'=>false,'error'=>'service'],503);}
+pv_admin_world_follow_teleport();
 $uid=(int)$_SESSION['myid'];$world=pv_world_normalize_key((string)($_SESSION['world_key']??''));$areaKey=pv_world_area_key((string)($_SESSION['world_area']??''));
 if(!pv_world_is_region_world($world)||$areaKey==='')pv_world_json(['ok'=>false,'error'=>'world'],409);
 // An old browser tab must not move the trainer on the newer tab's map.

@@ -17,6 +17,7 @@
     y: Number(cfg.y) || 1,
     trainer: Number(cfg.trainer) || 1,
     players: Array.isArray(cfg.players) ? cfg.players : [],
+    selfMeta: cfg.selfMeta || {},
     blockedDirections: Array.isArray(cfg.blockedDirections) ? cfg.blockedDirections.map(Number) : [],
     moving: false,
     lastDirection: 2,
@@ -34,6 +35,28 @@
     const lower = `${cfg.spriteBase}${highlighted ? 'o' : ''}${n}.gif`;
     const upper = `${cfg.spriteBase}${highlighted ? 'otop' : 'top'}${n}.gif`;
     return `<img class="pv-map-sprite-top" src="${upper}" alt=""><img class="pv-map-sprite-bottom" src="${lower}" alt="">`;
+  }
+
+  function updateEnvironment(environment) {
+    if (!environment) return;
+    const allowed = ['clear', 'rain', 'sun', 'snow', 'fog', 'storm'];
+    const weather = allowed.includes(environment.weather) ? environment.weather : 'clear';
+    let layer = stage.querySelector('.pv-console-weather');
+    if (!layer) {
+      layer = document.createElement('div');
+      layer.className = 'pv-console-weather';
+      layer.setAttribute('aria-hidden', 'true');
+      stage.appendChild(layer);
+    }
+    layer.dataset.weather = weather;
+    layer.dataset.period = ['day', 'night'].includes(environment.period) ? environment.period : 'auto';
+    const old = cfg.environment || {};
+    // Vortex day/night art has region-specific source images; refresh it after a change.
+    if (old.period && old.period !== environment.period) {
+      window.location.reload();
+      return;
+    }
+    cfg.environment = environment;
   }
 
   function actorKey(player, own) {
@@ -69,6 +92,9 @@
   }
 
   function updateActor(element, player, own, initial = false) {
+    const meta = own ? state.selfMeta : player;
+    element.dataset.pose = ['sit', 'dance'].includes(meta.pose) ? meta.pose : 'standing';
+    element.classList.toggle('is-afk', Boolean(meta.afk));
     const x = Number(player.x) || 1;
     const y = Number(player.y) || 1;
     const previousX = Number(element.dataset.x) || x;
@@ -89,6 +115,12 @@
     const label = element.querySelector('b');
     if (label) {
       label.textContent = username;
+      if (meta.title || meta.afk) {
+        const title = document.createElement('small');
+        title.className = 'pv-console-title';
+        title.textContent = [meta.title, meta.afk ? 'AFK' : ''].filter(Boolean).join(' · ');
+        label.appendChild(title);
+      }
       if (isBot) {
         const small = document.createElement('small');
         small.textContent = 'AI TRAINER';
@@ -232,6 +264,7 @@
     try {
       const body = new URLSearchParams();
       body.set('direction', String(direction));
+      body.set('console_revision', String(cfg.locationRevision || 0));
       body.set('csrf_token', String(cfg.csrf || ''));
       const response = await fetch(cfg.moveUrl, {
         method: 'POST',
@@ -249,6 +282,9 @@
         return;
       }
       const data = await response.json();
+      if (data.redirect) { window.location.href = data.redirect; return; }
+      if (data.selfMeta) state.selfMeta = data.selfMeta;
+      updateEnvironment(data.environment);
       if (!response.ok || !data.ok) throw new Error(data.error || `HTTP ${response.status}`);
       if (data.redirect) {
         setStatus('Entering connected region…', 'success');
@@ -300,7 +336,9 @@
     if (presenceRequestActive || state.moving || document.visibilityState !== 'visible') return;
     presenceRequestActive = true;
     try {
-      const response = await fetch(String(cfg.presenceUrl || ''), {
+      const presenceUrl = new URL(String(cfg.presenceUrl || ''), window.location.href);
+      presenceUrl.searchParams.set('console_revision', String(cfg.locationRevision || 0));
+      const response = await fetch(presenceUrl.toString(), {
         method: 'GET',
         credentials: 'same-origin',
         cache: 'no-store',
@@ -308,6 +346,9 @@
       });
       if (response.status === 401) return;
       const data = await response.json();
+      if (data.redirect) { window.location.href = data.redirect; return; }
+      if (data.selfMeta) state.selfMeta = data.selfMeta;
+      updateEnvironment(data.environment);
       if (!response.ok || !data.ok || Number(data.map) !== Number(cfg.map)) return;
       state.players = Array.isArray(data.players) ? data.players : [];
       renderActors(false);
@@ -341,6 +382,7 @@
   });
 
   bindMapArtwork();
+  updateEnvironment(cfg.environment);
   renderActors(true);
   centerTrainer();
   applyBlockedDirections();

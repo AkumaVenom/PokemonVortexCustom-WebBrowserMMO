@@ -22,6 +22,7 @@ catch (Throwable $e) {
     pv_map_presence_json(['ok'=>false,'error'=>'service'], 503);
 }
 
+pv_admin_world_follow_teleport();
 $uid = (int)$_SESSION['myid'];
 $worldKey = (string)($_SESSION['world_key'] ?? 'vortex');
 if ($worldKey !== 'vortex') pv_map_presence_json(['ok'=>false,'error'=>'world'], 409);
@@ -33,4 +34,5 @@ pv_map_presence_json([
     'world'=>$worldKey,
     'map'=>$map,
     'players'=>pv_map_players($db, $uid, $map, $worldKey),
+    'selfMeta'=>pv_admin_world_player_meta($db,$uid),'environment'=>pv_admin_world_environment($db),
 ]);

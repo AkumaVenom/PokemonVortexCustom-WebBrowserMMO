@@ -12,6 +12,7 @@ try {
     pv_redirect('dashboard.php?service=unavailable');
 }
 
+pv_admin_world_follow_teleport();
 $catalog = pv_map_catalog();
 $requested = filter_input(INPUT_GET, 'map', FILTER_VALIDATE_INT);
 $map = is_int($requested) ? max(1, min(25, $requested)) : max(1, min(25, (int)($_SESSION['map'] ?? 1)));
@@ -31,15 +32,18 @@ $players = pv_map_players($db, $uid, $map, $worldKey);
 $blockedDirections = pv_map_blocked_directions($db, $map, $x, $y);
 [$category, $mapName] = $catalog[$map];
 $trainer = max(1, min(29, (int)($_SESSION['map_preferences'][2] ?? 1)));
-$night = (int)($_SESSION['night'] ?? 0) === 1;
+$night = pv_admin_world_night($db, (int)($_SESSION['night'] ?? 0) === 1);
+$environment = pv_admin_world_environment($db);
 $overlayRel = 'images/maps/overlays/' . ($night ? 'night' : 'day') . $map . '.png';
 $overlayAbs = __DIR__ . '/html/static/' . $overlayRel;
 $overlayUrl = is_file($overlayAbs) ? pv_static($overlayRel) : '';
 $mapImage = pv_static_file('images/maps/v3/map' . $map . '.png', 'images/maps/map' . $map . '.png');
 $mapCount = count($players) + 1;
 
+$selfMeta = pv_admin_world_player_meta($db,$uid);
 pv_page_start($mapName, 'map_select.php', true);
 ?>
+<link rel="stylesheet" href="<?=pv_h(pv_asset('css/console-world.css'))?>?v=<?=pv_asset_version()?>">
 <div class="pv-game-layout">
 <?php pv_game_side_menu('map_select.php'); ?>
 <main class="pv-main-column">
@@ -124,7 +128,7 @@ window.PV_MAP_CONFIG = <?= json_encode([
     'x'=>$x,
     'y'=>$y,
     'trainer'=>$trainer,
-    'players'=>$players,
+    'players'=>$players,'locationRevision'=>(int)($_SESSION['pv_console_location_revision']??0),'selfMeta'=>$selfMeta,'environment'=>$environment,
     'blocked'=>array_keys($blocks),
     'blockedDirections'=>$blockedDirections,
     'moveUrl'=>pv_url('map_move.php'),

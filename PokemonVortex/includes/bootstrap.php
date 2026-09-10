@@ -236,6 +236,11 @@ function pv_db(): mysqli {
 
     $conn->set_charset((string)($db['charset'] ?? 'utf8mb4'));
     $GLOBALS['mysql_connection'] = $conn;
+    require_once __DIR__ . '/admin/runtime.php';
+    try { pv_admin_web_guard($conn); } catch (Throwable $guardError) {
+        error_log('Account enforcement failed: ' . $guardError->getMessage());
+        pv_admin_runtime_deny('Account services are temporarily unavailable. Please retry shortly.', 503);
+    }
     return $conn;
 }
 
