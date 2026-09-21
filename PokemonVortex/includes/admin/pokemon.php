@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/../experience.php';
 if (PHP_SAPI !== 'cli' || !defined('PV_SERVER_CONSOLE_CLI')) { http_response_code(404); exit; }
 require_once dirname(__DIR__).'/evolution.php';
 require_once dirname(__DIR__).'/economy.php';
@@ -19,8 +20,8 @@ function pv_admin_pokemon_specs(): array
     $add('heal','heal [player]','Queue one full HP/status recovery for unranked PvE sessions on their next request. Idle teams already start battles healed.','GAME MASTER',0,1);
     $add('healall','healall','Queue unranked PvE team recovery for online players; skip players with protected battle/trade state.','GAME MASTER',0,0);
     foreach (['evolve','devolve'] as $c) $add($c,"$c <owned-ID> [target-species]",'Force a configured evolution '.($c==='devolve'?'parent':'child').' route, preserving variant, specimen ID, moves and metadata. Branches require target; no item cost.','GAME MASTER',1,2);
-    $add('setlevel','setlevel <owned-ID> <1-100>','Set level and the matching Vortex EXP threshold (level × 500); refresh progression.','GAME MASTER',2,2);
-    $add('setexp','setexp <owned-ID> <0-2000000000>','Set EXP and recompute level using Vortex EXP/500 progression capped at 100.','GAME MASTER',2,2);
+    $add('setlevel','setlevel <owned-ID> <1-100>','Set level and the matching species-specific FireRed growth threshold; refresh progression.','GAME MASTER',2,2);
+    $add('setexp','setexp <owned-ID> <0-2000000000>','Set EXP and recompute level using the species growth curve capped at 100.','GAME MASTER',2,2);
     $add('learn','learn <owned-ID> <move> [slot:1-4]','Permanently teach a catalogued move. Without slot, use a blank slot; full movesets require an explicit slot.','GAME MASTER',2,3);
     $add('forget','forget <owned-ID> <move|slot:1-4>','Permanently remove a move or slot. Keep at least one move; clearmoves is sandbox-only.','GAME MASTER',2,2);
     $add('setnature','setnature <owned-ID> <nature>','Store one of the 25 specimen natures. Existing battles retain Vortex balance; test snapshots expose calculated nature stats.','GAME MASTER',2,2);
@@ -90,7 +91,7 @@ function pv_admin_give_pokemon(array $player,array $guide,int $level=5): int
     $uid=(int)$player['id']; $name=(string)$guide['name']; $username=(string)$player['username'];
     $gender=random_int(0,1)?'Male':'Female'; $ball='Poke Ball';
     $moves=[];for($i=1;$i<=4;$i++)$moves[]=trim((string)($guide['a'.$i]??''))?:'Struggle';
-    pv_admin_exec('INSERT INTO pokemon (pid,name,a1,a2,a3,a4,lvl,exp,t1,t2,rowner,owner,ball,gender,ot) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[(int)$guide['id'],$name,...$moves,$level,$level*500,(string)$guide['type1'],(string)($guide['type2']??''),$username,$uid,$ball,$gender,$username]);
+    pv_admin_exec('INSERT INTO pokemon (pid,name,a1,a2,a3,a4,lvl,exp,t1,t2,rowner,owner,ball,gender,ot,exp_curve_version) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)',[(int)$guide['id'],$name,...$moves,$level,pv_exp_at_level($name,$level),(string)$guide['type1'],(string)($guide['type2']??''),$username,$uid,$ball,$gender,$username]);
     $id=(int)pv_admin_db()->insert_id; $ivs=[]; for($i=0;$i<6;$i++)$ivs[]=random_int(0,31);
     $nature=pv_admin_natures()[random_int(0,24)]; $ability=pv_evolution_target_ability(pv_admin_db(),$name,'');
     pv_admin_exec('INSERT INTO pokemon_stats (id,hp_iv,attack_iv,defense_iv,spatk_iv,spdef_iv,speed_iv,nature,ability,gender,ball,ot,happiness) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)',[$id,...$ivs,$nature,$ability,$gender,$ball,$username,70]);
@@ -99,17 +100,18 @@ function pv_admin_give_pokemon(array $player,array $guide,int $level=5): int
     return $id;
 }
 
-/** Prevent legacy INT aggregate overflow rather than silently truncating progress. */
+/** Guard signed BIGINT aggregate arithmetic. */
 function pv_admin_progress_safe(int $uid,int $additionalExp=0): void
 {
     $s=pv_admin_row('SELECT COALESCE(SUM(exp),0) total FROM pokemon WHERE CAST(owner AS UNSIGNED)=?',[$uid]);
-    if((int)$s['total']+$additionalExp>2000000000) throw new RuntimeException('This would exceed the supported trainer EXP total of 2,000,000,000. Reduce EXP before this change.');
+    if($additionalExp>0 && (int)$s['total']>PHP_INT_MAX-$additionalExp) throw new RuntimeException('This would exceed the supported trainer EXP total.');
 }
 function pv_admin_pokemon_refresh(int $uid): void { pv_admin_progress_safe($uid); pv_recalculate_trainer_progress(pv_admin_db(),$uid,false); pv_admin_touch($uid); }
 
 function pv_admin_catalog_switch(array $p,array $guide): void
 {
-    pv_admin_exec('UPDATE pokemon SET pid=?,name=?,t1=?,t2=? WHERE id=?',[(int)$guide['id'],(string)$guide['name'],(string)$guide['type1'],(string)($guide['type2']??''),(int)$p['id']]);
+    $growth=pv_exp_change_species($p,(string)$guide['name']);
+    pv_admin_exec('UPDATE pokemon SET pid=?,name=?,t1=?,t2=?,lvl=?,exp=?,exp_curve_version=1 WHERE id=?',[(int)$guide['id'],(string)$guide['name'],(string)$guide['type1'],(string)($guide['type2']??''),$growth['lvl'],$growth['exp'],(int)$p['id']]);
     if((int)$p['pid']!==(int)$guide['id']) {
         pv_admin_exec('UPDATE pguide SET amount=GREATEST(0,COALESCE(amount,0)-1) WHERE id=?',[(int)$p['pid']]);
         pv_admin_exec('UPDATE pguide SET amount=COALESCE(amount,0)+1 WHERE id=?',[(int)$guide['id']]);
@@ -215,7 +217,7 @@ function pv_admin_pokemon_handle(string $command,array $args,array &$context): a
             }
             if($command==='givepokemon') {
                 $guide=pv_admin_species($args[1]);$level=isset($args[2])?pv_admin_int($args[2],1,100,'level'):5;
-                pv_admin_progress_safe($uid,$level*500);$id=pv_admin_give_pokemon($player,$guide,$level);pv_admin_pokemon_refresh($uid);
+                pv_admin_progress_safe($uid,pv_exp_at_level((string)$guide['name'],$level));$id=pv_admin_give_pokemon($player,$guide,$level);pv_admin_pokemon_refresh($uid);
                 return ['Gave '.$guide['name'].' Lv.'.$level.' to '.$player['username'].'; owned Pokémon #'.$id.'.'];
             }
             if($command==='removepokemon') {
@@ -258,8 +260,8 @@ function pv_admin_pokemon_handle(string $command,array $args,array &$context): a
             if($match===null)throw new RuntimeException('Invalid route. Available targets: '.implode(', ',array_keys($targets)).'.');
             [$prefix]=pv_evolution_variant_parts((string)$p['name']);$guide=pv_admin_species($prefix.$match);pv_admin_catalog_switch($p,$guide);$message=$p['name'].' → '.$guide['name'].' (forced route; no items consumed).';
         } elseif($command==='setlevel' || $command==='setexp') {
-            $exp=$command==='setlevel'?pv_admin_int($args[1],1,100,'level')*500:pv_admin_int($args[1],0,2000000000,'EXP');$level=max(1,min(100,(int)floor($exp/500)));
-            pv_admin_progress_safe($uid,$exp-(int)$p['exp']);pv_admin_exec('UPDATE pokemon SET lvl=?,exp=? WHERE id=?',[$level,$exp,$id]);$message='Level '.$level.', EXP '.$exp.'.';
+            $exp=$command==='setlevel'?pv_exp_at_level((string)$p['name'],pv_admin_int($args[1],1,100,'level')):min(pv_exp_at_level((string)$p['name'],100),pv_admin_int($args[1],0,2000000000,'EXP'));$level=pv_exp_level_for((string)$p['name'],$exp);
+            pv_admin_progress_safe($uid,$exp-(int)$p['exp']);pv_admin_exec('UPDATE pokemon SET lvl=?,exp=?,exp_curve_version=1 WHERE id=?',[$level,$exp,$id]);$message='Level '.$level.', EXP '.$exp.'.';
         } elseif($command==='learn' || $command==='forget') {
             $moves=[];for($i=1;$i<=4;$i++)$moves[]=(string)($p['a'.$i]??'');
             if($command==='learn'){$move=pv_admin_move($args[1]);$slot=pv_admin_move_slot($moves,$move,$args[2]??null);$moves[$slot]=$move;$message='Learned '.$move.' in slot '.($slot+1).'.';}

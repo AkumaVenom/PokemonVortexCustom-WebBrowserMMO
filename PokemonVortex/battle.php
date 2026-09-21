@@ -297,7 +297,7 @@ if($battleStartRequested){
     }
 	$_SESSION['pv_audio_standard_id'] = bin2hex(random_bytes(16));
 	// Unset previous battle sessions only after the new route has been validated.
-	unset($_SESSION['opponent_profile'],$_SESSION['s1'],$_SESSION['s2'],$_SESSION['s3'],$_SESSION['s4'],$_SESSION['s5'],$_SESSION['s6'],$_SESSION['ops1'],$_SESSION['ops2'],$_SESSION['ops3'],$_SESSION['ops4'],$_SESSION['ops5'],$_SESSION['ops6'],$_SESSION['position'],$_SESSION['your_profile'],$_SESSION['y_p']);
+	unset($_SESSION['pv_standard_exp'],$_SESSION['opponent_profile'],$_SESSION['s1'],$_SESSION['s2'],$_SESSION['s3'],$_SESSION['s4'],$_SESSION['s5'],$_SESSION['s6'],$_SESSION['ops1'],$_SESSION['ops2'],$_SESSION['ops3'],$_SESSION['ops4'],$_SESSION['ops5'],$_SESSION['ops6'],$_SESSION['position'],$_SESSION['your_profile'],$_SESSION['y_p']);
 	// The recovered engine treats this ten-element array as a tiny move cache.
 	// Seed it explicitly so the first turn never reads offsets from null under PHP 8.
 	$_SESSION['attack_short'] = array_fill(0, 10, '');
@@ -449,6 +449,12 @@ include(__DIR__ . '/includes/ads/sidead.php');
 }
 // Pokemon type damage conversions in style of the attacker
 
+if (isset($_SESSION['opponent_profile']) && !isset($_SESSION['pv_standard_exp'])) pv_battle_exp_begin(true);
+if (isset($_SESSION['pv_standard_exp']) || (int)($_SESSION['pv_exp_progress_dirty'] ?? 0) === (int)$_SESSION['myid']) {
+    // Finish a pending durable award before another turn can change eligibility.
+    pv_battle_runtime_reward_fainted($battleDb, (int)$_SESSION['myid']);
+    pv_battle_exp_note_active();
+}
 if(($_SESSION['position'] ?? 0) == 2 && !isset($_POST['choose'])){
 	function convert($atype, $ty, $ty2){
         return pv_combat_type_multiplier((string)$atype, (string)$ty, (string)$ty2);
@@ -1859,6 +1865,7 @@ if(($_SESSION['position'] ?? 0) == 2 && !isset($_POST['choose'])){
 		$div = pv_safe_divide((float)$_SESSION['ops'.$n][10], (float)$_SESSION['ops'.$n][11], 0.0);
 		$_SESSION['ops'.$n][12] = $div * 100;
 	}
+	pv_battle_runtime_reward_fainted($battleDb, (int)$_SESSION['myid']);
 	if(!empty($_POST['active_pokemon'])){ // Get the Pokemon you're using
 		$atp = $_POST['active_pokemon'];
 		if($atp == $_SESSION['s1'][1]){ // slot 1
@@ -1898,6 +1905,7 @@ if(($_SESSION['position'] ?? 0) == 2 && !isset($_POST['choose'])){
 		$recoveredOpponentSlot = pv_battle_first_alive_slot('ops', $opponentCount);
 		if ($recoveredOpponentSlot > 0) $_SESSION['y_p'][1] = $recoveredOpponentSlot;
 	}
+	pv_battle_exp_note_active();
 	$q = max(1, min(6, (int)($_SESSION['y_p'][1] ?? 1)));
 	$p = max(1, min(6, (int)($_SESSION['y_p'][0] ?? 1)));
 	echo "<form action=\"battle.php\" method=\"post\" name=\"1{$random}\" id=\"1{$random}\" style='display:none;' >" . pv_battle_form_security_fields() . "
@@ -2380,10 +2388,11 @@ if($battleStartRequested){
 					$slotNo = $index + 1;
 					$_SESSION['s'.$slotNo] = array(
 						$goo['name'],$goo['id'],$goo['t1'],$goo['t2'],$goo['lvl'],$goo['exp'],
-						$goo['a1'],$goo['a2'],$goo['a3'],$goo['a4'],$hp,$hp,"100","0","0","0"
+						$goo['a1'],$goo['a2'],$goo['a3'],$goo['a4'],$hp,$hp,"100","0","0","0",(string)($goo['original_trainer'] ?? '')
 					);
 				}
 
+				pv_battle_exp_begin();
 				$_SESSION['position'] = 1;
 				}
 			}
@@ -2448,6 +2457,7 @@ if($battleStartRequested){
                         echo '<h2>Congratulations! You won the battle!</h2>
 						<h3>Your team beat ' . htmlentities($_SESSION['opponent_profile'][1]) . '\'s team.</h3>';
 						
+						$ya = 0; $u_level = 0; $amount_level = 0;
 						for($sa=1;$sa<=6;$sa++){
 							if($_SESSION['s'.$sa][13] == 1){
 
@@ -2462,18 +2472,8 @@ if($battleStartRequested){
 						}
 						$exp2 = pv_safe_divide((float)$amount_level, max(1, (int)$u_level), 0.0);
 						$r_e_x = $exp2 * 500;
-						$exp2 = round($r_e_x * $_SESSION['your_profile'][3]); // add * 2 to the end for double experience
-						$tottal = 0;
-						for($sa=1;$sa<=6;$sa++){
-							if($_SESSION['s'.$sa][13] == 1){
-								$tottal += $exp2;
-								$id = (int)$_SESSION['s'.$sa][1];
-								$happy = rand(1,2);
-								if (!pv_battle_runtime_award_participant($battleDb, (int)$_SESSION['myid'], $id, (int)$exp2, $happy)) {
-									pv_log('Standard battle reward skipped for non-owned participant ' . $id . ' on trainer ' . (int)$_SESSION['myid']);
-								}
-							}
-						}
+						$exp2 = round($r_e_x * $_SESSION['your_profile'][3]); // Legacy currency basis only; Pokemon EXP is awarded per defeated opponent.
+						$tottal = pv_battle_exp_total();
 
 						function randmoney($ex){
 							$rvar = rand(1,1000);
@@ -2499,9 +2499,8 @@ if($battleStartRequested){
 							}
 							return $moni;
 						}
-						if($exp2 > 0){
-							echo '<p>Each Pokemon above gained ';
-							echo number_format($exp2); 
+							echo '<p>Your participating Pokémon gained a total of ';
+							echo number_format($tottal); 
 							$money = randmoney($exp2);
 							if(!isset($_SESSION['battle_count'])){
 								$_SESSION['battle_count'] = 1;
@@ -2571,10 +2570,9 @@ if($battleStartRequested){
 
 
 								pv_recalculate_trainer_progress($battleDb, $trainerId, true);
-							}
 						}
 
-						unset($_SESSION['opponent_profile'],$_SESSION['s1'],$_SESSION['s2'],$_SESSION['s3'],$_SESSION['s4'],$_SESSION['s5'],$_SESSION['s6'],$_SESSION['ops1'],$_SESSION['ops2'],$_SESSION['ops3'],$_SESSION['ops4'],$_SESSION['ops5'],$_SESSION['ops6'],$_SESSION['position'],$_SESSION['your_profile'],$_SESSION['y_p']); 
+						unset($_SESSION['pv_standard_exp'],$_SESSION['opponent_profile'],$_SESSION['s1'],$_SESSION['s2'],$_SESSION['s3'],$_SESSION['s4'],$_SESSION['s5'],$_SESSION['s6'],$_SESSION['ops1'],$_SESSION['ops2'],$_SESSION['ops3'],$_SESSION['ops4'],$_SESSION['ops5'],$_SESSION['ops6'],$_SESSION['position'],$_SESSION['your_profile'],$_SESSION['y_p']); 
 }
 						elseif($all_dead_u == 0 && isset($_SESSION['ops1'])){
 							$tb = pv_battle_runtime_member_snapshot($battleDb, (int)$_SESSION['myid']);
@@ -2635,7 +2633,7 @@ if($battleStartRequested){
 								<a href="your_pokemon.php" class="deselected">View All Pokemon</a><br />
 								<a href="items.php" class="deselected">Pok&eacute;mart</a></p>';
 							}
-							unset($_SESSION['opponent_profile'],$_SESSION['s1'],$_SESSION['s2'],$_SESSION['s3'],$_SESSION['s4'],$_SESSION['s5'],$_SESSION['s6'],$_SESSION['ops1'],$_SESSION['ops2'],$_SESSION['ops3'],$_SESSION['ops4'],$_SESSION['ops5'],$_SESSION['ops6'],$_SESSION['position'],$_SESSION['your_profile'],$_SESSION['y_p']); 
+							unset($_SESSION['pv_standard_exp'],$_SESSION['opponent_profile'],$_SESSION['s1'],$_SESSION['s2'],$_SESSION['s3'],$_SESSION['s4'],$_SESSION['s5'],$_SESSION['s6'],$_SESSION['ops1'],$_SESSION['ops2'],$_SESSION['ops3'],$_SESSION['ops4'],$_SESSION['ops5'],$_SESSION['ops6'],$_SESSION['position'],$_SESSION['your_profile'],$_SESSION['y_p']); 
 						}
 						elseif($all_dead_u == 0 && $all_dead_op == 0 && !isset($_SESSION['ops1'])){
 							echo '<h2>An error has occurred, please refresh the page or return to the battle select page you came from.</h2>';

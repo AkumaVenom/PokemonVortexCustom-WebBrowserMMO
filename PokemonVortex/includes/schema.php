@@ -119,6 +119,31 @@ function pv_apply_schema_migrations(mysqli $db): array
     $changes = [];
     $db->set_charset('utf8mb4');
 
+    // v34 species curves: default 0 deliberately identifies every pre-upgrade row.
+    pv_schema_add_column($db, 'pokemon', 'exp_curve_version', 'TINYINT UNSIGNED NOT NULL DEFAULT 0', $changes);
+    pv_schema_add_index($db, 'pokemon', 'idx_pokemon_exp_curve', '`exp_curve_version`,`id`', $changes);
+    pv_schema_ensure_table($db, 'pokemon_exp_awards', "CREATE TABLE pokemon_exp_awards (
+        reward_key VARCHAR(96) CHARACTER SET ascii NOT NULL PRIMARY KEY,
+        user_id INT NOT NULL, pokemon_id INT NOT NULL, reward_exp INT NOT NULL DEFAULT 0,
+        created_at BIGINT NOT NULL, KEY idx_exp_awards_user_time(user_id,created_at)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", $changes);
+    pv_schema_ensure_table($db, 'pokemon_exp_migration', "CREATE TABLE pokemon_exp_migration (
+        pokemon_id INT NOT NULL PRIMARY KEY, species VARCHAR(80) NOT NULL,
+        old_level INT NOT NULL, old_exp BIGINT NOT NULL, new_level INT NOT NULL,
+        new_exp BIGINT NOT NULL, migrated_at BIGINT NOT NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", $changes);
+    // A collection can legitimately exceed 2 billion cumulative EXP with real curves.
+    foreach (['members'=>['totalexp','averageexp'], 'clans'=>['exp'], 'clan_members'=>['exp']] as $table=>$columns) {
+        foreach ($columns as $column) {
+            if (!pv_schema_column_exists($db,$table,$column)) continue;
+            $type=$db->query('SHOW COLUMNS FROM `'.$table.'` LIKE \''.$column.'\'')->fetch_assoc();
+            if (!str_starts_with(strtolower((string)$type['Type']),'bigint')) {
+                if (!$db->query('ALTER TABLE `'.$table.'` MODIFY `'.$column.'` BIGINT NOT NULL DEFAULT 0')) throw new RuntimeException('Could not widen trainer experience totals.');
+                $changes[]='Widened '.$table.'.'.$column.' for species growth curves';
+            }
+        }
+    }
+
     // Account/runtime fields referenced by legacy dashboard, maps, battles and clans.
     $memberColumns = [
         'llogin' => 'BIGINT NOT NULL DEFAULT 0',
@@ -858,6 +883,8 @@ function pv_apply_schema_migrations(mysqli $db): array
     pv_schema_add_index($db, 'trade_offer_items', 'idx_trade_offer_items_pokemon', '`pokemon_id`', $changes);
     pv_schema_add_index($db, 'trade_offer_items', 'idx_trade_offer_items_owner', '`original_owner_id`', $changes);
 
+    pv_schema_add_column($db, 'bot_trainers', 'ranked_retry_at', 'INT NOT NULL DEFAULT 0', $changes);
+
     // Population repair is idempotent: interrupted local setup runs can resume
     // without duplicating bots or touching human trainer progress.
     $botPopulation = pv_bot_ensure_population($db, PV_BOT_POPULATION_TARGET);
@@ -887,8 +914,12 @@ function pv_apply_schema_migrations(mysqli $db): array
         @$db->query('UPDATE `members` m SET `total_poke`=(SELECT COUNT(*) FROM `pokemon` p WHERE p.`owner`=m.`id`)');
     }
 
+    require_once __DIR__ . '/experience_migration.php';
+    $convertedExp=pv_exp_migrate_legacy($db);
+    if ($convertedExp>0) $changes[]='Converted EXP for '.$convertedExp.' Pokémon; preserved levels and audited old values';
+
     if (pv_schema_table_exists($db, 'pv_schema_meta')) {
-        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,29,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
+        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,30,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
     }
 
     // v33 local operator console: shared additive fresh-install/upgrade repair path.

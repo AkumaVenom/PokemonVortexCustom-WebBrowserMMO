@@ -180,8 +180,7 @@ function pv_admin_account_starter(int $uid): int
     if (!function_exists('pv_admin_give_pokemon')) throw new RuntimeException('The console Pokémon module is required to initialize a complete trainer.');
     $player=pv_admin_row('SELECT * FROM members WHERE id=?',[$uid]);
     $id=pv_admin_give_pokemon($player,pv_admin_species('Bulbasaur'),18);
-    // Preserve the accepted signup contract: every fresh character starts at 18 / 9,000 EXP.
-    pv_admin_exec('UPDATE pokemon SET exp=9000 WHERE id=?',[$id]);
+    // The shared creation path sets level-18 species-specific EXP.
     pv_recalculate_trainer_progress(pv_admin_db(),$uid,false);
     return $id;
 }

@@ -304,6 +304,7 @@ function pv_console_banner(array $config, array $consoleCfg, string $worldLog, b
     pv_console_write_line('  Apache access log  : ' . ($showApacheAccess ? (is_file($apacheAccess) ? $apacheAccess : 'not detected') : 'hidden (add --apache-access to show)'));
     pv_console_write_line('  Command input      : ' . ($tailOnly ? 'DISABLED (--tail-only)' : 'LOCAL OPERATOR ONLY - type help'));
     pv_console_write_line('  Chat commands      : EXCLUDED');
+    pv_console_write_line('  Offline AI         : separate service (PokemonVortex_AIService.cmd / .sh)');
     pv_console_write_line('------------------------------------------------------------', C_CYAN);
     pv_console_write_line('  Ctrl+C closes the console; Apache/MySQL keep running.');
     pv_console_write_line('  Activity logs redact credentials. Temporary credentials from');

@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/experience.php';
 require_once __DIR__ . '/gameplay.php';
 require_once __DIR__ . '/admin/world_runtime.php';
 
@@ -181,10 +182,11 @@ function pv_event_fuse_kyurem(mysqli $db, int $uid, int $kyuremId, int $partnerI
         $resultName = ($variantA !== '' ? $variantA . ' ' : '') . $resultBase;
         $ability = $speciesB === 'Reshiram' ? 'Turboblaze' : 'Teravolt';
 
-        $stmt = $db->prepare('UPDATE pokemon SET name=?,lvl=100,exp=50000,ball=? WHERE id=? AND CAST(owner AS UNSIGNED)=?');
+        $fusedExp=pv_exp_at_level($resultName,100);
+        $stmt = $db->prepare('UPDATE pokemon SET name=?,lvl=100,exp=?,exp_curve_version=1,ball=? WHERE id=? AND CAST(owner AS UNSIGNED)=?');
         if (!$stmt) throw new RuntimeException('Could not prepare the fused Kyurem update.');
         $ball='Cherish Ball';
-        $stmt->bind_param('ssii', $resultName, $ball, $kyuremId, $uid);
+        $stmt->bind_param('sisii', $resultName, $fusedExp, $ball, $kyuremId, $uid);
         if (!$stmt->execute() || $stmt->affected_rows < 0) throw new RuntimeException('Could not create the fused Kyurem.');
         $stmt->close();
 

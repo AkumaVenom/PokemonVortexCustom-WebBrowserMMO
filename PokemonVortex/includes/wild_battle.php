@@ -3,6 +3,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/gameplay.php';
 require_once __DIR__ . '/combat.php';
 require_once __DIR__ . '/world_maps.php';
+require_once __DIR__ . '/experience.php';
 
 
 function pv_wild_return_url(?array $state=null): string
@@ -335,24 +336,53 @@ function pv_wild_finalize_win(mysqli $db, array &$state): void
     if($existing) throw new RuntimeException('This encounter has already been resolved. Return to the map to continue exploring.');
 
     $wildLevel=max(1,(int)$state['wild']['level']);
-    $exp=max(75,$wildLevel*55);
+    $exp=0;
     $money=max(50,$wildLevel*22+random_int(25,125));
-    $participantIds=array_map('intval',array_keys(array_filter($state['participants'])));
+    $participantIds=[];
+    foreach ((array)($state['participants'] ?? []) as $id => $participated) {
+        if ($participated && (int)($state['team'][$id]['hp'] ?? 0) > 0) $participantIds[] = (int)$id;
+    }
+    $participantIds=array_values(array_unique($participantIds));
+    if ($participantIds === []) throw new RuntimeException('No surviving Pokémon can receive experience from this encounter.');
 
-    $db->begin_transaction();
+    if (!$db->begin_transaction()) throw new RuntimeException('Could not start battle reward transaction.');
     try {
+        $idList=implode(',',array_map('intval',$participantIds));
+        $stmt=$db->prepare("SELECT id,name,lvl,exp,exp_curve_version,COALESCE(NULLIF(ot,''),rowner) AS original_trainer FROM pokemon WHERE CAST(owner AS UNSIGNED)=? AND id IN ({$idList}) ORDER BY id FOR UPDATE");
+        if(!$stmt) throw new RuntimeException('Could not lock participating Pokémon.');
+        $stmt->bind_param('i',$uid);
+        if(!$stmt->execute()) throw new RuntimeException('Could not read participating Pokémon.');
+        $rows=$stmt->get_result()->fetch_all(MYSQLI_ASSOC);$stmt->close();
+        if(count($rows)!==count($participantIds)) throw new RuntimeException('A participating Pokémon is no longer owned by this trainer.');
+        $awards=[];
+        foreach($rows as $row){
+            $originalTrainer=trim((string)$row['original_trainer']);
+            $traded=$originalTrainer!=='' && strcasecmp($originalTrainer,(string)($_SESSION['myuser']??''))!==0;
+            $gain=pv_exp_battle_gain((string)$state['wild']['name'],$wildLevel,count($participantIds),false,$traded);
+            $award=pv_exp_award($row,$gain);$awards[(int)$row['id']]=$award;
+            $exp+=(int)$award['gained'];
+        }
+        // The durable result stores actual team EXP, including level-100 caps.
         pv_wild_result_insert($db,$state,$uid,'won',$exp,$money,0);
         $stmt=$db->prepare('UPDATE members SET battle=battle+1,money=money+? WHERE id=?');
         if(!$stmt) throw new RuntimeException('Could not record battle rewards.');
-        $stmt->bind_param('ii',$money,$uid); $stmt->execute(); $stmt->close();
-        foreach($participantIds as $id){
-            $stmt=$db->prepare('UPDATE pokemon SET lvl=LEAST(100,GREATEST(1,FLOOR((exp+?)/500))), exp=exp+? WHERE id=? AND CAST(owner AS UNSIGNED)=?');
-            if(!$stmt) throw new RuntimeException('Could not record Pokémon experience.');
-            $stmt->bind_param('iiii',$exp,$exp,$id,$uid); $stmt->execute(); $stmt->close();
-            $stmt=$db->prepare('UPDATE pokemon_stats SET happiness=LEAST(255,happiness+1) WHERE id=?');
-            if($stmt){$stmt->bind_param('i',$id);$stmt->execute();$stmt->close();}
+        $stmt->bind_param('ii',$money,$uid);
+        if(!$stmt->execute() || $stmt->affected_rows!==1) throw new RuntimeException('Could not save trainer rewards.');
+        $stmt->close();
+        $stmt=$db->prepare('UPDATE pokemon SET lvl=?,exp=?,exp_curve_version=1 WHERE id=? AND CAST(owner AS UNSIGNED)=?');
+        if(!$stmt) throw new RuntimeException('Could not record Pokémon experience.');
+        foreach($awards as $id=>$award){
+            $level=(int)$award['lvl'];$newExp=(int)$award['exp'];
+            $stmt->bind_param('iiii',$level,$newExp,$id,$uid);
+            if(!$stmt->execute()) throw new RuntimeException('Could not persist Pokémon experience.');
         }
-        $db->commit();
+        $stmt->close();
+        foreach($participantIds as $id){
+            $stmt=$db->prepare('UPDATE pokemon_stats SET happiness=LEAST(255,happiness+1) WHERE id=?');
+            if(!$stmt) throw new RuntimeException('Could not prepare Pokémon happiness.');
+            $stmt->bind_param('i',$id);if(!$stmt->execute())throw new RuntimeException('Could not persist Pokémon happiness.');$stmt->close();
+        }
+        if (!$db->commit()) throw new RuntimeException('Could not commit battle rewards.');
     } catch(Throwable $e){
         $db->rollback();
         // Duplicate-key races are recoverable if another request already made
@@ -371,7 +401,7 @@ function pv_wild_finalize_win(mysqli $db, array &$state): void
     $state['status']='won'; $state['rewarded']=true;
     $state['result']=['title'=>'Battle won','message'=>'Wild '.$state['wild']['display_name'].' was defeated.','exp'=>$exp,'money'=>$money];
     pv_wild_log($state,'Wild '.$state['wild']['display_name'].' fainted. You won the battle!','good');
-    pv_wild_log($state,'Battle rewards: '.$exp.' EXP for each participating Pokémon and ₽'.number_format($money).'.','good');
+    pv_wild_log($state,'Battle rewards: '.number_format($exp).' total EXP shared by eligible participating Pokémon and ₽'.number_format($money).'.','good');
 }
 
 function pv_wild_finalize_loss(mysqli $db, array &$state): void
@@ -477,9 +507,9 @@ function pv_wild_capture_create(mysqli $db, array $state, string $ball): int
     if(!$stmt) throw new RuntimeException('Captured Pokémon data could not be loaded.');
     $stmt->bind_param('i',$pid);$stmt->execute();$guide=$stmt->get_result()->fetch_assoc();$stmt->close();
     if(!$guide) throw new RuntimeException('Captured Pokémon data is unavailable.');
-    $name=(string)$guide['name'];$level=max(1,(int)$wild['level']);$exp=$level*500;$gender=pv_wild_gender($name);
+    $name=(string)$guide['name'];$level=max(1,(int)$wild['level']);$exp=pv_exp_at_level($name,$level);$gender=pv_wild_gender($name);
     $a1=(string)$guide['a1'];$a2=(string)$guide['a2'];$a3=(string)$guide['a3'];$a4=(string)$guide['a4'];$t1=(string)$guide['type1'];$t2=(string)$guide['type2'];
-    $stmt=$db->prepare('INSERT INTO pokemon (name,pid,owner,a1,a2,a3,a4,lvl,t1,t2,exp,rowner,ball,gender,ot) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+    $stmt=$db->prepare('INSERT INTO pokemon (name,pid,owner,a1,a2,a3,a4,lvl,t1,t2,exp,rowner,ball,gender,ot,exp_curve_version) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)');
     if(!$stmt) throw new RuntimeException('The captured Pokémon could not be created.');
     $stmt->bind_param('siissssississss',$name,$pid,$uid,$a1,$a2,$a3,$a4,$level,$t1,$t2,$exp,$username,$ball,$gender,$username);
     if(!$stmt->execute()){ $stmt->close(); throw new RuntimeException('The captured Pokémon could not be saved.'); }

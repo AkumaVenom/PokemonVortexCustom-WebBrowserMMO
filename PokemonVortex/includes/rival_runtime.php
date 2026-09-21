@@ -706,7 +706,7 @@ function pv_rival_log_bot_world_action(mysqli $db, array $bot, string $action, ?
         $level = max(1, (int)($wildResult['level'] ?? 1));
         if (!empty($wildResult['captured'])) {
             $training=(int)($wildResult['exp']??0);$levelUps=(int)($wildResult['level_ups']??0);$trainingText=$training>0?' · +'.number_format($training).' team EXP'.($levelUps>0?' · '.$levelUps.' level'.($levelUps===1?'':'s').' gained':''):'';
-            pv_rival_log_ai_activity($db,$uid,'capture','Caught '.$species,'Captured a Lv. '.$level.' '.$species.' while roaming '.$world.' · '.$map.$trainingText.'.');
+            pv_rival_log_ai_activity($db,$uid,'capture',(!empty($wildResult['released'])?'Caught and released ':'Caught ').$species,(!empty($wildResult['released'])?'Caught and safely released ':'Captured ').'a Lv. '.$level.' '.$species.' while roaming '.$world.' · '.$map.$trainingText.'.');
         } elseif (!empty($wildResult['won'])) {
             $training=(int)($wildResult['exp']??0);$levelUps=(int)($wildResult['level_ups']??0);$trainingText=$training>0?' · +'.number_format($training).' team EXP'.($levelUps>0?' · '.$levelUps.' level'.($levelUps===1?'':'s').' gained':''):'';
             pv_rival_log_ai_activity($db,$uid,'wild','Won a wild battle','Defeated a Lv. '.$level.' '.$species.' while training in '.$world.' · '.$map.$trainingText.'.');

@@ -43,7 +43,7 @@ function pv_live_session_participants(string $prefix, int $count, bool $onlyPart
 function pv_live_clear_combat_session(bool $keepLiveIdentity = true): void {
     $keys = [
         'opponent_profile','s1','s2','s3','s4','s5','s6','ops1','ops2','ops3','ops4','ops5','ops6',
-        'position','your_profile','y_p','attack_short','your_attack','numero','numero1','pos','live_initialized_battle_id'
+        'position','your_profile','y_p','pv_standard_exp','attack_short','your_attack','numero','numero1','pos','live_initialized_battle_id'
     ];
     foreach ($keys as $key) unset($_SESSION[$key]);
     if (!$keepLiveIdentity) unset($_SESSION['live']);
@@ -130,36 +130,10 @@ function pv_live_settle_result(mysqli $db, int $battleId, int $userSlot, int $op
             $userLevelTotal = array_sum(array_column($participants, 'level'));
             $opponentLevelTotal = array_sum(array_column($opponents, 'level'));
             $multiplier = max(0.1, min(10.0, (float)($member['eb'] ?? 1)));
-            $rewardExp = (int)round(pv_safe_divide((float)$opponentLevelTotal, max(1, $userLevelTotal), 0.0) * 500 * $multiplier);
-            $rewardExp = max(0, min(10000000, $rewardExp));
-            $rewardMoney = max(0, min(1000000000, pv_live_reward_money($rewardExp)));
-
-            $ids = array_values(array_unique(array_map(static fn($row) => (int)$row['id'], $participants)));
-            if ($ids === []) throw new RuntimeException('No eligible Pokémon participated in the live battle.');
-            $idList = implode(',', array_map('intval', $ids));
-            $stmt = $db->prepare("SELECT id,lvl,exp FROM pokemon WHERE owner=? AND id IN ({$idList}) FOR UPDATE");
-            if (!$stmt) throw new RuntimeException('Could not lock participating Pokémon.');
-            $stmt->bind_param('i', $userId);
-            $stmt->execute();
-            $ownedRows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-            $stmt->close();
-            $ownedIds = array_map(static fn($row) => (int)$row['id'], $ownedRows);
-            sort($ownedIds);
-            $expectedIds = $ids;
-            sort($expectedIds);
-            if ($ownedIds !== $expectedIds) throw new RuntimeException('A participating Pokémon is no longer owned by this trainer.');
-
-            $updatePokemon = $db->prepare('UPDATE pokemon SET exp=?, lvl=? WHERE id=? AND owner=?');
-            if (!$updatePokemon) throw new RuntimeException('Could not prepare Pokémon progression.');
-            foreach ($ownedRows as $pokemon) {
-                $newExp = max(0, (int)$pokemon['exp']) + $rewardExp;
-                $newLevel = min(100, max(1, (int)floor($newExp / 500)));
-                if ((int)$pokemon['lvl'] >= 100) $newLevel = 100;
-                $pid = (int)$pokemon['id'];
-                $updatePokemon->bind_param('iiii', $newExp, $newLevel, $pid, $userId);
-                if (!$updatePokemon->execute() || $updatePokemon->affected_rows < 0) throw new RuntimeException('Could not apply Pokémon experience.');
-            }
-            $updatePokemon->close();
+            // Link battles grant no Pokémon EXP in FireRed. Keep Vortex's
+            // independent trainer money/record rewards without creating levels.
+            $currencyBasis = (int)round(pv_safe_divide((float)$opponentLevelTotal, max(1, $userLevelTotal), 0.0) * 500 * $multiplier);
+            $rewardMoney = max(0, min(1000000000, pv_live_reward_money(max(0, min(10000000, $currencyBasis)))));
 
             $stmt = $db->prepare('UPDATE members SET btime=?, battle=battle+1, money=money+? WHERE id=?');
             if (!$stmt) throw new RuntimeException('Could not prepare trainer victory progression.');

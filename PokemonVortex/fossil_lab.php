@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/includes/experience.php';
 require_once __DIR__ . '/includes/bootstrap.php';
 require_once __DIR__ . '/includes/ui.php';
 require_once __DIR__ . '/includes/gameplay.php';
@@ -55,8 +56,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
             $stmt->bind_param('s',$name); $stmt->execute(); $guide=$stmt->get_result()->fetch_assoc(); $stmt->close();
             if (!$guide) throw new RuntimeException('That Pokémon cannot be restored right now.');
 
-            $level = 5; $exp = 2500; $ball = 'Poke Ball';
-            $stmt = $db->prepare('INSERT INTO pokemon (name,pid,owner,a1,a2,a3,a4,lvl,t1,t2,exp,rowner,ball,gender,ot) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+            $level = 5; $exp = pv_exp_at_level($name, $level); $ball = 'Poke Ball';
+            $stmt = $db->prepare('INSERT INTO pokemon (name,pid,owner,a1,a2,a3,a4,lvl,t1,t2,exp,rowner,ball,gender,ot,exp_curve_version) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)');
             if (!$stmt) throw new RuntimeException('That Pokémon could not be restored.');
             $pid=(int)$guide['id'];$a1=(string)$guide['a1'];$a2=(string)$guide['a2'];$a3=(string)$guide['a3'];$a4=(string)$guide['a4'];$t1=(string)$guide['type1'];$t2=(string)$guide['type2'];
             $stmt->bind_param('siissssississss',$name,$pid,$uid,$a1,$a2,$a3,$a4,$level,$t1,$t2,$exp,$username,$ball,$gender,$username);

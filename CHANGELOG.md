@@ -1,3 +1,15 @@
+# v34.0.0 — Autonomous trainer and experience repair
+
+- Continuous supervised AI service, independent Ranked heartbeat, overdue fairness and bounded per-bot recovery.
+- Reserve training and ongoing capture/release activity after collection/level caps, with protected bounded retention.
+- ROM-extracted six growth curves and Gen I–III yields, explicit later-species metadata, per-KO surviving participant EXP and idempotent reward receipts.
+- Audited, resumable EXP migration that preserves stored levels; shared creation/evolution/admin thresholds and widened trainer totals.
+- Windows/Linux service launchers, health/status diagnostics, regression suites, reproducible extraction and upgrade instructions.
+
+See [UPGRADE_v34.md](UPGRADE_v34.md) and [validation evidence](docs/VALIDATION_v34.md).
+
+---
+
 ## v33.0.0 — Interactive local server command system
 
 - Extended the existing CMD/PHP console with editable input, concurrent filtered activity, safe in-memory history, aliases, quoted arguments, selected trainer context, detailed help and process reloads. Added Windows PowerShell keyboard handling and a Unix launcher/editor.

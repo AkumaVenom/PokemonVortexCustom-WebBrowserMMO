@@ -245,7 +245,7 @@ function pv_admin_ensure_schema(): void
     if (!empty($GLOBALS['pv_admin_schema_ready'])) return;
     if (pv_table_exists('console_settings')) {
         $version = pv_admin_row("SELECT value_json FROM console_settings WHERE setting_key='schema_version'");
-        if ($version && json_decode($version['value_json'], true) === 330001) {
+        if ($version && json_decode($version['value_json'], true) === 340000) {
             $GLOBALS['pv_admin_schema_ready'] = true;
             return;
         }

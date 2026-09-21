@@ -2,13 +2,15 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/battle_experience.php';
+require_once __DIR__ . '/gameplay.php';
 
 /**
  * Modern database boundary for the recovered standard trainer/NPC battle engine.
  *
- * v23.2 deliberately leaves the accepted combat arithmetic/session presentation
- * untouched while moving all battle-owned persistence and hydration onto
- * prepared mysqli statements. No request-controlled SQL identifiers are
+ * Battle-owned persistence and hydration use prepared mysqli statements.
+ * Species experience is awarded when an opponent faints, with a durable receipt
+ * independent of the final match result. No request-controlled SQL identifiers are
  * accepted: the only dynamic table/column names are resolved from private
  * allowlists in this file.
  */
@@ -139,8 +141,9 @@ function pv_battle_runtime_party(mysqli $db, string $tableKey, int $ownerId, arr
     if ($ownerId <= 0 || $ids === []) return [];
 
     $padded = array_pad($ids, 6, 0);
+    $originalTrainer = $table === 'pokemon' ? "COALESCE(NULLIF(ot,''),rowner)" : 'rowner';
     $stmt = $db->prepare(
-        "SELECT id,name,t1,t2,lvl,exp,a1,a2,a3,a4 FROM {$table} " .
+        "SELECT id,name,t1,t2,lvl,exp,a1,a2,a3,a4,{$originalTrainer} AS original_trainer FROM {$table} " .
         'WHERE owner=? AND id IN (?,?,?,?,?,?)'
     );
     if (!$stmt) throw new RuntimeException('Could not prepare battle party hydration.');
@@ -213,23 +216,25 @@ function pv_battle_runtime_member_snapshot(mysqli $db, int $uid): array
 
 /**
  * Persist one participating Pokémon's EXP/level/happiness as an owner-bound
- * transaction. This preserves the accepted reward formula while preventing a
- * stale session id from updating a Pokémon that has since changed ownership.
+ * transaction. The optional durable receipt makes a fainted opponent safe to
+ * retry after a lost response, while ownership remains bound to the trainer.
  */
-function pv_battle_runtime_award_participant(mysqli $db, int $uid, int $pokemonId, int $expGain, int $happiness): bool
+function pv_battle_runtime_award_participant(mysqli $db, int $uid, int $pokemonId, int $expGain, int $happiness, string $receiptKey = '', ?array &$awardResult = null): bool
 {
     $uid = max(1, $uid);
     $pokemonId = max(1, $pokemonId);
     $expGain = max(0, $expGain);
     $happiness = max(0, $happiness);
-    if ($expGain <= 0) return true;
+    $awardResult = ['gained'=>0, 'level_ups'=>0];
+    if ($expGain <= 0 && $receiptKey === '') return true;
+    if ($receiptKey !== '' && !preg_match('/^[a-f0-9]{32}:[1-6]:[1-9][0-9]*$/D', $receiptKey)) throw new InvalidArgumentException('Invalid experience receipt.');
 
-    $db->begin_transaction();
+    if (!$db->begin_transaction()) throw new RuntimeException('Could not start experience transaction.');
     try {
-        $stmt = $db->prepare('SELECT lvl,exp FROM pokemon WHERE id=? AND owner=? FOR UPDATE');
+        $stmt = $db->prepare('SELECT name,lvl,exp,exp_curve_version FROM pokemon WHERE id=? AND owner=? FOR UPDATE');
         if (!$stmt) throw new RuntimeException('Could not lock battle participant.');
         $stmt->bind_param('ii', $pokemonId, $uid);
-        $stmt->execute();
+        if (!$stmt->execute()) throw new RuntimeException('Could not read battle participant.');
         $pokemon = $stmt->get_result()->fetch_assoc();
         $stmt->close();
         if (!$pokemon) {
@@ -237,11 +242,24 @@ function pv_battle_runtime_award_participant(mysqli $db, int $uid, int $pokemonI
             return false;
         }
 
-        $currentLevel = max(1, (int)$pokemon['lvl']);
-        $finalExp = max(0, (int)$pokemon['exp']) + $expGain;
-        $finalLevel = $currentLevel >= 100 ? 100 : min(100, max(1, (int)floor($finalExp / 500)));
-
-        $stmt = $db->prepare('UPDATE pokemon SET lvl=?,exp=? WHERE id=? AND owner=?');
+        if ($receiptKey !== '') {
+            $stmt = $db->prepare('SELECT reward_exp FROM pokemon_exp_awards WHERE reward_key=? AND user_id=? AND pokemon_id=? FOR UPDATE');
+            if (!$stmt) throw new RuntimeException('Could not load experience receipt.');
+            $stmt->bind_param('sii', $receiptKey, $uid, $pokemonId);
+            if (!$stmt->execute()) throw new RuntimeException('Could not read experience receipt.');
+            $receipt = $stmt->get_result()->fetch_assoc();
+            $stmt->close();
+            if ($receipt) {
+                $awardResult = ['gained'=>(int)$receipt['reward_exp'], 'level_ups'=>0, 'lvl'=>(int)$pokemon['lvl'], 'exp'=>(int)$pokemon['exp'], 'name'=>(string)$pokemon['name']];
+                if (!$db->commit()) throw new RuntimeException('Could not commit experience transaction.');
+                return true;
+            }
+        }
+        $awardResult = pv_exp_award($pokemon, $expGain);
+        $awardResult['name'] = (string)$pokemon['name'];
+        $finalExp = $awardResult['exp'];
+        $finalLevel = $awardResult['lvl'];
+        $stmt = $db->prepare('UPDATE pokemon SET lvl=?,exp=?,exp_curve_version=1 WHERE id=? AND owner=?');
         if (!$stmt) throw new RuntimeException('Could not prepare participant progression.');
         $stmt->bind_param('iiii', $finalLevel, $finalExp, $pokemonId, $uid);
         if (!$stmt->execute()) {
@@ -249,9 +267,18 @@ function pv_battle_runtime_award_participant(mysqli $db, int $uid, int $pokemonI
             throw new RuntimeException('Could not persist participant progression.');
         }
         $stmt->close();
+        if ($receiptKey !== '') {
+            $gained = (int)$awardResult['gained'];
+            $now = time();
+            $stmt = $db->prepare('INSERT INTO pokemon_exp_awards (reward_key,user_id,pokemon_id,reward_exp,created_at) VALUES (?,?,?,?,?)');
+            if (!$stmt) throw new RuntimeException('Could not prepare experience receipt.');
+            $stmt->bind_param('siiii', $receiptKey, $uid, $pokemonId, $gained, $now);
+            if (!$stmt->execute()) throw new RuntimeException('Could not save experience receipt.');
+            $stmt->close();
+        }
 
         if ($happiness > 0) {
-            $stmt = $db->prepare('UPDATE pokemon_stats SET happiness=happiness+? WHERE id=?');
+            $stmt = $db->prepare('UPDATE pokemon_stats SET happiness=LEAST(255,happiness+?) WHERE id=?');
             if (!$stmt) throw new RuntimeException('Could not prepare participant happiness.');
             $stmt->bind_param('ii', $happiness, $pokemonId);
             if (!$stmt->execute()) {
@@ -261,13 +288,56 @@ function pv_battle_runtime_award_participant(mysqli $db, int $uid, int $pokemonI
             $stmt->close();
         }
 
-        $db->commit();
+        if (!$db->commit()) throw new RuntimeException('Could not commit experience transaction.');
         return true;
     } catch (Throwable $e) {
         $db->rollback();
         throw $e;
     }
 }
+
+/** Persist each newly fainted opponent independently of the final win/loss. */
+function pv_battle_runtime_reward_fainted(mysqli $db, int $uid): void
+{
+    try {
+        foreach (pv_battle_exp_pending() as $opponentSlot => $pending) {
+            $opponent = $pending['opponent'];
+            $eligible = $pending['eligible'];
+            $participants = count($eligible);
+            foreach ($eligible as $id => $ownSlot) {
+                $state = $_SESSION['s'.$ownSlot];
+                $originalTrainer = trim((string)($state[16] ?? ''));
+                $traded = $originalTrainer !== '' && strcasecmp($originalTrainer, (string)($_SESSION['myuser'] ?? '')) !== 0;
+                $gain = pv_exp_battle_gain((string)$opponent['name'], (int)$opponent['level'], $participants, true, $traded);
+                $receiptKey = (string)$_SESSION['pv_standard_exp']['id'].':'.$opponentSlot.':'.$id;
+                $result = null;
+                if (!pv_battle_runtime_award_participant($db, $uid, (int)$id, $gain, 1, $receiptKey, $result)) continue;
+                $_SESSION['pv_exp_progress_dirty'] = $uid;
+                $_SESSION['pv_standard_exp']['awards'][$opponentSlot][$id] = (int)$result['gained'];
+                $newLevel = (int)$result['lvl'];
+                $hpIncrease = max(0, $newLevel - (int)$state[4]) * (str_starts_with((string)$result['name'], 'Shiny ') ? 5 : 4);
+                $_SESSION['s'.$ownSlot][4] = $newLevel;
+                $_SESSION['s'.$ownSlot][5] = (int)$result['exp'];
+                $_SESSION['s'.$ownSlot][10] += $hpIncrease;
+                $_SESSION['s'.$ownSlot][11] += $hpIncrease;
+                $_SESSION['s'.$ownSlot][12] = 100 * $_SESSION['s'.$ownSlot][10] / max(1, $_SESSION['s'.$ownSlot][11]);
+            }
+            $_SESSION['pv_standard_exp']['opponents'][$opponentSlot]['done'] = true;
+        }
+    } finally {
+        if ((int)($_SESSION['pv_exp_progress_dirty'] ?? 0) === $uid) {
+            // Refresh a partially committed batch even if a later recipient
+            // failed. Keep the marker across combat cleanup for later retries.
+            try {
+                pv_recalculate_trainer_progress($db, $uid, true);
+                unset($_SESSION['pv_exp_progress_dirty']);
+            } catch (Throwable $e) {
+                pv_log('Trainer progress refresh failed after committed experience: '.$e->getMessage());
+            }
+        }
+    }
+}
+
 
 /**
  * Persist the standard battle win counter/money and optional clan win in one

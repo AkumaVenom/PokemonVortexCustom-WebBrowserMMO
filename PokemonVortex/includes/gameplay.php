@@ -49,9 +49,9 @@ function pv_recalculate_clan_progress(mysqli $db, string $clanName): void
     if ($clanName === '') return;
 
     $stmt = $db->prepare('SELECT COUNT(*) AS member_count, COALESCE(SUM(exp),0) AS total_exp FROM clan_members WHERE clan_name=? OR clan=?');
-    if (!$stmt) return;
+    if (!$stmt) throw new RuntimeException('Could not prepare clan progression refresh.');
     $stmt->bind_param('ss', $clanName, $clanName);
-    $stmt->execute();
+    if (!$stmt->execute()) { $stmt->close(); throw new RuntimeException('Could not persist or read progression totals.'); }
     $aggregate = $stmt->get_result()->fetch_assoc() ?: [];
     $stmt->close();
 
@@ -59,9 +59,9 @@ function pv_recalculate_clan_progress(mysqli $db, string $clanName): void
     $totalExp = max(0, (int)($aggregate['total_exp'] ?? 0));
 
     $stmt = $db->prepare('SELECT wins FROM clans WHERE name=? LIMIT 1');
-    if (!$stmt) return;
+    if (!$stmt) throw new RuntimeException('Could not prepare clan progression refresh.');
     $stmt->bind_param('s', $clanName);
-    $stmt->execute();
+    if (!$stmt->execute()) { $stmt->close(); throw new RuntimeException('Could not persist or read progression totals.'); }
     $row = $stmt->get_result()->fetch_assoc() ?: [];
     $stmt->close();
 
@@ -69,11 +69,10 @@ function pv_recalculate_clan_progress(mysqli $db, string $clanName): void
     $points = pv_clan_progress_score($totalExp, $memberCount, $wins);
 
     $stmt = $db->prepare('UPDATE clans SET members=?, exp=?, points=? WHERE name=?');
-    if ($stmt) {
-        $stmt->bind_param('iids', $memberCount, $totalExp, $points, $clanName);
-        $stmt->execute();
-        $stmt->close();
-    }
+    if (!$stmt) throw new RuntimeException('Could not prepare progression refresh.');
+    $stmt->bind_param('iids', $memberCount, $totalExp, $points, $clanName);
+    if (!$stmt->execute()) { $stmt->close(); throw new RuntimeException('Could not persist or read progression totals.'); }
+    $stmt->close();
 }
 
 function pv_recalculate_trainer_progress(mysqli $db, int $uid, bool $refreshSession = false): array
@@ -81,16 +80,16 @@ function pv_recalculate_trainer_progress(mysqli $db, int $uid, bool $refreshSess
     $uid = max(1, $uid);
 
     $stmt = $db->prepare('SELECT battle, clan_name FROM members WHERE id=? LIMIT 1');
-    if (!$stmt) return ['count'=>0,'unique'=>0,'total_exp'=>0,'average_exp'=>0,'points'=>0.0];
+    if (!$stmt) throw new RuntimeException('Could not prepare trainer progression refresh.');
     $stmt->bind_param('i', $uid);
-    $stmt->execute();
+    if (!$stmt->execute()) { $stmt->close(); throw new RuntimeException('Could not persist or read progression totals.'); }
     $member = $stmt->get_result()->fetch_assoc() ?: [];
     $stmt->close();
 
-    $stmt = $db->prepare('SELECT COUNT(*) AS owned_count, COUNT(DISTINCT pid) AS unique_count, COALESCE(SUM(exp),0) AS total_exp FROM pokemon WHERE CAST(owner AS UNSIGNED)=?');
-    if (!$stmt) return ['count'=>0,'unique'=>0,'total_exp'=>0,'average_exp'=>0,'points'=>0.0];
+    $stmt = $db->prepare('SELECT COUNT(*) AS owned_count, COUNT(DISTINCT pid) AS unique_count, COALESCE(SUM(exp),0) AS total_exp FROM pokemon WHERE owner=CAST(? AS CHAR)');
+    if (!$stmt) throw new RuntimeException('Could not prepare trainer progression refresh.');
     $stmt->bind_param('i', $uid);
-    $stmt->execute();
+    if (!$stmt->execute()) { $stmt->close(); throw new RuntimeException('Could not persist or read progression totals.'); }
     $stats = $stmt->get_result()->fetch_assoc() ?: [];
     $stmt->close();
 
@@ -101,33 +100,30 @@ function pv_recalculate_trainer_progress(mysqli $db, int $uid, bool $refreshSess
     $points = pv_progress_score($totalExp, $ownedCount, $uniqueCount, (int)($member['battle'] ?? 0));
 
     $stmt = $db->prepare('UPDATE members SET total_poke=?, uniques=?, totalexp=?, averageexp=?, points=? WHERE id=?');
-    if ($stmt) {
-        $stmt->bind_param('iiiidi', $ownedCount, $uniqueCount, $totalExp, $averageExp, $points, $uid);
-        $stmt->execute();
-        $stmt->close();
-    }
+    if (!$stmt) throw new RuntimeException('Could not prepare progression refresh.');
+    $stmt->bind_param('iiiidi', $ownedCount, $uniqueCount, $totalExp, $averageExp, $points, $uid);
+    if (!$stmt->execute()) { $stmt->close(); throw new RuntimeException('Could not persist or read progression totals.'); }
+    $stmt->close();
 
     $clanName = trim((string)($member['clan_name'] ?? ''));
     if ($clanName !== '') {
         $stmt = $db->prepare('UPDATE clan_members SET exp=? WHERE id=?');
-        if ($stmt) {
-            $stmt->bind_param('ii', $totalExp, $uid);
-            $stmt->execute();
-            $stmt->close();
-        }
+        if (!$stmt) throw new RuntimeException('Could not prepare progression refresh.');
+        $stmt->bind_param('ii', $totalExp, $uid);
+        if (!$stmt->execute()) { $stmt->close(); throw new RuntimeException('Could not persist or read progression totals.'); }
+        $stmt->close();
         pv_recalculate_clan_progress($db, $clanName);
     }
 
     if ($refreshSession && (int)($_SESSION['myid'] ?? 0) === $uid) {
         $_SESSION['your_pokemon'] = [];
-        $stmt = $db->prepare('SELECT DISTINCT pid FROM pokemon WHERE CAST(owner AS UNSIGNED)=? ORDER BY pid');
-        if ($stmt) {
-            $stmt->bind_param('i', $uid);
-            $stmt->execute();
-            $r = $stmt->get_result();
-            while ($row = $r->fetch_assoc()) $_SESSION['your_pokemon'][] = (int)$row['pid'];
-            $stmt->close();
-        }
+        $stmt = $db->prepare('SELECT DISTINCT pid FROM pokemon WHERE owner=CAST(? AS CHAR) ORDER BY pid');
+        if (!$stmt) throw new RuntimeException('Could not prepare progression refresh.');
+        $stmt->bind_param('i', $uid);
+        if (!$stmt->execute()) { $stmt->close(); throw new RuntimeException('Could not persist or read progression totals.'); }
+        $r = $stmt->get_result();
+        while ($row = $r->fetch_assoc()) $_SESSION['your_pokemon'][] = (int)$row['pid'];
+        $stmt->close();
     }
 
     return [

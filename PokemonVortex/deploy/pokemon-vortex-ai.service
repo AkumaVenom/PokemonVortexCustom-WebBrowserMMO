@@ -1,0 +1,26 @@
+[Unit]
+Description=Pokemon Vortex autonomous world and Ranked worker
+After=network.target mariadb.service mysql.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+# EDIT paths and service identity for this installation before installing.
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/html/PokemonVortex
+# systemd supervises bounded workers directly and restarts every cache recycle.
+ExecStart=/usr/bin/php /var/www/html/PokemonVortex/ai_service.php --duration=300
+Restart=always
+RestartSec=2
+RestartPreventExitStatus=2 3
+SuccessExitStatus=130
+KillSignal=SIGTERM
+TimeoutStopSec=30
+UMask=0007
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/experience.php';
 
 /**
  * v22.4.0 authoritative reconstructed league/facility catalog.
@@ -1563,7 +1564,7 @@ function pv_battle_catalog_seed(mysqli $db, array &$changes): void
             if (!is_array($meta)) throw new RuntimeException('Missing Battle Arena species metadata for ' . $name);
             $moves = array_pad((array)$meta['moves'], 4, 'Tackle');
             $level = max(1, (int)$trainer['level']);
-            $exp = $level * $level * $level;
+            $exp = pv_exp_at_level($name, $level);
             $type1 = (string)$meta['type1'];
             $type2 = (string)$meta['type2'];
             $ownerName = (string)$trainer['display'];

@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/experience.php';
 
 require_once __DIR__ . '/bootstrap.php';
 require_once __DIR__ . '/gameplay.php';
@@ -398,15 +399,17 @@ function pv_evolve_pokemon(mysqli $db, int $uid, int $pokemonId, string $ruleKey
         $newType1 = trim((string)($target['type1'] ?? ''));
         $newType2 = trim((string)($target['type2'] ?? ''));
 
+        $growth=pv_exp_change_species($pokemon,$newName);
+        $newLevel=$growth['lvl']; $newExp=$growth['exp'];
         if ($replaceMoves) {
             [$newA1, $newA2, $newA3, $newA4] = pv_evolution_adopted_moveset($target, $pokemon);
-            $stmt = $db->prepare('UPDATE pokemon SET pid=?,name=?,t1=?,t2=?,a1=?,a2=?,a3=?,a4=? WHERE id=? AND CAST(owner AS UNSIGNED)=?');
+            $stmt = $db->prepare('UPDATE pokemon SET pid=?,name=?,t1=?,t2=?,a1=?,a2=?,a3=?,a4=?,lvl=?,exp=?,exp_curve_version=1 WHERE id=? AND CAST(owner AS UNSIGNED)=?');
             if (!$stmt) throw new RuntimeException('The evolution could not update this Pokémon.');
-            $stmt->bind_param('isssssssii', $newPid, $newName, $newType1, $newType2, $newA1, $newA2, $newA3, $newA4, $pokemonId, $uid);
+            $stmt->bind_param('isssssssiiii', $newPid, $newName, $newType1, $newType2, $newA1, $newA2, $newA3, $newA4, $newLevel, $newExp, $pokemonId, $uid);
         } else {
-            $stmt = $db->prepare('UPDATE pokemon SET pid=?,name=?,t1=?,t2=? WHERE id=? AND CAST(owner AS UNSIGNED)=?');
+            $stmt = $db->prepare('UPDATE pokemon SET pid=?,name=?,t1=?,t2=?,lvl=?,exp=?,exp_curve_version=1 WHERE id=? AND CAST(owner AS UNSIGNED)=?');
             if (!$stmt) throw new RuntimeException('The evolution could not update this Pokémon.');
-            $stmt->bind_param('isssii', $newPid, $newName, $newType1, $newType2, $pokemonId, $uid);
+            $stmt->bind_param('isssiiii', $newPid, $newName, $newType1, $newType2, $newLevel, $newExp, $pokemonId, $uid);
         }
         if (!$stmt->execute() || $stmt->affected_rows !== 1) {
             $stmt->close();

@@ -90,7 +90,7 @@ pv_page_start('Live Battle Result', 'battle_select.php', true);
                 <article><small>OPPONENT</small><strong><?=pv_h($opponentName)?></strong><span>Trainer-vs-trainer match</span></article>
                 <article><small>OUTCOME</small><strong><?=pv_h(strtoupper($outcome ?: 'COMPLETE'))?></strong><span>Match #<?=number_format($battleId)?></span></article>
                 <?php if($outcome==='win'): ?>
-                <article><small>POKÉMON EXP</small><strong><?=number_format($rewardExp)?></strong><span>awarded to each participating Pokémon</span></article>
+                <article><small>POKÉMON EXP</small><strong><?=number_format($rewardExp)?></strong><span><?=$rewardExp > 0 ? 'awarded to each participating Pokémon' : 'Link battles do not award Pokémon EXP'?></span></article>
                 <article><small>MONEY</small><strong>₽<?=number_format($rewardMoney)?></strong><span>added to your account</span></article>
                 <?php else: ?>
                 <article><small>REWARDS</small><strong>—</strong><span>Defeat recorded; no victory reward issued</span></article>

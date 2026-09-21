@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/includes/experience.php';
 require_once __DIR__ . '/includes/bootstrap.php';
 if (pv_is_logged_in()) pv_redirect('dashboard.php');
 $starterNames=['Bulbasaur','Charmander','Squirtle','Pidgey','Chikorita','Cyndaquil','Totodile','Pichu','Treecko','Torchic','Mudkip','Poochyena','Turtwig','Chimchar','Piplup','Shinx','Snivy','Tepig','Oshawott','Lillipup','Chespin','Fennekin','Froakie','Bunnelby'];
@@ -62,11 +63,11 @@ if ($_SERVER['REQUEST_METHOD']==='POST' && $dbReady) {
             $stmt->close();
 
             $gender=random_int(0,1)===0?'Male':'Female';
-            $lvl=18; $exp=9000; $ball='Poke Ball';
+            $lvl=18; $exp=pv_exp_at_level((string)$guide['name'], $lvl); $ball='Poke Ball';
             $pid=(int)$guide['id'];
             $a1=(string)($guide['a1']??''); $a2=(string)($guide['a2']??''); $a3=(string)($guide['a3']??''); $a4=(string)($guide['a4']??'');
             $t1=(string)($guide['type1']??''); $t2=(string)($guide['type2']??'');
-            $stmt=$db->prepare('INSERT INTO pokemon (pid,name,a1,a2,a3,a4,lvl,exp,t1,t2,rowner,owner,ball,gender,ot) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+            $stmt=$db->prepare('INSERT INTO pokemon (pid,name,a1,a2,a3,a4,lvl,exp,t1,t2,rowner,owner,ball,gender,ot,exp_curve_version) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)');
             if(!$stmt) throw new RuntimeException('Could not prepare starter Pokémon.');
             $stmt->bind_param('isssssiisssisss',$pid,$starter,$a1,$a2,$a3,$a4,$lvl,$exp,$t1,$t2,$username,$uid,$ball,$gender,$username);
             if(!$stmt->execute()) throw new RuntimeException('Could not create starter Pokémon: '.$stmt->error);

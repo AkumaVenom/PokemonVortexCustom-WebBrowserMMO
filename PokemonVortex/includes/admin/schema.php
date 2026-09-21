@@ -19,7 +19,7 @@ function pv_admin_schema_migrate(mysqli $db, array &$changes): void
         require_once __DIR__ . '/' . $module . '_schema.php';
         ('pv_admin_' . $module . '_migrate')($db, $changes);
     }
-    if (!$db->query("INSERT INTO console_settings(setting_key,value_json,updated_at) VALUES('schema_version','330001',UNIX_TIMESTAMP()) ON DUPLICATE KEY UPDATE value_json=VALUES(value_json),updated_at=VALUES(updated_at)")) {
+    if (!$db->query("INSERT INTO console_settings(setting_key,value_json,updated_at) VALUES('schema_version','340000',UNIX_TIMESTAMP()) ON DUPLICATE KEY UPDATE value_json=VALUES(value_json),updated_at=VALUES(updated_at)")) {
         throw new RuntimeException('Could not record console migration version.');
     }
 }

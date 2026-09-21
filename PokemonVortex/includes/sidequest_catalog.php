@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/experience.php';
 
 /**
  * v22.6.0 authoritative full source-generation Sidequest catalog.
@@ -386,7 +387,7 @@ function pv_sidequest_seed(mysqli $db, array &$changes): void
                 $pokemonName=(string)$pokemonName;$meta=pv_sidequest_species_meta($db,$pokemonName,$cache);
                 if(!is_array($meta)) throw new RuntimeException('Missing Sidequest species metadata for '.$pokemonName.' at battle #'.$id);
                 $pokemonId=3000000+((int)$id*10)+((int)$slot+1);$ids[]=$pokemonId;$moves=array_pad((array)$meta['moves'],4,'Tackle');
-                $level=max(1,min(150,(int)($levels[$slot]??100)));$exp=$level*$level*$level;$owner=(int)$id;
+                $level=max(1,min(150,(int)($levels[$slot]??100)));$exp=pv_exp_at_level($pokemonName,$level);$owner=(int)$id;
                 $a1=(string)($moves[0]?:'Tackle');$a2=(string)($moves[1]?:'Tackle');$a3=(string)($moves[2]?:'Tackle');$a4=(string)($moves[3]?:'Tackle');$t1=(string)($meta['type1']?:'Normal');$t2=(string)($meta['type2']??'');
                 $pokeStmt->bind_param('iisssssiisss',$pokemonId,$owner,$pokemonName,$a1,$a2,$a3,$a4,$level,$exp,$t1,$t2,$trainerName);
                 if(!$pokeStmt->execute()) throw new RuntimeException('Could not seed Sidequest Pokémon for '.$trainerName.': '.$pokeStmt->error);

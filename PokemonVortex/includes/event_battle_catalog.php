@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/experience.php';
 
 /**
  * v22.5.0 authoritative Special Event battle catalog.
@@ -538,7 +539,7 @@ function pv_event_battle_seed(mysqli $db, array &$changes): void
                 $pokemonId=2000000+((int)$id*10)+((int)$slot+1); $ids[]=$pokemonId;
                 $meta=$species[(string)$name]??null;
                 if(!is_array($meta)) throw new RuntimeException('Missing Special Event species metadata for '.$name);
-                $moves=array_pad((array)$meta['moves'],4,'Tackle'); $level=max(1,(int)($levels[$slot]??100)); $exp=$level*$level*$level;
+                $moves=array_pad((array)$meta['moves'],4,'Tackle'); $level=max(1,(int)($levels[$slot]??100)); $exp=pv_exp_at_level($name,$level);
                 $type1=(string)$meta['type1'];$type2=(string)$meta['type2'];$ownerName=(string)$trainer['display'];$name=(string)$name;
                 $a1=(string)$moves[0];$a2=(string)$moves[1];$a3=(string)$moves[2];$a4=(string)$moves[3];$owner=(int)$id;
                 $pokeStmt->bind_param('iisssssiisss',$pokemonId,$owner,$name,$a1,$a2,$a3,$a4,$level,$exp,$type1,$type2,$ownerName);
