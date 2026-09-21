@@ -32,8 +32,27 @@ foreach([1,25,97] as $index){
     foreach([0,6,36,42,48,1000] as $total){
         $chance=pv_bot_capture_chance($total,$profile);
         bot_check($chance>0&&$chance<=92,'capture remains possible at every collection size for profile '.$index);
+        bot_check($chance===pv_bot_capture_chance(0,$profile),'collection retention never suppresses capture-intent success for profile '.$index);
+    }
+    for($cursor=0;$cursor<8;$cursor++){
+        $intent=pv_bot_wild_intent(['bot_index'=>$index,'wild_encounters'=>$cursor]);
+        $nextIntent=pv_bot_wild_intent(['bot_index'=>$index,'wild_encounters'=>$cursor+1]);
+        bot_check($intent!==$nextIntent,'every pair of committed encounters contains training and hunting for profile '.$index);
+    }
+    for($combatRoll=1;$combatRoll<=100;$combatRoll++){
+        $training=pv_bot_wild_outcome('train',20,10,$profile,$combatRoll,1);
+        $hunting=pv_bot_wild_outcome('capture',20,10,$profile,$combatRoll,1);
+        bot_check($training!=='caught_wild','a training turn cannot be replaced by a catch');
+        bot_check(($training==='lost_wild')===($hunting==='lost_wild'),'hunting never conceals a combat loss');
     }
 }
+bot_check(pv_bot_wild_intent(['bot_index'=>1,'wild_encounters'=>0])!==pv_bot_wild_intent(['bot_index'=>2,'wild_encounters'=>0]),'fresh bots are staggered across hunting and training');
+$profile=pv_bot_activity_profile(97);
+bot_check(pv_bot_wild_outcome('train',1,14,$profile,54,1)==='won_wild','a weak team can legitimately win at its strength boundary');
+bot_check(pv_bot_wild_outcome('train',1,14,$profile,55,1)==='lost_wild','a weak team can legitimately lose past its strength boundary');
+bot_check(pv_bot_wild_outcome('train',100,14,$profile,97,1)==='won_wild'&&pv_bot_wild_outcome('train',100,14,$profile,98,1)==='lost_wild','strong teams retain the existing bounded simulated combat odds');
+bot_check(pv_bot_wild_outcome('capture',20,10,$profile,1,82)==='caught_wild'&&pv_bot_wild_outcome('capture',20,10,$profile,1,83)==='won_wild','failed capture attempts resolve the successful combat as a defeat');
+bot_check(pv_bot_wild_outcome('capture',20,10,$profile,100,1)==='lost_wild','a failed combat cannot catch or earn defeat EXP');
 bot_check(pv_bot_ranked_remaining(15,4)===1&&pv_bot_ranked_remaining(16,16)===0,'ranked batches preserve the shared sixteen-match minute quota');
 bot_check(pv_bot_ranked_cycle(119)['refresh_at']===120&&pv_bot_ranked_cycle(120)['refresh_at']===180,'ranked cycles advance at the exact minute boundary');
 

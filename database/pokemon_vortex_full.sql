@@ -3,8 +3,8 @@
 -- Target: MariaDB 10.x / MySQL 5.7+
 
 -- Database-service credentials are deliberately NOT managed by this SQL file.
--- The public XAMPP package defaults to root with a blank password in config/app.php,
--- but operators may set any local password they require. Fresh Rebuild and
+-- The XAMPP package uses the shared-server credential in config/app.php.
+-- Operators may configure their local database credentials there. Fresh Rebuild and
 -- Upgrade / Repair use the configured credential as-is and never CREATE, ALTER,
 -- DROP, or otherwise rewrite MySQL/MariaDB user accounts.
 
@@ -1332,6 +1332,8 @@ CREATE TABLE IF NOT EXISTS `bot_trainers` (
   `wild_battles` INT UNSIGNED NOT NULL DEFAULT 0,
   `wild_wins` INT UNSIGNED NOT NULL DEFAULT 0,
   `captures` INT UNSIGNED NOT NULL DEFAULT 0,
+  `wild_encounters` INT UNSIGNED NOT NULL DEFAULT 0,
+  `wild_stats_version` TINYINT UNSIGNED NOT NULL DEFAULT 1,
   `player_battles` INT UNSIGNED NOT NULL DEFAULT 0,
   `player_wins` INT UNSIGNED NOT NULL DEFAULT 0,
   `player_losses` INT UNSIGNED NOT NULL DEFAULT 0,

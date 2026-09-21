@@ -114,6 +114,37 @@ function pv_schema_ensure_table(mysqli $db, string $table, string $sql, array &$
  * Apply every additive compatibility migration required by the recovered PHP
  * runtime. Returns a concise list of actual changes performed.
  */
+/** Convert the legacy encounter counters once, without resetting real progress.
+ * Captures used to count as wins. The marker and all counter changes commit
+ * together, so a stopped Upgrade / Repair can safely resume. */
+function pv_schema_migrate_bot_wild_counters(mysqli $db, array &$changes): void
+{
+    pv_schema_add_column($db, 'bot_trainers', 'wild_encounters', 'INT UNSIGNED NOT NULL DEFAULT 0', $changes);
+    pv_schema_add_column($db, 'bot_trainers', 'wild_stats_version', 'TINYINT UNSIGNED NOT NULL DEFAULT 0', $changes);
+    $result=$db->query("SELECT GET_LOCK('pokemon_vortex_bot_tick',10) acquired");
+    $acquired=$result?(int)($result->fetch_assoc()['acquired']??0):0;
+    if($result)$result->free();
+    if($acquired!==1)throw new RuntimeException('Stop the AI worker before upgrading wild activity counters, then retry Upgrade / Repair.');
+    try{
+        if(!$db->begin_transaction())throw new RuntimeException('Could not start bot counter repair.');
+        try{
+            // The first write locks the affected registry rows for the complete
+            // repair. Separate statements avoid multi-table assignment ordering.
+            if(!$db->query('UPDATE bot_trainers SET wild_encounters=wild_battles WHERE wild_stats_version=0'))throw new RuntimeException('Could not preserve legacy wild encounter totals.');
+            $affected=$db->query('SELECT user_id FROM bot_trainers WHERE wild_stats_version=0 AND captures>0');
+            if(!$affected)throw new RuntimeException('Could not read trainers whose legacy win totals need repair.');
+            $owners=$affected->fetch_all(MYSQLI_ASSOC);$affected->free();
+            if(!$db->query('UPDATE members m JOIN bot_trainers b ON b.user_id=m.id SET m.battle=GREATEST(0,CAST(m.battle AS SIGNED)-CAST(b.captures AS SIGNED)) WHERE b.wild_stats_version=0'))throw new RuntimeException('Could not separate trainer wins from captures.');
+            if(!$db->query('UPDATE bot_trainers SET wild_battles=GREATEST(0,CAST(wild_battles AS SIGNED)-CAST(captures AS SIGNED)),wild_wins=GREATEST(0,CAST(wild_wins AS SIGNED)-CAST(captures AS SIGNED)),wild_stats_version=1 WHERE wild_stats_version=0'))throw new RuntimeException('Could not convert bot wild battle counters.');
+            $converted=$db->affected_rows;
+            foreach($owners as $owner)pv_recalculate_trainer_progress($db,(int)$owner['user_id'],false);
+            if(!$db->commit())throw new RuntimeException('Could not commit bot counter repair.');
+        }catch(Throwable $error){$db->rollback();throw $error;}
+        if(!$db->query('ALTER TABLE bot_trainers ALTER COLUMN wild_stats_version SET DEFAULT 1'))throw new RuntimeException('Could not set new bot counter defaults.');
+        if($converted>0)$changes[]='Separated wild battle outcomes from captures for '.$converted.' autonomous trainers';
+    }finally{$db->query("DO RELEASE_LOCK('pokemon_vortex_bot_tick')");}
+}
+
 function pv_apply_schema_migrations(mysqli $db): array
 {
     $changes = [];
@@ -486,6 +517,8 @@ function pv_apply_schema_migrations(mysqli $db): array
         `wild_battles` INT UNSIGNED NOT NULL DEFAULT 0,
         `wild_wins` INT UNSIGNED NOT NULL DEFAULT 0,
         `captures` INT UNSIGNED NOT NULL DEFAULT 0,
+        `wild_encounters` INT UNSIGNED NOT NULL DEFAULT 0,
+        `wild_stats_version` TINYINT UNSIGNED NOT NULL DEFAULT 1,
         `player_battles` INT UNSIGNED NOT NULL DEFAULT 0,
         `player_wins` INT UNSIGNED NOT NULL DEFAULT 0,
         `player_losses` INT UNSIGNED NOT NULL DEFAULT 0,
@@ -884,6 +917,7 @@ function pv_apply_schema_migrations(mysqli $db): array
     pv_schema_add_index($db, 'trade_offer_items', 'idx_trade_offer_items_owner', '`original_owner_id`', $changes);
 
     pv_schema_add_column($db, 'bot_trainers', 'ranked_retry_at', 'INT NOT NULL DEFAULT 0', $changes);
+    pv_schema_migrate_bot_wild_counters($db, $changes);
 
     // Population repair is idempotent: interrupted local setup runs can resume
     // without duplicating bots or touching human trainer progress.
@@ -919,7 +953,7 @@ function pv_apply_schema_migrations(mysqli $db): array
     if ($convertedExp>0) $changes[]='Converted EXP for '.$convertedExp.' Pokémon; preserved levels and audited old values';
 
     if (pv_schema_table_exists($db, 'pv_schema_meta')) {
-        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,30,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
+        $db->query("INSERT INTO `pv_schema_meta` (`id`,`version`,`updated_at`) VALUES (1,31,NOW()) ON DUPLICATE KEY UPDATE `version`=VALUES(`version`),`updated_at`=VALUES(`updated_at`)");
     }
 
     // v33 local operator console: shared additive fresh-install/upgrade repair path.

@@ -68,7 +68,7 @@ function pv_ai_service_preflight(mysqli $db): array
         'world_map_blocks' => 'world_key,area_key,xblock,yblock',
         'mapusers' => 'id,username,trainer,world_key,map,x,y,time',
         'world_map_positions' => 'user_id,world_key,area_key,x,y,updated_at',
-        'bot_trainers' => 'user_id,bot_index,enabled,ranked_retry_at,trainer_sprite,world_key,map_key,x,y,next_action_at,last_action_at,last_action,last_wild_name,last_wild_level,wild_battles,wild_wins,captures,updated_at',
+        'bot_trainers' => 'user_id,bot_index,enabled,ranked_retry_at,trainer_sprite,world_key,map_key,x,y,next_action_at,last_action_at,last_action,last_wild_name,last_wild_level,wild_battles,wild_wins,captures,wild_encounters,wild_stats_version,updated_at',
         'trainer_rank_state' => 'user_id,rating,peak_rating,ranked_wins,ranked_losses,current_streak,best_streak,shield_until,shield_source_user_id,last_ranked_at,last_attack_at,last_defense_at,updated_at',
         'rival_battles' => 'id,attacker_id,defender_id,winner_id,loser_id,source,attacker_rating_before,defender_rating_before,rating_delta,retaliation_id,summary,created_at',
         'rival_retaliations' => 'id,battle_id,defender_id,attacker_id,status,created_at,expires_at,used_at',
@@ -88,8 +88,8 @@ function pv_ai_service_preflight(mysqli $db): array
     if (!$result) throw new RuntimeException('Could not read the installed schema version.');
     $version = (int)($result->fetch_assoc()['version'] ?? 0);
     $result->free();
-    if ($version < 30) {
-        throw new RuntimeException('Schema version 30 or later is required; found ' . $version
+    if ($version < 31) {
+        throw new RuntimeException('Schema version 31 or later is required; found ' . $version
             . '. Complete Setup Upgrade manually before starting the AI service.');
     }
 

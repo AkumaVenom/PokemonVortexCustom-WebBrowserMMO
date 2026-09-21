@@ -43,9 +43,13 @@ if($world==='vortex'){
 }
 $actions=[
     'spawned'=>'Entered the world','move'=>'Exploring the map','idle'=>'Surveying the area',
-    'caught_wild'=>'Caught a wild Pokémon','won_wild'=>'Won a wild Pokémon battle','lost_wild'=>'Lost a wild Pokémon battle',
+    'caught_wild'=>'Caught a wild Pokémon','released_wild'=>'Caught and released a wild Pokémon',
+    'won_wild'=>'Won a wild Pokémon battle','lost_wild'=>'Lost a wild Pokémon battle',
 ];
 $lastAction=$actions[(string)$profile['last_action']]??'Exploring the world';
+$wildBattles=max(0,(int)$profile['wild_battles']);
+$wildWins=max(0,min($wildBattles,(int)$profile['wild_wins']));
+$wildLosses=max(0,$wildBattles-$wildWins);
 $lastWild=trim((string)$profile['last_wild_name']);
 $trainer=max(1,min(29,(int)$profile['trainer_sprite']));
 $username=(string)$profile['username'];
@@ -87,7 +91,7 @@ pv_page_start($username,'map_select.php',true);
             <button class="pv-button" type="submit">Live AI Battle (Unranked)</button>
         </form>
     </div>
-    <div class="pv-bot-scope-note"><strong><?=pv_h((string)$activityProfile['label'])?> behavior</strong><span>This rival roams in multi-step bursts, trains its full active team through wild battles, catches Pokémon, automatically evolves eligible level-based evolutions and pressures the ranked ladder. It does not autonomously battle gyms, Battle Arena trainers, event trainers or Sidequest opponents.</span></div>
+    <div class="pv-bot-scope-note"><strong><?=pv_h((string)$activityProfile['label'])?> behavior</strong><span>This rival alternates wild training and catching opportunities while roaming. Wild victories train its active team, eligible Pokémon evolve by level, and ranked battles continue on their own schedule. It does not autonomously battle gyms, Battle Arena trainers, event trainers or Sidequest opponents.</span></div>
 <?php endif; ?>
 </section>
 
@@ -112,10 +116,10 @@ pv_page_start($username,'map_select.php',true);
 </section>
 
 <section class="pv-bot-metrics-grid">
-    <article><span>WILD BATTLES</span><strong><?=number_format((int)$profile['wild_battles'])?></strong><small><?=number_format((int)$profile['wild_wins'])?> wins</small></article>
-    <article><span>CAPTURES</span><strong><?=number_format((int)$profile['captures'])?></strong><small><?=number_format((int)$profile['total_poke'])?> owned Pokémon</small></article>
+    <article><span>WILD WINS</span><strong><?=number_format($wildWins)?></strong><small>defeated wild Pokémon</small></article>
+    <article><span>WILD LOSSES</span><strong><?=number_format($wildLosses)?></strong><small><?=number_format($wildBattles)?> wild battles completed</small></article>
+    <article><span>CATCHES</span><strong><?=number_format((int)$profile['captures'])?></strong><small><?=number_format((int)$profile['total_poke'])?> currently owned · catches include releases</small></article>
     <article><span>LIVE PLAYER BATTLES</span><strong><?=number_format((int)$profile['player_battles'])?></strong><small><?=number_format((int)$profile['player_wins'])?> W · <?=number_format((int)$profile['player_losses'])?> L</small></article>
-    <article><span>TRAINER SPRITE</span><strong>#<?=number_format($trainer)?></strong><small>trainer appearance</small></article>
 </section>
 </section></main></div>
 <?php pv_page_end(); ?>

@@ -898,11 +898,32 @@ function pv_bot_refresh_training_team(mysqli $db,int $uid): array
     }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}throw $e;}
 }
 
-/** The former collection cap is a retention limit, never an activity stop. */
+/** Collection size governs retention, never whether a hunting turn can catch.
+ * Keep the total argument for existing callers of this runtime helper. */
 function pv_bot_capture_chance(int $total,array $profile): int
 {
-    $base=$total<6?82:($total<12?38:($total<20?20:($total<28?10:4)));
-    return min(92,$base+max(0,(int)($profile['capture_bonus']??0)));
+    return min(92,82+max(0,(int)($profile['capture_bonus']??0)));
+}
+
+/** Alternate actual encounters, not footsteps or wall-clock ticks. The cursor
+ * is committed with the outcome, so movement, restarts and failed writes cannot
+ * consume a training turn. Offset identities to avoid synchronized hunting. */
+function pv_bot_wild_intent(array $bot): string
+{
+    return (max(0,(int)($bot['wild_encounters']??0))+max(1,(int)($bot['bot_index']??1)))%2===0?'capture':'train';
+}
+
+/** Pure resolution policy. Rolls are supplied explicitly so strength, defeats,
+ * losses and capture boundaries can be checked without probabilistic tests. */
+function pv_bot_wild_outcome(string $intent,float $teamLevel,int $wildLevel,array $profile,int $combatRoll,int $captureRoll): string
+{
+    if(!in_array($intent,['train','capture'],true))throw new InvalidArgumentException('Invalid autonomous wild intent.');
+    if($combatRoll<1||$combatRoll>100||$captureRoll<1||$captureRoll>100)throw new InvalidArgumentException('Wild rolls must be between 1 and 100.');
+    $classBonus=(float)($profile['ranked_win_bonus']??0.0)*0.45;
+    $winChance=max(54,min(97,(int)round(74+($teamLevel-$wildLevel)*2.2+$classBonus)));
+    if($combatRoll>$winChance)return 'lost_wild';
+    if($intent==='capture'&&$captureRoll<=pv_bot_capture_chance(0,$profile))return 'caught_wild';
+    return 'won_wild';
 }
 
 /** Called inside the capture transaction. Retire at most one fully trained,
@@ -935,11 +956,11 @@ function pv_bot_make_capture_room(mysqli $db,int $uid,string $username,int $cap)
 
 /** Participating trainable teammates share the actual defeated species yield.
  * Level 100 teammates neither accumulate overflowing EXP nor dilute training. */
-function pv_bot_award_wild_training(mysqli $db,int $uid,string $wildSpecies,int $wildLevel): array
+function pv_bot_award_wild_training(mysqli $db,int $uid,string $wildSpecies,int $wildLevel,bool $ownTransaction=true): array
 {
     $ids=pv_bot_active_team_ids($db,$uid);if($ids===[])return['exp'=>0,'level_ups'=>0,'team_ids'=>[]];
     $idList=implode(',',array_map('intval',$ids));$levelUps=0;$totalGain=0;
-    if(!$db->begin_transaction())throw new RuntimeException('Could not begin AI training.');
+    if($ownTransaction&&!$db->begin_transaction())throw new RuntimeException('Could not begin AI training.');
     try{
         $stmt=pv_bot_population_statement($db,"SELECT id,name,lvl,exp,exp_curve_version FROM pokemon WHERE owner=? AND id IN ({$idList}) FOR UPDATE",'s',[(string)$uid]);
         try{$rows=$stmt->get_result()->fetch_all(MYSQLI_ASSOC);}finally{$stmt->close();}
@@ -961,8 +982,8 @@ function pv_bot_award_wild_training(mysqli $db,int $uid,string $wildSpecies,int 
             if(!$db->query("UPDATE pokemon_stats SET happiness=LEAST(255,happiness+1) WHERE id IN ({$ownedList})"))throw new RuntimeException('Could not update AI team friendship.');
         }
         pv_bot_population_write($db,'UPDATE members SET battle=battle+1 WHERE id=?','i',[$uid]);
-        if(!$db->commit())throw new RuntimeException('Could not commit AI training.');
-    }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}throw $e;}
+        if($ownTransaction&&!$db->commit())throw new RuntimeException('Could not commit AI training.');
+    }catch(Throwable $e){if($ownTransaction){try{$db->rollback();}catch(Throwable $ignored){}}throw $e;}
     return['exp'=>$totalGain,'level_ups'=>$levelUps,'team_ids'=>$ownedIds];
 }
 
@@ -1001,39 +1022,42 @@ function pv_bot_simulate_wild(mysqli $db,array $bot,array $wild,array $activityP
     $uid=(int)$bot['user_id'];$username=(string)$bot['username'];$level=pv_wild_capped_level((int)$wild['level'],2);
     if($activityProfile===[])$activityProfile=pv_bot_activity_profile(max(1,(int)($bot['bot_index']??1)));
     pv_bot_refresh_training_team($db,$uid);
-    $avg=pv_bot_team_average_level($db,$uid);$classBonus=(float)($activityProfile['ranked_win_bonus']??0.0)*0.45;
-    $winChance=max(54,min(97,(int)round(74+($avg-$level)*2.2+$classBonus)));$won=random_int(1,100)<=$winChance;
     $captured=false;$released=false;$pokemonId=0;$training=['exp'=>0,'level_ups'=>0,'team_ids'=>[]];$evolutions=[];
+    if(!$db->begin_transaction())throw new RuntimeException('Could not begin autonomous wild encounter.');
+    try{
+        $lockedBot=pv_bot_population_row($db,'SELECT bot_index,wild_encounters FROM bot_trainers WHERE user_id=? AND enabled=1 FOR UPDATE','i',[$uid]);
+        if(!$lockedBot)throw new RuntimeException('Autonomous wild trainer is unavailable.');
+        $intent=pv_bot_wild_intent($lockedBot);
+        $outcome=pv_bot_wild_outcome($intent,pv_bot_team_average_level($db,$uid),$level,$activityProfile,random_int(1,100),random_int(1,100));
+        $captured=$outcome==='caught_wild';$won=$outcome==='won_wild';
+        if($captured){
+            $room=pv_bot_make_capture_room($db,$uid,$username,max(6,(int)($activityProfile['collection_cap']??36)));
+            if($room){
+                $pokemonId=pv_bot_create_pokemon($db,$uid,$username,(array)$wild['guide'],$level,(string)$wild['display']);
+                pv_bot_assign_team_slot($db,$uid,$pokemonId,$level);
+                pv_bot_population_write($db,'UPDATE pguide SET amount=amount+1 WHERE id=?','i',[(int)$wild['guide']['id']],false);
+            }else{$released=true;}
+        }elseif($won){
+            // Generation III rewards defeats only. Capture errors roll back the
+            // entire encounter; they can never turn into fabricated victories.
+            $training=pv_bot_award_wild_training($db,$uid,(string)$wild['display'],$level,false);
+        }else{
+            pv_bot_population_write($db,'UPDATE members SET losses=losses+1 WHERE id=?','i',[$uid]);
+        }
+        $action=$released?'released_wild':$outcome;$now=time();
+        pv_bot_population_write($db,
+            'UPDATE bot_trainers SET wild_encounters=wild_encounters+1,wild_battles=wild_battles+?,wild_wins=wild_wins+?,captures=captures+?,last_action=?,last_action_at=?,last_wild_name=?,last_wild_level=?,updated_at=? WHERE user_id=? AND enabled=1',
+            'iiisisiii',[$captured?0:1,$won?1:0,$captured?1:0,$action,$now,(string)$wild['display'],$level,$now,$uid]);
+        // Collection totals, trainer wins/losses, EXP and the intent cursor are
+        // one durable result. A later movement heartbeat cannot replay it.
+        pv_recalculate_trainer_progress($db,$uid,false);
+        if(!$db->commit())throw new RuntimeException('Could not commit autonomous wild encounter.');
+    }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}throw $e;}
     if($won){
-        $count=pv_bot_population_row($db,'SELECT COUNT(*) total FROM pokemon WHERE owner=?','s',[(string)$uid]);
-        $total=(int)($count['total']??0);
-        if(random_int(1,100)<=pv_bot_capture_chance($total,$activityProfile)){
-            if(!$db->begin_transaction())throw new RuntimeException('Could not begin AI capture.');
-            try{
-                $room=pv_bot_make_capture_room($db,$uid,$username,max(6,(int)($activityProfile['collection_cap']??36)));
-                if($room){
-                    $pokemonId=pv_bot_create_pokemon($db,$uid,$username,(array)$wild['guide'],$level,(string)$wild['display']);
-                    pv_bot_assign_team_slot($db,$uid,$pokemonId,$level);
-                    pv_bot_population_write($db,'UPDATE pguide SET amount=amount+1 WHERE id=?','i',[(int)$wild['guide']['id']],false);
-                }else{$released=true;}
-                // Recount handles a retired reserve and repairs stale legacy totals.
-                pv_bot_population_write($db,'UPDATE members SET total_poke=(SELECT COUNT(*) FROM pokemon WHERE owner=?) WHERE id=?','si',[(string)$uid,$uid],false);
-                pv_bot_population_write($db,'UPDATE members SET battle=battle+1 WHERE id=?','i',[$uid]);
-                if(!$db->commit())throw new RuntimeException('Could not commit AI capture.');
-                $captured=true;
-            }catch(Throwable $e){try{$db->rollback();}catch(Throwable $ignored){}$pokemonId=0;pv_log('Bot capture failed for '.$uid.': '.$e->getMessage());}
-        }
-        if(!$captured){
-            // Generation III awards EXP for a defeat, never a capture. Failed
-            // training is a failed action rather than a silently recorded win.
-            $training=pv_bot_award_wild_training($db,$uid,(string)$wild['display'],$level);
-            $evolutions=pv_bot_auto_evolve_team($db,$uid,(array)$training['team_ids']);
-        }
-        try{pv_recalculate_trainer_progress($db,$uid,false);}catch(Throwable $e){pv_log('AI trainer progress refresh failed for '.$uid.': '.$e->getMessage());}
-    }else{
-        pv_bot_population_write($db,'UPDATE members SET losses=losses+1 WHERE id=?','i',[$uid]);
+        try{$evolutions=pv_bot_auto_evolve_team($db,$uid,(array)$training['team_ids']);}
+        catch(Throwable $e){pv_log('AI evolution refresh failed after committed wild win for '.$uid.': '.$e->getMessage());}
     }
-    return['won'=>$won,'captured'=>$captured,'released'=>$released,'pokemon_id'=>$pokemonId,'species'=>(string)$wild['display'],'level'=>$level,'exp'=>(int)$training['exp'],'level_ups'=>(int)$training['level_ups'],'evolutions'=>$evolutions];
+    return['action'=>$action,'intent'=>$intent,'won'=>$won,'captured'=>$captured,'released'=>$released,'pokemon_id'=>$pokemonId,'species'=>(string)$wild['display'],'level'=>$level,'exp'=>(int)$training['exp'],'level_ups'=>(int)$training['level_ups'],'evolutions'=>$evolutions];
 }
 
 function pv_bot_tick(mysqli $db,int $limit=24,string $focusWorld='',string $focusMap='',int $budgetMs=65,bool $serviceRanked=true): int
@@ -1071,11 +1095,11 @@ function pv_bot_tick(mysqli $db,int $limit=24,string $focusWorld='',string $focu
                 $profile=pv_bot_activity_profile(max(1,(int)($bot['bot_index']??1)));$steps=random_int((int)$profile['movement_min'],(int)$profile['movement_max']);
                 $move=pv_bot_move_burst($db,$bot,$steps);
                 $world=(string)$move['world'];$mapKey=(string)$move['map'];$x=(int)$move['x'];$y=(int)$move['y'];$wild=pv_bot_roll_wild($db,$world,$mapKey,$x,$y,(int)$profile['wild_chance']);$wildResult=null;$action=!empty($move['moved'])?'move':'idle';
-                if($wild){$wildResult=pv_bot_simulate_wild($db,$bot,$wild,$profile);$action=$wildResult['captured']?'caught_wild':($wildResult['won']?'won_wild':'lost_wild');}
-                $next=$now+random_int((int)$profile['action_min'],(int)$profile['action_max']);$wildName=$wildResult?(string)$wildResult['species']:'';$wildLevel=$wildResult?(int)$wildResult['level']:0;$battleInc=$wildResult?1:0;$winInc=$wildResult&&!empty($wildResult['won'])?1:0;$captureInc=$wildResult&&!empty($wildResult['captured'])?1:0;
-                $stmt=$db->prepare('UPDATE bot_trainers SET world_key=?,map_key=?,x=?,y=?,next_action_at=?,last_action_at=?,last_action=?,last_wild_name=?,last_wild_level=?,wild_battles=wild_battles+?,wild_wins=wild_wins+?,captures=captures+?,updated_at=? WHERE user_id=? AND enabled=1');
+                if($wild){$wildResult=pv_bot_simulate_wild($db,$bot,$wild,$profile);$action=(string)$wildResult['action'];}
+                $next=$now+random_int((int)$profile['action_min'],(int)$profile['action_max']);$wildName=$wildResult?(string)$wildResult['species']:'';$wildLevel=$wildResult?(int)$wildResult['level']:0;
+                $stmt=$db->prepare('UPDATE bot_trainers SET world_key=?,map_key=?,x=?,y=?,next_action_at=?,last_action_at=?,last_action=?,last_wild_name=?,last_wild_level=?,updated_at=? WHERE user_id=? AND enabled=1');
                 if(!$stmt)throw new RuntimeException('Could not prepare autonomous trainer heartbeat.');
-                $stmt->bind_param('ssiiiissiiiiii',$world,$mapKey,$x,$y,$next,$now,$action,$wildName,$wildLevel,$battleInc,$winInc,$captureInc,$now,$uid);
+                $stmt->bind_param('ssiiiissiii',$world,$mapKey,$x,$y,$next,$now,$action,$wildName,$wildLevel,$now,$uid);
                 try{if(!$stmt->execute())throw new RuntimeException('Could not persist autonomous trainer heartbeat.');}finally{$stmt->close();}
                 pv_bot_write_presence($db,$uid,(string)$bot['username'],max(1,min(28,(int)$bot['trainer_sprite'])),$world,$mapKey,$x,$y,$now);
 

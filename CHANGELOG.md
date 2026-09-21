@@ -1,3 +1,20 @@
+# v34.0.2 — Balanced wild activity; blank database password
+
+- Alternate training and capture opportunities per bot, persisting the sequence across restarts and staggering identities across the population. Capture chance no longer collapses as collections fill.
+- Record defeats, losses and catches separately. Captures grant neither battle wins nor EXP; successful defeats retain FireRed EXP. Commit the encounter cursor and all progression together, rolling back failed writes.
+- Repair legacy capture-inflated wild/trainer win counters once without resetting Pokémon, levels, genuine battle results or ranked history. Schema version 31.
+- Show lifetime wild wins, wild losses and catches on bot profiles; add outcome filters to AI Activity and label its bounded recent-event counts accurately.
+- Restore the requested blank database password in the shared configuration for gameplay, AI workers, fresh installs and upgrades/repairs.
+
+# v34.0.1 — Shared XAMPP database credential
+
+- Updated the central application database password to the requested shared XAMPP credential.
+- Gameplay, CLI administration, the AI service, Fresh Rebuild and Upgrade / Repair all use that same configuration.
+- Updated current install instructions and the installer SQL commentary. MySQL accounts and other databases remain managed by the host.
+- Historical credential notes below describe older releases and are superseded by this entry.
+
+---
+
 # v34.0.0 — Autonomous trainer and experience repair
 
 - Continuous supervised AI service, independent Ranked heartbeat, overdue fairness and bounded per-bot recovery.
